@@ -1,0 +1,22 @@
+appId: com.mobstac.thehindu
+---
+
+
+
+
+- extendedWaitUntil:
+    visible: "Account"
+    timeout: 15000
+- tapOn: "Account"
+
+
+
+- extendedWaitUntil:
+    visible: "Appearance"
+    timeout: 15000
+    
+- tapOn: "Appearance"
+
+- assertVisible: "Light\nMode"
+- tapOn: "Light\nMode"
+- back

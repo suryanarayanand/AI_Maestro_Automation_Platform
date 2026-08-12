@@ -1,0 +1,173 @@
+{
+    "suite": {
+        "total": 5,
+        "passed": 4,
+        "failed": 1,
+        "pass_rate": 80.0
+    },
+    "reference": {
+        "role": "Production reference",
+        "serial": "46201FDAP0048X",
+        "manufacturer": "Google",
+        "model": "Pixel 9 Pro",
+        "android": "16",
+        "resolution": "Physical size: 960x2142",
+        "density": "Physical density: 360",
+        "package": "com.mobstac.thehindu",
+        "version_name": "2501.20.802",
+        "version_code": "568"
+    },
+    "actual": {
+        "role": "Internal test actual",
+        "serial": "R9ZY40T6PHN",
+        "manufacturer": "samsung",
+        "model": "SM-E066B",
+        "android": "16",
+        "resolution": "Physical size: 720x1600",
+        "density": "Physical density: 300",
+        "package": "com.mobstac.thehindu",
+        "version_name": "2501.20.813",
+        "version_code": "579"
+    },
+    "results": [
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_21"
+        },
+        {
+            "passed": 4,
+            "failed": 1,
+            "total": 5,
+            "details": [
+                {
+                    "image": "SC_22_Account_Settings_Page.png",
+                    "status": "PASS",
+                    "similarity": 99.55,
+                    "threshold": 95.0,
+                    "difference_count": 14,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_22/./reference_SC_22_Account_Settings_Page.png",
+                    "actual": "comparison/SC_22/./actual_SC_22_Account_Settings_Page.png",
+                    "difference": "comparison/SC_22/./diff_SC_22_Account_Settings_Page.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI defects detected. All visual differences are limited to the status bar and can be ignored as per instructions.",
+                        "issues": []
+                    }
+                },
+                {
+                    "image": "SC_22_Appearance.png",
+                    "status": "PASS",
+                    "similarity": 99.55,
+                    "threshold": 95.0,
+                    "difference_count": 14,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_22/./reference_SC_22_Appearance.png",
+                    "actual": "comparison/SC_22/./actual_SC_22_Appearance.png",
+                    "difference": "comparison/SC_22/./diff_SC_22_Appearance.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI defects detected. All critical UI components are visually consistent.",
+                        "issues": []
+                    }
+                },
+                {
+                    "image": "SC_22_Appearance_Dark_Theme.png",
+                    "status": "PASS",
+                    "similarity": 99.53,
+                    "threshold": 95.0,
+                    "difference_count": 11,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_22/./reference_SC_22_Appearance_Dark_Theme.png",
+                    "actual": "comparison/SC_22/./actual_SC_22_Appearance_Dark_Theme.png",
+                    "difference": "comparison/SC_22/./diff_SC_22_Appearance_Dark_Theme.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI defects detected. All visual differences are related to device status bar content, which is to be ignored as per instructions.",
+                        "issues": []
+                    }
+                },
+                {
+                    "image": "SC_22_Appearance_Dark_Theme_Home_Page.png",
+                    "status": "FAIL",
+                    "similarity": 29.33,
+                    "threshold": 95.0,
+                    "difference_count": 15,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_22/./reference_SC_22_Appearance_Dark_Theme_Home_Page.png",
+                    "actual": "comparison/SC_22/./actual_SC_22_Appearance_Dark_Theme_Home_Page.png",
+                    "difference": "comparison/SC_22/./diff_SC_22_Appearance_Dark_Theme_Home_Page.png",
+                    "ai_analysis": {
+                        "overall_status": "FAIL",
+                        "issue_count": 2,
+                        "summary": "Two genuine UI issues detected: main content not rendered (skeleton UI shown) and possible misalignment in Advertisement label.",
+                        "issues": [
+                            {
+                                "severity": "Critical",
+                                "component": "Main Content Area",
+                                "title": "Main content not rendered",
+                                "description": "The Home feed area displays only the skeleton loader UI instead of actual news articles, images, and headlines.",
+                                "recommendation": "Investigate the data/content loading logic. Ensure articles and actual content are loaded and rendered."
+                            },
+                            {
+                                "severity": "Low",
+                                "component": "Advertisement Label",
+                                "title": "Possible Advertisement label misalignment",
+                                "description": "The 'ADVERTISEMENT' label below the content feed appears to have a slight vertical misalignment or overlap compared to the reference.",
+                                "recommendation": "Verify vertical alignment, spacing, and ensure proper padding/margin is present as per design specs."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "image": "SC_22_Appearance_Light_Theme.png",
+                    "status": "PASS",
+                    "similarity": 99.55,
+                    "threshold": 95.0,
+                    "difference_count": 14,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_22/./reference_SC_22_Appearance_Light_Theme.png",
+                    "actual": "comparison/SC_22/./actual_SC_22_Appearance_Light_Theme.png",
+                    "difference": "comparison/SC_22/./diff_SC_22_Appearance_Light_Theme.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI issues detected. All visual differences are limited to dynamic status bar elements, which are expected and not relevant to UI regression.",
+                        "issues": []
+                    }
+                }
+            ],
+            "scenario": "SC_22"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_23"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_23"
+        }
+    ]
+}

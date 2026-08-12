@@ -1,0 +1,319 @@
+{
+    "suite": {
+        "total": 6,
+        "passed": 5,
+        "failed": 1,
+        "not_found": 0,
+        "pass_rate": 83.33
+    },
+    "results": [
+        {
+            "id": "SC_07",
+            "module": "Account",
+            "name": "Logout_function",
+            "status": "PASS",
+            "duration": 96.12,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_51_20260804_162619\\SC_07.log",
+            "screenshots": [
+                "screenshots/SC_07/SC_AccountPage.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present, with correct layout, alignment, and spacing. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_AccountPage.png",
+                    "image_path": "screenshots/SC_07/SC_AccountPage.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_08",
+            "module": "Account",
+            "name": "Verify_Account_Subscription_details",
+            "status": "PASS",
+            "duration": 98.74,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_51_20260804_162619\\SC_08.log",
+            "screenshots": [
+                "screenshots/SC_08/AccountPage/Sc_08_Purchase.png",
+                "screenshots/SC_08/AccountPage/Sc_08_SUBSCRIPTIONS.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and rendered correctly. No visible UI defects or layout issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "Sc_08_Purchase.png",
+                    "image_path": "screenshots/SC_08/AccountPage/Sc_08_Purchase.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly, with no layout or rendering defects visible.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "Sc_08_SUBSCRIPTIONS.png",
+                    "image_path": "screenshots/SC_08/AccountPage/Sc_08_SUBSCRIPTIONS.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_12",
+            "module": "Article",
+            "name": "Subscriber_Article_Full_Read_Access",
+            "status": "FAIL",
+            "duration": 138.5,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_51_20260804_162619\\SC_12.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "SC_13",
+            "module": "Article",
+            "name": "Article_Share_Functionality",
+            "status": "PASS",
+            "duration": 145.0,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_51_20260804_162619\\SC_13.log",
+            "screenshots": [
+                "screenshots/SC_13/SC_13_copied_successfully.png",
+                "screenshots/SC_13/SC_13_share_article.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_13_copied_successfully.png",
+                    "image_path": "screenshots/SC_13/SC_13_copied_successfully.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present. No visible layout, rendering, or text defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_13_share_article.png",
+                    "image_path": "screenshots/SC_13/SC_13_share_article.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_14",
+            "module": "Article",
+            "name": "Article_Font_Size_Validation",
+            "status": "PASS",
+            "duration": 97.6,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_51_20260804_162619\\SC_14.log",
+            "screenshots": [
+                "screenshots/SC_14/SC_14_Article_front_changer_panel.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are fully rendered, and the layout appears correct without any visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_14_Article_front_changer_panel.png",
+                    "image_path": "screenshots/SC_14/SC_14_Article_front_changer_panel.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_15",
+            "module": "Podcast",
+            "name": "Podcast_Section_Subscriber_account",
+            "status": "PASS",
+            "duration": 213.84,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_51_20260804_162619\\SC_15.log",
+            "screenshots": [
+                "screenshots/SC_15/SC_15_first_Podcast_closedFrom_playing.png",
+                "screenshots/SC_15/SC_15_first_Podcast_fastforwarded.png",
+                "screenshots/SC_15/SC_15_first_Podcast_paused_playing.png",
+                "screenshots/SC_15/SC_15_first_Podcast_player_controls.png",
+                "screenshots/SC_15/SC_15_first_Podcast_playing_the_latest.png",
+                "screenshots/SC_15/SC_15_first_Podcast_resumed_playing.png",
+                "screenshots/SC_15/SC_15_first_Podcast_Rewinded.png",
+                "screenshots/SC_15/SC_15_first_Podcast_startedplaying.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_00.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_bottom.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_middle_01.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_top_01.png"
+            ],
+            "ai_pass": 11,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_15_first_Podcast_closedFrom_playing.png",
+                    "image_path": "screenshots/SC_15/SC_15_first_Podcast_closedFrom_playing.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present with no visual defects. No layout, rendering, or text issues observed.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_15_first_Podcast_fastforwarded.png",
+                    "image_path": "screenshots/SC_15/SC_15_first_Podcast_fastforwarded.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present, and layout is correct. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_15_first_Podcast_paused_playing.png",
+                    "image_path": "screenshots/SC_15/SC_15_first_Podcast_paused_playing.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered properly. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_15_first_Podcast_player_controls.png",
+                    "image_path": "screenshots/SC_15/SC_15_first_Podcast_player_controls.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and properly aligned. No visual defects or rendering issues observed.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_15_first_Podcast_playing_the_latest.png",
+                    "image_path": "screenshots/SC_15/SC_15_first_Podcast_playing_the_latest.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and correctly rendered. No visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_15_first_Podcast_resumed_playing.png",
+                    "image_path": "screenshots/SC_15/SC_15_first_Podcast_resumed_playing.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are rendered correctly. No visual defects present.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_15_first_Podcast_Rewinded.png",
+                    "image_path": "screenshots/SC_15/SC_15_first_Podcast_Rewinded.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and properly rendered. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_15_first_Podcast_startedplaying.png",
+                    "image_path": "screenshots/SC_15/SC_15_first_Podcast_startedplaying.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Loading indicator is stuck and placeholder content is visible, indicating incomplete rendering of the podcast screen.",
+                    "issues": [
+                        "Loading indicator stuck",
+                        "Placeholder content still visible",
+                        "Incomplete screen rendering"
+                    ],
+                    "jira_title": "Podcast screen does not finish rendering and shows stuck loading indicator",
+                    "jira_description": "On the Podcast tab, a loading spinner remains visible and placeholder content is displayed instead of actual podcast data, indicating the screen failed to finish rendering.",
+                    "image": "SC_15_Podcast_Page_00.png",
+                    "image_path": "screenshots/SC_15/SC_15_Podcast_Page_00.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and correctly aligned. No visible UI issues or rendering defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_15_Podcast_Page_bottom.png",
+                    "image_path": "screenshots/SC_15/SC_15_Podcast_Page_bottom.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_15_Podcast_Page_middle_01.png",
+                    "image_path": "screenshots/SC_15/SC_15_Podcast_Page_middle_01.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered completely with no visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_15_Podcast_Page_top_01.png",
+                    "image_path": "screenshots/SC_15/SC_15_Podcast_Page_top_01.png"
+                }
+            ]
+        }
+    ]
+}

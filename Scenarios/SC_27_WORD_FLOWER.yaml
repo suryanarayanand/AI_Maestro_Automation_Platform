@@ -1,0 +1,24 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, games, sc27]
+---
+- runFlow: ../Common/OPEN_SUBSCRIBER_GAMES.yaml
+- scrollUntilVisible:
+    element: {text: "Word Flower"}
+    timeout: 20000
+- tapOn: {text: "Word Flower"}
+- extendedWaitUntil:
+    visible: {text: "2"}
+    timeout: 20000
+- tapOn: {text: "2"}
+- runFlow:
+    when: {visible: {text: "Dismiss"}}
+    commands:
+      - tapOn: {text: "Dismiss"}
+- extendedWaitUntil:
+    visible: {text: "Settings"}
+    timeout: 20000
+- assertNotVisible: {text: ".*access was not found.*"}
+- assertVisible: "Hint"
+- assertVisible: "Reveal"
+- assertVisible: {id: "main-nav"}
+- takeScreenshot: "Screenshots/SC_27/SC_27_Word_Flower"

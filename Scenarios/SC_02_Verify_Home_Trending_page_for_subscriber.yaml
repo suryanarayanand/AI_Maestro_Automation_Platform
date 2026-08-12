@@ -1,0 +1,121 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - trending
+  - home
+---
+# Verify Home Trending page for subscriber (SC-02).
+# Launch Application
+- launchApp:
+    clearState: true
+    # stopApp: true
+- waitForAnimationToEnd:
+    timeout: 10000
+
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+- waitForAnimationToEnd:
+    timeout: 10000
+- waitForAnimationToEnd
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Home Page Validation
+- takeScreenshot: "Screenshots/SC_02/Home/SC02_Home_page_top"
+- waitForAnimationToEnd:
+    timeout: 10000
+- waitForAnimationToEnd
+- repeat:
+    times: 3
+    commands:
+      - scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_02/Home/SC02_Home_page_top_1"
+- waitForAnimationToEnd:
+    timeout: 10000
+- repeat:
+    times: 3
+    commands:
+      - scroll
+- waitForAnimationToEnd
+- waitForAnimationToEnd:
+    timeout: 10000
+- takeScreenshot: "Screenshots/SC_02/Home/SC02_Home_page_top_3"
+- repeat:
+    times: 3
+    commands:
+      - scroll
+- waitForAnimationToEnd
+- waitForAnimationToEnd:
+    timeout: 10000
+- takeScreenshot: "Screenshots/SC_02/Home/SC02_Home_page_middle"
+- repeat:
+    times: 3
+    commands:
+      - scroll
+- waitForAnimationToEnd
+- waitForAnimationToEnd:
+    timeout: 10000
+- takeScreenshot: "Screenshots/SC_02/Home/SC02_Home_page_middle_1"
+- repeat:
+    times: 3
+    commands:
+      - scroll
+- waitForAnimationToEnd
+- waitForAnimationToEnd:
+    timeout: 10000
+- takeScreenshot: "Screenshots/SC_02/Home/SC02_Home_page_middle_2"
+- repeat:
+    times: 3
+    commands:
+      - scroll
+- waitForAnimationToEnd
+- waitForAnimationToEnd:
+    timeout: 10000
+- takeScreenshot: "Screenshots/SC_02/Home/SC02_Home_page_bottom"
+
+# Trending Page Validation
+- extendedWaitUntil:
+    visible: "Trending"
+    timeout: 15000
+- tapOn: "Trending"
+
+# Alternative Navigation (if required)
+# - extendedWaitUntil:
+#     visible: "TRENDING"
+#     timeout: 15000
+#
+# - tapOn: "TRENDING"
+- waitForAnimationToEnd
+- waitForAnimationToEnd:
+    timeout: 10000
+
+# Verify All Section
+- assertVisible: "All"
+- tapOn: "All"
+- waitForAnimationToEnd
+- waitForAnimationToEnd:
+    timeout: 10000
+- takeScreenshot: "Screenshots/SC_02/Trending/SC02_Trending_All_section"
+- waitForAnimationToEnd
+- repeat:
+    times: 10
+    commands:
+      - scroll
+- waitForAnimationToEnd
+
+# Verify News Section
+- assertVisible: "News"
+- tapOn: "News"
+- waitForAnimationToEnd
+- waitForAnimationToEnd:
+    timeout: 10000
+- takeScreenshot: "Screenshots/SC_02/Trending/SC02_Trending_NEWS_section"
+- back
+- killApp

@@ -1,0 +1,107 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_02_Verify_Home_Trending_page_for_subscriber
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Wait for animation to end within 10000 ms... COMPLETED
+Run ../Common/LOGIN.yaml...
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "Email" is visible... COMPLETED
+  Tap on "Email"... COMPLETED
+  Input text product.testing@thehindu.co.in... COMPLETED
+  Hide Keyboard... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "NEXT.*|Next.*|HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT.*LOGIN"... COMPLETED
+    Assert that "Email" is visible... COMPLETED
+    Tap on "Email"... COMPLETED
+    Input text product.testing@thehindu.co.in... COMPLETED
+    Hide Keyboard... COMPLETED
+    Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+  Assert that "NEXT.*|Next.*" is visible... COMPLETED
+  Tap on "NEXT.*|Next.*"... COMPLETED
+  Assert that "password" is visible... COMPLETED
+  Tap on "password"... COMPLETED
+  Input text Test@123... COMPLETED
+  Hide Keyboard... COMPLETED
+  Assert that "LOGIN.*" is visible... COMPLETED
+  Tap on "LOGIN.*"... COMPLETED
+  Assert that "Home" is visible... COMPLETED
+Run ../Common/LOGIN.yaml... COMPLETED
+Wait for animation to end within 10000 ms... COMPLETED
+Wait for animation to end... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Take screenshot Screenshots/SC_02/Home/SC02_Home_page_top... COMPLETED
+Wait for animation to end within 10000 ms... COMPLETED
+Wait for animation to end... COMPLETED
+Repeat 3 times...
+  Scroll vertically... COMPLETED
+Repeat 3 times... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_02/Home/SC02_Home_page_top_1... COMPLETED
+Wait for animation to end within 10000 ms... COMPLETED
+Repeat 3 times...
+  Scroll vertically... COMPLETED
+Repeat 3 times... COMPLETED
+Wait for animation to end... COMPLETED
+Wait for animation to end within 10000 ms... COMPLETED
+Take screenshot Screenshots/SC_02/Home/SC02_Home_page_top_3... COMPLETED
+Repeat 3 times...
+  Scroll vertically... COMPLETED
+Repeat 3 times... COMPLETED
+Wait for animation to end... COMPLETED
+Wait for animation to end within 10000 ms... COMPLETED
+Take screenshot Screenshots/SC_02/Home/SC02_Home_page_middle... COMPLETED
+Repeat 3 times...
+  Scroll vertically... COMPLETED
+Repeat 3 times... COMPLETED
+Wait for animation to end... COMPLETED
+Wait for animation to end within 10000 ms... COMPLETED
+Take screenshot Screenshots/SC_02/Home/SC02_Home_page_middle_1... COMPLETED
+Repeat 3 times...
+  Scroll vertically... COMPLETED
+Repeat 3 times... COMPLETED
+Wait for animation to end... COMPLETED
+Wait for animation to end within 10000 ms... COMPLETED
+Take screenshot Screenshots/SC_02/Home/SC02_Home_page_middle_2... COMPLETED
+Repeat 3 times...
+  Scroll vertically... COMPLETED
+Repeat 3 times... COMPLETED
+Wait for animation to end... COMPLETED
+Wait for animation to end within 10000 ms... COMPLETED
+Take screenshot Screenshots/SC_02/Home/SC02_Home_page_bottom... COMPLETED
+Assert that "Trending" is visible... COMPLETED
+Tap on "Trending"... COMPLETED
+Wait for animation to end... COMPLETED
+Wait for animation to end within 10000 ms... COMPLETED
+Assert that "All" is visible... COMPLETED
+Tap on "All"... COMPLETED
+Wait for animation to end... COMPLETED
+Wait for animation to end within 10000 ms... COMPLETED
+Take screenshot Screenshots/SC_02/Trending/SC02_Trending_All_section... COMPLETED
+Wait for animation to end... COMPLETED
+Repeat 10 times...
+  Scroll vertically... COMPLETED
+Repeat 10 times... COMPLETED
+Wait for animation to end... COMPLETED
+Assert that "News" is visible... COMPLETED
+Tap on "News"... COMPLETED
+Wait for animation to end... COMPLETED
+Wait for animation to end within 10000 ms... COMPLETED
+Take screenshot Screenshots/SC_02/Trending/SC02_Trending_NEWS_section... COMPLETED
+Press back... COMPLETED
+Kill com.mobstac.thehindu... COMPLETED
+
+
+===== STDERR =====
+

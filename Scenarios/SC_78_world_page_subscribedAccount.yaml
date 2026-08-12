@@ -1,0 +1,90 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - world
+  - account
+---
+# world page subscribedAccount (SC-78).
+# Launch App
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Navigate to World Section
+- extendedWaitUntil:
+    visible: "The Hindu"
+    timeout: 15000
+- extendedWaitUntil:
+    visible: "World"
+    timeout: 15000
+- tapOn: "World"
+
+# Refresh World Page
+- swipe:
+    direction: DOWN
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_After_Refresh"
+
+# World Page Validation
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_05"
+- scroll
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_06"
+- scroll
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_07"
+- scroll
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_08"
+- scroll
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_09"
+- scroll
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_10"
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_11"
+- scroll
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_12"
+- scroll
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_13"
+- scroll
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_14"
+- scroll
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_15"
+- scroll
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_16"
+- scroll
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_17"
+- scroll
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_18"
+- scroll
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_19"
+- scroll
+- takeScreenshot: "Screenshots/SC_78/SC_78_World_Page_20"
+
+# Navigate to Taboola Advertisement Section
+- repeat:
+    times: 20
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Taboola Advertisement is Absent
+- repeat:
+    times: 20
+    commands:
+      - assertNotVisible:
+          text: "Image for Taboola Advertising Unit"
+      - scroll
+      - takeScreenshot: "Screenshots/SC_78/SC_78_Taboola_Advertisement_Verification"
+      - waitForAnimationToEnd

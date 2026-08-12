@@ -1,0 +1,47 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - games
+  - sc27
+---
+- runFlow: ../Common/OPEN_SUBSCRIBER_GAMES.yaml
+- extendedWaitUntil:
+    visible:
+      text: "Sudoku"
+    timeout: 15000
+- tapOn:
+    text: "Sudoku"
+- extendedWaitUntil:
+    visible:
+      text: "Choose Your Puzzle to Play"
+    timeout: 20000
+- assertVisible: "Mini"
+- assertVisible: "Easy"
+- assertVisible: "Medium"
+- assertVisible: "Hard"
+- assertVisible: "Killer"
+- tapOn: "Mini"
+- extendedWaitUntil:
+    visible:
+      text: ".*Mini Sudoku No[.].*"
+    timeout: 20000
+- takeScreenshot: "Screenshots/SC_27/SC_27_Sudoku_Mini_List"
+- tapOn:
+    text: ".*Mini Sudoku No[.].*"
+    index: 0
+- extendedWaitUntil:
+    visible:
+      text: "Play solo"
+    timeout: 20000
+- tapOn: "Play solo"
+- extendedWaitUntil:
+    visible:
+      text: "Settings"
+    timeout: 20000
+- assertNotVisible:
+    text: ".*access was not found.*"
+- assertVisible: "Settings"
+- assertVisible: "Assist"
+- assertVisible:
+    id: "main-nav"
+- takeScreenshot: "Screenshots/SC_27/SC_27_Sudoku_Mini"

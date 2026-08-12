@@ -1,0 +1,87 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_91_Sports_page_anonymous_account
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Assert that "SUBSCRIBE" is visible... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Repeat 4 times...
+  Swiping in LEFT direction in 400 ms... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 4 times... COMPLETED
+Run flow when "Sports" is visible...
+  Tap on "Sports"... COMPLETED
+Run flow when "Sports" is visible... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_01... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_02... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_03... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_04... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_05... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_06... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_07... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_08... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_09... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_10... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_11... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_12... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_13... COMPLETED
+Repeat 20 times...
+  Run flow when "ADVERTISEMENT" is visible...
+    Take screenshot Screenshots/SC_91/SC_91_Advertisement... COMPLETED
+  Run flow when "ADVERTISEMENT" is visible... COMPLETED
+  Scroll vertically... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 20 times... COMPLETED
+Repeat 20 times...
+  Swiping in DOWN direction in 400 ms... COMPLETED
+Repeat 20 times... COMPLETED
+Repeat 25 times...
+  Run flow when "Image for Taboola Advertising Unit" is visible...
+  Run flow when "Image for Taboola Advertising Unit" is visible... SKIPPED
+  Scroll vertically... COMPLETED
+    Take screenshot Screenshots/SC_91/SC_91_Taboola_Ad_${TIMESTAMP}... COMPLETED
+Repeat 25 times... COMPLETED
+Repeat 20 times...
+  Swiping in DOWN direction in 400 ms... COMPLETED
+Repeat 20 times... COMPLETED
+Repeat 25 times...
+  Run flow when "Support Journalism" is visible...
+  Run flow when "Support Journalism" is visible... SKIPPED
+  Scroll vertically... COMPLETED
+    Take screenshot Screenshots/SC_91/SC_91_Support_Journalism_Popup_${TIMESTAMP}... COMPLETED
+Repeat 25 times... COMPLETED
+
+
+===== STDERR =====
+

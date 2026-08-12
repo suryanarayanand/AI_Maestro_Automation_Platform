@@ -1,0 +1,78 @@
+{
+    "suite": {
+        "total": 2,
+        "passed": 0,
+        "failed": 1,
+        "pass_rate": 0.0
+    },
+    "reference": {
+        "role": "Production reference",
+        "serial": "46201FDAP0048X",
+        "manufacturer": "Google",
+        "model": "Pixel 9 Pro",
+        "android": "16",
+        "resolution": "Physical size: 960x2142",
+        "density": "Physical density: 360",
+        "package": "com.mobstac.thehindu",
+        "version_name": "2501.20.802",
+        "version_code": "568"
+    },
+    "actual": {
+        "role": "Internal test actual",
+        "serial": "R9ZY40T6PHN",
+        "manufacturer": "samsung",
+        "model": "SM-E066B",
+        "android": "16",
+        "resolution": "Physical size: 720x1600",
+        "density": "Physical density: 300",
+        "package": "com.mobstac.thehindu",
+        "version_name": "2501.20.807",
+        "version_code": "573"
+    },
+    "results": [
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_02"
+        },
+        {
+            "passed": 0,
+            "failed": 1,
+            "total": 2,
+            "details": [
+                {
+                    "image": "SC_03_TaboolaAd_IndiaPage_undefined.png",
+                    "status": "FAIL",
+                    "similarity": 66.96,
+                    "threshold": 95.0,
+                    "difference_count": 99,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_03/./reference_SC_03_TaboolaAd_IndiaPage_undefined.png",
+                    "actual": "comparison/SC_03/./actual_SC_03_TaboolaAd_IndiaPage_undefined.png",
+                    "difference": "comparison/SC_03/./diff_SC_03_TaboolaAd_IndiaPage_undefined.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI issues detected. All detected differences are related to dynamic content, such as news articles and advertisements, which should be ignored.",
+                        "issues": []
+                    }
+                },
+                {
+                    "image": "SC_03_TaboolaAd_TrendingPage_undefined.png",
+                    "status": "NOT FOUND",
+                    "similarity": 0,
+                    "threshold": 95.0,
+                    "difference_count": 0,
+                    "reference": "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_03\\SC_03_TaboolaAd_TrendingPage_undefined.png",
+                    "actual": "",
+                    "difference": ""
+                }
+            ],
+            "scenario": "SC_03"
+        }
+    ]
+}

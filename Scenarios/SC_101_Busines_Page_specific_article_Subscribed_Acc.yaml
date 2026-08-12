@@ -1,0 +1,132 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - business
+  - article
+---
+# Busines Page specific article Subscribed Acc (SC-101).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- waitForAnimationToEnd
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Navigate to Business Section
+- repeat:
+    times: 5
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible:
+        text: "Business"
+    commands:
+      - tapOn: "Business"
+- takeScreenshot: "Screenshots/SC_101/SC_101_Business_Page_Subscribed_Account"
+- tapOn:
+    point: 50%, 50%
+# The frequency-capped AI Summary sheet can cover the article action bar.
+
+- runFlow:
+
+    when:
+
+      visible:
+
+        text: "Summary"
+
+    commands:
+
+      - tapOn: "Close sheet"
+
+# Verify Article Actions
+- assertVisible: "AI summary"
+- assertVisible:
+    text: "Text size"
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+- takeScreenshot: "Screenshots/SC_100/SC_100_Business_Page_Subscribed_Account_specific_Article_01"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_100/SC_100_Business_Page_Subscribed_Account_specific_Article_02"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_100/SC_100_Business_Page_Subscribed_Account_specific_Article_03"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_100/SC_100_Business_Page_Subscribed_Account_specific_Article_04"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_100/SC_100_Business_Page_Subscribed_Account_specific_Article_05"
+- scroll
+- waitForAnimationToEnd
+
+# Verify Comment Section
+- repeat:
+    times: 15
+    commands:
+      - swipe:
+          direction: DOWN
+- repeat:
+    times: 10
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Post a comment"
+          commands:
+            - takeScreenshot: "Screenshots/SC_94/SC_94_Post_A_Comment_Tab"
+      - scroll
+
+# Verify Taboola Advertisement is Absent
+- repeat:
+    times: 20
+    commands:
+      - swipe:
+          direction: DOWN
+- repeat:
+    times: 20
+    commands:
+      # Verify Taboola advertisement is absent
+      - assertNotVisible:
+          text: "Image for Taboola Advertising Unit"
+      # Continue navigation
+      - scroll
+      - takeScreenshot: "Screenshots/SC_92/SC_92_Taboola_Advertisement_Verification"
+      - waitForAnimationToEnd
+
+# Verify Web Page Availability
+- repeat:
+    times: 20
+    commands:
+      - swipe:
+          direction: DOWN
+- repeat:
+    times: 20
+    commands:
+      # Verify webpage is available
+      - assertNotVisible:
+          text: "Web page not available"
+      # Continue navigation
+      - scroll
+      - takeScreenshot: "Screenshots/SC_94/SC_94_Web_Page_Not_Available"
+      - waitForAnimationToEnd

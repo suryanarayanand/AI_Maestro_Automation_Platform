@@ -1,0 +1,132 @@
+{
+    "suite": "Excelpilotgames",
+    "execution_time": 535.41,
+    "summary": {
+        "total": 3,
+        "passed": 0,
+        "failed": 3,
+        "critical": 3,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "multiple-or-unavailable",
+            "manufacturer": "",
+            "model": "",
+            "android": "",
+            "resolution": "",
+            "density": "",
+            "package": "com.mobstac.thehindu",
+            "version_name": "",
+            "version_code": ""
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Three test scenarios failed in the latest execution. One scenario (TH_5634) showed only minor visual and textual defects (misspellings, misalignment) according to Screenshot AI, not affecting core functionality. The other two (TH_5716, TH_5818) failed due to functional reasons, as indicated by the Maestro execution logs, with no visual issues or dynamic content noise reported. No evidence suggests intermittent or content-only problems; the functional failures should be addressed to ensure application stability.",
+        "release_recommendation": "Do not release",
+        "top_risks": [
+            "Functional regression in scenarios TH_5716 and TH_5818",
+            "Potential user confusion from visible typos and text misalignment in scenario TH_5634",
+            "Quality perception issues due to uncorrected minor UI inconsistencies"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "TH_5634",
+            "scenario_name": "Landing/Home Screen",
+            "module": "AI Generated",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Screenshot AI",
+            "execution_time": 151.67,
+            "log_file": "TH_5634.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Excelpilotgames_Job_93_20260810_110937\\TH_5634.log",
+            "screenshots": [
+                "screenshots/TH_5634/TH_5634_games_screen_back_navigation.png",
+                "screenshots/TH_5634/TH_5634_sudoku_landing_page.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run",
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Text alignment and typo issues in the description. The word 'Sudoko' is misspelled, and 'coumns' should be 'columns.'",
+                    "severity": "LOW",
+                    "issues": [
+                        "Misspelled title: 'Sudoko' instead of 'Sudoku'",
+                        "Typo in description: 'coumns' instead of 'columns'",
+                        "Text alignment in the description appears inconsistent"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "TH_5716",
+            "scenario_name": "Games Landing Page Navigation",
+            "module": "AI Generated",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 89.67,
+            "log_file": "TH_5716.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Excelpilotgames_Job_93_20260810_110937\\TH_5716.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "TH_5818",
+            "scenario_name": "Easy down game listing",
+            "module": "AI Generated",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 288.1,
+            "log_file": "TH_5818.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Excelpilotgames_Job_93_20260810_110937\\TH_5818.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

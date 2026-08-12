@@ -1,0 +1,76 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - search
+  - account
+---
+# Search functionality anonymous account (SC-34).
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# non -subscribber
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 5000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 5000
+- tapOn: "Skip"
+
+# - tapOn:
+#     point: 3%,4%
+# - tapOn:
+#     point: 2%,4%
+- tapOn:
+    point: 2%,5%
+- extendedWaitUntil:
+    visible: "Search"
+    timeout: 5000
+- tapOn: "Search"
+
+# - inputRandomCityName
+- inputText: "Chennai"
+- pressKey: enter
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_34/SC_34_Search_function"
+- tapOn:
+    point: 0%,16%
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_34/SC_34_Search_content"
+- scroll
+- runFlow:
+    when:
+      visible:
+        text: "Already a subscriber? "
+    commands:
+        - takeScreenshot: "Screenshots/SC_34/SC_34_Search_content_article_loginOption"
+- repeat:
+    times: 10
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "ADVERTISEMENT"
+          commands:
+            - takeScreenshot: "Screenshots/SC_34/SC_34_Search_Advertisement"
+- assertVisible:
+    text: "Comment"
+    index: 1
+
+# assert all option at the bottom tab
+- assertVisible:
+    text: "Share"
+    index: 1
+- assertVisible:
+    text: "Bookmark"
+    index: 1
+- assertVisible:
+    text: "Text size"
+    index: 1
+- assertVisible:
+    text: "AI summary"
+    index: 1
+- back

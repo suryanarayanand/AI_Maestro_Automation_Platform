@@ -1,0 +1,136 @@
+{
+    "suite": {
+        "total": 4,
+        "passed": 0,
+        "failed": 2,
+        "pass_rate": 0.0
+    },
+    "reference": {
+        "role": "Production reference",
+        "serial": "46201FDAP0048X",
+        "manufacturer": "Google",
+        "model": "Pixel 9 Pro",
+        "android": "16",
+        "resolution": "Physical size: 960x2142",
+        "density": "Physical density: 360",
+        "package": "com.mobstac.thehindu",
+        "version_name": "2501.20.802",
+        "version_code": "568"
+    },
+    "actual": {
+        "role": "Internal test actual",
+        "serial": "R9ZY40T6PHN",
+        "manufacturer": "samsung",
+        "model": "SM-E066B",
+        "android": "16",
+        "resolution": "Physical size: 720x1600",
+        "density": "Physical density: 300",
+        "package": "com.mobstac.thehindu",
+        "version_name": "2501.20.807",
+        "version_code": "573"
+    },
+    "results": [
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_07"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_08"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 2,
+            "details": [
+                {
+                    "image": "SC_12_Subscriber_Article_page.png",
+                    "status": "NOT FOUND",
+                    "similarity": 0,
+                    "threshold": 95.0,
+                    "difference_count": 0,
+                    "reference": "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_12\\SC_12_Subscriber_Article_page.png",
+                    "actual": "",
+                    "difference": ""
+                },
+                {
+                    "image": "SC_12_Subscriber_Article_page_1.png",
+                    "status": "NOT FOUND",
+                    "similarity": 0,
+                    "threshold": 95.0,
+                    "difference_count": 0,
+                    "reference": "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_12\\SC_12_Subscriber_Article_page_1.png",
+                    "actual": "",
+                    "difference": ""
+                }
+            ],
+            "scenario": "SC_12"
+        },
+        {
+            "passed": 0,
+            "failed": 2,
+            "total": 2,
+            "details": [
+                {
+                    "image": "SC_13_copied_successfully.png",
+                    "status": "FAIL",
+                    "similarity": 44.26,
+                    "threshold": 95.0,
+                    "difference_count": 146,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_13/./reference_SC_13_copied_successfully.png",
+                    "actual": "comparison/SC_13/./actual_SC_13_copied_successfully.png",
+                    "difference": "comparison/SC_13/./diff_SC_13_copied_successfully.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI defects detected. All highlighted differences are related to dynamic or ignored areas such as time, network, live news content, headlines, or copy-prompt overlays. Persistent UI elements such as header, toolbar, navigation, icons, theme, layout, alignment, and buttons appear consistent and correct.",
+                        "issues": []
+                    }
+                },
+                {
+                    "image": "SC_13_share_article.png",
+                    "status": "FAIL",
+                    "similarity": 68.06,
+                    "threshold": 95.0,
+                    "difference_count": 219,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_13/./reference_SC_13_share_article.png",
+                    "actual": "comparison/SC_13/./actual_SC_13_share_article.png",
+                    "difference": "comparison/SC_13/./diff_SC_13_share_article.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI issues detected. All highlighted differences are related to dynamic content, text changes, or ignorable elements as per the provided instructions.",
+                        "issues": []
+                    }
+                }
+            ],
+            "scenario": "SC_13"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_14"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_15"
+        }
+    ]
+}

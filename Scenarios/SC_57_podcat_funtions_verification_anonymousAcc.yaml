@@ -1,0 +1,68 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+---
+# podcat funtions verification anonymousAcc (SC-57).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Login
+- runFlow: ../Common/Login_via_pages_or_Article.yaml
+
+# Navigate to Podcast Section
+- extendedWaitUntil:
+    visible: "SUBSCRIBE"
+    timeout: 5000
+- extendedWaitUntil:
+    visible: "Podcast"
+    timeout: 5000
+- tapOn: "Podcast"
+
+# Open First Podcast
+- runFlow:
+    when:
+      visible: "A podcast from The Hindu that delves deep into current developments with subject experts, and brings in context, history, perspective and analysis."
+    commands:
+      - tapOn: "A podcast from The Hindu that delves deep into current developments with subject experts, and brings in context, history, perspective and analysis."
+
+# Navigate Back
+- back
+
+# Open Second Podcast
+- scrollUntilVisible:
+    element: "Jacob Koshy and Sobhana K Nair guide you on a scenic route through the history of science. Filled with fascinating anecdotes, deep archival dives, and a closer look at the quirky minds behind groundbreaking ideas."
+- runFlow:
+    when:
+      visible: "Jacob Koshy and Sobhana K Nair guide you on a scenic route through the history of science. Filled with fascinating anecdotes, deep archival dives, and a closer look at the quirky minds behind groundbreaking ideas."
+    commands:
+      - tapOn: "Jacob Koshy and Sobhana K Nair guide you on a scenic route through the history of science. Filled with fascinating anecdotes, deep archival dives, and a closer look at the quirky minds behind groundbreaking ideas."
+
+# Navigate Back
+- back
+
+# Reopen Second Podcast
+- runFlow:
+    when:
+      visible: "Jacob Koshy and Sobhana K Nair guide you on a scenic route through the history of science. Filled with fascinating anecdotes, deep archival dives, and a closer look at the quirky minds behind groundbreaking ideas."
+    commands:
+      - tapOn: "Jacob Koshy and Sobhana K Nair guide you on a scenic route through the history of science. Filled with fascinating anecdotes, deep archival dives, and a closer look at the quirky minds behind groundbreaking ideas."
+
+# Navigate Back
+- back
+
+# Open Third Podcast
+- runFlow:
+    when:
+      visible: "The Hindu's Diplomatic Affairs Editor Suhasini Haidar analyses the key development of the week in international affairs."
+    commands:
+      - tapOn: "The Hindu's Diplomatic Affairs Editor Suhasini Haidar analyses the key development of the week in international affairs."
+
+# Navigate Back
+- back
+
+# Close Application
+- stopApp

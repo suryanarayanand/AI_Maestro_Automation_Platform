@@ -1,0 +1,72 @@
+{
+    "suite": "Sc27Remaininggames",
+    "execution_time": 39.42,
+    "summary": {
+        "total": 1,
+        "passed": 0,
+        "failed": 1,
+        "critical": 1,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.808",
+            "version_code": "574"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "The test scenario 'SC_27_EASY_DOWN' was cancelled during Maestro execution. There is no screenshot AI or cross-device visual evidence available for review in this cycle. As such, no functional or visual bugs were detected, nor was any dynamic-content noise observed.",
+        "release_recommendation": "No actionable evidence to block the release. Proceed with release only if scenario cancellation was expected or otherwise justified. If not, investigate the cause of the cancellation.",
+        "top_risks": [
+            "Scenario cancellation hides untested functionality",
+            "Potential missed coverage for 'SC_27_EASY_DOWN'",
+            "Lack of visual and functional validation for this scenario"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_27_EASY_DOWN",
+            "scenario_name": "Easy Down",
+            "module": "Subscriber Games",
+            "status": "ISSUE",
+            "execution_status": "CANCELLED",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 39.26,
+            "log_file": "SC_27_EASY_DOWN.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Remaininggames_Job_82_20260807_110247\\SC_27_EASY_DOWN.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

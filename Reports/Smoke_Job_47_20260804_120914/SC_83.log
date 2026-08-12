@@ -1,0 +1,86 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_83_EditorialPage_Subscribed_acc
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Run ../Common/LOGIN.yaml...
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "Email" is visible... COMPLETED
+  Tap on "Email"... COMPLETED
+  Input text product.testing@thehindu.co.in... COMPLETED
+  Hide Keyboard... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "NEXT.*|Next.*|HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT.*LOGIN"... COMPLETED
+    Assert that "Email" is visible... COMPLETED
+    Tap on "Email"... COMPLETED
+    Input text product.testing@thehindu.co.in... COMPLETED
+    Hide Keyboard... COMPLETED
+    Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+  Assert that "NEXT.*|Next.*" is visible... COMPLETED
+  Tap on "NEXT.*|Next.*"... COMPLETED
+  Assert that "password" is visible... COMPLETED
+  Tap on "password"... COMPLETED
+  Input text Test@123... COMPLETED
+  Hide Keyboard... COMPLETED
+  Assert that "LOGIN.*" is visible... COMPLETED
+  Tap on "LOGIN.*"... COMPLETED
+  Assert that "Home" is visible... COMPLETED
+Run ../Common/LOGIN.yaml... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Assert that "Editorial" is visible... COMPLETED
+Tap on "Editorial"... COMPLETED
+Take screenshot Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_01... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_02... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_03... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_04... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_05... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_06... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_07... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_08... COMPLETED
+Run flow when "SHOW MORE" is visible...
+Run flow when "SHOW MORE" is visible... SKIPPED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_09... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_10... COMPLETED
+Run flow when "SHOW MORE" is visible...
+  Tap on "SHOW MORE"... COMPLETED
+Run flow when "SHOW MORE" is visible... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_11... COMPLETED
+Run flow when "SHOW MORE" is visible...
+Run flow when "SHOW MORE" is visible... SKIPPED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_12... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_13... COMPLETED
+Run flow when "AI summary" is visible...
+Run flow when "AI summary" is visible... SKIPPED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_14... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_15... COMPLETED
+Run flow when "SHOW MORE" is visible...
+  Tap on "SHOW MORE"... COMPLETED
+Run flow when "SHOW MORE" is visible... COMPLETED
+
+
+===== STDERR =====
+

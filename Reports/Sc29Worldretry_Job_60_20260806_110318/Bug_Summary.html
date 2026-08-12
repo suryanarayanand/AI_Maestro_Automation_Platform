@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Bug Investigation Dashboard</title>
+
+<style>
+.bug-card{
+
+    background:white;
+
+    margin-top:25px;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+.bug-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.bug-body{
+
+    display:flex;
+
+    gap:30px;
+
+    margin-top:20px;
+
+    margin-bottom:20px;
+
+}
+
+.info{
+
+    min-width:140px;
+
+}
+
+.severity{
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+.major{
+
+    background:#f59e0b;
+
+}
+
+.critical{
+
+    background:#dc2626;
+
+}
+
+.minor{
+
+    background:#16a34a;
+
+}
+.screenshot-section{
+
+    margin-top:25px;
+
+}
+
+.bug-image{
+
+    width:350px;
+
+    max-width:100%;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.bug-image:hover{
+
+    transform:scale(1.02);
+
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+
+}
+
+.gallery{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:15px;
+
+}
+
+.gallery-image{
+
+    width:180px;
+
+    border-radius:8px;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.gallery-image:hover{
+
+    transform:scale(1.05);
+
+}
+body{
+    margin:0;
+    padding:0;
+    background:#f5f7fb;
+    font-family:Segoe UI,Arial,sans-serif;
+}
+
+.container{
+    width:95%;
+    margin:auto;
+    padding:20px;
+}
+
+.header{
+    background:#1f2937;
+    color:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.card{
+    background:white;
+    width:180px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.card h2{
+    margin:0;
+    font-size:36px;
+}
+
+.card p{
+    color:#666;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    
+<div class="header">
+
+<h1>🐞 Bug Investigation Dashboard</h1>
+
+<p>
+
+<b>Suite:</b> Sc29Worldretry
+
+&nbsp;&nbsp;&nbsp;
+
+<b>Execution:</b> 151.36 sec
+
+</p>
+
+</div>
+
+
+    
+<div class="cards">
+
+<div class="card">
+<h2>1</h2>
+<p>Total</p>
+</div>
+
+<div class="card">
+<h2>1</h2>
+<p>Failed</p>
+</div>
+
+<div class="card">
+<h2>1</h2>
+<p>Critical</p>
+</div>
+
+<div class="card">
+<h2>0</h2>
+<p>Major</p>
+</div>
+
+<div class="card">
+<h2>0</h2>
+<p>Minor</p>
+</div>
+
+</div>
+
+
+    
+<div class="bug-card">
+<h2>Combined AI Assessment</h2>
+<p><b>Executive summary</b><br>During Scenario SC_29_WORLD, the application execution passed Maestro's functional checks but high-severity visual issues were identified through screenshot AI analysis. Specifically, article cards failed to render and only loading placeholders were visible, indicating incomplete content loading.</p>
+<p><b>Release recommendation</b><br>Block release pending resolution of high-severity rendering issue. Though functional automation passed, user experience is critically impacted.</p>
+<ul><li>Incomplete rendering of critical article content</li><li>Loading placeholders persist with no actual data</li><li>Major content delivery failure not detected as functional error but visible to end users</li></ul><hr>
+<p><b>Reference:</b> Google Pixel 9 Pro — App 2501.20.802</p>
+<p><b>Actual:</b> samsung SM-E066B — App 2501.20.808</p>
+</div>
+
+
+    <h2>Combined Findings</h2>
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-001</h2>
+
+            <h3>SC_29_WORLD</h3>
+
+            <p>Hamburger categories - World</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: PASS</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            143.42 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Screenshot AI
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Screenshot AI</p>
+
+    <p><b>Screenshot AI findings</b><br>Article cards are not rendered; loading placeholders are stuck indicating incomplete rendering.<br>Screen shows placeholder skeleton loaders indicating main content failed to load.</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_29_WORLD/SC_29_WORLD_hamburger_menu.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_29_WORLD/SC_29_WORLD_hamburger_menu.png','_blank')">
+
+<img
+    src="screenshots/SC_29_WORLD/SC_29_WORLD_world_india.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_29_WORLD/SC_29_WORLD_world_india.png','_blank')">
+
+<img
+    src="screenshots/SC_29_WORLD/SC_29_WORLD_world_news.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_29_WORLD/SC_29_WORLD_world_news.png','_blank')">
+
+<img
+    src="screenshots/SC_29_WORLD/SC_29_WORLD_world_world.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_29_WORLD/SC_29_WORLD_world_world.png','_blank')">
+
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_95_Sports_page_light_Theme
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Run ../Common/Light_theme_changing.yaml...
+  Assert that "Account" is visible... COMPLETED
+  Tap on "Account"... COMPLETED
+  Assert that "Appearance" is visible... COMPLETED
+  Tap on "Appearance"... COMPLETED
+  Assert that "Light
+Mode" is visible... COMPLETED
+  Tap on "Light
+Mode"... COMPLETED
+  Press back... COMPLETED
+Run ../Common/Light_theme_changing.yaml... COMPLETED
+Launch app "com.mobstac.thehindu"... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Repeat 4 times...
+  Swiping in LEFT direction in 400 ms... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 4 times... COMPLETED
+Run flow when "Sports" is visible...
+  Tap on "Sports"... COMPLETED
+Run flow when "Sports" is visible... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_95/SC_95_SportsPage_LightTheme_01... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_95/SC_95_SportsPage_LightTheme_02... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Run flow when "Save 40% when you subscribe." is visible...
+Run flow when "Save 40% when you subscribe." is visible... SKIPPED
+Run flow when "Three days of The Hindu, free and without limits." is visible...
+Run flow when "Three days of The Hindu, free and without limits." is visible... SKIPPED
+Run flow when "Seven days of The Hindu, free and without limits." is visible...
+Run flow when "Seven days of The Hindu, free and without limits." is visible... SKIPPED
+Take screenshot Screenshots/SC_95/SC_95_SportsPage_LightTheme_03... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_95/SC_95_SportsPage_LightTheme_04... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_95/SC_95_SportsPage_LightTheme_05... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_95/SC_95_SportsPage_LightTheme_06... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_95/SC_95_SportsPage_LightTheme_07... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_95/SC_95_SportsPage_LightTheme_08... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_95/SC_95_SportsPage_LightTheme_09... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_95/SC_95_SportsPage_LightTheme_10... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_95/SC_95_SportsPage_LightTheme_11... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_95/SC_95_SportsPage_LightTheme_12... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_95/SC_95_SportsPage_LightTheme_13... COMPLETED
+Repeat 15 times...
+  Swiping in DOWN direction in 400 ms... COMPLETED
+Repeat 15 times... COMPLETED
+Scrolling DOWN until "DATA" is visible with speed 40, visibility percentage 100%, timeout 20000 ms, with centering disabled... FAILED
+
+No visible element found: "DATA"
+
+Could not find a visible element matching selector: "DATA"
+Tip: Try adjusting the following settings to improve detection:
+- `timeout`: current = 20000ms ? Increase if you need more time to find the element
+- `speed`: current = 40 (0-100 scale) ? Increase for faster scrolling if element is far away
+- `waitToSettleTimeoutMs`: current = Not defined ? Set this value (e.g., 500ms) if your UI updates frequently between scrolls
+- `visibilityPercentage`: current = 100% ? Lower this value if you want to detect partially visible elements
+- `centerElement`: current = false ? Enable if you want the element to be centered after finding it
+
+
+==== Debug output (logs & screenshots) ====
+
+C:\Users\12503\.maestro\tests\2026-08-11_125155
+
+
+===== STDERR =====
+

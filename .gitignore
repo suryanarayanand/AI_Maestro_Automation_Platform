@@ -1,0 +1,4 @@
+credentials.local.json
+portal.db
+__pycache__/
+*.pyc

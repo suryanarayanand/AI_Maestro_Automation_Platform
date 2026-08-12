@@ -1,0 +1,714 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Bug Investigation Dashboard</title>
+
+<style>
+.bug-card{
+
+    background:white;
+
+    margin-top:25px;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+.bug-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.bug-body{
+
+    display:flex;
+
+    gap:30px;
+
+    margin-top:20px;
+
+    margin-bottom:20px;
+
+}
+
+.info{
+
+    min-width:140px;
+
+}
+
+.severity{
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+.major{
+
+    background:#f59e0b;
+
+}
+
+.critical{
+
+    background:#dc2626;
+
+}
+
+.minor{
+
+    background:#16a34a;
+
+}
+.screenshot-section{
+
+    margin-top:25px;
+
+}
+
+.bug-image{
+
+    width:350px;
+
+    max-width:100%;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.bug-image:hover{
+
+    transform:scale(1.02);
+
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+
+}
+
+.gallery{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:15px;
+
+}
+
+.gallery-image{
+
+    width:180px;
+
+    border-radius:8px;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.gallery-image:hover{
+
+    transform:scale(1.05);
+
+}
+body{
+    margin:0;
+    padding:0;
+    background:#f5f7fb;
+    font-family:Segoe UI,Arial,sans-serif;
+}
+
+.container{
+    width:95%;
+    margin:auto;
+    padding:20px;
+}
+
+.header{
+    background:#1f2937;
+    color:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.card{
+    background:white;
+    width:180px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.card h2{
+    margin:0;
+    font-size:36px;
+}
+
+.card p{
+    color:#666;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    
+<div class="header">
+
+<h1>🐞 Bug Investigation Dashboard</h1>
+
+<p>
+
+<b>Suite:</b> Sc27Remaininggames
+
+&nbsp;&nbsp;&nbsp;
+
+<b>Execution:</b> 710.02 sec
+
+</p>
+
+</div>
+
+
+    
+<div class="cards">
+
+<div class="card">
+<h2>6</h2>
+<p>Total</p>
+</div>
+
+<div class="card">
+<h2>5</h2>
+<p>Failed</p>
+</div>
+
+<div class="card">
+<h2>5</h2>
+<p>Critical</p>
+</div>
+
+<div class="card">
+<h2>0</h2>
+<p>Major</p>
+</div>
+
+<div class="card">
+<h2>0</h2>
+<p>Minor</p>
+</div>
+
+</div>
+
+
+    
+<div class="bug-card">
+<h2>Combined AI Assessment</h2>
+<p><b>Executive summary</b><br>Multiple critical failures were detected during automated testing of Scenario 27. Four functional test cases failed to execute successfully, indicating likely functional regressions in the EASY_DOWN, WORD_ROW, WORD_FLOWER, and NEWS_QUIZ flows. Additionally, a major visual defect was reported by screenshot AI in the WORD_SEARCH scenario: several words in the list are cropped and unreadable. No dynamic-content noise or cross-device-only anomalies were identified; all reported issues are consistent across sources and devices.</p>
+<p><b>Release recommendation</b><br>Do not release. Immediate investigation and fixes are required for both functional and visual issues before considering further release candidates.</p>
+<ul><li>Critical functional regressions in key user flows</li><li>Major visual defect: unreadable/cropped text in word list</li><li>Potential for negative user retention due to broken or unreadable interface elements</li></ul><hr>
+<p><b>Reference:</b> Google Pixel 9 Pro — App 2501.20.802</p>
+<p><b>Actual:</b> samsung SM-E066B — App 2501.20.808</p>
+</div>
+
+
+    <h2>Combined Findings</h2>
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-001</h2>
+
+            <h3>SC_27_EASY_DOWN</h3>
+
+            <p>Easy Down</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: FAIL</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            105.61 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run</p>
+
+    <p><b>Screenshot AI findings</b><br>None</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+<h3>Screenshot evidence</h3>
+<p>No screenshot was captured before this failure.</p>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-002</h2>
+
+            <h3>SC_27_WORD_ROW</h3>
+
+            <p>Word Row</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: FAIL</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            112.13 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run</p>
+
+    <p><b>Screenshot AI findings</b><br>None</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+<h3>Screenshot evidence</h3>
+<p>No screenshot was captured before this failure.</p>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-003</h2>
+
+            <h3>SC_27_WORD_FLOWER</h3>
+
+            <p>Word Flower</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: FAIL</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            113.97 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run</p>
+
+    <p><b>Screenshot AI findings</b><br>None</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+<h3>Screenshot evidence</h3>
+<p>No screenshot was captured before this failure.</p>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-004</h2>
+
+            <h3>SC_27_WORD_SEARCH</h3>
+
+            <p>Word Search</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: PASS</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            100.21 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Screenshot AI
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Screenshot AI</p>
+
+    <p><b>Screenshot AI findings</b><br>Several words in the word list are visibly cut off on the right side. The text is cropped, making some words unreadable.</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_27_WORD_SEARCH/SC_27_Word_Search.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_27_WORD_SEARCH/SC_27_Word_Search.png','_blank')">
+
+</div>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-005</h2>
+
+            <h3>SC_27_NEWS_QUIZ</h3>
+
+            <p>News Quiz</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: FAIL</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            173.16 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run</p>
+
+    <p><b>Screenshot AI findings</b><br>None</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_27_NEWS_QUIZ/SC_27_Word_Flower.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_27_NEWS_QUIZ/SC_27_Word_Flower.png','_blank')">
+
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+</body>
+</html>

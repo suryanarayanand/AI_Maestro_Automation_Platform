@@ -1,0 +1,220 @@
+{
+    "suite": "Regression",
+    "execution_time": 428.81,
+    "summary": {
+        "total": 4,
+        "passed": 1,
+        "failed": 3,
+        "critical": 3,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.813",
+            "version_code": "579"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Automated testing across multiple scenarios revealed consistent failures in content rendering, with skeleton placeholders remaining visible in place of main articles and images. Functional defects are observed in the main feed's inability to fully load, confirmed both by Screenshot AI and cross-device visual evidence. A minor visual misalignment was also noted in the advertisement label, but this does not impact app functionality. Some dynamic visual differences are attributed to actual defects, not transient content noise.",
+        "release_recommendation": "Do NOT release; functional blocking issues are present. Critical rendering defects prevent core content from loading, which must be addressed before production rollout.",
+        "top_risks": [
+            "Main content feed fails to render (blocking functional defect)",
+            "Screens persistently show skeleton loaders and placeholders",
+            "Home page critical path is broken—users cannot see articles",
+            "Possible advertisement label misalignment (low risk)",
+            "Potential data loading logic or backend instability"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_22",
+            "scenario_name": "Appearance theme validation",
+            "module": "Settings",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Screenshot AI, Visual",
+            "execution_time": 76.33,
+            "log_file": "SC_22.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_121_20260812_123518\\SC_22.log",
+            "screenshots": [
+                "screenshots/SC_22/SC_22_Account_Settings_Page.png",
+                "screenshots/SC_22/SC_22_Appearance.png",
+                "screenshots/SC_22/SC_22_Appearance_Dark_Theme.png",
+                "screenshots/SC_22/SC_22_Appearance_Dark_Theme_Home_Page.png",
+                "screenshots/SC_22/SC_22_Appearance_Light_Theme.png"
+            ],
+            "comparison_images": [
+                "comparison/SC_22/./reference_SC_22_Appearance_Dark_Theme_Home_Page.png",
+                "comparison/SC_22/./actual_SC_22_Appearance_Dark_Theme_Home_Page.png",
+                "comparison/SC_22/./diff_SC_22_Appearance_Dark_Theme_Home_Page.png"
+            ],
+            "sources": [
+                "Screenshot AI",
+                "Visual"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Placeholders are still visible instead of fully rendered content, indicating incomplete rendering or loading defect.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Placeholder still visible",
+                        "Incomplete screen rendering"
+                    ]
+                }
+            ],
+            "visual_findings": [
+                {
+                    "image": "SC_22_Appearance_Dark_Theme_Home_Page.png",
+                    "similarity": 29.33,
+                    "normalized": false,
+                    "summary": "Two genuine UI issues detected: main content not rendered (skeleton UI shown) and possible misalignment in Advertisement label.",
+                    "issues": [
+                        {
+                            "severity": "Critical",
+                            "component": "Main Content Area",
+                            "title": "Main content not rendered",
+                            "description": "The Home feed area displays only the skeleton loader UI instead of actual news articles, images, and headlines.",
+                            "recommendation": "Investigate the data/content loading logic. Ensure articles and actual content are loaded and rendered."
+                        },
+                        {
+                            "severity": "Low",
+                            "component": "Advertisement Label",
+                            "title": "Possible Advertisement label misalignment",
+                            "description": "The 'ADVERTISEMENT' label below the content feed appears to have a slight vertical misalignment or overlap compared to the reference.",
+                            "recommendation": "Verify vertical alignment, spacing, and ensure proper padding/margin is present as per design specs."
+                        }
+                    ]
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "SC_23",
+            "scenario_name": "SC 23 gen",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 71.21,
+            "log_file": "SC_23.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_121_20260812_123518\\SC_23.log",
+            "screenshots": [
+                "screenshots/SC_23/SC_23_gen_enabling_dark_mode.png",
+                "screenshots/SC_23/SC_23_gen_home_page.png",
+                "screenshots/SC_23/SC_23_gen_scroll_through_editorial_page_and_at_different_sections.png",
+                "screenshots/SC_23/SC_23_gen_scroll_through_home_page_and_at_different_sections_to_v.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Multiple placeholder skeletons and loading bars visible instead of actual content, indicating incomplete rendering of the main UI.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Main content not rendered; placeholders visible",
+                        "Incomplete rendering of article/content cards"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "SC_23",
+            "scenario_name": "SC 23 Homepage FromHomepage to Editorialpage in darkTheme anonyous ",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "CANCELLED",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Screenshot AI",
+            "execution_time": 88.49,
+            "log_file": "SC_23.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_121_20260812_123518\\SC_23.log",
+            "screenshots": [
+                "screenshots/SC_23/SC_23_Dark_Theme.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_1.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_2.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_3.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_4.png",
+                "screenshots/SC_23/SC_23_Home_Page.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run",
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Screen displays placeholder skeletons instead of loaded article content, indicating incomplete rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Article placeholders visible",
+                        "Content failed to load",
+                        "Incomplete screen rendering"
+                    ]
+                },
+                {
+                    "reason": "Multiple UI placeholders are visible, indicating that the actual content failed to render. The screen is stuck on loading skeletons.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Screen is stuck on loading skeleton placeholders",
+                        "Actual article content failed to render"
+                    ]
+                },
+                {
+                    "reason": "Article placeholders are visible and actual content did not render. Screen is stuck in loading state.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Placeholders still visible",
+                        "Content failed to render",
+                        "Screen not fully loaded"
+                    ]
+                },
+                {
+                    "reason": "Multiple content placeholders are visible, indicating that the actual content failed to load/render. These placeholders suggest incomplete rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Content placeholders visible instead of real content",
+                        "Incomplete screen rendering"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

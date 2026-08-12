@@ -1,0 +1,152 @@
+appId: com.mobstac.thehindu
+tags:
+  - light_theme
+  - opinion
+  - theme
+---
+# opinionPage lightTheme (SC-90).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Change to Light Theme
+- extendedWaitUntil:
+    visible: "Account"
+    timeout: 15000
+- tapOn: "Account"
+- extendedWaitUntil:
+    visible: "Appearance"
+    timeout: 15000
+- tapOn: "Appearance"
+- assertVisible: "Light\nMode"
+- tapOn: "Light\nMode"
+- back
+
+# Relaunch the app because navigating back causes the app to crash.
+# - stopApp
+- launchApp
+
+# Navigate to Opinion Section
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- assertVisible: "Opinion"
+- tapOn: "Opinion"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_90/SC_90_Opinion_Page_LightTheme"
+- scroll
+
+# Opinion Page Validation
+- takeScreenshot: "Screenshots/SC_90/SC_90_Opinion_Page_Article_01_LightTheme"
+- scroll
+- takeScreenshot: "Screenshots/SC_90/SC_90_Opinion_Page_Article_02_LightTheme"
+- scroll
+- takeScreenshot: "Screenshots/SC_90/SC_90_Opinion_Page_Article_03_LightTheme"
+- runFlow:
+    when:
+      visible:
+        text: "SHOW MORE"
+    commands:
+      - tapOn: "SHOW MORE"
+- scroll
+- takeScreenshot: "Screenshots/SC_90/SC_90_Opinion_Page_Article_04_LightTheme"
+- waitForAnimationToEnd
+- scroll
+- takeScreenshot: "Screenshots/SC_90/SC_90_Opinion_Page_Article_05_LightTheme"
+- waitForAnimationToEnd
+
+# Cartoon Section
+- scrollUntilVisible:
+    element: "Cartoon"
+- takeScreenshot: "Screenshots/SC_90/SC_90_Cartoon_Section_01_LightTheme"
+- waitForAnimationToEnd
+- tapOn: "SEE MORE"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Cartoon"
+    timeout: 15000
+- tapOn: "Cartoon"
+- scroll
+- takeScreenshot: "Screenshots/SC_90/SC_90_Cartoon_Section_02_LightTheme"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_90/SC_90_Cartoon_Section_03_LightTheme"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_90/SC_90_Cartoon_Section_04_LightTheme"
+- scroll
+- waitForAnimationToEnd
+- tapOn:
+    point: 63%,44%
+- takeScreenshot: "Screenshots/SC_90/SC_90_Cartoon_Section_05_LightTheme"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_90/SC_90_Cartoon_Section_06_LightTheme"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_90/SC_90_Cartoon_Section_07_LightTheme"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_90/SC_90_Cartoon_Section_08_LightTheme"
+- waitForAnimationToEnd
+- back
+
+# Relaunch the app because navigating back causes the app to crash.
+# - stopApp
+- launchApp
+
+# Navigate to Opinion Section
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- assertVisible: "Opinion"
+- tapOn: "Opinion"
+- repeat:
+    times: 5
+    commands:
+      - scroll
+
+# Continue Opinion Page Validation
+- takeScreenshot: "Screenshots/SC_90/SC_90_Opinion_Page_Article_06_LightTheme"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_90/SC_90_Opinion_Page_Article_07_LightTheme"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_90/SC_90_Opinion_Page_Article_08_LightTheme"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_90/SC_90_Opinion_Page_Article_09_LightTheme"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_90/SC_90_Opinion_Page_Article_09_LightTheme"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_90/SC_90_Opinion_Page_Article_10_LightTheme"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_90/SC_90_Opinion_Page_Article_11_LightTheme"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_90/SC_90_Opinion_Page_Article_12_LightTheme"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_90/SC_90_Opinion_Page_Article_13_LightTheme"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_90/SC_90_Opinion_Page_Article_14_LightTheme"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_90/SC_90_Opinion_Page_Article_15_LightTheme"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_90/SC_90_Opinion_Page_Article_10_LightTheme"

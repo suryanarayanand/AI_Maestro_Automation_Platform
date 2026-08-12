@@ -1,0 +1,40 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_20_Signup_Option_Validation
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Assert that "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+Assert that "thehindu-logo" is visible... COMPLETED
+Assert that "Login to your account" is visible... COMPLETED
+Assert that "Don�t have an account ? " is visible... COMPLETED
+Assert that "Sign in with Apple" is visible... COMPLETED
+Assert that "Sign in with Google" is visible... COMPLETED
+Assert that "If you have an account with The Hindu Businessline,
+The Hindu e-Paper, Frontline, or Sportstar.
+You can use the same account to login here." is visible... COMPLETED
+Assert that "Sign up" is visible... COMPLETED
+Tap on "Sign up"... COMPLETED
+Take screenshot Screenshots/SC_20/SC_20_SignUp_page... COMPLETED
+Assert that "Email" is visible... COMPLETED
+Assert that "Password" is visible... COMPLETED
+Assert that ".*10 digit mobile number.*" is visible... COMPLETED
+Assert that "I'd like to receive updates and offers from THG via email and messages" is visible... COMPLETED
+Assert that "Stay logged in" is visible... COMPLETED
+Assert that "Contact me via Whatsapp" is visible... COMPLETED
+Assert that "Terms of Use" is visible... COMPLETED
+Assert that "Privacy Policy" is visible... COMPLETED
+Tap on "email"... COMPLETED
+Input text random TEXT_EMAIL_ADDRESS... COMPLETED
+Tap on "password"... COMPLETED
+Input text Test@123... COMPLETED
+Tap on ".*10 digit mobile number.*"... COMPLETED
+Input text random NUMBER... COMPLETED
+Tap on "Show password"... COMPLETED
+Assert that "SIGN UP ?" is visible... COMPLETED
+Tap on "SIGN UP ?"... COMPLETED
+Kill com.mobstac.thehindu... COMPLETED
+
+
+===== STDERR =====
+

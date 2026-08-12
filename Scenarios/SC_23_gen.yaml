@@ -1,0 +1,67 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+---
+
+- launchApp:
+    clearState: true
+
+- runFlow: "../Common/Anonymous_account_onboarding.yaml"
+
+- assertVisible:
+    id: "screen_home"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_23_gen_home_page"
+
+- tapOn:
+    id: "nav_account"
+
+- tapOn:
+    text: "Appearance"
+
+- assertVisible:
+    text: "Dark\nMode"
+
+- tapOn:
+    text: "Dark\nMode"
+
+- takeScreenshot: "Screenshots/Generated/SC_23_gen_enabling_dark_mode"
+
+- launchApp:
+    clearState: false
+    stopApp: true
+
+- assertVisible:
+    id: "screen_home"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_23_gen_scroll_through_home_page_and_at_different_sections_to_v"
+
+- tapOn:
+    text: "Editorial"
+
+- assertVisible:
+    text: "Editorial"
+
+- assertVisible:
+    text: "Editorial"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_23_gen_scroll_through_editorial_page_and_at_different_sections"
+
+- launchApp:
+    clearState: false
+    stopApp: true

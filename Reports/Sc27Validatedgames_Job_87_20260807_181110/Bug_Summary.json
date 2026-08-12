@@ -1,0 +1,108 @@
+{
+    "suite": "Sc27Validatedgames",
+    "execution_time": 1186.14,
+    "summary": {
+        "total": 9,
+        "passed": 7,
+        "failed": 2,
+        "critical": 2,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.808",
+            "version_code": "574"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Scenario SC_27 has mixed results: functional test execution via Maestro failed, while Screenshot AI flagged high-severity visual cropping issues. No evidence of dynamic-content noise was found. Visual defects do not appear to impact functional correctness directly, but functional automation indicates an underlying blocking issue.",
+        "release_recommendation": "Do not release until both the functional failure in SC_27 is investigated and the severe visual cropping on word list items is resolved.",
+        "top_risks": [
+            "Functional automation failure in SC_27",
+            "High-severity visual defect: cropped/truncated word list items",
+            "Potential user experience issues due to visual truncation"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_27",
+            "scenario_name": "SC 27 Subscriber Games validation",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 307.42,
+            "log_file": "SC_27.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Validatedgames_Job_87_20260807_181110\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_Games_Page_Subscribed_Account.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "SC_27",
+            "scenario_name": "SC 27 WORD SEARCH",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 89.68,
+            "log_file": "SC_27.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Validatedgames_Job_87_20260807_181110\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_Word_Search.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Some word list items are visibly cropped on their right side.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Cropped text in word list on right edge",
+                        "Word cards on the right are truncated"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+appId: com.mobstac.thehindu
+tags:
+  - baseline
+  - books
+---
+- runFlow: ../Common/OPEN_HOME_FOR_BASELINE.yaml
+- tapOn:
+    point: "6%,10%"
+- extendedWaitUntil:
+    visible:
+      text: "Books"
+    timeout: 15000
+- scrollUntilVisible:
+    element:
+      text: "Books"
+    direction: DOWN
+    timeout: 30000
+- tapOn:
+    text: "Books"
+- extendedWaitUntil:
+    visible:
+      text: "Books"
+    timeout: 15000
+- tapOn:
+    point: "15%,62%"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: "Books"
+    timeout: 20000
+- assertVisible:
+    text: "Books"
+- takeScreenshot: "Screenshots/LocatorSmoke/books_page"

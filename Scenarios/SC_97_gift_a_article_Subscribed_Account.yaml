@@ -1,0 +1,149 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - account
+  - article
+  - gift_article
+---
+# gift a article Subscribed Account (SC-97).
+- launchApp:
+    clearState: true
+
+# Launch Application
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- waitForAnimationToEnd
+- runFlow: ../Common/LOGIN.yaml
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Navigate to Opinion Section
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- assertVisible: "Opinion"
+- tapOn: "Opinion"
+- takeScreenshot: "Screenshots/SC_97/SC_97_Opinion_Page_Subscriber_Account"
+- tapOn:
+    point: 50%, 50%
+
+# Verify Article Actions
+- assertVisible: "AI summary"
+- assertVisible:
+    text: "Text size"
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+- runFlow:
+    when:
+      visible:
+        text: "GIFT THIS ARTICLE"
+    commands:
+      - tapOn: "GIFT THIS ARTICLE"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_97/SC_97_Opinion_Page_Subscriber_Account_gift_articles"
+- runFlow:
+    when:
+      visible:
+        text: "More options"
+    commands:
+      - tapOn: "More options"
+- takeScreenshot: "Screenshots/SC_97/SC_97_Opinion_Page_Subscriber_Account_gift_articles_more_Option"
+- assertVisible: "Quick Share"
+- assertVisible:
+    text: "Gmail"
+    index: 1
+- assertVisible:
+    text: "Teams"
+    index: 3
+- assertVisible: "WhatsApp"
+- assertVisible: "Messages"
+- assertVisible: "Quick Share"
+- tapOn: "Quick Share"
+- takeScreenshot: "Screenshots/SC_97/SC_97_Opinion_Page_Subscriber_Account_gift_articles_more_Option_quick_ShareOption_selected"
+- back
+- tapOn: "More options"
+- tapOn:
+    text: "Teams"
+    index: 3
+- takeScreenshot: "Screenshots/SC_97/SC_97_Opinion_Page_Subscriber_Account_gift_articles_more_Option_TeamsOption_selected"
+- tapOn: "navigationBack"
+- tapOn: "More options"
+- tapOn: "WhatsApp"
+- takeScreenshot: "Screenshots/SC_97/SC_97_Opinion_Page_Subscriber_Account_gift_articles_more_Option_whatsappOption_selected"
+- back
+- tapOn: "More options"
+- tapOn: "Messages"
+- takeScreenshot: "Screenshots/SC_97/SC_97_Opinion_Page_Subscriber_Account_gift_articles_more_Option_MessagepOption_selected"
+- back
+- runFlow:
+    when:
+      visible:
+        text: "More options"
+    commands:
+      - tapOn: "More options"
+- swipe:
+    start: 92%,89%
+    end: 8%,89%
+    duration: 1000
+- takeScreenshot: "Screenshots/SC_97/SC_97_Opinion_Page_Subscriber_Account_gift_articles_more_Option_02"
+- runFlow:
+    when:
+      visible:
+        text: "Instagram"
+    commands:
+      - tapOn: "Instagram"
+- takeScreenshot: "Screenshots/SC_97/SC_97_Opinion_Page_Subscriber_Account_gift_articles_more_Option_InstagramOption_selected"
+- back
+- runFlow:
+    when:
+      visible:
+        text: "More options"
+    commands:
+      - tapOn: "More options"
+- swipe:
+    start: 92%,89%
+    end: 8%,89%
+    duration: 1000
+- runFlow:
+    when:
+      visible:
+        text: "Facebook"
+    commands:
+      - tapOn: "Facebook"
+- takeScreenshot: "Screenshots/SC_97/SC_97_Opinion_Page_Subscriber_Account_gift_articles_more_Option_FacebookOption_selected"
+
+# - repeat:
+#     times: 5
+#     commands:
+#       - runFlow:
+#           when:
+#             visible:
+#               text: "Bluetooth"
+#           commands:
+#             - tapOn: "Bluetooth"
+#       - swipe:
+#           start: 85%,88%
+#           end: 20%,88%
+#       - waitForAnimationToEnd
+# - tapOn:
+#     text: "Gmail"
+#     index: 1
+# - takeScreenshot: "Screenshots/SC_97/SC_97_Opinion_Page_Subscriber_Account_gift_articles_more_Option_GmailOption_selected"
+# - tapOn: "Navigate up"
+# - back
+# - runFlow:
+#     when:
+#       visible:
+#         text: "Copy link"
+#     commands:
+#       - tapOn: "Copy link"

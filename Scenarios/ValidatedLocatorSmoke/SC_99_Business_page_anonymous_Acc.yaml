@@ -1,0 +1,119 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - business
+---
+# Validated-locator smoke copy; source scenario is unchanged.
+# Business page anonymous Acc (SC-99).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- waitForAnimationToEnd
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Verify Anonymous Home Page
+- assertVisible: "SUBSCRIBE"
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Navigate to Business Section
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 15000
+- assertVisible:
+    id: "screen_home"
+- repeat:
+    times: 5
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible:
+        text: "Business"
+    commands:
+      - tapOn:
+          text: "Business"
+# Verify Business Section
+- extendedWaitUntil:
+    visible:
+      id: "screen_section"
+    timeout: 15000
+- assertVisible:
+    id: "screen_section"
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_01"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_02"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_03"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_04"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_05"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_06"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_07"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_08"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_09"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_10"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_11"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_12"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_13"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_14"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_15"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_16"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_17"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_18"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_19"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_20"
+- scroll
+- waitForAnimationToEnd

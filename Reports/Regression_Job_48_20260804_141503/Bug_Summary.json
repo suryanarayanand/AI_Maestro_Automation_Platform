@@ -1,0 +1,104 @@
+{
+    "suite": "Regression",
+    "execution_time": 498.29,
+    "summary": {
+        "total": 2,
+        "passed": 1,
+        "failed": 1,
+        "critical": 1,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.807",
+            "version_code": "573"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "The Maestro execution for scenario SC_03 was cancelled. Visual analysis identified dynamic content differences that are expected and not genuine UI issues. However, the Screenshot AI flagged a high-severity functional issue: SDK debug or impression text is visible above the advertisement banner, which exposes non-user-facing/internal text in the main UI.",
+        "release_recommendation": "Do not release. The identified SDK debug text visibility is a functional failure that should be resolved prior to release.",
+        "top_risks": [
+            "SDK debug or impression text visible to end users",
+            "Potential exposure of internal or sensitive data in UI"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_03",
+            "scenario_name": "Verify_Ads_Taboola_for_anonymous_user",
+            "module": "Ads",
+            "status": "ISSUE",
+            "execution_status": "CANCELLED",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Screenshot AI, Visual",
+            "execution_time": 292.01,
+            "log_file": "SC_03.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_48_20260804_141503\\SC_03.log",
+            "screenshots": [
+                "screenshots/SC_03/SC_03_TaboolaAd_IndiaPage_undefined.png"
+            ],
+            "comparison_images": [
+                "comparison/SC_03/./reference_SC_03_TaboolaAd_IndiaPage_undefined.png",
+                "comparison/SC_03/./actual_SC_03_TaboolaAd_IndiaPage_undefined.png",
+                "comparison/SC_03/./diff_SC_03_TaboolaAd_IndiaPage_undefined.png",
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_03\\SC_03_TaboolaAd_TrendingPage_undefined.png"
+            ],
+            "sources": [
+                "Run",
+                "Screenshot AI",
+                "Visual"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "SDK debug text is visible above the advertisement banner.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "SDK debug or impression text visible above advertisement",
+                        "Non-user facing text is rendered in main UI"
+                    ]
+                }
+            ],
+            "visual_findings": [
+                {
+                    "image": "SC_03_TaboolaAd_IndiaPage_undefined.png",
+                    "similarity": 66.96,
+                    "normalized": false,
+                    "summary": "No genuine UI issues detected. All detected differences are related to dynamic content, such as news articles and advertisements, which should be ignored.",
+                    "issues": []
+                },
+                {
+                    "image": "SC_03_TaboolaAd_TrendingPage_undefined.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

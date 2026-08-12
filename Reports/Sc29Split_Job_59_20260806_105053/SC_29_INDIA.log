@@ -1,0 +1,69 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_29_INDIA
+Run ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml...
+  Launch app "com.mobstac.thehindu"... COMPLETED
+  Repeat 2 times...
+    Run flow when "Skip" is visible...
+    Run flow when "Skip" is visible... SKIPPED
+    Wait for animation to end... COMPLETED
+  Repeat 2 times... COMPLETED
+  Assert that id: screen_home is visible... COMPLETED
+  Assert that id: screen_home is visible... COMPLETED
+Run ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml... COMPLETED
+Assert that id: nav_menu is visible... COMPLETED
+Retry 2 times...
+  Tap on id: nav_menu... COMPLETED
+  Assert that id: screen_hamburger is visible... COMPLETED
+Retry 2 times... COMPLETED
+Assert that id: screen_hamburger is visible... COMPLETED
+Take screenshot Screenshots/Generated/SC_29_INDIA_hamburger_menu... COMPLETED
+Run ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml...
+  Launch app "com.mobstac.thehindu"... COMPLETED
+  Repeat 2 times...
+    Run flow when "Skip" is visible...
+    Run flow when "Skip" is visible... SKIPPED
+    Wait for animation to end... COMPLETED
+  Repeat 2 times... COMPLETED
+  Assert that id: screen_home is visible... COMPLETED
+  Assert that id: screen_home is visible... COMPLETED
+Run ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml... COMPLETED
+Assert that id: nav_menu is visible... COMPLETED
+Retry 2 times...
+  Tap on id: nav_menu... COMPLETED
+  Assert that id: screen_hamburger is visible... COMPLETED
+Retry 2 times... COMPLETED
+Assert that id: screen_hamburger is visible... COMPLETED
+Tap on "India", Index: 0... COMPLETED
+Tap on "News"... COMPLETED
+Assert that id: screen_section is visible... COMPLETED
+Swiping in UP direction in 400 ms... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/Generated/SC_29_INDIA_india_news... COMPLETED
+Run ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml...
+  Launch app "com.mobstac.thehindu"... COMPLETED
+  Repeat 2 times...
+    Run flow when "Skip" is visible...
+    Run flow when "Skip" is visible... SKIPPED
+    Wait for animation to end... COMPLETED
+  Repeat 2 times... COMPLETED
+  Assert that id: screen_home is visible... COMPLETED
+  Assert that id: screen_home is visible... COMPLETED
+Run ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml... COMPLETED
+Assert that id: nav_menu is visible... COMPLETED
+Retry 2 times...
+  Tap on id: nav_menu... COMPLETED
+  Assert that id: screen_hamburger is visible... COMPLETED
+Retry 2 times... COMPLETED
+Assert that id: screen_hamburger is visible... COMPLETED
+Tap on "India", Index: 0... COMPLETED
+Tap on "India", Index: 1... COMPLETED
+Assert that id: screen_section is visible... COMPLETED
+Swiping in UP direction in 400 ms... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/Generated/SC_29_INDIA_india_india... COMPLETED
+
+
+===== STDERR =====
+

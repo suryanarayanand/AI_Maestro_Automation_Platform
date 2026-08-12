@@ -1,0 +1,270 @@
+{
+    "suite": "Smoke",
+    "execution_time": 2055.18,
+    "summary": {
+        "total": 7,
+        "passed": 3,
+        "failed": 4,
+        "critical": 4,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.813",
+            "version_code": "579"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Testing across recent app builds identified a mix of critical functional and high-severity visual issues. Multiple scenarios exposed rendering failures—most notably incomplete or missing advertisement containers, blank UI regions, and critical content that failed to appear. Several visual findings, confirmed by AI screenshot analysis, show improper ad rendering (including on paywall/subscriber screens), broken layouts, and missing or duplicate content elements. At least one test scenario (SC_88) failed with no detail, indicating a potential underlying functional problem. Some noise from dynamic content was observed, but key findings center on systemic rendering and layout failures likely impacting both functionality and user trust.",
+        "release_recommendation": "Do not release. Blocker-level rendering and ad/UI defects must be resolved before ship. Further root cause analysis is required for both functional and persistent visual failures.",
+        "top_risks": [
+            "Blank advertisement containers and incomplete ad rendering",
+            "Advertisements shown on paywall/subscriber offer screens",
+            "UI layout defects: blank areas, missing or repeated content sections",
+            "Functional test failure (SC_88) without diagnostic details",
+            "Loading skeletons and missing main content after load",
+            "Overlapping advertisement banners with primary navigation or content"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_81",
+            "scenario_name": "SC 81 World page article Anonymous Account",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Screenshot AI",
+            "execution_time": 334.18,
+            "log_file": "SC_81.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_117_20260811_163044\\SC_81.log",
+            "screenshots": [
+                "screenshots/SC_81/SC_81_Taboola_Advertisement_Verification.png",
+                "screenshots/SC_81/SC_81_World_Page_AI_Summary.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_01.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_02.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_03.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_04.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_05.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_06.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_07.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_08.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_09.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_10.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_11.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_12.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_13.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_14.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_15.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run",
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "A large blank area is visible below the 'ADVERTISEMENT' label, indicating a missing or failed advertisement render.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Incomplete rendering of advertisement"
+                    ]
+                },
+                {
+                    "reason": "Large blank area with only 'ADVERTISEMENT' label, indicating missing or failed ad rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Empty advertisement placeholder",
+                        "Incomplete rendering in ad section"
+                    ]
+                },
+                {
+                    "reason": "Large unexpected blank areas and repeated 'Support Journalism' and advertisement containers indicate incomplete rendering and layout defects.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Large unexpected blank region inside main content",
+                        "Repeated 'Support Journalism' section",
+                        "Blank advertisement placeholder",
+                        "Content not fully rendered"
+                    ]
+                },
+                {
+                    "reason": "A large blank area is present where an advertisement is labeled but not rendered, indicating a rendering defect.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Large blank advertisement placeholder",
+                        "Incomplete rendering in advertisement section"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "SC_86",
+            "scenario_name": "SC 86 Editorial Page anonymous light theme",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 356.21,
+            "log_file": "SC_86.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_117_20260811_163044\\SC_86.log",
+            "screenshots": [
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_01.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_02.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_03.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_04.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_05.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_01.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_02.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_03.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_04.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Advertisement visible on a paywall/subscriber offer screen.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement is visible underneath the subscription paywall",
+                        "Subscriber offer screen should not display advertisements"
+                    ]
+                },
+                {
+                    "reason": "Banner advertisement overlaps main content and UI controls, causing layout defect.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement banner overlaps with main content",
+                        "Advertisement overlaps application navigation bar"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "SC_88",
+            "scenario_name": "SC 88 Opinion Article Navigation Interaction Login Validation",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 94.3,
+            "log_file": "SC_88.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_117_20260811_163044\\SC_88.log",
+            "screenshots": [
+                "screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account_Article_Via_Comment_Section.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-004",
+            "scenario_id": "SC_90",
+            "scenario_name": "SC 90 opinionPage lightTheme",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 275.56,
+            "log_file": "SC_90.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_117_20260811_163044\\SC_90.log",
+            "screenshots": [
+                "screenshots/SC_90/SC_90_Cartoon_Section_01_LightTheme.png",
+                "screenshots/SC_90/SC_90_Cartoon_Section_02_LightTheme.png",
+                "screenshots/SC_90/SC_90_Cartoon_Section_03_LightTheme.png",
+                "screenshots/SC_90/SC_90_Cartoon_Section_04_LightTheme.png",
+                "screenshots/SC_90/SC_90_Cartoon_Section_05_LightTheme.png",
+                "screenshots/SC_90/SC_90_Cartoon_Section_06_LightTheme.png",
+                "screenshots/SC_90/SC_90_Cartoon_Section_07_LightTheme.png",
+                "screenshots/SC_90/SC_90_Cartoon_Section_08_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_01_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_02_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_03_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_04_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_05_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_06_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_07_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_08_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_09_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_10_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_11_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_12_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_13_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_14_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_15_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_LightTheme.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Placeholder loading skeletons are visible indicating the article content did not load as expected.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Loading skeletons visible",
+                        "Content not rendered"
+                    ]
+                },
+                {
+                    "reason": "Unexpected blank area interrupts application content above 'SEE MORE', indicating missing or partially rendered UI elements.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank area inside application content",
+                        "Possible missing cards or containers above SEE MORE"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

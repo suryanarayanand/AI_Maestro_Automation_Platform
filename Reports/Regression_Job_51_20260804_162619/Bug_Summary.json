@@ -1,0 +1,185 @@
+{
+    "suite": "Regression",
+    "execution_time": 832.81,
+    "summary": {
+        "total": 6,
+        "passed": 3,
+        "failed": 3,
+        "critical": 2,
+        "major": 0,
+        "minor": 1
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.807",
+            "version_code": "573"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "The testing revealed one functional failure in scenario SC_12, but with minimal supporting evidence for the nature of the defect. Visual checks in passing scenario SC_13 surfaced only expected dynamic-content differences and no actionable UI issues. In scenario SC_15, the Screenshot AI flagged a serious functional failure: the podcast screen failed to render properly, remaining stuck on a loading indicator with incomplete content, although this was not caught by other sources. No meaningful visual-only deviations were found across tested devices. The presence of unresolved functional defects, particularly the podcast screen loading issue, presents a significant risk.",
+        "release_recommendation": "Do not release. At least two scenarios present unresolved functional failures, including critical app flow (article access and podcast loading) that must be addressed before proceeding.",
+        "top_risks": [
+            "Functional failure: SC_12 execution failed with no detail on symptoms",
+            "Critical defect: Podcast screen does not finish loading (SC_15)",
+            "Risk of undetected functional/visual issues due to missing breakdown on SC_12"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_12",
+            "scenario_name": "Subscriber_Article_Full_Read_Access",
+            "module": "Article",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Visual",
+            "execution_time": 138.5,
+            "log_file": "SC_12.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_51_20260804_162619\\SC_12.log",
+            "screenshots": [],
+            "comparison_images": [
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_12\\SC_12_Subscriber_Article_page.png",
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_12\\SC_12_Subscriber_Article_page_1.png"
+            ],
+            "sources": [
+                "Run",
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "SC_12_Subscriber_Article_page.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                },
+                {
+                    "image": "SC_12_Subscriber_Article_page_1.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "SC_13",
+            "scenario_name": "Article_Share_Functionality",
+            "module": "Article",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Minor",
+            "confidence": 80,
+            "reason": "Evidence detected by Visual",
+            "execution_time": 145.0,
+            "log_file": "SC_13.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_51_20260804_162619\\SC_13.log",
+            "screenshots": [
+                "screenshots/SC_13/SC_13_copied_successfully.png",
+                "screenshots/SC_13/SC_13_share_article.png"
+            ],
+            "comparison_images": [
+                "comparison/SC_13/./reference_SC_13_copied_successfully.png",
+                "comparison/SC_13/./actual_SC_13_copied_successfully.png",
+                "comparison/SC_13/./diff_SC_13_copied_successfully.png",
+                "comparison/SC_13/./reference_SC_13_share_article.png",
+                "comparison/SC_13/./actual_SC_13_share_article.png",
+                "comparison/SC_13/./diff_SC_13_share_article.png"
+            ],
+            "sources": [
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "SC_13_copied_successfully.png",
+                    "similarity": 44.26,
+                    "normalized": false,
+                    "summary": "No genuine UI defects detected. All highlighted differences are related to dynamic or ignored areas such as time, network, live news content, headlines, or copy-prompt overlays. Persistent UI elements such as header, toolbar, navigation, icons, theme, layout, alignment, and buttons appear consistent and correct.",
+                    "issues": []
+                },
+                {
+                    "image": "SC_13_share_article.png",
+                    "similarity": 68.06,
+                    "normalized": false,
+                    "summary": "No genuine UI issues detected. All highlighted differences are related to dynamic content, text changes, or ignorable elements as per the provided instructions.",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "SC_15",
+            "scenario_name": "Podcast_Section_Subscriber_account",
+            "module": "Podcast",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 213.84,
+            "log_file": "SC_15.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_51_20260804_162619\\SC_15.log",
+            "screenshots": [
+                "screenshots/SC_15/SC_15_first_Podcast_closedFrom_playing.png",
+                "screenshots/SC_15/SC_15_first_Podcast_fastforwarded.png",
+                "screenshots/SC_15/SC_15_first_Podcast_paused_playing.png",
+                "screenshots/SC_15/SC_15_first_Podcast_player_controls.png",
+                "screenshots/SC_15/SC_15_first_Podcast_playing_the_latest.png",
+                "screenshots/SC_15/SC_15_first_Podcast_resumed_playing.png",
+                "screenshots/SC_15/SC_15_first_Podcast_Rewinded.png",
+                "screenshots/SC_15/SC_15_first_Podcast_startedplaying.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_00.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_bottom.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_middle_01.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_top_01.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Loading indicator is stuck and placeholder content is visible, indicating incomplete rendering of the podcast screen.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Loading indicator stuck",
+                        "Placeholder content still visible",
+                        "Incomplete screen rendering"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

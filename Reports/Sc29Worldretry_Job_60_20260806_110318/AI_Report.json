@@ -1,0 +1,81 @@
+{
+    "suite": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "not_found": 0,
+        "pass_rate": 100.0
+    },
+    "results": [
+        {
+            "id": "SC_29_WORLD",
+            "module": "Hamburger Menu",
+            "name": "Hamburger categories - World",
+            "status": "PASS",
+            "duration": 143.42,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc29Worldretry_Job_60_20260806_110318\\SC_29_WORLD.log",
+            "screenshots": [
+                "screenshots/SC_29_WORLD/SC_29_WORLD_hamburger_menu.png",
+                "screenshots/SC_29_WORLD/SC_29_WORLD_world_india.png",
+                "screenshots/SC_29_WORLD/SC_29_WORLD_world_news.png",
+                "screenshots/SC_29_WORLD/SC_29_WORLD_world_world.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 2,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. Navigation drawer and search bar appear normal. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_29_WORLD_hamburger_menu.png",
+                    "image_path": "screenshots/SC_29_WORLD/SC_29_WORLD_hamburger_menu.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_29_WORLD_world_india.png",
+                    "image_path": "screenshots/SC_29_WORLD/SC_29_WORLD_world_india.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Article cards are not rendered; loading placeholders are stuck indicating incomplete rendering.",
+                    "issues": [
+                        "Incomplete rendering of article cards",
+                        "Loading placeholders are visible instead of actual content"
+                    ],
+                    "jira_title": "Article listing page stuck on loading placeholders",
+                    "jira_description": "The article listing page displays only grey loading placeholders and does not render the article content, indicating a rendering or data loading issue.",
+                    "image": "SC_29_WORLD_world_news.png",
+                    "image_path": "screenshots/SC_29_WORLD/SC_29_WORLD_world_news.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Screen shows placeholder skeleton loaders indicating main content failed to load.",
+                    "issues": [
+                        "Article cards not loaded",
+                        "Only placeholders visible",
+                        "Content not rendered"
+                    ],
+                    "jira_title": "Article list failed to load, only placeholders visible",
+                    "jira_description": "The World tab displays only skeleton loaders for article cards, with no actual content loaded, indicating a rendering or loading failure.",
+                    "image": "SC_29_WORLD_world_world.png",
+                    "image_path": "screenshots/SC_29_WORLD/SC_29_WORLD_world_world.png"
+                }
+            ]
+        }
+    ]
+}

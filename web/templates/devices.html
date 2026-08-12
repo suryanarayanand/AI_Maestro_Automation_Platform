@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="mb-4">
+
+    Connected Devices
+
+</h2>
+
+<div class="card">
+
+    <div class="card-body">
+
+        <h4>Status</h4>
+
+        <h2>
+
+            {{ device.status }}
+
+        </h2>
+
+        {% if device.connected %}
+
+        <p>
+
+            Device ID :
+            {{ device.device_id }}
+
+        </p>
+
+        <p>
+
+            Connected Devices :
+            {{ device.count }}
+
+        </p>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

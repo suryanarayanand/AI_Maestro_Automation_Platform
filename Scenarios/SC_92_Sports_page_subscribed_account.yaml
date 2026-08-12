@@ -1,0 +1,90 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - sports
+  - account
+---
+# Sports page subscribed account (SC-92).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Navigate to Sports Section
+- repeat:
+    times: 4
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible:
+        text: "Sports"
+    commands:
+      - tapOn: "Sports"
+
+# Sports Page Validation
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_92/SC_92_SportsPage_Subscribed_Account_01"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_92/SC_92_SportsPage_Subscribed_Account_02"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_92/SC_92_SportsPage_Subscribed_Account_03"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_92/SC_92_SportsPage_Subscribed_Account_04"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_92/SC_92_SportsPage_Subscribed_Account_05"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_92/SC_92_SportsPage_Subscribed_Account_06"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_92/SC_92_SportsPage_Subscribed_Account_07"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_92/SC_92_SportsPage_Subscribed_Account_08"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_92/SC_92_SportsPage_Subscribed_Account_09"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_92/SC_92_SportsPage_Subscribed_Account_10"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_92/SC_92_SportsPage_Subscribed_Account_11"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_92/SC_92_SportsPage_Subscribed_Account_12"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_92/SC_92_SportsPage_Subscribed_Account_13"
+
+# Verify Taboola Advertisement is Absent
+- repeat:
+    times: 20
+    commands:
+      - swipe:
+          direction: DOWN
+- repeat:
+    times: 20
+    commands:
+      # Verify Taboola advertisement is absent
+      - assertNotVisible:
+          text: "Image for Taboola Advertising Unit"
+      # Continue navigation
+      - scroll
+      - takeScreenshot: "Screenshots/SC_92/SC_92_Taboola_Advertisement_Verification"
+      - waitForAnimationToEnd

@@ -1,0 +1,797 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Bug Investigation Dashboard</title>
+
+<style>
+.bug-card{
+
+    background:white;
+
+    margin-top:25px;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+.bug-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.bug-body{
+
+    display:flex;
+
+    gap:30px;
+
+    margin-top:20px;
+
+    margin-bottom:20px;
+
+}
+
+.info{
+
+    min-width:140px;
+
+}
+
+.severity{
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+.major{
+
+    background:#f59e0b;
+
+}
+
+.critical{
+
+    background:#dc2626;
+
+}
+
+.minor{
+
+    background:#16a34a;
+
+}
+.screenshot-section{
+
+    margin-top:25px;
+
+}
+
+.bug-image{
+
+    width:350px;
+
+    max-width:100%;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.bug-image:hover{
+
+    transform:scale(1.02);
+
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+
+}
+
+.gallery{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:15px;
+
+}
+
+.gallery-image{
+
+    width:180px;
+
+    border-radius:8px;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.gallery-image:hover{
+
+    transform:scale(1.05);
+
+}
+body{
+    margin:0;
+    padding:0;
+    background:#f5f7fb;
+    font-family:Segoe UI,Arial,sans-serif;
+}
+
+.container{
+    width:95%;
+    margin:auto;
+    padding:20px;
+}
+
+.header{
+    background:#1f2937;
+    color:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.card{
+    background:white;
+    width:180px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.card h2{
+    margin:0;
+    font-size:36px;
+}
+
+.card p{
+    color:#666;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    
+<div class="header">
+
+<h1>🐞 Bug Investigation Dashboard</h1>
+
+<p>
+
+<b>Suite:</b> Smoke
+
+&nbsp;&nbsp;&nbsp;
+
+<b>Execution:</b> 315.43 sec
+
+</p>
+
+</div>
+
+
+    
+<div class="cards">
+
+<div class="card">
+<h2>6</h2>
+<p>Total</p>
+</div>
+
+<div class="card">
+<h2>6</h2>
+<p>Failed</p>
+</div>
+
+<div class="card">
+<h2>5</h2>
+<p>Critical</p>
+</div>
+
+<div class="card">
+<h2>0</h2>
+<p>Major</p>
+</div>
+
+<div class="card">
+<h2>1</h2>
+<p>Minor</p>
+</div>
+
+</div>
+
+
+    
+<div class="bug-card">
+<h2>Combined AI Assessment</h2>
+<p><b>Executive summary</b><br>The latest test run indicates multiple critical functional failures across several scenarios, with no significant visual-only defects beyond minor text typos. The failures were detected by execution runs, rather than visual analysis or screenshot AI, which implies core functional regression. Dynamic content noise was not detected, and only one low-severity typo was found through screenshot AI. Visual evidence from cross-device checks did not reveal additional issues.</p>
+<p><b>Release recommendation</b><br>Do not release. Immediate investigation and remediation of functional failures are required before proceeding to production.</p>
+<ul><li>Core functional regressions in major scenarios: PILOT_SC_02, PILOT_SC_03, PILOT_SC_05, TH_5818, TH_5716</li><li>Potential missed test coverage for visual and dynamic defects due to lack of findings from screenshot AI and visual sources</li><li>Presence of minor text typos in user-facing strings ('Sudoko' and 'row,coumns')</li></ul><hr>
+<p><b>Reference:</b> Google Pixel 9 Pro — App 2501.20.802</p>
+<p><b>Actual:</b> samsung SM-E066B — App 2501.20.811</p>
+</div>
+
+
+    <h2>Combined Findings</h2>
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-001</h2>
+
+            <h3>PILOT_SC_02</h3>
+
+            <p>PILOT SC 02</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: FAIL</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            36.72 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run</p>
+
+    <p><b>Screenshot AI findings</b><br>None</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+<h3>Screenshot evidence</h3>
+<p>No screenshot was captured before this failure.</p>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-002</h2>
+
+            <h3>PILOT_SC_03</h3>
+
+            <p>PILOT SC 03</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: FAIL</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            33.56 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run</p>
+
+    <p><b>Screenshot AI findings</b><br>None</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+<h3>Screenshot evidence</h3>
+<p>No screenshot was captured before this failure.</p>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-003</h2>
+
+            <h3>PILOT_SC_05</h3>
+
+            <p>Anonymous Premium navigation</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: FAIL</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            32.61 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run</p>
+
+    <p><b>Screenshot AI findings</b><br>None</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+<h3>Screenshot evidence</h3>
+<p>No screenshot was captured before this failure.</p>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-004</h2>
+
+            <h3>TH_5818</h3>
+
+            <p>Easy down game listing</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: FAIL</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            94.72 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run</p>
+
+    <p><b>Screenshot AI findings</b><br>None</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+<h3>Screenshot evidence</h3>
+<p>No screenshot was captured before this failure.</p>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-005</h2>
+
+            <h3>TH_5716</h3>
+
+            <p>Games Landing Page Navigation</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: FAIL</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            30.56 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run</p>
+
+    <p><b>Screenshot AI findings</b><br>None</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+<h3>Screenshot evidence</h3>
+<p>No screenshot was captured before this failure.</p>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-006</h2>
+
+            <h3>TH_5634</h3>
+
+            <p>Landing/Home Screen</p>
+
+        </div>
+
+        <div class="severity minor">
+            Minor
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: PASS</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            82.55 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Screenshot AI
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Screenshot AI</p>
+
+    <p><b>Screenshot AI findings</b><br>There is a visible text typo in the word 'Sudoko' and 'row,coumns' in the description.</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/TH_5634/TH_5634_games_screen_back_navigation.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/TH_5634/TH_5634_games_screen_back_navigation.png','_blank')">
+
+<img
+    src="screenshots/TH_5634/TH_5634_sudoku_landing_page.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/TH_5634/TH_5634_sudoku_landing_page.png','_blank')">
+
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+</body>
+</html>

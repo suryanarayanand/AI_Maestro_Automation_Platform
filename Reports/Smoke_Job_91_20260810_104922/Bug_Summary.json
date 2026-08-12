@@ -1,0 +1,72 @@
+{
+    "suite": "Smoke",
+    "execution_time": 22.19,
+    "summary": {
+        "total": 1,
+        "passed": 0,
+        "failed": 1,
+        "critical": 1,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.811",
+            "version_code": "577"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Test scenario PILOT_SC_02 was not executed to completion, as the execution status was marked CANCELLED. There is no supporting screenshot AI or cross-device visual evidence provided for this run. As a result, no functional failures, visual regressions, or dynamic-content issues were observed or detected.",
+        "release_recommendation": "No Evidence - Pending Validation",
+        "top_risks": [
+            "Scenario PILOT_SC_02 untested",
+            "Potential undiscovered functional issues",
+            "Lack of visual validation for this scenario"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "PILOT_SC_02",
+            "scenario_name": "PILOT SC 02",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "CANCELLED",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 22.01,
+            "log_file": "PILOT_SC_02.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_91_20260810_104922\\PILOT_SC_02.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

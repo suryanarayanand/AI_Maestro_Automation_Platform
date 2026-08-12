@@ -1,0 +1,126 @@
+appId: com.mobstac.thehindu
+tags:
+  - auth
+---
+# Logout Without Internet (SC-54).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+- takeScreenshot: "Screenshots/SC_54/SC_54_After_Login"
+
+# Enable Airplane Mode
+# The device becomes offline when Wi-Fi is disabled.
+- pressKey: home
+- stopApp: com.mobstac.thehindu
+
+# Open Android Settings
+- launchApp:
+    appId: com.android.settings
+
+# [realme narzo 60]
+# - runFlow:
+#     when:
+#       visible:
+#         text: "Wi-Fi"
+#     commands:
+#       - assertVisible: "Wi-Fi"
+#       - tapOn: "Wi-Fi"
+#
+#       - assertVisible: "On"
+#       - tapOn: "On"
+# [Samsung F06]
+# - runFlow:
+#     when:
+#       visible:
+#         text: "Network & internet"
+#     commands:
+#       - assertVisible: "Network & internet"
+#       - tapOn: "Network & internet"
+#       - assertVisible: "Internet"
+#       - tapOn: "Internet"
+#
+#       - assertVisible: "Use Wi-Fi"
+#       - tapOn:
+#           id: "switchWidget"
+# [Samsung F06 - Settings Version 02]
+- runFlow:
+    when:
+      visible:
+        text: "Connections"
+    commands:
+      - tapOn: "Connections"
+      - assertVisible: "Wi-Fi"
+      - tapOn: "Wi-Fi"
+- setAirplaneMode: enabled
+- pressKey: home
+
+# Relaunch the App
+- launchApp: com.mobstac.thehindu
+
+# Verify No Internet Connection
+- runFlow:
+    when:
+      visible:
+        text: ".*Unable to resolve host \"www.thehindu.com.*"
+    commands:
+      - takeScreenshot: "Screenshots/SC_54/SC_54_Without_Internet"
+- runFlow:
+    when:
+      visible:
+        text: ".*Web page not available.*"
+    commands:
+      - takeScreenshot: "Screenshots/SC_54/SC_54_Without_Internet"
+- runFlow:
+    when:
+      visible:
+        text: ".*Welcome to a new.*"
+    commands:
+      - tapOn: "Account"
+      - scroll
+      - assertVisible: "LOGOUT"
+      - tapOn: "LOGOUT"
+      - back
+      - takeScreenshot: "Screenshots/SC_54/SC_54_Without_Internet_Logged_Out"
+
+# Disable Airplane Mode
+- setAirplaneMode: disabled
+- pressKey: home
+- stopApp: com.mobstac.thehindu
+
+# Open Android Settings
+- launchApp:
+    appId: com.android.settings
+
+# Enable Wi-Fi
+- runFlow:
+    when:
+      visible:
+        text: "Connections"
+    commands:
+      - tapOn: "Connections"
+      - assertVisible: "Wi-Fi"
+      - tapOn: "Wi-Fi"
+- pressKey: home
+
+# Verify Login Persistence After App Relaunch
+- launchApp: com.mobstac.thehindu
+- takeScreenshot: "Screenshots/SC_54/SC_54_With_Internet"
+- extendedWaitUntil:
+    visible: "SUBSCRIBE"
+    timeout: 15000
+
+# Verify Logged-In Account
+# The app should be logged out after restoring the internet connection.
+- extendedWaitUntil:
+    visible: "Login"
+    timeout: 15000
+- takeScreenshot: "Screenshots/SC_54/SC_54_Account_Page"
+
+# Close Application
+- stopApp

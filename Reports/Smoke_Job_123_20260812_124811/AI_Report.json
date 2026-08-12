@@ -1,0 +1,24 @@
+{
+    "suite": {
+        "total": 1,
+        "passed": 0,
+        "failed": 0,
+        "not_found": 0,
+        "pass_rate": 0.0
+    },
+    "results": [
+        {
+            "id": "SC_81",
+            "module": "Unassigned",
+            "name": "SC 81 World page article Anonymous Account",
+            "status": "CANCELLED",
+            "duration": 1.76,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_123_20260812_124811\\SC_81.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        }
+    ]
+}

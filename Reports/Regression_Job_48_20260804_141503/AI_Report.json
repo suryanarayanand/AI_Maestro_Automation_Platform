@@ -1,0 +1,164 @@
+{
+    "suite": {
+        "total": 2,
+        "passed": 1,
+        "failed": 0,
+        "not_found": 0,
+        "pass_rate": 50.0
+    },
+    "results": [
+        {
+            "id": "SC_02",
+            "module": "Home",
+            "name": "Verify_Home_Trending_page_for_subscriber",
+            "status": "PASS",
+            "duration": 182.85,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_48_20260804_141503\\SC_02.log",
+            "screenshots": [
+                "screenshots/SC_02/Home/SC02_Home_page_bottom.png",
+                "screenshots/SC_02/Home/SC02_Home_page_middle.png",
+                "screenshots/SC_02/Home/SC02_Home_page_middle_1.png",
+                "screenshots/SC_02/Home/SC02_Home_page_middle_2.png",
+                "screenshots/SC_02/Home/SC02_Home_page_top.png",
+                "screenshots/SC_02/Home/SC02_Home_page_top_1.png",
+                "screenshots/SC_02/Home/SC02_Home_page_top_3.png",
+                "screenshots/SC_02/Trending/SC02_Trending_All_section.png",
+                "screenshots/SC_02/Trending/SC02_Trending_NEWS_section.png"
+            ],
+            "ai_pass": 9,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present, layout is correct, and there are no visible rendering or alignment defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC02_Home_page_bottom.png",
+                    "image_path": "screenshots/SC_02/Home/SC02_Home_page_bottom.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered correctly with no visible layout or rendering defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC02_Home_page_middle.png",
+                    "image_path": "screenshots/SC_02/Home/SC02_Home_page_middle.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present, fully rendered, and correctly aligned. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC02_Home_page_middle_1.png",
+                    "image_path": "screenshots/SC_02/Home/SC02_Home_page_middle_1.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and properly aligned. No visible rendering, layout, or text issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC02_Home_page_middle_2.png",
+                    "image_path": "screenshots/SC_02/Home/SC02_Home_page_middle_2.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are visible and correctly rendered. No blank regions, alignment, or rendering issues detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC02_Home_page_top.png",
+                    "image_path": "screenshots/SC_02/Home/SC02_Home_page_top.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC02_Home_page_top_1.png",
+                    "image_path": "screenshots/SC_02/Home/SC02_Home_page_top_1.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visible layout, rendering, or text issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC02_Home_page_top_3.png",
+                    "image_path": "screenshots/SC_02/Home/SC02_Home_page_top_3.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and fully rendered. No visual defects observed.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC02_Trending_All_section.png",
+                    "image_path": "screenshots/SC_02/Trending/SC02_Trending_All_section.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered correctly. No visual defects found.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC02_Trending_NEWS_section.png",
+                    "image_path": "screenshots/SC_02/Trending/SC02_Trending_NEWS_section.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_03",
+            "module": "Ads",
+            "name": "Verify_Ads_Taboola_for_anonymous_user",
+            "status": "CANCELLED",
+            "duration": 292.01,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_48_20260804_141503\\SC_03.log",
+            "screenshots": [
+                "screenshots/SC_03/SC_03_TaboolaAd_IndiaPage_undefined.png"
+            ],
+            "ai_pass": 0,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "SDK debug text is visible above the advertisement banner.",
+                    "issues": [
+                        "SDK debug or impression text visible above advertisement",
+                        "Non-user facing text is rendered in main UI"
+                    ],
+                    "jira_title": "SDK debug text visible above advertisement",
+                    "jira_description": "A line of SDK or impression/debug information ('unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression') is visible above the advertisement banner. This text should not be displayed to end users.",
+                    "image": "SC_03_TaboolaAd_IndiaPage_undefined.png",
+                    "image_path": "screenshots/SC_03/SC_03_TaboolaAd_IndiaPage_undefined.png"
+                }
+            ]
+        }
+    ]
+}

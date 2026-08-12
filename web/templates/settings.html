@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Settings{% endblock %}
+{% block page_title %}Portal settings{% endblock %}
+{% block content %}
+<p class="page-intro">Control execution safeguards used by the local Maestro agent.</p>
+<section class="surface" style="max-width:720px">
+    <div class="section-head"><div><small>Execution</small><h2>Timeout safeguards</h2></div></div>
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label" for="case-timeout">Per-case timeout (seconds)</label>
+            <input class="form-control" id="case-timeout" name="case_timeout_seconds" type="number" min="30" max="3600" required value="{{ case_timeout_seconds }}">
+            <div class="form-text">If a Maestro case exceeds this time, it is stopped and recorded as failed so the suite can continue. Applies to newly claimed jobs.</div>
+        </div>
+        <button class="btn btn-primary" type="submit">Save settings</button>
+    </form>
+</section>
+{% endblock %}

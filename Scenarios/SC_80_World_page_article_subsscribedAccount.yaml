@@ -1,0 +1,186 @@
+appId: com.mobstac.thehindu
+tags:
+  - world
+  - account
+  - article
+---
+# World page article subsscribedAccount (SC-80).
+# Launch App
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "The Hindu"
+    timeout: 15000
+
+# Navigate to World Section
+- extendedWaitUntil:
+    visible: "World"
+    timeout: 15000
+- tapOn: "World"
+- waitForAnimationToEnd
+- tapOn:
+    point: 50%,50%
+- waitForAnimationToEnd
+
+# The frequency-capped AI Summary sheet can cover the article action bar.
+
+- runFlow:
+
+    when:
+
+      visible:
+
+        text: "Summary"
+
+    commands:
+
+      - tapOn: "Close sheet"
+
+# Verify Article Actions
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: LEFT
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Text size"
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+- extendedWaitUntil:
+    visible: "Listen to article"
+
+# Verify AI Summary
+- runFlow:
+    when:
+      visible:
+        text: "AI summary"
+    commands:
+      - takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_AI_Summary"
+
+# World Article Validation
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_01"
+- waitForAnimationToEnd
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_02"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_03"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_04"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_05"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_06"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_07"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_08"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_09"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_10"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_11"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_12"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_13"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_14"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_15"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_16"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_17"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_18"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_19"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_20"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_21"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_22"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_23"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_24"
+
+# Advertisement Validation (Disabled)
+# - repeat:
+#     times: 25
+#     commands:
+#       - swipe:
+#           direction: DOWN
+# Verify Taboola Advertisement is Absent (Disabled)
+# - repeat:
+#     times: 20
+#     commands:
+#
+#       - assertNotVisible:
+#           text: "Image for Taboola Advertising Unit"
+#
+#       - scroll
+#       - takeScreenshot: "Screenshots/SC_80/SC_80_Taboola_Advertisement_Verification"
+#       - waitForAnimationToEnd
+# Navigate to Advertisement Section (Disabled)
+# - repeat:
+#     times: 20
+#     commands:
+#       - swipe:
+#           start: 50%,80%
+#           end: 50%,20%
+# - repeat:
+#     times: 25
+#     commands:
+#       - swipe:
+#           direction: DOWN
+# Verify Advertisement is Absent (Disabled)
+# - repeat:
+#     times: 20
+#     commands:
+#
+#       - assertNotVisible:
+#           text: "ADVERTISEMENT"
+#
+#       - scroll
+#       - takeScreenshot: "Screenshots/SC_80/SC_80_Advertisement_Verification"
+#       - waitForAnimationToEnd

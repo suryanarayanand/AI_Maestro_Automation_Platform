@@ -1,0 +1,860 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>AI Automation Report</title>
+
+<style>
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    margin: 30px;
+}
+
+h1 {
+    color: #1f4e79;
+}
+
+h2 {
+    color: #1f4e79;
+    margin-top: 40px;
+}
+
+.summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    width: 180px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    text-align: center;
+}
+
+.card h2 {
+    margin: 10px 0 0;
+    font-size: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+
+th {
+    background: #1f4e79;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+}
+
+tr:hover {
+    background: #f8f8f8;
+}
+
+.scenario {
+    text-align: left;
+    padding-left: 15px;
+}
+
+.status-pass {
+    background: #28a745;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status-fail {
+    background: #dc3545;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status-notfound {
+    background: orange;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status-error {
+    background: #6c757d;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.toolbar label {
+    font-size: 15px;
+    color: #333;
+}
+
+.scenario-block {
+    margin-bottom: 25px;
+}
+
+.scenario-block h3 {
+    color: #1f4e79;
+    border-bottom: 2px solid #1f4e79;
+    padding-bottom: 6px;
+}
+
+.finding {
+    display: flex;
+    gap: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.finding-fail {
+    border-left: 6px solid #dc3545;
+}
+
+.finding-pass {
+    border-left: 6px solid #28a745;
+}
+
+.finding-error {
+    border-left: 6px solid #6c757d;
+}
+
+.finding-image {
+    flex: 0 0 260px;
+}
+
+.finding-image img {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    cursor: zoom-in;
+}
+
+.finding-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.finding-details p {
+    margin: 6px 0;
+}
+
+.finding-details ul {
+    margin: 4px 0 10px 20px;
+}
+
+.jira-box {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-top: 8px;
+}
+
+.footer {
+    margin-top: 30px;
+    color: gray;
+    text-align: center;
+}
+
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,.85);
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    cursor: zoom-out;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 6px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Automation AI Report</h1>
+
+<div class="summary">
+
+<div class="card">
+<h3>Total Tests</h3>
+<h2>4</h2>
+</div>
+
+<div class="card">
+<h3>Passed</h3>
+<h2 style="color:green;">3</h2>
+</div>
+
+<div class="card">
+<h3>Failed</h3>
+<h2 style="color:red;">0</h2>
+</div>
+
+<div class="card">
+<h3>Not Found</h3>
+<h2 style="color:orange;">0</h2>
+</div>
+
+<div class="card">
+<h3>Pass Rate</h3>
+<h2>75.0%</h2>
+</div>
+
+</div>
+
+<h2>Scenario Results</h2>
+
+<table>
+
+<tr>
+
+<th>Scenario ID</th>
+<th>Module</th>
+<th>Scenario</th>
+<th>Status</th>
+<th>Duration (sec)</th>
+<th>AI Total</th>
+<th>AI PASS</th>
+<th>AI FAIL</th>
+
+</tr>
+
+<tr>
+
+<td>SC_21</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 21 Whats new option subscribed user</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>107.56</td>
+
+<td>8</td>
+
+<td>8</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_22</td>
+
+<td>Settings</td>
+
+<td class="scenario">Appearance theme validation</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>76.33</td>
+
+<td>5</td>
+
+<td>4</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>SC_23</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 23 gen</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>71.21</td>
+
+<td>4</td>
+
+<td>3</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>SC_23</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 23 Homepage FromHomepage to Editorialpage in darkTheme anonyous </td>
+
+<td>
+<span class="status-pass">
+CANCELLED
+</span>
+</td>
+
+<td>88.49</td>
+
+<td>10</td>
+
+<td>6</td>
+
+<td>4</td>
+
+</tr>
+
+
+</table>
+
+<br>
+
+<h2>AI Screenshot Summary</h2>
+
+<div class="summary">
+
+<div class="card">
+<h3>Total Screenshots</h3>
+<h2>27</h2>
+</div>
+
+<div class="card">
+<h3>AI PASS</h3>
+<h2 style="color:green;">21</h2>
+</div>
+
+<div class="card">
+<h3>AI FAIL</h3>
+<h2 style="color:red;">6</h2>
+</div>
+
+<div class="card">
+<h3>AI ERROR</h3>
+<h2 style="color:#6c757d;">0</h2>
+</div>
+
+</div>
+
+<h2>Detailed AI Findings</h2>
+
+<div class="toolbar">
+    <input type="checkbox" id="failuresOnly" onchange="toggleFailuresOnly()">
+    <label for="failuresOnly">Show failures only</label>
+</div>
+<div class="scenario-block"><h3>SC_21 &mdash; SC 21 Whats new option subscribed user</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_21/SC_21_01_Revamped_Home_Page.png" alt="SC_21_01_Revamped_Home_Page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_21_01_Revamped_Home_Page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present, with no visible layout, rendering, or text defects. A popup onboarding message overlays complete content, but nothing is cropped or missing.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_21/SC_21_02_Quick_Access.png" alt="SC_21_02_Quick_Access.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_21_02_Quick_Access.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All essential UI components are present and correctly rendered. No visible UI defects observed. The overlay tutorial does not indicate any missing or broken UI.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_21/SC_21_03_Trending.png" alt="SC_21_03_Trending.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_21_03_Trending.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and correctly rendered. No blank regions, overlaps, or missing elements.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_21/SC_21_04_Premium.png" alt="SC_21_04_Premium.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_21_04_Premium.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No visible UI defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_21/SC_21_05_Ebooks.png" alt="SC_21_05_Ebooks.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_21_05_Ebooks.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered correctly. No visible layout, text, or rendering defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_21/SC_21_06_TH_Games.png" alt="SC_21_06_TH_Games.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_21_06_TH_Games.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are visible and correctly rendered. No visual defects present.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_21/SC_21_07_More.png" alt="SC_21_07_More.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_21_07_More.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are visible and there are no clear layout or rendering defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_21/SC_21_08_Home_Page.png" alt="SC_21_08_Home_Page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_21_08_Home_Page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI elements are present and rendered as expected; no blank regions, misalignment, or visible defects.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_22 &mdash; Appearance theme validation</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_22/SC_22_Account_Settings_Page.png" alt="SC_22_Account_Settings_Page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_22_Account_Settings_Page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and there are no visible defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_22/SC_22_Appearance.png" alt="SC_22_Appearance.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_22_Appearance.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and correctly aligned. No UI defects are visible.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_22/SC_22_Appearance_Dark_Theme.png" alt="SC_22_Appearance_Dark_Theme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_22_Appearance_Dark_Theme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components for the appearance/theme selection are present. No visual defects or layout issues are visible.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_22/SC_22_Appearance_Dark_Theme_Home_Page.png" alt="SC_22_Appearance_Dark_Theme_Home_Page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_22_Appearance_Dark_Theme_Home_Page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Placeholders are still visible instead of fully rendered content, indicating incomplete rendering or loading defect.</p>
+        <p><strong>Issues:</strong></p><ul><li>Placeholder still visible</li><li>Incomplete screen rendering</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Placeholders visible instead of content on Home screen</p>
+                    <p><strong>Jira Description:</strong> The Home screen displays loading placeholders rather than fully rendered article cards, indicating that the actual content has not properly loaded or rendered.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_22/SC_22_Appearance_Light_Theme.png" alt="SC_22_Appearance_Light_Theme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_22_Appearance_Light_Theme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly, and the empty space below is valid as content has ended.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_23 &mdash; SC 23 gen</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_gen_enabling_dark_mode.png" alt="SC_23_gen_enabling_dark_mode.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_23_gen_enabling_dark_mode.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> UI layout is correct and fully rendered. No missing or broken components.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_gen_home_page.png" alt="SC_23_gen_home_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_23_gen_home_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No visible layout, rendering, or content issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_gen_scroll_through_editorial_page_and_at_different_sections.png" alt="SC_23_gen_scroll_through_editorial_page_and_at_different_sections.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_23_gen_scroll_through_editorial_page_and_at_different_sections.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and correctly rendered. No visible UI defects, missing components, or rendering issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_gen_scroll_through_home_page_and_at_different_sections_to_v.png" alt="SC_23_gen_scroll_through_home_page_and_at_different_sections_to_v.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_23_gen_scroll_through_home_page_and_at_different_sections_to_v.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Multiple placeholder skeletons and loading bars visible instead of actual content, indicating incomplete rendering of the main UI.</p>
+        <p><strong>Issues:</strong></p><ul><li>Main content not rendered; placeholders visible</li><li>Incomplete rendering of article/content cards</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Main content area displays placeholders instead of articles</p>
+                    <p><strong>Jira Description:</strong> The home screen shows multiple placeholder skeletons and loading bars instead of fully rendered content, indicating a rendering or loading defect.</p>
+                </div>
+                
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_23 &mdash; SC 23 Homepage FromHomepage to Editorialpage in darkTheme anonyous </h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_Dark_Theme.png" alt="SC_23_Dark_Theme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_23_Dark_Theme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements for the Appearance screen are present and correctly rendered. No layout, text, or rendering issues are visible.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_Dark_Theme_Home_Page_1.png" alt="SC_23_Dark_Theme_Home_Page_1.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_23_Dark_Theme_Home_Page_1.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Screen displays placeholder skeletons instead of loaded article content, indicating incomplete rendering.</p>
+        <p><strong>Issues:</strong></p><ul><li>Article placeholders visible</li><li>Content failed to load</li><li>Incomplete screen rendering</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Home screen displays loading placeholders instead of content</p>
+                    <p><strong>Jira Description:</strong> The Home screen shows skeleton placeholders where articles and images should appear, indicating that the actual content failed to render.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_Dark_Theme_Home_Page_2.png" alt="SC_23_Dark_Theme_Home_Page_2.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_23_Dark_Theme_Home_Page_2.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Multiple UI placeholders are visible, indicating that the actual content failed to render. The screen is stuck on loading skeletons.</p>
+        <p><strong>Issues:</strong></p><ul><li>Screen is stuck on loading skeleton placeholders</li><li>Actual article content failed to render</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Home screen stuck on loading skeletons</p>
+                    <p><strong>Jira Description:</strong> The Home screen displays only loading skeleton placeholders and no actual content appears, indicating the content failed to render.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_Dark_Theme_Home_Page_3.png" alt="SC_23_Dark_Theme_Home_Page_3.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_23_Dark_Theme_Home_Page_3.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Article placeholders are visible and actual content did not render. Screen is stuck in loading state.</p>
+        <p><strong>Issues:</strong></p><ul><li>Placeholders still visible</li><li>Content failed to render</li><li>Screen not fully loaded</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Home page displays loading placeholders instead of content</p>
+                    <p><strong>Jira Description:</strong> The Home page is stuck in a loading state with skeleton placeholders visible and actual article content missing. Users cannot view the intended content.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_Dark_Theme_Home_Page_4.png" alt="SC_23_Dark_Theme_Home_Page_4.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_23_Dark_Theme_Home_Page_4.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and correctly rendered. No visible UI defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_gen_enabling_dark_mode.png" alt="SC_23_gen_enabling_dark_mode.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_23_gen_enabling_dark_mode.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements for the Appearance settings screen are present and properly rendered. No evidence of missing, cropped, or overlapping components.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_gen_home_page.png" alt="SC_23_gen_home_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_23_gen_home_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_gen_scroll_through_editorial_page_and_at_different_sections.png" alt="SC_23_gen_scroll_through_editorial_page_and_at_different_sections.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_23_gen_scroll_through_editorial_page_and_at_different_sections.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present, text and layout are correct, and no visible defects exist.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_gen_scroll_through_home_page_and_at_different_sections_to_v.png" alt="SC_23_gen_scroll_through_home_page_and_at_different_sections_to_v.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_23_gen_scroll_through_home_page_and_at_different_sections_to_v.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Multiple content placeholders are visible, indicating that the actual content failed to load/render. These placeholders suggest incomplete rendering.</p>
+        <p><strong>Issues:</strong></p><ul><li>Content placeholders visible instead of real content</li><li>Incomplete screen rendering</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Content placeholders visible - incomplete screen rendering</p>
+                    <p><strong>Jira Description:</strong> The main screen displays multiple grey/white placeholder blocks instead of the expected content, indicating that the UI failed to load or render the actual stories/articles. This results in an incomplete and non-functional screen.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_Home_Page.png" alt="SC_23_Home_Page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_23_Home_Page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and rendered properly. No visible UI defects.</p>
+        
+        
+    </div>
+</div>
+</div>
+<div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="">
+</div>
+
+<div class="footer">
+Generated by Automation Framework with AI Visual Analysis
+</div>
+
+<script>
+function toggleFailuresOnly() {
+    var onlyFailures = document.getElementById('failuresOnly').checked;
+    var findings = document.querySelectorAll('.finding');
+    findings.forEach(function (el) {
+        if (onlyFailures) {
+            el.style.display = (el.getAttribute('data-status') === 'FAIL') ? 'flex' : 'none';
+        } else {
+            el.style.display = 'flex';
+        }
+    });
+}
+
+function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+}
+</script>
+
+</body>
+
+</html>

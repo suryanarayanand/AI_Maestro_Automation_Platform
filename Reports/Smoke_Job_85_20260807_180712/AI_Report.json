@@ -1,0 +1,76 @@
+{
+    "suite": {
+        "total": 5,
+        "passed": 0,
+        "failed": 5,
+        "not_found": 0,
+        "pass_rate": 0.0
+    },
+    "results": [
+        {
+            "id": "SC_28",
+            "module": "Unassigned",
+            "name": "SC 28 Anonymous Games validation",
+            "status": "FAIL",
+            "duration": 7.23,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_85_20260807_180712\\SC_28.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "SC_29",
+            "module": "Unassigned",
+            "name": "SC 29 Category navigation anonymous",
+            "status": "FAIL",
+            "duration": 6.13,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_85_20260807_180712\\SC_29.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "SC_30",
+            "module": "Unassigned",
+            "name": "SC 30 BreifingSection premium subscriber account",
+            "status": "FAIL",
+            "duration": 7.2,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_85_20260807_180712\\SC_30.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "PILOT_SC_02",
+            "module": "AI Generated",
+            "name": "Home and Trending navigation",
+            "status": "FAIL",
+            "duration": 7.38,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_85_20260807_180712\\PILOT_SC_02.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "PILOT_SC_03",
+            "module": "AI Generated",
+            "name": "Anonymous Home and India navigation",
+            "status": "FAIL",
+            "duration": 6.35,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_85_20260807_180712\\PILOT_SC_03.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        }
+    ]
+}

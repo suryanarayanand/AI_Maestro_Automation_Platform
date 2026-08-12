@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Overview{% endblock %}
+{% block page_title %}Automation overview{% endblock %}
+{% block content %}
+<p class="page-intro">Build scenarios from Excel, approve generated YAML, execute suites on a connected agent, and review the evidence.</p>
+<div class="workflow">
+    <a href="{{ url_for('generator.generator') }}"><span>1</span><strong>Generate</strong><small>Upload Excel</small></a>
+    <a href="{{ url_for('generator.generator') }}"><span>2</span><strong>Review</strong><small>{{ stats.pending_drafts }} pending</small></a>
+    <a href="{{ url_for('suite.suites') }}"><span>3</span><strong>Execute</strong><small>{{ stats.active_jobs }} active jobs</small></a>
+    <a href="{{ url_for('report.reports') }}"><span>4</span><strong>Analyze</strong><small>{{ stats.report_count }} reports</small></a>
+</div>
+<div class="metric-grid">
+    <div class="metric"><small>Test suites</small><strong>{{ stats.suite_count }}</strong></div>
+    <div class="metric"><small>Unique active suite cases</small><strong>{{ stats.scenario_count }}</strong></div>
+    <div class="metric"><small>Pending reviews</small><strong>{{ stats.pending_drafts }}</strong></div>
+    <div class="metric"><small>Device</small><strong class="metric-text">{{ stats.device_status }}</strong></div>
+</div>
+<div class="content-grid">
+    <section class="surface"><div class="section-head"><div><small>Live status</small><h2>Current execution</h2></div><a href="{{ url_for('jobs.jobs') }}">View all jobs</a></div>
+        <dl class="execution-summary"><div><dt>Status</dt><dd><span id="execution-status" class="status-pill status-idle">Idle</span></dd></div><div><dt>Suite</dt><dd id="execution-suite">-</dd></div><div><dt>Progress</dt><dd id="execution-progress">-</dd></div><div><dt>Started</dt><dd id="execution-time">-</dd></div></dl>
+        <button id="cancel-execution" class="btn btn-danger mt-3 d-none" type="button">Cancel Execution</button>
+    </section>
+    <section class="surface"><div class="section-head"><div><small>Recent activity</small><h2>Latest jobs</h2></div></div>
+        {% if stats.latest_completed %}<p>Last completed: <a href="{{ url_for('jobs.job_detail', job_id=stats.latest_completed.id) }}"><span class="status-pill status-{{ stats.latest_completed.status }}">{{ stats.latest_completed.status }}</span> Job #{{ stats.latest_completed.id }} · {{ stats.latest_completed.suite|title }}</a></p>{% else %}<p class="empty">No completed execution yet.</p>{% endif %}
+        {% for job in stats.latest_jobs %}<a class="activity-row" href="{{ url_for('jobs.job_detail', job_id=job.id) }}"><span>#{{ job.id }} · {{ job.suite|title }}</span><span class="status-pill status-{{ job.status }}">{{ job.status }}</span></a>{% else %}<p class="empty">No execution jobs yet.</p>{% endfor %}
+    </section>
+</div>
+{% endblock %}

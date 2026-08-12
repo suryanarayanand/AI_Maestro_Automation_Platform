@@ -1,0 +1,86 @@
+appId: com.mobstac.thehindu
+tags:
+  - signup
+---
+# Signup Option Validation (SC-20).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Navigate to Login Page
+- extendedWaitUntil:
+    visible: "HAVE AN ACCOUNT? LOGIN"
+    timeout: 15000
+- tapOn: "HAVE AN ACCOUNT? LOGIN"
+
+# Verify Login Screen
+- extendedWaitUntil:
+    visible: "thehindu-logo"
+    timeout: 15000
+- extendedWaitUntil:
+    visible: "Login to your account"
+    timeout: 15000
+- extendedWaitUntil:
+    visible: "Don’t have an account ? "
+    timeout: 15000
+- assertVisible: "Sign in with Apple"
+- assertVisible: "Sign in with Google"
+- assertVisible: "If you have an account with The Hindu Businessline,\nThe Hindu e-Paper, Frontline, or Sportstar.\nYou can use the same account to login here."
+
+# Navigate to Sign Up Page
+- assertVisible: "Sign up"
+- tapOn: "Sign up"
+- takeScreenshot: "Screenshots/SC_20/SC_20_SignUp_page"
+
+# Verify Sign Up Page Elements
+- extendedWaitUntil:
+    visible: "Email"
+    timeout: 15000
+- extendedWaitUntil:
+    visible: "Password"
+    timeout: 15000
+- extendedWaitUntil:
+    visible: ".*10 digit mobile number.*"
+    timeout: 15000
+- extendedWaitUntil:
+    visible: "I'd like to receive updates and offers from THG via email and messages"
+    timeout: 15000
+- extendedWaitUntil:
+    visible: "Stay logged in"
+    timeout: 15000
+- extendedWaitUntil:
+    visible: "Contact me via Whatsapp"
+    timeout: 15000
+- extendedWaitUntil:
+    visible: "Terms of Use"
+    timeout: 15000
+- extendedWaitUntil:
+    visible: "Privacy Policy"
+    timeout: 15000
+
+# Enter Registration Details
+- tapOn: "email"
+- inputRandomEmail
+- tapOn: "password"
+- inputText: "Test@123"
+- tapOn: ".*10 digit mobile number.*"
+- inputRandomNumber:
+    length: 10
+- tapOn: "Show password"
+- extendedWaitUntil:
+    visible: "SIGN UP →"
+    timeout: 15000
+- tapOn: "SIGN UP →"
+
+# # Verify CAPTCHA Validation
+# - runFlow:
+#     when:
+#       visible:
+#         text: "Sign up"
+#     commands:
+#       - assertVisible: "Captcha validation failed. If you are not a bot then please try again."
+#       - takeScreenshot: "Screenshots/SC_20/SC_20_captcha_is_observed"
+
+# Close Application
+- killApp

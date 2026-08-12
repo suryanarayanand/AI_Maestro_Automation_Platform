@@ -1,0 +1,72 @@
+{
+    "suite": "Sc29Worldretry",
+    "execution_time": 8.89,
+    "summary": {
+        "total": 1,
+        "passed": 0,
+        "failed": 1,
+        "critical": 1,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.808",
+            "version_code": "574"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "The execution of scenario SC_27 was cancelled, with no functional tests, screenshot AI, or visual findings available. As a result, there is no evidence of either functional failures or visual regressions. No signals of dynamic-content noise were observed due to absence of output.",
+        "release_recommendation": "Cannot assess release readiness due to incomplete test execution and lack of evidence. Scenario SC_27 must be executed and results reviewed before making a release decision.",
+        "top_risks": [
+            "Incomplete test coverage for scenario SC_27",
+            "Unknown undiscovered functional or visual issues",
+            "Potential gaps in QA process compliance"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_27",
+            "scenario_name": "SC 27 SUDOKU",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "CANCELLED",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 8.7,
+            "log_file": "SC_27.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc29Worldretry_Job_74_20260806_175049\\SC_27.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

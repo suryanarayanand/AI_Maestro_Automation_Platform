@@ -1,0 +1,500 @@
+{
+    "suite": {
+        "total": 9,
+        "passed": 8,
+        "failed": 1,
+        "not_found": 0,
+        "pass_rate": 88.89
+    },
+    "results": [
+        {
+            "id": "SC_27_SUDOKU",
+            "module": "Subscriber Games",
+            "name": "Subscriber Games - Mini Sudoku",
+            "status": "PASS",
+            "duration": 107.73,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Validatedgames_Job_87_20260807_181110\\SC_27_SUDOKU.log",
+            "screenshots": [
+                "screenshots/SC_27_SUDOKU/SC_27_Sudoku_Mini.png",
+                "screenshots/SC_27_SUDOKU/SC_27_Sudoku_Mini_List.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No layout, rendering, or text issues observed.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Sudoku_Mini.png",
+                    "image_path": "screenshots/SC_27_SUDOKU/SC_27_Sudoku_Mini.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visual defects, misalignments, or missing elements.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Sudoku_Mini_List.png",
+                    "image_path": "screenshots/SC_27_SUDOKU/SC_27_Sudoku_Mini_List.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27_THE_HINDU_MINI",
+            "module": "Subscriber Games",
+            "name": "Subscriber Games - The Hindu Mini",
+            "status": "PASS",
+            "duration": 112.12,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Validatedgames_Job_87_20260807_181110\\SC_27_THE_HINDU_MINI.log",
+            "screenshots": [
+                "screenshots/SC_27_THE_HINDU_MINI/SC_27_The_Hindu_Mini.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and properly aligned. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_The_Hindu_Mini.png",
+                    "image_path": "screenshots/SC_27_THE_HINDU_MINI/SC_27_The_Hindu_Mini.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "name": "SC 27 CRYPTIC CROSSWORD",
+            "status": "PASS",
+            "duration": 106.6,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Validatedgames_Job_87_20260807_181110\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_Cryptic_Crossword.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendering is complete. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Cryptic_Crossword.png",
+                    "image_path": "screenshots/SC_27/SC_27_Cryptic_Crossword.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "name": "SC 27 EASY DOWN",
+            "status": "PASS",
+            "duration": 97.53,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Validatedgames_Job_87_20260807_181110\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_Easy_Down.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and fully rendered. There are no visible layout, rendering, or text issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Cryptic_Crossword.png",
+                    "image_path": "screenshots/SC_27/SC_27_Cryptic_Crossword.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present, layout is complete, and there are no visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Easy_Down.png",
+                    "image_path": "screenshots/SC_27/SC_27_Easy_Down.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "name": "SC 27 NEWS QUIZ",
+            "status": "PASS",
+            "duration": 94.06,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Validatedgames_Job_87_20260807_181110\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_News_Quiz.png"
+            ],
+            "ai_pass": 3,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Cryptic_Crossword.png",
+                    "image_path": "screenshots/SC_27/SC_27_Cryptic_Crossword.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are correctly rendered and aligned with no visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Easy_Down.png",
+                    "image_path": "screenshots/SC_27/SC_27_Easy_Down.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI elements are rendered correctly, no evidence of UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_News_Quiz.png",
+                    "image_path": "screenshots/SC_27/SC_27_News_Quiz.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "name": "SC 27 Subscriber Games validation",
+            "status": "FAIL",
+            "duration": 307.42,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Validatedgames_Job_87_20260807_181110\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_Games_Page_Subscribed_Account.png"
+            ],
+            "ai_pass": 4,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Cryptic_Crossword.png",
+                    "image_path": "screenshots/SC_27/SC_27_Cryptic_Crossword.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and correctly rendered. No visible layout or rendering issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Easy_Down.png",
+                    "image_path": "screenshots/SC_27/SC_27_Easy_Down.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visual defects found.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Games_Page_Subscribed_Account.png",
+                    "image_path": "screenshots/SC_27/SC_27_Games_Page_Subscribed_Account.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI elements are rendered correctly with no visible layout, rendering, or text issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_News_Quiz.png",
+                    "image_path": "screenshots/SC_27/SC_27_News_Quiz.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "name": "SC 27 WORD FLOWER",
+            "status": "PASS",
+            "duration": 104.89,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Validatedgames_Job_87_20260807_181110\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_Word_Flower.png"
+            ],
+            "ai_pass": 5,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and fully rendered. No visible defects, missing components, or layout issues detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Cryptic_Crossword.png",
+                    "image_path": "screenshots/SC_27/SC_27_Cryptic_Crossword.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visible UI defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Easy_Down.png",
+                    "image_path": "screenshots/SC_27/SC_27_Easy_Down.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present. No visible UI defects or layout issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Games_Page_Subscribed_Account.png",
+                    "image_path": "screenshots/SC_27/SC_27_Games_Page_Subscribed_Account.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and layout is correct. No rendering or alignment issues detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_News_Quiz.png",
+                    "image_path": "screenshots/SC_27/SC_27_News_Quiz.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI elements are present and correctly aligned. No visible defects or rendering issues. The empty space at the bottom is valid and expected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Word_Flower.png",
+                    "image_path": "screenshots/SC_27/SC_27_Word_Flower.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "name": "SC 27 WORD ROW",
+            "status": "PASS",
+            "duration": 90.69,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Validatedgames_Job_87_20260807_181110\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_Word_Row.png"
+            ],
+            "ai_pass": 6,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present, no layout or rendering issues visible.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Cryptic_Crossword.png",
+                    "image_path": "screenshots/SC_27/SC_27_Cryptic_Crossword.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and layout is complete with no visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Easy_Down.png",
+                    "image_path": "screenshots/SC_27/SC_27_Easy_Down.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present, no visible layout, rendering, or text defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Games_Page_Subscribed_Account.png",
+                    "image_path": "screenshots/SC_27/SC_27_Games_Page_Subscribed_Account.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_News_Quiz.png",
+                    "image_path": "screenshots/SC_27/SC_27_News_Quiz.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All major UI components are present and correctly rendered. There are no unexpected blank areas interrupting content, no visible rendering or layout defects, and no overlapping or cropped elements.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Word_Flower.png",
+                    "image_path": "screenshots/SC_27/SC_27_Word_Flower.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and correctly rendered, with no visible layout or rendering defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Word_Row.png",
+                    "image_path": "screenshots/SC_27/SC_27_Word_Row.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "name": "SC 27 WORD SEARCH",
+            "status": "PASS",
+            "duration": 89.68,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Validatedgames_Job_87_20260807_181110\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_Word_Search.png"
+            ],
+            "ai_pass": 6,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present, layout is correct, and there are no visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Cryptic_Crossword.png",
+                    "image_path": "screenshots/SC_27/SC_27_Cryptic_Crossword.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present with no evidence of missing or broken layout, rendering, or text.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Easy_Down.png",
+                    "image_path": "screenshots/SC_27/SC_27_Easy_Down.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and properly rendered. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Games_Page_Subscribed_Account.png",
+                    "image_path": "screenshots/SC_27/SC_27_Games_Page_Subscribed_Account.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI elements are present and properly aligned. No visible defects or rendering issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_News_Quiz.png",
+                    "image_path": "screenshots/SC_27/SC_27_News_Quiz.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and the layout appears complete with no visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Word_Flower.png",
+                    "image_path": "screenshots/SC_27/SC_27_Word_Flower.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Word_Row.png",
+                    "image_path": "screenshots/SC_27/SC_27_Word_Row.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Some word list items are visibly cropped on their right side.",
+                    "issues": [
+                        "Cropped text in word list on right edge",
+                        "Word cards on the right are truncated"
+                    ],
+                    "jira_title": "Word list items are cropped on the right side",
+                    "jira_description": "On the Word Search game screen, the word cards on the right side are cropped, making some words partially visible or unreadable. The text overflows the container and is not fully rendered.",
+                    "image": "SC_27_Word_Search.png",
+                    "image_path": "screenshots/SC_27/SC_27_Word_Search.png"
+                }
+            ]
+        }
+    ]
+}

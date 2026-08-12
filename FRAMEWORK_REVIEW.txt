@@ -1,0 +1,240 @@
+AI MAESTRO AUTOMATION PLATFORM - FRAMEWORK REVIEW
+=================================================
+
+CLEAR OBJECTIVE
+---------------
+
+This framework is intended to provide a web portal that:
+
+1. Converts Excel test cases into Maestro YAML.
+2. Allows manual review and approval.
+3. Adds approved tests to Smoke, Sanity, or Regression suites.
+4. Queues suites for execution on a Maestro-connected device.
+5. Stores execution results and produces reports.
+
+The architecture is promising, but Excel-based bug reruns are not implemented yet.
+
+
+FOLDER PURPOSE
+--------------
+
+Uploads
+    Uploaded Excel test-case files.
+
+generation
+    Excel reading, step parsing, locator lookup, and YAML generation.
+
+ApprovalQueue
+    Intended for YAML awaiting approval; currently unused.
+
+GeneratedTests
+    Intended generated output; currently not used by the portal workflow.
+
+Scenarios
+    Approved and runnable Maestro YAML files. There are currently 105 files.
+
+Common
+    Reusable flows such as login and onboarding.
+
+Suites
+    Smoke, Sanity, and Regression JSON definitions.
+
+LocatorRepository
+    Element text, IDs, and accessibility locators.
+
+Hierarchies
+    Captured application UI hierarchy.
+
+Expected
+    Expected or baseline YAML copies.
+
+Screenshots
+    Actual screenshots for visual analysis.
+
+Reports
+    Execution and consolidated reports.
+
+Utils
+    AI analysis, visual comparison, Excel/HTML reports, and bug summaries.
+
+web
+    Flask portal routes, services, pages, CSS, and JavaScript.
+
+tests
+    Portal and framework-level Python tests.
+
+Test_Report
+    Older or separate report location; not part of the current portal flow.
+
+
+HOW IT CURRENTLY WORKS
+----------------------
+
+Excel workbook
+    -> ExcelReader groups rows by test_case_id
+    -> ScenarioParser interprets each English step
+    -> LocatorRepository finds the matching UI element
+    -> YAMLGenerator creates Maestro YAML
+    -> Draft is saved in portal.db
+    -> Reviewer edits and approves it
+    -> YAML is saved under Scenarios
+    -> Test is added to a Suites/*.json file
+    -> Portal creates a queued job
+    -> maestro_agent.py claims the job
+    -> Maestro runs: maestro test <scenario.yaml>
+    -> PASS/FAIL and logs are saved in portal.db
+
+
+REQUIRED EXCEL FORMAT
+---------------------
+
+The current generator only accepts .xlsx files with these columns:
+
+test_case_id | name | step
+
+Example:
+
+TC001 | Navigation smoke test | Open Videos tab
+TC001 | Navigation smoke test | Tap Home
+TC001 | Navigation smoke test | Open Account
+
+Multiple rows with the same test_case_id become one YAML test.
+
+
+STARTING AND EXECUTING
+----------------------
+
+Start the portal using:
+
+D:\AI_Maestro_Automation_Platform\Run_Framework.bat
+
+Open:
+
+http://127.0.0.1:5000
+
+Current development credentials:
+
+admin / admin
+
+On the machine with Maestro and the device connected, run:
+
+cd D:\AI_Maestro_Automation_Platform
+py maestro_agent.py
+
+The agent polls the portal every five seconds and executes queued jobs.
+
+
+CURRENT HEALTH
+--------------
+
+The Python syntax check passes.
+
+Current data:
+
+- 105 runnable scenario YAML files
+- 99 expected YAML files
+- 7 common flows
+- Regression: 70 tests, no missing YAML
+- Sanity: 8 tests, no missing YAML
+- Smoke: 2 tests, no missing YAML
+- One approved generated draft
+- One failed job and one queued job
+- Latest recorded result is failed
+
+
+IMPORTANT FEEDBACK
+------------------
+
+1. BUG EXCEL AND RERUN SUITES ARE MISSING
+
+The framework currently has no functionality to:
+
+- Upload a bug sheet
+- Filter bugs ready for retest
+- Convert bug rows into YAML
+- Create bug_rerun.json
+- Rerun only failed or bug-related scenarios
+
+bug_report_generator.py only creates a small bug-summary dictionary. It does
+not read bug Excel files or build rerun suites.
+
+
+2. THE NATURAL-LANGUAGE PARSER IS TOO LIMITED
+
+It mainly understands steps starting with:
+
+Open, Tap, Click, Select, Choose, Enter, Type, Scroll, Swipe, Verify, Assert,
+and Wait.
+
+However, several mappings are incorrect or incomplete:
+
+- "Open Videos" becomes "tapOn Videos"; it does not launch the application.
+- "Enter Email" is built like a locator operation, not a proper Maestro inputText.
+- "Scroll down", "Swipe left", and waits are unlikely to generate valid commands.
+- Every target must already exist in the locator repository.
+- Partial locator matching may select the wrong element.
+
+This is suitable for a controlled demonstration workbook, not unrestricted
+manual test steps.
+
+
+3. GENERATED FOLDERS DO NOT MATCH ACTUAL BEHAVIOR
+
+The portal stores generated YAML inside SQLite drafts. It does not currently
+write drafts into ApprovalQueue or GeneratedTests. After approval, it writes
+directly to Scenarios. Therefore, the README and folder design do not fully
+match the implementation.
+
+
+4. TWO EXECUTION SYSTEMS EXIST
+
+There are two separate runners:
+
+- maestro_agent.py: used by the current portal; saves basic PASS/FAIL and logs.
+- run_suite.py: produces Excel, HTML, AI, visual, and bug reports.
+
+The portal agent does not call run_suite.py. Therefore, portal jobs currently
+miss most of the advanced reporting advertised by the framework.
+
+
+5. VISUAL REPORTING HAS A CODE-PLACEMENT ISSUE
+
+In run_suite.py, visual comparison appears outside the scenario loop. It will
+primarily process the final scenario rather than every scenario.
+
+
+6. CONFIGURATION CASE INCONSISTENCY
+
+config.json contains:
+
+"suiteFolder": "suites"
+
+The actual folder is Suites. This works on Windows but will fail on
+case-sensitive Linux systems.
+
+
+7. SECURITY DEFAULTS MUST BE CHANGED
+
+Before shared or production use, change:
+
+- admin/admin
+- Flask development secret
+- Default agent token: change-me
+
+The local credentials file is correctly excluded through .gitignore.
+
+
+OVERALL ASSESSMENT
+------------------
+
+The framework is a good proof of concept with a working portal, approval flow,
+suites, job queue, Maestro execution, and basic results. However, it is not yet
+a complete AI automation platform.
+
+The highest-priority next improvements should be:
+
+1. Add separate test-scenario and bug Excel schemas.
+2. Add a dedicated BugRerun suite.
+3. Strengthen step-to-Maestro conversion and validation.
+4. Merge portal-agent execution with the advanced report pipeline.
+5. Add automatic rerun of failed cases with retry history.

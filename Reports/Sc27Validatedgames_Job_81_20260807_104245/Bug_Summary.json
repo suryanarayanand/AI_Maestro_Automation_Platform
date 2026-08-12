@@ -1,0 +1,223 @@
+{
+    "suite": "Sc27Validatedgames",
+    "execution_time": 1004.5,
+    "summary": {
+        "total": 9,
+        "passed": 4,
+        "failed": 5,
+        "critical": 5,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.808",
+            "version_code": "574"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Critical functional and visual issues were detected in scenario SC_27 during cross-device Maestro and screenshot AI assessments. Despite some executions recorded as PASS by automation, persistent blank screens and missing UI elements signal incomplete or failed content rendering, which is a fundamental application failure. Additionally, visual-only findings such as cropped or unreadable components were observed. No evidence suggests these outcomes are caused by dynamic content or device-specific noise.",
+        "release_recommendation": "Do not release. The severity and consistency of blank screen and major content rendering failures preclude acceptable user experience and pose unacceptable release risk.",
+        "top_risks": [
+            "Complete blank screens upon navigation (functional failure)",
+            "Missing or failed rendering of core UI components (functional failure)",
+            "Cropped or unreadable word list containers (visual/functional; impacts usability)",
+            "Functional PASS falsely reported by automation amidst critical UI failures"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_27",
+            "scenario_name": "SC 27 NEWS QUIZ",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 91.0,
+            "log_file": "SC_27.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Validatedgames_Job_81_20260807_104245\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_News_Quiz.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Screen is entirely blank indicating missing or failed content rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank white area replaces all expected UI components",
+                        "Missing content",
+                        "Incomplete rendering"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "SC_27",
+            "scenario_name": "SC 27 Subscriber Games validation",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 136.97,
+            "log_file": "SC_27.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Validatedgames_Job_81_20260807_104245\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_Easy_Down.png",
+                "screenshots/SC_27/SC_27_Games_Page_Subscribed_Account.png",
+                "screenshots/SC_27/SC_27_Word_Row.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Blank white screen indicates missing or failed UI rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank white area replaces expected UI",
+                        "No visible application content",
+                        "Possible incomplete rendering"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "SC_27",
+            "scenario_name": "SC 27 WORD FLOWER",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 117.46,
+            "log_file": "SC_27.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Validatedgames_Job_81_20260807_104245\\SC_27.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-004",
+            "scenario_id": "SC_27",
+            "scenario_name": "SC 27 WORD ROW",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 100.11,
+            "log_file": "SC_27.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Validatedgames_Job_81_20260807_104245\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_Word_Row.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Large blank white region with no UI elements visible, indicating incomplete or failed rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank white area",
+                        "Missing UI components",
+                        "Incomplete screen rendering"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-005",
+            "scenario_id": "SC_27",
+            "scenario_name": "SC 27 WORD SEARCH",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 102.45,
+            "log_file": "SC_27.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Validatedgames_Job_81_20260807_104245\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_Word_Search.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "A large blank white region replaces the application content, indicating incomplete or failed rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank white area",
+                        "Incomplete rendering",
+                        "Missing UI components"
+                    ]
+                },
+                {
+                    "reason": "Some word list containers on the right side are cropped, making words unreadable or inaccessible.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Cropped word list containers",
+                        "Unreadable or inaccessible word options"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

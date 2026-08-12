@@ -1,0 +1,636 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>AI Automation Report</title>
+
+<style>
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    margin: 30px;
+}
+
+h1 {
+    color: #1f4e79;
+}
+
+h2 {
+    color: #1f4e79;
+    margin-top: 40px;
+}
+
+.summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    width: 180px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    text-align: center;
+}
+
+.card h2 {
+    margin: 10px 0 0;
+    font-size: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+
+th {
+    background: #1f4e79;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+}
+
+tr:hover {
+    background: #f8f8f8;
+}
+
+.scenario {
+    text-align: left;
+    padding-left: 15px;
+}
+
+.status-pass {
+    background: #28a745;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status-fail {
+    background: #dc3545;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status-notfound {
+    background: orange;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status-error {
+    background: #6c757d;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.toolbar label {
+    font-size: 15px;
+    color: #333;
+}
+
+.scenario-block {
+    margin-bottom: 25px;
+}
+
+.scenario-block h3 {
+    color: #1f4e79;
+    border-bottom: 2px solid #1f4e79;
+    padding-bottom: 6px;
+}
+
+.finding {
+    display: flex;
+    gap: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.finding-fail {
+    border-left: 6px solid #dc3545;
+}
+
+.finding-pass {
+    border-left: 6px solid #28a745;
+}
+
+.finding-error {
+    border-left: 6px solid #6c757d;
+}
+
+.finding-image {
+    flex: 0 0 260px;
+}
+
+.finding-image img {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    cursor: zoom-in;
+}
+
+.finding-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.finding-details p {
+    margin: 6px 0;
+}
+
+.finding-details ul {
+    margin: 4px 0 10px 20px;
+}
+
+.jira-box {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-top: 8px;
+}
+
+.footer {
+    margin-top: 30px;
+    color: gray;
+    text-align: center;
+}
+
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,.85);
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    cursor: zoom-out;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 6px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Automation AI Report</h1>
+
+<div class="summary">
+
+<div class="card">
+<h3>Total Tests</h3>
+<h2>3</h2>
+</div>
+
+<div class="card">
+<h3>Passed</h3>
+<h2 style="color:green;">2</h2>
+</div>
+
+<div class="card">
+<h3>Failed</h3>
+<h2 style="color:red;">1</h2>
+</div>
+
+<div class="card">
+<h3>Not Found</h3>
+<h2 style="color:orange;">0</h2>
+</div>
+
+<div class="card">
+<h3>Pass Rate</h3>
+<h2>66.67%</h2>
+</div>
+
+</div>
+
+<h2>Scenario Results</h2>
+
+<table>
+
+<tr>
+
+<th>Scenario ID</th>
+<th>Module</th>
+<th>Scenario</th>
+<th>Status</th>
+<th>Duration (sec)</th>
+<th>AI Total</th>
+<th>AI PASS</th>
+<th>AI FAIL</th>
+
+</tr>
+
+<tr>
+
+<td>SC_29_INDIA</td>
+
+<td>Hamburger Menu</td>
+
+<td class="scenario">Hamburger categories - India</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>109.65</td>
+
+<td>3</td>
+
+<td>2</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>SC_29_WORLD</td>
+
+<td>Hamburger Menu</td>
+
+<td class="scenario">Hamburger categories - World</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>91.59</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_29_SPORT</td>
+
+<td>Hamburger Menu</td>
+
+<td class="scenario">Hamburger categories - Sport</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>344.05</td>
+
+<td>10</td>
+
+<td>6</td>
+
+<td>4</td>
+
+</tr>
+
+
+</table>
+
+<br>
+
+<h2>AI Screenshot Summary</h2>
+
+<div class="summary">
+
+<div class="card">
+<h3>Total Screenshots</h3>
+<h2>14</h2>
+</div>
+
+<div class="card">
+<h3>AI PASS</h3>
+<h2 style="color:green;">9</h2>
+</div>
+
+<div class="card">
+<h3>AI FAIL</h3>
+<h2 style="color:red;">5</h2>
+</div>
+
+<div class="card">
+<h3>AI ERROR</h3>
+<h2 style="color:#6c757d;">0</h2>
+</div>
+
+</div>
+
+<h2>Detailed AI Findings</h2>
+
+<div class="toolbar">
+    <input type="checkbox" id="failuresOnly" onchange="toggleFailuresOnly()">
+    <label for="failuresOnly">Show failures only</label>
+</div>
+<div class="scenario-block"><h3>SC_29_INDIA &mdash; Hamburger categories - India</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_29_INDIA/SC_29_INDIA_hamburger_menu.png" alt="SC_29_INDIA_hamburger_menu.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_29_INDIA_hamburger_menu.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI elements are present and aligned. No blank regions, missing components, or rendering issues are visible in the navigation drawer.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_29_INDIA/SC_29_INDIA_india_india.png" alt="SC_29_INDIA_india_india.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_29_INDIA_india_india.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Screen is stuck in loading state; only placeholders visible, no real content rendered.</p>
+        <p><strong>Issues:</strong></p><ul><li>Placeholder skeletons visible throughout screen</li><li>Content failed to load or render</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Content does not load, only placeholders visible</p>
+                    <p><strong>Jira Description:</strong> The India news section is stuck displaying loading skeleton placeholders. Expected content (news articles) is missing, indicating a rendering or data loading issue.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_29_INDIA/SC_29_INDIA_india_news.png" alt="SC_29_INDIA_india_news.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_29_INDIA_india_news.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components, navigation, and content cards are fully rendered without visual defects.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_29_WORLD &mdash; Hamburger categories - World</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_29_WORLD/SC_29_WORLD_hamburger_menu.png" alt="SC_29_WORLD_hamburger_menu.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_29_WORLD_hamburger_menu.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present. Layout is correctly rendered for the navigation drawer. No visible UI defects.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_29_SPORT &mdash; Hamburger categories - Sport</h3>
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_29_SPORT/SC_29_SPORT_hamburger_menu.png" alt="SC_29_SPORT_hamburger_menu.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_29_SPORT_hamburger_menu.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Side navigation drawer does not cover the full height and width of the screen, leaving visible underlying app content.</p>
+        <p><strong>Issues:</strong></p><ul><li>Side navigation drawer not fully covering the screen</li><li>Underlying home screen content visible on the right</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Navigation drawer does not fully cover screen</p>
+                    <p><strong>Jira Description:</strong> The side navigation drawer only partially covers the screen, leaving the underlying home screen visible on the right edge and at the bottom. This is a critical UI defect as the navigation drawer should obscure the content below for focus and clarity.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_29_SPORT/SC_29_SPORT_sport_athletics.png" alt="SC_29_SPORT_sport_athletics.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_29_SPORT_sport_athletics.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Placeholder content is displayed throughout indicating the actual UI content failed to load or render.</p>
+        <p><strong>Issues:</strong></p><ul><li>Article/text/image placeholders still visible</li><li>Actual content is missing</li><li>Screen not fully rendered</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Placeholder content visible instead of article list</p>
+                    <p><strong>Jira Description:</strong> The Athletics screen displays only placeholder skeletons for article text and images. Actual articles are missing, and the UI appears to be in a perpetual loading state or failed to render content.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_29_SPORT/SC_29_SPORT_sport_cricket.png" alt="SC_29_SPORT_sport_cricket.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_29_SPORT_sport_cricket.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. Layout is properly aligned. No visible rendering or layout issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_29_SPORT/SC_29_SPORT_sport_football.png" alt="SC_29_SPORT_sport_football.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_29_SPORT_sport_football.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. Layout, alignment, and content regions are complete without overlap, cropping, or missing elements.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_29_SPORT/SC_29_SPORT_sport_hockey.png" alt="SC_29_SPORT_sport_hockey.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_29_SPORT_sport_hockey.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are visible and properly rendered. No issues detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_29_SPORT/SC_29_SPORT_sport_motorsport.png" alt="SC_29_SPORT_sport_motorsport.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_29_SPORT_sport_motorsport.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and properly aligned. No evidence of rendering issues, missing elements, or layout problems.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_29_SPORT/SC_29_SPORT_sport_other_sports.png" alt="SC_29_SPORT_sport_other_sports.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_29_SPORT_sport_other_sports.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Screen displays placeholder skeletons, indicating article and image data failed to load or render.</p>
+        <p><strong>Issues:</strong></p><ul><li>Placeholder skeletons visible instead of content</li><li>Content failed to render</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Content not rendered, placeholder skeletons displayed</p>
+                    <p><strong>Jira Description:</strong> The Other Sports section displays only loading placeholders (skeletons), indicating that the expected article and image content did not render. This likely represents a defect in either data loading or rendering.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_29_SPORT/SC_29_SPORT_sport_races.png" alt="SC_29_SPORT_sport_races.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_29_SPORT_sport_races.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered correctly with no visible defects or interruptions in content.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_29_SPORT/SC_29_SPORT_sport_sport.png" alt="SC_29_SPORT_sport_sport.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_29_SPORT_sport_sport.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present and rendered correctly. No evidence of layout issues or rendering defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_29_SPORT/SC_29_SPORT_sport_tennis.png" alt="SC_29_SPORT_sport_tennis.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_29_SPORT_sport_tennis.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Content placeholders are visible, indicating that the actual article cards or content failed to load/render.</p>
+        <p><strong>Issues:</strong></p><ul><li>Content placeholders are present</li><li>Article content failed to render</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Tennis tab displays only placeholders, actual content missing</p>
+                    <p><strong>Jira Description:</strong> On the Tennis tab, only placeholder cards are visible. The actual article cards and images failed to render, indicating an incomplete content load or rendering defect.</p>
+                </div>
+                
+    </div>
+</div>
+</div>
+<div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="">
+</div>
+
+<div class="footer">
+Generated by Automation Framework with AI Visual Analysis
+</div>
+
+<script>
+function toggleFailuresOnly() {
+    var onlyFailures = document.getElementById('failuresOnly').checked;
+    var findings = document.querySelectorAll('.finding');
+    findings.forEach(function (el) {
+        if (onlyFailures) {
+            el.style.display = (el.getAttribute('data-status') === 'FAIL') ? 'flex' : 'none';
+        } else {
+            el.style.display = 'flex';
+        }
+    });
+}
+
+function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+}
+</script>
+
+</body>
+
+</html>

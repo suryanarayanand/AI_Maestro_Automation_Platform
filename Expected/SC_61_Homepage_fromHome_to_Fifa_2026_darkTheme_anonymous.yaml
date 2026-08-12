@@ -1,0 +1,142 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - dark_theme
+  - fifa
+  - home
+  - theme
+---
+# Homepage fromHome to Fifa 2026 darkTheme anonymous (SC-61).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Verify Anonymous Home Page
+- assertVisible: "SUBSCRIBE"
+- takeScreenshot: "Screenshots/SC_61/SC_61_Anonymous_Account_Home_Page"
+
+# Navigate to Appearance Settings
+- tapOn:
+    point: 88%,5%
+- extendedWaitUntil:
+    visible: "Appearance"
+    timeout: 15000
+- tapOn: "Appearance"
+
+# Verify Change Theme Option
+- assertVisible: "Dark\nMode"
+- tapOn: "Dark\nMode"
+- back
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Navigate to FIFA World Cup 2026 Section
+- repeat:
+    times: 11
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "FIFA World Cup 2026"
+          commands:
+            - scrollUntilVisible:
+                element: "FIFA World Cup 2026"
+      - scroll
+      - waitForAnimationToEnd
+- scrollUntilVisible:
+    element: "FIFA World Cup 2026"
+- scroll
+
+# Open First Article
+- takeScreenshot: "Screenshots/SC_61/SC_61_FIFA_World_Cup_2026_Section"
+- tapOn:
+    point: 63%,53%
+
+# Article Validation
+- takeScreenshot: "Screenshots/SC_61/SC_61_FIFA_World_Cup_2026_Article_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_61/SC_61_FIFA_World_Cup_2026_Article_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_61/SC_61_FIFA_World_Cup_2026_Article_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_61/SC_61_FIFA_World_Cup_2026_Article_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_61/SC_61_FIFA_World_Cup_2026_Article_05"
+- scroll
+- takeScreenshot: "Screenshots/SC_61/SC_61_FIFA_World_Cup_2026_Article_06"
+- scroll
+- takeScreenshot: "Screenshots/SC_61/SC_61_FIFA_World_Cup_2026_Article_07"
+
+# Navigate Back
+- back
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Navigate to FIFA World Cup 2026 Section
+- repeat:
+    times: 11
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "FIFA World Cup 2026"
+          commands:
+            - scrollUntilVisible:
+                element: "FIFA World Cup 2026"
+      - scroll
+      - waitForAnimationToEnd
+- scrollUntilVisible:
+    element: "FIFA World Cup 2026"
+- takeScreenshot: "Screenshots/SC_61/SC_61_FIFA_World_Cup_2026_Section"
+
+# Open FIFA World Cup 2026 Carousel
+- tapOn:
+    point: 63%,53%
+- takeScreenshot: "Screenshots/SC_61/SC_61_FIFA_World_Cup_2026_Carousel_01"
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_61/SC_61_FIFA_World_Cup_2026_Carousel_02"
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_61/SC_61_FIFA_World_Cup_2026_Carousel_03"
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_61/SC_61_FIFA_World_Cup_2026_Carousel_04"
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_61/SC_61_FIFA_World_Cup_2026_Carousel_05"
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_61/SC_61_FIFA_World_Cup_2026_Carousel_06"
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_61/SC_61_FIFA_World_Cup_2026_Carousel_07"
+
+# Navigate Back
+- back
+
+# Close Application
+- stopApp

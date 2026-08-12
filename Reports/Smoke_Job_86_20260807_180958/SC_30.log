@@ -1,0 +1,16 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_30_BreifingSection_premium_subscriber_account
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Run ../Common/LOGIN.yaml...
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... SKIPPED
+  Wait for animation to end... COMPLETED
+  Assert that "Email" is visible...
+
+===== STDERR =====
+

@@ -1,0 +1,92 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - dark_theme
+  - home
+  - theme
+---
+# HomePage Dark Theme LatestNews ananoymous (SC-58).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Verify Anonymous Home Page
+- assertVisible: "SUBSCRIBE"
+- takeScreenshot: "Screenshots/SC_58/SC_58_Anonymous_Account_Home_Page"
+
+# Navigate to Appearance Settings
+- tapOn:
+    point: 88%,5%
+- extendedWaitUntil:
+    visible: "Appearance"
+    timeout: 15000
+- tapOn: "Appearance"
+
+# Verify Change Theme Option
+- assertVisible: "Dark\nMode"
+- tapOn: "Dark\nMode"
+- back
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Capture Screenshots After Applying Dark Theme
+- repeat:
+    times: 9
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Latest News"
+          commands:
+            - takeScreenshot: "Screenshots/SC_58/SC_58_Home_Page_Latest_News_Dark_Theme"
+      - scroll
+      - waitForAnimationToEnd
+- repeat:
+    times: 1
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "SEE MORE"
+          commands:
+            - tapOn: "SEE MORE"
+      - scroll
+      - waitForAnimationToEnd
+- repeat:
+    times: 2
+    commands:
+      - swipe:
+          direction: DOWN
+- scroll
+- takeScreenshot: "Screenshots/SC_58/SC_58_Dark_Theme_Home_Page_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_58/SC_58_Dark_Theme_Home_Page_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_58/SC_58_Dark_Theme_Home_Page_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_58/SC_58_Dark_Theme_Home_Page_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_58/SC_58_Dark_Theme_Home_Page_05"
+- scroll
+- takeScreenshot: "Screenshots/SC_58/SC_58_Dark_Theme_Home_Page_06"
+
+# Navigate Back
+- back
+
+# Close Application
+- stopApp

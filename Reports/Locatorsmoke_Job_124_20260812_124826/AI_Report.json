@@ -1,0 +1,53 @@
+{
+    "suite": {
+        "total": 1,
+        "passed": 0,
+        "failed": 1,
+        "not_found": 0,
+        "pass_rate": 0.0
+    },
+    "results": [
+        {
+            "id": "TH_0062",
+            "module": "AI Generated",
+            "name": "Subscribe button Appearance",
+            "status": "FAIL",
+            "duration": 75.46,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Locatorsmoke_Job_124_20260812_124826\\TH_0062.log",
+            "screenshots": [
+                "screenshots/TH_0062/TH_0062_non_subscriber_article_floating_bar_evidence.png",
+                "screenshots/TH_0062/TH_0062_non_subscriber_home_header_evidence.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "A large unexpected blank area interrupts the article content, indicating incomplete rendering.",
+                    "issues": [
+                        "Unexpected blank area inside article content",
+                        "Content rendering interrupted"
+                    ],
+                    "jira_title": "Large blank area interrupts article on detail page",
+                    "jira_description": "There is a large unexpected blank region within the article detail page, breaking the flow and rendering of the content. This suggests a rendering defect and incomplete UI loading.",
+                    "image": "TH_0062_non_subscriber_article_floating_bar_evidence.png",
+                    "image_path": "screenshots/TH_0062/TH_0062_non_subscriber_article_floating_bar_evidence.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and correctly rendered. No visible layout, rendering, or text issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "TH_0062_non_subscriber_home_header_evidence.png",
+                    "image_path": "screenshots/TH_0062/TH_0062_non_subscriber_home_header_evidence.png"
+                }
+            ]
+        }
+    ]
+}

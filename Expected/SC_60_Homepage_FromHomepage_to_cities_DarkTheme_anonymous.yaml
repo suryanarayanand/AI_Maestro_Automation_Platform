@@ -1,0 +1,124 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - dark_theme
+  - home
+  - theme
+  - cities
+---
+# Homepage FromHomepage to cities DarkTheme anonymous (SC-60).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Verify Anonymous Home Page
+- assertVisible: "SUBSCRIBE"
+- takeScreenshot: "Screenshots/SC_60/SC_60_Anonymous_Account_Home_Page"
+
+# Navigate to Appearance Settings
+- tapOn:
+    point: 88%,5%
+- extendedWaitUntil:
+    visible: "Appearance"
+    timeout: 15000
+- tapOn: "Appearance"
+
+# Verify Change Theme Option
+- assertVisible: "Dark\nMode"
+- tapOn: "Dark\nMode"
+- back
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Navigate to States Section
+- repeat:
+    times: 9
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "States"
+          commands:
+            - scrollUntilVisible:
+                element: "States"
+      - scroll
+      - waitForAnimationToEnd
+- scrollUntilVisible:
+    element: "States"
+
+# Open First Article
+- takeScreenshot: "Screenshots/SC_60/SC_60_States_Section"
+- scroll
+- tapOn:
+    point: 44%,26%
+
+# Article Validation
+- takeScreenshot: "Screenshots/SC_60/SC_60_States_Article_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_60/SC_60_States_Article_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_60/SC_60_States_Article_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_60/SC_60_States_Article_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_60/SC_60_States_Article_05"
+- scroll
+- takeScreenshot: "Screenshots/SC_60/SC_60_States_Article_06"
+- scroll
+- takeScreenshot: "Screenshots/SC_60/SC_60_States_Article_07"
+
+# Navigate Back
+- back
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Navigate to States Section
+- repeat:
+    times: 9
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "States"
+          commands:
+            - scrollUntilVisible:
+                element: "States"
+      - scroll
+      - waitForAnimationToEnd
+- scrollUntilVisible:
+    element: "States"
+- scrollUntilVisible:
+    element: "SEE MORE"
+
+# Open States See More
+- tapOn: "SEE MORE"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_60/SC_60_States_See_More_01"
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_60/SC_60_States_See_More_02"
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_60/SC_60_States_See_More_03"
+
+# Close Application
+- stopApp

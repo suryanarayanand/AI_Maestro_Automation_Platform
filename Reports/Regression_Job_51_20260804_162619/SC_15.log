@@ -1,0 +1,94 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_15_Podcast_Section_Subscriber_account
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Run ../Common/LOGIN.yaml...
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "Email" is visible... COMPLETED
+  Tap on "Email"... COMPLETED
+  Input text product.testing@thehindu.co.in... COMPLETED
+  Hide Keyboard... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "NEXT.*|Next.*|HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT.*LOGIN"... COMPLETED
+    Assert that "Email" is visible... COMPLETED
+    Tap on "Email"... COMPLETED
+    Input text product.testing@thehindu.co.in... COMPLETED
+    Hide Keyboard... COMPLETED
+    Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+  Assert that "NEXT.*|Next.*" is visible... COMPLETED
+  Tap on "NEXT.*|Next.*"... COMPLETED
+  Assert that "password" is visible... COMPLETED
+  Tap on "password"... COMPLETED
+  Input text Test@123... COMPLETED
+  Hide Keyboard... COMPLETED
+  Assert that "LOGIN.*" is visible... COMPLETED
+  Tap on "LOGIN.*"... COMPLETED
+  Assert that "Home" is visible... COMPLETED
+Run ../Common/LOGIN.yaml... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Assert that "Podcast" is visible... COMPLETED
+Tap on "Podcast"... COMPLETED
+Take screenshot Screenshots/SC_15/SC_15_Podcast_Page_00... COMPLETED
+Repeat 2 times...
+  Scroll vertically... COMPLETED
+Repeat 2 times... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_15/SC_15_Podcast_Page_top_01... COMPLETED
+Wait for animation to end within 10000 ms... COMPLETED
+Repeat 2 times...
+  Scroll vertically... COMPLETED
+Repeat 2 times... COMPLETED
+Wait for animation to end... COMPLETED
+Wait for animation to end within 10000 ms... COMPLETED
+Take screenshot Screenshots/SC_15/SC_15_Podcast_Page_middle_01... COMPLETED
+Repeat 2 times...
+  Scroll vertically... COMPLETED
+Repeat 2 times... COMPLETED
+Wait for animation to end... COMPLETED
+Wait for animation to end within 10000 ms... COMPLETED
+Take screenshot Screenshots/SC_15/SC_15_Podcast_Page_bottom... COMPLETED
+Repeat 8 times...
+  Swiping in DOWN direction in 400 ms... COMPLETED
+Repeat 8 times... COMPLETED
+Wait for animation to end... COMPLETED
+Tap on point (4%,18%)... COMPLETED
+Assert that "Play Latest Episode" is visible... COMPLETED
+Tap on "Play Latest Episode"... COMPLETED
+Take screenshot Screenshots/SC_15/SC_15_first_Podcast_playing_the_latest... COMPLETED
+Assert that  is visible... COMPLETED
+Assert that "�" is visible... COMPLETED
+Assert that "?" is visible... COMPLETED
+Assert that "?" is visible... COMPLETED
+Take screenshot Screenshots/SC_15/SC_15_first_Podcast_player_controls... COMPLETED
+Tap on point (43%,80%)... COMPLETED
+Take screenshot Screenshots/SC_15/SC_15_first_Podcast_startedplaying... COMPLETED
+Repeat 8 times...
+  Tap on "?"... COMPLETED
+Repeat 8 times... COMPLETED
+Take screenshot Screenshots/SC_15/SC_15_first_Podcast_fastforwarded... COMPLETED
+Repeat 8 times...
+  Tap on "?"... COMPLETED
+Repeat 8 times... COMPLETED
+Take screenshot Screenshots/SC_15/SC_15_first_Podcast_Rewinded... COMPLETED
+Tap on point (43%,80%)... COMPLETED
+Take screenshot Screenshots/SC_15/SC_15_first_Podcast_paused_playing... COMPLETED
+Tap on point (43%,80%)... COMPLETED
+Take screenshot Screenshots/SC_15/SC_15_first_Podcast_resumed_playing... COMPLETED
+Tap on "�"... COMPLETED
+Take screenshot Screenshots/SC_15/SC_15_first_Podcast_closedFrom_playing... COMPLETED
+
+
+===== STDERR =====
+

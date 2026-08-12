@@ -1,0 +1,68 @@
+appId: com.mobstac.thehindu
+tags:
+  - common
+  - authenticated
+---
+# Local-only test credentials. Restore environment injection before sharing.
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+- runFlow:
+    when:
+      visible: "HAVE AN ACCOUNT? LOGIN"
+    commands:
+      - tapOn: "HAVE AN ACCOUNT? LOGIN"
+- waitForAnimationToEnd
+
+
+- extendedWaitUntil:
+    visible: "Email"
+    timeout: 30000
+- tapOn: "Email"
+- inputText: "product.testing@thehindu.co.in"
+- hideKeyboard
+- waitForAnimationToEnd
+
+# The authentication WebView occasionally resets to the onboarding login entry.
+# Wait for either the expected NEXT action or the reset state, then recover once.
+- extendedWaitUntil:
+    visible: "NEXT.*|Next.*|HAVE AN ACCOUNT.*LOGIN"
+    timeout: 30000
+- runFlow:
+    when:
+      visible: "HAVE AN ACCOUNT.*LOGIN"
+    commands:
+      - tapOn: "HAVE AN ACCOUNT.*LOGIN"
+      - extendedWaitUntil:
+          visible: "Email"
+          timeout: 30000
+      - tapOn: "Email"
+      - inputText: "product.testing@thehindu.co.in"
+      - hideKeyboard
+      - waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible: "NEXT.*|Next.*"
+    timeout: 30000
+- tapOn:
+    text: "NEXT.*|Next.*"
+
+
+
+
+- extendedWaitUntil:
+    visible: "password"
+    timeout: 30000
+- tapOn: "password"
+- inputText: "Test@123"
+- hideKeyboard
+
+- extendedWaitUntil:
+    visible: "LOGIN.*"
+    timeout: 15000
+- tapOn: "LOGIN.*"
+
+- extendedWaitUntil:
+    visible: "Home"
+    timeout: 30000

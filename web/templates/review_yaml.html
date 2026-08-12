@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Review {{ draft.case_id }} — {{ draft.name }}</h2>
+{% if draft.error %}<div class="alert alert-danger">Generation failed: {{ draft.error }}</div>{% endif %}
+{% if draft.generation_mode == 'ai' %}
+<div class="alert alert-info">
+  <strong>AI-adapted draft</strong> · Confidence: {{ '%.0f%%'|format((draft.ai_confidence or 0) * 100) }}
+  {% if assumptions %}<hr><strong>Review these assumptions:</strong><ul class="mb-0">{% for item in assumptions %}<li>{{ item }}</li>{% endfor %}</ul>{% endif %}
+</div>
+{% endif %}
+<form method="post" action="{{ url_for('generator.approve', draft_id=draft.id) }}">
+  <textarea class="form-control font-monospace my-3" name="yaml" rows="22" required>{{ draft.yaml }}</textarea>
+  <div class="row"><div class="col-md-4"><select class="form-select" name="suite"><option>smoke</option><option>sanity</option><option>regression</option></select></div><div class="col"><button class="btn btn-success" {% if draft.status != 'pending' or draft.error %}disabled{% endif %}>Approve and Add to Suite</button></div></div>
+</form>
+{% if draft.status == 'pending' %}<form class="mt-3" method="post" action="{{ url_for('generator.reject', draft_id=draft.id) }}"><button class="btn btn-outline-danger">Reject Draft</button></form>{% endif %}
+{% endblock %}

@@ -1,0 +1,604 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Bug Investigation Dashboard</title>
+
+<style>
+.bug-card{
+
+    background:white;
+
+    margin-top:25px;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+.bug-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.bug-body{
+
+    display:flex;
+
+    gap:30px;
+
+    margin-top:20px;
+
+    margin-bottom:20px;
+
+}
+
+.info{
+
+    min-width:140px;
+
+}
+
+.severity{
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+.major{
+
+    background:#f59e0b;
+
+}
+
+.critical{
+
+    background:#dc2626;
+
+}
+
+.minor{
+
+    background:#16a34a;
+
+}
+.screenshot-section{
+
+    margin-top:25px;
+
+}
+
+.bug-image{
+
+    width:350px;
+
+    max-width:100%;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.bug-image:hover{
+
+    transform:scale(1.02);
+
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+
+}
+
+.gallery{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:15px;
+
+}
+
+.gallery-image{
+
+    width:180px;
+
+    border-radius:8px;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.gallery-image:hover{
+
+    transform:scale(1.05);
+
+}
+body{
+    margin:0;
+    padding:0;
+    background:#f5f7fb;
+    font-family:Segoe UI,Arial,sans-serif;
+}
+
+.container{
+    width:95%;
+    margin:auto;
+    padding:20px;
+}
+
+.header{
+    background:#1f2937;
+    color:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.card{
+    background:white;
+    width:180px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.card h2{
+    margin:0;
+    font-size:36px;
+}
+
+.card p{
+    color:#666;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    
+<div class="header">
+
+<h1>🐞 Bug Investigation Dashboard</h1>
+
+<p>
+
+<b>Suite:</b> Sc29Split
+
+&nbsp;&nbsp;&nbsp;
+
+<b>Execution:</b> 581.57 sec
+
+</p>
+
+</div>
+
+
+    
+<div class="cards">
+
+<div class="card">
+<h2>3</h2>
+<p>Total</p>
+</div>
+
+<div class="card">
+<h2>3</h2>
+<p>Failed</p>
+</div>
+
+<div class="card">
+<h2>3</h2>
+<p>Critical</p>
+</div>
+
+<div class="card">
+<h2>0</h2>
+<p>Major</p>
+</div>
+
+<div class="card">
+<h2>0</h2>
+<p>Minor</p>
+</div>
+
+</div>
+
+
+    
+<div class="bug-card">
+<h2>Combined AI Assessment</h2>
+<p><b>Executive summary</b><br>Major functional failures were detected in key user scenarios during Maestro automation runs, particularly affecting content loading and navigation drawer functionality. Multiple tests passed execution but showed severe UI and functional issues such as persistent loading placeholders and incomplete rendering of core content, indicating back-end or rendering pipeline failures. One scenario failed completely at execution level without further data. The visual evidence and AI analysis suggest systemic reliability issues affecting both usability and user experience.</p>
+<p><b>Release recommendation</b><br>Block release. Issues include content failing to load or render and critical navigation UI defects, which directly impact fundamental app functionality and user flows.</p>
+<ul><li>Content fails to load, with only placeholders visible in key scenarios</li><li>Side navigation drawer does not fully overlay the screen, compromising app navigation</li><li>Functional failure in scenario SC_29_WORLD with no rendered content or detail</li><li>Visual instability raises the risk of degraded user experience and usability</li><li>Potential back-end and rendering pipeline reliability issues</li></ul><hr>
+<p><b>Reference:</b> Google Pixel 9 Pro — App 2501.20.802</p>
+<p><b>Actual:</b> samsung SM-E066B — App 2501.20.808</p>
+</div>
+
+
+    <h2>Combined Findings</h2>
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-001</h2>
+
+            <h3>SC_29_INDIA</h3>
+
+            <p>Hamburger categories - India</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: PASS</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            109.65 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Screenshot AI
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Screenshot AI</p>
+
+    <p><b>Screenshot AI findings</b><br>Screen is stuck in loading state; only placeholders visible, no real content rendered.</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_29_INDIA/SC_29_INDIA_hamburger_menu.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_29_INDIA/SC_29_INDIA_hamburger_menu.png','_blank')">
+
+<img
+    src="screenshots/SC_29_INDIA/SC_29_INDIA_india_india.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_29_INDIA/SC_29_INDIA_india_india.png','_blank')">
+
+<img
+    src="screenshots/SC_29_INDIA/SC_29_INDIA_india_news.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_29_INDIA/SC_29_INDIA_india_news.png','_blank')">
+
+</div>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-002</h2>
+
+            <h3>SC_29_WORLD</h3>
+
+            <p>Hamburger categories - World</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: FAIL</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            91.59 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run</p>
+
+    <p><b>Screenshot AI findings</b><br>None</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_29_WORLD/SC_29_WORLD_hamburger_menu.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_29_WORLD/SC_29_WORLD_hamburger_menu.png','_blank')">
+
+</div>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-003</h2>
+
+            <h3>SC_29_SPORT</h3>
+
+            <p>Hamburger categories - Sport</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: PASS</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            344.05 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Screenshot AI
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Screenshot AI</p>
+
+    <p><b>Screenshot AI findings</b><br>Side navigation drawer does not cover the full height and width of the screen, leaving visible underlying app content.<br>Placeholder content is displayed throughout indicating the actual UI content failed to load or render.<br>Screen displays placeholder skeletons, indicating article and image data failed to load or render.<br>Content placeholders are visible, indicating that the actual article cards or content failed to load/render.</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_29_SPORT/SC_29_SPORT_hamburger_menu.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_29_SPORT/SC_29_SPORT_hamburger_menu.png','_blank')">
+
+<img
+    src="screenshots/SC_29_SPORT/SC_29_SPORT_sport_athletics.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_29_SPORT/SC_29_SPORT_sport_athletics.png','_blank')">
+
+<img
+    src="screenshots/SC_29_SPORT/SC_29_SPORT_sport_cricket.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_29_SPORT/SC_29_SPORT_sport_cricket.png','_blank')">
+
+<img
+    src="screenshots/SC_29_SPORT/SC_29_SPORT_sport_football.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_29_SPORT/SC_29_SPORT_sport_football.png','_blank')">
+
+<img
+    src="screenshots/SC_29_SPORT/SC_29_SPORT_sport_hockey.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_29_SPORT/SC_29_SPORT_sport_hockey.png','_blank')">
+
+<img
+    src="screenshots/SC_29_SPORT/SC_29_SPORT_sport_motorsport.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_29_SPORT/SC_29_SPORT_sport_motorsport.png','_blank')">
+
+<img
+    src="screenshots/SC_29_SPORT/SC_29_SPORT_sport_other_sports.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_29_SPORT/SC_29_SPORT_sport_other_sports.png','_blank')">
+
+<img
+    src="screenshots/SC_29_SPORT/SC_29_SPORT_sport_races.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_29_SPORT/SC_29_SPORT_sport_races.png','_blank')">
+
+<img
+    src="screenshots/SC_29_SPORT/SC_29_SPORT_sport_sport.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_29_SPORT/SC_29_SPORT_sport_sport.png','_blank')">
+
+<img
+    src="screenshots/SC_29_SPORT/SC_29_SPORT_sport_tennis.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_29_SPORT/SC_29_SPORT_sport_tennis.png','_blank')">
+
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_03_Verify_Ads_Taboola_for_anonymous_user
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Wait for animation to end... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Wait for animation to end... COMPLETED
+Tap on point (50%,50%)... COMPLETED
+Wait for animation to end... COMPLETED
+Run flow when "Summary" is visible...
+Run flow when "Summary" is visible... SKIPPED
+Repeat 15 times...
+  Run flow when "Image for Taboola Advertising Unit" is visible...
+  Run flow when "Image for Taboola Advertising Unit" is visible... SKIPPED
+  Scroll vertically... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 15 times... COMPLETED
+Swiping in LEFT direction in 400 ms... COMPLETED
+Press back... COMPLETED
+Assert that "India" is visible... COMPLETED
+Tap on "India"... COMPLETED
+Repeat 15 times...
+  Run flow when "ADVERTISEMENT" is visible...
+    Take screenshot Screenshots/SC_03/SC_03_TaboolaAd_IndiaPage_${TIMESTAMP}... COMPLETED
+  Run flow when "ADVERTISEMENT" is visible... COMPLETED
+  Scroll vertically... COMPLETED
+  Wait for animation to end... COMPLETED
+
+
+===== STDERR =====
+

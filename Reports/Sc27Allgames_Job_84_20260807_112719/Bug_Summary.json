@@ -1,0 +1,118 @@
+{
+    "suite": "Sc27Allgames",
+    "execution_time": 713.9,
+    "summary": {
+        "total": 8,
+        "passed": 6,
+        "failed": 2,
+        "critical": 2,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.808",
+            "version_code": "574"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Automated Maestro executions for key scenarios passed on a functional level, but Screenshot AI detected major visual issues: cropped interactive elements and missing content due to rendering failures. These issues compromise user experience and interface usability. No purely dynamic-content noise was identified; findings are consistent on visual/UI integrity.",
+        "release_recommendation": "Do not release. Address high-severity visual/UI defects before proceeding; issues impact usability and content accessibility despite functional pass.",
+        "top_risks": [
+            "Critical UI components are not fully visible or interactable (cropped word buttons).",
+            "Significant portions of UI missing or replaced by blank areas (content not rendered).",
+            "Potential user confusion or inability to complete primary application tasks."
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_27_WORD_SEARCH",
+            "scenario_name": "Word Search",
+            "module": "Subscriber Games",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 89.96,
+            "log_file": "SC_27_WORD_SEARCH.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Allgames_Job_84_20260807_112719\\SC_27_WORD_SEARCH.log",
+            "screenshots": [
+                "screenshots/SC_27_WORD_SEARCH/SC_27_Word_Search.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "The last column of word buttons is cropped, causing incomplete visibility of search words.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Cropped search word buttons",
+                        "Incomplete rendering of last column in the word list"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "SC_27_NEWS_QUIZ",
+            "scenario_name": "News Quiz",
+            "module": "Subscriber Games",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 83.94,
+            "log_file": "SC_27_NEWS_QUIZ.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Allgames_Job_84_20260807_112719\\SC_27_NEWS_QUIZ.log",
+            "screenshots": [
+                "screenshots/SC_27_NEWS_QUIZ/SC_27_News_Quiz.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Large blank white region replaces UI content indicating incomplete or missing rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank white area",
+                        "Missing application UI elements",
+                        "Incomplete rendering"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

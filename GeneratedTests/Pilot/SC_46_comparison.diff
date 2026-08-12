@@ -1,0 +1,91 @@
+--- existing/SC_46_Trending_page_verification.yaml
++++ generated/SC_46_generated.yaml
+@@ -1,82 +1,11 @@
+ appId: com.mobstac.thehindu
+ tags:
+-  - trending
++  - generated
++  - pilot
+ ---
+-# Trending page verification (SC-46).
+-# Launch App
+-- launchApp:
+-    clearState: true
+ 
+-# Accept Terms and Conditions
+-# - runFlow: ../Common/OOBE_terms_and_condition.yaml
++- tapOn:
++    text: "TRENDING"
+ 
+-# Login
+-- runFlow: ../Common/LOGIN.yaml
+-
+-# Skip Onboarding
+-- runFlow:
+-    when:
+-      visible:
+-        text: "Skip"
+-    commands:
+-      - tapOn: "Skip"
+-
+-# Navigate to Trending Section
+-- extendedWaitUntil:
+-    visible: "Trending"
+-    timeout: 15000
+-- tapOn: "Trending"
+-
+-# Navigate to News Section
+-- extendedWaitUntil:
+-    visible: "News"
+-    timeout: 5000
+-- tapOn: "News"
+-- takeScreenshot: "Screenshots/SC_46/SC_46_News_Page_01"
+-- scroll
+-- takeScreenshot: "Screenshots/SC_46/SC_46_News_Page_02"
+-
+-# Navigate to Business Section
+-- extendedWaitUntil:
+-    visible: "Business"
+-    timeout: 5000
+-- tapOn: "Business"
+-- waitForAnimationToEnd
+-- takeScreenshot: "Screenshots/SC_46/SC_46_Business_Page_01"
+-- scroll
+-- takeScreenshot: "Screenshots/SC_46/SC_46_Business_Page_02"
+-- scroll
+-- takeScreenshot: "Screenshots/SC_46/SC_46_Business_Page_03"
+-
+-# Navigate to Technology Section
+-- extendedWaitUntil:
+-    visible: "Technology"
+-    timeout: 5000
+-- tapOn: "Technology"
+-- takeScreenshot: "Screenshots/SC_46/SC_46_Technology_Page_01"
+-- scroll
+-- takeScreenshot: "Screenshots/SC_46/SC_46_Technology_Page_02"
+-
+-# Navigate to Entertainment Section
+-- extendedWaitUntil:
+-    visible: "Entertainment"
+-    timeout: 5000
+-- tapOn: "Entertainment"
+-- takeScreenshot: "Screenshots/SC_46/SC_46_Entertainment_Page_01"
+-- scroll
+-- takeScreenshot: "Screenshots/SC_46/SC_46_Entertainment_Page_02"
+-
+-# Navigate to Sports Section
+-- extendedWaitUntil:
+-    visible: "Sports"
+-    timeout: 5000
+-- tapOn: "Sports"
+-- takeScreenshot: "Screenshots/SC_46/SC_46_Sports_Page_01"
+-- scroll
+-- takeScreenshot: "Screenshots/SC_46/SC_46_Sports_Page_02"
+-
+-# Navigate Back
+-- back
+-
+-# Close Application
+-- killApp
++- assertVisible:
++    text: "TRENDING"

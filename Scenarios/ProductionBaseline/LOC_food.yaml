@@ -1,0 +1,33 @@
+appId: com.mobstac.thehindu
+tags:
+  - baseline
+  - food
+---
+- runFlow: ../Common/OPEN_HOME_FOR_BASELINE.yaml
+- tapOn:
+    point: "6%,10%"
+- extendedWaitUntil:
+    visible:
+      text: "Life & Style"
+    timeout: 15000
+- scrollUntilVisible:
+    element:
+      text: "Life & Style"
+    direction: DOWN
+    timeout: 30000
+- tapOn:
+    text: "Life & Style"
+- extendedWaitUntil:
+    visible:
+      text: "Food"
+    timeout: 15000
+- tapOn:
+    text: "Food"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: "Food"
+    timeout: 20000
+- assertVisible:
+    text: "Food"
+- takeScreenshot: "Screenshots/LocatorSmoke/food_page"

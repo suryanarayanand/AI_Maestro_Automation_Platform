@@ -1,0 +1,11 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - pilot
+---
+
+- tapOn:
+    text: "PREMIUM"
+
+- assertVisible:
+    text: "PREMIUM"

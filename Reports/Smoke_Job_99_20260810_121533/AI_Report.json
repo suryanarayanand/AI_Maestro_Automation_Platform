@@ -1,0 +1,38 @@
+{
+    "suite": {
+        "total": 1,
+        "passed": 0,
+        "failed": 1,
+        "not_found": 0,
+        "pass_rate": 0.0
+    },
+    "results": [
+        {
+            "id": "COMPLEX_003",
+            "module": "AI Generated",
+            "name": "Dark Mode Appearance Validation",
+            "status": "FAIL",
+            "duration": 67.51,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_99_20260810_121533\\COMPLEX_003.log",
+            "screenshots": [
+                "screenshots/COMPLEX_003/COMPLEX_003_dark_mode_enabled.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components for the Appearance settings screen are present and correctly rendered. No visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_003_dark_mode_enabled.png",
+                    "image_path": "screenshots/COMPLEX_003/COMPLEX_003_dark_mode_enabled.png"
+                }
+            ]
+        }
+    ]
+}

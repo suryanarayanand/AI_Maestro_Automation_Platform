@@ -1,0 +1,94 @@
+--- existing/SC_36_RapidSwitchingTaps_on_homePage.yaml
++++ generated/SC_36_generated.yaml
+@@ -1,74 +1,26 @@
+ appId: com.mobstac.thehindu
+ tags:
+-  - stress_test
+-  - home
++  - generated
++  - pilot
+ ---
+-# RapidSwitchingTaps on homePage (SC-36).
+-# Launch App
+-- launchApp:
+-    clearState: true
+-    # stopApp: true
+-- waitForAnimationToEnd:
+-    timeout: 8000
+-# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+ 
+-# Login
+-- runFlow: ../Common/LOGIN.yaml
++- tapOn:
++    text: "Home"
+ 
+-# Skip Onboarding
+-- extendedWaitUntil:
+-    visible: "Skip"
+-    timeout: 5000
+-- tapOn: "Skip"
+-- waitForAnimationToEnd:
+-    timeout: 10000
++- tapOn:
++    text: "TRENDING"
+ 
+-# - extendedWaitUntil:
+-#     visible:
+-#       text: "Skip"
+-#     timeout: 20000
+-# - tapOn: "Skip"
+-- extendedWaitUntil:
+-    visible:
+-      text: "Home"
+-    timeout: 15000
+-- waitForAnimationToEnd:
+-    timeout: 5000
++- tapOn:
++    text: "PREMIUM"
+ 
+-# Rapid Navigation Between Bottom Tabs
+-- assertVisible: "Home"
+-- tapOn: "Trending"
+-- takeScreenshot: "Screenshots/SC_36/SC_36_Trending_Page_01"
+-- tapOn: "Premium"
++- tapOn:
++    text: "EBOOKS"
+ 
+-# - tapOn: "OKAY"
+-- takeScreenshot: "Screenshots/SC_36/SC_36_Premium_Page_01"
+-- tapOn: "eBooks"
+-- takeScreenshot: "Screenshots/SC_36/SC_36_eBooks_Page_01"
+-- tapOn: "Home"
+-- takeScreenshot: "Screenshots/SC_36/SC_36_Home_Page_01"
+-- tapOn: "Games"
+-- takeScreenshot: "Screenshots/SC_36/SC_36_Games_Page_01"
+-- tapOn: "eBooks"
+-- takeScreenshot: "Screenshots/SC_36/SC_36_eBooks_Page_02"
+-- tapOn: "Premium"
+-- takeScreenshot: "Screenshots/SC_36/SC_36_Premium_Page_02"
+-- tapOn: "Trending"
+-- takeScreenshot: "Screenshots/SC_36/SC_36_Trending_Page_02"
+-- tapOn: "Home"
+-- takeScreenshot: "Screenshots/SC_36/SC_36_Home_Page_02"
+-- tapOn: "Trending"
+-- takeScreenshot: "Screenshots/SC_36/SC_36_Trending_Page_03"
+-- assertVisible: "Trending"
+-- tapOn: "Premium"
+-- takeScreenshot: "Screenshots/SC_36/SC_36_Premium_Page_03"
+-- assertVisible: "Premium"
+-- tapOn: "eBooks"
+-- takeScreenshot: "Screenshots/SC_36/SC_36_eBooks_Page_03"
+-- assertVisible: "eBooks"
+-- takeScreenshot: "Screenshots/SC_36/SC_36_eBooks_Page_04"
+-- tapOn: "Games"
+-- takeScreenshot: "Screenshots/SC_36/SC_36_Games_Page_02"
++- tapOn:
++    text: "GAMES"
+ 
+-# Close Application
+-- stopApp
++- tapOn:
++    text: "Home"
++
++- assertVisible:
++    text: "Home"

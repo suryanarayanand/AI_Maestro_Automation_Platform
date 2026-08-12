@@ -1,0 +1,12 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow PILOT_SC_02
+Tap on id: nav_home... COMPLETED
+Assert that id: screen_home is visible... COMPLETED
+Tap on id: nav_trending... COMPLETED
+Assert that id: screen_trending is visible... COMPLETED
+
+
+===== STDERR =====
+

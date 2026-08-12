@@ -1,0 +1,12 @@
+{
+    "suite": "Smoke",
+    "tests": [
+        {
+            "id": "TC_001",
+            "module": "AI Generated",
+            "priority": "P2",
+            "name": "TSS_00001",
+            "yaml": "TC_001.yaml"
+        }
+    ]
+}

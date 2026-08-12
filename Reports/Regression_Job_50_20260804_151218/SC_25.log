@@ -1,0 +1,55 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_25_Homepage_FromHomepage_to_Comments_Drak_theme_ananoymous
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Take screenshot Screenshots/SC_25/SC_25_Home_Page... COMPLETED
+Tap on point (88%,5%)... COMPLETED
+Assert that "Appearance" is visible... COMPLETED
+Tap on "Appearance"... COMPLETED
+Assert that "Dark
+Mode" is visible... COMPLETED
+Tap on "Dark
+Mode"... COMPLETED
+Take screenshot Screenshots/SC_25/SC_25_Dark_Theme... COMPLETED
+Press back... COMPLETED
+Launch app "com.mobstac.thehindu"... COMPLETED
+Repeat 9 times...
+  Scroll vertically... COMPLETED
+Repeat 9 times... COMPLETED
+Scrolling DOWN until "Comment" is visible with speed 40, visibility percentage 100%, timeout 20000 ms, with centering disabled... COMPLETED
+Take screenshot Screenshots/SC_25/SC_25_Comment_Section... COMPLETED
+Repeat 4 times...
+  Run flow when "SEE MORE" is visible...
+    Tap on "SEE MORE"... COMPLETED
+  Run flow when "SEE MORE" is visible... COMPLETED
+  Scroll vertically... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 4 times... COMPLETED
+Assert that "Opinion" is visible... COMPLETED
+Take screenshot Screenshots/SC_25/SC_25_Opinion_Section... COMPLETED
+Repeat 2 times...
+  Swiping in DOWN direction in 400 ms... COMPLETED
+Repeat 2 times... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_25/SC_25_Opinion_Page_01... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_25/SC_25_Opinion_Page_02... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_25/SC_25_Opinion_Page_03... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_25/SC_25_Opinion_Page_04... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_25/SC_25_Opinion_Page_05... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_25/SC_25_Opinion_Page_06... COMPLETED
+Press back... COMPLETED
+Launch app "com.mobstac.thehindu"... COMPLETED
+
+
+===== STDERR =====
+

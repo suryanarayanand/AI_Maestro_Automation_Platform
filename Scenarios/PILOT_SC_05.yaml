@@ -1,0 +1,12 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+---
+
+- tapOn:
+    id: "nav_premium"
+
+- assertVisible:
+    id: "screen_premium"
+
+

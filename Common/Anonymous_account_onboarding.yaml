@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+tags:
+  - common
+  - onboarding
+---
+- runFlow:
+    when:
+      visible: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+- extendedWaitUntil:
+    visible: "SUBSCRIBE"
+    timeout: 15000

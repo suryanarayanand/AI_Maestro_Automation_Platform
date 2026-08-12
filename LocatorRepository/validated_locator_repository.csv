@@ -1,0 +1,36 @@
+﻿name,screen,type,value,priority,status,validated_at,source,notes
+cta_login,account_anonymous,id,cta_login,1,validated,2026-07-31T14:47:11,"account_anonymous_20260731_143551.json, premium_top_20260731_143903.json",Maestro assertVisible passed on R9ZY40T6PHN; close action also tap-verified
+cta_menu_close,account_anonymous,id,cta_menu_close,1,validated,2026-07-31T14:47:12,account_anonymous_20260731_143551.json,Maestro assertVisible passed on R9ZY40T6PHN; close action also tap-verified
+screen_user_menu,account_anonymous,id,screen_user_menu,1,validated,2026-07-31T14:47:11,account_anonymous_20260731_143551.json,Maestro assertVisible passed on R9ZY40T6PHN; close action also tap-verified
+screen_section,section_common,id,screen_section,1,validated,2026-08-03T15:18:00,"scitech_page_20260803_150944.json, entertainment_page_20260803_151313.json, books_page_20260803_151746.json, food_page_20260803_151053.json, latest_news_page_20260803_151535.json",Canonical shared destination ID; assert the page title text as page identity
+screen_ebooks,ebooks_top,id,screen_ebooks,1,validated,2026-07-31T14:47:14,ebooks_top_20260731_143956.json,Maestro navigation and assertVisible passed on R9ZY40T6PHN
+screen_games,games_top,id,screen_games,1,validated,2026-07-31T14:47:12,games_top_20260731_144054.json,Maestro navigation and assertVisible passed on R9ZY40T6PHN
+Sport,hamburger_menu,text,Sport,3,validated,2026-07-31T15:11:42,"hamburger_menu_20260731_144148.json, sport_page_20260731_150454.json",Maestro visibility and tap validation passed on R9ZY40T6PHN
+cta_drawer_close,hamburger_menu,id,cta_drawer_close,1,validated,2026-07-31T14:47:13,hamburger_menu_20260731_144148.json,Maestro navigation and assertVisible passed on R9ZY40T6PHN
+cta_search,hamburger_menu,id,cta_search,1,validated,2026-07-31T14:47:13,hamburger_menu_20260731_144148.json,Maestro navigation and assertVisible passed on R9ZY40T6PHN
+screen_hamburger,hamburger_menu,id,screen_hamburger,1,validated,2026-07-31T14:47:12,hamburger_menu_20260731_144148.json,Maestro navigation and assertVisible passed on R9ZY40T6PHN
+Business,home_content_tabs,text,Business,3,validated,2026-07-31T15:11:42,"trending_top_20260731_143756.json, hamburger_menu_20260731_144148.json, sport_page_20260731_150454.json, business_page_20260731_150633.json",Maestro visibility and tap validation passed on R9ZY40T6PHN
+Editorial,home_content_tabs,text,Editorial,3,validated,2026-07-31T15:11:41,"existing_repository, Home.json, home_top_20260731_143115.json",Maestro visibility and tap validation passed on R9ZY40T6PHN
+Opinion,home_content_tabs,text,Opinion,3,validated,2026-07-31T15:11:41,"existing_repository, Home.json, home_top_20260731_143115.json, hamburger_menu_20260731_144148.json, sport_page_20260731_150454.json",Maestro visibility and tap validation passed on R9ZY40T6PHN
+Photos,home_content_tabs,text,Photos,3,validated,2026-07-31T15:11:40,"existing_repository, Home.json, home_top_20260731_143115.json",Maestro visibility and tap validation passed on R9ZY40T6PHN
+Sports,home_content_tabs,text,Sports,3,validated,2026-07-31T15:11:41,trending_top_20260731_143756.json,Maestro visibility and tap validation passed on R9ZY40T6PHN
+Videos,home_content_tabs,text,Videos,3,validated,2026-07-31T15:11:40,"existing_repository, Home.json, home_top_20260731_143115.json, hamburger_menu_20260731_144148.json",Maestro visibility and tap validation passed on R9ZY40T6PHN
+India,home_sections,text,India,3,validated,2026-07-31T14:55:40,"existing_repository, Home.json, home_top_20260731_143115.json, hamburger_menu_20260731_144148.json",Maestro visibility and tap validation passed on R9ZY40T6PHN
+World,home_sections,text,World,3,validated,2026-07-31T14:55:41,"existing_repository, Home.json, home_top_20260731_143115.json, hamburger_menu_20260731_144148.json",Maestro visibility and tap validation passed on R9ZY40T6PHN
+nav_account,home_top,id,nav_account,1,validated,2026-07-31T14:32:46,"existing_repository, Home.json, home_top_20260731_143115.json",Maestro assertVisible passed on R9ZY40T6PHN using home_top capture
+nav_ebooks,home_top,id,nav_ebooks,1,validated,2026-07-31T14:32:47,"existing_repository, Home.json, home_top_20260731_143115.json",Maestro assertVisible passed on R9ZY40T6PHN using home_top capture
+nav_games,home_top,id,nav_games,1,validated,2026-07-31T14:32:47,"existing_repository, Home.json, home_top_20260731_143115.json",Maestro assertVisible passed on R9ZY40T6PHN using home_top capture
+nav_home,home_top,id,nav_home,1,validated,2026-07-31T14:32:46,"existing_repository, Home.json, home_top_20260731_143115.json",Maestro assertVisible passed on R9ZY40T6PHN using home_top capture
+nav_menu,home_top,id,nav_menu,1,validated,2026-07-31T14:32:46,"existing_repository, Home.json, home_top_20260731_143115.json",Maestro assertVisible passed on R9ZY40T6PHN using home_top capture
+nav_premium,home_top,id,nav_premium,1,validated,2026-07-31T14:32:46,"existing_repository, Home.json, home_top_20260731_143115.json",Maestro assertVisible passed on R9ZY40T6PHN using home_top capture
+nav_trending,home_top,id,nav_trending,1,validated,2026-07-31T14:32:46,"existing_repository, Home.json, home_top_20260731_143115.json",Maestro assertVisible passed on R9ZY40T6PHN using home_top capture
+screen_home,home_top,id,screen_home,1,validated,2026-07-31T14:32:46,"existing_repository, Home.json, home_top_20260731_143115.json",Maestro assertVisible passed on R9ZY40T6PHN using home_top capture
+screen_premium,premium_top,id,screen_premium,1,validated,2026-07-31T14:47:13,premium_top_20260731_143903.json,Maestro navigation and assertVisible passed on R9ZY40T6PHN
+article_card,section_common,id,article_card,1,validated,2026-08-03T15:18:00,14 requested section page hierarchies,Reusable article entry; present on content-list section pages
+Podcast,podcast_page,text,Podcast,3,validated,2026-08-03T14:38:43,podcast_page_20260803_143843.json,Navigation and page identity verified on R9ZY40T6PHN
+Sci-Tech,scitech_page,text,Sci-Tech,3,validated,2026-08-03T15:09:44,"science_expanded_20260803_150821.json, scitech_page_20260803_150944.json",Science child navigation and destination identity verified
+Entertainment,entertainment_page,text,Entertainment,3,validated,2026-08-03T15:13:13,"entertainment_expanded_20260803_151154.json, entertainment_page_20260803_151313.json",Destination is the second Entertainment label after category expansion
+Books,books_page,text,Books,3,validated,2026-08-03T15:17:46,"books_expanded_20260803_151625.json, books_page_20260803_151746.json",Destination is the second Books label after category expansion
+Food,food_page,text,Food,3,validated,2026-08-03T15:10:53,food_page_20260803_151053.json,Life & Style child navigation and destination identity verified
+Latest News,latest_news_page,text,News,3,validated,2026-08-03T15:15:35,"news_expanded_20260803_151408.json, latest_news_page_20260803_151535.json",Logical Latest News route is News category to second News child
+screen_trending,trending_top,id,screen_trending,1,validated,2026-07-31T14:47:13,trending_top_20260731_143756.json,Maestro navigation and assertVisible passed on R9ZY40T6PHN

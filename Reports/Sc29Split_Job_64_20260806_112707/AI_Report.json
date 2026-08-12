@@ -1,0 +1,24 @@
+{
+    "suite": {
+        "total": 1,
+        "passed": 0,
+        "failed": 0,
+        "not_found": 0,
+        "pass_rate": 0.0
+    },
+    "results": [
+        {
+            "id": "SC_29_INDIA",
+            "module": "Hamburger Menu",
+            "name": "Hamburger categories - India",
+            "status": "CANCELLED",
+            "duration": 51.81,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc29Split_Job_64_20260806_112707\\SC_29_INDIA.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        }
+    ]
+}

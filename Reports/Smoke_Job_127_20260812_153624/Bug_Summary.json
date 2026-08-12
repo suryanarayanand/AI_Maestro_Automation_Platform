@@ -1,0 +1,71 @@
+{
+    "suite": "Smoke",
+    "execution_time": 97.06,
+    "summary": {
+        "total": 1,
+        "passed": 0,
+        "failed": 1,
+        "critical": 1,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.813",
+            "version_code": "579"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Test case TC_001 failed during Maestro execution. There are no supporting screenshot AI or cross-device visual findings attached, suggesting the issue is based solely on automation run status and not corroborated by visual evidence. At this stage, the failure appears to be a functional issue recorded during automated execution.",
+        "release_recommendation": "With the current information, recommend blocking release until the root cause of the functional failure in TC_001 is investigated. Visual regressions and dynamic-content noise are not a factor here.",
+        "top_risks": [
+            "Potential functional regression (TC_001)",
+            "Lack of supporting screenshot or visual evidence for diagnosis"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "TC_001",
+            "scenario_name": "TC_001",
+            "module": "AI Generated",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 96.84,
+            "log_file": "TC_001.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_127_20260812_153624\\TC_001.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

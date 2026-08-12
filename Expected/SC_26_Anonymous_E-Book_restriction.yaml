@@ -1,0 +1,43 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - ebooks
+---
+# Anonymous E Book restriction (SC-26).
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "eBooks"
+    timeout: 15000
+- tapOn: "eBooks"
+- waitForAnimationToEnd
+- tapOn:
+    point: 77%,34%
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_26/SC_26_Ebook_Anonymous"
+- retry:
+    maxRetries: 3
+    commands:
+      - assertVisible:
+         text: ".*Subscribe.*"
+- assertVisible: "Yearly"
+- assertVisible: "Monthly"
+- tapOn:
+    point: 86%,14%
+- repeat:
+    times: 3
+    commands:
+        - scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_26/SC_26_Ebook_Anonymous_001"

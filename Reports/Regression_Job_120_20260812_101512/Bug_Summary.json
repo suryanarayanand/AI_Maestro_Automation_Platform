@@ -1,0 +1,1174 @@
+{
+    "suite": "Regression",
+    "execution_time": 7530.37,
+    "summary": {
+        "total": 30,
+        "passed": 12,
+        "failed": 18,
+        "critical": 17,
+        "major": 0,
+        "minor": 1
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.813",
+            "version_code": "579"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Automated testing revealed that while most Maestro scenarios technically 'pass,' significant critical defects persist across the mobile app. The primary issues are not functional test failures, but widespread and severe visual/UI rendering defects that negatively impact user experience and core business logic, especially regarding advertisement placement, subscriber paywalls, content rendering, and overall layout consistency. Several scenarios (notably SC_03, SC_05, SC_13, SC_14, SC_15) failed automated checks, and even 'pass' cases often reveal high-severity UX and visual defects via screenshot AI and cross-device image comparison. Most notably, ad containers often render as blank, overlap content, or display where they should not (e.g., behind paywalls). Key areas like content loading, podcast sections, and UI alignment are repeatedly broken.",
+        "release_recommendation": "Do NOT release. Although functional tests mostly pass, pervasive high-severity UI and UX defects (ads, content missing, layout corruption, paywall violations) present major risks to user experience, monetization, and subscriber trust. The current build does not meet minimum quality standards.",
+        "top_risks": [
+            "Ads visible on paywalled/subscriber screens (monetization and UX violation)",
+            "Advertisement containers frequently blank, missing, or overlapping key content",
+            "Critical app sections (podcast, article, main content) fail to load or appear stuck in loading state",
+            "Broken or missing UI/layout components causing unreadable or incomplete screens",
+            "Misaligned or cropped UI elements (cards, buttons, navigation bars, text)",
+            "Dynamic-content placeholders and loading skeletons remain visible",
+            "Reference/dynamic-content noise mostly avoided—defects identified are persistent, non-content-dependent regressions"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_81",
+            "scenario_name": "SC 81 World page article Anonymous Account",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 130.13,
+            "log_file": "SC_81.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_120_20260812_101512\\SC_81.log",
+            "screenshots": [
+                "screenshots/SC_81/SC_81_World_Page_AI_Summary.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_01.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_02.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_03.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_04.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_05.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_06.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_07.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_08.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_09.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_10.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_11.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_12.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_13.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_14.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_15.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Two advertisement containers are stacked vertically with an empty advertisement container visible above the S.A. Engineering College ad, indicating a rendering defect.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Empty advertisement container",
+                        "Stacked advertisement components"
+                    ]
+                },
+                {
+                    "reason": "Large blank area exists where an advertisement should be displayed, indicating incomplete or missing ad rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank white area in place of advertisement",
+                        "Incomplete ad rendering"
+                    ]
+                },
+                {
+                    "reason": "A large blank area labeled 'ADVERTISEMENT' is present, but the advertisement container is mostly empty except for a small ad at the bottom. This indicates a rendering defect or empty advertisement placeholder.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Empty advertisement placeholder"
+                    ]
+                },
+                {
+                    "reason": "Advertisement banner overlaps article content, partially obscuring text.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement overlaps article content",
+                        "Text partially obscured by advertisement"
+                    ]
+                },
+                {
+                    "reason": "Advertisement overlaps readable article text.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement overlaps article content",
+                        "Cropping of article text by advertisement"
+                    ]
+                },
+                {
+                    "reason": "Large blank area between 'Post a comment' and the bottom advertisement indicates incomplete rendering or missing advertisement content.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank white area between content and advertisement",
+                        "Possible incomplete rendering or missing ad"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "SC_82",
+            "scenario_name": "SC 82 EditorialPage Anonymous acc",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 156.94,
+            "log_file": "SC_82.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_120_20260812_101512\\SC_82.log",
+            "screenshots": [
+                "screenshots/SC_82/SC_82_Editorial_Page_Image_for_Taboola_Advertising_Unit.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_01.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_02.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_03.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_04.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_05.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_06.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_07.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_08.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_09.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_10.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_11.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_12.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_13.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_14.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_15.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Blank advertisement container is present. The advertisement section under the article content is empty.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Empty advertisement placeholder"
+                    ]
+                },
+                {
+                    "reason": "Blank advertisement container is visible above the bottom navigation bar.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Empty advertisement placeholder"
+                    ]
+                },
+                {
+                    "reason": "Blank advertisement container is visible above the bottom navigation bar.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Empty advertisement placeholder"
+                    ]
+                },
+                {
+                    "reason": "Blank advertisement container visible above bottom navigation.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Empty advertisement placeholder",
+                        "Blank region where advertisement should display"
+                    ]
+                },
+                {
+                    "reason": "Blank advertisement container is visible above the bottom navigation bar.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank advertisement container"
+                    ]
+                },
+                {
+                    "reason": "A large blank advertisement container is visible above the bottom navigation bar, but no actual advertisement is rendered.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Empty advertisement placeholder"
+                    ]
+                },
+                {
+                    "reason": "Blank advertisement container is visible with the 'ADVERTISEMENT' label but no ad content present.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Empty advertisement placeholder"
+                    ]
+                },
+                {
+                    "reason": "Advertisement container is visible but no advertisement is rendered, leaving an empty placeholder.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Empty advertisement placeholder",
+                        "Blank advertisement container"
+                    ]
+                },
+                {
+                    "reason": "Advertisement container has cropped content; the word 'Search' is cut off at the top right inside the ad block.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Cropped text in advertisement container",
+                        "Right edge of 'Search' text is not fully visible"
+                    ]
+                },
+                {
+                    "reason": "Advertisement section overlaps or replaces navigation and content area.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement section is shown above bottom navigation and overlaps the content area",
+                        "Unexpected large gray area labeled 'ADVERTISEMENT' between content and bottom navigation"
+                    ]
+                },
+                {
+                    "reason": "A large blank white region is visible above the bottom navigation bar labeled 'ADVERTISEMENT', indicating incomplete rendering or a missing ad component.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank white area above bottom navigation",
+                        "Possible missing advertisement content",
+                        "Incomplete section rendering"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "SC_84",
+            "scenario_name": "SC 84 Editorial Page specific article anonymous",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 288.32,
+            "log_file": "SC_84.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_120_20260812_101512\\SC_84.log",
+            "screenshots": [
+                "screenshots/SC_84/SC_84_Editorial_Page_Anonymous_Account_01.png",
+                "screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_01.png",
+                "screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_02.png",
+                "screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_03.png",
+                "screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_04.png",
+                "screenshots/SC_84/SC_84_Taboola_Ad_undefined.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Blank advertisement container is visible without any ad content.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Empty advertisement placeholder"
+                    ]
+                },
+                {
+                    "reason": "A large blank white area labeled as 'ADVERTISEMENT' contains no advertisement content, indicating a blank advertisement container.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Empty advertisement placeholder"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-004",
+            "scenario_id": "SC_86",
+            "scenario_name": "SC 86 Editorial Page anonymous light theme",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 456.91,
+            "log_file": "SC_86.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_120_20260812_101512\\SC_86.log",
+            "screenshots": [
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_01.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_02.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_03.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_04.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_05.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_01.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_02.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_03.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_04.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Advertisement is visible while the paywall is displayed on the article screen. Subscribers or paywall-locked users should not see advertisements.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement is visible on paywall screen"
+                    ]
+                },
+                {
+                    "reason": "Advertisement is visible on a subscriber login section.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement displayed on a subscriber/login section"
+                    ]
+                },
+                {
+                    "reason": "Advertisement banner overlaps article image resulting in layout corruption.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement overlaps content",
+                        "Layout corruption"
+                    ]
+                },
+                {
+                    "reason": "Advertisement banner is overlapping content below it.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement overlaps content",
+                        "Layout is broken"
+                    ]
+                },
+                {
+                    "reason": "Banner advertisement is partially overlapping visual content below, causing content to be cropped and unreadable.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement banner overlaps underlying image and content",
+                        "Cropped visual content"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-005",
+            "scenario_id": "SC_87",
+            "scenario_name": "SC 87 Editorial Page anonymous DarkTheme",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 1030.55,
+            "log_file": "SC_87.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_120_20260812_101512\\SC_87.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-006",
+            "scenario_id": "SC_88",
+            "scenario_name": "SC 88 Opinion Article Navigation Interaction Login Validation",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 218.68,
+            "log_file": "SC_88.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_120_20260812_101512\\SC_88.log",
+            "screenshots": [
+                "screenshots/SC_88/SC_88_Opinion_Page_After_Clicking_AI_Summary_Anonymous.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_01.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_02.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account_Article_Via_Comment_Section.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Article_01.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Article_02.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Article_03.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Article_04.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Article_05.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_01.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_02.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_03.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_04.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_05.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_06.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_07.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_08.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_09.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "An advertisement is visible behind the subscribe paywall modal, which should not happen as paywalls must block access to advertisements.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement visible behind subscription paywall"
+                    ]
+                },
+                {
+                    "reason": "Advertisement is visible under the subscription paywall modal.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement visible when paywall is shown"
+                    ]
+                },
+                {
+                    "reason": "Advertisement is visible underneath the subscriber paywall screen. Subscriber paywall should not display advertisements.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement visible behind paywall modal"
+                    ]
+                },
+                {
+                    "reason": "Advertisement is visible on a subscriber paywall screen where ads should not display.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement visible on paywall/subscriber screen",
+                        "AD placeholder and ad content are present below subscription offer"
+                    ]
+                },
+                {
+                    "reason": "A visible blank advertisement container is present; 'ADVERTISEMENT' label shows with empty space before the advertisement loads at the bottom.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Empty advertisement placeholder"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-007",
+            "scenario_id": "SC_89",
+            "scenario_name": "SC 89 Opinion Article EndToEnd Subscriber Feature Validation",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 239.56,
+            "log_file": "SC_89.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_120_20260812_101512\\SC_89.log",
+            "screenshots": [
+                "screenshots/SC_89/SC_89_Opinion_Page_Article_01.png",
+                "screenshots/SC_89/SC_89_Opinion_Page_Article_02.png",
+                "screenshots/SC_89/SC_89_Opinion_Page_Article_03.png",
+                "screenshots/SC_89/SC_89_Opinion_Page_Article_04.png",
+                "screenshots/SC_89/SC_89_Opinion_Page_Article_05.png",
+                "screenshots/SC_89/SC_89_Opinion_Page_Article_06.png",
+                "screenshots/SC_89/SC_89_Opinion_Page_Article_07.png",
+                "screenshots/SC_89/SC_89_Opinion_Page_Article_08.png",
+                "screenshots/SC_89/SC_89_Opinion_Page_Article_After_Clicking_AI_Summary.png",
+                "screenshots/SC_89/SC_89_Opinion_Page_Second_Article_01.png",
+                "screenshots/SC_89/SC_89_Opinion_Page_Second_Article_02.png",
+                "screenshots/SC_89/SC_89_Opinion_Page_Second_Article_03.png",
+                "screenshots/SC_89/SC_89_Opinion_Page_Second_Article_04.png",
+                "screenshots/SC_89/SC_89_Opinion_Page_Subscriber_Account.png",
+                "screenshots/SC_89/SC_89_Opinion_Page_Subscriber_Account_Article_Via_Comment_Section.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Cartoon card in the second row is cropped on the right side, cutting off both text and the image.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Cropped card in horizontal scroll list",
+                        "Text and image cut off"
+                    ]
+                },
+                {
+                    "reason": "Unexpected blank area present in the content section above the 'Columns' header, suggesting missing or failed-to-render UI elements.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Unexpected blank area inside content",
+                        "Potential missing or incomplete rendered card/container above 'Columns'"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-008",
+            "scenario_id": "SC_90",
+            "scenario_name": "SC 90 opinionPage lightTheme",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 262.52,
+            "log_file": "SC_90.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_120_20260812_101512\\SC_90.log",
+            "screenshots": [
+                "screenshots/SC_90/SC_90_Cartoon_Section_01_LightTheme.png",
+                "screenshots/SC_90/SC_90_Cartoon_Section_02_LightTheme.png",
+                "screenshots/SC_90/SC_90_Cartoon_Section_03_LightTheme.png",
+                "screenshots/SC_90/SC_90_Cartoon_Section_04_LightTheme.png",
+                "screenshots/SC_90/SC_90_Cartoon_Section_05_LightTheme.png",
+                "screenshots/SC_90/SC_90_Cartoon_Section_06_LightTheme.png",
+                "screenshots/SC_90/SC_90_Cartoon_Section_07_LightTheme.png",
+                "screenshots/SC_90/SC_90_Cartoon_Section_08_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_01_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_02_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_03_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_04_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_05_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_06_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_07_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_08_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_09_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_10_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_11_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_12_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_13_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_14_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_15_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_LightTheme.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Content placeholders are visible, indicating that the content has not loaded and the page is incomplete.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Content placeholders visible",
+                        "Incomplete content rendering"
+                    ]
+                },
+                {
+                    "reason": "Card in 'Cartoon' section is visibly cropped on the right side, cutting off both image and text.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Cropped card in 'Cartoon' section",
+                        "Image and text in 'Cartoon' card cut off on the right"
+                    ]
+                },
+                {
+                    "reason": "There is a large blank area near the top of the screen inside the content, with only the 'SEE MORE' text visible. This suggests missing or incomplete UI rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Unexpected blank area inside application content",
+                        "Possible incomplete or missing UI components"
+                    ]
+                },
+                {
+                    "reason": "Content placeholders are visible, indicating the content did not render and is stuck loading.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Content placeholders visible",
+                        "Article images and texts not rendered",
+                        "Screen appears stuck on loading state"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-009",
+            "scenario_id": "SC_03",
+            "scenario_name": "Verify Ads Taboola for anonymous user",
+            "module": "Advertisement",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Visual",
+            "execution_time": 1051.07,
+            "log_file": "SC_03.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_120_20260812_101512\\SC_03.log",
+            "screenshots": [],
+            "comparison_images": [
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_03\\SC_03_TaboolaAd_IndiaPage_undefined.png",
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_03\\SC_03_TaboolaAd_TrendingPage_undefined.png"
+            ],
+            "sources": [
+                "Run",
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "SC_03_TaboolaAd_IndiaPage_undefined.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                },
+                {
+                    "image": "SC_03_TaboolaAd_TrendingPage_undefined.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-010",
+            "scenario_id": "SC_04",
+            "scenario_name": "Verify Ads Taboola for anonymous subscriber",
+            "module": "Advertisement",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Screenshot AI, Visual",
+            "execution_time": 516.08,
+            "log_file": "SC_04.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_120_20260812_101512\\SC_04.log",
+            "screenshots": [
+                "screenshots/SC_04/Subscriber_No_Ads_Article_1.png",
+                "screenshots/SC_04/Subscriber_No_Ads_Article_2.png",
+                "screenshots/SC_04/Subscriber_No_Ads_Article_3.png",
+                "screenshots/SC_04/Subscriber_No_Ads_Article_4.png"
+            ],
+            "comparison_images": [
+                "comparison/SC_04/./reference_Subscriber_No_Ads_Article_1.png",
+                "comparison/SC_04/./actual_Subscriber_No_Ads_Article_1.png",
+                "comparison/SC_04/./diff_Subscriber_No_Ads_Article_1.png",
+                "comparison/SC_04/./reference_Subscriber_No_Ads_Article_2.png",
+                "comparison/SC_04/./actual_Subscriber_No_Ads_Article_2.png",
+                "comparison/SC_04/./diff_Subscriber_No_Ads_Article_2.png",
+                "comparison/SC_04/./reference_Subscriber_No_Ads_Article_3.png",
+                "comparison/SC_04/./actual_Subscriber_No_Ads_Article_3.png",
+                "comparison/SC_04/./diff_Subscriber_No_Ads_Article_3.png",
+                "comparison/SC_04/./reference_Subscriber_No_Ads_Article_4.png",
+                "comparison/SC_04/./actual_Subscriber_No_Ads_Article_4.png",
+                "comparison/SC_04/./diff_Subscriber_No_Ads_Article_4.png"
+            ],
+            "sources": [
+                "Screenshot AI",
+                "Visual"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Large blank region under 'Live updates' indicates missing or incomplete content rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Unexpected blank area inside content",
+                        "Incomplete rendering of Live updates section"
+                    ]
+                }
+            ],
+            "visual_findings": [
+                {
+                    "image": "Subscriber_No_Ads_Article_1.png",
+                    "similarity": 59.25,
+                    "normalized": false,
+                    "summary": "One visual defect detected in the 'Live updates' section.",
+                    "issues": [
+                        {
+                            "severity": "High",
+                            "component": "Live Updates Section",
+                            "title": "Missing or Broken Live Update UI",
+                            "description": "The 'Live updates' section appears to be either missing content or displaying a large empty space with broken/misaligned layout. This is not expected based on the reference and suggests a missing or malfunctioning UI component.",
+                            "recommendation": "Ensure the 'Live updates' section displays content correctly and investigate missing or unloaded controls/components."
+                        }
+                    ]
+                },
+                {
+                    "image": "Subscriber_No_Ads_Article_2.png",
+                    "similarity": 63.16,
+                    "normalized": false,
+                    "summary": "No genuine UI defects detected. All highlighted visual differences are related to dynamic content and are not actual UI issues. Core UI components, alignment, buttons, headers, navigation, color theme, and layout remain consistent.",
+                    "issues": []
+                },
+                {
+                    "image": "Subscriber_No_Ads_Article_3.png",
+                    "similarity": 62.09,
+                    "normalized": false,
+                    "summary": "No genuine UI defects detected. All highlighted differences are due to dynamic/news content changes and not UI regression.",
+                    "issues": []
+                },
+                {
+                    "image": "Subscriber_No_Ads_Article_4.png",
+                    "similarity": 62.15,
+                    "normalized": false,
+                    "summary": "No genuine UI issues detected in the core components. All highlighted changes are related to dynamic content or ignored elements.",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-011",
+            "scenario_id": "SC_05",
+            "scenario_name": "SC 05 Premium access for anonymous user",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 194.66,
+            "log_file": "SC_05.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_120_20260812_101512\\SC_05.log",
+            "screenshots": [
+                "screenshots/SC_05/SC05_premiumpage_nonsubscriber.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-012",
+            "scenario_id": "SC_06",
+            "scenario_name": "SC 06 Premium access for subscriber",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 126.31,
+            "log_file": "SC_06.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_120_20260812_101512\\SC_06.log",
+            "screenshots": [
+                "screenshots/SC_06/Sc_06_paywall_premium00.png",
+                "screenshots/SC_06/SC_06_paywall_premium_02.png",
+                "screenshots/SC_06/SC_06_paywall_premium_fails_subscribeIs_present_01.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Modal overlay (Briefing) covers main content but lacks proper dimming or separation, and appears to interrupt visibility of article content beneath.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Modal overlay obstructs main content",
+                        "Underlying page content partially visible and readable under modal, causing functional and layout confusion"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-013",
+            "scenario_id": "SC_11",
+            "scenario_name": "Anonymous article navigation",
+            "module": "Articles",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Screenshot AI, Visual",
+            "execution_time": 50.27,
+            "log_file": "SC_11.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_120_20260812_101512\\SC_11.log",
+            "screenshots": [
+                "screenshots/SC_11/Sc_011_article00.png",
+                "screenshots/SC_11/Sc_011_article01.png"
+            ],
+            "comparison_images": [
+                "comparison/SC_11/./reference_Sc_011_article00.png",
+                "comparison/SC_11/./actual_Sc_011_article00.png",
+                "comparison/SC_11/./diff_Sc_011_article00.png",
+                "comparison/SC_11/./reference_Sc_011_article01.png",
+                "comparison/SC_11/./actual_Sc_011_article01.png",
+                "comparison/SC_11/./diff_Sc_011_article01.png"
+            ],
+            "sources": [
+                "Screenshot AI",
+                "Visual"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Advertisement is visible below the paywall on a premium/subscriber screen where ads should not appear.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement visible below paywall",
+                        "Ads should not be shown on paywalled/subscriber screens"
+                    ]
+                }
+            ],
+            "visual_findings": [
+                {
+                    "image": "Sc_011_article00.png",
+                    "similarity": 51.86,
+                    "normalized": false,
+                    "summary": "Two genuine UI issues detected affecting text rendering/alignment and button alignment.",
+                    "issues": [
+                        {
+                            "severity": "High",
+                            "component": "Text Rendering",
+                            "title": "Text clipping and alignment regression",
+                            "description": "Diff image highlights show several places in headline, summary, and article body where text alignment, kerning, or clipping has changed, resulting in minor overlaps and uneven spacing compared to reference. This impacts readability and professionalism.",
+                            "recommendation": "Review text rendering and layout constraints, verify font rendering pipeline, and restore original spacing/margins."
+                        },
+                        {
+                            "severity": "Medium",
+                            "component": "Toolbar and Bottom Action Bar",
+                            "title": "Misaligned action buttons and icons",
+                            "description": "'AI', 'A+', and 'Subscribe' buttons in the bottom bar and the header-bar are shown as slightly misaligned or overlapping, as per diff highlights. This could affect usability and provide a visually inconsistent UI.",
+                            "recommendation": "Check alignment and view padding/margin in action bars, adjust layout to match reference screenshot."
+                        }
+                    ]
+                },
+                {
+                    "image": "Sc_011_article01.png",
+                    "similarity": 60.89,
+                    "normalized": false,
+                    "summary": "One genuine UI issue detected in the Bottom Navigation bar.",
+                    "issues": [
+                        {
+                            "severity": "Medium",
+                            "component": "Bottom Navigation",
+                            "title": "Bottom Navigation bar alignment and spacing regression",
+                            "description": "The bottom navigation bar has spacing and alignment differences compared to the reference, including possible shifting or resizing of navigation icons and the 'SUBSCRIBE' button, which affects visual consistency.",
+                            "recommendation": "Review the bottom navigation bar layout and correct the alignment and spacing to match the reference design."
+                        }
+                    ]
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-014",
+            "scenario_id": "SC_12",
+            "scenario_name": "Subscriber_Article_Full_Read_Access",
+            "module": "Articles",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Minor",
+            "confidence": 80,
+            "reason": "Evidence detected by Visual",
+            "execution_time": 85.39,
+            "log_file": "SC_12.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_120_20260812_101512\\SC_12.log",
+            "screenshots": [
+                "screenshots/SC_12/SC_12_Subscriber_Article_page_1.png",
+                "screenshots/SC_12/SC_12_Subscriber_Article_page_2.png",
+                "screenshots/SC_12/SC_12_Subscriber_Article_page_3.png"
+            ],
+            "comparison_images": [
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_12\\SC_12_Subscriber_Article_page.png",
+                "comparison/SC_12/./reference_SC_12_Subscriber_Article_page_1.png",
+                "comparison/SC_12/./actual_SC_12_Subscriber_Article_page_1.png",
+                "comparison/SC_12/./diff_SC_12_Subscriber_Article_page_1.png"
+            ],
+            "sources": [
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "SC_12_Subscriber_Article_page.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                },
+                {
+                    "image": "SC_12_Subscriber_Article_page_1.png",
+                    "similarity": 47.28,
+                    "normalized": false,
+                    "summary": "No genuine UI issues detected in header, navigation, toolbar, icons, buttons, theme, colors, alignment, padding, margins, font, layout, or other static UI elements. All differences are related to dynamic or content-based elements that can be ignored as per the instructions.",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-015",
+            "scenario_id": "SC_13",
+            "scenario_name": "Article Share Functionality",
+            "module": "Articles",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Visual",
+            "execution_time": 136.32,
+            "log_file": "SC_13.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_120_20260812_101512\\SC_13.log",
+            "screenshots": [
+                "screenshots/SC_13/SC_13_share_article.png"
+            ],
+            "comparison_images": [
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_13\\SC_13_copied_successfully.png",
+                "comparison/SC_13/./reference_SC_13_share_article.png",
+                "comparison/SC_13/./actual_SC_13_share_article.png",
+                "comparison/SC_13/./diff_SC_13_share_article.png"
+            ],
+            "sources": [
+                "Run",
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "SC_13_copied_successfully.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                },
+                {
+                    "image": "SC_13_share_article.png",
+                    "similarity": 76.11,
+                    "normalized": false,
+                    "summary": "No genuine UI defects detected. All highlighted differences are due to dynamic content, headlines, images, or expected personalization. Header, toolbar, navigation bar, icons, buttons, theme, alignment, spacing, and layout appear consistent.",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-016",
+            "scenario_id": "SC_14",
+            "scenario_name": "SC 14 Article Font Size Validation",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 107.86,
+            "log_file": "SC_14.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_120_20260812_101512\\SC_14.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-017",
+            "scenario_id": "SC_15",
+            "scenario_name": "SC 15 Podcast Section Subscriber account",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Screenshot AI",
+            "execution_time": 147.74,
+            "log_file": "SC_15.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_120_20260812_101512\\SC_15.log",
+            "screenshots": [
+                "screenshots/SC_15/SC_15_first_Podcast_playing_the_latest.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_00.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_bottom.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_middle_01.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_top_01.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run",
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Podcast section shows a blank placeholder and loading skeletons, indicating content failed to render.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank placeholder in podcast section",
+                        "Podcast content did not load",
+                        "Incomplete rendering"
+                    ]
+                },
+                {
+                    "reason": "Multiple large placeholder containers are visible indicating incomplete content rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Visible loading placeholders",
+                        "Content failed to render",
+                        "App appears stuck in loading state"
+                    ]
+                },
+                {
+                    "reason": "Multiple placeholder elements are visible, indicating that screen content has not fully loaded or rendered.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Placeholder elements visible",
+                        "Content appears missing or stuck in loading state",
+                        "Incomplete rendering of podcast screen"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-018",
+            "scenario_id": "SC_19",
+            "scenario_name": "ad_navigation",
+            "module": "Advertisement",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Screenshot AI, Visual",
+            "execution_time": 235.28,
+            "log_file": "SC_19.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_120_20260812_101512\\SC_19.log",
+            "screenshots": [
+                "screenshots/SC_19/SC_19_Ad_Page_03.png",
+                "screenshots/SC_19/SC_19_Ad_Page_04.png"
+            ],
+            "comparison_images": [
+                "comparison/SC_19/./reference_SC_19_Ad_Page_03.png",
+                "comparison/SC_19/./actual_SC_19_Ad_Page_03.png",
+                "comparison/SC_19/./diff_SC_19_Ad_Page_03.png",
+                "comparison/SC_19/./reference_SC_19_Ad_Page_04.png",
+                "comparison/SC_19/./actual_SC_19_Ad_Page_04.png",
+                "comparison/SC_19/./diff_SC_19_Ad_Page_04.png"
+            ],
+            "sources": [
+                "Screenshot AI",
+                "Visual"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Blank white area where Taboola content should be rendered; indicates an incomplete ad or content rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank white area",
+                        "Empty advertisement placeholder",
+                        "Incomplete Taboola content rendering"
+                    ]
+                }
+            ],
+            "visual_findings": [
+                {
+                    "image": "SC_19_Ad_Page_03.png",
+                    "similarity": 52.47,
+                    "normalized": false,
+                    "summary": "Two critical UI defects detected in the actual screenshot: the main content is missing and the layout is broken.",
+                    "issues": [
+                        {
+                            "severity": "Critical",
+                            "component": "Main Content Area",
+                            "title": "Missing UI Content",
+                            "description": "The actual screenshot is missing all principal UI content including article headers, images, navigation bar, and buttons. Only the app bar and domain name are visible, with the rest of the view being blank.",
+                            "recommendation": "Investigate rendering failures or loading logic for the main content area."
+                        },
+                        {
+                            "severity": "High",
+                            "component": "Layout",
+                            "title": "Broken Layout",
+                            "description": "The layout does not render any of the expected UI elements (toolbar buttons, bottom navigation, icons, or article lists). This indicates either a loading failure or a severe layout/visibility regression.",
+                            "recommendation": "Check view initialization and ensure all UI components are being loaded correctly."
+                        }
+                    ]
+                },
+                {
+                    "image": "SC_19_Ad_Page_04.png",
+                    "similarity": 35.78,
+                    "normalized": false,
+                    "summary": "Three genuine UI issues detected related to header, progress indicator alignment, and toolbar controls.",
+                    "issues": [
+                        {
+                            "severity": "High",
+                            "component": "Header",
+                            "title": "Missing or Incorrect Main Toolbar/Header",
+                            "description": "The main header section with logo, menu, and primary navigation is missing or replaced by a different UI (carousel ad and progress indicator) compared to the reference screenshot.",
+                            "recommendation": "Restore the primary header and navigation bar as per the reference design."
+                        },
+                        {
+                            "severity": "Medium",
+                            "component": "Progress Indicator (Toolbar area)",
+                            "title": "Progress indicator overlaps with header area",
+                            "description": "The progress indicator dots are present and misaligned, overlapping into the header area instead of being correctly positioned under a hero image/banner.",
+                            "recommendation": "Verify the stacking and placement of the progress indicator to prevent overlap with the header."
+                        },
+                        {
+                            "severity": "Medium",
+                            "component": "Bottom Toolbar",
+                            "title": "Toolbar control and subscribe button misplacement",
+                            "description": "Bottom toolbar controls like the back button, AI, font, bookmark, comment, and subscribe button are present in the actual screenshot but not in the reference. They overlap with the advertisement bar section.",
+                            "recommendation": "Ensure bottom controls and advertisement bar do not overlap and match reference layout."
+                        }
+                    ]
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

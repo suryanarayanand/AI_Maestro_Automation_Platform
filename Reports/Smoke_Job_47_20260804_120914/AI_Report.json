@@ -1,0 +1,895 @@
+{
+    "suite": {
+        "total": 9,
+        "passed": 6,
+        "failed": 3,
+        "not_found": 0,
+        "pass_rate": 66.67
+    },
+    "results": [
+        {
+            "id": "SC_82",
+            "module": "Editorial",
+            "name": "Editorial_page_anonymous_account",
+            "status": "PASS",
+            "duration": 110.47,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_47_20260804_120914\\SC_82.log",
+            "screenshots": [
+                "screenshots/SC_82/SC_82_Editorial_Page_Image_for_Taboola_Advertising_Unit.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_01.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_02.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_03.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_04.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_05.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_06.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_07.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_08.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_09.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_10.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_11.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_12.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_13.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_14.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_15.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 15,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "SDK debug string 'unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression' is visible in the UI, which should not be present in production.",
+                    "issues": [
+                        "SDK debug string visible in UI"
+                    ],
+                    "jira_title": "SDK debug string appears in advertisement container",
+                    "jira_description": "The SDK debug string 'unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression' is visible to end users within the advertisement section. This should be hidden in production builds.",
+                    "image": "SC_82_Editorial_Page_Image_for_Taboola_Advertising_Unit.png",
+                    "image_path": "screenshots/SC_82/SC_82_Editorial_Page_Image_for_Taboola_Advertising_Unit.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Debug information ('unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression') is visible above the advertisement.",
+                    "issues": [
+                        "Debug information visible in the UI",
+                        "Ad SDK technical details exposed to user"
+                    ],
+                    "jira_title": "Debug information for ad unit is visible above advertisement",
+                    "jira_description": "The UI shows debug information or technical details related to the ad unit and SDK impression above the advertisement, which should not be displayed to end users.",
+                    "image": "SC_82_Editorial_Page_Subscribed_Account_01.png",
+                    "image_path": "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_01.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement SDK debug information and unit name are visible above the advertisement, which should not appear in production UI.",
+                    "issues": [
+                        "SDK debug text '/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression' visible above advertisement",
+                        "Advertisement unit information is rendered in user-facing UI"
+                    ],
+                    "jira_title": "Advertisement SDK debug information visible in production UI",
+                    "jira_description": "The advertisement container displays SDK debug information and unit identifiers ('/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression'), which should not appear for end users.",
+                    "image": "SC_82_Editorial_Page_Subscribed_Account_02.png",
+                    "image_path": "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_02.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Rendering/debug information is visible above the advertisement.",
+                    "issues": [
+                        "Debug or SDK log text visible above advertisement"
+                    ],
+                    "jira_title": "Debug text visible above advertisement banner",
+                    "jira_description": "A rendering or SDK debug message ('unit:/22390678/TH_Android_Topic__Sticky_A SDK loaded / impression') is displayed above the advertisement container, which should not be visible to end users.",
+                    "image": "SC_82_Editorial_Page_Subscribed_Account_03.png",
+                    "image_path": "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_03.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Ad tech debug information is visibly rendered above the advertisement.",
+                    "issues": [
+                        "SDK debug text 'unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression' is visible above the advertisement"
+                    ],
+                    "jira_title": "Advertisement SDK debug text visible in production UI",
+                    "jira_description": "The advertisement section displays SDK debug information ('unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression') above the banner ad. This is not intended for end users and should not be visible in the release build.",
+                    "image": "SC_82_Editorial_Page_Subscribed_Account_04.png",
+                    "image_path": "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_04.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "MEDIUM",
+                    "reason": "Advertisement container displays internal SDK debug or impression text, indicating a rendering or advertisement integration defect.",
+                    "issues": [
+                        "Advertisement unit displays internal SDK text",
+                        "Debug information visible above advertisement"
+                    ],
+                    "jira_title": "Advertisement area displays internal SDK text",
+                    "jira_description": "The advertisement container shows SDK debug or impression text (e.g., 'unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression') above the actual ad, indicating a rendering or advertising integration defect.",
+                    "image": "SC_82_Editorial_Page_Subscribed_Account_05.png",
+                    "image_path": "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_05.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement tech/debug info ('unit:/22390678/TH_Android_Topic__Sticky__A SDK loaded / impression') is visible above the advertisement banner.",
+                    "issues": [
+                        "Advertisement tech/debug info visible",
+                        "Debug string 'unit:/22390678/TH_Android_Topic__Sticky__A SDK loaded / impression' displayed in production UI"
+                    ],
+                    "jira_title": "Advertisement tech/debug info string visible above ad banner",
+                    "jira_description": "A technical or debug information string ('unit:/22390678/TH_Android_Topic__Sticky__A SDK loaded / impression') is shown above the advertisement banner on the Editorial page. This should not be visible in the production UI as it disrupts the user experience and reveals internal implementation details.",
+                    "image": "SC_82_Editorial_Page_Subscribed_Account_06.png",
+                    "image_path": "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_06.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "MEDIUM",
+                    "reason": "Technical SDK debug information and unit name are visible above the advertisement.",
+                    "issues": [
+                        "SDK debug text (unit name and impression log) visible above ad",
+                        "Internal information exposed in UI"
+                    ],
+                    "jira_title": "SDK debug information visible above advertisement",
+                    "jira_description": "Technical SDK/debug text (unit:/22390678/TH_Android_Topic_Sticky__A SDK loaded/impression) is displayed above the advertisement, exposing internal implementation details to users.",
+                    "image": "SC_82_Editorial_Page_Subscribed_Account_07.png",
+                    "image_path": "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_07.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "MEDIUM",
+                    "reason": "Ad SDK/debug information is visible above the advertisement, which is not expected in production UI.",
+                    "issues": [
+                        "Ad SDK/debug information visible above advertisement"
+                    ],
+                    "jira_title": "Ad SDK/debug information displayed above advertisement",
+                    "jira_description": "Technical/debug information (unit and SDK loaded/impression text) is shown above the advertisement banner on the Editorial screen. This information should not be visible to end users in production.",
+                    "image": "SC_82_Editorial_Page_Subscribed_Account_08.png",
+                    "image_path": "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_08.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement container shows a stuck loading indicator and placeholder text, indicating incomplete rendering.",
+                    "issues": [
+                        "Advertisement loading spinner visible",
+                        "Advertisement placeholder text visible",
+                        "Incomplete ad rendering"
+                    ],
+                    "jira_title": "Advertisement placeholder and loading spinner visible",
+                    "jira_description": "An advertisement container displays a loading spinner and placeholder text, indicating the ad failed to render properly. This results in incomplete UI rendering for advertisements.",
+                    "image": "SC_82_Editorial_Page_Subscribed_Account_09.png",
+                    "image_path": "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_09.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement container is stuck on 'Loading ad...' with technical details visible, indicating an incomplete ad load and UI defect.",
+                    "issues": [
+                        "Advertisement container displaying 'Loading ad...' indefinitely",
+                        "Technical ad unit and status visible to user",
+                        "Incomplete rendering of advertisement"
+                    ],
+                    "jira_title": "Advertisement container stuck on loading with debug info visible",
+                    "jira_description": "An advertisement container displays 'Loading ad...' indefinitely along with technical debug information (unit and status) instead of a user-facing ad. This indicates a rendering defect and exposes backend details to the user.",
+                    "image": "SC_82_Editorial_Page_Subscribed_Account_10.png",
+                    "image_path": "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_10.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Debug information and SDK status message are visible over the advertisement.",
+                    "issues": [
+                        "SDK loaded / impression text over advertisement unit",
+                        "Visible debug or unit info text: 'unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression' is present over advertisement"
+                    ],
+                    "jira_title": "SDK loaded / impression debug info visible on advertisement",
+                    "jira_description": "The screen displays debug or SDK status text ('unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression') over the advertisement, which should not be visible to end users.",
+                    "image": "SC_82_Editorial_Page_Subscribed_Account_11.png",
+                    "image_path": "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_11.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Debug/technical ad unit information is visible to the user.",
+                    "issues": [
+                        "Technical ad unit and status information displayed in UI",
+                        "Debug details ('unit', 'status', 'SDK loaded / impression') should not be visible to end user"
+                    ],
+                    "jira_title": "Technical ad unit debug information visible in UI",
+                    "jira_description": "The application displays ad unit debug information (e.g., 'unit:/22390678/TH_Android_Topic_Bottom_A', 'status: loaded', 'SDK loaded / impression') directly to the user. This information is for debugging and should not appear in production UI. Please hide all technical or debug data from end users.",
+                    "image": "SC_82_Editorial_Page_Subscribed_Account_12.png",
+                    "image_path": "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_12.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and properly rendered. No visible layout, rendering, or advertisement defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_82_Editorial_Page_Subscribed_Account_13.png",
+                    "image_path": "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_13.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Technical ad debugging information (unit, SDK loaded / impression) is visibly rendered inside the advertisement container.",
+                    "issues": [
+                        "Ad unit debug string visible",
+                        "Technical SDK/impression data visible on UI"
+                    ],
+                    "jira_title": "Ad unit technical debug string visible in advertisement container",
+                    "jira_description": "Technical ad debugging information such as the ad unit id and SDK loaded/impression text is visible inside the advertisement area. This information should not be shown to end users.",
+                    "image": "SC_82_Editorial_Page_Subscribed_Account_14.png",
+                    "image_path": "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_14.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Debug or SDK impression message is visible above the advertisement, indicating a rendering or configuration issue.",
+                    "issues": [
+                        "SDK loaded / impression message visible above advertisement",
+                        "Debug/configuration message present in production UI"
+                    ],
+                    "jira_title": "SDK loaded / impression debug message is visible above advertisement",
+                    "jira_description": "A debug or SDK impression message (unit: /22390678/TH_Android_Topic_Sticky_A SDK loaded / impression) is visible above the advertisement banner. This message should not be displayed in the production UI and indicates a rendering or configuration issue.",
+                    "image": "SC_82_Editorial_Page_Subscribed_Account_15.png",
+                    "image_path": "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_15.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_83",
+            "module": "Editorial",
+            "name": "Editorial_page_subscribed_account",
+            "status": "PASS",
+            "duration": 148.17,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_47_20260804_120914\\SC_83.log",
+            "screenshots": [
+                "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_01.png",
+                "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_02.png",
+                "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_03.png",
+                "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_04.png",
+                "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_05.png",
+                "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_06.png",
+                "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_07.png",
+                "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_08.png",
+                "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_09.png",
+                "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_10.png",
+                "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_11.png",
+                "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_12.png",
+                "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_13.png",
+                "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_14.png",
+                "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_15.png"
+            ],
+            "ai_pass": 15,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visible defects in layout, spacing, or text. No overlapping or missing UI.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_83_Editorial_Page_Anonymous_Account_01.png",
+                    "image_path": "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_01.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI elements are present and correctly rendered. No visible layout, text, or rendering defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_83_Editorial_Page_Anonymous_Account_02.png",
+                    "image_path": "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_02.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_83_Editorial_Page_Anonymous_Account_03.png",
+                    "image_path": "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_03.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_83_Editorial_Page_Anonymous_Account_04.png",
+                    "image_path": "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_04.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and layout appears correct.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_83_Editorial_Page_Anonymous_Account_05.png",
+                    "image_path": "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_05.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and layout appears correct with no visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_83_Editorial_Page_Anonymous_Account_06.png",
+                    "image_path": "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_06.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly, with no evidence of missing or broken UI elements.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_83_Editorial_Page_Anonymous_Account_07.png",
+                    "image_path": "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_07.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No layout or rendering defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_83_Editorial_Page_Anonymous_Account_08.png",
+                    "image_path": "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_08.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and properly rendered with no visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_83_Editorial_Page_Anonymous_Account_09.png",
+                    "image_path": "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_09.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and layout is correct.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_83_Editorial_Page_Anonymous_Account_10.png",
+                    "image_path": "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_10.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and rendered correctly. No visible layout, rendering, or text issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_83_Editorial_Page_Anonymous_Account_11.png",
+                    "image_path": "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_11.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and fully rendered with no visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_83_Editorial_Page_Anonymous_Account_12.png",
+                    "image_path": "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_12.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and properly rendered. No evidence of cropped, overlapping, or missing UI elements. Layout appears complete and functional.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_83_Editorial_Page_Anonymous_Account_13.png",
+                    "image_path": "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_13.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_83_Editorial_Page_Anonymous_Account_14.png",
+                    "image_path": "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_14.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and there are no visible layout, rendering, or navigation defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_83_Editorial_Page_Anonymous_Account_15.png",
+                    "image_path": "screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_15.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_84",
+            "module": "Editorial",
+            "name": "Editorial_page_specific_article_anonymous",
+            "status": "PASS",
+            "duration": 216.9,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_47_20260804_120914\\SC_84.log",
+            "screenshots": [
+                "screenshots/SC_84/SC_84_Editorial_Page_Anonymous_Account_01.png",
+                "screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_01.png",
+                "screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_02.png",
+                "screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_03.png",
+                "screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_04.png",
+                "screenshots/SC_84/SC_84_Taboola_Ad_undefined.png"
+            ],
+            "ai_pass": 0,
+            "ai_fail": 6,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement implementation detail text is visible above the advertisement banner.",
+                    "issues": [
+                        "SDK implementation detail 'unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression' is visible above advertisement",
+                        "Advertisement technical/textual overlay is leaking into end user UI"
+                    ],
+                    "jira_title": "Advertisement SDK debug text visible on Editorial page",
+                    "jira_description": "Text related to the advertisement SDK implementation ('unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression') is visible above the advertisement banner, indicating a leaking of technical or debug information into the end user interface. This should be removed from production UI.",
+                    "image": "SC_84_Editorial_Page_Anonymous_Account_01.png",
+                    "image_path": "screenshots/SC_84/SC_84_Editorial_Page_Anonymous_Account_01.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement SDK debug path is visible above advertisement banner.",
+                    "issues": [
+                        "SDK debug path and technical information exposed above advertisement banner"
+                    ],
+                    "jira_title": "Advertisement renders with SDK debug/technical path visible",
+                    "jira_description": "The advertisement section displays the SDK debug path or technical information (unit: /22390678/TH_Android_Article_Sticky_A SDK loaded / impression) above the banner ad. This should not be visible to end users and is a UI defect.",
+                    "image": "SC_84_Editorial_Page_Specific_Article_01.png",
+                    "image_path": "screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_01.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement is visible when paywall is active. Ad should not display behind a paywall/subscriber prompt.",
+                    "issues": [
+                        "Advertisement visible behind paywall",
+                        "Advertisement present when subscriber prompt modal is shown"
+                    ],
+                    "jira_title": "Advertisement visible behind paywall prompt",
+                    "jira_description": "An advertisement is displayed behind the paywall/subscriber prompt. Ads must not appear on screens where the paywall is shown, as this is a premium/subscriber context.",
+                    "image": "SC_84_Editorial_Page_Specific_Article_02.png",
+                    "image_path": "screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_02.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "SDK debug information is visible above the advertisement, indicating an unintended artifact in production UI.",
+                    "issues": [
+                        "SDK debug unit path and status message visible",
+                        "Unintended debug information shown to end user"
+                    ],
+                    "jira_title": "SDK debug information appears above advertisement",
+                    "jira_description": "SDK debug info (unit path and status message) is displayed above the advertisement banner, which should not be visible to end users in production.",
+                    "image": "SC_84_Editorial_Page_Specific_Article_03.png",
+                    "image_path": "screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_03.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Technical ad debug text is visible above advertisement banner.",
+                    "issues": [
+                        "Technical ad debug text ('unit:/22390678/TH_Android_Article_Sticky_A SDK loaded / impression') visible above advertisement banner"
+                    ],
+                    "jira_title": "Technical ad debug text visible in production UI",
+                    "jira_description": "A technical debug line ('unit:/22390678/TH_Android_Article_Sticky_A SDK loaded / impression') is visible above the advertisement banner. This text should not be visible to end users and indicates a release artifact or logging issue.",
+                    "image": "SC_84_Editorial_Page_Specific_Article_04.png",
+                    "image_path": "screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_04.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Ad tech/debug SDK message is shown to the user above the advertisement.",
+                    "issues": [
+                        "Debug or technical ad SDK message visible to user"
+                    ],
+                    "jira_title": "Ad SDK debug message displayed above advertisement",
+                    "jira_description": "A technical/debug ad SDK message (unit:/22390678/TH_Android_Article_Sticky_A SDK loaded/impression) is visible to end users above the advertisement. This should not be shown in production UI.",
+                    "image": "SC_84_Taboola_Ad_undefined.png",
+                    "image_path": "screenshots/SC_84/SC_84_Taboola_Ad_undefined.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_85",
+            "module": "Editorial",
+            "name": "Editorial_page_specific_article_subscribed_account",
+            "status": "PASS",
+            "duration": 242.3,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_47_20260804_120914\\SC_85.log",
+            "screenshots": [
+                "screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_01.png",
+                "screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_02.png",
+                "screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_03.png",
+                "screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_04.png",
+                "screenshots/SC_85/SC_85_Editorial_Page_Subscribed_Account_01.png",
+                "screenshots/SC_85/SC_85_Taboola_Advertisement_Verification.png"
+            ],
+            "ai_pass": 6,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and fully rendered. No visual UI defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_85_Editorial_Page_Specific_Article_01.png",
+                    "image_path": "screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_01.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visible UI defect.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_85_Editorial_Page_Specific_Article_02.png",
+                    "image_path": "screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_02.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present. Layout is correct and completely rendered without visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_85_Editorial_Page_Specific_Article_03.png",
+                    "image_path": "screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_03.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are visible and properly rendered. No obvious layout, rendering, or text issues are present.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_85_Editorial_Page_Specific_Article_04.png",
+                    "image_path": "screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_04.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and fully rendered with no visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_85_Editorial_Page_Subscribed_Account_01.png",
+                    "image_path": "screenshots/SC_85/SC_85_Editorial_Page_Subscribed_Account_01.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered correctly with no visible layout, rendering, or text issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_85_Taboola_Advertisement_Verification.png",
+                    "image_path": "screenshots/SC_85/SC_85_Taboola_Advertisement_Verification.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_86",
+            "module": "Editorial",
+            "name": "Editorial_page_anonymous_light_theme",
+            "status": "PASS",
+            "duration": 307.83,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_47_20260804_120914\\SC_86.log",
+            "screenshots": [
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_01.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_02.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_03.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_04.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_05.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_01.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_02.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_03.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_04.png",
+                "screenshots/SC_86/SC_86_Post_A_Comment_LightTheme.png"
+            ],
+            "ai_pass": 0,
+            "ai_fail": 10,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Technical advertisement debug text is visible above the ad container indicating a rendering or environment issue.",
+                    "issues": [
+                        "Advertisement debug text visible in UI",
+                        "unit:/22390678/TH_Android_Article_Sticky_A SDK loaded / impression message shown to user"
+                    ],
+                    "jira_title": "Advertisement debug information visible on article page",
+                    "jira_description": "Debug or technical information related to the advertisement (unit:/22390678/TH_Android_Article_Sticky_A SDK loaded / impression) is displayed above the advertisement container, which should not be visible in the production UI.",
+                    "image": "SC_86_Editorial_Page_Anonymous_Account_LightTheme_01.png",
+                    "image_path": "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_01.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Debug information from the ad unit (SDK loaded / impression) is visibly overlaid above the advertisement.",
+                    "issues": [
+                        "Debug info visible in live UI",
+                        "unit:/22390678/TH_Android_Article_Sticky_A SDK loaded / impression displayed"
+                    ],
+                    "jira_title": "Debug ad SDK info visible above advertisement",
+                    "jira_description": "The ad container on the article page is showing live debug info or development logging (unit:/22390678/TH_Android_Article_Sticky_A SDK loaded / impression) above the advertisement, which should not be visible to end users.",
+                    "image": "SC_86_Editorial_Page_Anonymous_Account_LightTheme_02.png",
+                    "image_path": "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_02.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement container displays raw SDK load/debug text which should not be visible to users.",
+                    "issues": [
+                        "Advertisement area displays SDK debug text",
+                        "Developer/debug information visible in production UI"
+                    ],
+                    "jira_title": "Advertisement container displays raw SDK debug text",
+                    "jira_description": "The advertisement container shows technical SDK load/debug information (unit:/22390678/TH_Android_Article_Sticky_A SDK loaded / impression) that should not be visible to end users in the production application UI.",
+                    "image": "SC_86_Editorial_Page_Anonymous_Account_LightTheme_03.png",
+                    "image_path": "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_03.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "There is a large blank area under the 'ADVERTISEMENT' label which indicates a missing or empty advertisement container.",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Empty advertisement placeholder"
+                    ],
+                    "jira_title": "Blank advertisement container visible in article",
+                    "jira_description": "A large blank region labeled 'ADVERTISEMENT' is visible in the article, indicating a missing or empty advertisement container that should be filled with ad content.",
+                    "image": "SC_86_Editorial_Page_Anonymous_Account_LightTheme_04.png",
+                    "image_path": "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_04.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement unit debug information (unit and status) is visible to end users.",
+                    "issues": [
+                        "Ad unit debug info is visible",
+                        "unit: /22390678/TH_Android_Article_Mid01_A status: loaded text should not be visible",
+                        "unit: /22390678/TH_Android_Article_bottom01_A status: loaded text should not be visible",
+                        "unit: /22390678/TH_Android_Article_Sticky_A SDK loaded / impression text should not be visible"
+                    ],
+                    "jira_title": "Ad unit debug information displayed on live UI",
+                    "jira_description": "Advertisement unit debug strings (e.g., ad unit path, status, SDK info) are being displayed to end users in multiple locations. These should not be visible in production as they detract from the experience and may leak internal configuration.",
+                    "image": "SC_86_Editorial_Page_Anonymous_Account_LightTheme_05.png",
+                    "image_path": "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_05.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Debug ad unit and status information are visible in the UI.",
+                    "issues": [
+                        "Ad unit and status text (e.g., 'unit: /22390678/TH_Android_Article_Mid01_A status: loaded') are rendered visibly on the screen."
+                    ],
+                    "jira_title": "Debug ad unit and status data visible on Article screen",
+                    "jira_description": "Technical debug or configuration information like 'unit: /22390678/TH_Android_Article_Mid01_A status: loaded' is displayed on the screen, which should not be visible to end users.",
+                    "image": "SC_86_Editorial_Page_Specific_Article_LightTheme_01.png",
+                    "image_path": "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_01.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Raw ad unit and SDK status text is visible above the Related Topics and advertisement, indicating a rendering or integration bug.",
+                    "issues": [
+                        "Raw ad unit and status text displayed to the user",
+                        "SDK loaded / impression debug info shown in live UI"
+                    ],
+                    "jira_title": "Ad unit and SDK status debug text visible in main UI",
+                    "jira_description": "Raw ad unit information and SDK status/debug text are visible above the Related Topics and advertisement sections. This is a rendering/integration issue that exposes backend/debug information directly to end users.",
+                    "image": "SC_86_Editorial_Page_Specific_Article_LightTheme_02.png",
+                    "image_path": "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_02.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement container displays technical SDK/debug information above the ad banner.",
+                    "issues": [
+                        "Advertisement debug information visible",
+                        "SDK loaded/impression text is not user-facing"
+                    ],
+                    "jira_title": "Advertisement SDK debug info is visible in production UI",
+                    "jira_description": "The advertisement container displays technical SDK/debug information (e.g., 'unit: /22390678/TH_Android_Article_Sticky_A SDK loaded / impression') above the actual ad banner, which should not be visible to the user.",
+                    "image": "SC_86_Editorial_Page_Specific_Article_LightTheme_03.png",
+                    "image_path": "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_03.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Blank advertisement containers are visible above and below the rendered advertisement.",
+                    "issues": [
+                        "Empty advertisement placeholder above ad",
+                        "Empty advertisement placeholder below ad"
+                    ],
+                    "jira_title": "Blank advertisement containers displayed",
+                    "jira_description": "There are one or more blank advertisement placeholders displayed above and below the active advertisement banner. This indicates that the ad slot is not being filled correctly, leading to unnecessary blank regions in the content.",
+                    "image": "SC_86_Editorial_Page_Specific_Article_LightTheme_04.png",
+                    "image_path": "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_04.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Visible debug or internal ad unit and status text shown to users.",
+                    "issues": [
+                        "Ad unit path and status (e.g. 'unit:/22390678/TH_Android_Article_Mid01_A status: loaded') visible in production UI",
+                        "SDK loaded / impression debug text visible",
+                        "Developer/internal information leaking into user-facing UI"
+                    ],
+                    "jira_title": "Internal ad unit and status text visible in production UI",
+                    "jira_description": "Ad unit identifiers and SDK status (e.g. 'unit:/22390678/TH_Android_Article_Mid01_A status: loaded' and 'SDK loaded / impression') are shown in the user interface, which is a production/cosmetic defect. This debug or internal information should not be visible to users.",
+                    "image": "SC_86_Post_A_Comment_LightTheme.png",
+                    "image_path": "screenshots/SC_86/SC_86_Post_A_Comment_LightTheme.png"
+                }
+            ]
+        },
+        {
+            "id": "GEN_001",
+            "module": "AI Generated",
+            "name": "Validated bottom navigation",
+            "status": "FAIL",
+            "duration": 38.56,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_47_20260804_120914\\GEN_001.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "GEN_002",
+            "module": "AI Generated",
+            "name": "Validated hamburger sections",
+            "status": "FAIL",
+            "duration": 37.54,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_47_20260804_120914\\GEN_002.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "GEN_003",
+            "module": "AI Generated",
+            "name": "Validated content section labels",
+            "status": "FAIL",
+            "duration": 38.13,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_47_20260804_120914\\GEN_003.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "TH_1181",
+            "module": "AI Generated",
+            "name": "Active Tab Reset / Scroll-to-Top",
+            "status": "PASS",
+            "duration": 63.94,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_47_20260804_120914\\TH_1181.log",
+            "screenshots": [
+                "screenshots/TH_1181/TH_1181_reset_top.png",
+                "screenshots/TH_1181/TH_1181_scrolled.png"
+            ],
+            "ai_pass": 0,
+            "ai_fail": 2,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement container is displaying internal debug/logging text (unit path and SDK loaded message) to the user.",
+                    "issues": [
+                        "Advertisement section is displaying internal debug/log text",
+                        "Visible 'unit:/22390678/TH_Android_HP_Sticky_A SDK loaded / impression' message above advertisement"
+                    ],
+                    "jira_title": "Advertisement debug/log text visible above ad banner",
+                    "jira_description": "The advertisement section contains internal debug/log messages ('unit:/22390678/TH_Android_HP_Sticky_A SDK loaded / impression'), which are visible to the end user. Only the actual advertisement content should be shown in this space.",
+                    "image": "TH_1181_reset_top.png",
+                    "image_path": "screenshots/TH_1181/TH_1181_reset_top.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement container displays debug or SDK log information above the ad, which should not be visible to users.",
+                    "issues": [
+                        "Debug/SDK information visible in advertisement container"
+                    ],
+                    "jira_title": "Debug/SDK information visible above advertisement",
+                    "jira_description": "Debug or SDK log data ('unit:/22390678/TH_Android_HP_Sticky_A SDK loaded / impression') is shown above the advertisement. This is a user-facing UI defect and should not be visible in production.",
+                    "image": "TH_1181_scrolled.png",
+                    "image_path": "screenshots/TH_1181/TH_1181_scrolled.png"
+                }
+            ]
+        }
+    ]
+}

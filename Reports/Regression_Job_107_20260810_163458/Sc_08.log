@@ -1,0 +1,19 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow Sc_08_Verify_Account_Subscription_details
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Run ../Common/LOGIN.yaml...
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "Email" is visible... COMPLETED
+  Tap on "Email"... COMPLETED
+  Input text product.testing@thehindu.co.in...
+
+===== STDERR =====
+

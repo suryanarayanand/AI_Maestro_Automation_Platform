@@ -1,0 +1,142 @@
+appId: com.mobstac.thehindu
+tags:
+  - bookmark
+---
+# Bookmark Remove Validation (SC-50).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+- takeScreenshot: "Screenshots/SC_50/SC_50_After_Login"
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible:
+      text: "Skip"
+    timeout: 10000
+- tapOn: "Skip"
+
+# Navigate to Search
+- tapOn:
+    point: 2%,5%
+- extendedWaitUntil:
+    visible: "Search"
+    timeout: 15000
+- tapOn: "Search"
+- inputText: "BJP objects"
+- pressKey: enter
+- assertVisible: "Sort by : "
+- tapOn: "newest"
+- tapOn: "relevance"
+
+# Open Search Result
+- assertVisible: "As it happened | Narendra Modi government defeats no-confidence motion"
+- tapOn: "As it happened | Narendra Modi government defeats no-confidence motion"
+
+# Close Summary Popup
+- runFlow:
+    when:
+      visible:
+        text: "Summary"
+    commands:
+      - back
+
+# Article Validation
+- waitForAnimationToEnd
+
+# Bookmark Article
+- runFlow:
+    when:
+      visible:
+        text: "Remove bookmark"
+    commands:
+      - tapOn: "Remove bookmark"
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      visible:
+        text: "Bookmark"
+    commands:
+      - tapOn: "Bookmark"
+
+# Close Promotional Popup
+- runFlow:
+    when:
+      visible:
+        text: "Dear Reader, this event is free for you to attend."
+    commands:
+      - back
+
+# Verify Bookmark Success
+- runFlow:
+    when:
+      visible:
+        text: "success"
+    commands:
+      - takeScreenshot: "Screenshots/SC_50/SC_50_Bookmark_Success"
+- takeScreenshot: "Screenshots/SC_50/SC_50_Bookmark_Selected"
+
+# - back
+# - back
+# - back
+# - back
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Verify Bookmarks Page
+- tapOn: "Account"
+- extendedWaitUntil:
+    visible: "Bookmarks"
+    timeout: 15000
+- tapOn: "Bookmarks"
+- assertVisible: "As it happened | Narendra Modi government defeats no-confidence motion [read]"
+- takeScreenshot: "Screenshots/SC_50/SC_50_Bookmark_In_Bookmarks_Page"
+- tapOn:
+    point: 62%,14%
+- extendedWaitUntil:
+    visible: ""
+    timeout: 15000
+
+# Remove Bookmark
+- runFlow:
+    when:
+      visible:
+        text: "Remove bookmark"
+    commands:
+      - tapOn: "Remove bookmark"
+
+# Verify Bookmark Removal Success
+- runFlow:
+    when:
+      visible:
+        text: "success"
+    commands:
+      - takeScreenshot: "Screenshots/SC_50/SC_50_Bookmark_Removed_Success"
+- scroll
+
+# Navigate Back
+- back
+
+# - stopApp
+# Relaunch the App Because Navigating Back Causes the App to Crash
+- launchApp
+
+# Verify Bookmarks Page
+- tapOn: "Account"
+- extendedWaitUntil:
+    visible: "Bookmarks"
+    timeout: 15000
+- tapOn: "Bookmarks"
+- swipe:
+    direction: DOWN
+- assertNotVisible: "As it happened | Narendra Modi government defeats no-confidence motion"
+- takeScreenshot: "Screenshots/SC_50/SC_50_Bookmark_Removed"
+
+# Close Application
+- killApp

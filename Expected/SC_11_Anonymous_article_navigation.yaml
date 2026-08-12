@@ -1,0 +1,42 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - article
+  - navigation
+---
+# Anonymous article navigation (SC-11).
+# Launch App
+- launchApp:
+    clearState: true
+
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Open Home Article
+- waitForAnimationToEnd
+- tapOn:
+    point: 64%,27%
+- waitForAnimationToEnd
+
+# Home Article Validation
+- takeScreenshot: "Screenshots/SC_11/Sc_011_article00"
+- retry:
+    maxRetries: 5
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_11/Sc_011_article01"
+
+# Navigate Back
+- swipe:
+    direction: LEFT
+
+# Close Application
+- killApp

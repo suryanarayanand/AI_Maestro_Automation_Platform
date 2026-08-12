@@ -1,0 +1,8 @@
+appId: com.mobstac.thehindu
+tags:
+  - account
+  - paywall
+---
+# Paywall Verification subsscribedAccount (SC_Paywall_Verification_subsscribedAccount.yaml).
+- launchApp:
+    clearState: true

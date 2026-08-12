@@ -1,0 +1,123 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - light_theme
+  - editorial
+  - theme
+---
+# Editorial Page anonymous light theme (SC-86).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "SUBSCRIBE"
+    timeout: 15000
+
+# Change to Light Theme
+- extendedWaitUntil:
+    visible: "Account"
+    timeout: 15000
+- tapOn: "Account"
+- extendedWaitUntil:
+    visible: "Appearance"
+    timeout: 15000
+- tapOn: "Appearance"
+- assertVisible: "Light\nMode"
+- tapOn: "Light\nMode"
+- back
+
+- back 
+
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Navigate to Editorial Section
+
+- extendedWaitUntil:
+    visible: "SUBSCRIBE"
+    timeout: 15000
+- extendedWaitUntil:
+    visible: "Editorial"
+    timeout: 15000
+- tapOn: "Editorial"
+
+# Open Editorial Article
+- tapOn:
+    point: 50%,50%
+
+
+
+# Verify closing Summary
+- runFlow:
+    when:
+      visible:
+        text: "Summary"
+    commands:
+      - tapOn: "Close sheet"
+
+
+# Editorial Page Validation
+
+# Verify Article Actions
+- assertVisible:
+    text: "Text size"
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+- waitForAnimationToEnd
+# - assertVisible:
+#     text: "Listen to article"
+
+- takeScreenshot: "Screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_05"
+
+
+- takeScreenshot: "Screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_04"
+- scroll
+
+
+
+# Navigate to Comments Section
+- repeat:
+    times: 20
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Post a Comment Section
+- repeat:
+    times: 20
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Post a comment"
+          commands:
+            - takeScreenshot: "Screenshots/SC_86/SC_86_Post_A_Comment_LightTheme"
+      - scroll
+
+

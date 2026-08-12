@@ -1,0 +1,192 @@
+{
+    "suite": "Regression",
+    "execution_time": 682.32,
+    "summary": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "critical": 2,
+        "major": 0,
+        "minor": 2
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.811",
+            "version_code": "577"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Automated execution of all Maestro scenarios passed functionally; however, major visual regressions were detected by Screenshot AI. Two scenarios (COMPLEX_004 and TH_5818) display high-severity visual errors where large portions of the app content are missing or blank, suggesting rendering issues not caught by functional checks. Additionally, persistent low-severity typographical errors ('Sudoko', 'coumns') were observed in the UI across multiple scenarios. No evidence of functional failures was observed, but the visual defects may impact user experience.",
+        "release_recommendation": "Do not release. Address critical visual rendering defects before proceeding, as these could severely impact users despite passing functional tests. Low-priority text issues should be scheduled for correction in a subsequent patch.",
+        "top_risks": [
+            "Critical app content missing or blank due to rendering failure",
+            "Major visible blank UI regions in flows COMPLEX_004 and TH_5818",
+            "Persistent spelling/typo errors reduce app quality perception"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "COMPLEX_002",
+            "scenario_name": "COMPLEX 002",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Minor",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 85.81,
+            "log_file": "COMPLEX_002.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_101_20260810_122126\\COMPLEX_002.log",
+            "screenshots": [
+                "screenshots/COMPLEX_002/COMPLEX_002_games_page_sudoku.png",
+                "screenshots/COMPLEX_002/COMPLEX_002_sudoku_landing_page.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "The word 'Sudoku' is misspelled as 'Sudoko' in the header. There is also a typo in the description: 'row,coumns' should be 'rows, columns'.",
+                    "severity": "LOW",
+                    "issues": [
+                        "Misspelled 'Sudoku' in the header",
+                        "Typo in description: 'row,coumns' should be 'rows, columns'"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "COMPLEX_004",
+            "scenario_name": "COMPLEX 004",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 72.96,
+            "log_file": "COMPLEX_004.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_101_20260810_122126\\COMPLEX_004.log",
+            "screenshots": [
+                "screenshots/COMPLEX_004/COMPLEX_004_easy_down_destination.png",
+                "screenshots/COMPLEX_004/COMPLEX_004_scroll_down_and_games_catalogue.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Large blank white region indicates missing or incomplete content rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank white area inside application",
+                        "Missing application content",
+                        "No visible UI components rendered"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "TH_5634",
+            "scenario_name": "TH 5634",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Minor",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 77.23,
+            "log_file": "TH_5634.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_101_20260810_122126\\TH_5634.log",
+            "screenshots": [
+                "screenshots/TH_5634/TH_5634_games_screen_back_navigation.png",
+                "screenshots/TH_5634/TH_5634_sudoku_landing_page.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Typographical error visible in the word 'Sudoko' instead of 'Sudoku' and 'coumns' instead of 'columns'. This is a UI text issue.",
+                    "severity": "LOW",
+                    "issues": [
+                        "Typographical error 'Sudoko' instead of 'Sudoku'",
+                        "Typographical error 'coumns' instead of 'columns'"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-004",
+            "scenario_id": "TH_5818",
+            "scenario_name": "TH 5818",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 74.82,
+            "log_file": "TH_5818.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_101_20260810_122126\\TH_5818.log",
+            "screenshots": [
+                "screenshots/TH_5818/TH_5818_easy_down_game_listing.png",
+                "screenshots/TH_5818/TH_5818_easy_down_post_tap_state.png",
+                "screenshots/TH_5818/TH_5818_games_page_back_navigation.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Screen is almost entirely blank with only a status icon and points visible. Application content is missing, indicating incomplete rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Application content missing",
+                        "Large blank region replaces expected UI elements",
+                        "Incomplete screen rendering"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

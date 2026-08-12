@@ -1,0 +1,738 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Visual Regression Report</title>
+
+<style>
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+body{
+    font-family:Segoe UI,Arial,sans-serif;
+    background:#eef3f8;
+    margin:30px;
+    color:#222;
+}
+
+h1{
+    color:#154c79;
+    margin-bottom:8px;
+}
+
+h2{
+    color:#1f4e79;
+}
+
+h3{
+    color:#285f8f;
+}
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.summary{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:25px;
+    margin-bottom:40px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.card h2{
+    margin-top:15px;
+    font-size:42px;
+    color:#154c79;
+    font-weight:700;
+}
+
+.card h3{
+    color:#777;
+    font-size:18px;
+    margin:0;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-pass{
+    background:#28a745;
+    color:white;
+    padding:7px 16px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.status-fail{
+    background:#dc3545;
+    color:white;
+    padding:7px 16px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.status-review{
+    background:#ff9800;
+    color:white;
+    padding:7px 16px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.status-notfound{
+    background:#6c757d;
+    color:white;
+    padding:7px 16px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+/* =====================================================
+   RESULT CARD
+===================================================== */
+
+.result-card{
+    background:white;
+    margin-top:35px;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+/* =====================================================
+   INFO GRID
+===================================================== */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+    margin-top:20px;
+}
+
+.info{
+    background:#f7f9fc;
+    border-radius:10px;
+    padding:15px;
+}
+
+/* =====================================================
+   AI
+===================================================== */
+
+.ai-card{
+    margin-top:25px;
+    padding:20px;
+    background:#f4f9ff;
+    border-left:6px solid #0078d4;
+    border-radius:10px;
+}
+
+.ai-summary{
+    margin-top:15px;
+    line-height:1.7;
+}
+
+/* =====================================================
+   ISSUE CARD
+===================================================== */
+
+.issue{
+    margin-top:15px;
+    padding:18px;
+    background:white;
+    border-left:6px solid #dc3545;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.issue:hover{
+    transform:translateY(-2px);
+    transition:.2s;
+}
+
+/* =====================================================
+   IMAGES
+===================================================== */
+
+.images{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:25px;
+}
+
+.image-box{
+    text-align:center;
+}
+
+.image-box img{
+    width:100%;
+    height:auto;
+    border-radius:10px;
+    border:2px solid #ddd;
+    cursor:pointer;
+    transition:.25s;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.image-box img:hover{
+    transform:scale(1.02);
+}
+
+hr{
+    border:none;
+    height:1px;
+    background:#d9d9d9;
+    margin:25px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th{
+    background:#154c79;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f5f5f5;
+}
+
+/* =====================================================
+   LIGHTBOX
+===================================================== */
+
+#lightbox{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.9);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+#lightbox img{
+    max-width:92%;
+    max-height:92%;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    margin-top:50px;
+    text-align:center;
+    color:#777;
+}
+
+</style>
+
+
+</head>
+
+<body>
+
+<h1>Visual Regression Report</h1>
+
+<p style="color:#666;font-size:18px;">
+AI Powered Visual Regression Dashboard
+</p>
+
+<div class="info-grid">
+<div class="info"><strong>Reference</strong><br>Production reference | Google | Pixel 9 Pro | Android 16 | App 2501.20.802 | Physical size: 960x2142 | Physical density: 360</div>
+<div class="info"><strong>Actual</strong><br>Internal test actual | samsung | SM-E066B | Android 16 | App 2501.20.813 | Physical size: 720x1600 | Physical density: 300</div>
+</div>
+
+<div class="summary">
+
+<div class="card">
+<h3>Total</h3>
+<h2>5</h2>
+</div>
+
+<div class="card">
+<h3>Passed</h3>
+<h2 style="color:green">4</h2>
+</div>
+
+<div class="card">
+<h3>Failed</h3>
+<h2 style="color:red">1</h2>
+</div>
+
+<div class="card">
+<h3>Pass Rate</h3>
+<h2>80.0%</h2>
+</div>
+
+</div>
+
+<h2>Comparison Details</h2>
+
+<h2>SC_21</h2>
+
+<h2>SC_22</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> SC_22_Account_Settings_Page.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-pass">
+PASS
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 99.55%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 14</p>
+
+<p><strong>Image Size :</strong> Reference 720x1600 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>PASS</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No genuine UI defects detected. All visual differences are limited to the status bar and can be ignored as per instructions.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/SC_22/./reference_SC_22_Account_Settings_Page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/SC_22/./actual_SC_22_Account_Settings_Page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/SC_22/./diff_SC_22_Account_Settings_Page.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> SC_22_Appearance.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-pass">
+PASS
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 99.55%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 14</p>
+
+<p><strong>Image Size :</strong> Reference 720x1600 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>PASS</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No genuine UI defects detected. All critical UI components are visually consistent.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/SC_22/./reference_SC_22_Appearance.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/SC_22/./actual_SC_22_Appearance.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/SC_22/./diff_SC_22_Appearance.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> SC_22_Appearance_Dark_Theme.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-pass">
+PASS
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 99.53%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 11</p>
+
+<p><strong>Image Size :</strong> Reference 720x1600 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>PASS</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No genuine UI defects detected. All visual differences are related to device status bar content, which is to be ignored as per instructions.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/SC_22/./reference_SC_22_Appearance_Dark_Theme.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/SC_22/./actual_SC_22_Appearance_Dark_Theme.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/SC_22/./diff_SC_22_Appearance_Dark_Theme.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> SC_22_Appearance_Dark_Theme_Home_Page.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 29.33%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 15</p>
+
+<p><strong>Image Size :</strong> Reference 720x1600 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>FAIL</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+2
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+Two genuine UI issues detected: main content not rendered (skeleton UI shown) and possible misalignment in Advertisement label.
+</p>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Main content not rendered</h4>
+
+<p>
+<b>Severity :</b>
+Critical
+</p>
+
+<p>
+<b>Component :</b>
+Main Content Area
+</p>
+
+<p>
+<b>Description :</b><br>
+The Home feed area displays only the skeleton loader UI instead of actual news articles, images, and headlines.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Investigate the data/content loading logic. Ensure articles and actual content are loaded and rendered.
+</p>
+
+</div>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Possible Advertisement label misalignment</h4>
+
+<p>
+<b>Severity :</b>
+Low
+</p>
+
+<p>
+<b>Component :</b>
+Advertisement Label
+</p>
+
+<p>
+<b>Description :</b><br>
+The 'ADVERTISEMENT' label below the content feed appears to have a slight vertical misalignment or overlap compared to the reference.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Verify vertical alignment, spacing, and ensure proper padding/margin is present as per design specs.
+</p>
+
+</div>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/SC_22/./reference_SC_22_Appearance_Dark_Theme_Home_Page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/SC_22/./actual_SC_22_Appearance_Dark_Theme_Home_Page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/SC_22/./diff_SC_22_Appearance_Dark_Theme_Home_Page.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> SC_22_Appearance_Light_Theme.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-pass">
+PASS
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 99.55%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 14</p>
+
+<p><strong>Image Size :</strong> Reference 720x1600 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>PASS</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No genuine UI issues detected. All visual differences are limited to dynamic status bar elements, which are expected and not relevant to UI regression.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/SC_22/./reference_SC_22_Appearance_Light_Theme.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/SC_22/./actual_SC_22_Appearance_Light_Theme.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/SC_22/./diff_SC_22_Appearance_Light_Theme.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>SC_23</h2>
+
+<h2>SC_23</h2>
+
+<div id="lightbox" onclick="closeImage()">
+    <img id="lightbox-image">
+</div>
+
+<div class="footer">
+Generated by Automation Framework - Visual Regression
+</div>
+
+<script>
+
+function openImage(src){
+
+    document.getElementById("lightbox-image").src = src;
+    document.getElementById("lightbox").style.display = "flex";
+
+}
+
+function closeImage(){
+
+    document.getElementById("lightbox").style.display = "none";
+
+}
+
+</script>
+
+</body>
+
+</html>

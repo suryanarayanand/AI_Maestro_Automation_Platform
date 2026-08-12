@@ -1,0 +1,97 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - editorial
+---
+# Validated-locator smoke copy; source scenario is unchanged.
+# EditorialPage Anonymous acc (SC-82).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- assertVisible: "SUBSCRIBE"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Navigate to Editorial Section
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 15000
+- assertVisible:
+    id: "screen_home"
+- extendedWaitUntil:
+    visible: "Editorial"
+    timeout: 15000
+- tapOn:
+    text: "Editorial"
+# Editorial Page Validation
+- takeScreenshot: "Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_05"
+- scroll
+- takeScreenshot: "Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_06"
+- scroll
+- takeScreenshot: "Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_07"
+- scroll
+- takeScreenshot: "Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_08"
+- runFlow:
+    when:
+      visible:
+        text: "SHOW MORE"
+    commands:
+      - tapOn: "SHOW MORE"
+- scroll
+- takeScreenshot: "Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_09"
+- scroll
+- takeScreenshot: "Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_10"
+- runFlow:
+    when:
+      visible:
+        text: "SHOW MORE"
+    commands:
+      - tapOn: "SHOW MORE"
+- scroll
+- takeScreenshot: "Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_11"
+- scroll
+- takeScreenshot: "Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_12"
+- scroll
+- takeScreenshot: "Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_13"
+# Verify AD check Summary
+- runFlow:
+    when:
+      visible: 
+        text: "Image for Taboola Advertising Unit"
+    commands:
+      - takeScreenshot: "Screenshots/SC_82/SC_82_Editorial_Page_Image_for_Taboola_Advertising_Unit"
+- scroll
+
+# Verify AI Summary
+- runFlow:
+    when:
+      visible:
+        text: "AI summary"
+    commands:
+      - takeScreenshot: "Screenshots/SC_82/SC_82_Editorial_Page_AI_Summary"
+- scroll
+- takeScreenshot: "Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_14"
+- scroll
+- takeScreenshot: "Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_15"
+- runFlow:
+    when:
+      visible:
+        text: "SHOW MORE"
+    commands:
+      - tapOn: "SHOW MORE"

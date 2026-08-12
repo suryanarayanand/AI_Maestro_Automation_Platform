@@ -1,0 +1,29 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_GAMES.yaml"
+
+- assertVisible:
+    id: "screen_games"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/COMPLEX_004_scroll_down_and_games_catalogue"
+
+- assertVisible:
+    text: "Easy Down"
+
+- tapOn:
+    text: "Easy Down"
+
+- takeScreenshot: "Screenshots/Generated/COMPLEX_004_easy_down_destination"
+
+- back
+
+- assertVisible:
+    id: "screen_games"

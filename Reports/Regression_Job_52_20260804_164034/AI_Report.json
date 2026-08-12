@@ -1,0 +1,66 @@
+{
+    "suite": {
+        "total": 2,
+        "passed": 0,
+        "failed": 1,
+        "not_found": 0,
+        "pass_rate": 0.0
+    },
+    "results": [
+        {
+            "id": "SC_12",
+            "module": "Article",
+            "name": "Subscriber_Article_Full_Read_Access",
+            "status": "FAIL",
+            "duration": 144.64,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_52_20260804_164034\\SC_12.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "SC_16",
+            "module": "Unassigned",
+            "name": "SC 16 login with appleid",
+            "status": "CANCELLED",
+            "duration": 41.3,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_52_20260804_164034\\SC_16.log",
+            "screenshots": [
+                "screenshots/SC_16/SC_16_Apple_signin_page.png",
+                "screenshots/SC_16/SC_16_signin_error_via_AppleID.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components of the login screen are present and correctly rendered. The white space below is valid as content has ended.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_16_Apple_signin_page.png",
+                    "image_path": "screenshots/SC_16/SC_16_Apple_signin_page.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Error state displayed with no guidance or actionable UI provided; large blank area and no navigation or recovery options.",
+                    "issues": [
+                        "No actionable button or navigation after error message",
+                        "Unexpected large blank area due to missing recovery UI"
+                    ],
+                    "jira_title": "Error screen lacks user guidance and recovery UI",
+                    "jira_description": "The error screen displays 'invalid_request' with no actionable UI such as a back/home button or instructions for the user, leaving a large blank space below the error message. User has no way to recover or navigate away from this error screen.",
+                    "image": "SC_16_signin_error_via_AppleID.png",
+                    "image_path": "screenshots/SC_16/SC_16_signin_error_via_AppleID.png"
+                }
+            ]
+        }
+    ]
+}

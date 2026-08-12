@@ -1,0 +1,32 @@
+appId: com.mobstac.thehindu
+tags:
+  - mobile
+  - games
+  - sudoku
+  - landing-page
+  - navigation
+  - regression
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_GAMES.yaml"
+
+- assertVisible:
+    id: "screen_games"
+
+- assertVisible:
+    text: "Sudoku"
+
+- tapOn:
+    text: "Sudoku"
+
+- assertVisible:
+    text: "Sudoku"
+
+- takeScreenshot: "Screenshots/Generated/TH_5634_sudoku_landing_page"
+
+- back
+
+- assertVisible:
+    id: "screen_games"
+
+- takeScreenshot: "Screenshots/Generated/TH_5634_games_screen_back_navigation"

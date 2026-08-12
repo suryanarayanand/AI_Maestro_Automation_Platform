@@ -1,0 +1,15 @@
+YAML GENERATION PILOT - 10 CASES
+========================================
+Input: D:\AI_Maestro_Automation_Platform\Uploads\YAML_Generation_Pilot_10_Cases.xlsx
+Existing YAML files were not modified.
+
+SC_02: DIFFERENT | diff lines=134 | generated=SC_02_generated.yaml | existing=SC_02_Verify_Home_Trending_page_for_subscriber.yaml
+SC_03: DIFFERENT | diff lines=118 | generated=SC_03_generated.yaml | existing=SC_03_Verify_Ads_Taboola_for_anonymous_user.yaml
+SC_05: DIFFERENT | diff lines=155 | generated=SC_05_generated.yaml | existing=SC_05_Premium_access_for_anonymous_user.yaml
+SC_11: DIFFERENT | diff lines=55 | generated=SC_11_generated.yaml | existing=SC_11_Anonymous_article_navigation.yaml
+SC_22: DIFFERENT | diff lines=70 | generated=SC_22_generated.yaml | existing=SC_22_Appearance_theme_validation.yaml
+SC_26: DIFFERENT | diff lines=53 | generated=SC_26_generated.yaml | existing=SC_26_Anonymous_E-Book_restriction.yaml
+SC_28: DIFFERENT | diff lines=62 | generated=SC_28_generated.yaml | existing=SC_28_Anonymous_Games_validation.yaml
+SC_29: DIFFERENT | diff lines=764 | generated=SC_29_generated.yaml | existing=SC_29_Category_navigation_anonymous.yaml
+SC_36: DIFFERENT | diff lines=94 | generated=SC_36_generated.yaml | existing=SC_36_RapidSwitchingTaps_on_homePage.yaml
+SC_46: DIFFERENT | diff lines=91 | generated=SC_46_generated.yaml | existing=SC_46_Trending_page_verification.yaml

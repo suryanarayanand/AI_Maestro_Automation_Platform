@@ -1,0 +1,39 @@
+appId: com.mobstac.thehindu
+tags:
+  - mobile
+  - games
+  - easy-down
+  - listing
+  - navigation
+  - regression
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_GAMES.yaml"
+
+- assertVisible:
+    id: "screen_games"
+
+- scrollUntilVisible:
+    element:
+      text: "Easy Down"
+    timeout: 20000
+
+- assertVisible:
+    text: "Easy Down"
+
+- takeScreenshot: "Screenshots/Generated/TH_5818_easy_down_game_listing"
+
+- tapOn:
+    text: "Easy Down"
+
+- takeScreenshot: "Screenshots/Generated/TH_5818_easy_down_post_tap_state"
+
+- back
+
+- assertVisible:
+    id: "screen_games"
+
+- assertVisible:
+    text: "Easy Down"
+
+- takeScreenshot: "Screenshots/Generated/TH_5818_games_page_back_navigation"

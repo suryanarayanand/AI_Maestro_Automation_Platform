@@ -1,0 +1,55 @@
+appId: com.mobstac.thehindu
+tags:
+  - auth
+  - persistence
+---
+# Login persistance (SC-41).
+# Launch App
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd:
+    timeout: 8000
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Verify Login Persistence After App Relaunch
+- stopApp
+- launchApp
+
+# Verify Logged-In Account
+- waitForAnimationToEnd:
+    timeout: 45000
+- takeScreenshot: "Screenshots/SC_41/SC_41_App_Relaunched"
+- extendedWaitUntil:
+    visible:
+      text: "Home"
+    timeout: 10000
+- extendedWaitUntil:
+    visible:
+      text: "Account"
+    timeout: 10000
+- tapOn: "Account"
+- assertVisible: "Account"
+- tapOn: "Account"
+- waitForAnimationToEnd:
+    timeout: 45000
+- waitForAnimationToEnd:
+    timeout: 1500
+- takeScreenshot: "Screenshots/SC_41/SC_41_Account_Page"
+- assertVisible: "product.testing@thehindu.co.in"
+
+# Navigate Back
+- back
+
+# Close Application
+- killApp

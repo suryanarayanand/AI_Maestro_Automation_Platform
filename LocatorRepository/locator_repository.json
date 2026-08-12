@@ -1,0 +1,3158 @@
+[
+    {
+        "name": "android:id/content",
+        "locator": {
+            "type": "id",
+            "value": "android:id/content",
+            "priority": 1
+        },
+        "class": "android.widget.FrameLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,0][720,1600]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "article_card",
+        "locator": {
+            "type": "id",
+            "value": "article_card",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[41,289][652,1422]",
+        "sources": [
+            "trending_top_20260731_143756.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "aw0",
+        "locator": {
+            "type": "id",
+            "value": "aw0",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[60,1337][661,1431]",
+        "sources": [
+            "home_top_20260731_143115.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/battery",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/battery",
+            "priority": 1
+        },
+        "class": "android.widget.LinearLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[626,21][690,45]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/clock",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/clock",
+            "priority": 1
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[30,11][86,56]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/container",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/container",
+            "priority": 1
+        },
+        "class": "android.widget.FrameLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,0][720,64]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/left_clock_container",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/left_clock_container",
+            "priority": 1
+        },
+        "class": "android.widget.LinearLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[30,11][86,56]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/mobile_combo",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/mobile_combo",
+            "priority": 1
+        },
+        "class": "android.widget.FrameLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[596,20][620,46]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/mobile_group",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/mobile_group",
+            "priority": 1
+        },
+        "class": "android.widget.LinearLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[596,20][620,46]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/mobile_signal",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/mobile_signal",
+            "priority": 1
+        },
+        "class": "android.widget.ImageView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[596,20][620,46]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/notification_icon_area",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/notification_icon_area",
+            "priority": 1
+        },
+        "class": "android.widget.FrameLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[94,11][218,56]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/notification_icon_area_inner",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/notification_icon_area_inner",
+            "priority": 1
+        },
+        "class": "android.widget.LinearLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[94,11][218,56]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/notificationIcons",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/notificationIcons",
+            "priority": 1
+        },
+        "class": "android.view.ViewGroup",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[94,11][218,56]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/samsung_notification_indicator_container",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/samsung_notification_indicator_container",
+            "priority": 1
+        },
+        "class": "android.widget.LinearLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[94,11][320,56]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/status_bar",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/status_bar",
+            "priority": 1
+        },
+        "class": "android.widget.FrameLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,0][720,64]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/status_bar_container",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/status_bar_container",
+            "priority": 1
+        },
+        "class": "android.widget.FrameLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,0][720,64]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/status_bar_contents",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/status_bar_contents",
+            "priority": 1
+        },
+        "class": "android.widget.RelativeLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,11][720,56]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/status_bar_end_side_content",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/status_bar_end_side_content",
+            "priority": 1
+        },
+        "class": "android.widget.LinearLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[554,11][690,56]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/status_bar_launch_animation_container",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/status_bar_launch_animation_container",
+            "priority": 1
+        },
+        "class": "android.widget.FrameLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,0][720,64]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/status_bar_left_container",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/status_bar_left_container",
+            "priority": 1
+        },
+        "class": "android.widget.FrameLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[30,11][320,56]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/status_bar_start_side_content",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/status_bar_start_side_content",
+            "priority": 1
+        },
+        "class": "android.widget.FrameLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[30,11][320,56]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/status_bar_start_side_except_heads_up",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/status_bar_start_side_except_heads_up",
+            "priority": 1
+        },
+        "class": "android.widget.LinearLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[30,11][320,56]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/statusIcons",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/statusIcons",
+            "priority": 1
+        },
+        "class": "android.widget.LinearLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[556,20][628,46]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/system_icon_area",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/system_icon_area",
+            "priority": 1
+        },
+        "class": "android.widget.LinearLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[554,11][690,56]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/system_icons",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/system_icons",
+            "priority": 1
+        },
+        "class": "android.widget.LinearLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[554,11][690,56]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/wifi_activity",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/wifi_activity",
+            "priority": 1
+        },
+        "class": "android.widget.ImageView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[556,20][592,46]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/wifi_combo",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/wifi_combo",
+            "priority": 1
+        },
+        "class": "android.widget.FrameLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[556,20][592,46]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/wifi_group",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/wifi_group",
+            "priority": 1
+        },
+        "class": "android.widget.LinearLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[556,20][592,46]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/wifi_iconset",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/wifi_iconset",
+            "priority": 1
+        },
+        "class": "android.widget.FrameLayout",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[556,20][592,46]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "com.android.systemui:id/wifi_signal",
+        "locator": {
+            "type": "id",
+            "value": "com.android.systemui:id/wifi_signal",
+            "priority": 1
+        },
+        "class": "android.widget.ImageView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[556,20][592,46]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "cta_drawer_close",
+        "locator": {
+            "type": "id",
+            "value": "cta_drawer_close",
+            "priority": 1
+        },
+        "class": "android.widget.Button",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[21,66][111,151]",
+        "sources": [
+            "hamburger_menu_20260731_144148.json",
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "cta_login",
+        "locator": {
+            "type": "id",
+            "value": "cta_login",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,580][720,659]",
+        "sources": [
+            "account_anonymous_20260731_143551.json",
+            "premium_top_20260731_143903.json"
+        ]
+    },
+    {
+        "name": "cta_menu_close",
+        "locator": {
+            "type": "id",
+            "value": "cta_menu_close",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[622,79][712,169]",
+        "sources": [
+            "account_anonymous_20260731_143551.json"
+        ]
+    },
+    {
+        "name": "cta_search",
+        "locator": {
+            "type": "id",
+            "value": "cta_search",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[113,66][532,151]",
+        "sources": [
+            "hamburger_menu_20260731_144148.json",
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "google_image_div",
+        "locator": {
+            "type": "id",
+            "value": "google_image_div",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[60,1337][661,1431]",
+        "sources": [
+            "home_top_20260731_143115.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "nav_account",
+        "locator": {
+            "type": "id",
+            "value": "nav_account",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[622,79][712,169]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json",
+            "trending_top_20260731_143756.json",
+            "premium_top_20260731_143903.json",
+            "ebooks_top_20260731_143956.json",
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "nav_bar",
+        "locator": {
+            "type": "id",
+            "value": "nav_bar",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,1467][720,1600]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json",
+            "trending_top_20260731_143756.json",
+            "premium_top_20260731_143903.json",
+            "ebooks_top_20260731_143956.json",
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "nav_ebooks",
+        "locator": {
+            "type": "id",
+            "value": "nav_ebooks",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[432,1467][576,1572]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json",
+            "trending_top_20260731_143756.json",
+            "premium_top_20260731_143903.json",
+            "ebooks_top_20260731_143956.json",
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "nav_games",
+        "locator": {
+            "type": "id",
+            "value": "nav_games",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[576,1467][720,1572]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json",
+            "trending_top_20260731_143756.json",
+            "premium_top_20260731_143903.json",
+            "ebooks_top_20260731_143956.json",
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "nav_home",
+        "locator": {
+            "type": "id",
+            "value": "nav_home",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,1467][144,1572]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json",
+            "trending_top_20260731_143756.json",
+            "premium_top_20260731_143903.json",
+            "ebooks_top_20260731_143956.json",
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "nav_menu",
+        "locator": {
+            "type": "id",
+            "value": "nav_menu",
+            "priority": 1
+        },
+        "class": "android.widget.Button",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[9,80][99,170]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json",
+            "trending_top_20260731_143756.json",
+            "premium_top_20260731_143903.json",
+            "ebooks_top_20260731_143956.json",
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "nav_premium",
+        "locator": {
+            "type": "id",
+            "value": "nav_premium",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[288,1467][432,1572]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json",
+            "trending_top_20260731_143756.json",
+            "premium_top_20260731_143903.json",
+            "ebooks_top_20260731_143956.json",
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "nav_trending",
+        "locator": {
+            "type": "id",
+            "value": "nav_trending",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[144,1467][288,1572]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json",
+            "trending_top_20260731_143756.json",
+            "premium_top_20260731_143903.json",
+            "ebooks_top_20260731_143956.json",
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "screen_ebooks",
+        "locator": {
+            "type": "id",
+            "value": "screen_ebooks",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,184][720,1467]",
+        "sources": [
+            "ebooks_top_20260731_143956.json"
+        ]
+    },
+    {
+        "name": "screen_games",
+        "locator": {
+            "type": "id",
+            "value": "screen_games",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,184][720,1467]",
+        "sources": [
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "screen_hamburger",
+        "locator": {
+            "type": "id",
+            "value": "screen_hamburger",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,0][570,1600]",
+        "sources": [
+            "hamburger_menu_20260731_144148.json",
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "screen_home",
+        "locator": {
+            "type": "id",
+            "value": "screen_home",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,184][720,1467]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json"
+        ]
+    },
+    {
+        "name": "screen_premium",
+        "locator": {
+            "type": "id",
+            "value": "screen_premium",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,184][720,1467]",
+        "sources": [
+            "premium_top_20260731_143903.json"
+        ]
+    },
+    {
+        "name": "screen_section",
+        "locator": {
+            "type": "id",
+            "value": "screen_section",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,64][720,1600]",
+        "sources": [
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "screen_trending",
+        "locator": {
+            "type": "id",
+            "value": "screen_trending",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,184][720,1467]",
+        "sources": [
+            "trending_top_20260731_143756.json"
+        ]
+    },
+    {
+        "name": "screen_user_menu",
+        "locator": {
+            "type": "id",
+            "value": "screen_user_menu",
+            "priority": 1
+        },
+        "class": "android.widget.ScrollView",
+        "clickable": "false",
+        "scrollable": "true",
+        "enabled": "true",
+        "bounds": "[0,184][720,1572]",
+        "sources": [
+            "account_anonymous_20260731_143551.json"
+        ]
+    },
+    {
+        "name": "Account",
+        "locator": {
+            "type": "accessibilityText",
+            "value": "Account",
+            "priority": 2
+        },
+        "class": "android.view.View",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[648,105][686,144]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json",
+            "trending_top_20260731_143756.json",
+            "premium_top_20260731_143903.json",
+            "ebooks_top_20260731_143956.json",
+            "games_top_20260731_144054.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "Android System notification:",
+        "locator": {
+            "type": "accessibilityText",
+            "value": "Android System notification:",
+            "priority": 2
+        },
+        "class": "android.widget.ImageView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[187,11][218,56]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "AppCloud notification:",
+        "locator": {
+            "type": "accessibilityText",
+            "value": "AppCloud notification:",
+            "priority": 2
+        },
+        "class": "android.widget.ImageView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[201,11][218,56]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "Businessline notification:",
+        "locator": {
+            "type": "accessibilityText",
+            "value": "Businessline notification:",
+            "priority": 2
+        },
+        "class": "android.widget.ImageView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[94,11][125,56]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "Close",
+        "locator": {
+            "type": "accessibilityText",
+            "value": "Close",
+            "priority": 2
+        },
+        "class": "android.view.View",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[637,94][697,154]",
+        "sources": [
+            "account_anonymous_20260731_143551.json"
+        ]
+    },
+    {
+        "name": "Close navigation menu",
+        "locator": {
+            "type": "accessibilityText",
+            "value": "Close navigation menu",
+            "priority": 2
+        },
+        "class": "android.view.View",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[570,0][720,1600]",
+        "sources": [
+            "hamburger_menu_20260731_144148.json",
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "Easy Down",
+        "locator": {
+            "type": "accessibilityText",
+            "value": "Easy Down",
+            "priority": 2
+        },
+        "class": "android.view.View",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[100,1192][231,1323]",
+        "sources": [
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "Software update notification:",
+        "locator": {
+            "type": "accessibilityText",
+            "value": "Software update notification:",
+            "priority": 2
+        },
+        "class": "android.widget.ImageView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[201,11][218,56]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "Sudoku",
+        "locator": {
+            "type": "accessibilityText",
+            "value": "Sudoku",
+            "priority": 2
+        },
+        "class": "android.view.View",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[295,439][426,570]",
+        "sources": [
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "TH",
+        "locator": {
+            "type": "accessibilityText",
+            "value": "TH",
+            "priority": 2
+        },
+        "class": "android.widget.ImageView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[105,110][165,170]",
+        "sources": [
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "The Hindu",
+        "locator": {
+            "type": "accessibilityText",
+            "value": "The Hindu",
+            "priority": 2
+        },
+        "class": "android.widget.ImageView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[106,79][459,169]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json",
+            "trending_top_20260731_143756.json",
+            "premium_top_20260731_143903.json",
+            "ebooks_top_20260731_143956.json",
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "The Hindu Mini",
+        "locator": {
+            "type": "accessibilityText",
+            "value": "The Hindu Mini",
+            "priority": 2
+        },
+        "class": "android.view.View",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[100,916][231,1047]",
+        "sources": [
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "The Hindu notification:",
+        "locator": {
+            "type": "accessibilityText",
+            "value": "The Hindu notification:",
+            "priority": 2
+        },
+        "class": "android.widget.ImageView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[125,11][156,56]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "Weather notification:",
+        "locator": {
+            "type": "accessibilityText",
+            "value": "Weather notification:",
+            "priority": 2
+        },
+        "class": "android.widget.ImageView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[156,11][187,56]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "1",
+        "locator": {
+            "type": "text",
+            "value": "1",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[685,94][693,117]",
+        "sources": [
+            "existing_repository",
+            "Home.json"
+        ]
+    },
+    {
+        "name": "17-07-2026",
+        "locator": {
+            "type": "text",
+            "value": "17-07-2026",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[68,1122][203,1150]",
+        "sources": [
+            "ebooks_top_20260731_143956.json"
+        ]
+    },
+    {
+        "name": "1h ago",
+        "locator": {
+            "type": "text",
+            "value": "1h ago",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[626,797][682,835]",
+        "sources": [
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "2",
+        "locator": {
+            "type": "text",
+            "value": "2",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[677,94][688,117]",
+        "sources": [
+            "home_top_20260731_143115.json",
+            "account_anonymous_20260731_143551.json",
+            "trending_top_20260731_143756.json",
+            "premium_top_20260731_143903.json",
+            "ebooks_top_20260731_143956.json",
+            "games_top_20260731_144054.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "27m ago",
+        "locator": {
+            "type": "text",
+            "value": "27m ago",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[592,592][682,630]",
+        "sources": [
+            "existing_repository",
+            "Home.json"
+        ]
+    },
+    {
+        "name": "3h ago",
+        "locator": {
+            "type": "text",
+            "value": "3h ago",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[102,1306][168,1344]",
+        "sources": [
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "41m ago",
+        "locator": {
+            "type": "text",
+            "value": "41m ago",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[595,1230][682,1268]",
+        "sources": [
+            "home_top_20260731_143115.json"
+        ]
+    },
+    {
+        "name": "4h ago",
+        "locator": {
+            "type": "text",
+            "value": "4h ago",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[144,1098][211,1136]",
+        "sources": [
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "?",
+        "locator": {
+            "type": "text",
+            "value": "?",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[684,597][697,623]",
+        "sources": [
+            "trending_top_20260731_143756.json"
+        ]
+    },
+    {
+        "name": "ACCOUNT SETTINGS",
+        "locator": {
+            "type": "text",
+            "value": "ACCOUNT SETTINGS",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,543][682,571]",
+        "sources": [
+            "account_anonymous_20260731_143551.json"
+        ]
+    },
+    {
+        "name": "ADVERTISEMENT",
+        "locator": {
+            "type": "text",
+            "value": "ADVERTISEMENT",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[293,1431][428,1467]",
+        "sources": [
+            "home_top_20260731_143115.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "Agri-Business",
+        "locator": {
+            "type": "text",
+            "value": "Agri-Business",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,1554][570,1600]",
+        "sources": [
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "All",
+        "locator": {
+            "type": "text",
+            "value": "All",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[49,214][78,242]",
+        "sources": [
+            "trending_top_20260731_143756.json"
+        ]
+    },
+    {
+        "name": "All Stories",
+        "locator": {
+            "type": "text",
+            "value": "All Stories",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[517,211][628,239]",
+        "sources": [
+            "premium_top_20260731_143903.json"
+        ]
+    },
+    {
+        "name": "Appearance",
+        "locator": {
+            "type": "text",
+            "value": "Appearance",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,1336][187,1369]",
+        "sources": [
+            "account_anonymous_20260731_143551.json"
+        ]
+    },
+    {
+        "name": "APPLICATION SETTINGS",
+        "locator": {
+            "type": "text",
+            "value": "APPLICATION SETTINGS",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,1191][682,1219]",
+        "sources": [
+            "account_anonymous_20260731_143551.json"
+        ]
+    },
+    {
+        "name": "Athletics",
+        "locator": {
+            "type": "text",
+            "value": "Athletics",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,709][570,765]",
+        "sources": [
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "Banks charge debit card maintenance fee, ATM charges and account maintenance charges",
+        "locator": {
+            "type": "text",
+            "value": "Banks charge debit card maintenance fee, ATM charges and account maintenance charges",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,938][682,1006]",
+        "sources": [
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "Bookmarks",
+        "locator": {
+            "type": "text",
+            "value": "Bookmarks",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,1091][179,1124]",
+        "sources": [
+            "account_anonymous_20260731_143551.json"
+        ]
+    },
+    {
+        "name": "Briefing",
+        "locator": {
+            "type": "text",
+            "value": "Briefing",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[74,211][163,239]",
+        "sources": [
+            "premium_top_20260731_143903.json"
+        ]
+    },
+    {
+        "name": "Budget",
+        "locator": {
+            "type": "text",
+            "value": "Budget",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[651,201][720,229]",
+        "sources": [
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "Business",
+        "locator": {
+            "type": "text",
+            "value": "Business",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[181,214][277,242]",
+        "sources": [
+            "trending_top_20260731_143756.json",
+            "hamburger_menu_20260731_144148.json",
+            "sport_page_20260731_150454.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "Cancel anytime in subscriptions. You will not be charged before the free trial ends. Post the free trial completion you will be charged ?299.00 per month. We will send you a reminder before the trial ends",
+        "locator": {
+            "type": "text",
+            "value": "Cancel anytime in subscriptions. You will not be charged before the free trial ends. Post the free trial completion you will be charged ?299.00 per month. We will send you a reminder before the trial ends",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[72,316][654,434]",
+        "sources": [
+            "account_anonymous_20260731_143551.json"
+        ]
+    },
+    {
+        "name": "Cities",
+        "locator": {
+            "type": "text",
+            "value": "Cities",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[23,1269][513,1307]",
+        "sources": [
+            "hamburger_menu_20260731_144148.json"
+        ]
+    },
+    {
+        "name": "CONTENT",
+        "locator": {
+            "type": "text",
+            "value": "CONTENT",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,867][682,895]",
+        "sources": [
+            "account_anonymous_20260731_143551.json"
+        ]
+    },
+    {
+        "name": "Create account",
+        "locator": {
+            "type": "text",
+            "value": "Create account",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,688][226,721]",
+        "sources": [
+            "account_anonymous_20260731_143551.json"
+        ]
+    },
+    {
+        "name": "Cricket",
+        "locator": {
+            "type": "text",
+            "value": "Cricket",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,429][570,485]",
+        "sources": [
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "Data",
+        "locator": {
+            "type": "text",
+            "value": "Data",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[23,411][513,449]",
+        "sources": [
+            "hamburger_menu_20260731_144148.json",
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "Digits Go Wild 123",
+        "locator": {
+            "type": "text",
+            "value": "Digits Go Wild 123",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[264,646][456,684]",
+        "sources": [
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "Easy Clue Wonder",
+        "locator": {
+            "type": "text",
+            "value": "Easy Clue Wonder",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[349,1240][539,1274]",
+        "sources": [
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "Easy Down",
+        "locator": {
+            "type": "text",
+            "value": "Easy Down",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[372,1191][516,1229]",
+        "sources": [
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "EBOOKS",
+        "locator": {
+            "type": "text",
+            "value": "EBOOKS",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[473,1531][535,1557]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json",
+            "trending_top_20260731_143756.json",
+            "premium_top_20260731_143903.json",
+            "ebooks_top_20260731_143956.json",
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "Eco tourism-based livelihood opportunities, the only way forward for tiger conservation in Telangana, say experts",
+        "locator": {
+            "type": "text",
+            "value": "Eco tourism-based livelihood opportunities, the only way forward for tiger conservation in Telangana, say experts",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[610,261][720,301]",
+        "sources": [
+            "existing_repository",
+            "Home.json"
+        ]
+    },
+    {
+        "name": "Economy",
+        "locator": {
+            "type": "text",
+            "value": "Economy",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[311,201][412,229]",
+        "sources": [
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "ECONOMY",
+        "locator": {
+            "type": "text",
+            "value": "ECONOMY",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,797][603,835]",
+        "sources": [
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "Editorial",
+        "locator": {
+            "type": "text",
+            "value": "Editorial",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[558,208][653,236]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json"
+        ]
+    },
+    {
+        "name": "Entertainment",
+        "locator": {
+            "type": "text",
+            "value": "Entertainment",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[448,214][611,242]",
+        "sources": [
+            "trending_top_20260731_143756.json",
+            "hamburger_menu_20260731_144148.json",
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "FAQs",
+        "locator": {
+            "type": "text",
+            "value": "FAQs",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,1502][101,1535]",
+        "sources": [
+            "account_anonymous_20260731_143551.json"
+        ]
+    },
+    {
+        "name": "FIFA WORLD CUP 2026",
+        "locator": {
+            "type": "text",
+            "value": "FIFA WORLD CUP 2026",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,541][570,597]",
+        "sources": [
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "Food",
+        "locator": {
+            "type": "text",
+            "value": "Food",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[23,1503][513,1541]",
+        "sources": [
+            "hamburger_menu_20260731_144148.json"
+        ]
+    },
+    {
+        "name": "Football",
+        "locator": {
+            "type": "text",
+            "value": "Football",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,485][570,541]",
+        "sources": [
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "GAMES",
+        "locator": {
+            "type": "text",
+            "value": "GAMES",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[621,1531][675,1557]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json",
+            "trending_top_20260731_143756.json",
+            "premium_top_20260731_143903.json",
+            "ebooks_top_20260731_143956.json",
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "Good Afternoon",
+        "locator": {
+            "type": "text",
+            "value": "Good Afternoon",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[43,207][265,247]",
+        "sources": [
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "Health",
+        "locator": {
+            "type": "text",
+            "value": "Health",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[23,489][513,527]",
+        "sources": [
+            "hamburger_menu_20260731_144148.json",
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "HELP & SUPPORT",
+        "locator": {
+            "type": "text",
+            "value": "HELP & SUPPORT",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,1436][682,1464]",
+        "sources": [
+            "account_anonymous_20260731_143551.json"
+        ]
+    },
+    {
+        "name": "History",
+        "locator": {
+            "type": "text",
+            "value": "History",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,1012][129,1045]",
+        "sources": [
+            "account_anonymous_20260731_143551.json"
+        ]
+    },
+    {
+        "name": "Hockey",
+        "locator": {
+            "type": "text",
+            "value": "Hockey",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,597][570,653]",
+        "sources": [
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "Home",
+        "locator": {
+            "type": "text",
+            "value": "Home",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[316,208][382,216]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json"
+        ]
+    },
+    {
+        "name": "HOME",
+        "locator": {
+            "type": "text",
+            "value": "HOME",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[49,1531][96,1557]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json",
+            "trending_top_20260731_143756.json",
+            "premium_top_20260731_143903.json",
+            "ebooks_top_20260731_143956.json",
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "How has the Odisha-Chhattisgarh Mahanadi water dispute evolved? Explained",
+        "locator": {
+            "type": "text",
+            "value": "How has the Odisha-Chhattisgarh Mahanadi water dispute evolved? Explained",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,267][682,408]",
+        "sources": [
+            "home_top_20260731_143115.json"
+        ]
+    },
+    {
+        "name": "India",
+        "locator": {
+            "type": "text",
+            "value": "India",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[400,208][456,216]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json",
+            "hamburger_menu_20260731_144148.json",
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "INDIA",
+        "locator": {
+            "type": "text",
+            "value": "INDIA",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,1306][102,1344]",
+        "sources": [
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "Indian Clue Craze",
+        "locator": {
+            "type": "text",
+            "value": "Indian Clue Craze",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[352,964][536,998]",
+        "sources": [
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "India’s Quantum Leap: From Ancient Philosophy to Post-Quantum Cryptography",
+        "locator": {
+            "type": "text",
+            "value": "India’s Quantum Leap: From Ancient Philosophy to Post-Quantum Cryptography",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[49,1186][671,1339]",
+        "sources": [
+            "ebooks_top_20260731_143956.json"
+        ]
+    },
+    {
+        "name": "Industry",
+        "locator": {
+            "type": "text",
+            "value": "Industry",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[430,201][524,229]",
+        "sources": [
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "LALATENDU MISHRA",
+        "locator": {
+            "type": "text",
+            "value": "LALATENDU MISHRA",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[132,1063][368,1101]",
+        "sources": [
+            "existing_repository",
+            "Home.json"
+        ]
+    },
+    {
+        "name": "Life & Style",
+        "locator": {
+            "type": "text",
+            "value": "Life & Style",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[23,957][513,995]",
+        "sources": [
+            "hamburger_menu_20260731_144148.json"
+        ]
+    },
+    {
+        "name": "LIGHT MODE",
+        "locator": {
+            "type": "text",
+            "value": "LIGHT MODE",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[499,1338][636,1366]",
+        "sources": [
+            "account_anonymous_20260731_143551.json"
+        ]
+    },
+    {
+        "name": "Login",
+        "locator": {
+            "type": "text",
+            "value": "Login",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,609][107,642]",
+        "sources": [
+            "account_anonymous_20260731_143551.json"
+        ]
+    },
+    {
+        "name": "LOGIN TO PLAY",
+        "locator": {
+            "type": "text",
+            "value": "LOGIN TO PLAY",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[295,717][426,755]",
+        "sources": [
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "Markets",
+        "locator": {
+            "type": "text",
+            "value": "Markets",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[542,201][633,229]",
+        "sources": [
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "MARKETS",
+        "locator": {
+            "type": "text",
+            "value": "MARKETS",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,1098][144,1136]",
+        "sources": [
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "Markets trade higher in early deals; Bajaj Finance surges over 6%",
+        "locator": {
+            "type": "text",
+            "value": "Markets trade higher in early deals; Bajaj Finance surges over 6%",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,1353][442,1455]",
+        "sources": [
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "Motorsport",
+        "locator": {
+            "type": "text",
+            "value": "Motorsport",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,765][570,821]",
+        "sources": [
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "Movies",
+        "locator": {
+            "type": "text",
+            "value": "Movies",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[23,1425][513,1463]",
+        "sources": [
+            "hamburger_menu_20260731_144148.json"
+        ]
+    },
+    {
+        "name": "New",
+        "locator": {
+            "type": "text",
+            "value": "New",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[51,852][80,890]",
+        "sources": [
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "News",
+        "locator": {
+            "type": "text",
+            "value": "News",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[100,214][159,242]",
+        "sources": [
+            "trending_top_20260731_143756.json",
+            "hamburger_menu_20260731_144148.json",
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "OKAY",
+        "locator": {
+            "type": "text",
+            "value": "OKAY",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[330,468][391,506]",
+        "sources": [
+            "premium_top_20260731_143903.json"
+        ]
+    },
+    {
+        "name": "OP-ED",
+        "locator": {
+            "type": "text",
+            "value": "OP-ED",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[60,671][133,699]",
+        "sources": [
+            "trending_top_20260731_143756.json"
+        ]
+    },
+    {
+        "name": "Opinion",
+        "locator": {
+            "type": "text",
+            "value": "Opinion",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[671,208][720,216]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json",
+            "hamburger_menu_20260731_144148.json",
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "Other Sports",
+        "locator": {
+            "type": "text",
+            "value": "Other Sports",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,887][570,964]",
+        "sources": [
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "Packages",
+        "locator": {
+            "type": "text",
+            "value": "Packages",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[288,211][389,239]",
+        "sources": [
+            "premium_top_20260731_143903.json"
+        ]
+    },
+    {
+        "name": "Photos",
+        "locator": {
+            "type": "text",
+            "value": "Photos",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[116,208][193,216]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json"
+        ]
+    },
+    {
+        "name": "Podcast",
+        "locator": {
+            "type": "text",
+            "value": "Podcast",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[211,208][298,216]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json"
+        ]
+    },
+    {
+        "name": "PREMIUM",
+        "locator": {
+            "type": "text",
+            "value": "PREMIUM",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[88,588][202,626]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json",
+            "trending_top_20260731_143756.json",
+            "premium_top_20260731_143903.json",
+            "ebooks_top_20260731_143956.json",
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "PTI",
+        "locator": {
+            "type": "text",
+            "value": "PTI",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,1219][71,1257]",
+        "sources": [
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "Quiz, Grid, or Play - Sharpen your mind each day",
+        "locator": {
+            "type": "text",
+            "value": "Quiz, Grid, or Play - Sharpen your mind each day",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[43,247][614,285]",
+        "sources": [
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "Races",
+        "locator": {
+            "type": "text",
+            "value": "Races",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,821][570,887]",
+        "sources": [
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "READ FULL ARTICLE",
+        "locator": {
+            "type": "text",
+            "value": "READ FULL ARTICLE",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[60,1347][233,1437]",
+        "sources": [
+            "trending_top_20260731_143756.json"
+        ]
+    },
+    {
+        "name": "Read this essential guide to demystify the complex world of quantum computing and learn how India is navigating the paradigm shift.",
+        "locator": {
+            "type": "text",
+            "value": "Read this essential guide to demystify the complex world of quantum computing and learn how India is navigating the paradigm shift.",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[49,1356][671,1467]",
+        "sources": [
+            "ebooks_top_20260731_143956.json"
+        ]
+    },
+    {
+        "name": "Rupee rises 20 paise to 95.30 against U.S. dollar in early trade",
+        "locator": {
+            "type": "text",
+            "value": "Rupee rises 20 paise to 95.30 against U.S. dollar in early trade",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,1145][442,1213]",
+        "sources": [
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "SATYASUNDAR BARIK",
+        "locator": {
+            "type": "text",
+            "value": "SATYASUNDAR BARIK",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,726][279,764]",
+        "sources": [
+            "home_top_20260731_143115.json"
+        ]
+    },
+    {
+        "name": "Science",
+        "locator": {
+            "type": "text",
+            "value": "Science",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[23,645][513,683]",
+        "sources": [
+            "hamburger_menu_20260731_144148.json",
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "SDK loaded / impression",
+        "locator": {
+            "type": "text",
+            "value": "SDK loaded / impression",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[244,1311][476,1337]",
+        "sources": [
+            "home_top_20260731_143115.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "Search",
+        "locator": {
+            "type": "text",
+            "value": "Search",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[132,92][217,130]",
+        "sources": [
+            "hamburger_menu_20260731_144148.json",
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "SEE MORE",
+        "locator": {
+            "type": "text",
+            "value": "SEE MORE",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[28,349][563,439]",
+        "sources": [
+            "existing_repository",
+            "Home.json"
+        ]
+    },
+    {
+        "name": "SIGN-UP FOR A FREE TRIAL",
+        "locator": {
+            "type": "text",
+            "value": "SIGN-UP FOR A FREE TRIAL",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[189,244][532,277]",
+        "sources": [
+            "account_anonymous_20260731_143551.json"
+        ]
+    },
+    {
+        "name": "Society",
+        "locator": {
+            "type": "text",
+            "value": "Society",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[23,1035][513,1073]",
+        "sources": [
+            "hamburger_menu_20260731_144148.json"
+        ]
+    },
+    {
+        "name": "Specials",
+        "locator": {
+            "type": "text",
+            "value": "Specials",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[181,211][270,239]",
+        "sources": [
+            "premium_top_20260731_143903.json"
+        ]
+    },
+    {
+        "name": "Sport",
+        "locator": {
+            "type": "text",
+            "value": "Sport",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[23,333][513,371]",
+        "sources": [
+            "hamburger_menu_20260731_144148.json",
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "Sports",
+        "locator": {
+            "type": "text",
+            "value": "Sports",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[633,214][705,242]",
+        "sources": [
+            "trending_top_20260731_143756.json"
+        ]
+    },
+    {
+        "name": "States",
+        "locator": {
+            "type": "text",
+            "value": "States",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[23,1347][513,1385]",
+        "sources": [
+            "hamburger_menu_20260731_144148.json"
+        ]
+    },
+    {
+        "name": "Stay fully informed with a daily editorial curation of the most important news and insights—your essential current affairs briefing.",
+        "locator": {
+            "type": "text",
+            "value": "Stay fully informed with a daily editorial curation of the most important news and insights—your essential current affairs briefing.",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[43,360][677,433]",
+        "sources": [
+            "premium_top_20260731_143903.json"
+        ]
+    },
+    {
+        "name": "SUBSCRIBE",
+        "locator": {
+            "type": "text",
+            "value": "SUBSCRIBE",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[509,107][610,145]",
+        "sources": [
+            "home_top_20260731_143115.json",
+            "trending_top_20260731_143756.json",
+            "premium_top_20260731_143903.json",
+            "ebooks_top_20260731_143956.json",
+            "games_top_20260731_144054.json",
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "Subscribe",
+        "locator": {
+            "type": "text",
+            "value": "Subscribe",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,767][159,800]",
+        "sources": [
+            "account_anonymous_20260731_143551.json"
+        ]
+    },
+    {
+        "name": "Sudoku",
+        "locator": {
+            "type": "text",
+            "value": "Sudoku",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[311,589][410,627]",
+        "sources": [
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "T. Ramakrishnan",
+        "locator": {
+            "type": "text",
+            "value": "T. Ramakrishnan",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[47,310][199,335]",
+        "sources": [
+            "existing_repository",
+            "Home.json"
+        ]
+    },
+    {
+        "name": "T.C.A. SHARAD RAGHAVAN",
+        "locator": {
+            "type": "text",
+            "value": "T.C.A. SHARAD RAGHAVAN",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,1012][277,1050]",
+        "sources": [
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "Technology",
+        "locator": {
+            "type": "text",
+            "value": "Technology",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[299,214][426,242]",
+        "sources": [
+            "trending_top_20260731_143756.json",
+            "hamburger_menu_20260731_144148.json"
+        ]
+    },
+    {
+        "name": "Tennis",
+        "locator": {
+            "type": "text",
+            "value": "Tennis",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[0,653][570,709]",
+        "sources": [
+            "sport_page_20260731_150454.json"
+        ]
+    },
+    {
+        "name": "Text Size",
+        "locator": {
+            "type": "text",
+            "value": "Text Size",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,1257][148,1290]",
+        "sources": [
+            "account_anonymous_20260731_143551.json"
+        ]
+    },
+    {
+        "name": "The Bay of Bengal as India’s SHANTI anchor",
+        "locator": {
+            "type": "text",
+            "value": "The Bay of Bengal as India’s SHANTI anchor",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[60,718][633,816]",
+        "sources": [
+            "trending_top_20260731_143756.json"
+        ]
+    },
+    {
+        "name": "The Bay of Bengal, a disaster-prone region, lacks coordinated mechanisms for maritime security. India's new initiative, SHANTI (Securing Holistic Advancement through Norms, Trust and Integrity), aims to address this by providing a normative framework for shared maritime spaces. Building on previous policies like SAGAR and MAHASAGAR, SHANTI emphasizes cooperation, institution-building, and long-term resilience over competition and crisis management. The Bay of Bengal is seen as an ideal testing ground for SHANTI due to its interconnected challenges and the strategic importance it holds for India's Act East policy and global trade routes. This initiative seeks to redefine security from deterrence to shared responsibility and governance of maritime commons.",
+        "locator": {
+            "type": "text",
+            "value": "The Bay of Bengal, a disaster-prone region, lacks coordinated mechanisms for maritime security. India's new initiative, SHANTI (Securing Holistic Advancement through Norms, Trust and Integrity), aims to address this by providing a normative framework for shared maritime spaces. Building on previous policies like SAGAR and MAHASAGAR, SHANTI emphasizes cooperation, institution-building, and long-term resilience over competition and crisis management. The Bay of Bengal is seen as an ideal testing ground for SHANTI due to its interconnected challenges and the strategic importance it holds for India's Act East policy and global trade routes. This initiative seeks to redefine security from deterrence to shared responsibility and governance of maritime commons.",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[60,835][633,1365]",
+        "sources": [
+            "trending_top_20260731_143756.json"
+        ]
+    },
+    {
+        "name": "The Hindu Explains",
+        "locator": {
+            "type": "text",
+            "value": "The Hindu Explains",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[149,477][571,537]",
+        "sources": [
+            "existing_repository",
+            "Home.json"
+        ]
+    },
+    {
+        "name": "The Hindu Mini",
+        "locator": {
+            "type": "text",
+            "value": "The Hindu Mini",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[342,915][547,953]",
+        "sources": [
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "The political solution to the interstate water dispute was reinitiated when the Odisha CM, on July 25, 2025, wrote a letter to the Chhattisgarh CM proposing an amicable settlement of the Mahanadi Water Dispute. On August 1, 2025, the Chhattisgarh CM replied to the letter, stating that the matter of settling the dispute between the two States was under consideration.",
+        "locator": {
+            "type": "text",
+            "value": "The political solution to the interstate water dispute was reinitiated when the Odisha CM, on July 25, 2025, wrote a letter to the Chhattisgarh CM proposing an amicable settlement of the Mahanadi Water Dispute. On August 1, 2025, the Chhattisgarh CM replied to the letter, stating that the matter of settling the dispute between the two States was under consideration.",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,427][682,707]",
+        "sources": [
+            "home_top_20260731_143115.json"
+        ]
+    },
+    {
+        "name": "The remark came at a time when the rupee had weakened against the U.S. dollar amid global uncertainties, including elevated crude oil prices, geopolitical tensions and capital outflows from emerging markets.",
+        "locator": {
+            "type": "text",
+            "value": "The remark came at a time when the rupee had weakened against the U.S. dollar amid global uncertainties, including elevated crude oil prices, geopolitical tensions and capital outflows from emerging markets.",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,850][682,1025]",
+        "sources": [
+            "existing_repository",
+            "Home.json"
+        ]
+    },
+    {
+        "name": "TO UNLOCK AND PLAY ALL FREE GAMES, LOGIN",
+        "locator": {
+            "type": "text",
+            "value": "TO UNLOCK AND PLAY ALL FREE GAMES, LOGIN",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[43,292][677,371]",
+        "sources": [
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "TRENDING",
+        "locator": {
+            "type": "text",
+            "value": "TRENDING",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[176,1531][256,1557]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json",
+            "trending_top_20260731_143756.json",
+            "premium_top_20260731_143903.json",
+            "ebooks_top_20260731_143956.json",
+            "games_top_20260731_144054.json"
+        ]
+    },
+    {
+        "name": "unit: /22390678/TH_Android_HP_Sticky_A",
+        "locator": {
+            "type": "text",
+            "value": "unit: /22390678/TH_Android_HP_Sticky_A",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[138,1285][582,1311]",
+        "sources": [
+            "home_top_20260731_143115.json"
+        ]
+    },
+    {
+        "name": "unit: /22390678/TH_Android_Topic_Sticky_A",
+        "locator": {
+            "type": "text",
+            "value": "unit: /22390678/TH_Android_Topic_Sticky_A",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[126,1418][594,1444]",
+        "sources": [
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "Unlock Briefing and\nother Subscription Benefits",
+        "locator": {
+            "type": "text",
+            "value": "Unlock Briefing and\nother Subscription Benefits",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[151,1126][570,1216]",
+        "sources": [
+            "premium_top_20260731_143903.json"
+        ]
+    },
+    {
+        "name": "V. Swathi",
+        "locator": {
+            "type": "text",
+            "value": "V. Swathi",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[610,310][690,335]",
+        "sources": [
+            "existing_repository",
+            "Home.json"
+        ]
+    },
+    {
+        "name": "Videos",
+        "locator": {
+            "type": "text",
+            "value": "Videos",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[24,208][98,236]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json",
+            "hamburger_menu_20260731_144148.json"
+        ]
+    },
+    {
+        "name": "VijayÆs proposed visit to Bengaluru kindles public curiosity about similar missions in the mid-1980s",
+        "locator": {
+            "type": "text",
+            "value": "VijayÆs proposed visit to Bengaluru kindles public curiosity about similar missions in the mid-1980s",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[47,261][333,301]",
+        "sources": [
+            "existing_repository",
+            "Home.json"
+        ]
+    },
+    {
+        "name": "Webinar",
+        "locator": {
+            "type": "text",
+            "value": "Webinar",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[407,211][499,239]",
+        "sources": [
+            "premium_top_20260731_143903.json"
+        ]
+    },
+    {
+        "name": "What are IN-SPACe re-entry guidelines | Explained",
+        "locator": {
+            "type": "text",
+            "value": "What are IN-SPACe re-entry guidelines | Explained",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,1283][682,1285]",
+        "sources": [
+            "home_top_20260731_143115.json"
+        ]
+    },
+    {
+        "name": "What are the various charges banks collect from customers | Explained",
+        "locator": {
+            "type": "text",
+            "value": "What are the various charges banks collect from customers | Explained",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,844][682,932]",
+        "sources": [
+            "business_page_20260731_150633.json"
+        ]
+    },
+    {
+        "name": "Why RBI seem to believe that rupee is æundervaluedÆ? | Explained",
+        "locator": {
+            "type": "text",
+            "value": "Why RBI seem to believe that rupee is æundervaluedÆ? | Explained",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[38,645][682,831]",
+        "sources": [
+            "existing_repository",
+            "Home.json"
+        ]
+    },
+    {
+        "name": "World",
+        "locator": {
+            "type": "text",
+            "value": "World",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[474,208][540,216]",
+        "sources": [
+            "existing_repository",
+            "Home.json",
+            "home_top_20260731_143115.json",
+            "hamburger_menu_20260731_144148.json",
+            "sport_page_20260731_150454.json"
+        ]
+    }
+]

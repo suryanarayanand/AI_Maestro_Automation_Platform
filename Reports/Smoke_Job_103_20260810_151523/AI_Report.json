@@ -1,0 +1,128 @@
+{
+    "suite": {
+        "total": 7,
+        "passed": 1,
+        "failed": 6,
+        "not_found": 0,
+        "pass_rate": 14.29
+    },
+    "results": [
+        {
+            "id": "COMPLEX_003",
+            "module": "AI Generated",
+            "name": "Dark Mode Appearance Validation",
+            "status": "PASS",
+            "duration": 54.02,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_103_20260810_151523\\COMPLEX_003.log",
+            "screenshots": [
+                "screenshots/COMPLEX_003/COMPLEX_003_dark_mode_enabled.png",
+                "screenshots/COMPLEX_003/COMPLEX_003_home_page_in_dark_mode.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "UI layout is correct for an appearance/theme selection screen. No evidence of missing components, unexpected blank space, or rendering issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_003_dark_mode_enabled.png",
+                    "image_path": "screenshots/COMPLEX_003/COMPLEX_003_dark_mode_enabled.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and correctly rendered with no visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_003_home_page_in_dark_mode.png",
+                    "image_path": "screenshots/COMPLEX_003/COMPLEX_003_home_page_in_dark_mode.png"
+                }
+            ]
+        },
+        {
+            "id": "TH_0006",
+            "module": "AI Generated",
+            "name": "Verify Opening Push Notification when App is in Opened / Idle State",
+            "status": "FAIL",
+            "duration": 66.05,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_103_20260810_151523\\TH_0006.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "TH_0011",
+            "module": "AI Generated",
+            "name": "Subscriber E-Paper access",
+            "status": "FAIL",
+            "duration": 66.16,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_103_20260810_151523\\TH_0011.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "TH_0010",
+            "module": "AI Generated",
+            "name": "Verify Home Page Content Loading",
+            "status": "FAIL",
+            "duration": 69.09,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_103_20260810_151523\\TH_0010.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "TH_0012",
+            "module": "AI Generated",
+            "name": "Search Edge Cases",
+            "status": "FAIL",
+            "duration": 66.01,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_103_20260810_151523\\TH_0012.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "TH_0009",
+            "module": "AI Generated",
+            "name": "Verify Login from Onboarding Screen",
+            "status": "FAIL",
+            "duration": 37.61,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_103_20260810_151523\\TH_0009.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "TH_0008",
+            "module": "AI Generated",
+            "name": "Verify New User Account Creation from Onboarding Screen",
+            "status": "FAIL",
+            "duration": 38.61,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_103_20260810_151523\\TH_0008.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        }
+    ]
+}

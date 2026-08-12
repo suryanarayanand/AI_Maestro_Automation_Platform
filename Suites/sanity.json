@@ -1,0 +1,68 @@
+{
+    "suite": "Sanity",
+    "tests": [
+        {
+            "id": "SC_91",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 91 Sports page anonymous account",
+            "yaml": "SC_91_Sports_page_anonymous_account.yaml"
+        },
+        {
+            "id": "SC_92",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 92 Sports page subscribed account",
+            "yaml": "SC_92_Sports_page_subscribed_account.yaml"
+        },
+        {
+            "id": "SC_93",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 93 Sports page anonymous account article",
+            "yaml": "SC_93_Sports_page_anonymous_account_article.yaml"
+        },
+        {
+            "id": "SC_94",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 94 Sports page subscribed account article ",
+            "yaml": "SC_94_Sports_page_subscribed_account_article_.yaml"
+        },
+        {
+            "id": "SC_95",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 95 Sports page light Theme",
+            "yaml": "SC_95_Sports_page_light_Theme.yaml"
+        },
+        {
+            "id": "SC_96",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 96 subscribeOption from differentPage",
+            "yaml": "SC_96_subscribeOption_from_differentPage.yaml"
+        },
+        {
+            "id": "SC_97",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 97 gift a article Subscribed Account",
+            "yaml": "SC_97_gift_a_article_Subscribed_Account.yaml"
+        },
+        {
+            "id": "SC_98",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 98 Business page subscribed ACC",
+            "yaml": "SC_98_Business_page_subscribed_ACC.yaml"
+        },
+        {
+            "id": "SC_99",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 99 Business page anonymous Acc",
+            "yaml": "SC_99_Business_page_anonymous_Acc.yaml"
+        }
+    ]
+}

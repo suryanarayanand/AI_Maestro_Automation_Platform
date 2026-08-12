@@ -1,0 +1,140 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - premium
+---
+# specialsSection premiumTab subscriber (SC-31).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+      # Verify Subscribe Popup is Absent
+      - runFlow:
+          when:
+            visible:
+              text: "SUBSCRIBE"
+          commands:
+            - takeScreenshot: "Screenshots/SC_31/SC_31_Subscribe_Popup"
+            - assertNotVisible:
+                text: "SUBSCRIBE"
+
+# Navigate to Premium Section
+- assertVisible: "Premium"
+- tapOn: "Premium"
+- takeScreenshot: "Screenshots/SC_31/SC_31_Premium_Tab"
+
+# Navigate to Specials Section
+- extendedWaitUntil:
+    visible: "Specials"
+    timeout: 15000
+- takeScreenshot: "Screenshots/SC_31/SC_31_Specials_Section"
+- tapOn: "Specials"
+- assertVisible: "PREMIUM"
+- scroll
+- scrollUntilVisible:
+    element: "Ground Zero"
+- takeScreenshot: "Screenshots/SC_31/SC_31_Ground_Zero_Section"
+- scroll
+- repeat:
+    times: 1
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "SEE MORE"
+          commands:
+            - tapOn: "SEE MORE"
+      - scroll
+      - waitForAnimationToEnd
+- swipe:
+    direction: UP
+- takeScreenshot: "Screenshots/SC_31/SC_31_Ground_Zero_After_See_More"
+
+# Open Ground Zero Article
+- tapOn:
+    point: 0%,10%
+
+# Verify Article Elements
+- assertVisible: "GIFT THIS ARTICLE"
+- assertVisible: "AI summary"
+- assertVisible:
+    text: "Bookmark"
+    index: 1
+- assertVisible:
+    text: "Text size"
+    index: 1
+- assertVisible:
+    text: "Share"
+    index: 1
+- assertVisible:
+    text: "Comment"
+    index: 1
+
+# Article Validation
+- swipe:
+    direction: UP
+- repeat:
+    times: 15
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Post a comment"
+          commands:
+            - takeScreenshot: "Screenshots/SC_31/SC_31_Post_A_Comment"
+      - scroll
+      - waitForAnimationToEnd
+
+# - repeat:
+#     times: 20
+#     commands:
+#       - assertNotVisible:
+#           text: "Image for Taboola Advertising Unit"
+#
+#       - scroll
+#
+#       - waitForAnimationToEnd
+- repeat:
+    times: 20
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Related Articles
+- swipe:
+    direction: LEFT
+- takeScreenshot: "Screenshots/SC_31/SC_31_Related_Article_01"
+- swipe:
+    direction: LEFT
+- takeScreenshot: "Screenshots/SC_31/SC_31_Related_Article_02"
+- swipe:
+    direction: LEFT
+- takeScreenshot: "Screenshots/SC_31/SC_31_Related_Article_03"
+
+# Navigate Back
+- tapOn: "Close article"
+- tapOn:
+    point: 2%,4%
+- assertVisible: "Ground Zero"
+
+# Navigate to The Hindu Profiles
+- assertVisible: "Premium"
+- tapOn: "Premium"
+- extendedWaitUntil:
+    visible: "Specials"
+    timeout: 15000
+- tapOn: "Specials"
+- scrollUntilVisible:
+    element: "The Hindu Profiles"
+- scroll

@@ -1,0 +1,525 @@
+{
+    "suite": "Regression",
+    "execution_time": 2845.57,
+    "summary": {
+        "total": 14,
+        "passed": 4,
+        "failed": 10,
+        "critical": 10,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.807",
+            "version_code": "573"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "The latest test execution reveals several critical functional failures alongside prominent UI and visual issues across multiple key user flows. Fundamental problems include loading indicators stuck or content not rendering (SC_05, SC_15), missing or blank advertisement containers, unrendered core article images breaking layout and user experience (SC_04), and visible debug/SDK information leaking into the UI (SC_11). Scenarios SC_07, SC_08, SC_12, SC_13, SC_14, and SC_15 have hard failures, some with no further evidence provided, indicating broken app flows. Numerous severe visual-only issues persist, notably in layout, alignment, and spacing, compounding UX degradation. Dynamic content differences and data-variation noise were successfully filtered and do not contribute to blocking findings.",
+        "release_recommendation": "Do NOT release. Multiple high-severity functional failures and user-limiting defects require immediate resolution before release to production.",
+        "top_risks": [
+            "Core screens stuck on loading or failing to render content (SC_05, SC_15)",
+            "Blank or missing advertisement containers leading to lost revenue and broken UX (SC_03, SC_05)",
+            "Primary news article images not displayed, creating major layout gaps (SC_04)",
+            "Visible SDK debug or unit ID information leaking into the user interface (SC_11)",
+            "Broken or incomplete subscriber/premium flows; scenarios failing without details (SC_07, SC_08, SC_12, SC_14, SC_15)",
+            "Critical layout and alignment regressions in headers and navigation (SC_11)"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_03",
+            "scenario_name": "Verify_Ads_Taboola_for_anonymous_user",
+            "module": "Ads",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Screenshot AI, Visual",
+            "execution_time": 479.24,
+            "log_file": "SC_03.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_49_20260804_142357\\SC_03.log",
+            "screenshots": [
+                "screenshots/SC_03/SC_03_TaboolaAd_IndiaPage_undefined.png",
+                "screenshots/SC_03/SC_03_TaboolaAd_TrendingPage_undefined.png"
+            ],
+            "comparison_images": [
+                "comparison/SC_03/./reference_SC_03_TaboolaAd_IndiaPage_undefined.png",
+                "comparison/SC_03/./actual_SC_03_TaboolaAd_IndiaPage_undefined.png",
+                "comparison/SC_03/./diff_SC_03_TaboolaAd_IndiaPage_undefined.png"
+            ],
+            "sources": [
+                "Screenshot AI",
+                "Visual"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "There is a large blank area where the advertisement should be, with only the 'ADVERTISEMENT' label and ad unit info shown. No actual advertisement is rendered in that container.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Empty advertisement placeholder"
+                    ]
+                },
+                {
+                    "reason": "Advertisement container is blank, showing only placeholder and debug info, with no actual ad content rendered.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Advertisement not loaded properly",
+                        "Placeholder with debug info visible"
+                    ]
+                }
+            ],
+            "visual_findings": [
+                {
+                    "image": "SC_03_TaboolaAd_IndiaPage_undefined.png",
+                    "similarity": 82.66,
+                    "normalized": false,
+                    "summary": "No genuine UI defects detected. All highlighted differences are related to dynamic content, news headlines, author names, timestamps, and advertisements, which are to be ignored per instructions.",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "SC_04",
+            "scenario_name": "Verify_Ads_Taboola_for_subscriber",
+            "module": "Ads",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Screenshot AI, Visual",
+            "execution_time": 396.08,
+            "log_file": "SC_04.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_49_20260804_142357\\SC_04.log",
+            "screenshots": [
+                "screenshots/SC_04/Subscriber_No_Ads_Article_1.png",
+                "screenshots/SC_04/Subscriber_No_Ads_Article_2.png",
+                "screenshots/SC_04/Subscriber_No_Ads_Article_3.png",
+                "screenshots/SC_04/Subscriber_No_Ads_Article_4.png"
+            ],
+            "comparison_images": [
+                "comparison/SC_04/./reference_Subscriber_No_Ads_Article_1.png",
+                "comparison/SC_04/./actual_Subscriber_No_Ads_Article_1.png",
+                "comparison/SC_04/./diff_Subscriber_No_Ads_Article_1.png",
+                "comparison/SC_04/./reference_Subscriber_No_Ads_Article_2.png",
+                "comparison/SC_04/./actual_Subscriber_No_Ads_Article_2.png",
+                "comparison/SC_04/./diff_Subscriber_No_Ads_Article_2.png",
+                "comparison/SC_04/./reference_Subscriber_No_Ads_Article_3.png",
+                "comparison/SC_04/./actual_Subscriber_No_Ads_Article_3.png",
+                "comparison/SC_04/./diff_Subscriber_No_Ads_Article_3.png",
+                "comparison/SC_04/./reference_Subscriber_No_Ads_Article_4.png",
+                "comparison/SC_04/./actual_Subscriber_No_Ads_Article_4.png",
+                "comparison/SC_04/./diff_Subscriber_No_Ads_Article_4.png"
+            ],
+            "sources": [
+                "Screenshot AI",
+                "Visual"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "A large blank area exists where an article image should be rendered, indicating a missing or broken image.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank area where image should be",
+                        "Missing or broken article image"
+                    ]
+                }
+            ],
+            "visual_findings": [
+                {
+                    "image": "Subscriber_No_Ads_Article_1.png",
+                    "similarity": 59.04,
+                    "normalized": false,
+                    "summary": "Two major UI defects detected: primary news article image missing and significant empty space in main content area.",
+                    "issues": [
+                        {
+                            "severity": "Critical",
+                            "component": "Main Content",
+                            "title": "Primary news article image missing",
+                            "description": "The main image corresponding to the headline news article is missing, leaving a large blank area. This breaks the layout consistency and affects the user experience.",
+                            "recommendation": "Ensure that all news articles have the expected images loaded per design. If unavailable, display a placeholder."
+                        },
+                        {
+                            "severity": "High",
+                            "component": "Layout",
+                            "title": "Excessive empty space in content area",
+                            "description": "There is significant vertical empty space above the headline text where the article image should be. This leads to inefficient use of screen real estate and can confuse users.",
+                            "recommendation": "Fix the layout logic to collapse empty space when images/content are missing, maintaining proper alignment and padding."
+                        }
+                    ]
+                },
+                {
+                    "image": "Subscriber_No_Ads_Article_2.png",
+                    "similarity": 64.07,
+                    "normalized": false,
+                    "summary": "No genuine UI issues detected. All detected differences are related to dynamic content or non-UI impacting areas.",
+                    "issues": []
+                },
+                {
+                    "image": "Subscriber_No_Ads_Article_3.png",
+                    "similarity": 68.09,
+                    "normalized": false,
+                    "summary": "No genuine UI issues detected in header, navigation, toolbar, icons, buttons, themes, colors, alignment, padding, margins, or layout. All highlighted differences are caused by dynamic content, news, timestamps, notifications, or data-related changes, which are excluded from the scope of issues.",
+                    "issues": []
+                },
+                {
+                    "image": "Subscriber_No_Ads_Article_4.png",
+                    "similarity": 68.02,
+                    "normalized": false,
+                    "summary": "No genuine UI issues detected. All detected differences are related to dynamic content or ignored elements.",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "SC_05",
+            "scenario_name": "Premium_access_for_anonymous_user",
+            "module": "Premium",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 669.62,
+            "log_file": "SC_05.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_49_20260804_142357\\SC_05.log",
+            "screenshots": [
+                "screenshots/SC_05/SC05_premiumpage_nonsubscriber.png",
+                "screenshots/SC_05/SC_05_premiumpage_nonsubscriber_AllStories.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Loading indicator is stuck and content underneath is blocked by the persistent black overlay.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Loading indicator is not completing",
+                        "Persistent black overlay blocks content",
+                        "Page content is not accessible"
+                    ]
+                },
+                {
+                    "reason": "Prominent advertisement is displayed on the premium or subscriber section, which should not show ads.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement visible on premium screen"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-004",
+            "scenario_id": "SC_07",
+            "scenario_name": "Logout_function",
+            "module": "Account",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 81.65,
+            "log_file": "SC_07.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_49_20260804_142357\\SC_07.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-005",
+            "scenario_id": "SC_08",
+            "scenario_name": "Verify_Account_Subscription_details",
+            "module": "Account",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 80.06,
+            "log_file": "SC_08.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_49_20260804_142357\\SC_08.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-006",
+            "scenario_id": "SC_11",
+            "scenario_name": "Anonymous_article_navigation",
+            "module": "Article",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Screenshot AI, Visual",
+            "execution_time": 70.56,
+            "log_file": "SC_11.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_49_20260804_142357\\SC_11.log",
+            "screenshots": [
+                "screenshots/SC_11/Sc_011_article00.png",
+                "screenshots/SC_11/Sc_011_article01.png"
+            ],
+            "comparison_images": [
+                "comparison/SC_11/./reference_Sc_011_article00.png",
+                "comparison/SC_11/./actual_Sc_011_article00.png",
+                "comparison/SC_11/./diff_Sc_011_article00.png",
+                "comparison/SC_11/./reference_Sc_011_article01.png",
+                "comparison/SC_11/./actual_Sc_011_article01.png",
+                "comparison/SC_11/./diff_Sc_011_article01.png"
+            ],
+            "sources": [
+                "Screenshot AI",
+                "Visual"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Advertisement SDK debug information and unit ID are visible above the actual advertisement.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement SDK debug information visible",
+                        "unit ID and SDK message displayed to end user"
+                    ]
+                },
+                {
+                    "reason": "Advertisement unit identifier and SDK impression/debug information visibly displayed in the UI.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Visible advertisement unit debug text",
+                        "SDK loaded / impression debug text visible to user"
+                    ]
+                }
+            ],
+            "visual_findings": [
+                {
+                    "image": "Sc_011_article00.png",
+                    "similarity": 43.66,
+                    "normalized": false,
+                    "summary": "Two genuine UI regression issues detected in core UI components.",
+                    "issues": [
+                        {
+                            "severity": "High",
+                            "component": "Header",
+                            "title": "Header alignment and font inconsistencies",
+                            "description": "The header section displays alignment and font rendering differences. Elements are misaligned compared to the reference, and text style is inconsistent, impacting the visual hierarchy.",
+                            "recommendation": "Check and correct the header layout constraints, and ensure the correct font, size, and style are applied according to design specifications."
+                        },
+                        {
+                            "severity": "Medium",
+                            "component": "Toolbar & Bottom Navigation",
+                            "title": "Icon and button position shifts",
+                            "description": "Icons and action buttons in the toolbar and bottom navigation appear slightly shifted. The 'SUBSCRIBE' button and associated icons are out of alignment, which could affect usability and visual appeal.",
+                            "recommendation": "Review spacing, padding, and margin values for toolbar and bottom navigation components, and align UI elements to match the reference screenshot."
+                        }
+                    ]
+                },
+                {
+                    "image": "Sc_011_article01.png",
+                    "similarity": 50.73,
+                    "normalized": false,
+                    "summary": "No genuine UI issues detected. All highlighted differences are due to dynamic/article content, ads, or ignored regions.",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-007",
+            "scenario_id": "SC_12",
+            "scenario_name": "Subscriber_Article_Full_Read_Access",
+            "module": "Article",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Visual",
+            "execution_time": 139.18,
+            "log_file": "SC_12.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_49_20260804_142357\\SC_12.log",
+            "screenshots": [],
+            "comparison_images": [
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_12\\SC_12_Subscriber_Article_page.png",
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_12\\SC_12_Subscriber_Article_page_1.png"
+            ],
+            "sources": [
+                "Run",
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "SC_12_Subscriber_Article_page.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                },
+                {
+                    "image": "SC_12_Subscriber_Article_page_1.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-008",
+            "scenario_id": "SC_13",
+            "scenario_name": "Article_Share_Functionality",
+            "module": "Article",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Visual",
+            "execution_time": 165.02,
+            "log_file": "SC_13.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_49_20260804_142357\\SC_13.log",
+            "screenshots": [
+                "screenshots/SC_13/SC_13_share_article.png"
+            ],
+            "comparison_images": [
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_13\\SC_13_copied_successfully.png",
+                "comparison/SC_13/./reference_SC_13_share_article.png",
+                "comparison/SC_13/./actual_SC_13_share_article.png",
+                "comparison/SC_13/./diff_SC_13_share_article.png"
+            ],
+            "sources": [
+                "Run",
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "SC_13_copied_successfully.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                },
+                {
+                    "image": "SC_13_share_article.png",
+                    "similarity": 70.37,
+                    "normalized": false,
+                    "summary": "No genuine UI defects detected. All detected differences are limited to dynamic and content changes, not structural UI issues.",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-009",
+            "scenario_id": "SC_14",
+            "scenario_name": "Article_Font_Size_Validation",
+            "module": "Article",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 120.07,
+            "log_file": "SC_14.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_49_20260804_142357\\SC_14.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-010",
+            "scenario_id": "SC_15",
+            "scenario_name": "Podcast_Section_Subscriber_account",
+            "module": "Podcast",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Screenshot AI",
+            "execution_time": 147.58,
+            "log_file": "SC_15.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_49_20260804_142357\\SC_15.log",
+            "screenshots": [
+                "screenshots/SC_15/SC_15_first_Podcast_playing_the_latest.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_00.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_bottom.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_middle_01.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_top_01.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run",
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Podcast screen shows loading spinner with placeholder cards but content failed to render, indicating incomplete rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Stuck loading indicator",
+                        "Content failed to render",
+                        "Podcast placeholder visible without loaded data"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

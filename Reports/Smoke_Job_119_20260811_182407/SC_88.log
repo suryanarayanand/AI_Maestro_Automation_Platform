@@ -1,0 +1,105 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_88_Opinion_Article_Navigation_Interaction_Login_Validation
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Wait for animation to end... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Wait for animation to end... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Repeat 3 times...
+  Swiping in LEFT direction in 400 ms... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 3 times... COMPLETED
+Assert that "Opinion" is visible... COMPLETED
+Tap on "Opinion"... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account... COMPLETED
+Scrolling DOWN until "COMMENT" is visible with speed 40, visibility percentage 100%, timeout 20000 ms, with centering disabled... COMPLETED
+Tap on "COMMENT"... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account_Article_Via_Comment_Section... COMPLETED
+Assert that "Go beyond the headline � subscribe to access in-depth summaries and related insights." is visible... COMPLETED
+Tap on "SUBSCRIBE"... COMPLETED
+Assert that "Yearly" is visible... COMPLETED
+Assert that "Monthly" is visible... COMPLETED
+Tap on "Close subscription options"... COMPLETED
+Assert that "Text size" is visible... COMPLETED
+Wait for animation to end... COMPLETED
+Assert that "Bookmark" is visible... COMPLETED
+Assert that "Share" is visible... COMPLETED
+Assert that "Comment" is visible... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_Article_01... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_Article_02... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_Article_03... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_Article_04... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_Article_05... COMPLETED
+Assert that "AI summary" is visible... COMPLETED
+Tap on "AI summary"... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_After_Clicking_AI_Summary_Anonymous... COMPLETED
+Assert that "SUBSCRIBE" is visible... COMPLETED
+Assert that "SUBSCRIBE" is visible... COMPLETED
+Tap on "SUBSCRIBE"... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_01... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_02... COMPLETED
+Assert that ".*Login.*" is visible... COMPLETED
+Tap on ".*Login.*"... COMPLETED
+Run ../Common/Login_via_pages_or_Article.yaml...
+  Run flow when "HAVE AN ACCOUNT? LOGIN|LOGIN" is visible...
+  Run flow when "HAVE AN ACCOUNT? LOGIN|LOGIN" is visible... SKIPPED
+  Assert that "Email" is visible... COMPLETED
+  Tap on "Email"... COMPLETED
+  Input text product.testing@thehindu.co.in... COMPLETED
+  Hide Keyboard... COMPLETED
+  Tap on "NEXT.*"... COMPLETED
+  Assert that "password" is visible... COMPLETED
+  Tap on "password"... COMPLETED
+  Input text Test@123... COMPLETED
+  Hide Keyboard... COMPLETED
+  Tap on "LOGIN.*"... COMPLETED
+  Run flow when "Skip" is visible...
+  Run flow when "Skip" is visible... SKIPPED
+Run ../Common/Login_via_pages_or_Article.yaml... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_Subscription... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_01... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_02... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_03... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_04... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_05... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_06... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_07... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_08... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_09... COMPLETED
+Launch app "com.mobstac.thehindu"... COMPLETED
+Run flow when "Skip" is visible...
+Run flow when "Skip" is visible... SKIPPED
+Assert that "Account" is visible... COMPLETED
+Tap on "Account"... COMPLETED
+Assert that "Account" is visible... COMPLETED
+Assert that "Bookmarks" is visible... COMPLETED
+Scroll vertically... COMPLETED
+Assert that "LOGOUT" is visible... COMPLETED
+Tap on "LOGOUT"... COMPLETED
+Press back... COMPLETED
+
+
+===== STDERR =====
+

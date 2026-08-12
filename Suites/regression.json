@@ -1,0 +1,313 @@
+{
+    "suite": "Regression",
+    "tests": [
+        {
+            "id": "SC_21",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 21 Whats new option subscribed user",
+            "yaml": "SC_21_Whats_new_option_subscribed_user.yaml"
+        },
+        {
+            "id": "SC_22",
+            "module": "Settings",
+            "priority": "P2",
+            "name": "Appearance theme validation",
+            "yaml": "SC_22_Appearance_theme_validation.yaml"
+        },
+        {
+            "id": "SC_23",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 23 gen",
+            "yaml": "SC_23_gen.yaml"
+        },
+        {
+            "id": "SC_23",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 23 Homepage FromHomepage to Editorialpage in darkTheme anonyous ",
+            "yaml": "SC_23_Homepage_FromHomepage_to_Editorialpage_in_darkTheme_anonyous_.yaml"
+        },
+        {
+            "id": "SC_24",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 24 Subscriber E-Book access",
+            "yaml": "SC_24_Subscriber_E-Book_access.yaml"
+        },
+        {
+            "id": "SC_25",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 25 Homepage FromHomepage to Comments Drak theme ananoymous",
+            "yaml": "SC_25_Homepage_FromHomepage_to_Comments_Drak_theme_ananoymous.yaml"
+        },
+        {
+            "id": "SC_26",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 26 Anonymous E-Book restriction",
+            "yaml": "SC_26_Anonymous_E-Book_restriction.yaml"
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 27 CRYPTIC CROSSWORD",
+            "yaml": "SC_27_CRYPTIC_CROSSWORD.yaml"
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 27 EASY DOWN",
+            "yaml": "SC_27_EASY_DOWN.yaml"
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 27 NEWS QUIZ",
+            "yaml": "SC_27_NEWS_QUIZ.yaml"
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 27 Subscriber Games validation",
+            "yaml": "SC_27_Subscriber_Games_validation.yaml"
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 27 SUDOKU",
+            "yaml": "SC_27_SUDOKU.yaml"
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 27 THE HINDU MINI",
+            "yaml": "SC_27_THE_HINDU_MINI.yaml"
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 27 WORD FLOWER",
+            "yaml": "SC_27_WORD_FLOWER.yaml"
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 27 WORD ROW",
+            "yaml": "SC_27_WORD_ROW.yaml"
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 27 WORD SEARCH",
+            "yaml": "SC_27_WORD_SEARCH.yaml"
+        },
+        {
+            "id": "SC_28",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 28 Anonymous Games validation",
+            "yaml": "SC_28_Anonymous_Games_validation.yaml"
+        },
+        {
+            "id": "SC_29",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 29 Category navigation anonymous",
+            "yaml": "SC_29_Category_navigation_anonymous.yaml"
+        },
+        {
+            "id": "SC_29",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 29 gen",
+            "yaml": "SC_29_gen.yaml"
+        },
+        {
+            "id": "SC_29",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 29 INDIA",
+            "yaml": "SC_29_INDIA.yaml"
+        },
+        {
+            "id": "SC_29",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 29 SPORT",
+            "yaml": "SC_29_SPORT.yaml"
+        },
+        {
+            "id": "SC_29",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 29 WORLD",
+            "yaml": "SC_29_WORLD.yaml"
+        },
+        {
+            "id": "SC_30",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 30 BreifingSection premium subscriber account",
+            "yaml": "SC_30_BreifingSection_premium_subscriber_account.yaml"
+        },
+        {
+            "id": "SC_31",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 31 specialsSection premiumTab subscriber",
+            "yaml": "SC_31_specialsSection_premiumTab_subscriber.yaml"
+        },
+        {
+            "id": "SC_32",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 32 AccountSettingPage subscriberAccount",
+            "yaml": "SC_32_AccountSettingPage_subscriberAccount.yaml"
+        },
+        {
+            "id": "SC_33",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 33 Anonymous Account Settings",
+            "yaml": "SC_33_Anonymous_Account_Settings.yaml"
+        },
+        {
+            "id": "SC_34",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 34 Search functionality anonymous account",
+            "yaml": "SC_34_Search_functionality_anonymous_account.yaml"
+        },
+        {
+            "id": "SC_35",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 35 SearchFuction subscriber",
+            "yaml": "SC_35_SearchFuction_subscriber.yaml"
+        },
+        {
+            "id": "SC_36",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 36 RapidSwitchingTaps on homePage",
+            "yaml": "SC_36_RapidSwitchingTaps_on_homePage.yaml"
+        },
+        {
+            "id": "SC_37",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 37 FIFA 2026 tab",
+            "yaml": "SC_37_FIFA_2026_tab.yaml"
+        },
+        {
+            "id": "SC_38",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 38 Offline cached article",
+            "yaml": "SC_38_Offline_cached_article.yaml"
+        },
+        {
+            "id": "SC_39",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 39 Background Foreground",
+            "yaml": "SC_39_Background_Foreground.yaml"
+        },
+        {
+            "id": "SC_40",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 40 search specialCharacter",
+            "yaml": "SC_40_search_specialCharacter.yaml"
+        },
+        {
+            "id": "SC_41",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 41 Login persistance",
+            "yaml": "SC_41_Login_persistance.yaml"
+        },
+        {
+            "id": "SC_42",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 42 ArticleRefereshvalidation",
+            "yaml": "SC_42_ArticleRefereshvalidation.yaml"
+        },
+        {
+            "id": "SC_43",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 43 bookmark presistance",
+            "yaml": "SC_43_bookmark_presistance.yaml"
+        },
+        {
+            "id": "SC_44",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 44 Account Theme Persistence",
+            "yaml": "SC_44_Account_Theme_Persistence.yaml"
+        },
+        {
+            "id": "SC_45",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 45 ebook page navigation validation",
+            "yaml": "SC_45_ebook_page_navigation_validation.yaml"
+        },
+        {
+            "id": "SC_46",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 46 Trending page verification",
+            "yaml": "SC_46_Trending_page_verification.yaml"
+        },
+        {
+            "id": "SC_47",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 47 Premium page verification",
+            "yaml": "SC_47_Premium_page_verification.yaml"
+        },
+        {
+            "id": "SC_48",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 48 Games page verification",
+            "yaml": "SC_48_Games_page_verification.yaml"
+        },
+        {
+            "id": "SC_49",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 49 Check account settings for anonymousAccount",
+            "yaml": "SC_49_Check_account_settings_for_anonymousAccount.yaml"
+        },
+        {
+            "id": "SC_50",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 50 Bookmark Remove Validation",
+            "yaml": "SC_50_Bookmark_Remove_Validation.yaml"
+        },
+        {
+            "id": "SC_51",
+            "module": "Unassigned",
+            "priority": "P2",
+            "name": "SC 51 EBOOKS Page Boundary Validation",
+            "yaml": "SC_51_EBOOKS_Page_Boundary_Validation.yaml"
+        }
+    ]
+}

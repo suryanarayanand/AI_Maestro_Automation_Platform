@@ -1,0 +1,199 @@
+{
+    "suite": {
+        "total": 6,
+        "passed": 1,
+        "failed": 5,
+        "pass_rate": 16.67
+    },
+    "reference": {
+        "role": "Production reference",
+        "serial": "46201FDAP0048X",
+        "manufacturer": "Google",
+        "model": "Pixel 9 Pro",
+        "android": "16",
+        "resolution": "Physical size: 960x2142",
+        "density": "Physical density: 360",
+        "package": "com.mobstac.thehindu",
+        "version_name": "2501.20.802",
+        "version_code": "568"
+    },
+    "actual": {
+        "role": "Internal test actual",
+        "serial": "R9ZY40T6PHN",
+        "manufacturer": "samsung",
+        "model": "SM-E066B",
+        "android": "16",
+        "resolution": "Physical size: 720x1600",
+        "density": "Physical density: 300",
+        "package": "com.mobstac.thehindu",
+        "version_name": "2501.20.811",
+        "version_code": "577"
+    },
+    "results": [
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_02"
+        },
+        {
+            "passed": 1,
+            "failed": 1,
+            "total": 2,
+            "details": [
+                {
+                    "image": "SC_03_TaboolaAd_IndiaPage_undefined.png",
+                    "status": "FAIL",
+                    "similarity": 63.63,
+                    "threshold": 95.0,
+                    "difference_count": 46,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_03/./reference_SC_03_TaboolaAd_IndiaPage_undefined.png",
+                    "actual": "comparison/SC_03/./actual_SC_03_TaboolaAd_IndiaPage_undefined.png",
+                    "difference": "comparison/SC_03/./diff_SC_03_TaboolaAd_IndiaPage_undefined.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI issues detected. All significant differences are related to dynamic content or excluded areas.",
+                        "issues": []
+                    }
+                },
+                {
+                    "image": "SC_03_TaboolaAd_TrendingPage_undefined.png",
+                    "status": "PASS",
+                    "similarity": 95.74,
+                    "threshold": 95.0,
+                    "difference_count": 16,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_03/./reference_SC_03_TaboolaAd_TrendingPage_undefined.png",
+                    "actual": "comparison/SC_03/./actual_SC_03_TaboolaAd_TrendingPage_undefined.png",
+                    "difference": "comparison/SC_03/./diff_SC_03_TaboolaAd_TrendingPage_undefined.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI defects detected. All differences are limited to dynamic or ignorable content areas.",
+                        "issues": []
+                    }
+                }
+            ],
+            "scenario": "SC_03"
+        },
+        {
+            "passed": 0,
+            "failed": 4,
+            "total": 4,
+            "details": [
+                {
+                    "image": "Subscriber_No_Ads_Article_1.png",
+                    "status": "FAIL",
+                    "similarity": 54.94,
+                    "threshold": 95.0,
+                    "difference_count": 126,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_04/./reference_Subscriber_No_Ads_Article_1.png",
+                    "actual": "comparison/SC_04/./actual_Subscriber_No_Ads_Article_1.png",
+                    "difference": "comparison/SC_04/./diff_Subscriber_No_Ads_Article_1.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI defects detected in critical UI components. All observed differences are related to dynamic content, user-specific data, or non-static elements as per the exclusions.",
+                        "issues": []
+                    }
+                },
+                {
+                    "image": "Subscriber_No_Ads_Article_2.png",
+                    "status": "FAIL",
+                    "similarity": 64.25,
+                    "threshold": 95.0,
+                    "difference_count": 97,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_04/./reference_Subscriber_No_Ads_Article_2.png",
+                    "actual": "comparison/SC_04/./actual_Subscriber_No_Ads_Article_2.png",
+                    "difference": "comparison/SC_04/./diff_Subscriber_No_Ads_Article_2.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI issues detected. All highlighted differences are related to dynamic content or ignored areas.",
+                        "issues": []
+                    }
+                },
+                {
+                    "image": "Subscriber_No_Ads_Article_3.png",
+                    "status": "FAIL",
+                    "similarity": 63.38,
+                    "threshold": 95.0,
+                    "difference_count": 166,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_04/./reference_Subscriber_No_Ads_Article_3.png",
+                    "actual": "comparison/SC_04/./actual_Subscriber_No_Ads_Article_3.png",
+                    "difference": "comparison/SC_04/./diff_Subscriber_No_Ads_Article_3.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI issues detected. All detected differences are related to dynamic content or ignorable aspects.",
+                        "issues": []
+                    }
+                },
+                {
+                    "image": "Subscriber_No_Ads_Article_4.png",
+                    "status": "FAIL",
+                    "similarity": 63.39,
+                    "threshold": 95.0,
+                    "difference_count": 166,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_04/./reference_Subscriber_No_Ads_Article_4.png",
+                    "actual": "comparison/SC_04/./actual_Subscriber_No_Ads_Article_4.png",
+                    "difference": "comparison/SC_04/./diff_Subscriber_No_Ads_Article_4.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI defects detected. All differences are related to dynamic content or are non-UI issues.",
+                        "issues": []
+                    }
+                }
+            ],
+            "scenario": "SC_04"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_05"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_06"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_07"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "Sc_08"
+        }
+    ]
+}

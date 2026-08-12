@@ -1,0 +1,160 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - dark_theme
+  - photos
+  - theme
+---
+# Validated-locator smoke copy; source scenario is unchanged.
+# Photos page darkTheme anonymous (SC-64).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Verify Anonymous Home Page
+- assertVisible: "SUBSCRIBE"
+
+# Verify Change Theme Option
+- runFlow: ../Common/Dark_theme_changing.yaml
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Navigate to Photos Section
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 15000
+- assertVisible:
+    id: "screen_home"
+- extendedWaitUntil:
+    visible: "Photos"
+    timeout: 15000
+- tapOn:
+    text: "Photos"
+# Article Validation
+- takeScreenshot: "Screenshots/SC_64/SC_64_Photos_Page"
+- assertNotVisible:
+    text: ".*Request timeout.*"
+- takeScreenshot: "Screenshots/SC_64/SC_64_Photos_Page_No_Error"
+- repeat:
+    times: 2
+    commands:
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_64/SC_64_Photos_Page_01"
+- repeat:
+    times: 1
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "SHOW MORE"
+          commands:
+            - tapOn: "SHOW MORE"
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_64/SC_64_Photos_Page_02"
+- repeat:
+    times: 2
+    commands:
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_64/SC_64_Photos_Page_04"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_64/SC_64_Photos_Page_05"
+- repeat:
+    times: 1
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "SHOW MORE"
+          commands:
+            - tapOn: "SHOW MORE"
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_64/SC_64_Photos_Page_06"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_64/SC_64_Photos_Page_07"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_64/SC_64_Photos_Page_08"
+
+# Open Specific Article
+- repeat:
+    times: 15
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Bowing out"
+          commands:
+            - tapOn: "Bowing out"
+      - swipe:
+          direction: DOWN
+- takeScreenshot: "Screenshots/SC_64/SC_64_Bowing_Out"
+
+# Navigate Back
+- back
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Navigate to Photos Section
+- extendedWaitUntil:
+    visible: "Photos"
+    timeout: 15000
+- tapOn:
+    text: "Photos"
+# Open Specific Article
+- repeat:
+    times: 15
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "El Nino effect: Challenges to adaptation and resilience"
+          commands:
+            - tapOn: "El Nino effect: Challenges to adaptation and resilience"
+      - swipe:
+          direction: DOWN
+- takeScreenshot: "Screenshots/SC_64/SC_64_El_Nino_Article_01"
+- swipe:
+    direction: LEFT
+- takeScreenshot: "Screenshots/SC_64/SC_64_El_Nino_Article_02"
+- swipe:
+    direction: LEFT
+- takeScreenshot: "Screenshots/SC_64/SC_64_El_Nino_Article_03"
+- swipe:
+    direction: LEFT
+- takeScreenshot: "Screenshots/SC_64/SC_64_El_Nino_Article_04"
+
+# Close Application
+- stopApp

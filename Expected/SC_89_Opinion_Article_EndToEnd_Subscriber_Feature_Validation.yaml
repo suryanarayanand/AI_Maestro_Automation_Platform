@@ -1,0 +1,168 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - opinion
+  - article
+---
+# Opinion Article EndToEnd Subscriber Feature Validation (SC-89).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Navigate to Opinion Section
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- assertVisible: "Opinion"
+- tapOn: "Opinion"
+- takeScreenshot: "Screenshots/SC_89/SC_89_Opinion_Page_Subscriber_Account"
+
+# Open Education Article
+- scrollUntilVisible:
+    element: "EDUCATION"
+- tapOn: "EDUCATION"
+- takeScreenshot: "Screenshots/SC_89/SC_89_Opinion_Page_Subscriber_Account_Article_Via_Education_Section"
+
+# Verify Article Actions
+- assertVisible:
+    text: "Text size"
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+
+# Article Validation
+- takeScreenshot: "Screenshots/SC_89/SC_89_Opinion_Page_Article_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_89/SC_89_Opinion_Page_Article_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_89/SC_89_Opinion_Page_Article_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_89/SC_89_Opinion_Page_Article_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_89/SC_89_Opinion_Page_Article_05"
+
+# AI Summary
+- extendedWaitUntil:
+    visible: "AI summary"
+    timeout: 15000
+- tapOn: "AI summary"
+- takeScreenshot: "Screenshots/SC_89/SC_89_Opinion_Page_Article_After_Clicking_AI_Summary"
+- waitForAnimationToEnd
+- tapOn: "Close sheet"
+
+# Continue Article Validation
+- takeScreenshot: "Screenshots/SC_89/SC_89_Opinion_Page_Article_06"
+- scroll
+- takeScreenshot: "Screenshots/SC_89/SC_89_Opinion_Page_Article_07"
+- scroll
+- takeScreenshot: "Screenshots/SC_89/SC_89_Opinion_Page_Article_08"
+
+# Open Next Article
+- swipe:
+    direction: LEFT
+- takeScreenshot: "Screenshots/SC_89/SC_89_Opinion_Page_Second_Article_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_89/SC_89_Opinion_Page_Second_Article_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_89/SC_89_Opinion_Page_Second_Article_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_89/SC_89_Opinion_Page_Second_Article_04"
+- tapOn: "Close article"
+
+# Navigate to Letters Section
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- assertVisible: "Opinion"
+- tapOn: "Opinion"
+- scrollUntilVisible:
+    element: "LETTERS"
+- extendedWaitUntil:
+    visible: "LETTERS"
+    timeout: 15000
+- tapOn: "LETTERS"
+
+# Gift Article Validation
+- extendedWaitUntil:
+    visible: "GIFT THIS ARTICLE"
+    timeout: 15000
+- tapOn: "GIFT THIS ARTICLE"
+- takeScreenshot: "Screenshots/SC_89/SC_89_Opinion_Page_Letters_Gift_Article"
+- assertVisible: "Gift Articles"
+- assertVisible: "Copy link"
+- assertVisible: "More options"
+
+# Copy Link
+- tapOn: "Copy link"
+- takeScreenshot: "Screenshots/SC_89/SC_89_Letters_Gift_Article_Copy_Link"
+- swipe:
+    direction: DOWN
+- tapOn: "GIFT THIS ARTICLE"
+
+# Share via Microsoft Teams
+- tapOn: "More options"
+- takeScreenshot: "Screenshots/SC_89/SC_89_Letters_Gift_Article_More_Options"
+- assertVisible: "Surya Narayanan D"
+- tapOn:
+    id: "icon"
+- takeScreenshot: "Screenshots/SC_89/SC_89_Letters_Gift_Article_Share_Via_Teams"
+- waitForAnimationToEnd
+- assertVisible: "navigationBack"
+- waitForAnimationToEnd
+- tapOn: "navigationBack"
+- waitForAnimationToEnd
+
+# Share via WhatsApp
+- tapOn: "More options"
+- waitForAnimationToEnd
+- assertVisible: "WhatsApp"
+- tapOn: "WhatsApp"
+- takeScreenshot: "Screenshots/SC_89/SC_89_Letters_Gift_Article_Share_Via_WhatsApp"
+- back
+- waitForAnimationToEnd
+
+# Share via Gmail
+- assertVisible: "More options"
+- tapOn: "More options"
+- waitForAnimationToEnd
+- tapOn: "Gmail"
+- waitForAnimationToEnd
+- tapOn:
+    id: "peoplekit_autocomplete_chip_group"
+- inputRandomEmail
+- waitForAnimationToEnd
+- assertVisible: "Send"
+- assertVisible: "More options"
+- assertVisible: "Attach files"
+- assertVisible: "Navigate up"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_89/SC_89_Letters_Gift_Article_Share_Via_Gmail"
+- waitForAnimationToEnd
+- tapOn: "Send"
+- takeScreenshot: "Screenshots/SC_89/SC_89_Letters_Gift_Article_Email_Sent"
+
+# Verify Related Content
+- scrollUntilVisible:
+    element: "Recommended"
+- scrollUntilVisible:
+    element: "Headlines"
+- assertVisible: "Recommended"
+- assertVisible: "Headlines"

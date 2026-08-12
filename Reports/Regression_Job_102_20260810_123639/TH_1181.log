@@ -1,0 +1,17 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow TH_1181
+Run ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml...
+  Launch app "com.mobstac.thehindu"... FAILED
+Run ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml... FAILED
+
+Unable to launch app com.mobstac.thehindu
+
+==== Debug output (logs & screenshots) ====
+
+C:\Users\12503\.maestro\tests\2026-08-10_124350
+
+
+===== STDERR =====
+

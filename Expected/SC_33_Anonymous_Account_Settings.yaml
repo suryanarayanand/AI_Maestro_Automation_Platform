@@ -1,0 +1,212 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - account
+  - settings
+---
+# Anonymous Account Settings (SC-33).
+# Launch App
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 5000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 5000
+- tapOn: "Skip"
+
+# Navigate to Account Page
+- tapOn: "Account"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_33/SC_33_Account_Page"
+- takeScreenshot: "Screenshots/SC_33/SC_33_Account_Page_01"
+
+# Verify Login Page
+- assertVisible: "ACCOUNT SETTINGS"
+- tapOn: "Login"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_33/SC_33_Login_Page"
+- extendedWaitUntil:
+    visible: "Login to your account"
+    timeout: 250000
+- extendedWaitUntil:
+    visible: "Sign in with Google"
+    timeout: 250000
+- extendedWaitUntil:
+    visible: "Sign in with Apple"
+    timeout: 250000
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+- back
+
+# - stopApp
+- launchApp
+
+# Create Account and Subscription (Commented)
+# - extendedWaitUntil:
+#     visible: "Create account"
+#     timeout: 15000
+# - tapOn: "Create account"
+# - waitForAnimationToEnd
+# - takeScreenshot: "Screenshots/SC_33/SC_33_Create_Account_Page"
+# - back
+# - assertVisible: "Subscribe"
+# - tapOn: "Subscribe"
+# - assertVisible: "Yearly"
+# - waitForAnimationToEnd
+# - takeScreenshot: "Screenshots/SC_33/SC_33_Subscription_Page"
+# - assertVisible: "Monthly"
+# - tapOn: "Monthly"
+# - waitForAnimationToEnd
+# - takeScreenshot: "Screenshots/SC_33/SC_33_Subscription_Page"
+# Verify Notification Inbox
+- tapOn: "Account"
+- extendedWaitUntil:
+    visible: "Notification Inbox"
+    timeout: 5000
+- tapOn: "Notification Inbox"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_33/SC_33_Notification_Inbox"
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+- back
+
+# - stopApp
+- launchApp
+
+# Verify History Page
+- tapOn: "Account"
+- assertVisible: "History"
+- tapOn: "History"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_33/SC_33_History_Page"
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+- back
+
+# - stopApp
+- launchApp
+
+# Verify Bookmarks Page
+- tapOn: "Account"
+- assertVisible: "Bookmarks"
+- tapOn: "Bookmarks"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_33/SC_33_Bookmarks_Page"
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Verify Text Size Settings
+- tapOn: "Account"
+- assertVisible: "Text Size"
+- tapOn: "Text Size"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_33/SC_33_Text_Size"
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+- back
+
+# - stopApp
+- launchApp
+
+# Verify Appearance Settings
+- tapOn: "Account"
+- assertVisible: "Appearance"
+- tapOn: "Appearance"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_33/SC_33_Appearance"
+- tapOn: "Light\nMode"
+- assertVisible: "Dark\nMode"
+- tapOn: "Dark\nMode"
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+- back
+
+# - stopApp
+- launchApp
+
+# Verify Account Page in Dark Theme
+- tapOn: "Account"
+- takeScreenshot: "Screenshots/SC_33/SC_33_Account_Page_Dark_Theme"
+- tapOn: "Login"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_33/SC_33_Login_Page_Dark_Theme"
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+- back
+
+# - stopApp
+- launchApp
+
+# Create Account and Subscription in Dark Theme (Commented)
+- tapOn: "Account"
+
+# - assertVisible: "Create account"
+# - tapOn: "Create account"
+# - waitForAnimationToEnd
+# - takeScreenshot: "Screenshots/SC_33/SC_33_Create_Account_Page_Dark_Theme"
+# - back
+# - assertVisible: "Subscribe"
+# - tapOn: "Subscribe"
+# - assertVisible: "Yearly"
+# - waitForAnimationToEnd
+# - takeScreenshot: "Screenshots/SC_33/SC_33_Subscription_Page_Dark_Theme"
+# - assertVisible: "Monthly"
+# - tapOn: "Monthly"
+# - waitForAnimationToEnd
+# - takeScreenshot: "Screenshots/SC_33/SC_33_Subscription_Page_Dark_Theme"
+# Verify Notification Inbox in Dark Theme
+- assertVisible: "Notification Inbox"
+- tapOn: "Notification Inbox"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_33/SC_33_Notification_Inbox_Dark_Theme"
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+- back
+
+# - stopApp
+- launchApp
+
+# Verify History Page in Dark Theme
+- tapOn: "Account"
+- assertVisible: "History"
+- tapOn: "History"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_33/SC_33_History_Page_Dark_Theme"
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+- back
+
+# - stopApp
+- launchApp
+
+# Verify Bookmarks Page in Dark Theme
+- tapOn: "Account"
+- assertVisible: "Bookmarks"
+- tapOn: "Bookmarks"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_33/SC_33_Bookmarks_Page_Dark_Theme"
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+- back
+
+# - stopApp
+- launchApp
+
+# Verify Text Size Settings in Dark Theme
+- tapOn: "Account"
+- assertVisible: "Text Size"
+- tapOn: "Text Size"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_33/SC_33_Text_Size_Dark_Theme"
+
+# Close Application
+- stopApp

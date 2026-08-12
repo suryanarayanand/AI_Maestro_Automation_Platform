@@ -1,0 +1,391 @@
+{
+    "suite": {
+        "total": 7,
+        "passed": 6,
+        "failed": 0,
+        "not_found": 0,
+        "pass_rate": 85.71
+    },
+    "results": [
+        {
+            "id": "SC_02",
+            "module": "Unassigned",
+            "name": "SC 02 Verify Home Trending page for subscriber",
+            "status": "PASS",
+            "duration": 203.55,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_107_20260810_163458\\SC_02.log",
+            "screenshots": [
+                "screenshots/SC_02/Home/SC02_Home_page_bottom.png",
+                "screenshots/SC_02/Home/SC02_Home_page_middle.png",
+                "screenshots/SC_02/Home/SC02_Home_page_middle_1.png",
+                "screenshots/SC_02/Home/SC02_Home_page_middle_2.png",
+                "screenshots/SC_02/Home/SC02_Home_page_top.png",
+                "screenshots/SC_02/Home/SC02_Home_page_top_1.png",
+                "screenshots/SC_02/Home/SC02_Home_page_top_3.png",
+                "screenshots/SC_02/Trending/SC02_Trending_All_section.png",
+                "screenshots/SC_02/Trending/SC02_Trending_NEWS_section.png"
+            ],
+            "ai_pass": 9,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and correctly rendered. No visible UI defects found.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC02_Home_page_bottom.png",
+                    "image_path": "screenshots/SC_02/Home/SC02_Home_page_bottom.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are rendered correctly with no visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC02_Home_page_middle.png",
+                    "image_path": "screenshots/SC_02/Home/SC02_Home_page_middle.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are visible and properly rendered. No visible layout, text, or rendering defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC02_Home_page_middle_1.png",
+                    "image_path": "screenshots/SC_02/Home/SC02_Home_page_middle_1.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and correctly rendered. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC02_Home_page_middle_2.png",
+                    "image_path": "screenshots/SC_02/Home/SC02_Home_page_middle_2.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and rendered correctly. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC02_Home_page_top.png",
+                    "image_path": "screenshots/SC_02/Home/SC02_Home_page_top.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present. Layout, navigation, images, and text rendering are correct.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC02_Home_page_top_1.png",
+                    "image_path": "screenshots/SC_02/Home/SC02_Home_page_top_1.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and correctly rendered. No visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC02_Home_page_top_3.png",
+                    "image_path": "screenshots/SC_02/Home/SC02_Home_page_top_3.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and correctly rendered. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC02_Trending_All_section.png",
+                    "image_path": "screenshots/SC_02/Trending/SC02_Trending_All_section.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visual defects observed.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC02_Trending_NEWS_section.png",
+                    "image_path": "screenshots/SC_02/Trending/SC02_Trending_NEWS_section.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_03",
+            "module": "Advertisement",
+            "name": "Verify Ads Taboola for anonymous user",
+            "status": "PASS",
+            "duration": 484.47,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_107_20260810_163458\\SC_03.log",
+            "screenshots": [
+                "screenshots/SC_03/SC_03_TaboolaAd_IndiaPage_undefined.png",
+                "screenshots/SC_03/SC_03_TaboolaAd_TrendingPage_undefined.png",
+                "screenshots/SC_03/SC_03_TaboolaAd_undefined.png"
+            ],
+            "ai_pass": 0,
+            "ai_fail": 3,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement SDK debug information is visible to users.",
+                    "issues": [
+                        "Advertisement debug information visible (unit paths and load status)",
+                        "Test/SDK diagnostic output rendered in production UI"
+                    ],
+                    "jira_title": "Advertisement SDK debug information displayed to users",
+                    "jira_description": "Unit path and SDK load status for advertisements are visible in the UI. This technical information should not be shown to end users.",
+                    "image": "SC_03_TaboolaAd_IndiaPage_undefined.png",
+                    "image_path": "screenshots/SC_03/SC_03_TaboolaAd_IndiaPage_undefined.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Blank advertisement container is visible with only placeholder text, indicating a rendering or load defect.",
+                    "issues": [
+                        "Empty advertisement container",
+                        "Advertisement placeholder visible"
+                    ],
+                    "jira_title": "Blank advertisement container displayed on Trending tab",
+                    "jira_description": "An empty advertisement placeholder is rendered within the application content area. The advertisement unit is loaded but no actual ad is shown, leaving a large blank container with a placeholder.",
+                    "image": "SC_03_TaboolaAd_TrendingPage_undefined.png",
+                    "image_path": "screenshots/SC_03/SC_03_TaboolaAd_TrendingPage_undefined.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement banner displays a technical unit string and SDK loading message which is not intended for end users.",
+                    "issues": [
+                        "Advertisement container displays technical unit path",
+                        "SDK loaded / impression message visible to users"
+                    ],
+                    "jira_title": "Technical debug information visible in advertisement container",
+                    "jira_description": "The advertisement container displays a technical unit path and SDK loading/impression message, which should not be visible to end users. Only the actual advertisement should be shown.",
+                    "image": "SC_03_TaboolaAd_undefined.png",
+                    "image_path": "screenshots/SC_03/SC_03_TaboolaAd_undefined.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_04",
+            "module": "Advertisement",
+            "name": "Verify Ads Taboola for anonymous subscriber",
+            "status": "PASS",
+            "duration": 395.17,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_107_20260810_163458\\SC_04.log",
+            "screenshots": [
+                "screenshots/SC_04/Subscriber_No_Ads_Article_1.png",
+                "screenshots/SC_04/Subscriber_No_Ads_Article_2.png",
+                "screenshots/SC_04/Subscriber_No_Ads_Article_3.png",
+                "screenshots/SC_04/Subscriber_No_Ads_Article_4.png"
+            ],
+            "ai_pass": 4,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and fully rendered. No blank regions, overlaps, or broken elements detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "Subscriber_No_Ads_Article_1.png",
+                    "image_path": "screenshots/SC_04/Subscriber_No_Ads_Article_1.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present, no visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "Subscriber_No_Ads_Article_2.png",
+                    "image_path": "screenshots/SC_04/Subscriber_No_Ads_Article_2.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present with no visible defects or layout issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "Subscriber_No_Ads_Article_3.png",
+                    "image_path": "screenshots/SC_04/Subscriber_No_Ads_Article_3.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "Subscriber_No_Ads_Article_4.png",
+                    "image_path": "screenshots/SC_04/Subscriber_No_Ads_Article_4.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_05",
+            "module": "Unassigned",
+            "name": "SC 05 Premium access for anonymous user",
+            "status": "PASS",
+            "duration": 720.59,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_107_20260810_163458\\SC_05.log",
+            "screenshots": [
+                "screenshots/SC_05/SC05_premiumpage_nonsubscriber.png",
+                "screenshots/SC_05/SC_05_premiumpage_nonsubscriber_AllStories.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI elements are rendered correctly with no visible layout, rendering, or text issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC05_premiumpage_nonsubscriber.png",
+                    "image_path": "screenshots/SC_05/SC05_premiumpage_nonsubscriber.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Popup modal overlays and partially blocks a video ad, causing UI overlap and incomplete visibility of dynamic content.",
+                    "issues": [
+                        "Popup modal ('All stories') overlaps with video card",
+                        "Underlying content (video ad) is partially blocked by the modal",
+                        "UI overlap between modal and content"
+                    ],
+                    "jira_title": "Popup modal overlays and blocks content",
+                    "jira_description": "The 'All stories' popup modal overlays and partially blocks the video advertisement below it, causing incomplete visibility of dynamic content and resulting in a UI layout defect due to component overlap.",
+                    "image": "SC_05_premiumpage_nonsubscriber_AllStories.png",
+                    "image_path": "screenshots/SC_05/SC_05_premiumpage_nonsubscriber_AllStories.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_06",
+            "module": "Unassigned",
+            "name": "SC 06 Premium access for subscriber",
+            "status": "PASS",
+            "duration": 104.27,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_107_20260810_163458\\SC_06.log",
+            "screenshots": [
+                "screenshots/SC_06/Sc_06_paywall_premium00.png",
+                "screenshots/SC_06/SC_06_paywall_premium_02.png",
+                "screenshots/SC_06/SC_06_paywall_premium_fails_subscribeIs_present_01.png"
+            ],
+            "ai_pass": 3,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and there are no visible layout or rendering defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "Sc_06_paywall_premium00.png",
+                    "image_path": "screenshots/SC_06/Sc_06_paywall_premium00.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_06_paywall_premium_02.png",
+                    "image_path": "screenshots/SC_06/SC_06_paywall_premium_02.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and correctly rendered with no visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_06_paywall_premium_fails_subscribeIs_present_01.png",
+                    "image_path": "screenshots/SC_06/SC_06_paywall_premium_fails_subscribeIs_present_01.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_07",
+            "module": "Unassigned",
+            "name": "SC 07 Logout function",
+            "status": "PASS",
+            "duration": 82.27,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_107_20260810_163458\\SC_07.log",
+            "screenshots": [
+                "screenshots/SC_07/SC_AccountPage.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and properly aligned. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_AccountPage.png",
+                    "image_path": "screenshots/SC_07/SC_AccountPage.png"
+                }
+            ]
+        },
+        {
+            "id": "Sc_08",
+            "module": "Unassigned",
+            "name": "Sc 08 Verify Account Subscription details",
+            "status": "CANCELLED",
+            "duration": 41.81,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_107_20260810_163458\\Sc_08.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        }
+    ]
+}

@@ -1,0 +1,396 @@
+D:\AI_Maestro_Automation_Platform\Utils\visual_html_report.py
+VISUAL HTML REPORT VERSION 2
+Agent LP-2233 polling http://127.0.0.1:5000
+
+Excel Report Generated : D:\AI_Maestro_Automation_Platform\Reports\Smoke_Job_126_20260812_153551\Dashboard.xlsx
+
+HTML Report Generated : D:\AI_Maestro_Automation_Platform\Reports\Smoke_Job_126_20260812_153551\Dashboard.html
+
+Found 0 baseline images
+================================================================================
+USING VISUAL HTML REPORT
+================================================================================
+Running file: D:\AI_Maestro_Automation_Platform\Utils\visual_html_report.py
+Checking: Excelpilotgames_Job_93_20260810_110937
+Directory Found
+✓ Valid Execution Folder
+Checking: Excelpilotgames_Job_94_20260810_112229
+Directory Found
+✓ Valid Execution Folder
+Checking: Excelpilotgames_Job_95_20260810_112539
+Directory Found
+✓ Valid Execution Folder
+Checking: Excelpilotgamesretry_Job_97_20260810_113522
+Directory Found
+✓ Valid Execution Folder
+Checking: Locatorsmoke_Job_122_20260812_124500
+Directory Found
+✓ Valid Execution Folder
+Checking: Locatorsmoke_Job_124_20260812_124826
+Directory Found
+✓ Valid Execution Folder
+Checking: Locatorsmoke_Job_125_20260812_125100
+Directory Found
+✓ Valid Execution Folder
+Checking: Master_Dashboard.html
+Checking: Master_Report.json
+Checking: Regression_Job_101_20260810_122126
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_102_20260810_123639
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_104_20260810_153218
+Directory Found
+Checking: Regression_Job_107_20260810_163458
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_110_20260810_181211
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_111_20260811_110804
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_115_20260811_120724
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_120_20260812_101512
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_121_20260812_123518
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_48_20260804_141503
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_49_20260804_142357
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_50_20260804_151218
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_51_20260804_162619
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_52_20260804_164034
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_61_20260806_110940
+Directory Found
+Checking: Sanity_Job_88_20260810_104458
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc27Allgames_Job_79_20260806_183201
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc27Allgames_Job_84_20260807_112719
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc27Remaininggames_Job_82_20260807_110247
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc27Remaininggames_Job_83_20260807_110919
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc27Sudoku_Job_80_20260807_104050
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc27Validatedgames_Job_77_20260806_181743
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc27Validatedgames_Job_78_20260806_183021
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc27Validatedgames_Job_81_20260807_104245
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc27Validatedgames_Job_87_20260807_181110
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc29Split_Job_59_20260806_105053
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc29Split_Job_64_20260806_112707
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc29Worldretry_Job_60_20260806_110318
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc29Worldretry_Job_74_20260806_175049
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_100_20260810_121724
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_103_20260810_151523
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_108_20260810_171300
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_109_20260810_180502
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_112_20260811_112730
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_113_20260811_115528
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_114_20260811_120216
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_117_20260811_163044
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_118_20260811_180846
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_119_20260811_182407
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_123_20260812_124811
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_126_20260812_153551
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_47_20260804_120914
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_76_20260806_180920
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_85_20260807_180712
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_86_20260807_180958
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_89_20260810_104527
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_90_20260810_104640
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_91_20260810_104922
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_92_20260810_110618
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_96_20260810_113220
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_98_20260810_120711
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_99_20260810_121533
+Directory Found
+✓ Valid Execution Folder
+Checking: Unique_Bug_Summary.json
+
+Master Report Generated
+D:\AI_Maestro_Automation_Platform\Reports\Master_Report.json
+================================================================================
+GENERATING MASTER DASHBOARD
+================================================================================
+Master Dashboard Generated
+
+Excel Report Generated : D:\AI_Maestro_Automation_Platform\Reports\Smoke_Job_127_20260812_153624\Dashboard.xlsx
+
+HTML Report Generated : D:\AI_Maestro_Automation_Platform\Reports\Smoke_Job_127_20260812_153624\Dashboard.html
+
+Found 0 baseline images
+================================================================================
+USING VISUAL HTML REPORT
+================================================================================
+Running file: D:\AI_Maestro_Automation_Platform\Utils\visual_html_report.py
+Checking: Excelpilotgames_Job_93_20260810_110937
+Directory Found
+✓ Valid Execution Folder
+Checking: Excelpilotgames_Job_94_20260810_112229
+Directory Found
+✓ Valid Execution Folder
+Checking: Excelpilotgames_Job_95_20260810_112539
+Directory Found
+✓ Valid Execution Folder
+Checking: Excelpilotgamesretry_Job_97_20260810_113522
+Directory Found
+✓ Valid Execution Folder
+Checking: Locatorsmoke_Job_122_20260812_124500
+Directory Found
+✓ Valid Execution Folder
+Checking: Locatorsmoke_Job_124_20260812_124826
+Directory Found
+✓ Valid Execution Folder
+Checking: Locatorsmoke_Job_125_20260812_125100
+Directory Found
+✓ Valid Execution Folder
+Checking: Master_Dashboard.html
+Checking: Master_Report.json
+Checking: Regression_Job_101_20260810_122126
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_102_20260810_123639
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_104_20260810_153218
+Directory Found
+Checking: Regression_Job_107_20260810_163458
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_110_20260810_181211
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_111_20260811_110804
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_115_20260811_120724
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_120_20260812_101512
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_121_20260812_123518
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_48_20260804_141503
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_49_20260804_142357
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_50_20260804_151218
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_51_20260804_162619
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_52_20260804_164034
+Directory Found
+✓ Valid Execution Folder
+Checking: Regression_Job_61_20260806_110940
+Directory Found
+Checking: Sanity_Job_88_20260810_104458
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc27Allgames_Job_79_20260806_183201
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc27Allgames_Job_84_20260807_112719
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc27Remaininggames_Job_82_20260807_110247
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc27Remaininggames_Job_83_20260807_110919
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc27Sudoku_Job_80_20260807_104050
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc27Validatedgames_Job_77_20260806_181743
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc27Validatedgames_Job_78_20260806_183021
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc27Validatedgames_Job_81_20260807_104245
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc27Validatedgames_Job_87_20260807_181110
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc29Split_Job_59_20260806_105053
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc29Split_Job_64_20260806_112707
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc29Worldretry_Job_60_20260806_110318
+Directory Found
+✓ Valid Execution Folder
+Checking: Sc29Worldretry_Job_74_20260806_175049
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_100_20260810_121724
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_103_20260810_151523
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_108_20260810_171300
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_109_20260810_180502
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_112_20260811_112730
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_113_20260811_115528
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_114_20260811_120216
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_117_20260811_163044
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_118_20260811_180846
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_119_20260811_182407
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_123_20260812_124811
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_126_20260812_153551
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_127_20260812_153624
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_47_20260804_120914
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_76_20260806_180920
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_85_20260807_180712
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_86_20260807_180958
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_89_20260810_104527
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_90_20260810_104640
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_91_20260810_104922
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_92_20260810_110618
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_96_20260810_113220
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_98_20260810_120711
+Directory Found
+✓ Valid Execution Folder
+Checking: Smoke_Job_99_20260810_121533
+Directory Found
+✓ Valid Execution Folder
+Checking: Unique_Bug_Summary.json
+
+Master Report Generated
+D:\AI_Maestro_Automation_Platform\Reports\Master_Report.json
+================================================================================
+GENERATING MASTER DASHBOARD
+================================================================================
+Master Dashboard Generated

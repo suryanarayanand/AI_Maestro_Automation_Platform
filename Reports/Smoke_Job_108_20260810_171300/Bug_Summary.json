@@ -1,0 +1,189 @@
+{
+    "suite": "Smoke",
+    "execution_time": 2522.62,
+    "summary": {
+        "total": 15,
+        "passed": 10,
+        "failed": 5,
+        "critical": 4,
+        "major": 0,
+        "minor": 1
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.813",
+            "version_code": "579"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "The release contains a mix of functional and visual issues. Scenario COMPLEX_002 passed functionally but has minor visual typos. Scenario COMPLEX_004 passed functionally but displays a critical visual failure (blank screen, no UI rendered). Scenario SC_27 failed repeatedly, indicating a functional failure. Dynamic content noise was not detected; all findings are actionable.",
+        "release_recommendation": "Do not release",
+        "top_risks": [
+            "Critical visual failure: blank UI in COMPLEX_004",
+            "Functional failure in SC_27 (repeated test failures)",
+            "Minor UI typos in COMPLEX_002"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "COMPLEX_002",
+            "scenario_name": "COMPLEX 002",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Minor",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 77.76,
+            "log_file": "COMPLEX_002.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\COMPLEX_002.log",
+            "screenshots": [
+                "screenshots/COMPLEX_002/COMPLEX_002_games_page_sudoku.png",
+                "screenshots/COMPLEX_002/COMPLEX_002_sudoku_landing_page.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "There is a spelling error in the title 'Sudoko' which should be 'Sudoku', and 'coumns' should be 'columns'.",
+                    "severity": "LOW",
+                    "issues": [
+                        "Typo in puzzle title: 'Sudoko' instead of 'Sudoku'",
+                        "Typo in description: 'coumns' instead of 'columns'"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "COMPLEX_004",
+            "scenario_name": "COMPLEX 004",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 87.95,
+            "log_file": "COMPLEX_004.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\COMPLEX_004.log",
+            "screenshots": [
+                "screenshots/COMPLEX_004/COMPLEX_004_easy_down_destination.png",
+                "screenshots/COMPLEX_004/COMPLEX_004_scroll_down_and_games_catalogue.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Large blank white region replaces all expected UI content, indicating incomplete screen rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Full screen blank white area",
+                        "No application UI rendered",
+                        "Incomplete rendering"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "SC_27",
+            "scenario_name": "SC 27 EASY DOWN",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 119.02,
+            "log_file": "SC_27.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\SC_27.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-004",
+            "scenario_id": "SC_27",
+            "scenario_name": "SC 27 NEWS QUIZ",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 1248.28,
+            "log_file": "SC_27.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\SC_27.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-005",
+            "scenario_id": "SC_27",
+            "scenario_name": "SC 27 WORD ROW",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 103.75,
+            "log_file": "SC_27.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\SC_27.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

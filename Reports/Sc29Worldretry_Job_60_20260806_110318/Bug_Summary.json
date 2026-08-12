@@ -1,0 +1,95 @@
+{
+    "suite": "Sc29Worldretry",
+    "execution_time": 151.36,
+    "summary": {
+        "total": 1,
+        "passed": 0,
+        "failed": 1,
+        "critical": 1,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.808",
+            "version_code": "574"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "During Scenario SC_29_WORLD, the application execution passed Maestro's functional checks but high-severity visual issues were identified through screenshot AI analysis. Specifically, article cards failed to render and only loading placeholders were visible, indicating incomplete content loading.",
+        "release_recommendation": "Block release pending resolution of high-severity rendering issue. Though functional automation passed, user experience is critically impacted.",
+        "top_risks": [
+            "Incomplete rendering of critical article content",
+            "Loading placeholders persist with no actual data",
+            "Major content delivery failure not detected as functional error but visible to end users"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_29_WORLD",
+            "scenario_name": "Hamburger categories - World",
+            "module": "Hamburger Menu",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 143.42,
+            "log_file": "SC_29_WORLD.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc29Worldretry_Job_60_20260806_110318\\SC_29_WORLD.log",
+            "screenshots": [
+                "screenshots/SC_29_WORLD/SC_29_WORLD_hamburger_menu.png",
+                "screenshots/SC_29_WORLD/SC_29_WORLD_world_india.png",
+                "screenshots/SC_29_WORLD/SC_29_WORLD_world_news.png",
+                "screenshots/SC_29_WORLD/SC_29_WORLD_world_world.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Article cards are not rendered; loading placeholders are stuck indicating incomplete rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Incomplete rendering of article cards",
+                        "Loading placeholders are visible instead of actual content"
+                    ]
+                },
+                {
+                    "reason": "Screen shows placeholder skeleton loaders indicating main content failed to load.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Article cards not loaded",
+                        "Only placeholders visible",
+                        "Content not rendered"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

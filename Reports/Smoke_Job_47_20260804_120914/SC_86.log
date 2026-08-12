@@ -1,0 +1,62 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_86_Editorial_Page_anonymous_light_theme
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Assert that "SUBSCRIBE" is visible... COMPLETED
+Assert that "Account" is visible... COMPLETED
+Tap on "Account"... COMPLETED
+Assert that "Appearance" is visible... COMPLETED
+Tap on "Appearance"... COMPLETED
+Assert that "Light
+Mode" is visible... COMPLETED
+Tap on "Light
+Mode"... COMPLETED
+Press back... COMPLETED
+Press back... COMPLETED
+Assert that "SUBSCRIBE" is visible... COMPLETED
+Assert that "Editorial" is visible... COMPLETED
+Tap on "Editorial"... COMPLETED
+Tap on point (50%,50%)... COMPLETED
+Run flow when "Summary" is visible...
+  Tap on "Close sheet"... COMPLETED
+Run flow when "Summary" is visible... COMPLETED
+Assert that "Text size" is visible... COMPLETED
+Wait for animation to end... COMPLETED
+Assert that "Bookmark" is visible... COMPLETED
+Assert that "Share" is visible... COMPLETED
+Assert that "Comment" is visible... COMPLETED
+Wait for animation to end... COMPLETED
+Assert that "Listen to article" is visible... COMPLETED
+Take screenshot Screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_01... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_02... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_03... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_04... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_05... COMPLETED
+Take screenshot Screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_01... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_02... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_03... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_04... COMPLETED
+Scroll vertically... COMPLETED
+Repeat 20 times...
+  Swiping in DOWN direction in 400 ms... COMPLETED
+Repeat 20 times... COMPLETED
+Repeat 20 times...
+  Run flow when "Post a comment" is visible...
+  Run flow when "Post a comment" is visible... SKIPPED
+  Scroll vertically... COMPLETED
+    Take screenshot Screenshots/SC_86/SC_86_Post_A_Comment_LightTheme... COMPLETED
+Repeat 20 times... COMPLETED
+
+
+===== STDERR =====
+

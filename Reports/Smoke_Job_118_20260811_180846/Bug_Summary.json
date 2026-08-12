@@ -1,0 +1,257 @@
+{
+    "suite": "Smoke",
+    "execution_time": 909.92,
+    "summary": {
+        "total": 4,
+        "passed": 0,
+        "failed": 4,
+        "critical": 4,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.813",
+            "version_code": "579"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Despite all tested scenarios executing without automation-level failures, multiple high-severity visual and UI layout defects were detected via Screenshot AI across critical user flows. These include navigation elements overlapping content, advertisements interfering with article readability and paywalls, blank ad containers, as well as duplicated ad and subscription prompts. No functional automation failures were observed, and dynamic-content noise was not detected; the findings are consistent visual and layout regressions across devices.",
+        "release_recommendation": "Block release. The volume and severity of the visual and layout issues—particularly those impacting core reading and subscription experiences—must be resolved before approving release.",
+        "top_risks": [
+            "Bottom navigation overlaps content",
+            "Advertisements overlap with article text and paywalls",
+            "Blank advertisement containers disrupting layout",
+            "Duplicate advertisements and subscription prompts",
+            "Ads shown where minimal-ad/subscriber experiences are expected"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_80",
+            "scenario_name": "SC 80 World page article subsscribedAccount",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 232.62,
+            "log_file": "SC_80.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_118_20260811_180846\\SC_80.log",
+            "screenshots": [
+                "screenshots/SC_80/SC_80_World_Page_AI_Summary.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_01.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_02.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_03.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_04.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_05.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_06.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_07.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_08.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_09.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_10.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_11.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_12.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_13.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_14.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_15.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_16.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_17.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_18.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_19.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_20.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_21.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_22.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_23.png",
+                "screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_24.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Bottom navigation bar overlaps article list content.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Bottom navigation bar overlaps list content",
+                        "Layout corruption at bottom of screen"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "SC_81",
+            "scenario_name": "SC 81 World page article Anonymous Account",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 143.75,
+            "log_file": "SC_81.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_118_20260811_180846\\SC_81.log",
+            "screenshots": [
+                "screenshots/SC_81/SC_81_World_Page_AI_Summary.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_01.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_02.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_03.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_04.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_05.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_06.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_07.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_08.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_09.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_10.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_11.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_12.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_13.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_14.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_15.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Advertisement is overlapping with the article text content.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement overlaps article text",
+                        "Layout overlap"
+                    ]
+                },
+                {
+                    "reason": "Duplicate advertisement blocks and subscription prompts are rendered consecutively, indicating a layout duplication defect.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Duplicate advertisement block",
+                        "Duplicate 'Support Journalism' cards",
+                        "Duplicate 'SUBSCRIBE' buttons",
+                        "Consecutive identical content sections"
+                    ]
+                },
+                {
+                    "reason": "Advertisement is overlapping with the news article card, causing layout corruption.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement overlaps content",
+                        "Layout overlap"
+                    ]
+                },
+                {
+                    "reason": "Large blank advertisement container is visible, indicating a UI rendering defect or missing ad.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Unexpected empty advertisement placeholder"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "SC_86",
+            "scenario_name": "SC 86 Editorial Page anonymous light theme",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 403.62,
+            "log_file": "SC_86.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_118_20260811_180846\\SC_86.log",
+            "screenshots": [
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_01.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_02.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_03.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_04.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_05.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_01.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_02.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_03.png",
+                "screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_04.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Advertisement is visible on top of the paywall overlay, which is not expected for subscribers/premium paywall modal.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement visible when paywall overlay is present",
+                        "Ad shown above subscriber prompt"
+                    ]
+                },
+                {
+                    "reason": "Advertisement is visible on a subscriber upsell screen, which should promote minimal ads experience and not show ads to subscribers.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement visible on subscriber upsell",
+                        "Subscription upsell highlights minimal ads but still shows ads"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-004",
+            "scenario_id": "SC_87",
+            "scenario_name": "SC 87 Editorial Page anonymous DarkTheme",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "CANCELLED",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 1.46,
+            "log_file": "SC_87.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_118_20260811_180846\\SC_87.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

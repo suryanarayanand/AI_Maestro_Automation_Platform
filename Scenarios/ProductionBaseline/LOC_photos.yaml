@@ -1,0 +1,16 @@
+appId: com.mobstac.thehindu
+tags:
+  - baseline
+  - photos
+---
+- runFlow: ../Common/OPEN_HOME_FOR_BASELINE.yaml
+- tapOn:
+    text: "Photos\nTab 2 of 15"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: "Photos\nTab 2 of 15"
+    timeout: 20000
+- assertVisible:
+    text: "Photos\nTab 2 of 15"
+- takeScreenshot: "Screenshots/LocatorSmoke/photos_page"

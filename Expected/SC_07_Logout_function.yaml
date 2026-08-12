@@ -1,0 +1,24 @@
+appId: com.mobstac.thehindu
+tags:
+  - auth
+---
+# Logout function (SC-07).
+# Launch App
+- launchApp:
+    # clearState: true
+    stopApp: true
+
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+
+# Navigate to Account Page
+- tapOn: "Account"
+- takeScreenshot: "Screenshots/SC_07/SC_AccountPage"
+
+# Logout from Account
+- scrollUntilVisible:
+    element: "LOGOUT"
+- tapOn: "LOGOUT"
+
+# Close Application
+- killApp

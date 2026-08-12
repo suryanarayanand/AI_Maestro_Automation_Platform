@@ -1,0 +1,1562 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>AI Automation Report</title>
+
+<style>
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    margin: 30px;
+}
+
+h1 {
+    color: #1f4e79;
+}
+
+h2 {
+    color: #1f4e79;
+    margin-top: 40px;
+}
+
+.summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    width: 180px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    text-align: center;
+}
+
+.card h2 {
+    margin: 10px 0 0;
+    font-size: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+
+th {
+    background: #1f4e79;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+}
+
+tr:hover {
+    background: #f8f8f8;
+}
+
+.scenario {
+    text-align: left;
+    padding-left: 15px;
+}
+
+.status-pass {
+    background: #28a745;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status-fail {
+    background: #dc3545;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status-notfound {
+    background: orange;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status-error {
+    background: #6c757d;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.toolbar label {
+    font-size: 15px;
+    color: #333;
+}
+
+.scenario-block {
+    margin-bottom: 25px;
+}
+
+.scenario-block h3 {
+    color: #1f4e79;
+    border-bottom: 2px solid #1f4e79;
+    padding-bottom: 6px;
+}
+
+.finding {
+    display: flex;
+    gap: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.finding-fail {
+    border-left: 6px solid #dc3545;
+}
+
+.finding-pass {
+    border-left: 6px solid #28a745;
+}
+
+.finding-error {
+    border-left: 6px solid #6c757d;
+}
+
+.finding-image {
+    flex: 0 0 260px;
+}
+
+.finding-image img {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    cursor: zoom-in;
+}
+
+.finding-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.finding-details p {
+    margin: 6px 0;
+}
+
+.finding-details ul {
+    margin: 4px 0 10px 20px;
+}
+
+.jira-box {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-top: 8px;
+}
+
+.footer {
+    margin-top: 30px;
+    color: gray;
+    text-align: center;
+}
+
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,.85);
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    cursor: zoom-out;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 6px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Automation AI Report</h1>
+
+<div class="summary">
+
+<div class="card">
+<h3>Total Tests</h3>
+<h2>32</h2>
+</div>
+
+<div class="card">
+<h3>Passed</h3>
+<h2 style="color:green;">22</h2>
+</div>
+
+<div class="card">
+<h3>Failed</h3>
+<h2 style="color:red;">10</h2>
+</div>
+
+<div class="card">
+<h3>Not Found</h3>
+<h2 style="color:orange;">0</h2>
+</div>
+
+<div class="card">
+<h3>Pass Rate</h3>
+<h2>68.75%</h2>
+</div>
+
+</div>
+
+<h2>Scenario Results</h2>
+
+<table>
+
+<tr>
+
+<th>Scenario ID</th>
+<th>Module</th>
+<th>Scenario</th>
+<th>Status</th>
+<th>Duration (sec)</th>
+<th>AI Total</th>
+<th>AI PASS</th>
+<th>AI FAIL</th>
+
+</tr>
+
+<tr>
+
+<td>COMPLEX_001</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">COMPLEX 001</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>52.91</td>
+
+<td>2</td>
+
+<td>2</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>COMPLEX_002</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">COMPLEX 002</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>93.82</td>
+
+<td>2</td>
+
+<td>1</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>COMPLEX_003</td>
+
+<td>AI Generated</td>
+
+<td class="scenario">Dark Mode Appearance Validation</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>69.38</td>
+
+<td>2</td>
+
+<td>2</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>COMPLEX_004</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">COMPLEX 004</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>124.23</td>
+
+<td>2</td>
+
+<td>1</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>COMPLEX_005</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">COMPLEX 005</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>61.16</td>
+
+<td>2</td>
+
+<td>2</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>TH_1181</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">TH 1181</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>148.38</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>TH_5634</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">TH 5634</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>105.32</td>
+
+<td>2</td>
+
+<td>1</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>TH_5716</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">TH 5716</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>66.79</td>
+
+<td>3</td>
+
+<td>3</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>TH_5818</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">TH 5818</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>106.16</td>
+
+<td>3</td>
+
+<td>2</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>PILOT_SC_02</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">PILOT SC 02</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>34.67</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>PILOT_SC_03</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">PILOT SC 03</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>33.88</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>PILOT_SC_05</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">PILOT SC 05</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>19.92</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>capture_duplicate_hamburger_child</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">capture duplicate hamburger child</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>102.3</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>capture_hamburger_child</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">capture hamburger child</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>91.67</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>capture_home_section</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">capture home section</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>43.19</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>capture_shifted_home_section</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">capture shifted home section</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>84.79</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>expand_hamburger_category</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">expand hamburger category</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>66.39</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>open_hamburger</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">open hamburger</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>17.34</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>LOC_BOOKS</td>
+
+<td>Validated Section Locators</td>
+
+<td class="scenario">Validated locator smoke - Books</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>63.48</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>LOC_BUSINESS</td>
+
+<td>Validated Section Locators</td>
+
+<td class="scenario">Validated locator smoke - Business</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>93.07</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>LOC_EDITORIAL</td>
+
+<td>Validated Section Locators</td>
+
+<td class="scenario">Validated locator smoke - Editorial</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>49.79</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>LOC_ENTERTAINMENT</td>
+
+<td>Validated Section Locators</td>
+
+<td class="scenario">Validated locator smoke - Entertainment</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>63.49</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>LOC_FOOD</td>
+
+<td>Validated Section Locators</td>
+
+<td class="scenario">Validated locator smoke - Food</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>67.16</td>
+
+<td>1</td>
+
+<td>0</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>LOC_INDIA</td>
+
+<td>Validated Section Locators</td>
+
+<td class="scenario">Validated locator smoke - India</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>71.02</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>LOC_LATEST_NEWS</td>
+
+<td>Validated Section Locators</td>
+
+<td class="scenario">Validated locator smoke - Latest News</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>61.37</td>
+
+<td>1</td>
+
+<td>0</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>LOC_OPINION</td>
+
+<td>Validated Section Locators</td>
+
+<td class="scenario">Validated locator smoke - Opinion</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>51.22</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>LOC_PHOTOS</td>
+
+<td>Validated Section Locators</td>
+
+<td class="scenario">Validated locator smoke - Photos</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>55.19</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>LOC_PODCAST</td>
+
+<td>Validated Section Locators</td>
+
+<td class="scenario">Validated locator smoke - Podcast</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>58.28</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>LOC_SCI_TECH</td>
+
+<td>Validated Section Locators</td>
+
+<td class="scenario">Validated locator smoke - Sci-Tech</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>63.18</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>LOC_SPORTS</td>
+
+<td>Validated Section Locators</td>
+
+<td class="scenario">Validated locator smoke - Sports</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>3321.54</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>LOC_VIDEOS</td>
+
+<td>Validated Section Locators</td>
+
+<td class="scenario">Validated locator smoke - Videos</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>1841.33</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>LOC_WORLD</td>
+
+<td>Validated Section Locators</td>
+
+<td class="scenario">Validated locator smoke - World</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>112.92</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+
+</table>
+
+<br>
+
+<h2>AI Screenshot Summary</h2>
+
+<div class="summary">
+
+<div class="card">
+<h3>Total Screenshots</h3>
+<h2>29</h2>
+</div>
+
+<div class="card">
+<h3>AI PASS</h3>
+<h2 style="color:green;">23</h2>
+</div>
+
+<div class="card">
+<h3>AI FAIL</h3>
+<h2 style="color:red;">6</h2>
+</div>
+
+<div class="card">
+<h3>AI ERROR</h3>
+<h2 style="color:#6c757d;">0</h2>
+</div>
+
+</div>
+
+<h2>Detailed AI Findings</h2>
+
+<div class="toolbar">
+    <input type="checkbox" id="failuresOnly" onchange="toggleFailuresOnly()">
+    <label for="failuresOnly">Show failures only</label>
+</div>
+<div class="scenario-block"><h3>COMPLEX_001 &mdash; COMPLEX 001</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/COMPLEX_001/COMPLEX_001_hamburger_navigation_menu.png" alt="COMPLEX_001_hamburger_navigation_menu.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> COMPLEX_001_hamburger_navigation_menu.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are visible in the menu overlay. No layout, rendering, or alignment issues are present.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/COMPLEX_001/COMPLEX_001_home_closing_menu.png" alt="COMPLEX_001_home_closing_menu.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> COMPLEX_001_home_closing_menu.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and there are no visible layout, rendering, or text defects.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>COMPLEX_002 &mdash; COMPLEX 002</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/COMPLEX_002/COMPLEX_002_games_page_sudoku.png" alt="COMPLEX_002_games_page_sudoku.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> COMPLEX_002_games_page_sudoku.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered correctly, with no evidence of missing, overlapping, or corrupted UI elements. Layout, navigation, and images are intact.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/COMPLEX_002/COMPLEX_002_sudoku_landing_page.png" alt="COMPLEX_002_sudoku_landing_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> COMPLEX_002_sudoku_landing_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> There is a typo in the description: 'Sudoko' instead of 'Sudoku' and 'coumns' instead of 'columns'.</p>
+        <p><strong>Issues:</strong></p><ul><li>Misspelled 'Sudoku' as 'Sudoko'</li><li>Misspelled 'columns' as 'coumns' in the description</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Typos in puzzle name and description on Sudoku selection screen</p>
+                    <p><strong>Jira Description:</strong> The word 'Sudoku' is misspelled as 'Sudoko' in the title. The word 'columns' is misspelled as 'coumns' in the description. Both should be corrected for clarity and professionalism.</p>
+                </div>
+                
+    </div>
+</div>
+</div><div class="scenario-block"><h3>COMPLEX_003 &mdash; Dark Mode Appearance Validation</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/COMPLEX_003/COMPLEX_003_dark_mode_enabled.png" alt="COMPLEX_003_dark_mode_enabled.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> COMPLEX_003_dark_mode_enabled.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> UI is fully rendered, all expected elements for the Appearance screen are present and there are no visual defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/COMPLEX_003/COMPLEX_003_home_page_in_dark_mode.png" alt="COMPLEX_003_home_page_in_dark_mode.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> COMPLEX_003_home_page_in_dark_mode.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present and correctly rendered. No visible UI defects.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>COMPLEX_004 &mdash; COMPLEX 004</h3>
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/COMPLEX_004/COMPLEX_004_easy_down_destination.png" alt="COMPLEX_004_easy_down_destination.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> COMPLEX_004_easy_down_destination.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Screen is entirely blank except for the status bar; application content appears missing, indicating incomplete rendering.</p>
+        <p><strong>Issues:</strong></p><ul><li>Blank white area</li><li>Missing application content</li><li>Incomplete rendering</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Application screen is blank with missing content</p>
+                    <p><strong>Jira Description:</strong> The application displays only the status bar. All expected UI components are missing and a large blank white area is visible, indicating a rendering or loading failure.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/COMPLEX_004/COMPLEX_004_scroll_down_and_games_catalogue.png" alt="COMPLEX_004_scroll_down_and_games_catalogue.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> COMPLEX_004_scroll_down_and_games_catalogue.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present and rendered correctly. Layout, images, text, toolbar, and bottom navigation are visually intact.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>COMPLEX_005 &mdash; COMPLEX 005</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/COMPLEX_005/COMPLEX_005_games_page_from_bottom_navigation.png" alt="COMPLEX_005_games_page_from_bottom_navigation.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> COMPLEX_005_games_page_from_bottom_navigation.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All visible UI components are rendered correctly with no evidence of missing or broken UI elements.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/COMPLEX_005/COMPLEX_005_home_page_back_navigation.png" alt="COMPLEX_005_home_page_back_navigation.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> COMPLEX_005_home_page_back_navigation.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present with no visible defects. Layout, images, navigation, and text are rendered correctly.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>TH_5634 &mdash; TH 5634</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/TH_5634/TH_5634_games_screen_back_navigation.png" alt="TH_5634_games_screen_back_navigation.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> TH_5634_games_screen_back_navigation.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are fully rendered; no visible defects or layout issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/TH_5634/TH_5634_sudoku_landing_page.png" alt="TH_5634_sudoku_landing_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> TH_5634_sudoku_landing_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> Text spelling error in title and description.</p>
+        <p><strong>Issues:</strong></p><ul><li>Title 'Sudoko' is misspelled, should be 'Sudoku'</li><li>Description contains 'row,coumns' instead of 'rows,columns'</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Misspelled text in Sudoku selection screen</p>
+                    <p><strong>Jira Description:</strong> The title 'Sudoko' is misspelled; it should be 'Sudoku'. The description also has a typo: 'row,coumns' should be 'rows,columns'.</p>
+                </div>
+                
+    </div>
+</div>
+</div><div class="scenario-block"><h3>TH_5716 &mdash; TH 5716</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/TH_5716/TH_5716_games_page_navigation_state.png" alt="TH_5716_games_page_navigation_state.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> TH_5716_games_page_navigation_state.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No visible UI defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/TH_5716/TH_5716_games_tab_visible_on_home.png" alt="TH_5716_games_tab_visible_on_home.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> TH_5716_games_tab_visible_on_home.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered correctly, with no visible defects or missing elements.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/TH_5716/TH_5716_home_restored_back_navigation.png" alt="TH_5716_home_restored_back_navigation.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> TH_5716_home_restored_back_navigation.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are visible and properly rendered. No layout, rendering, or text defects observed.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>TH_5818 &mdash; TH 5818</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/TH_5818/TH_5818_easy_down_game_listing.png" alt="TH_5818_easy_down_game_listing.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> TH_5818_easy_down_game_listing.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present and rendered correctly. No layout, rendering, or text issues visible.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/TH_5818/TH_5818_easy_down_post_tap_state.png" alt="TH_5818_easy_down_post_tap_state.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> TH_5818_easy_down_post_tap_state.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Large blank area indicates missing or failed content rendering.</p>
+        <p><strong>Issues:</strong></p><ul><li>Blank white area replaces expected UI</li><li>No visible application content</li><li>Incomplete rendering</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> App screen displays large blank white area</p>
+                    <p><strong>Jira Description:</strong> The application screen contains only a large blank white region, indicating that UI elements failed to render. No content, toolbar, or navigation is displayed.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/TH_5818/TH_5818_games_page_back_navigation.png" alt="TH_5818_games_page_back_navigation.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> TH_5818_games_page_back_navigation.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are fully rendered and aligned. No missing or overlapping elements.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>LOC_BOOKS &mdash; Validated locator smoke - Books</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/LOC_BOOKS/books_page.png" alt="books_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> books_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No visual defects observed.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>LOC_BUSINESS &mdash; Validated locator smoke - Business</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/LOC_BUSINESS/business_page.png" alt="business_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> business_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are rendered with no visible defects.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>LOC_EDITORIAL &mdash; Validated locator smoke - Editorial</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/LOC_EDITORIAL/editorial_page.png" alt="editorial_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> editorial_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present and rendered correctly. No evidence of missing content or layout defects.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>LOC_ENTERTAINMENT &mdash; Validated locator smoke - Entertainment</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/LOC_ENTERTAINMENT/entertainment_page.png" alt="entertainment_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> entertainment_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered correctly with no visible layout, rendering, or text defects.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>LOC_FOOD &mdash; Validated locator smoke - Food</h3>
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/LOC_FOOD/food_page.png" alt="food_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> food_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Screen shows only loading placeholders and no real content, indicating content failed to render.</p>
+        <p><strong>Issues:</strong></p><ul><li>Only skeleton placeholders visible</li><li>No actual articles or images rendered</li><li>Content failed to load</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Food tab shows only skeletons, no content rendered</p>
+                    <p><strong>Jira Description:</strong> Navigating to the Food tab results in a screen with only loading placeholders visible. No article titles, images, or actual content are rendered, which indicates incomplete or failed content rendering.</p>
+                </div>
+                
+    </div>
+</div>
+</div><div class="scenario-block"><h3>LOC_INDIA &mdash; Validated locator smoke - India</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/LOC_INDIA/india_page.png" alt="india_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> india_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present with no visible rendering, layout, or overlapping issues.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>LOC_LATEST_NEWS &mdash; Validated locator smoke - Latest News</h3>
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/LOC_LATEST_NEWS/latest_news_page.png" alt="latest_news_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> latest_news_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Content placeholders are still visible, indicating the content failed to load or is stuck in a loading state.</p>
+        <p><strong>Issues:</strong></p><ul><li>Placeholder content visible</li><li>Content not rendered</li><li>Stuck loading state</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> News screen stuck on placeholder loading state</p>
+                    <p><strong>Jira Description:</strong> The News screen displays placeholder cards and no real content has rendered, indicating the page is stuck in a loading state or content has failed to load.</p>
+                </div>
+                
+    </div>
+</div>
+</div><div class="scenario-block"><h3>LOC_OPINION &mdash; Validated locator smoke - Opinion</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/LOC_OPINION/opinion_page.png" alt="opinion_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> opinion_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present, no visual defects or layout issues detected.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>LOC_PHOTOS &mdash; Validated locator smoke - Photos</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/LOC_PHOTOS/photos_page.png" alt="photos_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> photos_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly with no visible layout, rendering, text, or navigation issues.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>LOC_PODCAST &mdash; Validated locator smoke - Podcast</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/LOC_PODCAST/podcast_page.png" alt="podcast_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> podcast_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and properly aligned. No visible UI defects or rendering issues.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>LOC_SCI_TECH &mdash; Validated locator smoke - Sci-Tech</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/LOC_SCI_TECH/sci_tech_page.png" alt="sci_tech_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> sci_tech_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and correctly rendered. No visible UI defects.</p>
+        
+        
+    </div>
+</div>
+</div>
+<div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="">
+</div>
+
+<div class="footer">
+Generated by Automation Framework with AI Visual Analysis
+</div>
+
+<script>
+function toggleFailuresOnly() {
+    var onlyFailures = document.getElementById('failuresOnly').checked;
+    var findings = document.querySelectorAll('.finding');
+    findings.forEach(function (el) {
+        if (onlyFailures) {
+            el.style.display = (el.getAttribute('data-status') === 'FAIL') ? 'flex' : 'none';
+        } else {
+            el.style.display = 'flex';
+        }
+    });
+}
+
+function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+}
+</script>
+
+</body>
+
+</html>

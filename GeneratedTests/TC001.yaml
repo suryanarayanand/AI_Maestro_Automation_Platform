@@ -1,0 +1,13 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+---
+
+- tapOn:
+    text: "Videos"
+
+- tapOn:
+    text: "Home"
+
+- tapOn:
+    accessibilityText: "Account"

@@ -1,0 +1,104 @@
+{
+    "suite": {
+        "total": 5,
+        "passed": 2,
+        "failed": 2,
+        "not_found": 0,
+        "pass_rate": 40.0
+    },
+    "results": [
+        {
+            "id": "SC_100",
+            "module": "Unassigned",
+            "name": "SC 100 Busines Page specific article Anonymous Acc",
+            "status": "FAIL",
+            "duration": 89.57,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_110_20260810_181211\\SC_100.log",
+            "screenshots": [
+                "screenshots/SC_100/SC_100_Business_Page_Anonymous_Account.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_100_Business_Page_Anonymous_Account.png",
+                    "image_path": "screenshots/SC_100/SC_100_Business_Page_Anonymous_Account.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_101",
+            "module": "Unassigned",
+            "name": "SC 101 Busines Page specific article Subscribed Acc",
+            "status": "FAIL",
+            "duration": 129.03,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_110_20260810_181211\\SC_101.log",
+            "screenshots": [
+                "screenshots/SC_101/SC_101_Business_Page_Subscribed_Account.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered correctly with no visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_101_Business_Page_Subscribed_Account.png",
+                    "image_path": "screenshots/SC_101/SC_101_Business_Page_Subscribed_Account.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_102",
+            "module": "Unassigned",
+            "name": "SC 102 Busines Page DarkTheme",
+            "status": "PASS",
+            "duration": 22.56,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_110_20260810_181211\\SC_102.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "SC_103",
+            "module": "Unassigned",
+            "name": "SC 103 Business page lightTheme",
+            "status": "PASS",
+            "duration": 26.11,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_110_20260810_181211\\SC_103.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "SC_105",
+            "module": "Unassigned",
+            "name": "SC 105 magicLink",
+            "status": "CANCELLED",
+            "duration": 16.16,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_110_20260810_181211\\SC_105.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        }
+    ]
+}

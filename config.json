@@ -1,0 +1,26 @@
+{
+    "projectRoot": "D:\\AI_Maestro_Automation_Platform",
+
+    "scenarioFolder": "Scenarios",
+
+    "suiteFolder": "suites",
+
+    "reportFolder": "Reports",
+
+    "screenshotFolder": "Screenshots",
+
+    "baselineFolder": "Baselines",
+
+    "visualThreshold": 95,
+
+    "app_id": "com.mobstac.thehindu",
+
+    "generation": {
+        "uploadFolder": "Uploads",
+        "approvalQueueFolder": "ApprovalQueue",
+        "generatedFolder": "GeneratedTests",
+        "locatorRepository": "LocatorRepository/smart_locator_repository.json",
+        "aiEnabled": false,
+        "model": "gpt-5.4"
+    }
+}

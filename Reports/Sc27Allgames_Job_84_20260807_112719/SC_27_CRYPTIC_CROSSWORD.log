@@ -1,0 +1,54 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_27_CRYPTIC_CROSSWORD
+Run ../Common/OPEN_SUBSCRIBER_GAMES.yaml...
+  Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+  Run LOGIN.yaml...
+    Wait for animation to end... COMPLETED
+    Wait for animation to end... COMPLETED
+    Wait for animation to end... COMPLETED
+    Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+      Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+    Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+    Wait for animation to end... COMPLETED
+    Assert that "Email" is visible... COMPLETED
+    Tap on "Email"... COMPLETED
+    Input text product.testing@thehindu.co.in... COMPLETED
+    Hide Keyboard... COMPLETED
+    Wait for animation to end... COMPLETED
+    Assert that "NEXT.*|Next.*|HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+    Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible...
+    Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible... SKIPPED
+    Assert that "NEXT.*|Next.*" is visible... COMPLETED
+    Tap on "NEXT.*|Next.*"... COMPLETED
+    Assert that "password" is visible... COMPLETED
+    Tap on "password"... COMPLETED
+    Input text Test@123... COMPLETED
+    Hide Keyboard... COMPLETED
+    Assert that "LOGIN.*" is visible... COMPLETED
+    Tap on "LOGIN.*"... COMPLETED
+    Assert that "Home" is visible... COMPLETED
+  Run LOGIN.yaml... COMPLETED
+  Assert that id: screen_home is visible... COMPLETED
+  Tap on id: nav_games... COMPLETED
+  Assert that id: screen_games is visible... COMPLETED
+  Assert that id: screen_games is visible... COMPLETED
+Run ../Common/OPEN_SUBSCRIBER_GAMES.yaml... COMPLETED
+Assert that ".*(Cryptic Crossword|Cryptic).*" is visible... COMPLETED
+Tap on ".*(Cryptic Crossword|Cryptic).*"... COMPLETED
+Assert that ".*(Cryptic Crossword|Cryptic).*" is visible... COMPLETED
+Tap on point (18%,47%)... COMPLETED
+Scrolling DOWN until ".*(January|February|March|April|May|June|July|August|September|October|November|December).*" is visible with speed 40, visibility percentage 100%, timeout 20000 ms, with centering disabled... COMPLETED
+Tap on ".*(January|February|March|April|May|June|July|August|September|October|November|December).*", Index: 0... COMPLETED
+Run flow when "Dismiss" is visible...
+  Tap on "Dismiss"... COMPLETED
+Run flow when "Dismiss" is visible... COMPLETED
+Assert that "Settings" is visible... COMPLETED
+Assert that "Assist" is visible... COMPLETED
+Assert that id: main-nav is visible... COMPLETED
+Take screenshot Screenshots/SC_27/SC_27_Cryptic_Crossword... COMPLETED
+
+
+===== STDERR =====
+

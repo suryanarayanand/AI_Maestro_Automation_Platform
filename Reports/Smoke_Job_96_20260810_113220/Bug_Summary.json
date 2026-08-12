@@ -1,0 +1,129 @@
+{
+    "suite": "Smoke",
+    "execution_time": 298.99,
+    "summary": {
+        "total": 6,
+        "passed": 3,
+        "failed": 3,
+        "critical": 2,
+        "major": 0,
+        "minor": 1
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.811",
+            "version_code": "577"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "The latest test run identified two scenarios (TH_5818, TH_5716) that failed due to functional issues based on Maestro execution results. One scenario (TH_5634) passed all functional checks but revealed low-severity typographical errors via AI screenshot analysis. No significant cross-device or visual-only issues, nor evidence of failure due to transient or dynamic content, were detected.",
+        "release_recommendation": "Do not release",
+        "top_risks": [
+            "Unresolved functional failures in scenarios TH_5818 and TH_5716",
+            "Typographical errors in user-facing text ('Sudoko', 'coumns')"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "TH_5818",
+            "scenario_name": "Easy down game listing",
+            "module": "AI Generated",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 100.85,
+            "log_file": "TH_5818.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_96_20260810_113220\\TH_5818.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "TH_5716",
+            "scenario_name": "Games Landing Page Navigation",
+            "module": "AI Generated",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 30.55,
+            "log_file": "TH_5716.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_96_20260810_113220\\TH_5716.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "TH_5634",
+            "scenario_name": "Landing/Home Screen",
+            "module": "AI Generated",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Minor",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 81.63,
+            "log_file": "TH_5634.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_96_20260810_113220\\TH_5634.log",
+            "screenshots": [
+                "screenshots/TH_5634/TH_5634_games_screen_back_navigation.png",
+                "screenshots/TH_5634/TH_5634_sudoku_landing_page.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Text contains a typo: 'Sudoko' instead of 'Sudoku' and 'row,coumns' instead of 'row,columns'.",
+                    "severity": "LOW",
+                    "issues": [
+                        "Misspelled title: 'Sudoko' should be 'Sudoku'",
+                        "Typo in body text: 'coumns' should be 'columns'"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

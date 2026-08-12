@@ -1,0 +1,1706 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Visual Regression Report</title>
+
+<style>
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+body{
+    font-family:Segoe UI,Arial,sans-serif;
+    background:#eef3f8;
+    margin:30px;
+    color:#222;
+}
+
+h1{
+    color:#154c79;
+    margin-bottom:8px;
+}
+
+h2{
+    color:#1f4e79;
+}
+
+h3{
+    color:#285f8f;
+}
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.summary{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:25px;
+    margin-bottom:40px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.card h2{
+    margin-top:15px;
+    font-size:42px;
+    color:#154c79;
+    font-weight:700;
+}
+
+.card h3{
+    color:#777;
+    font-size:18px;
+    margin:0;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-pass{
+    background:#28a745;
+    color:white;
+    padding:7px 16px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.status-fail{
+    background:#dc3545;
+    color:white;
+    padding:7px 16px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.status-review{
+    background:#ff9800;
+    color:white;
+    padding:7px 16px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.status-notfound{
+    background:#6c757d;
+    color:white;
+    padding:7px 16px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+/* =====================================================
+   RESULT CARD
+===================================================== */
+
+.result-card{
+    background:white;
+    margin-top:35px;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+/* =====================================================
+   INFO GRID
+===================================================== */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+    margin-top:20px;
+}
+
+.info{
+    background:#f7f9fc;
+    border-radius:10px;
+    padding:15px;
+}
+
+/* =====================================================
+   AI
+===================================================== */
+
+.ai-card{
+    margin-top:25px;
+    padding:20px;
+    background:#f4f9ff;
+    border-left:6px solid #0078d4;
+    border-radius:10px;
+}
+
+.ai-summary{
+    margin-top:15px;
+    line-height:1.7;
+}
+
+/* =====================================================
+   ISSUE CARD
+===================================================== */
+
+.issue{
+    margin-top:15px;
+    padding:18px;
+    background:white;
+    border-left:6px solid #dc3545;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.issue:hover{
+    transform:translateY(-2px);
+    transition:.2s;
+}
+
+/* =====================================================
+   IMAGES
+===================================================== */
+
+.images{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:25px;
+}
+
+.image-box{
+    text-align:center;
+}
+
+.image-box img{
+    width:100%;
+    height:auto;
+    border-radius:10px;
+    border:2px solid #ddd;
+    cursor:pointer;
+    transition:.25s;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.image-box img:hover{
+    transform:scale(1.02);
+}
+
+hr{
+    border:none;
+    height:1px;
+    background:#d9d9d9;
+    margin:25px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th{
+    background:#154c79;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f5f5f5;
+}
+
+/* =====================================================
+   LIGHTBOX
+===================================================== */
+
+#lightbox{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.9);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+#lightbox img{
+    max-width:92%;
+    max-height:92%;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    margin-top:50px;
+    text-align:center;
+    color:#777;
+}
+
+</style>
+
+
+</head>
+
+<body>
+
+<h1>Visual Regression Report</h1>
+
+<p style="color:#666;font-size:18px;">
+AI Powered Visual Regression Dashboard
+</p>
+
+<div class="info-grid">
+<div class="info"><strong>Reference</strong><br>Production reference | Google | Pixel 9 Pro | Android 16 | App 2501.20.802 | Physical size: 960x2142 | Physical density: 360</div>
+<div class="info"><strong>Actual</strong><br>Internal test actual | samsung | SM-E066B | Android 16 | App 2501.20.811 | Physical size: 720x1600 | Physical density: 300</div>
+</div>
+
+<div class="summary">
+
+<div class="card">
+<h3>Total</h3>
+<h2>13</h2>
+</div>
+
+<div class="card">
+<h3>Passed</h3>
+<h2 style="color:green">0</h2>
+</div>
+
+<div class="card">
+<h3>Failed</h3>
+<h2 style="color:red">10</h2>
+</div>
+
+<div class="card">
+<h3>Pass Rate</h3>
+<h2>0.0%</h2>
+</div>
+
+</div>
+
+<h2>Comparison Details</h2>
+
+<h2>COMPLEX_001</h2>
+
+<h2>COMPLEX_002</h2>
+
+<h2>COMPLEX_003</h2>
+
+<h2>COMPLEX_004</h2>
+
+<h2>COMPLEX_005</h2>
+
+<h2>TH_1181</h2>
+
+<h2>TH_5634</h2>
+
+<h2>TH_5716</h2>
+
+<h2>TH_5818</h2>
+
+<h2>PILOT_SC_02</h2>
+
+<h2>PILOT_SC_03</h2>
+
+<h2>PILOT_SC_05</h2>
+
+<h2>capture_duplicate_hamburger_child</h2>
+
+<h2>capture_hamburger_child</h2>
+
+<h2>capture_home_section</h2>
+
+<h2>capture_shifted_home_section</h2>
+
+<h2>expand_hamburger_category</h2>
+
+<h2>open_hamburger</h2>
+
+<h2>LOC_BOOKS</h2>
+
+<h2>LOC_BUSINESS</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> business_page.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 41.41%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 82</p>
+
+<p><strong>Image Size :</strong> Reference 960x2142 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Applied</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>FAIL</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+2
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+Two genuine UI issues detected in the header and toolbar regions.
+</p>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Header logo and toolbar misalignment</h4>
+
+<p>
+<b>Severity :</b>
+High
+</p>
+
+<p>
+<b>Component :</b>
+Header
+</p>
+
+<p>
+<b>Description :</b><br>
+The header logo and toolbar icons (hamburger menu, subscribe, user/profile) are misaligned and not matching the reference. The spacing and placement differ, impacting visual consistency.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Align the header and toolbar components as per the reference screenshot, ensuring equal spacing and layout.
+</p>
+
+</div>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Bottom navigation bar height and icon alignment discrepancy</h4>
+
+<p>
+<b>Severity :</b>
+Medium
+</p>
+
+<p>
+<b>Component :</b>
+Navigation Bar
+</p>
+
+<p>
+<b>Description :</b><br>
+The height and padding of the bottom navigation bar, as well as the alignment of navigation icons, do not match the reference, potentially causing an inconsistent appearance.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Verify and fix the navigation bar dimensions and ensure all icons are vertically centered with the correct padding.
+</p>
+
+</div>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/LOC_BUSINESS/./reference_business_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/LOC_BUSINESS/./actual_business_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/LOC_BUSINESS/./diff_business_page.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>LOC_EDITORIAL</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> editorial_page.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 55.89%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 123</p>
+
+<p><strong>Image Size :</strong> Reference 960x2142 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Applied</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>FAIL</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+2
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+Two genuine UI issues detected: header nav overflow and minor navigation bar icon misalignment.
+</p>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Overflowing navigation items</h4>
+
+<p>
+<b>Severity :</b>
+High
+</p>
+
+<p>
+<b>Component :</b>
+Header Navigation Bar
+</p>
+
+<p>
+<b>Description :</b><br>
+The header horizontal navigation bar now includes an additional menu item ('Podcast') that overflows and causes the navigation text to be clipped at the right edge.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Implement horizontal scrolling or resize/reduce navigation items to fit available space.
+</p>
+
+</div>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Slight misalignment of navigation icons</h4>
+
+<p>
+<b>Severity :</b>
+Low
+</p>
+
+<p>
+<b>Component :</b>
+Bottom Navigation Bar
+</p>
+
+<p>
+<b>Description :</b><br>
+Bottom navigation icons and labels show subtle alignment and spacing differences compared to the reference screenshot.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Verify bottom navigation layout for consistent spacing and centering across devices.
+</p>
+
+</div>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/LOC_EDITORIAL/./reference_editorial_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/LOC_EDITORIAL/./actual_editorial_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/LOC_EDITORIAL/./diff_editorial_page.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>LOC_ENTERTAINMENT</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> entertainment_page.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 44.59%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 130</p>
+
+<p><strong>Image Size :</strong> Reference 960x2142 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Applied</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>FAIL</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+2
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+Two genuine UI defects detected in the header and top icon alignment.
+</p>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Header/logo alignment and spacing regression</h4>
+
+<p>
+<b>Severity :</b>
+High
+</p>
+
+<p>
+<b>Component :</b>
+Header
+</p>
+
+<p>
+<b>Description :</b><br>
+The 'Entertainment' section header, logo, and back arrow are misaligned relative to the reference image, with increased height and spacing between elements.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Adjust header layout to match reference alignment and spacing.
+</p>
+
+</div>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Notification and top-right icon badge misplacement</h4>
+
+<p>
+<b>Severity :</b>
+Medium
+</p>
+
+<p>
+<b>Component :</b>
+Toolbar
+</p>
+
+<p>
+<b>Description :</b><br>
+The notification icon and badge at the top right are misaligned or overlapping slightly with the toolbar, differing from the reference layout.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Verify notification icon and badge alignment within toolbar bounds.
+</p>
+
+</div>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/LOC_ENTERTAINMENT/./reference_entertainment_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/LOC_ENTERTAINMENT/./actual_entertainment_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/LOC_ENTERTAINMENT/./diff_entertainment_page.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>LOC_FOOD</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> food_page.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 41.15%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 84</p>
+
+<p><strong>Image Size :</strong> Reference 960x2142 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Applied</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>FAIL</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+2
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+Two major visual defects detected: missing main content and incorrect tab bar content.
+</p>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Main content missing</h4>
+
+<p>
+<b>Severity :</b>
+Critical
+</p>
+
+<p>
+<b>Component :</b>
+Main Content Area
+</p>
+
+<p>
+<b>Description :</b><br>
+The actual screenshot displays only placeholder skeleton loaders instead of the food articles, images, and story content present in the reference screenshot.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Ensure feed data loads correctly and is rendered in the UI; investigate backend/API/data state.
+</p>
+
+</div>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Top navigation tab bar content is different</h4>
+
+<p>
+<b>Severity :</b>
+High
+</p>
+
+<p>
+<b>Component :</b>
+Top Navigation Tabs
+</p>
+
+<p>
+<b>Description :</b><br>
+The actual screenshot shows category tabs (Life & Style, Fashion, Fitness, Food, etc.) which do not match the reference tabs (All, Recipes, Dining, Features, Guides).
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Verify top tab configuration and tab bar source; synchronize navigation categories to match the expected design for the 'Food' section.
+</p>
+
+</div>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/LOC_FOOD/./reference_food_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/LOC_FOOD/./actual_food_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/LOC_FOOD/./diff_food_page.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>LOC_INDIA</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> india_page.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 38.84%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 111</p>
+
+<p><strong>Image Size :</strong> Reference 960x2142 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Applied</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>PASS</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No genuine UI defects detected. All differences are related to dynamic content, news items, or notifications and are not relevant for visual regression of static UI elements.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/LOC_INDIA/./reference_india_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/LOC_INDIA/./actual_india_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/LOC_INDIA/./diff_india_page.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>LOC_LATEST_NEWS</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> latest_news_page.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 43.82%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 43</p>
+
+<p><strong>Image Size :</strong> Reference 960x2142 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Applied</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>FAIL</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+2
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+Two critical visual defects detected in the main UI layout.
+</p>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Main news feed missing</h4>
+
+<p>
+<b>Severity :</b>
+High
+</p>
+
+<p>
+<b>Component :</b>
+Main Content / Article Feed
+</p>
+
+<p>
+<b>Description :</b><br>
+Actual screenshot is showing skeleton loaders/placeholders instead of real content/articles. All data and images are absent.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Verify API/data loading, or check for UI state bug preventing main content from rendering.
+</p>
+
+</div>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Bottom navigation bar missing</h4>
+
+<p>
+<b>Severity :</b>
+High
+</p>
+
+<p>
+<b>Component :</b>
+Bottom Navigation Bar
+</p>
+
+<p>
+<b>Description :</b><br>
+The entire bottom navigation bar with actions (Home, Back, etc.) is absent in the actual screenshot.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Ensure the navigation bar is present and visible across all UI states.
+</p>
+
+</div>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/LOC_LATEST_NEWS/./reference_latest_news_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/LOC_LATEST_NEWS/./actual_latest_news_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/LOC_LATEST_NEWS/./diff_latest_news_page.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>LOC_OPINION</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> opinion_page.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 35.29%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 18</p>
+
+<p><strong>Image Size :</strong> Reference 960x2142 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Applied</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>FAIL</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+2
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+Two genuine UI issues detected related to header/menu alignment and top bar icon misplacement.
+</p>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Header position and logo alignment changed</h4>
+
+<p>
+<b>Severity :</b>
+High
+</p>
+
+<p>
+<b>Component :</b>
+Header
+</p>
+
+<p>
+<b>Description :</b><br>
+The header section, including the logo and menu icon, is slightly shifted in the actual screenshot, causing misalignment compared to the reference.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Review and adjust the header container's alignment and sizing to match the reference layout.
+</p>
+
+</div>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Top right icon group misalignment</h4>
+
+<p>
+<b>Severity :</b>
+Medium
+</p>
+
+<p>
+<b>Component :</b>
+Toolbar
+</p>
+
+<p>
+<b>Description :</b><br>
+The set of icons in the top right (profile/notification/settings) are shifted in the actual UI, causing spacing and potential overlap issues.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Check padding and margin in the top bar's icon container and ensure proper spacing per reference.
+</p>
+
+</div>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/LOC_OPINION/./reference_opinion_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/LOC_OPINION/./actual_opinion_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/LOC_OPINION/./diff_opinion_page.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>LOC_PHOTOS</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> photos_page.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 36.86%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 119</p>
+
+<p><strong>Image Size :</strong> Reference 960x2142 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Applied</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>FAIL</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+2
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+Two visual UI issues detected: overlay icons on images and notification badge count mismatch.
+</p>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Overlay icons unexpectedly present on images</h4>
+
+<p>
+<b>Severity :</b>
+High
+</p>
+
+<p>
+<b>Component :</b>
+Photo Thumbnails
+</p>
+
+<p>
+<b>Description :</b><br>
+Camera and counter overlay icons are present on each photo thumbnail in the actual screenshot, which do not appear in the reference. This could obstruct image content and alter the intended design.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Confirm if overlay icons are intended for this view. If not, remove them to restore original UI.
+</p>
+
+</div>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Notification badge count mismatch</h4>
+
+<p>
+<b>Severity :</b>
+Medium
+</p>
+
+<p>
+<b>Component :</b>
+Header - Notification Badge
+</p>
+
+<p>
+<b>Description :</b><br>
+The notification badge in the header shows a different unread count (1 vs 3) between actual and reference. This may confuse users about unread items if not intended.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Ensure the correct notification count is displayed or clarify if the badge shows live/dynamic content.
+</p>
+
+</div>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/LOC_PHOTOS/./reference_photos_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/LOC_PHOTOS/./actual_photos_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/LOC_PHOTOS/./diff_photos_page.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>LOC_PODCAST</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> podcast_page.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 45.62%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 17</p>
+
+<p><strong>Image Size :</strong> Reference 960x2142 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Applied</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>PASS</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No genuine UI issues detected based on provided focus criteria.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/LOC_PODCAST/./reference_podcast_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/LOC_PODCAST/./actual_podcast_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/LOC_PODCAST/./diff_podcast_page.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>LOC_SCI_TECH</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> sci_tech_page.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 38.88%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 102</p>
+
+<p><strong>Image Size :</strong> Reference 960x2142 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Applied</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>PASS</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No genuine UI defects detected in the controlled areas. All highlighted differences are related to dynamic content, device indicators, article data, or non-static assets.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/LOC_SCI_TECH/./reference_sci_tech_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/LOC_SCI_TECH/./actual_sci_tech_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/LOC_SCI_TECH/./diff_sci_tech_page.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>LOC_SPORTS</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> sports_page.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-notfound">
+NOT FOUND
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 0%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 0</p>
+
+<p><strong>Image Size :</strong> Reference N/A | Actual N/A</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>N/A</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No AI analysis available.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="D:\AI_Maestro_Automation_Platform\.maestro\screenshots\Baselines\Screenshots\LOC_SPORTS\sports_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>LOC_VIDEOS</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> videos_page.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-notfound">
+NOT FOUND
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 0%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 0</p>
+
+<p><strong>Image Size :</strong> Reference N/A | Actual N/A</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>N/A</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No AI analysis available.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="D:\AI_Maestro_Automation_Platform\.maestro\screenshots\Baselines\Screenshots\LOC_VIDEOS\videos_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>LOC_WORLD</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> world_page.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-notfound">
+NOT FOUND
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 0%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 0</p>
+
+<p><strong>Image Size :</strong> Reference N/A | Actual N/A</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>N/A</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No AI analysis available.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="D:\AI_Maestro_Automation_Platform\.maestro\screenshots\Baselines\Screenshots\LOC_WORLD\world_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<div id="lightbox" onclick="closeImage()">
+    <img id="lightbox-image">
+</div>
+
+<div class="footer">
+Generated by Automation Framework - Visual Regression
+</div>
+
+<script>
+
+function openImage(src){
+
+    document.getElementById("lightbox-image").src = src;
+    document.getElementById("lightbox").style.display = "flex";
+
+}
+
+function closeImage(){
+
+    document.getElementById("lightbox").style.display = "none";
+
+}
+
+</script>
+
+</body>
+
+</html>

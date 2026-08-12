@@ -1,0 +1,50 @@
+appId: com.mobstac.thehindu
+tags:
+  - article
+  - share
+---
+# Article Share Functionality (SC-13).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- assertVisible:
+    text: "Welcome to a new\nThe Hindu experience"
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Open Home Article
+- extendedWaitUntil:
+    visible: "Home"
+    timeout: 15000
+- waitForAnimationToEnd
+- tapOn:
+    point: 64%,27%
+- waitForAnimationToEnd
+
+# Verify Share Options
+- tapOn:
+    text: "Share"
+    index: 1
+- takeScreenshot: "Screenshots/SC_13/SC_13_share_article"
+- assertVisible: "WhatsApp"
+- assertVisible: "Messages"
+- assertVisible: "Gmail"
+- assertVisible: "Instagram"
+- assertVisible: "Quick Share"
+
+# Verify Copy Text Option
+- extendedWaitUntil:
+    visible: "Copy text"
+    timeout: 15000
+- tapOn: "Copy text"
+
+# Copy Text Validation
+- takeScreenshot: "Screenshots/SC_13/SC_13_copied_successfully"

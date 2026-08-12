@@ -1,0 +1,103 @@
+{
+    "suite": "baseline",
+    "tests": [
+        {
+            "id": "LOC_VIDEOS",
+            "module": "Production Reference Screenshots",
+            "priority": "P1",
+            "name": "Production baseline - Videos",
+            "yaml": "ProductionBaseline/LOC_videos.yaml"
+        },
+        {
+            "id": "LOC_PHOTOS",
+            "module": "Production Reference Screenshots",
+            "priority": "P1",
+            "name": "Production baseline - Photos",
+            "yaml": "ProductionBaseline/LOC_photos.yaml"
+        },
+        {
+            "id": "LOC_PODCAST",
+            "module": "Production Reference Screenshots",
+            "priority": "P1",
+            "name": "Production baseline - Podcast",
+            "yaml": "ProductionBaseline/LOC_podcast.yaml"
+        },
+        {
+            "id": "LOC_INDIA",
+            "module": "Production Reference Screenshots",
+            "priority": "P1",
+            "name": "Production baseline - India",
+            "yaml": "ProductionBaseline/LOC_india.yaml"
+        },
+        {
+            "id": "LOC_WORLD",
+            "module": "Production Reference Screenshots",
+            "priority": "P1",
+            "name": "Production baseline - World",
+            "yaml": "ProductionBaseline/LOC_world.yaml"
+        },
+        {
+            "id": "LOC_EDITORIAL",
+            "module": "Production Reference Screenshots",
+            "priority": "P1",
+            "name": "Production baseline - Editorial",
+            "yaml": "ProductionBaseline/LOC_editorial.yaml"
+        },
+        {
+            "id": "LOC_OPINION",
+            "module": "Production Reference Screenshots",
+            "priority": "P1",
+            "name": "Production baseline - Opinion",
+            "yaml": "ProductionBaseline/LOC_opinion.yaml"
+        },
+        {
+            "id": "LOC_SPORTS",
+            "module": "Production Reference Screenshots",
+            "priority": "P1",
+            "name": "Production baseline - Sports",
+            "yaml": "ProductionBaseline/LOC_sports.yaml"
+        },
+        {
+            "id": "LOC_BUSINESS",
+            "module": "Production Reference Screenshots",
+            "priority": "P1",
+            "name": "Production baseline - Business",
+            "yaml": "ProductionBaseline/LOC_business.yaml"
+        },
+        {
+            "id": "LOC_SCI_TECH",
+            "module": "Production Reference Screenshots",
+            "priority": "P1",
+            "name": "Production baseline - Sci-Tech",
+            "yaml": "ProductionBaseline/LOC_sci_tech.yaml"
+        },
+        {
+            "id": "LOC_ENTERTAINMENT",
+            "module": "Production Reference Screenshots",
+            "priority": "P1",
+            "name": "Production baseline - Entertainment",
+            "yaml": "ProductionBaseline/LOC_entertainment.yaml"
+        },
+        {
+            "id": "LOC_BOOKS",
+            "module": "Production Reference Screenshots",
+            "priority": "P1",
+            "name": "Production baseline - Books",
+            "yaml": "ProductionBaseline/LOC_books.yaml"
+        },
+        {
+            "id": "LOC_FOOD",
+            "module": "Production Reference Screenshots",
+            "priority": "P1",
+            "name": "Production baseline - Food",
+            "yaml": "ProductionBaseline/LOC_food.yaml"
+        },
+        {
+            "id": "LOC_LATEST_NEWS",
+            "module": "Production Reference Screenshots",
+            "priority": "P1",
+            "name": "Production baseline - Latest News",
+            "yaml": "ProductionBaseline/LOC_latest_news.yaml"
+        }
+    ]
+}

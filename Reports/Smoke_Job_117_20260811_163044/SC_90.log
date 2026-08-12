@@ -1,0 +1,140 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_90_opinionPage_lightTheme
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Run ../Common/LOGIN.yaml...
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "Email" is visible... COMPLETED
+  Tap on "Email"... COMPLETED
+  Input text product.testing@thehindu.co.in... COMPLETED
+  Hide Keyboard... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "NEXT.*|Next.*|HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible...
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible... SKIPPED
+  Assert that "NEXT.*|Next.*" is visible... COMPLETED
+  Tap on "NEXT.*|Next.*"... COMPLETED
+  Assert that "password" is visible... COMPLETED
+  Tap on "password"... COMPLETED
+  Input text Test@123... COMPLETED
+  Hide Keyboard... COMPLETED
+  Assert that "LOGIN.*" is visible... COMPLETED
+  Tap on "LOGIN.*"... COMPLETED
+  Assert that "Home" is visible... COMPLETED
+Run ../Common/LOGIN.yaml... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Assert that "Account" is visible... COMPLETED
+Tap on "Account"... COMPLETED
+Assert that "Appearance" is visible... COMPLETED
+Tap on "Appearance"... COMPLETED
+Assert that "Light
+Mode" is visible... COMPLETED
+Tap on "Light
+Mode"... COMPLETED
+Press back... COMPLETED
+Press back... COMPLETED
+Repeat 3 times...
+  Swiping in LEFT direction in 400 ms... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 3 times... COMPLETED
+Assert that "Opinion" is visible... COMPLETED
+Tap on "Opinion"... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_LightTheme... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_01_LightTheme... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_02_LightTheme... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_03_LightTheme... COMPLETED
+Run flow when "SEE MORE" is visible...
+  Tap on "SEE MORE"... COMPLETED
+Run flow when "SEE MORE" is visible... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_04_LightTheme... COMPLETED
+Wait for animation to end... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_05_LightTheme... COMPLETED
+Wait for animation to end... COMPLETED
+Repeat 10 times...
+  Swiping in DOWN direction in 400 ms... COMPLETED
+Repeat 10 times... COMPLETED
+Run flow when "Cartoon" is visible...
+  Tap on "Cartoon"... COMPLETED
+Run flow when "Cartoon" is visible... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Cartoon_Section_01_LightTheme... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Cartoon_Section_02_LightTheme... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Cartoon_Section_03_LightTheme... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Cartoon_Section_04_LightTheme... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Tap on point (63%,44%)... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Cartoon_Section_05_LightTheme... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Cartoon_Section_06_LightTheme... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Cartoon_Section_07_LightTheme... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Cartoon_Section_08_LightTheme... COMPLETED
+Wait for animation to end... COMPLETED
+Press back... COMPLETED
+Launch app "com.mobstac.thehindu"... COMPLETED
+Repeat 3 times...
+  Swiping in LEFT direction in 400 ms... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 3 times... COMPLETED
+Assert that "Opinion" is visible... COMPLETED
+Tap on "Opinion"... COMPLETED
+Repeat 5 times...
+  Scroll vertically... COMPLETED
+Repeat 5 times... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_06_LightTheme... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_07_LightTheme... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_08_LightTheme... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_09_LightTheme... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_09_LightTheme... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_10_LightTheme... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_11_LightTheme... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_12_LightTheme... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_13_LightTheme... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_14_LightTheme... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_15_LightTheme... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_10_LightTheme... COMPLETED
+
+
+===== STDERR =====
+

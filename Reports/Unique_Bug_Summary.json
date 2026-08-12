@@ -1,0 +1,1417 @@
+{
+  "summary": {
+    "source_reports": 50,
+    "source_bugs": 166,
+    "unique_bugs": 72,
+    "duplicates_removed": 94
+  },
+  "bugs": [
+    {
+      "unique_id": "UBUG-001",
+      "scenario_id": "TH_5634",
+      "scenario_name": "Landing/Home Screen",
+      "module": "AI Generated",
+      "severity": "Critical",
+      "details": "Text alignment and typo issues in the description. The word 'Sudoko' is misspelled, and 'coumns' should be 'columns.' Misspelled title: 'Sudoko' instead of 'Sudoku' Typo in description: 'coumns' instead of 'columns' Text alignment in the description appears inconsistent",
+      "occurrence_count": 11,
+      "reports": [
+        "Excelpilotgames_Job_93_20260810_110937",
+        "Excelpilotgames_Job_94_20260810_112229",
+        "Excelpilotgames_Job_95_20260810_112539",
+        "Regression_Job_101_20260810_122126",
+        "Regression_Job_102_20260810_123639",
+        "Smoke_Job_108_20260810_171300",
+        "Smoke_Job_92_20260810_110618",
+        "Smoke_Job_96_20260810_113220",
+        "Smoke_Job_98_20260810_120711"
+      ],
+      "related_scenarios": [
+        "COMPLEX_002",
+        "TH_5634"
+      ],
+      "sources": [
+        "Run",
+        "Screenshot AI"
+      ]
+    },
+    {
+      "unique_id": "UBUG-002",
+      "scenario_id": "TH_5716",
+      "scenario_name": "Games Landing Page Navigation",
+      "module": "AI Generated",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 6,
+      "reports": [
+        "Excelpilotgames_Job_93_20260810_110937",
+        "Excelpilotgames_Job_94_20260810_112229",
+        "Excelpilotgames_Job_95_20260810_112539",
+        "Excelpilotgamesretry_Job_97_20260810_113522",
+        "Smoke_Job_92_20260810_110618",
+        "Smoke_Job_96_20260810_113220"
+      ],
+      "related_scenarios": [
+        "TH_5716"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-003",
+      "scenario_id": "SC_27",
+      "scenario_name": "SC 27 WORD SEARCH",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "A large blank white region replaces the application content, indicating incomplete or failed rendering. Blank white area Incomplete rendering Missing UI components Some word list containers on the right side are cropped, making words unreadable or inaccessible. Cropped word list containers Unreadable or inaccessible word options",
+      "occurrence_count": 24,
+      "reports": [
+        "Excelpilotgames_Job_93_20260810_110937",
+        "Excelpilotgames_Job_94_20260810_112229",
+        "Excelpilotgames_Job_95_20260810_112539",
+        "Regression_Job_101_20260810_122126",
+        "Regression_Job_102_20260810_123639",
+        "Sc27Allgames_Job_84_20260807_112719",
+        "Sc27Remaininggames_Job_83_20260807_110919",
+        "Sc27Validatedgames_Job_81_20260807_104245",
+        "Sc27Validatedgames_Job_87_20260807_181110",
+        "Sc29Worldretry_Job_74_20260806_175049",
+        "Smoke_Job_108_20260810_171300",
+        "Smoke_Job_92_20260810_110618",
+        "Smoke_Job_96_20260810_113220",
+        "Smoke_Job_98_20260810_120711"
+      ],
+      "related_scenarios": [
+        "COMPLEX_004",
+        "SC_27",
+        "SC_27_NEWS_QUIZ",
+        "TH_5818"
+      ],
+      "sources": [
+        "Run",
+        "Screenshot AI"
+      ]
+    },
+    {
+      "unique_id": "UBUG-004",
+      "scenario_id": "SC_82",
+      "scenario_name": "Editorial_page_anonymous_account",
+      "module": "Editorial",
+      "severity": "Critical",
+      "details": "SDK debug string 'unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression' is visible in the UI, which should not be present in production. SDK debug string visible in UI Debug information ('unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression') is visible above the advertisement. Debug information visible in the UI Ad SDK technical details exposed to user Advertisement SDK debug information and unit name are visible above the advertisement, which should not appear in production UI. SDK debug text '/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression' visible above advertisement Advertisement unit information is rendered in user-facing UI Rendering/debug information is visible above the advertisement. Debug or SDK log text visible above advertisement Ad tech debug information is visibly rendered above the advertisement. SDK debug text 'unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression' is visible above the advertisement Advertisement container displays internal SDK debug or impression text, indicating a rendering or advertisement integration defect. Advertisement unit displays internal SDK text Debug information visible above advertisement Advertisement tech/debug info ('unit:/22390678/TH_Android_Topic__Sticky__A SDK loaded / impression') is visible above the advertisement banner. Advertisement tech/debug info visible Debug string 'unit:/22390678/TH_Android_Topic__Sticky__A SDK loaded / impression' displayed in production UI Technical SDK debug information and unit name are visible above the advertisement. SDK debug text (unit name and impression log) visible above ad Internal information exposed in UI Ad SDK/debug information is visible above the advertisement, which is not expected in production UI. Ad SDK/debug information visible above advertisement Advertisement container shows a stuck loading indicator and placeholder text, indicating incomplete rendering. Advertisement loading spinner visible Advertisement placeholder text visible Incomplete ad rendering Advertisement container is stuck on 'Loading ad...' with technical details visible, indicating an incomplete ad load and UI defect. Advertisement container displaying 'Loading ad...' indefinitely Technical ad unit and status visible to user Incomplete rendering of advertisement Debug information and SDK status message are visible over the advertisement. SDK loaded / impression text over advertisement unit Visible debug or unit info text: 'unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression' is present over advertisement Debug/technical ad unit information is visible to the user. Technical ad unit and status information displayed in UI Debug details ('unit', 'status', 'SDK loaded / impression') should not be visible to end user Technical ad debugging information (unit, SDK loaded / impression) is visibly rendered inside the advertisement container. Ad unit debug string visible Technical SDK/impression data visible on UI Debug or SDK impression message is visible above the advertisement, indicating a rendering or configuration issue. SDK loaded / impression message visible above advertisement Debug/configuration message present in production UI",
+      "occurrence_count": 18,
+      "reports": [
+        "Regression_Job_102_20260810_123639",
+        "Regression_Job_107_20260810_163458",
+        "Regression_Job_115_20260811_120724",
+        "Regression_Job_48_20260804_141503",
+        "Regression_Job_49_20260804_142357",
+        "Regression_Job_50_20260804_151218",
+        "Sanity_Job_88_20260810_104458",
+        "Smoke_Job_117_20260811_163044",
+        "Smoke_Job_118_20260811_180846",
+        "Smoke_Job_47_20260804_120914"
+      ],
+      "related_scenarios": [
+        "SC_03",
+        "SC_22",
+        "SC_23",
+        "SC_25",
+        "SC_82",
+        "SC_84",
+        "SC_86",
+        "SC_95",
+        "TH_1181"
+      ],
+      "sources": [
+        "Run",
+        "Screenshot AI",
+        "Visual"
+      ]
+    },
+    {
+      "unique_id": "UBUG-005",
+      "scenario_id": "capture_duplicate_hamburger_child",
+      "scenario_name": "capture duplicate hamburger child",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_102_20260810_123639"
+      ],
+      "related_scenarios": [
+        "capture_duplicate_hamburger_child"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-006",
+      "scenario_id": "capture_hamburger_child",
+      "scenario_name": "capture hamburger child",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_102_20260810_123639"
+      ],
+      "related_scenarios": [
+        "capture_hamburger_child"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-007",
+      "scenario_id": "capture_home_section",
+      "scenario_name": "capture home section",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_102_20260810_123639"
+      ],
+      "related_scenarios": [
+        "capture_home_section"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-008",
+      "scenario_id": "capture_shifted_home_section",
+      "scenario_name": "capture shifted home section",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_102_20260810_123639"
+      ],
+      "related_scenarios": [
+        "capture_shifted_home_section"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-009",
+      "scenario_id": "expand_hamburger_category",
+      "scenario_name": "expand hamburger category",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_102_20260810_123639"
+      ],
+      "related_scenarios": [
+        "expand_hamburger_category"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-010",
+      "scenario_id": "open_hamburger",
+      "scenario_name": "open hamburger",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_102_20260810_123639"
+      ],
+      "related_scenarios": [
+        "open_hamburger"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-011",
+      "scenario_id": "LOC_BUSINESS",
+      "scenario_name": "Validated locator smoke - Business",
+      "module": "Validated Section Locators",
+      "severity": "Critical",
+      "details": "Two genuine UI issues detected in the header and toolbar regions. High Header Header logo and toolbar misalignment The header logo and toolbar icons (hamburger menu, subscribe, user/profile) are misaligned and not matching the reference. The spacing and placement differ, impacting visual consistency. Align the header and toolbar components as per the reference screenshot, ensuring equal spacing and layout. Medium Navigation Bar Bottom navigation bar height and icon alignment discrepancy The height and padding of the bottom navigation bar, as well as the alignment of navigation icons, do not match the reference, potentially causing an inconsistent appearance. Verify and fix the navigation bar dimensions and ensure all icons are vertically centered with the correct padding.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_102_20260810_123639"
+      ],
+      "related_scenarios": [
+        "LOC_BUSINESS"
+      ],
+      "sources": [
+        "Visual"
+      ]
+    },
+    {
+      "unique_id": "UBUG-012",
+      "scenario_id": "LOC_EDITORIAL",
+      "scenario_name": "Validated locator smoke - Editorial",
+      "module": "Validated Section Locators",
+      "severity": "Critical",
+      "details": "Two genuine UI issues detected: header nav overflow and minor navigation bar icon misalignment. High Header Navigation Bar Overflowing navigation items The header horizontal navigation bar now includes an additional menu item ('Podcast') that overflows and causes the navigation text to be clipped at the right edge. Implement horizontal scrolling or resize/reduce navigation items to fit available space. Low Bottom Navigation Bar Slight misalignment of navigation icons Bottom navigation icons and labels show subtle alignment and spacing differences compared to the reference screenshot. Verify bottom navigation layout for consistent spacing and centering across devices.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_102_20260810_123639"
+      ],
+      "related_scenarios": [
+        "LOC_EDITORIAL"
+      ],
+      "sources": [
+        "Visual"
+      ]
+    },
+    {
+      "unique_id": "UBUG-013",
+      "scenario_id": "LOC_OPINION",
+      "scenario_name": "Validated locator smoke - Opinion",
+      "module": "Validated Section Locators",
+      "severity": "Critical",
+      "details": "Two genuine UI issues detected related to header/menu alignment and top bar icon misplacement. High Header Header position and logo alignment changed The header section, including the logo and menu icon, is slightly shifted in the actual screenshot, causing misalignment compared to the reference. Review and adjust the header container's alignment and sizing to match the reference layout. Medium Toolbar Top right icon group misalignment The set of icons in the top right (profile/notification/settings) are shifted in the actual UI, causing spacing and potential overlap issues. Check padding and margin in the top bar's icon container and ensure proper spacing per reference.",
+      "occurrence_count": 2,
+      "reports": [
+        "Regression_Job_102_20260810_123639"
+      ],
+      "related_scenarios": [
+        "LOC_ENTERTAINMENT",
+        "LOC_OPINION"
+      ],
+      "sources": [
+        "Visual"
+      ]
+    },
+    {
+      "unique_id": "UBUG-014",
+      "scenario_id": "LOC_FOOD",
+      "scenario_name": "Validated locator smoke - Food",
+      "module": "Validated Section Locators",
+      "severity": "Critical",
+      "details": "Screen shows only loading placeholders and no real content, indicating content failed to render. Only skeleton placeholders visible No actual articles or images rendered Content failed to load Two major visual defects detected: missing main content and incorrect tab bar content. Critical Main Content Area Main content missing The actual screenshot displays only placeholder skeleton loaders instead of the food articles, images, and story content present in the reference screenshot. Ensure feed data loads correctly and is rendered in the UI; investigate backend/API/data state. High Top Navigation Tabs Top navigation tab bar content is different The actual screenshot shows category tabs (Life & Style, Fashion, Fitness, Food, etc.) which do not match the reference tabs (All, Recipes, Dining, Features, Guides). Verify top tab configuration and tab bar source; synchronize navigation categories to match the expected design for the 'Food' section.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_102_20260810_123639"
+      ],
+      "related_scenarios": [
+        "LOC_FOOD"
+      ],
+      "sources": [
+        "Screenshot AI",
+        "Visual"
+      ]
+    },
+    {
+      "unique_id": "UBUG-015",
+      "scenario_id": "LOC_LATEST_NEWS",
+      "scenario_name": "Validated locator smoke - Latest News",
+      "module": "Validated Section Locators",
+      "severity": "Critical",
+      "details": "Content placeholders are still visible, indicating the content failed to load or is stuck in a loading state. Placeholder content visible Content not rendered Stuck loading state Two critical visual defects detected in the main UI layout. High Main Content / Article Feed Main news feed missing Actual screenshot is showing skeleton loaders/placeholders instead of real content/articles. All data and images are absent. Verify API/data loading, or check for UI state bug preventing main content from rendering. High Bottom Navigation Bar Bottom navigation bar missing The entire bottom navigation bar with actions (Home, Back, etc.) is absent in the actual screenshot. Ensure the navigation bar is present and visible across all UI states.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_102_20260810_123639"
+      ],
+      "related_scenarios": [
+        "LOC_LATEST_NEWS"
+      ],
+      "sources": [
+        "Screenshot AI",
+        "Visual"
+      ]
+    },
+    {
+      "unique_id": "UBUG-016",
+      "scenario_id": "LOC_PHOTOS",
+      "scenario_name": "Validated locator smoke - Photos",
+      "module": "Validated Section Locators",
+      "severity": "Critical",
+      "details": "Two visual UI issues detected: overlay icons on images and notification badge count mismatch. High Photo Thumbnails Overlay icons unexpectedly present on images Camera and counter overlay icons are present on each photo thumbnail in the actual screenshot, which do not appear in the reference. This could obstruct image content and alter the intended design. Confirm if overlay icons are intended for this view. If not, remove them to restore original UI. Medium Header - Notification Badge Notification badge count mismatch The notification badge in the header shows a different unread count (1 vs 3) between actual and reference. This may confuse users about unread items if not intended. Ensure the correct notification count is displayed or clarify if the badge shows live/dynamic content.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_102_20260810_123639"
+      ],
+      "related_scenarios": [
+        "LOC_PHOTOS"
+      ],
+      "sources": [
+        "Visual"
+      ]
+    },
+    {
+      "unique_id": "UBUG-017",
+      "scenario_id": "LOC_SPORTS",
+      "scenario_name": "Validated locator smoke - Sports",
+      "module": "Validated Section Locators",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_102_20260810_123639"
+      ],
+      "related_scenarios": [
+        "LOC_SPORTS"
+      ],
+      "sources": [
+        "Run",
+        "Visual"
+      ]
+    },
+    {
+      "unique_id": "UBUG-018",
+      "scenario_id": "LOC_VIDEOS",
+      "scenario_name": "Validated locator smoke - Videos",
+      "module": "Validated Section Locators",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_102_20260810_123639"
+      ],
+      "related_scenarios": [
+        "LOC_VIDEOS"
+      ],
+      "sources": [
+        "Run",
+        "Visual"
+      ]
+    },
+    {
+      "unique_id": "UBUG-019",
+      "scenario_id": "LOC_WORLD",
+      "scenario_name": "Validated locator smoke - World",
+      "module": "Validated Section Locators",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_102_20260810_123639"
+      ],
+      "related_scenarios": [
+        "LOC_WORLD"
+      ],
+      "sources": [
+        "Run",
+        "Visual"
+      ]
+    },
+    {
+      "unique_id": "UBUG-020",
+      "scenario_id": "SC_05",
+      "scenario_name": "Premium_access_for_anonymous_user",
+      "module": "Premium",
+      "severity": "Critical",
+      "details": "Loading indicator is stuck and content underneath is blocked by the persistent black overlay. Loading indicator is not completing Persistent black overlay blocks content Page content is not accessible Prominent advertisement is displayed on the premium or subscriber section, which should not show ads. Advertisement visible on premium screen",
+      "occurrence_count": 2,
+      "reports": [
+        "Regression_Job_107_20260810_163458",
+        "Regression_Job_49_20260804_142357"
+      ],
+      "related_scenarios": [
+        "SC_05"
+      ],
+      "sources": [
+        "Screenshot AI"
+      ]
+    },
+    {
+      "unique_id": "UBUG-021",
+      "scenario_id": "Sc_08",
+      "scenario_name": "Sc 08 Verify Account Subscription details",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 3,
+      "reports": [
+        "Regression_Job_107_20260810_163458",
+        "Regression_Job_49_20260804_142357",
+        "Regression_Job_50_20260804_151218"
+      ],
+      "related_scenarios": [
+        "Sc_08",
+        "SC_08"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-022",
+      "scenario_id": "SC_100",
+      "scenario_name": "SC 100 Busines Page specific article Anonymous Acc",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_110_20260810_181211"
+      ],
+      "related_scenarios": [
+        "SC_100"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-023",
+      "scenario_id": "SC_101",
+      "scenario_name": "SC 101 Busines Page specific article Subscribed Acc",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 2,
+      "reports": [
+        "Regression_Job_110_20260810_181211",
+        "Regression_Job_111_20260811_110804"
+      ],
+      "related_scenarios": [
+        "SC_101"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-024",
+      "scenario_id": "SC_105",
+      "scenario_name": "SC 105 magicLink",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_110_20260810_181211"
+      ],
+      "related_scenarios": [
+        "SC_105"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-025",
+      "scenario_id": "SC_80",
+      "scenario_name": "SC 80 World page article subsscribedAccount",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Bottom navigation bar overlaps article list content. Bottom navigation bar overlaps list content Layout corruption at bottom of screen",
+      "occurrence_count": 2,
+      "reports": [
+        "Regression_Job_115_20260811_120724",
+        "Smoke_Job_118_20260811_180846"
+      ],
+      "related_scenarios": [
+        "SC_80"
+      ],
+      "sources": [
+        "Run",
+        "Screenshot AI"
+      ]
+    },
+    {
+      "unique_id": "UBUG-026",
+      "scenario_id": "SC_81",
+      "scenario_name": "SC 81 World page article Anonymous Account",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "A large blank white region is present above the advertisement banner, with two 'ADVERTISEMENT' labels indicating a missing or failed ad render. Large blank area above advertisement Multiple 'ADVERTISEMENT' labels without corresponding ads Evidence of missing ad content Visible blank advertisement container between article content and banner ad indicates incomplete ad rendering. Blank advertisement container Empty advertisement placeholder Large unexpected blank white region interrupts the application content between 'Post a comment' and the advertisement section indicating incomplete rendering or missing UI. Unexpected large blank area within app content Possible missing cards or incomplete rendering Advertisement banner overlays and blocks visible content of a news article. Advertisement banner overlaying application content News article text and image partially blocked by advertisement There is a large blank area under the 'ADVERTISEMENT' label, indicating an empty advertisement placeholder. Blank advertisement container Empty advertisement placeholder",
+      "occurrence_count": 5,
+      "reports": [
+        "Regression_Job_115_20260811_120724",
+        "Smoke_Job_117_20260811_163044",
+        "Smoke_Job_118_20260811_180846",
+        "Smoke_Job_119_20260811_182407"
+      ],
+      "related_scenarios": [
+        "SC_81",
+        "SC_99"
+      ],
+      "sources": [
+        "Run",
+        "Screenshot AI"
+      ]
+    },
+    {
+      "unique_id": "UBUG-027",
+      "scenario_id": "SC_87",
+      "scenario_name": "SC 87 Editorial Page anonymous DarkTheme",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 2,
+      "reports": [
+        "Regression_Job_115_20260811_120724",
+        "Smoke_Job_118_20260811_180846"
+      ],
+      "related_scenarios": [
+        "SC_87"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-028",
+      "scenario_id": "SC_88",
+      "scenario_name": "SC 88 Opinion Article Navigation Interaction Login Validation",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Advertisement is visible behind the subscription paywall modal. Advertisement visible behind paywall modal Advertisement is visible on the subscription paywall, which is not expected for a subscriber acquisition/promotional screen. Advertisement visible on subscription paywall Advertisement is visible on the subscription paywall, which should not display ads to users deciding whether to subscribe. Advertisement visible on subscription paywall Advertisement is visible below the paywall/subscription prompt. Advertisement visible on subscription paywall A large unexpected blank area is visible at the top of the screen, indicating missing or incomplete rendering of content. Large blank area at the top of the screen Possible missing header or primary content Bottom UI toolbar is overlapping the article content and obscuring text. Bottom navigation overlaps article content Obscured news article",
+      "occurrence_count": 3,
+      "reports": [
+        "Regression_Job_115_20260811_120724",
+        "Smoke_Job_117_20260811_163044",
+        "Smoke_Job_119_20260811_182407"
+      ],
+      "related_scenarios": [
+        "SC_88"
+      ],
+      "sources": [
+        "Run",
+        "Screenshot AI"
+      ]
+    },
+    {
+      "unique_id": "UBUG-029",
+      "scenario_id": "SC_89",
+      "scenario_name": "SC 89 Opinion Article EndToEnd Subscriber Feature Validation",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_115_20260811_120724"
+      ],
+      "related_scenarios": [
+        "SC_89"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-030",
+      "scenario_id": "SC_90",
+      "scenario_name": "SC 90 opinionPage lightTheme",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Placeholder loading skeletons are visible indicating the article content did not load as expected. Loading skeletons visible Content not rendered Unexpected blank area interrupts application content above 'SEE MORE', indicating missing or partially rendered UI elements. Blank area inside application content Possible missing cards or containers above SEE MORE",
+      "occurrence_count": 2,
+      "reports": [
+        "Regression_Job_115_20260811_120724",
+        "Smoke_Job_117_20260811_163044"
+      ],
+      "related_scenarios": [
+        "SC_90"
+      ],
+      "sources": [
+        "Run",
+        "Screenshot AI"
+      ]
+    },
+    {
+      "unique_id": "UBUG-031",
+      "scenario_id": "SC_91",
+      "scenario_name": "SC 91 Sports page anonymous account",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Advertisement banner is visibly broken with corrupted rendering. Broken advertisement rendering Corrupted advertisement banner An advertisement banner is overlapping and partially covering the Football section content. Advertisement overlaps content Partially hidden Football card Advertisement overlaps with the 'Tennis' article content, causing a layout/rendering defect. Advertisement overlays/obscures article content Broken layout A large horizontal advertisement is overlapping the 'Athletics' section title and content, causing clear layout corruption. Advertisement overlaps content Layout corruption in content section",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_115_20260811_120724"
+      ],
+      "related_scenarios": [
+        "SC_91"
+      ],
+      "sources": [
+        "Screenshot AI"
+      ]
+    },
+    {
+      "unique_id": "UBUG-032",
+      "scenario_id": "SC_93",
+      "scenario_name": "SC 93 Sports page anonymous account article",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_115_20260811_120724"
+      ],
+      "related_scenarios": [
+        "SC_93"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-033",
+      "scenario_id": "SC_94",
+      "scenario_name": "SC 94 Sports page subscribed account article ",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_115_20260811_120724"
+      ],
+      "related_scenarios": [
+        "SC_94"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-034",
+      "scenario_id": "SC_96",
+      "scenario_name": "SC 96 subscribeOption from differentPage",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Rendering artifacts are visible in the advertisement area, with two warning icons overlapping the ad content. Rendering artifacts in advertisement area Warning icons overlapping advertisement",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_115_20260811_120724"
+      ],
+      "related_scenarios": [
+        "SC_96"
+      ],
+      "sources": [
+        "Run",
+        "Screenshot AI"
+      ]
+    },
+    {
+      "unique_id": "UBUG-035",
+      "scenario_id": "SC_97",
+      "scenario_name": "SC 97 gift a article Subscribed Account",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Placeholder elements are visible in the article feed area, indicating incomplete content rendering or a loading state stuck. Placeholder cards visible Partial rendering of article feed Loading state not cleared",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_115_20260811_120724"
+      ],
+      "related_scenarios": [
+        "SC_97"
+      ],
+      "sources": [
+        "Run",
+        "Screenshot AI"
+      ]
+    },
+    {
+      "unique_id": "UBUG-036",
+      "scenario_id": "SC_04",
+      "scenario_name": "Verify_Ads_Taboola_for_subscriber",
+      "module": "Ads",
+      "severity": "Critical",
+      "details": "A large blank area exists where an article image should be rendered, indicating a missing or broken image. Blank area where image should be Missing or broken article image Two major UI defects detected: primary news article image missing and significant empty space in main content area. Critical Main Content Primary news article image missing The main image corresponding to the headline news article is missing, leaving a large blank area. This breaks the layout consistency and affects the user experience. Ensure that all news articles have the expected images loaded per design. If unavailable, display a placeholder. High Layout Excessive empty space in content area There is significant vertical empty space above the headline text where the article image should be. This leads to inefficient use of screen real estate and can confuse users. Fix the layout logic to collapse empty space when images/content are missing, maintaining proper alignment and padding.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_49_20260804_142357"
+      ],
+      "related_scenarios": [
+        "SC_04"
+      ],
+      "sources": [
+        "Screenshot AI",
+        "Visual"
+      ]
+    },
+    {
+      "unique_id": "UBUG-037",
+      "scenario_id": "SC_07",
+      "scenario_name": "Logout_function",
+      "module": "Account",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 2,
+      "reports": [
+        "Regression_Job_49_20260804_142357",
+        "Regression_Job_50_20260804_151218"
+      ],
+      "related_scenarios": [
+        "SC_07"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-038",
+      "scenario_id": "SC_11",
+      "scenario_name": "Anonymous_article_navigation",
+      "module": "Article",
+      "severity": "Critical",
+      "details": "Advertisement SDK debug information and unit ID are visible above the actual advertisement. Advertisement SDK debug information visible unit ID and SDK message displayed to end user Advertisement unit identifier and SDK impression/debug information visibly displayed in the UI. Visible advertisement unit debug text SDK loaded / impression debug text visible to user Two genuine UI regression issues detected in core UI components. High Header Header alignment and font inconsistencies The header section displays alignment and font rendering differences. Elements are misaligned compared to the reference, and text style is inconsistent, impacting the visual hierarchy. Check and correct the header layout constraints, and ensure the correct font, size, and style are applied according to design specifications. Medium Toolbar & Bottom Navigation Icon and button position shifts Icons and action buttons in the toolbar and bottom navigation appear slightly shifted. The 'SUBSCRIBE' button and associated icons are out of alignment, which could affect usability and visual appeal. Review spacing, padding, and margin values for toolbar and bottom navigation components, and align UI elements to match the reference screenshot.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_49_20260804_142357"
+      ],
+      "related_scenarios": [
+        "SC_11"
+      ],
+      "sources": [
+        "Screenshot AI",
+        "Visual"
+      ]
+    },
+    {
+      "unique_id": "UBUG-039",
+      "scenario_id": "SC_12",
+      "scenario_name": "Subscriber_Article_Full_Read_Access",
+      "module": "Article",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 4,
+      "reports": [
+        "Regression_Job_49_20260804_142357",
+        "Regression_Job_50_20260804_151218",
+        "Regression_Job_51_20260804_162619",
+        "Regression_Job_52_20260804_164034"
+      ],
+      "related_scenarios": [
+        "SC_12"
+      ],
+      "sources": [
+        "Run",
+        "Visual"
+      ]
+    },
+    {
+      "unique_id": "UBUG-040",
+      "scenario_id": "SC_13",
+      "scenario_name": "Article_Share_Functionality",
+      "module": "Article",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 2,
+      "reports": [
+        "Regression_Job_49_20260804_142357",
+        "Regression_Job_50_20260804_151218"
+      ],
+      "related_scenarios": [
+        "SC_13"
+      ],
+      "sources": [
+        "Run",
+        "Visual"
+      ]
+    },
+    {
+      "unique_id": "UBUG-041",
+      "scenario_id": "SC_14",
+      "scenario_name": "Article_Font_Size_Validation",
+      "module": "Article",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 2,
+      "reports": [
+        "Regression_Job_49_20260804_142357",
+        "Regression_Job_50_20260804_151218"
+      ],
+      "related_scenarios": [
+        "SC_14"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-042",
+      "scenario_id": "SC_15",
+      "scenario_name": "Podcast_Section_Subscriber_account",
+      "module": "Podcast",
+      "severity": "Critical",
+      "details": "Podcast screen shows loading spinner with placeholder cards but content failed to render, indicating incomplete rendering. Stuck loading indicator Content failed to render Podcast placeholder visible without loaded data",
+      "occurrence_count": 3,
+      "reports": [
+        "Regression_Job_49_20260804_142357",
+        "Regression_Job_50_20260804_151218",
+        "Regression_Job_51_20260804_162619"
+      ],
+      "related_scenarios": [
+        "SC_15"
+      ],
+      "sources": [
+        "Run",
+        "Screenshot AI"
+      ]
+    },
+    {
+      "unique_id": "UBUG-043",
+      "scenario_id": "SC_16",
+      "scenario_name": "SC 16 login with appleid",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Error state shown with invalid_request and a large blank area replaces UI content. No actionable UI provided for user to proceed. Blank white area replaces expected content No actionable button or option to retry, dismiss, or navigate back Error state is not user-friendly",
+      "occurrence_count": 2,
+      "reports": [
+        "Regression_Job_50_20260804_151218",
+        "Regression_Job_52_20260804_164034"
+      ],
+      "related_scenarios": [
+        "SC_16"
+      ],
+      "sources": [
+        "Run",
+        "Screenshot AI"
+      ]
+    },
+    {
+      "unique_id": "UBUG-044",
+      "scenario_id": "SC_18",
+      "scenario_name": "SC 18 Create New Account Option",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_50_20260804_151218"
+      ],
+      "related_scenarios": [
+        "SC_18"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-045",
+      "scenario_id": "SC_19",
+      "scenario_name": "ad_navigation",
+      "module": "Advertisement",
+      "severity": "Critical",
+      "details": "Large unexpected blank area is present in the middle of the screen where live updates content should be displayed. Large blank area in Live updates section Incomplete rendering of live updates Three genuine UI defects detected related to missing header, navigation, and toolbar. Critical Header Header missing The application header containing the app logo, menu icon, and subscribe/settings icons is missing in the actual screenshot. Restore the header and verify visibility of all associated icons. Critical Navigation Bar Bottom Navigation Bar missing Bottom navigation bar with HOME, TRENDING, PREMIUM, EBOOKS, and GAMES is not present in the actual screenshot. Ensure the bottom navigation bar is always visible on main screens. Major Toolbar/Tab bar Tab bar missing The toolbar/tab bar with navigation to Videos, Photos, Podcast, Home, India, World, etc., is absent. Restore the toolbar/tab bar for content discovery and navigation.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_50_20260804_151218"
+      ],
+      "related_scenarios": [
+        "SC_19"
+      ],
+      "sources": [
+        "Screenshot AI",
+        "Visual"
+      ]
+    },
+    {
+      "unique_id": "UBUG-046",
+      "scenario_id": "SC_20",
+      "scenario_name": "SC 20 Signup Option Validation",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_50_20260804_151218"
+      ],
+      "related_scenarios": [
+        "SC_20"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-047",
+      "scenario_id": "SC_24",
+      "scenario_name": "SC 24 Subscriber E-Book access",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Loading indicator is visible for an extended duration with a large blank area, indicating incomplete rendering or stuck loading state. Stuck loading indicator Incomplete screen rendering Blank content area",
+      "occurrence_count": 1,
+      "reports": [
+        "Regression_Job_50_20260804_151218"
+      ],
+      "related_scenarios": [
+        "SC_24"
+      ],
+      "sources": [
+        "Screenshot AI"
+      ]
+    },
+    {
+      "unique_id": "UBUG-048",
+      "scenario_id": "SC_27_EASY_DOWN",
+      "scenario_name": "Easy Down",
+      "module": "Subscriber Games",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 3,
+      "reports": [
+        "Sc27Allgames_Job_79_20260806_183201",
+        "Sc27Remaininggames_Job_82_20260807_110247",
+        "Sc27Remaininggames_Job_83_20260807_110919"
+      ],
+      "related_scenarios": [
+        "SC_27_EASY_DOWN"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-049",
+      "scenario_id": "SC_27_WORD_SEARCH",
+      "scenario_name": "Word Search",
+      "module": "Subscriber Games",
+      "severity": "Critical",
+      "details": "Several words in the word list are visibly cut off on the right side. The text is cropped, making some words unreadable. Cropped text in word list Some words cut off on the right",
+      "occurrence_count": 2,
+      "reports": [
+        "Sc27Allgames_Job_84_20260807_112719",
+        "Sc27Remaininggames_Job_83_20260807_110919"
+      ],
+      "related_scenarios": [
+        "SC_27_WORD_SEARCH"
+      ],
+      "sources": [
+        "Screenshot AI"
+      ]
+    },
+    {
+      "unique_id": "UBUG-050",
+      "scenario_id": "SC_27_WORD_ROW",
+      "scenario_name": "Word Row",
+      "module": "Subscriber Games",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Sc27Remaininggames_Job_83_20260807_110919"
+      ],
+      "related_scenarios": [
+        "SC_27_WORD_ROW"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-051",
+      "scenario_id": "SC_27_WORD_FLOWER",
+      "scenario_name": "Word Flower",
+      "module": "Subscriber Games",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Sc27Remaininggames_Job_83_20260807_110919"
+      ],
+      "related_scenarios": [
+        "SC_27_WORD_FLOWER"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-052",
+      "scenario_id": "SC_27_SUDOKU",
+      "scenario_name": "Subscriber Games - Mini Sudoku",
+      "module": "Subscriber Games",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Sc27Validatedgames_Job_78_20260806_183021"
+      ],
+      "related_scenarios": [
+        "SC_27_SUDOKU"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-053",
+      "scenario_id": "SC_29_INDIA",
+      "scenario_name": "Hamburger categories - India",
+      "module": "Hamburger Menu",
+      "severity": "Critical",
+      "details": "Screen is stuck in loading state; only placeholders visible, no real content rendered. Placeholder skeletons visible throughout screen Content failed to load or render",
+      "occurrence_count": 2,
+      "reports": [
+        "Sc29Split_Job_59_20260806_105053",
+        "Sc29Split_Job_64_20260806_112707"
+      ],
+      "related_scenarios": [
+        "SC_29_INDIA"
+      ],
+      "sources": [
+        "Run",
+        "Screenshot AI"
+      ]
+    },
+    {
+      "unique_id": "UBUG-054",
+      "scenario_id": "SC_29_WORLD",
+      "scenario_name": "Hamburger categories - World",
+      "module": "Hamburger Menu",
+      "severity": "Critical",
+      "details": "Article cards are not rendered; loading placeholders are stuck indicating incomplete rendering. Incomplete rendering of article cards Loading placeholders are visible instead of actual content Screen shows placeholder skeleton loaders indicating main content failed to load. Article cards not loaded Only placeholders visible Content not rendered",
+      "occurrence_count": 2,
+      "reports": [
+        "Sc29Split_Job_59_20260806_105053",
+        "Sc29Worldretry_Job_60_20260806_110318"
+      ],
+      "related_scenarios": [
+        "SC_29_WORLD"
+      ],
+      "sources": [
+        "Run",
+        "Screenshot AI"
+      ]
+    },
+    {
+      "unique_id": "UBUG-055",
+      "scenario_id": "SC_29_SPORT",
+      "scenario_name": "Hamburger categories - Sport",
+      "module": "Hamburger Menu",
+      "severity": "Critical",
+      "details": "Side navigation drawer does not cover the full height and width of the screen, leaving visible underlying app content. Side navigation drawer not fully covering the screen Underlying home screen content visible on the right Placeholder content is displayed throughout indicating the actual UI content failed to load or render. Article/text/image placeholders still visible Actual content is missing Screen not fully rendered Screen displays placeholder skeletons, indicating article and image data failed to load or render. Placeholder skeletons visible instead of content Content failed to render Content placeholders are visible, indicating that the actual article cards or content failed to load/render. Content placeholders are present Article content failed to render",
+      "occurrence_count": 1,
+      "reports": [
+        "Sc29Split_Job_59_20260806_105053"
+      ],
+      "related_scenarios": [
+        "SC_29_SPORT"
+      ],
+      "sources": [
+        "Screenshot AI"
+      ]
+    },
+    {
+      "unique_id": "UBUG-056",
+      "scenario_id": "TH_0006",
+      "scenario_name": "Verify Opening Push Notification when App is in Opened / Idle State",
+      "module": "AI Generated",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Smoke_Job_103_20260810_151523"
+      ],
+      "related_scenarios": [
+        "TH_0006"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-057",
+      "scenario_id": "TH_0011",
+      "scenario_name": "Subscriber E-Paper access",
+      "module": "AI Generated",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Smoke_Job_103_20260810_151523"
+      ],
+      "related_scenarios": [
+        "TH_0011"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-058",
+      "scenario_id": "TH_0010",
+      "scenario_name": "Verify Home Page Content Loading",
+      "module": "AI Generated",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Smoke_Job_103_20260810_151523"
+      ],
+      "related_scenarios": [
+        "TH_0010"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-059",
+      "scenario_id": "TH_0012",
+      "scenario_name": "Search Edge Cases",
+      "module": "AI Generated",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Smoke_Job_103_20260810_151523"
+      ],
+      "related_scenarios": [
+        "TH_0012"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-060",
+      "scenario_id": "TH_0009",
+      "scenario_name": "Verify Login from Onboarding Screen",
+      "module": "AI Generated",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Smoke_Job_103_20260810_151523"
+      ],
+      "related_scenarios": [
+        "TH_0009"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-061",
+      "scenario_id": "TH_0008",
+      "scenario_name": "Verify New User Account Creation from Onboarding Screen",
+      "module": "AI Generated",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Smoke_Job_103_20260810_151523"
+      ],
+      "related_scenarios": [
+        "TH_0008"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-062",
+      "scenario_id": "SC_102",
+      "scenario_name": "SC 102 Busines Page DarkTheme",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Smoke_Job_112_20260811_112730"
+      ],
+      "related_scenarios": [
+        "SC_102"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-063",
+      "scenario_id": "GEN_001",
+      "scenario_name": "Validated bottom navigation",
+      "module": "AI Generated",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Smoke_Job_47_20260804_120914"
+      ],
+      "related_scenarios": [
+        "GEN_001"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-064",
+      "scenario_id": "GEN_002",
+      "scenario_name": "Validated hamburger sections",
+      "module": "AI Generated",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Smoke_Job_47_20260804_120914"
+      ],
+      "related_scenarios": [
+        "GEN_002"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-065",
+      "scenario_id": "GEN_003",
+      "scenario_name": "Validated content section labels",
+      "module": "AI Generated",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 1,
+      "reports": [
+        "Smoke_Job_47_20260804_120914"
+      ],
+      "related_scenarios": [
+        "GEN_003"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-066",
+      "scenario_id": "SC_28",
+      "scenario_name": "SC 28 Anonymous Games validation",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 2,
+      "reports": [
+        "Smoke_Job_85_20260807_180712",
+        "Smoke_Job_86_20260807_180958"
+      ],
+      "related_scenarios": [
+        "SC_28"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-067",
+      "scenario_id": "SC_29",
+      "scenario_name": "SC 29 Category navigation anonymous",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 2,
+      "reports": [
+        "Smoke_Job_85_20260807_180712",
+        "Smoke_Job_86_20260807_180958"
+      ],
+      "related_scenarios": [
+        "SC_29"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-068",
+      "scenario_id": "SC_30",
+      "scenario_name": "SC 30 BreifingSection premium subscriber account",
+      "module": "Unassigned",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 2,
+      "reports": [
+        "Smoke_Job_85_20260807_180712",
+        "Smoke_Job_86_20260807_180958"
+      ],
+      "related_scenarios": [
+        "SC_30"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-069",
+      "scenario_id": "PILOT_SC_02",
+      "scenario_name": "Home and Trending navigation",
+      "module": "AI Generated",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 5,
+      "reports": [
+        "Smoke_Job_85_20260807_180712",
+        "Smoke_Job_89_20260810_104527",
+        "Smoke_Job_90_20260810_104640",
+        "Smoke_Job_91_20260810_104922",
+        "Smoke_Job_92_20260810_110618"
+      ],
+      "related_scenarios": [
+        "PILOT_SC_02"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-070",
+      "scenario_id": "PILOT_SC_03",
+      "scenario_name": "Anonymous Home and India navigation",
+      "module": "AI Generated",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 3,
+      "reports": [
+        "Smoke_Job_85_20260807_180712",
+        "Smoke_Job_90_20260810_104640",
+        "Smoke_Job_92_20260810_110618"
+      ],
+      "related_scenarios": [
+        "PILOT_SC_03"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-071",
+      "scenario_id": "PILOT_SC_05",
+      "scenario_name": "Anonymous Premium navigation",
+      "module": "AI Generated",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 2,
+      "reports": [
+        "Smoke_Job_90_20260810_104640",
+        "Smoke_Job_92_20260810_110618"
+      ],
+      "related_scenarios": [
+        "PILOT_SC_05"
+      ],
+      "sources": [
+        "Run"
+      ]
+    },
+    {
+      "unique_id": "UBUG-072",
+      "scenario_id": "COMPLEX_003",
+      "scenario_name": "Dark Mode Appearance Validation",
+      "module": "AI Generated",
+      "severity": "Critical",
+      "details": "Execution failed; see the source report logs for command-level details.",
+      "occurrence_count": 2,
+      "reports": [
+        "Smoke_Job_98_20260810_120711",
+        "Smoke_Job_99_20260810_121533"
+      ],
+      "related_scenarios": [
+        "COMPLEX_003"
+      ],
+      "sources": [
+        "Run"
+      ]
+    }
+  ]
+}

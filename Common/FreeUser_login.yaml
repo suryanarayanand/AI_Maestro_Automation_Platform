@@ -1,0 +1,35 @@
+appId: com.mobstac.thehindu
+---
+ 
+
+
+
+# Opens login when the entry point is available on the current page.
+- runFlow:
+    when:
+      visible: "HAVE AN ACCOUNT? LOGIN"
+    commands:
+      - tapOn: "HAVE AN ACCOUNT? LOGIN"
+
+- extendedWaitUntil:
+    visible: "Email"
+    timeout: 30000
+- tapOn: "Email"
+- inputText:  "testersurya06@gmail.com"
+- hideKeyboard
+- tapOn: "NEXT→"
+
+- extendedWaitUntil:
+    visible: "password"
+    timeout: 30000
+- tapOn: "password"
+- inputText: "Test@123"
+- hideKeyboard
+- tapOn: "LOGIN.*"
+
+- runFlow:
+    when:
+      visible: "Skip"
+    commands:
+      - tapOn: "Skip"
+

@@ -1,0 +1,109 @@
+appId: com.mobstac.thehindu
+tags:
+  - fifa
+---
+# FIFA 2026 tab (SC-37).
+# Launch App
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd:
+    timeout: 8000
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 5000
+- tapOn: "Skip"
+
+# Navigate to FIFA 2026 Section
+- extendedWaitUntil:
+    visible: "FIFA 2026"
+    timeout: 15000
+- tapOn: "FIFA 2026"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_37/SC_37_FIFA_2026_Page"
+
+# Open FIFA 2026 Article
+- tapOn:
+    point: 63%,24%
+- runFlow:
+    when:
+      visible:
+        text: "Summary"
+    commands:
+      - back
+
+# Verify Article Elements
+- assertVisible:
+    text: "Share"
+    index: 1
+- assertVisible:
+    text: "Text size"
+    index: 1
+- assertVisible:
+    text: "AI summary"
+    index: 1
+
+# Bookmark Article
+- runFlow:
+    when:
+      visible:
+        text: "Remove bookmark"
+        index: 1
+    commands:
+      - tapOn: "Remove bookmark"
+- assertVisible:
+    text: "Bookmark"
+- tapOn: "Bookmark"
+- takeScreenshot: "Screenshots/SC_37/SC_37_FIFA_2026_Article_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_37/SC_37_FIFA_2026_Article_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_37/SC_37_FIFA_2026_Article_03"
+
+# - tapOn: "Bookmark"
+- takeScreenshot: "Screenshots/SC_37/SC_37_FIFA_2026_Article_Bookmarked"
+
+# Verify Text Size Controls
+- assertVisible: "Text Size"
+- tapOn: "Text size"
+- takeScreenshot: "Screenshots/SC_37/SC_37_FIFA_2026_Text_Size"
+- assertVisible: "CLOSE"
+- tapOn: "CLOSE"
+
+# Verify Share Functionality
+- tapOn:
+    text: "Share"
+    index: 1
+- takeScreenshot: "Screenshots/SC_37/SC_37_FIFA_2026_Share"
+- tapOn:
+    point: 50%,50%
+
+# Verify Comment Section
+- tapOn:
+    text: "Comment"
+    index: 1
+- tapOn: "\n"
+- inputRandomCityName
+- inputRandomColorName
+- assertVisible: "SUBMIT→"
+- assertVisible: "Newest"
+- tapOn: "Newest"
+- assertVisible: "Newest"
+- assertVisible: "Oldest"
+- assertVisible: "Most replies"
+- assertVisible: "Most Respected"
+- tapOn: "Oldest"
+- tapOn: "SUBMIT→"
+- tapOn: "Close sheet"
+- repeat:
+    times: 8
+    commands:
+      - scroll
+
+# Close Application
+- killApp

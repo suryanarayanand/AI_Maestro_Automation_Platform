@@ -1,0 +1,171 @@
+{
+    "suite": {
+        "total": 2,
+        "passed": 1,
+        "failed": 0,
+        "not_found": 0,
+        "pass_rate": 50.0
+    },
+    "results": [
+        {
+            "id": "SC_100",
+            "module": "Unassigned",
+            "name": "SC 100 Busines Page specific article Anonymous Acc",
+            "status": "PASS",
+            "duration": 458.5,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_111_20260811_110804\\SC_100.log",
+            "screenshots": [
+                "screenshots/SC_100/SC_100_Advertisement.png",
+                "screenshots/SC_100/SC_100_Business_Page_Anonymous_Account.png",
+                "screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_01.png",
+                "screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_02.png",
+                "screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_03.png",
+                "screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_04.png",
+                "screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_05.png",
+                "screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_06.png",
+                "screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_07.png",
+                "screenshots/SC_100/SC_100_Support_Journalism.png",
+                "screenshots/SC_100/SC_100_Web_Page_Availability.png"
+            ],
+            "ai_pass": 11,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered with no visual defects. Advertisements, related topics, navigation, and all content are present and aligned correctly.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_100_Advertisement.png",
+                    "image_path": "screenshots/SC_100/SC_100_Advertisement.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly with no visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_100_Business_Page_Anonymous_Account.png",
+                    "image_path": "screenshots/SC_100/SC_100_Business_Page_Anonymous_Account.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visible layout, rendering, or text issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_100_Business_Page_Anonymous_Account_specific_Article_01.png",
+                    "image_path": "screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_01.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI elements are rendered correctly with no visible UI defects or layout issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_100_Business_Page_Anonymous_Account_specific_Article_02.png",
+                    "image_path": "screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_02.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "UI components are fully rendered, all expected elements are present, and advertisement containers are correctly populated. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_100_Business_Page_Anonymous_Account_specific_Article_03.png",
+                    "image_path": "screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_03.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "No visible UI defects. All UI components are rendered correctly and there are no unexpected blank areas or rendering issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_100_Business_Page_Anonymous_Account_specific_Article_04.png",
+                    "image_path": "screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_04.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered correctly and layout is intact. Advertisements and other UI appear as expected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_100_Business_Page_Anonymous_Account_specific_Article_05.png",
+                    "image_path": "screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_05.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "No visible UI defects. All elements are aligned and rendered correctly.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_100_Business_Page_Anonymous_Account_specific_Article_06.png",
+                    "image_path": "screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_06.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "No visible UI defects; advertisements, toolbar, and article content are rendered correctly.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_100_Business_Page_Anonymous_Account_specific_Article_07.png",
+                    "image_path": "screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_07.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "No visual UI defects detected; all components are rendered correctly.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_100_Support_Journalism.png",
+                    "image_path": "screenshots/SC_100/SC_100_Support_Journalism.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and properly rendered. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_100_Web_Page_Availability.png",
+                    "image_path": "screenshots/SC_100/SC_100_Web_Page_Availability.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_101",
+            "module": "Unassigned",
+            "name": "SC 101 Busines Page specific article Subscribed Acc",
+            "status": "CANCELLED",
+            "duration": 48.56,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_111_20260811_110804\\SC_101.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        }
+    ]
+}

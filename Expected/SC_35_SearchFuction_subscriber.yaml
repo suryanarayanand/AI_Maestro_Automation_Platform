@@ -1,0 +1,67 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - search
+---
+# SearchFuction subscriber (SC-35).
+# Launch App
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 5000
+- tapOn: "Skip"
+
+# Navigate to Search
+- tapOn:
+    point: 2%,5%
+- waitForAnimationToEnd
+- assertVisible: "Search"
+- tapOn: "Search"
+
+# Search for an Article
+- inputText: "Bangalore"
+- pressKey: enter
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_35/SC_35_Search_Results"
+
+# Open Search Result
+- tapOn:
+    point: 0%,16%
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_35/SC_35_Search_Article"
+- scroll
+
+# Verify Subscribe Popup is Absent
+- runFlow:
+    when:
+      visible:
+        text: "SUBSCRIBE"
+    commands:
+      - takeScreenshot: "Screenshots/SC_35/SC_35_Subscribe_Popup"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+
+# Verify Article Elements
+- assertVisible:
+    text: "Share"
+    index: 1
+- assertVisible:
+    text: "Bookmark"
+    index: 1
+- assertVisible:
+    text: "Text size"
+    index: 1
+- assertVisible:
+    text: "AI summary"
+    index: 1
+
+# Navigate Back
+- back

@@ -1,0 +1,94 @@
+appId: com.mobstac.thehindu
+
+tags:
+
+  - generated
+
+  - ai-adapted
+
+---
+
+
+
+- launchApp:
+    clearState: true
+
+
+
+- runFlow: "../Common/LOGIN.yaml"
+
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+- assertVisible:
+
+    id: "screen_home"
+
+
+
+- tapOn:
+
+    id: "cta_search"
+
+
+
+- takeScreenshot: "Screenshots/Generated/TH_0012_search_entry_state"
+
+
+
+- back
+
+
+
+- assertVisible:
+
+    id: "screen_home"
+
+
+
+- tapOn:
+
+    id: "nav_ebooks"
+
+
+
+- assertVisible:
+
+    id: "screen_ebooks"
+
+
+
+- takeScreenshot: "Screenshots/Generated/TH_0012_ebooks_navigation_evidence"
+
+
+
+- tapOn:
+
+    id: "nav_home"
+
+
+
+- assertVisible:
+
+    id: "screen_home"
+
+
+
+- tapOn:
+
+    id: "nav_trending"
+
+
+
+- assertVisible:
+
+    id: "screen_trending"
+
+
+
+- takeScreenshot: "Screenshots/Generated/TH_0012_trending_page_evidence"
+

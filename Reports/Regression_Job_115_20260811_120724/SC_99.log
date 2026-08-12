@@ -1,0 +1,84 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_99_Business_page_anonymous_Acc
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Wait for animation to end... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Assert that "SUBSCRIBE" is visible... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Repeat 5 times...
+  Swiping in LEFT direction in 400 ms... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 5 times... COMPLETED
+Run flow when "Business" is visible...
+  Tap on "Business"... COMPLETED
+Run flow when "Business" is visible... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_01... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_02... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_03... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_04... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_05... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_06... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_07... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_08... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_09... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_10... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_11... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_12... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_13... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_14... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_15... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_16... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_17... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_18... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_19... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_20... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+
+
+===== STDERR =====
+

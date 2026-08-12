@@ -1,0 +1,666 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Bug Investigation Dashboard</title>
+
+<style>
+.bug-card{
+
+    background:white;
+
+    margin-top:25px;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+.bug-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.bug-body{
+
+    display:flex;
+
+    gap:30px;
+
+    margin-top:20px;
+
+    margin-bottom:20px;
+
+}
+
+.info{
+
+    min-width:140px;
+
+}
+
+.severity{
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+.major{
+
+    background:#f59e0b;
+
+}
+
+.critical{
+
+    background:#dc2626;
+
+}
+
+.minor{
+
+    background:#16a34a;
+
+}
+.screenshot-section{
+
+    margin-top:25px;
+
+}
+
+.bug-image{
+
+    width:350px;
+
+    max-width:100%;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.bug-image:hover{
+
+    transform:scale(1.02);
+
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+
+}
+
+.gallery{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:15px;
+
+}
+
+.gallery-image{
+
+    width:180px;
+
+    border-radius:8px;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.gallery-image:hover{
+
+    transform:scale(1.05);
+
+}
+body{
+    margin:0;
+    padding:0;
+    background:#f5f7fb;
+    font-family:Segoe UI,Arial,sans-serif;
+}
+
+.container{
+    width:95%;
+    margin:auto;
+    padding:20px;
+}
+
+.header{
+    background:#1f2937;
+    color:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.card{
+    background:white;
+    width:180px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.card h2{
+    margin:0;
+    font-size:36px;
+}
+
+.card p{
+    color:#666;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    
+<div class="header">
+
+<h1>🐞 Bug Investigation Dashboard</h1>
+
+<p>
+
+<b>Suite:</b> Regression
+
+&nbsp;&nbsp;&nbsp;
+
+<b>Execution:</b> 2100.68 sec
+
+</p>
+
+</div>
+
+
+    
+<div class="cards">
+
+<div class="card">
+<h2>7</h2>
+<p>Total</p>
+</div>
+
+<div class="card">
+<h2>4</h2>
+<p>Failed</p>
+</div>
+
+<div class="card">
+<h2>3</h2>
+<p>Critical</p>
+</div>
+
+<div class="card">
+<h2>0</h2>
+<p>Major</p>
+</div>
+
+<div class="card">
+<h2>1</h2>
+<p>Minor</p>
+</div>
+
+</div>
+
+
+    
+<div class="bug-card">
+<h2>Combined AI Assessment</h2>
+<p><b>Executive summary</b><br>All executed test scenarios passed functional verification, with no blocking functional failures detected. However, there are significant visual/UI issues, particularly related to advertisement containers displaying debug information and placeholder text, as well as a high-severity overlap between modal popups and video ads. All other detected differences were attributable to dynamic content or non-critical elements.</p>
+<p><b>Release recommendation</b><br>Not recommended for release until high-severity visual/UI issues with advertisements and modal overlap are resolved. Functional integrity is intact, but visual defects risk user experience and production usability.</p>
+<ul><li>Advertisement containers displaying SDK debug/technical information in production UI</li><li>Advertisement containers displaying empty placeholders indicating load/render failures</li><li>Popup modal overlapping and blocking video advertisements, leading to poor usability</li><li>Potential for further user-facing visual issues under dynamic content/ads</li></ul><hr>
+<p><b>Reference:</b> Google Pixel 9 Pro — App 2501.20.802</p>
+<p><b>Actual:</b> samsung SM-E066B — App 2501.20.811</p>
+</div>
+
+
+    <h2>Combined Findings</h2>
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-001</h2>
+
+            <h3>SC_03</h3>
+
+            <p>Verify Ads Taboola for anonymous user</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: PASS</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            95%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            484.47 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Screenshot AI, Visual
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Screenshot AI, Visual</p>
+
+    <p><b>Screenshot AI findings</b><br>Advertisement SDK debug information is visible to users.<br>Blank advertisement container is visible with only placeholder text, indicating a rendering or load defect.<br>Advertisement banner displays a technical unit string and SDK loading message which is not intended for end users.</p>
+
+    <p><b>Visual findings</b><br>No genuine UI issues detected. All significant differences are related to dynamic content or excluded areas.</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_03/SC_03_TaboolaAd_IndiaPage_undefined.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_03/SC_03_TaboolaAd_IndiaPage_undefined.png','_blank')">
+
+<img
+    src="screenshots/SC_03/SC_03_TaboolaAd_TrendingPage_undefined.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_03/SC_03_TaboolaAd_TrendingPage_undefined.png','_blank')">
+
+<img
+    src="screenshots/SC_03/SC_03_TaboolaAd_undefined.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_03/SC_03_TaboolaAd_undefined.png','_blank')">
+
+</div>
+</div>
+<div class="screenshot-section"><h3>Reference / Actual / Difference</h3><div class="gallery"><img src="comparison/SC_03/./reference_SC_03_TaboolaAd_IndiaPage_undefined.png" class="gallery-image" onclick="window.open('comparison/SC_03/./reference_SC_03_TaboolaAd_IndiaPage_undefined.png','_blank')"><img src="comparison/SC_03/./actual_SC_03_TaboolaAd_IndiaPage_undefined.png" class="gallery-image" onclick="window.open('comparison/SC_03/./actual_SC_03_TaboolaAd_IndiaPage_undefined.png','_blank')"><img src="comparison/SC_03/./diff_SC_03_TaboolaAd_IndiaPage_undefined.png" class="gallery-image" onclick="window.open('comparison/SC_03/./diff_SC_03_TaboolaAd_IndiaPage_undefined.png','_blank')"></div></div>
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-002</h2>
+
+            <h3>SC_04</h3>
+
+            <p>Verify Ads Taboola for anonymous subscriber</p>
+
+        </div>
+
+        <div class="severity minor">
+            Minor
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: PASS</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            395.17 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Visual
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Visual</p>
+
+    <p><b>Screenshot AI findings</b><br>None</p>
+
+    <p><b>Visual findings</b><br>No genuine UI defects detected in critical UI components. All observed differences are related to dynamic content, user-specific data, or non-static elements as per the exclusions.<br>No genuine UI issues detected. All highlighted differences are related to dynamic content or ignored areas.<br>No genuine UI issues detected. All detected differences are related to dynamic content or ignorable aspects.<br>No genuine UI defects detected. All differences are related to dynamic content or are non-UI issues.</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_04/Subscriber_No_Ads_Article_1.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_04/Subscriber_No_Ads_Article_1.png','_blank')">
+
+<img
+    src="screenshots/SC_04/Subscriber_No_Ads_Article_2.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_04/Subscriber_No_Ads_Article_2.png','_blank')">
+
+<img
+    src="screenshots/SC_04/Subscriber_No_Ads_Article_3.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_04/Subscriber_No_Ads_Article_3.png','_blank')">
+
+<img
+    src="screenshots/SC_04/Subscriber_No_Ads_Article_4.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_04/Subscriber_No_Ads_Article_4.png','_blank')">
+
+</div>
+</div>
+<div class="screenshot-section"><h3>Reference / Actual / Difference</h3><div class="gallery"><img src="comparison/SC_04/./reference_Subscriber_No_Ads_Article_1.png" class="gallery-image" onclick="window.open('comparison/SC_04/./reference_Subscriber_No_Ads_Article_1.png','_blank')"><img src="comparison/SC_04/./actual_Subscriber_No_Ads_Article_1.png" class="gallery-image" onclick="window.open('comparison/SC_04/./actual_Subscriber_No_Ads_Article_1.png','_blank')"><img src="comparison/SC_04/./diff_Subscriber_No_Ads_Article_1.png" class="gallery-image" onclick="window.open('comparison/SC_04/./diff_Subscriber_No_Ads_Article_1.png','_blank')"><img src="comparison/SC_04/./reference_Subscriber_No_Ads_Article_2.png" class="gallery-image" onclick="window.open('comparison/SC_04/./reference_Subscriber_No_Ads_Article_2.png','_blank')"><img src="comparison/SC_04/./actual_Subscriber_No_Ads_Article_2.png" class="gallery-image" onclick="window.open('comparison/SC_04/./actual_Subscriber_No_Ads_Article_2.png','_blank')"><img src="comparison/SC_04/./diff_Subscriber_No_Ads_Article_2.png" class="gallery-image" onclick="window.open('comparison/SC_04/./diff_Subscriber_No_Ads_Article_2.png','_blank')"><img src="comparison/SC_04/./reference_Subscriber_No_Ads_Article_3.png" class="gallery-image" onclick="window.open('comparison/SC_04/./reference_Subscriber_No_Ads_Article_3.png','_blank')"><img src="comparison/SC_04/./actual_Subscriber_No_Ads_Article_3.png" class="gallery-image" onclick="window.open('comparison/SC_04/./actual_Subscriber_No_Ads_Article_3.png','_blank')"><img src="comparison/SC_04/./diff_Subscriber_No_Ads_Article_3.png" class="gallery-image" onclick="window.open('comparison/SC_04/./diff_Subscriber_No_Ads_Article_3.png','_blank')"><img src="comparison/SC_04/./reference_Subscriber_No_Ads_Article_4.png" class="gallery-image" onclick="window.open('comparison/SC_04/./reference_Subscriber_No_Ads_Article_4.png','_blank')"><img src="comparison/SC_04/./actual_Subscriber_No_Ads_Article_4.png" class="gallery-image" onclick="window.open('comparison/SC_04/./actual_Subscriber_No_Ads_Article_4.png','_blank')"><img src="comparison/SC_04/./diff_Subscriber_No_Ads_Article_4.png" class="gallery-image" onclick="window.open('comparison/SC_04/./diff_Subscriber_No_Ads_Article_4.png','_blank')"></div></div>
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-003</h2>
+
+            <h3>SC_05</h3>
+
+            <p>SC 05 Premium access for anonymous user</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: PASS</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            720.59 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Screenshot AI
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Screenshot AI</p>
+
+    <p><b>Screenshot AI findings</b><br>Popup modal overlays and partially blocks a video ad, causing UI overlap and incomplete visibility of dynamic content.</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_05/SC05_premiumpage_nonsubscriber.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_05/SC05_premiumpage_nonsubscriber.png','_blank')">
+
+<img
+    src="screenshots/SC_05/SC_05_premiumpage_nonsubscriber_AllStories.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_05/SC_05_premiumpage_nonsubscriber_AllStories.png','_blank')">
+
+</div>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-004</h2>
+
+            <h3>Sc_08</h3>
+
+            <p>Sc 08 Verify Account Subscription details</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: CANCELLED</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            41.81 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run</p>
+
+    <p><b>Screenshot AI findings</b><br>None</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+<h3>Screenshot evidence</h3>
+<p>No screenshot was captured before this failure.</p>
+</div>
+
+</div>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,763 @@
+{
+    "suite": {
+        "total": 15,
+        "passed": 12,
+        "failed": 3,
+        "not_found": 0,
+        "pass_rate": 80.0
+    },
+    "results": [
+        {
+            "id": "COMPLEX_003",
+            "module": "AI Generated",
+            "name": "Dark Mode Appearance Validation",
+            "status": "PASS",
+            "duration": 59.26,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\COMPLEX_003.log",
+            "screenshots": [
+                "screenshots/COMPLEX_003/COMPLEX_003_dark_mode_enabled.png",
+                "screenshots/COMPLEX_003/COMPLEX_003_home_page_in_dark_mode.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "UI is fully rendered, all expected elements present, no evidence of missing or broken components, empty space is valid in a settings screen.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_003_dark_mode_enabled.png",
+                    "image_path": "screenshots/COMPLEX_003/COMPLEX_003_dark_mode_enabled.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are rendered correctly. No visible layout, rendering, or text defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_003_home_page_in_dark_mode.png",
+                    "image_path": "screenshots/COMPLEX_003/COMPLEX_003_home_page_in_dark_mode.png"
+                }
+            ]
+        },
+        {
+            "id": "COMPLEX_001",
+            "module": "Unassigned",
+            "name": "COMPLEX 001",
+            "status": "PASS",
+            "duration": 51.83,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\COMPLEX_001.log",
+            "screenshots": [
+                "screenshots/COMPLEX_001/COMPLEX_001_hamburger_navigation_menu.png",
+                "screenshots/COMPLEX_001/COMPLEX_001_home_closing_menu.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components in the navigation drawer are present and rendered correctly without any visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_001_hamburger_navigation_menu.png",
+                    "image_path": "screenshots/COMPLEX_001/COMPLEX_001_hamburger_navigation_menu.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered correctly with no visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_001_home_closing_menu.png",
+                    "image_path": "screenshots/COMPLEX_001/COMPLEX_001_home_closing_menu.png"
+                }
+            ]
+        },
+        {
+            "id": "COMPLEX_002",
+            "module": "Unassigned",
+            "name": "COMPLEX 002",
+            "status": "PASS",
+            "duration": 77.76,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\COMPLEX_002.log",
+            "screenshots": [
+                "screenshots/COMPLEX_002/COMPLEX_002_games_page_sudoku.png",
+                "screenshots/COMPLEX_002/COMPLEX_002_sudoku_landing_page.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present, fully rendered, and correctly aligned. No visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_002_games_page_sudoku.png",
+                    "image_path": "screenshots/COMPLEX_002/COMPLEX_002_games_page_sudoku.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "There is a spelling error in the title 'Sudoko' which should be 'Sudoku', and 'coumns' should be 'columns'.",
+                    "issues": [
+                        "Typo in puzzle title: 'Sudoko' instead of 'Sudoku'",
+                        "Typo in description: 'coumns' instead of 'columns'"
+                    ],
+                    "jira_title": "Typos in Sudoku screen title and description",
+                    "jira_description": "The title for the Sudoku puzzle is misspelled as 'Sudoko' instead of 'Sudoku'. Additionally, 'columns' is misspelled as 'coumns' in the description text below the title.",
+                    "image": "COMPLEX_002_sudoku_landing_page.png",
+                    "image_path": "screenshots/COMPLEX_002/COMPLEX_002_sudoku_landing_page.png"
+                }
+            ]
+        },
+        {
+            "id": "COMPLEX_004",
+            "module": "Unassigned",
+            "name": "COMPLEX 004",
+            "status": "PASS",
+            "duration": 87.95,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\COMPLEX_004.log",
+            "screenshots": [
+                "screenshots/COMPLEX_004/COMPLEX_004_easy_down_destination.png",
+                "screenshots/COMPLEX_004/COMPLEX_004_scroll_down_and_games_catalogue.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Large blank white region replaces all expected UI content, indicating incomplete screen rendering.",
+                    "issues": [
+                        "Full screen blank white area",
+                        "No application UI rendered",
+                        "Incomplete rendering"
+                    ],
+                    "jira_title": "Application screen displays blank white area",
+                    "jira_description": "A large blank white region is visible on the application screen with no UI components rendered, indicating a blocking rendering or loading defect.",
+                    "image": "COMPLEX_004_easy_down_destination.png",
+                    "image_path": "screenshots/COMPLEX_004/COMPLEX_004_easy_down_destination.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are visible and properly aligned. No layout, rendering, or text issues present.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_004_scroll_down_and_games_catalogue.png",
+                    "image_path": "screenshots/COMPLEX_004/COMPLEX_004_scroll_down_and_games_catalogue.png"
+                }
+            ]
+        },
+        {
+            "id": "COMPLEX_005",
+            "module": "Unassigned",
+            "name": "COMPLEX 005",
+            "status": "PASS",
+            "duration": 36.62,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\COMPLEX_005.log",
+            "screenshots": [
+                "screenshots/COMPLEX_005/COMPLEX_005_games_page_from_bottom_navigation.png",
+                "screenshots/COMPLEX_005/COMPLEX_005_home_page_back_navigation.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present, correctly rendered and aligned. No layout, rendering or text issues visible.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_005_games_page_from_bottom_navigation.png",
+                    "image_path": "screenshots/COMPLEX_005/COMPLEX_005_games_page_from_bottom_navigation.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are rendered correctly with no visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_005_home_page_back_navigation.png",
+                    "image_path": "screenshots/COMPLEX_005/COMPLEX_005_home_page_back_navigation.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "name": "SC 27 CRYPTIC CROSSWORD",
+            "status": "PASS",
+            "duration": 92.98,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_Cryptic_Crossword.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and there are no visible layout, rendering, or text issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Cryptic_Crossword.png",
+                    "image_path": "screenshots/SC_27/SC_27_Cryptic_Crossword.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "name": "SC 27 EASY DOWN",
+            "status": "FAIL",
+            "duration": 119.02,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\SC_27.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "name": "SC 27 NEWS QUIZ",
+            "status": "FAIL",
+            "duration": 1248.28,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\SC_27.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "name": "SC 27 Subscriber Games validation",
+            "status": "PASS",
+            "duration": 145.71,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_Easy_Down.png",
+                "screenshots/SC_27/SC_27_Games_Page_Subscribed_Account.png",
+                "screenshots/SC_27/SC_27_Word_Row.png"
+            ],
+            "ai_pass": 4,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and fully rendered with no obvious defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Cryptic_Crossword.png",
+                    "image_path": "screenshots/SC_27/SC_27_Cryptic_Crossword.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No overlapping, cropping, or layout issues detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Easy_Down.png",
+                    "image_path": "screenshots/SC_27/SC_27_Easy_Down.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and correctly rendered. No evidence of missing or cropped elements, overlap, or broken images.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Games_Page_Subscribed_Account.png",
+                    "image_path": "screenshots/SC_27/SC_27_Games_Page_Subscribed_Account.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visible layout, rendering, or text issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Word_Row.png",
+                    "image_path": "screenshots/SC_27/SC_27_Word_Row.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "name": "SC 27 SUDOKU",
+            "status": "PASS",
+            "duration": 86.39,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_Sudoku_Mini.png",
+                "screenshots/SC_27/SC_27_Sudoku_Mini_List.png"
+            ],
+            "ai_pass": 6,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are correctly rendered and aligned. No visible defects or layout issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Cryptic_Crossword.png",
+                    "image_path": "screenshots/SC_27/SC_27_Cryptic_Crossword.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visible layout, rendering, or text issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Easy_Down.png",
+                    "image_path": "screenshots/SC_27/SC_27_Easy_Down.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are fully rendered, with no evidence of missing, overlapped, or cropped content.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Games_Page_Subscribed_Account.png",
+                    "image_path": "screenshots/SC_27/SC_27_Games_Page_Subscribed_Account.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI elements are rendered correctly, no visual defects or layout issues detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Sudoku_Mini.png",
+                    "image_path": "screenshots/SC_27/SC_27_Sudoku_Mini.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visual defects identified.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Sudoku_Mini_List.png",
+                    "image_path": "screenshots/SC_27/SC_27_Sudoku_Mini_List.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Word_Row.png",
+                    "image_path": "screenshots/SC_27/SC_27_Word_Row.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "name": "SC 27 THE HINDU MINI",
+            "status": "PASS",
+            "duration": 91.49,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_The_Hindu_Mini.png"
+            ],
+            "ai_pass": 7,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and correctly rendered. No visible layout, rendering, or alignment defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Cryptic_Crossword.png",
+                    "image_path": "screenshots/SC_27/SC_27_Cryptic_Crossword.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly, with no visible layout or rendering defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Easy_Down.png",
+                    "image_path": "screenshots/SC_27/SC_27_Easy_Down.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and visually rendered correctly without any visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Games_Page_Subscribed_Account.png",
+                    "image_path": "screenshots/SC_27/SC_27_Games_Page_Subscribed_Account.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visible layout, rendering, or text issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Sudoku_Mini.png",
+                    "image_path": "screenshots/SC_27/SC_27_Sudoku_Mini.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI elements are rendered correctly, no visual defects found.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Sudoku_Mini_List.png",
+                    "image_path": "screenshots/SC_27/SC_27_Sudoku_Mini_List.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and visually aligned. No blank regions or cropping; layout appears correct.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_The_Hindu_Mini.png",
+                    "image_path": "screenshots/SC_27/SC_27_The_Hindu_Mini.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present. No visible layout, rendering, or text defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Word_Row.png",
+                    "image_path": "screenshots/SC_27/SC_27_Word_Row.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "name": "SC 27 WORD FLOWER",
+            "status": "PASS",
+            "duration": 88.44,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_Word_Flower.png"
+            ],
+            "ai_pass": 8,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and fully rendered. No visible layout, rendering, or alignment defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Cryptic_Crossword.png",
+                    "image_path": "screenshots/SC_27/SC_27_Cryptic_Crossword.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered with no visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Easy_Down.png",
+                    "image_path": "screenshots/SC_27/SC_27_Easy_Down.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered correctly, no visible defects in layout, text, images, or navigation.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Games_Page_Subscribed_Account.png",
+                    "image_path": "screenshots/SC_27/SC_27_Games_Page_Subscribed_Account.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present, layout is correct, and there are no visible rendering or alignment issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Sudoku_Mini.png",
+                    "image_path": "screenshots/SC_27/SC_27_Sudoku_Mini.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present, and the layout is visually correct with no obvious defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Sudoku_Mini_List.png",
+                    "image_path": "screenshots/SC_27/SC_27_Sudoku_Mini_List.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and fully rendered. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_The_Hindu_Mini.png",
+                    "image_path": "screenshots/SC_27/SC_27_The_Hindu_Mini.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No evidence of UI defects, missing elements, or layout issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Word_Flower.png",
+                    "image_path": "screenshots/SC_27/SC_27_Word_Flower.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and properly rendered. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Word_Row.png",
+                    "image_path": "screenshots/SC_27/SC_27_Word_Row.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "name": "SC 27 WORD ROW",
+            "status": "FAIL",
+            "duration": 103.75,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\SC_27.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "name": "SC 27 WORD SEARCH",
+            "status": "PASS",
+            "duration": 86.37,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_Word_Search.png"
+            ],
+            "ai_pass": 9,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and fully rendered with no visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Cryptic_Crossword.png",
+                    "image_path": "screenshots/SC_27/SC_27_Cryptic_Crossword.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and rendered correctly. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Easy_Down.png",
+                    "image_path": "screenshots/SC_27/SC_27_Easy_Down.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI elements are present and rendered correctly. No visible layout, rendering, or content issues identified.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Games_Page_Subscribed_Account.png",
+                    "image_path": "screenshots/SC_27/SC_27_Games_Page_Subscribed_Account.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visible layout, text, or rendering defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Sudoku_Mini.png",
+                    "image_path": "screenshots/SC_27/SC_27_Sudoku_Mini.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are visible and properly aligned. No visual UI defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Sudoku_Mini_List.png",
+                    "image_path": "screenshots/SC_27/SC_27_Sudoku_Mini_List.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and properly rendered. No visible layout, rendering, text, or navigation issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_The_Hindu_Mini.png",
+                    "image_path": "screenshots/SC_27/SC_27_The_Hindu_Mini.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Word_Flower.png",
+                    "image_path": "screenshots/SC_27/SC_27_Word_Flower.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and fully rendered. Layout is consistent and properly aligned.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Word_Row.png",
+                    "image_path": "screenshots/SC_27/SC_27_Word_Row.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present. No visual defects or layout issues are observed.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Word_Search.png",
+                    "image_path": "screenshots/SC_27/SC_27_Word_Search.png"
+                }
+            ]
+        },
+        {
+            "id": "TH_0006",
+            "module": "AI Generated",
+            "name": "Verify Opening Push Notification when App is in Opened / Idle State",
+            "status": "PASS",
+            "duration": 20.34,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_108_20260810_171300\\TH_0006.log",
+            "screenshots": [
+                "screenshots/TH_0006/TH_0006_foreground_application_baseline.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and fully rendered. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "TH_0006_foreground_application_baseline.png",
+                    "image_path": "screenshots/TH_0006/TH_0006_foreground_application_baseline.png"
+                }
+            ]
+        }
+    ]
+}

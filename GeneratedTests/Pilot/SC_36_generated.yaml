@@ -1,0 +1,26 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - pilot
+---
+
+- tapOn:
+    text: "Home"
+
+- tapOn:
+    text: "TRENDING"
+
+- tapOn:
+    text: "PREMIUM"
+
+- tapOn:
+    text: "EBOOKS"
+
+- tapOn:
+    text: "GAMES"
+
+- tapOn:
+    text: "Home"
+
+- assertVisible:
+    text: "Home"

@@ -1,0 +1,50 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - account
+---
+# Verify Account Subscription details (SC-08).
+# Launch App
+- launchApp:
+    # clearState: true
+    stopApp: true
+
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+- waitForAnimationToEnd
+
+# Skip Onboarding
+- assertVisible: "Skip"
+- tapOn: "Skip"
+
+# Navigate to Account Page
+- tapOn: "Account"
+
+# - tapOn:
+#     point: 89%,3%
+- takeScreenshot: "Screenshots/SC_08/AccountPage/Sc_08_Purchase"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Account"
+    timeout: 15000
+
+# Open Subscription Details
+# - tapOn: "Account"
+- tapOn:
+    point: 0%,17%
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "product.testing@thehindu.co.in"
+    timeout: 15000
+- retry:
+    maxRetries: 3
+    commands:
+      - assertVisible: "SUBSCRIPTIONS"
+- tapOn: "SUBSCRIPTIONS"
+- waitForAnimationToEnd
+
+# Subscription Page Validation
+- takeScreenshot: "Screenshots/SC_08/AccountPage/Sc_08_SUBSCRIPTIONS"
+
+# Close Application
+- killApp

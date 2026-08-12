@@ -1,0 +1,13 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, games, sc27]
+---
+- runFlow: ../Common/OPEN_SUBSCRIBER_GAMES.yaml
+- scrollUntilVisible:
+    element: {text: "News Quiz"}
+    timeout: 20000
+- tapOn: {text: "News Quiz"}
+- extendedWaitUntil:
+    visible: {text: ".*News Quiz.*"}
+    timeout: 20000
+- assertNotVisible: {text: ".*access was not found.*"}
+- takeScreenshot: "Screenshots/SC_27/SC_27_News_Quiz"

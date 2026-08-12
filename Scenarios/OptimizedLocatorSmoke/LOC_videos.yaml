@@ -1,0 +1,18 @@
+appId: com.mobstac.thehindu
+tags:
+  - locator-smoke
+  - videos
+---
+- runFlow: ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml
+- tapOn:
+    text: "Videos"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 20000
+- assertVisible:
+    id: "screen_home"
+- assertVisible:
+    text: "Videos"
+- takeScreenshot: "Screenshots/LocatorSmoke/videos_page"

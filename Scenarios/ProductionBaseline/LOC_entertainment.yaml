@@ -1,0 +1,33 @@
+appId: com.mobstac.thehindu
+tags:
+  - baseline
+  - entertainment
+---
+- runFlow: ../Common/OPEN_HOME_FOR_BASELINE.yaml
+- tapOn:
+    point: "6%,10%"
+- extendedWaitUntil:
+    visible:
+      text: "Entertainment"
+    timeout: 15000
+- scrollUntilVisible:
+    element:
+      text: "Entertainment"
+    direction: DOWN
+    timeout: 30000
+- tapOn:
+    text: "Entertainment"
+- extendedWaitUntil:
+    visible:
+      text: "Entertainment"
+    timeout: 15000
+- tapOn:
+    point: "15%,56%"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: "Entertainment"
+    timeout: 20000
+- assertVisible:
+    text: "Entertainment"
+- takeScreenshot: "Screenshots/LocatorSmoke/entertainment_page"

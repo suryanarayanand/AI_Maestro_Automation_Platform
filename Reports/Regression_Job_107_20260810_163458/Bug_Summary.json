@@ -1,0 +1,244 @@
+{
+    "suite": "Regression",
+    "execution_time": 2100.68,
+    "summary": {
+        "total": 7,
+        "passed": 3,
+        "failed": 4,
+        "critical": 3,
+        "major": 0,
+        "minor": 1
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.811",
+            "version_code": "577"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "All executed test scenarios passed functional verification, with no blocking functional failures detected. However, there are significant visual/UI issues, particularly related to advertisement containers displaying debug information and placeholder text, as well as a high-severity overlap between modal popups and video ads. All other detected differences were attributable to dynamic content or non-critical elements.",
+        "release_recommendation": "Not recommended for release until high-severity visual/UI issues with advertisements and modal overlap are resolved. Functional integrity is intact, but visual defects risk user experience and production usability.",
+        "top_risks": [
+            "Advertisement containers displaying SDK debug/technical information in production UI",
+            "Advertisement containers displaying empty placeholders indicating load/render failures",
+            "Popup modal overlapping and blocking video advertisements, leading to poor usability",
+            "Potential for further user-facing visual issues under dynamic content/ads"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_03",
+            "scenario_name": "Verify Ads Taboola for anonymous user",
+            "module": "Advertisement",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Screenshot AI, Visual",
+            "execution_time": 484.47,
+            "log_file": "SC_03.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_107_20260810_163458\\SC_03.log",
+            "screenshots": [
+                "screenshots/SC_03/SC_03_TaboolaAd_IndiaPage_undefined.png",
+                "screenshots/SC_03/SC_03_TaboolaAd_TrendingPage_undefined.png",
+                "screenshots/SC_03/SC_03_TaboolaAd_undefined.png"
+            ],
+            "comparison_images": [
+                "comparison/SC_03/./reference_SC_03_TaboolaAd_IndiaPage_undefined.png",
+                "comparison/SC_03/./actual_SC_03_TaboolaAd_IndiaPage_undefined.png",
+                "comparison/SC_03/./diff_SC_03_TaboolaAd_IndiaPage_undefined.png"
+            ],
+            "sources": [
+                "Screenshot AI",
+                "Visual"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Advertisement SDK debug information is visible to users.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement debug information visible (unit paths and load status)",
+                        "Test/SDK diagnostic output rendered in production UI"
+                    ]
+                },
+                {
+                    "reason": "Blank advertisement container is visible with only placeholder text, indicating a rendering or load defect.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Empty advertisement container",
+                        "Advertisement placeholder visible"
+                    ]
+                },
+                {
+                    "reason": "Advertisement banner displays a technical unit string and SDK loading message which is not intended for end users.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement container displays technical unit path",
+                        "SDK loaded / impression message visible to users"
+                    ]
+                }
+            ],
+            "visual_findings": [
+                {
+                    "image": "SC_03_TaboolaAd_IndiaPage_undefined.png",
+                    "similarity": 63.63,
+                    "normalized": false,
+                    "summary": "No genuine UI issues detected. All significant differences are related to dynamic content or excluded areas.",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "SC_04",
+            "scenario_name": "Verify Ads Taboola for anonymous subscriber",
+            "module": "Advertisement",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Minor",
+            "confidence": 80,
+            "reason": "Evidence detected by Visual",
+            "execution_time": 395.17,
+            "log_file": "SC_04.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_107_20260810_163458\\SC_04.log",
+            "screenshots": [
+                "screenshots/SC_04/Subscriber_No_Ads_Article_1.png",
+                "screenshots/SC_04/Subscriber_No_Ads_Article_2.png",
+                "screenshots/SC_04/Subscriber_No_Ads_Article_3.png",
+                "screenshots/SC_04/Subscriber_No_Ads_Article_4.png"
+            ],
+            "comparison_images": [
+                "comparison/SC_04/./reference_Subscriber_No_Ads_Article_1.png",
+                "comparison/SC_04/./actual_Subscriber_No_Ads_Article_1.png",
+                "comparison/SC_04/./diff_Subscriber_No_Ads_Article_1.png",
+                "comparison/SC_04/./reference_Subscriber_No_Ads_Article_2.png",
+                "comparison/SC_04/./actual_Subscriber_No_Ads_Article_2.png",
+                "comparison/SC_04/./diff_Subscriber_No_Ads_Article_2.png",
+                "comparison/SC_04/./reference_Subscriber_No_Ads_Article_3.png",
+                "comparison/SC_04/./actual_Subscriber_No_Ads_Article_3.png",
+                "comparison/SC_04/./diff_Subscriber_No_Ads_Article_3.png",
+                "comparison/SC_04/./reference_Subscriber_No_Ads_Article_4.png",
+                "comparison/SC_04/./actual_Subscriber_No_Ads_Article_4.png",
+                "comparison/SC_04/./diff_Subscriber_No_Ads_Article_4.png"
+            ],
+            "sources": [
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "Subscriber_No_Ads_Article_1.png",
+                    "similarity": 54.94,
+                    "normalized": false,
+                    "summary": "No genuine UI defects detected in critical UI components. All observed differences are related to dynamic content, user-specific data, or non-static elements as per the exclusions.",
+                    "issues": []
+                },
+                {
+                    "image": "Subscriber_No_Ads_Article_2.png",
+                    "similarity": 64.25,
+                    "normalized": false,
+                    "summary": "No genuine UI issues detected. All highlighted differences are related to dynamic content or ignored areas.",
+                    "issues": []
+                },
+                {
+                    "image": "Subscriber_No_Ads_Article_3.png",
+                    "similarity": 63.38,
+                    "normalized": false,
+                    "summary": "No genuine UI issues detected. All detected differences are related to dynamic content or ignorable aspects.",
+                    "issues": []
+                },
+                {
+                    "image": "Subscriber_No_Ads_Article_4.png",
+                    "similarity": 63.39,
+                    "normalized": false,
+                    "summary": "No genuine UI defects detected. All differences are related to dynamic content or are non-UI issues.",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "SC_05",
+            "scenario_name": "SC 05 Premium access for anonymous user",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 720.59,
+            "log_file": "SC_05.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_107_20260810_163458\\SC_05.log",
+            "screenshots": [
+                "screenshots/SC_05/SC05_premiumpage_nonsubscriber.png",
+                "screenshots/SC_05/SC_05_premiumpage_nonsubscriber_AllStories.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Popup modal overlays and partially blocks a video ad, causing UI overlap and incomplete visibility of dynamic content.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Popup modal ('All stories') overlaps with video card",
+                        "Underlying content (video ad) is partially blocked by the modal",
+                        "UI overlap between modal and content"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-004",
+            "scenario_id": "Sc_08",
+            "scenario_name": "Sc 08 Verify Account Subscription details",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "CANCELLED",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 41.81,
+            "log_file": "Sc_08.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_107_20260810_163458\\Sc_08.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

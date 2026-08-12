@@ -1,0 +1,144 @@
+{
+    "suite": "Smoke",
+    "execution_time": 370.8,
+    "summary": {
+        "total": 5,
+        "passed": 2,
+        "failed": 3,
+        "critical": 2,
+        "major": 0,
+        "minor": 1
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.811",
+            "version_code": "577"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Testing identified one critical functional failure (COMPLEX_003 - Run FAIL) and a major visual issue (large blank white area/missing content in COMPLEX_004). Additionally, a minor typo was observed in COMPLEX_002. Some findings are attributable to dynamic rendering or visual regressions, but the functional failure and severe rendering issue are blocking release.",
+        "release_recommendation": "Do not release. Critical rendering and functional issues require resolution.",
+        "top_risks": [
+            "Critical functional failure in COMPEX_003 scenario.",
+            "Severe visual rendering issue with missing content in main application area (COMPLEX_004).",
+            "Possible deployment or backend regression leading to blank screen.",
+            "Minor typo ('coumns') present in release."
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "COMPLEX_004",
+            "scenario_name": "Games Landing and Easy Down Listing",
+            "module": "AI Generated",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 93.73,
+            "log_file": "COMPLEX_004.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_98_20260810_120711\\COMPLEX_004.log",
+            "screenshots": [
+                "screenshots/COMPLEX_004/COMPLEX_004_easy_down_destination.png",
+                "screenshots/COMPLEX_004/COMPLEX_004_scroll_down_and_games_catalogue.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Large blank white region indicates incomplete rendering or missing content in the main area of the application.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank white area inside application content",
+                        "Missing expected screen content"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "COMPLEX_003",
+            "scenario_name": "Dark Mode Appearance Validation",
+            "module": "AI Generated",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 70.3,
+            "log_file": "COMPLEX_003.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_98_20260810_120711\\COMPLEX_003.log",
+            "screenshots": [
+                "screenshots/COMPLEX_003/COMPLEX_003_dark_mode_enabled.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "COMPLEX_002",
+            "scenario_name": "Subscriber Sudoku Navigation",
+            "module": "AI Generated",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Minor",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 86.61,
+            "log_file": "COMPLEX_002.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_98_20260810_120711\\COMPLEX_002.log",
+            "screenshots": [
+                "screenshots/COMPLEX_002/COMPLEX_002_games_page_sudoku.png",
+                "screenshots/COMPLEX_002/COMPLEX_002_sudoku_landing_page.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "There is a text typo in the description ('coumns' instead of 'columns').",
+                    "severity": "LOW",
+                    "issues": [
+                        "Typo in description: 'coumns' should be 'columns'"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+appId: com.mobstac.thehindu
+
+tags:
+
+  - generated
+
+---
+
+
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+
+
+- tapOn:
+
+    id: "nav_account"
+
+
+
+- tapOn:
+
+    text: "Appearance"
+
+
+
+- assertVisible:
+
+    text: "Dark\nMode"
+
+
+
+- tapOn:
+
+    text: "Dark\nMode"
+
+
+
+- takeScreenshot: "Screenshots/Generated/COMPLEX_003_dark_mode_enabled"
+
+
+
+- back
+- back
+
+
+- assertVisible:
+
+    id: "screen_home"
+
+
+
+- takeScreenshot: "Screenshots/Generated/COMPLEX_003_home_page_in_dark_mode"
+

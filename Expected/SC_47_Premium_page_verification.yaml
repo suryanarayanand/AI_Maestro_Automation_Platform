@@ -1,0 +1,391 @@
+appId: com.mobstac.thehindu
+tags:
+  - premium
+---
+# Premium page verification (SC-47).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Navigate to Premium Section
+- extendedWaitUntil:
+    visible: "Premium"
+    timeout: 15000
+- tapOn: "Premium"
+
+# Dismiss OKAY Popup
+- runFlow:
+    when:
+      visible:
+        text: "OKAY"
+    commands:
+      - tapOn: "OKAY"
+
+# Premium Page Validation
+- takeScreenshot: "Screenshots/SC_47/SC_47_Premium_Page_01"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Premium_Page_02"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Premium_Page_03"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Premium_Page_04"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Premium_Page_05"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Premium_Page_06"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Premium_Page_07"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Premium_Page_08"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Premium_Page_09"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Premium_Page_10"
+
+# Navigate to Specials Section
+- extendedWaitUntil:
+    visible: "Specials"
+    timeout: 15000
+- tapOn: "Specials"
+
+# Close Promotional Popup
+- runFlow:
+    when:
+      visible:
+        text: "Dear Reader, this event is free for you to attend."
+    commands:
+      - back
+
+# Dismiss OKAY Popup
+- runFlow:
+    when:
+      visible:
+        text: "OKAY"
+    commands:
+      - tapOn: "OKAY"
+
+# Specials Page Validation
+- takeScreenshot: "Screenshots/SC_47/SC_47_Specials_Page_01"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Specials_Page_02"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Specials_Page_03"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Specials_Page_04"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Specials_Page_05"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Specials_Page_06"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Specials_Page_07"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Specials_Page_08"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Specials_Page_09"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Specials_Page_10"
+
+# Navigate to Packages Section
+- extendedWaitUntil:
+    visible: "Packages"
+    timeout: 15000
+- tapOn: "Packages"
+
+# Close Promotional Popup
+- runFlow:
+    when:
+      visible:
+        text: "Dear Reader, this event is free for you to attend."
+    commands:
+      - back
+
+# Dismiss OKAY Popup
+- runFlow:
+    when:
+      visible:
+        text: "OKAY"
+    commands:
+      - tapOn: "OKAY"
+
+# Packages Page Validation
+- takeScreenshot: "Screenshots/SC_47/SC_47_Packages_Page_01"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Packages_Page_02"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Packages_Page_03"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Packages_Page_04"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Packages_Page_05"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Packages_Page_06"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Packages_Page_07"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Packages_Page_08"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Packages_Page_09"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Packages_Page_10"
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+      - waitForAnimationToEnd
+
+# Navigate to Webinar Section
+- runFlow:
+    when:
+      visible:
+        text: "Webinar"
+    commands:
+      - tapOn: "Webinar"
+- runFlow:
+    when:
+      notVisible:
+        text: "Webinar"
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+
+# Dismiss OKAY Popup
+- runFlow:
+    when:
+      visible:
+        text: "OKAY"
+    commands:
+      - tapOn: "OKAY"
+
+# Webinar Page Validation
+- takeScreenshot: "Screenshots/SC_47/SC_47_Webinar_Page_01"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Webinar_Page_02"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Webinar_Page_03"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Webinar_Page_04"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Webinar_Page_05"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Webinar_Page_06"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Webinar_Page_07"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Webinar_Page_08"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Webinar_Page_09"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_Webinar_Page_10"
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+      - waitForAnimationToEnd
+
+# Navigate to All Stories Section
+- runFlow:
+    when:
+      visible:
+        text: "All Stories"
+    commands:
+      - tapOn: "All Stories"
+- runFlow:
+    when:
+      notVisible:
+        text: "All Stories"
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+
+# Dismiss OKAY Popup
+- runFlow:
+    when:
+      visible:
+        text: "OKAY"
+    commands:
+      - tapOn: "OKAY"
+
+# All Stories Page Validation
+- takeScreenshot: "Screenshots/SC_47/SC_47_All_Stories_Page_01"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_All_Stories_Page_02"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_All_Stories_Page_03"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_All_Stories_Page_04"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_All_Stories_Page_05"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_All_Stories_Page_06"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_All_Stories_Page_07"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_All_Stories_Page_08"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_All_Stories_Page_09"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+- takeScreenshot: "Screenshots/SC_47/SC_47_All_Stories_Page_10"
+
+# Close Promotional Popup
+- runFlow:
+    when:
+      visible:
+        text: "Dear Reader, this event is free for you to attend."
+    commands:
+      - back
+
+# Close Application
+- killApp

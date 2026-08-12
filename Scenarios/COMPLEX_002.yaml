@@ -1,0 +1,27 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_GAMES.yaml"
+
+- assertVisible:
+    id: "screen_games"
+
+- assertVisible:
+    text: "Sudoku"
+
+- tapOn:
+    text: "Sudoku"
+
+- assertVisible:
+    text: "Sudoku"
+
+- takeScreenshot: "Screenshots/Generated/COMPLEX_002_sudoku_landing_page"
+
+- back
+
+- assertVisible:
+    id: "screen_games"
+
+- takeScreenshot: "Screenshots/Generated/COMPLEX_002_games_page_sudoku"

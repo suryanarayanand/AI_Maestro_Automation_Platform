@@ -1,0 +1,73 @@
+appId: com.mobstac.thehindu
+tags:
+  - article
+---
+# ArticleRefereshvalidation (SC-42).
+# Launch App
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd:
+    timeout: 8000
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+- extendedWaitUntil:
+    visible:
+      text: "Home"
+    timeout: 10000
+
+# Open First Article
+# - tapOn:
+#     point: 50%,25%
+- tapOn:
+    index: 0
+
+# Refresh Article Content
+- swipe:
+    start: 50%,20%
+    end: 50%,80%
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "Screenshots/SC_42/SC_42_Article_After_Refresh_01"
+- swipe:
+    start: 50%,20%
+    end: 50%,80%
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "Screenshots/SC_42/SC_42_Article_After_Refresh_02"
+- swipe:
+    start: 50%,20%
+    end: 50%,80%
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "Screenshots/SC_42/SC_42_Article_After_Refresh_03"
+- swipe:
+    start: 50%,20%
+    end: 50%,80%
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "Screenshots/SC_42/SC_42_Article_After_Refresh_04"
+- swipe:
+    start: 50%,20%
+    end: 50%,80%
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "Screenshots/SC_42/SC_42_Article_After_Refresh_05"
+- swipe:
+    start: 50%,20%
+    end: 50%,80%
+- waitForAnimationToEnd:
+    timeout: 5000
+- takeScreenshot: "Screenshots/SC_42/SC_42_Article_After_Refresh_06"
+
+# Close Application
+- killApp

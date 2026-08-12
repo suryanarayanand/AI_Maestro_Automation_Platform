@@ -1,0 +1,80 @@
+{
+    "suite": {
+        "total": 3,
+        "passed": 0,
+        "failed": 3,
+        "not_found": 0,
+        "pass_rate": 0.0
+    },
+    "results": [
+        {
+            "id": "TH_5634",
+            "module": "AI Generated",
+            "name": "Landing/Home Screen",
+            "status": "FAIL",
+            "duration": 151.67,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Excelpilotgames_Job_93_20260810_110937\\TH_5634.log",
+            "screenshots": [
+                "screenshots/TH_5634/TH_5634_games_screen_back_navigation.png",
+                "screenshots/TH_5634/TH_5634_sudoku_landing_page.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present with no visible defects or layout issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "TH_5634_games_screen_back_navigation.png",
+                    "image_path": "screenshots/TH_5634/TH_5634_games_screen_back_navigation.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "Text alignment and typo issues in the description. The word 'Sudoko' is misspelled, and 'coumns' should be 'columns.'",
+                    "issues": [
+                        "Misspelled title: 'Sudoko' instead of 'Sudoku'",
+                        "Typo in description: 'coumns' instead of 'columns'",
+                        "Text alignment in the description appears inconsistent"
+                    ],
+                    "jira_title": "Text typos and alignment issues on Sudoku selection screen",
+                    "jira_description": "The Sudoku selection screen contains a misspelled title ('Sudoko' instead of 'Sudoku'), a typo in the description ('coumns' instead of 'columns'), and inconsistent description text alignment.",
+                    "image": "TH_5634_sudoku_landing_page.png",
+                    "image_path": "screenshots/TH_5634/TH_5634_sudoku_landing_page.png"
+                }
+            ]
+        },
+        {
+            "id": "TH_5716",
+            "module": "AI Generated",
+            "name": "Games Landing Page Navigation",
+            "status": "FAIL",
+            "duration": 89.67,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Excelpilotgames_Job_93_20260810_110937\\TH_5716.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "TH_5818",
+            "module": "AI Generated",
+            "name": "Easy down game listing",
+            "status": "FAIL",
+            "duration": 288.1,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Excelpilotgames_Job_93_20260810_110937\\TH_5818.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ai-adapted
+---
+
+- launchApp:
+    clearState: false
+
+- runFlow: "../Common/OPEN_HOME_FOR_BASELINE.yaml"
+
+- assertVisible:
+    id: "screen_home"
+
+- assertVisible:
+    text: "News"
+
+- assertVisible:
+    id: "article_card"
+
+- takeScreenshot: "Screenshots/Generated/TH_0010_home_page_initial_content"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "article_card"
+
+- takeScreenshot: "Screenshots/Generated/TH_0010_home_page_content_scroll"

@@ -1,0 +1,59 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow TC_001
+Launch app "com.mobstac.thehindu"... COMPLETED
+Run ../Common/LOGIN.yaml...
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "Email" is visible... COMPLETED
+  Tap on "Email"... COMPLETED
+  Input text product.testing@thehindu.co.in... COMPLETED
+  Hide Keyboard... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "NEXT.*|Next.*|HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT.*LOGIN"... COMPLETED
+    Assert that "Email" is visible... COMPLETED
+    Tap on "Email"... COMPLETED
+    Input text product.testing@thehindu.co.in... COMPLETED
+    Hide Keyboard... COMPLETED
+    Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+  Assert that "NEXT.*|Next.*" is visible... COMPLETED
+  Tap on "NEXT.*|Next.*"... COMPLETED
+  Assert that "password" is visible... COMPLETED
+  Tap on "password"... COMPLETED
+  Input text Test@123... COMPLETED
+  Hide Keyboard... COMPLETED
+  Assert that "LOGIN.*" is visible... COMPLETED
+  Tap on "LOGIN.*"... COMPLETED
+  Assert that "Home" is visible... COMPLETED
+Run ../Common/LOGIN.yaml... COMPLETED
+Assert that id: screen_home is visible... COMPLETED
+Assert that id: nav_premium is visible... COMPLETED
+Tap on id: nav_premium... COMPLETED
+Assert that id: screen_premium is visible... COMPLETED
+Assert that id: article_card is visible... FAILED
+
+Assertion is false: id: article_card is visible
+
+Assertion 'id: article_card is visible' failed. Check the UI hierarchy in debug artifacts to verify the element state and properties.
+
+Possible causes:
+- Element selector may be incorrect - check if there are similar elements with slightly different names/properties.
+- Element may be temporarily unavailable due to loading state
+- This could be a real regression that needs to be addressed
+
+==== Debug output (logs & screenshots) ====
+
+C:\Users\12503\.maestro\tests\2026-08-12_153627
+
+
+===== STDERR =====
+

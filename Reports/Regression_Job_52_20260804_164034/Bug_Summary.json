@@ -1,0 +1,127 @@
+{
+    "suite": "Regression",
+    "execution_time": 191.94,
+    "summary": {
+        "total": 2,
+        "passed": 0,
+        "failed": 2,
+        "critical": 2,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.807",
+            "version_code": "573"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "The Maestro test execution surfaced significant issues across both functional and visual verification layers. Scenario SC_12 failed with cross-device visual mismatches, but no specific functional or UI issues were called out by screenshot AI—indicating likely dynamic-content or rendering variances, not core functionality breaks. Scenario SC_16 was cancelled due to a critical functional failure: users encountering an error state see no actionable guidance or navigation, leaving the interface in a blank, unrecoverable state. This represents a severe usability and flow-blocking bug. No spurious noise or benign visual regressions were present.",
+        "release_recommendation": "Release not recommended until the critical error-handling and recovery UI issues from SC_16 are remediated.",
+        "top_risks": [
+            "Irrecoverable error state with no navigation options (SC_16)",
+            "User abandonment during error experience due to lack of actionable UI (SC_16)",
+            "Potential device- or data-driven visual inconsistency (SC_12), but non-blocking"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_12",
+            "scenario_name": "Subscriber_Article_Full_Read_Access",
+            "module": "Article",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Visual",
+            "execution_time": 144.64,
+            "log_file": "SC_12.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_52_20260804_164034\\SC_12.log",
+            "screenshots": [],
+            "comparison_images": [
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_12\\SC_12_Subscriber_Article_page.png",
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_12\\SC_12_Subscriber_Article_page_1.png"
+            ],
+            "sources": [
+                "Run",
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "SC_12_Subscriber_Article_page.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                },
+                {
+                    "image": "SC_12_Subscriber_Article_page_1.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "SC_16",
+            "scenario_name": "SC 16 login with appleid",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "CANCELLED",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Screenshot AI",
+            "execution_time": 41.3,
+            "log_file": "SC_16.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_52_20260804_164034\\SC_16.log",
+            "screenshots": [
+                "screenshots/SC_16/SC_16_Apple_signin_page.png",
+                "screenshots/SC_16/SC_16_signin_error_via_AppleID.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run",
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Error state displayed with no guidance or actionable UI provided; large blank area and no navigation or recovery options.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "No actionable button or navigation after error message",
+                        "Unexpected large blank area due to missing recovery UI"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

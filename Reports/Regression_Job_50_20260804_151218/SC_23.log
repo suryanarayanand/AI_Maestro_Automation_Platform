@@ -1,0 +1,58 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_23_Homepage_FromHomepage_to_Editorialpage_in_darkTheme_anonyous_
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Repeat 3 times...
+  Swiping in DOWN direction in 400 ms... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 3 times... COMPLETED
+Take screenshot Screenshots/SC_23/SC_23_Home_Page... COMPLETED
+Tap on point (88%,5%)... COMPLETED
+Assert that "Appearance" is visible... COMPLETED
+Tap on "Appearance"... COMPLETED
+Assert that "Dark
+Mode" is visible... COMPLETED
+Tap on "Dark
+Mode"... COMPLETED
+Take screenshot Screenshots/SC_23/SC_23_Dark_Theme... COMPLETED
+Press back... COMPLETED
+Launch app "com.mobstac.thehindu"... COMPLETED
+Repeat 3 times...
+  Swiping in DOWN direction in 400 ms... COMPLETED
+Repeat 3 times... COMPLETED
+Take screenshot Screenshots/SC_23/SC_23_Dark_Theme_Home_Page_1... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_23/SC_23_Dark_Theme_Home_Page_2... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_23/SC_23_Dark_Theme_Home_Page_3... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_23/SC_23_Dark_Theme_Home_Page_4... COMPLETED
+Scroll vertically... COMPLETED
+Run flow when "SEE MORE" is visible...
+Run flow when "SEE MORE" is visible... SKIPPED
+Assert that "Editorial" is visible... COMPLETED
+Take screenshot Screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_1... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_2... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_3... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_4... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_5... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_6... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_7... COMPLETED
+Scroll vertically... COMPLETED
+Press back... COMPLETED
+Launch app "com.mobstac.thehindu"... COMPLETED
+
+
+===== STDERR =====
+

@@ -1,0 +1,138 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - world
+  - account
+  - article
+---
+# World page article Anonymous Account (SC-81).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "The Hindu"
+    timeout: 15000
+
+# Navigate to World Section
+- extendedWaitUntil:
+    visible: "World"
+    timeout: 15000
+- tapOn: "World"
+- tapOn:
+    point: 50%,50%
+- waitForAnimationToEnd
+
+# The frequency-capped AI Summary sheet can cover the article action bar.
+
+- runFlow:
+
+    when:
+
+      visible:
+
+        text: "Summary"
+
+    commands:
+
+      - tapOn: "Close sheet"
+# Verify Article Actions
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Text size"
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+- extendedWaitUntil:
+    visible: "Listen to article"
+
+# Verify AI Summary
+- runFlow:
+    when:
+      visible:
+        text: "AI summary"
+    commands:
+      - takeScreenshot: "Screenshots/SC_81/SC_81_World_Page_AI_Summary"
+
+# World Article Validation
+- takeScreenshot: "Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_05"
+- scroll
+- takeScreenshot: "Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_06"
+- scroll
+- takeScreenshot: "Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_07"
+- scroll
+- takeScreenshot: "Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_08"
+- scroll
+- takeScreenshot: "Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_09"
+- scroll
+- takeScreenshot: "Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_10"
+- scroll
+- takeScreenshot: "Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_11"
+- scroll
+- takeScreenshot: "Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_12"
+- scroll
+- takeScreenshot: "Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_13"
+- scroll
+- takeScreenshot: "Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_14"
+- scroll
+- takeScreenshot: "Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_15"
+
+# Navigate to Taboola Advertisement Section
+- repeat:
+    times: 25
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Taboola Advertisement is Absent
+- repeat:
+    times: 20
+    commands:
+      - assertNotVisible:
+          text: "Image for Taboola Advertising Unit"
+      - scroll
+      - takeScreenshot: "Screenshots/SC_81/SC_81_Taboola_Advertisement_Verification"
+      - waitForAnimationToEnd
+
+# Navigate to Advertisement Section
+- repeat:
+    times: 20
+    commands:
+      - swipe:
+          start: 50%,80%
+          end: 50%,20%
+- repeat:
+    times: 25
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Advertisement is Absent
+- repeat:
+    times: 20
+    commands:
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - scroll
+      - takeScreenshot: "Screenshots/SC_81/SC_81_Advertisement_Verification"
+      - waitForAnimationToEnd

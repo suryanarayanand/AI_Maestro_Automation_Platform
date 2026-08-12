@@ -1,0 +1,74 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - light_theme
+  - india
+  - theme
+---
+# india page lightTheme anonymous (SC-77).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "SUBSCRIBE"
+    timeout: 15000
+
+# Change to Light Theme
+- runFlow: ../Common/Light_theme_changing.yaml
+
+# Relaunch the app because navigating back
+# causes the app to crash.
+# - stopApp
+- launchApp
+
+# Navigate to India Section
+- extendedWaitUntil:
+    visible: "India"
+    timeout: 15000
+- tapOn: "India"
+- tapOn:
+    point: 50%,50%
+
+# Verify Article Elements
+- assertVisible:
+    text: "Text size"
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+
+# - extendedWaitUntil:
+#     visible: "Listen to article"
+# India Article Validation
+- takeScreenshot: "Screenshots/SC_77/SC_77_India_Page_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_77/SC_77_India_Page_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_77/SC_77_India_Page_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_77/SC_77_India_Page_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_77/SC_77_India_Page_05"
+- scroll
+- takeScreenshot: "Screenshots/SC_77/SC_77_India_Page_06"
+- scroll
+- takeScreenshot: "Screenshots/SC_77/SC_77_India_Page_07"
+- scroll
+- takeScreenshot: "Screenshots/SC_77/SC_77_India_Page_08"
+- scroll
+- takeScreenshot: "Screenshots/SC_77/SC_77_India_Page_09"
+- scroll
+- takeScreenshot: "Screenshots/SC_77/SC_77_India_Page_10"

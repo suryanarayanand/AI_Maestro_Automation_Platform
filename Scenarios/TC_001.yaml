@@ -1,0 +1,24 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ai-adapted
+---
+
+- launchApp:
+    clearState: false
+
+- assertVisible:
+    id: "screen_home"
+
+- tapOn:
+    id: "nav_account"
+
+- assertVisible:
+    id: "screen_user_menu"
+
+- tapOn:
+    id: "cta_login"
+
+- runFlow: "../Common/LOGIN.yaml"
+
+- takeScreenshot: "Screenshots/Generated/TC_001_post_login_header_evidence"

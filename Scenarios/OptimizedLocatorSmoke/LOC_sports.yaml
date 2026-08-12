@@ -1,0 +1,28 @@
+appId: com.mobstac.thehindu
+tags:
+  - locator-smoke
+  - sports
+---
+- runFlow: ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml
+- repeat:
+    times: 5
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: "Sports"
+    timeout: 15000
+- tapOn:
+    text: "Sports"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 20000
+- assertVisible:
+    id: "screen_home"
+- assertVisible:
+    text: "Sports"
+- takeScreenshot: "Screenshots/LocatorSmoke/sports_page"

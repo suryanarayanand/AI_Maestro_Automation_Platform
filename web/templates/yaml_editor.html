@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}YAML Editor{% endblock %}
+{% block page_title %}YAML Editor{% endblock %}
+{% block content %}
+<p class="page-intro">View and safely edit existing Maestro scenarios. Every save creates a timestamped backup.</p>
+<section class="surface">
+<form class="row g-2 mb-3" method="get"><div class="col"><input class="form-control" name="q" value="{{ query }}" placeholder="Search scenario name or folder"></div><div class="col-auto"><button class="btn btn-primary">Search</button></div></form>
+<div class="table-responsive"><table class="table align-middle"><thead><tr><th>Scenario</th><th>Folder</th><th>Size</th><th></th></tr></thead><tbody>
+{% for scenario in scenarios %}<tr><td><strong>{{ scenario.name }}</strong></td><td>{{ scenario.folder if scenario.folder != '.' else 'Scenarios' }}</td><td>{{ scenario.size }} bytes</td><td class="text-end"><div class="d-inline-flex gap-2"><a class="btn btn-sm btn-outline-primary" href="{{ url_for('yaml_editor.edit_query', file=scenario.path) }}">View / Edit</a><form method="post" action="{{ url_for('yaml_editor.delete') }}" onsubmit="return confirm('Delete {{ scenario.path }}? A recovery backup will be retained.');"><input type="hidden" name="file" value="{{ scenario.path }}"><button class="btn btn-sm btn-outline-danger" type="submit">Delete</button></form></div></td></tr>{% else %}<tr><td colspan="4" class="text-muted">No matching YAML scenarios.</td></tr>{% endfor %}
+</tbody></table></div></section>
+{% endblock %}

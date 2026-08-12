@@ -1,0 +1,503 @@
+{
+    "suite": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "not_found": 0,
+        "pass_rate": 100.0
+    },
+    "results": [
+        {
+            "id": "SC_81",
+            "module": "Unassigned",
+            "name": "SC 81 World page article Anonymous Account",
+            "status": "PASS",
+            "duration": 107.81,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_119_20260811_182407\\SC_81.log",
+            "screenshots": [
+                "screenshots/SC_81/SC_81_World_Page_AI_Summary.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_01.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_02.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_03.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_04.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_05.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_06.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_07.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_08.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_09.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_10.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_11.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_12.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_13.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_14.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_15.png"
+            ],
+            "ai_pass": 11,
+            "ai_fail": 5,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and rendered correctly. No visible UI defects or layout issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_81_World_Page_AI_Summary.png",
+                    "image_path": "screenshots/SC_81/SC_81_World_Page_AI_Summary.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visual UI defects found.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_81_World_Page_Anonymous_Account_Article_01.png",
+                    "image_path": "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_01.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and no visual defects are observed.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_81_World_Page_Anonymous_Account_Article_02.png",
+                    "image_path": "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_02.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "A large blank white region is present above the advertisement banner, with two 'ADVERTISEMENT' labels indicating a missing or failed ad render.",
+                    "issues": [
+                        "Large blank area above advertisement",
+                        "Multiple 'ADVERTISEMENT' labels without corresponding ads",
+                        "Evidence of missing ad content"
+                    ],
+                    "jira_title": "Blank area and missing advertisement in content feed",
+                    "jira_description": "A large blank white space is visible above the advertisement banner with two sequential 'ADVERTISEMENT' labels. This indicates a rendering defect where an ad or content block failed to load.",
+                    "image": "SC_81_World_Page_Anonymous_Account_Article_03.png",
+                    "image_path": "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_03.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "No UI defects are visible. All elements are present and correctly rendered. Advertisements appear in designated containers and no layout issues are observed.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_81_World_Page_Anonymous_Account_Article_04.png",
+                    "image_path": "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_04.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. There are no visible layout, text, rendering, or advertisement defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_81_World_Page_Anonymous_Account_Article_05.png",
+                    "image_path": "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_05.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Visible blank advertisement container between article content and banner ad indicates incomplete ad rendering.",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Empty advertisement placeholder"
+                    ],
+                    "jira_title": "Blank advertisement container visible in article page",
+                    "jira_description": "An empty advertisement container with only the 'ADVERTISEMENT' label is visible between the article content and the banner ad. This indicates incomplete ad rendering or missing advertisement content.",
+                    "image": "SC_81_World_Page_Anonymous_Account_Article_06.png",
+                    "image_path": "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_06.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Large unexpected blank white region interrupts the application content between 'Post a comment' and the advertisement section indicating incomplete rendering or missing UI.",
+                    "issues": [
+                        "Unexpected large blank area within app content",
+                        "Possible missing cards or incomplete rendering"
+                    ],
+                    "jira_title": "Unexpected blank area interrupts application content",
+                    "jira_description": "There is a large blank white space between the 'Post a comment' button and the advertisement section, indicating possible incomplete rendering or missing content within the application UI.",
+                    "image": "SC_81_World_Page_Anonymous_Account_Article_07.png",
+                    "image_path": "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_07.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and fully rendered. No layout, rendering, or text defects are visible.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_81_World_Page_Anonymous_Account_Article_08.png",
+                    "image_path": "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_08.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and properly rendered. No layout, rendering, or text issues detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_81_World_Page_Anonymous_Account_Article_09.png",
+                    "image_path": "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_09.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement banner overlays and blocks visible content of a news article.",
+                    "issues": [
+                        "Advertisement banner overlaying application content",
+                        "News article text and image partially blocked by advertisement"
+                    ],
+                    "jira_title": "Advertisement banner overlays news content",
+                    "jira_description": "The advertisement banner is overlaying and blocking part of the news article content, resulting in partial visibility and broken layout. Advertisement containers should never cover main content.",
+                    "image": "SC_81_World_Page_Anonymous_Account_Article_10.png",
+                    "image_path": "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_10.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "There is a large blank area under the 'ADVERTISEMENT' label, indicating an empty advertisement placeholder.",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Empty advertisement placeholder"
+                    ],
+                    "jira_title": "Blank advertisement container visible in article feed",
+                    "jira_description": "A large blank area labeled 'ADVERTISEMENT' is present without any ad creative, indicating an empty advertisement placeholder should not be shown to users.",
+                    "image": "SC_81_World_Page_Anonymous_Account_Article_11.png",
+                    "image_path": "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_11.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and rendered correctly. No visible layout, rendering, or text issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_81_World_Page_Anonymous_Account_Article_12.png",
+                    "image_path": "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_12.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly without any visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_81_World_Page_Anonymous_Account_Article_13.png",
+                    "image_path": "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_13.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and correctly rendered with no visible layout or rendering defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_81_World_Page_Anonymous_Account_Article_14.png",
+                    "image_path": "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_14.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present. No visible layout or rendering issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_81_World_Page_Anonymous_Account_Article_15.png",
+                    "image_path": "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_15.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_88",
+            "module": "Unassigned",
+            "name": "SC 88 Opinion Article Navigation Interaction Login Validation",
+            "status": "PASS",
+            "duration": 257.2,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_119_20260811_182407\\SC_88.log",
+            "screenshots": [
+                "screenshots/SC_88/SC_88_Opinion_Page_After_Clicking_AI_Summary_Anonymous.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_01.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_02.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account_Article_Via_Comment_Section.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Article_01.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Article_02.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Article_03.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Article_04.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Article_05.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_01.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_02.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_03.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_04.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_05.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_06.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_07.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_08.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_09.png"
+            ],
+            "ai_pass": 14,
+            "ai_fail": 6,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement is visible behind the subscription paywall modal.",
+                    "issues": [
+                        "Advertisement visible behind paywall modal"
+                    ],
+                    "jira_title": "Advertisement is visible behind subscription paywall",
+                    "jira_description": "An advertisement is displayed in the background while the subscription paywall modal is open. Advertisements should not be visible when a paywall is shown.",
+                    "image": "SC_88_Opinion_Page_After_Clicking_AI_Summary_Anonymous.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_After_Clicking_AI_Summary_Anonymous.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement is visible on the subscription paywall, which is not expected for a subscriber acquisition/promotional screen.",
+                    "issues": [
+                        "Advertisement visible on subscription paywall"
+                    ],
+                    "jira_title": "Advertisement visible on subscription paywall",
+                    "jira_description": "An advertisement is shown behind the subscription/purchase paywall modal. Subscriber prompts should never display advertisements, as this disrupts the purchase experience and is against UX best practices.",
+                    "image": "SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_01.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_01.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement is visible on the subscription paywall, which should not display ads to users deciding whether to subscribe.",
+                    "issues": [
+                        "Advertisement visible on subscription paywall"
+                    ],
+                    "jira_title": "Advertisement visible on subscription paywall",
+                    "jira_description": "An advertisement is shown at the top of the subscription paywall screen. Paywall/subscription pages should not display ads to ensure a focused and professional subscription experience.",
+                    "image": "SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_02.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_02.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present with no evidence of rendering issues, layout problems, or missing content.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_88_Opinion_Page_Anonymous_Account.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and rendered correctly, including the subscription modal. No evidence of UI defects or interrupted layout.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_88_Opinion_Page_Anonymous_Account_Article_Via_Comment_Section.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account_Article_Via_Comment_Section.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered correctly with no visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_88_Opinion_Page_Article_01.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_Article_01.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "No visual UI defects found. All expected UI elements are present and properly rendered.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_88_Opinion_Page_Article_02.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_Article_02.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement is visible below the paywall/subscription prompt.",
+                    "issues": [
+                        "Advertisement visible on subscription paywall"
+                    ],
+                    "jira_title": "Advertisement displayed on subscription paywall screen",
+                    "jira_description": "The subscription paywall screen displays an advertisement. Ads should not be shown on paywall/subscriber pages, as it disrupts the premium experience.",
+                    "image": "SC_88_Opinion_Page_Article_03.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_Article_03.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "A large unexpected blank area is visible at the top of the screen, indicating missing or incomplete rendering of content.",
+                    "issues": [
+                        "Large blank area at the top of the screen",
+                        "Possible missing header or primary content"
+                    ],
+                    "jira_title": "Large blank area at the top of the screen",
+                    "jira_description": "A significant blank region is present at the top of the screen, suggesting that content failed to render or is missing entirely.",
+                    "image": "SC_88_Opinion_Page_Article_04.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_Article_04.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered correctly with no visible layout, rendering, or text defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_88_Opinion_Page_Article_05.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_Article_05.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visual defects observed.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_88_Opinion_Page_Subscription.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_Subscription.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_88_Opinion_Page_Subscription_Page_01.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_01.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visible layout, rendering, or text defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_88_Opinion_Page_Subscription_Page_02.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_02.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and properly rendered. There are no visible layout, rendering, or text issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_88_Opinion_Page_Subscription_Page_03.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_03.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and correctly rendered. No visual defects are evident.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_88_Opinion_Page_Subscription_Page_04.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_04.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_88_Opinion_Page_Subscription_Page_05.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_05.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered correctly with no visible layout, rendering, or text issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_88_Opinion_Page_Subscription_Page_06.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_06.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and fully rendered. No layout, rendering, or text defects are visible.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_88_Opinion_Page_Subscription_Page_07.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_07.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Bottom UI toolbar is overlapping the article content and obscuring text.",
+                    "issues": [
+                        "Bottom navigation overlaps article content",
+                        "Obscured news article"
+                    ],
+                    "jira_title": "Bottom navigation bar overlaps content",
+                    "jira_description": "The bottom navigation UI toolbar is overlapping the news article list, obscuring part of the article content and causing a layout defect.",
+                    "image": "SC_88_Opinion_Page_Subscription_Page_08.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_08.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and rendered correctly. No layout, rendering, or text issues are visible.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_88_Opinion_Page_Subscription_Page_09.png",
+                    "image_path": "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_09.png"
+                }
+            ]
+        }
+    ]
+}

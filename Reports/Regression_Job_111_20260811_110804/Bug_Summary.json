@@ -1,0 +1,72 @@
+{
+    "suite": "Regression",
+    "execution_time": 532.39,
+    "summary": {
+        "total": 2,
+        "passed": 1,
+        "failed": 1,
+        "critical": 1,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.813",
+            "version_code": "579"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "The automated Maestro execution for scenario SC_101 was cancelled, resulting in no available functional, screenshot AI, or cross-device visual evidence. No failures or findings, functional or visual, were detected or reported.",
+        "release_recommendation": "No defects or risks identified in this scenario; however, as execution was cancelled and evidence is absent, recommend re-running the scenario for complete validation before making any release decisions.",
+        "top_risks": [
+            "Test coverage gap due to scenario cancellation",
+            "Potential undetected functional or visual regressions",
+            "Release confidence decreased due to incomplete execution"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_101",
+            "scenario_name": "SC 101 Busines Page specific article Subscribed Acc",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "CANCELLED",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 48.56,
+            "log_file": "SC_101.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_111_20260811_110804\\SC_101.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

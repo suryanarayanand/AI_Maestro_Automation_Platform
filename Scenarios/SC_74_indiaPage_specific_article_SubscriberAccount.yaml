@@ -1,0 +1,114 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - india
+  - account
+  - article
+---
+# indiaPage specific article SubscriberAccount (SC-74).
+# Launch App
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Navigate to India Section
+- extendedWaitUntil:
+    visible: "India"
+    timeout: 15000
+- tapOn: "India"
+- tapOn:
+    point: 50%,50%
+
+# Open India Article
+- takeScreenshot: "Screenshots/SC_74/SC_74_India_Page_Subscribed_Account"
+
+# Verify Article Elements
+- extendedWaitUntil:
+    visible: "Listen to article"
+- runFlow:
+    when:
+      visible:
+        text: "AI summary"
+    commands:
+      - takeScreenshot: "Screenshots/SC_74/SC_74_AI_Summary"
+- assertVisible:
+    text: "Text size"
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+
+# India Article Validation
+- takeScreenshot: "Screenshots/SC_74/SC_74_India_Page_Subscribed_Account_Article_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_74/SC_74_India_Page_Subscribed_Account_Article_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_74/SC_74_India_Page_Subscribed_Account_Article_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_74/SC_74_India_Page_Subscribed_Account_Article_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_74/SC_74_India_Page_Subscribed_Account_Article_05"
+- scroll
+- takeScreenshot: "Screenshots/SC_74/SC_74_India_Page_Subscribed_Account_Article_06"
+- scroll
+- takeScreenshot: "Screenshots/SC_74/SC_74_India_Page_Subscribed_Account_Article_07"
+- scroll
+- takeScreenshot: "Screenshots/SC_74/SC_74_India_Page_Subscribed_Account_Article_08"
+- scroll
+- takeScreenshot: "Screenshots/SC_74/SC_74_India_Page_Subscribed_Account_Article_09"
+- scroll
+- takeScreenshot: "Screenshots/SC_74/SC_74_India_Page_Subscribed_Account_Article_10"
+- swipe:
+    direction: LEFT
+
+# Verify Taboola Advertisement is Absent
+- repeat:
+    times: 10
+    commands:
+      - assertNotVisible:
+          text: "Image for Taboola Advertising Unit"
+      - scroll
+      - takeScreenshot: "Screenshots/SC_74/SC_74_Taboola_Advertisement_Verification"
+      - waitForAnimationToEnd
+
+# Navigate to Advertisement Section
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Advertisement is Absent
+- repeat:
+    times: 10
+    commands:
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - scroll
+      - takeScreenshot: "Screenshots/SC_74/SC_74_Advertisement_Verification"
+      - waitForAnimationToEnd
+
+# Navigate to Advertisement Section
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+- repeat:
+    times: 15
+    commands:
+      - assertNotVisible:
+          text: "Webpage not available"
+      - scroll
+      - takeScreenshot: "Screenshots/SC_74/SC_74_Web_Page_Not_Available"
+      - waitForAnimationToEnd

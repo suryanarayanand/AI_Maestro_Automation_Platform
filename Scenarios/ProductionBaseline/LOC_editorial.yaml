@@ -1,0 +1,16 @@
+appId: com.mobstac.thehindu
+tags:
+  - baseline
+  - editorial
+---
+- runFlow: ../Common/OPEN_HOME_FOR_BASELINE.yaml
+- tapOn:
+    text: "Editorial\nTab 7 of 15"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: "Editorial\nTab 7 of 15"
+    timeout: 20000
+- assertVisible:
+    text: "Editorial\nTab 7 of 15"
+- takeScreenshot: "Screenshots/LocatorSmoke/editorial_page"

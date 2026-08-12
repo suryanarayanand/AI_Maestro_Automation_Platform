@@ -1,0 +1,86 @@
+appId: com.mobstac.thehindu
+tags:
+  - navigation
+  - category
+---
+# Deep Category Navigation (SC-52).
+# Launch App
+- launchApp:
+    # clearState: true
+    stopApp: true
+- waitForAnimationToEnd
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Navigate to World Section
+# [Samsung F06]
+# - tapOn:
+#     point: 0%,4%
+# [Android Studio Medium Phone]
+# - tapOn:
+#     point: 0%,3%
+# [realme narzo 60]
+- tapOn:
+    point: 5%,6%
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "India"
+    timeout: 15000
+- tapOn: "India"
+- extendedWaitUntil:
+    visible: "World"
+    timeout: 15000
+- tapOn: "World"
+
+# Verify Subscribe Popup is Absent
+- runFlow:
+    when:
+      visible:
+        text: "Dear Reader, this event is free for you to attend."
+    commands:
+      - back
+
+# Open First Article
+- tapOn:
+    point: 50%,34%
+
+# Article Validation
+- takeScreenshot: "Screenshots/SC_52/SC_52_World_Article"
+
+# Verify Subscribe Popup is Absent
+- runFlow:
+    when:
+      visible:
+        text: "Dear Reader, this event is free for you to attend."
+    commands:
+      - back
+- scroll
+- takeScreenshot: "Screenshots/SC_52/SC_52_World_Article_Login"
+
+# Navigate Back
+- back
+- takeScreenshot: "Screenshots/SC_52/SC_52_World_Page"
+- back
+- takeScreenshot: "Screenshots/SC_52/SC_52_India_Page"
+- back
+- takeScreenshot: "Screenshots/SC_52/SC_52_India_Section"
+- back
+- takeScreenshot: "Screenshots/SC_52/SC_52_Home_Page"
+
+# Close Application
+- stopApp

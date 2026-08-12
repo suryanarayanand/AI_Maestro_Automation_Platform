@@ -1,0 +1,149 @@
+appId: com.mobstac.thehindu
+tags:
+  - ebooks
+  - navigation
+---
+# ebook page navigation validation (SC-45).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 5000
+- tapOn: "Skip"
+
+# Navigate to eBooks Section
+- extendedWaitUntil:
+    visible: "eBooks"
+    timeout: 5000
+- tapOn: "eBooks"
+- takeScreenshot: "Screenshots/SC_45/SC_45_eBooks_Page"
+
+# Open Main eBook
+- waitForAnimationToEnd:
+    timeout: 18000
+- tapOn:
+    point: 13%,18%
+- waitForAnimationToEnd:
+    timeout: 18000
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_45/SC_45_Main_eBook_01"
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: LEFT
+- takeScreenshot: "Screenshots/SC_45/SC_45_Main_eBook_02"
+- repeat:
+    times: 5
+    commands:
+      - swipe:
+          direction: LEFT
+- takeScreenshot: "Screenshots/SC_45/SC_45_Main_eBook_03"
+
+# Verify Display Settings
+- assertVisible: "Display Settings"
+- tapOn: "Display Settings"
+
+# Verify Theme Options
+- extendedWaitUntil:
+    visible: "Light"
+    timeout: 5000
+- tapOn: "Light"
+- takeScreenshot: "Screenshots/SC_45/SC_45_Light_Theme"
+- extendedWaitUntil:
+    visible: "Sepia"
+    timeout: 5000
+- tapOn: "Sepia"
+- takeScreenshot: "Screenshots/SC_45/SC_45_Sepia_Theme"
+- extendedWaitUntil:
+    visible: "Dark"
+    timeout: 5000
+- tapOn: "Dark"
+- takeScreenshot: "Screenshots/SC_45/SC_45_Dark_Theme"
+- extendedWaitUntil:
+    visible: "Night"
+    timeout: 5000
+- tapOn: "Night"
+- takeScreenshot: "Screenshots/SC_45/SC_45_Night_Theme"
+
+# Verify Font Settings
+- scrollUntilVisible:
+    element: "Font"
+- runFlow:
+    when:
+      visible:
+        text: "Times New Roman"
+    commands:
+      - tapOn: "Times New Roman"
+- runFlow:
+    when:
+      visible:
+        text: "Arial"
+    commands:
+      - tapOn: "Arial"
+- runFlow:
+    when:
+      visible:
+        text: "Arial"
+    commands:
+      - tapOn: "Arial"
+- runFlow:
+    when:
+      visible:
+        text: "Courier New"
+    commands:
+      - tapOn: "Courier New"
+- runFlow:
+    when:
+      visible:
+        text: "Courier New"
+    commands:
+      - tapOn: "Courier New"
+- runFlow:
+    when:
+      visible:
+        text: "Times New Roman"
+    commands:
+      - tapOn: "Times New Roman"
+- scroll
+- assertVisible: "Line Spacing"
+- scroll
+
+# Verify Change Theme Option
+- tapOn: "Display Settings"
+- repeat:
+    times: 2
+    commands:
+      - tapOn: "Change Theme"
+- takeScreenshot: "Screenshots/SC_45/SC_45_Change_Theme"
+
+# Verify Font Settings Option
+- assertVisible: "Font Settings"
+- tapOn: "Font Settings"
+- runFlow:
+    when:
+      visible:
+        text: "Times New Roman"
+    commands:
+      - tapOn: "Times New Roman"
+- runFlow:
+    when:
+      visible:
+        text: "Arial"
+    commands:
+      - tapOn: "Arial"
+- back
+- scroll
+- takeScreenshot: "Screenshots/SC_45/SC_45_eBook_Page_Validation"
+
+# Close Application
+- killApp

@@ -1,0 +1,104 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - ads
+---
+# Verify Ads Taboola for anonymous user (SC-03).
+# Launch App
+- launchApp:
+    clearState: true
+    # stopApp: true
+- waitForAnimationToEnd
+
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+- waitForAnimationToEnd
+
+# Open Home Page Content
+- tapOn:
+    point: 50%,50%
+- waitForAnimationToEnd
+
+# Verify closing Summary
+- runFlow:
+    when:
+      visible:
+        text: "Summary"
+    commands:
+      - tapOn: "Close sheet"
+
+# - back
+# Verify Taboola Advertisement on Home Page
+- repeat:
+    times: 15
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Image for Taboola Advertising Unit"
+          commands:
+            - takeScreenshot: "Screenshots/SC_03/SC_03_TaboolaAd_${TIMESTAMP}"
+      - scroll
+      - waitForAnimationToEnd
+
+# Navigate Back
+- swipe:
+    direction: LEFT
+
+- back
+
+# Navigate to India Section
+- extendedWaitUntil:
+    visible: "India"
+    timeout: 15000
+- tapOn: "India"
+
+# Verify Advertisement on India Page
+- repeat:
+    times: 15
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "ADVERTISEMENT"
+          commands:
+            - takeScreenshot: "Screenshots/SC_03/SC_03_TaboolaAd_IndiaPage_${TIMESTAMP}"
+      - scroll
+      - waitForAnimationToEnd
+
+# Return to a stable root screen before the next section.
+- launchApp
+
+# Navigate to Trending Section
+- extendedWaitUntil:
+    visible: "Trending"
+    timeout: 15000
+- tapOn: "Trending"
+
+# Verify Advertisement on Trending Page
+- repeat:
+    times: 15
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "ADVERTISEMENT"
+          commands:
+            - takeScreenshot: "Screenshots/SC_03/SC_03_TaboolaAd_TrendingPage_${TIMESTAMP}"
+      - scroll
+      - waitForAnimationToEnd
+
+# Close Application
+- killApp

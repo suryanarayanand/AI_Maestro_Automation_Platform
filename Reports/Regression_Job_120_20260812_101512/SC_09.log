@@ -1,0 +1,34 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_09_Invalid_Credentials_Error_Handling
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+  Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+  Wait for animation to end within 15000 ms... COMPLETED
+  Assert that "Email" is visible... COMPLETED
+  Tap on "Email"... COMPLETED
+  Input text random TEXT_EMAIL_ADDRESS... COMPLETED
+  Wait for animation to end within 30000 ms... COMPLETED
+  Assert that "NEXT?" is visible... COMPLETED
+  Tap on "NEXT?"... COMPLETED
+  Wait for animation to end within 80000 ms... COMPLETED
+  Assert that "password" is visible... COMPLETED
+  Tap on "password"... COMPLETED
+  Input text T%$#1234n... COMPLETED
+  Wait for animation to end within 30000 ms... COMPLETED
+  Run flow when "Show password" is visible...
+    Tap on "Show password"... COMPLETED
+  Run flow when "Show password" is visible... COMPLETED
+  Assert that "LOGIN?" is visible... COMPLETED
+  Tap on "LOGIN?"... COMPLETED
+Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+Wait for animation to end within 10000 ms... COMPLETED
+Assert that "That combination of email and password is not recognized" is visible... COMPLETED
+Assert that "That combination of email and password is not recognized" is visible... COMPLETED
+Take screenshot Screenshots/SC_09/SC_09_InvalidCredentials_Error... COMPLETED
+Stop com.mobstac.thehindu... COMPLETED
+
+
+===== STDERR =====
+

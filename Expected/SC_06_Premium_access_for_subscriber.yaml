@@ -1,0 +1,50 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - premium
+---
+# Premium access for subscriber (SC-06).
+# Launch App
+- launchApp:
+    clearState: true
+    # stopApp: true
+
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+- waitForAnimationToEnd
+
+# Skip Onboarding
+- assertVisible: "Skip"
+- tapOn: "Skip"
+
+# Navigate to Premium Section
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Premium"
+    timeout: 15000
+- tapOn: "Premium"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_06/Sc_06_paywall_premium00"
+
+# Verify Premium Dialog (Disabled)
+# - assertVisible: "OKAY"
+# - tapOn: "OKAY"
+# Navigate to All Stories
+- assertVisible: "All Stories"
+- tapOn: "All Stories"
+
+# Verify Subscribe Option is Absent
+- repeat:
+    times: 7
+    commands:
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_06/SC_06_paywall_premium_fails_subscribeIs_present_01"
+
+# Premium Page Validation
+- takeScreenshot: "Screenshots/SC_06/SC_06_paywall_premium_02"
+
+# Close Application
+- killApp

@@ -1,0 +1,38 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_18_Create_New_Account_Option
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Assert that "Save articles to read later" is visible... COMPLETED
+Assert that "Unlock more stories" is visible... COMPLETED
+Take screenshot Screenshots/SC_18/SC_18_intialSetupScreen_01... COMPLETED
+Assert that "CREATE A FREE ACCOUNT" is visible... COMPLETED
+Tap on "CREATE A FREE ACCOUNT"... COMPLETED
+Assert that "thehindu-logo" is visible... COMPLETED
+Assert that "Already have an account? " is visible... COMPLETED
+Assert that "Sign In" is visible... COMPLETED
+Assert that "Sign in with Apple" is visible... COMPLETED
+Assert that "Sign in with Google" is visible... COMPLETED
+Assert that "Sign up" is visible... COMPLETED
+Tap on "Sign up"... COMPLETED
+Take screenshot Screenshots/SC_18/SC_18_SignUp_page... COMPLETED
+Assert that "Email" is visible... COMPLETED
+Assert that "Password" is visible... COMPLETED
+Assert that "Mobile" is visible... FAILED
+
+Assertion is false: "Mobile" is visible
+
+Assertion '"Mobile" is visible' failed. Check the UI hierarchy in debug artifacts to verify the element state and properties.
+
+Possible causes:
+- Element selector may be incorrect - check if there are similar elements with slightly different names/properties.
+- Element may be temporarily unavailable due to loading state
+- This could be a real regression that needs to be addressed
+
+==== Debug output (logs & screenshots) ====
+
+C:\Users\12503\.maestro\tests\2026-08-04_153030
+
+
+===== STDERR =====
+

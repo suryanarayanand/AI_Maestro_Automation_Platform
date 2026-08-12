@@ -1,0 +1,97 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - dark_theme
+  - editorial
+  - theme
+---
+# Editorial Page anonymous DarkTheme (SC-87).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- runFlow: ../Common/Dark_theme_changing.yaml
+
+- back
+- back
+
+# Navigate to Editorial Section
+- extendedWaitUntil:
+    visible: "Editorial"
+    timeout: 15000
+- tapOn: "Editorial"
+
+# Editorial Page Validation
+- takeScreenshot: "Screenshots/SC_87/SC_87_Editorial_Page_Anonymous_Account_DarkTheme_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_87/SC_87_Editorial_Page_Anonymous_Account_DarkTheme_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_87/SC_87_Editorial_Page_Anonymous_Account_DarkTheme_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_87/SC_87_Editorial_Page_Anonymous_Account_DarkTheme_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_87/SC_87_Editorial_Page_Anonymous_Account_DarkTheme_05"
+
+# Open Editorial Article
+- tapOn:
+    point: 50%,50%
+- waitForAnimationToEnd
+# - assertVisible:
+#     text: "Listen to article"
+
+# Verify closing Summary
+- runFlow:
+    when:
+      visible:
+        text: "Summary"
+    commands:
+      - tapOn: "Close sheet"
+
+# Verify Article Actions
+- assertVisible:
+    text: "Text size"
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+
+- takeScreenshot: "Screenshots/SC_87/SC_87_Editorial_Page_Specific_Article_DarkTheme_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_87/SC_87_Editorial_Page_Specific_Article_DarkTheme_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_87/SC_87_Editorial_Page_Specific_Article_DarkTheme_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_87/SC_87_Editorial_Page_Specific_Article_DarkTheme_04"
+- scroll
+
+
+
+# Navigate to Comments Section
+- repeat:
+    times: 20
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Post a Comment Section
+- repeat:
+    times: 20
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Post a comment"
+          commands:
+            - takeScreenshot: "Screenshots/SC_87/SC_87_Post_A_Comment_DarkTheme"
+      - scroll
+
+ 
+

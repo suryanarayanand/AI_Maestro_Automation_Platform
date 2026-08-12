@@ -1,0 +1,52 @@
+appId: com.mobstac.thehindu
+tags:
+  - excel
+  - pilot
+  - smoke
+  - bottom-tabs
+---
+# Excel source: TH_1177 | Bottom Tabs | Bottom Bar Sections / Bottom Tab
+# Validation requirement:
+# - Verify that the currently selected tab (HOME) displays a clear active visual profile—changing text colour to red and adding a red circular pill background behind the icon—while unselected tabs stay visually muted.
+# - Verify that tapping any inactive tab (such as TRENDING, PREMIUM, EBOOKS, or GAMES) instantly switches the primary viewport layout to the selected section's root screen.
+- launchApp:
+    clearState: false
+- runFlow:
+    when:
+      visible: "Skip"
+    commands:
+      - tapOn: "Skip"
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 15000
+- tapOn:
+    id: "nav_home"
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_home"
+- takeScreenshot: "Screenshots/THExcelPilot/TH_1177_home"
+- tapOn:
+    id: "nav_trending"
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_trending"
+- takeScreenshot: "Screenshots/THExcelPilot/TH_1177_trending"
+- tapOn:
+    id: "nav_premium"
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_premium"
+- takeScreenshot: "Screenshots/THExcelPilot/TH_1177_premium"
+- tapOn:
+    id: "nav_ebooks"
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_ebooks"
+- takeScreenshot: "Screenshots/THExcelPilot/TH_1177_ebooks"
+- tapOn:
+    id: "nav_games"
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_games"
+- takeScreenshot: "Screenshots/THExcelPilot/TH_1177_games"

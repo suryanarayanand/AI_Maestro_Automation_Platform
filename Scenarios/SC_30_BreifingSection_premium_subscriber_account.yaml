@@ -1,0 +1,129 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - account
+  - premium
+---
+# BreifingSection premium subscriber account (SC-30).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+      # Verify Subscribe Popup is Absent
+      - runFlow:
+          when:
+            visible:
+              text: "SUBSCRIBE"
+          commands:
+            - takeScreenshot: "Screenshots/SC_30/SC_30_Subscribe_Popup"
+            - assertNotVisible:
+                text: "SUBSCRIBE"
+
+# Navigate to Premium Section
+- assertVisible: "Premium"
+- tapOn: "Premium"
+
+# Premium Page Validation
+- takeScreenshot: "Screenshots/SC_30/SC_30_Premium_Page_01"
+- repeat:
+    times: 5
+    commands:
+      - scroll
+
+# Open Premium Article
+- extendedWaitUntil:
+    visible: "READ FULL ARTICLE"
+    timeout: 5000
+- tapOn: "READ FULL ARTICLE"
+- takeScreenshot: "Screenshots/SC_30/SC_30_Premium_Article_01"
+
+# AI Summary
+- extendedWaitUntil:
+    visible: ".*summary.*"
+    timeout: 15000
+- takeScreenshot: "Screenshots/SC_28/SC_28_Opinion_Page_Article_After_Clicking_AI_Summary"
+- waitForAnimationToEnd
+- tapOn: "Close sheet"
+
+# Verify Article Elements
+
+
+- runFlow: 
+    when: 
+     visible: 
+         text: "GIFT THIS ARTICLE"
+    commands:
+        - takeScreenshot: "Screenshots/SC_30/SC_30_Show_premiumPage_article"
+- runFlow: 
+    when: 
+     visible: 
+         text: ".*summary.*"
+    commands:
+        - takeScreenshot: "Screenshots/SC_30/SC_30_Show_More_Option_India_Page"
+ 
+- assertVisible: "AI summary"
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Text size"
+
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+
+- takeScreenshot: "Screenshots/SC_30/SC_30_Premium_Article_Validation_01"
+- repeat:
+    times: 5
+    commands:
+      - scroll
+- back
+- scroll
+# Open Next Premium Article
+- extendedWaitUntil:
+    visible: "READ FULL ARTICLE"
+    timeout: 5000
+- tapOn: "READ FULL ARTICLE"
+
+# # AI Summary
+# - extendedWaitUntil:
+#     visible: ".*summary.*"
+#     timeout: 15000
+# - takeScreenshot: "Screenshots/SC_28/SC_28_Opinion_Page_Article_After_Clicking_AI_Summary"
+# - waitForAnimationToEnd
+# - tapOn: "Close sheet"
+
+
+# Verify Article Elements
+# - assertVisible: "GIFT THIS ARTICLE"
+- assertVisible: "AI summary"
+- assertVisible:
+    text: "Bookmark"
+    index: 1
+- assertVisible:
+    text: "Text size"
+    index: 1
+- assertVisible:
+    text: "Share"
+    index: 1
+- assertVisible:
+    text: "Comment"
+    index: 1
+- takeScreenshot: "Screenshots/SC_30/SC_30_Premium_Article_Validation_02"
+- back  
+# Navigate to Specific Briefing Articles
+- tapOn: "4"
+- tapOn: "8"
+- tapOn: "5"
+- tapOn: "2"

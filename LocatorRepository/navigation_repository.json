@@ -1,0 +1,16 @@
+[
+    {"page":"Videos","container":{"id":"screen_home"},"steps":[{"tapOn":{"text":"Videos"}}],"identity":{"text":"Videos"}},
+    {"page":"Photos","container":{"id":"screen_home"},"steps":[{"tapOn":{"text":"Photos"}}],"identity":{"text":"Photos"}},
+    {"page":"Podcast","container":{"id":"screen_home"},"steps":[{"tapOn":{"text":"Podcast"}}],"identity":{"text":"Podcast"}},
+    {"page":"India","container":{"id":"screen_home"},"steps":[{"tapOn":{"text":"India"}}],"identity":{"text":"India"}},
+    {"page":"World","container":{"id":"screen_home"},"steps":[{"tapOn":{"text":"World"}}],"identity":{"text":"World"}},
+    {"page":"Editorial","container":{"id":"screen_home"},"steps":[{"tapOn":{"text":"Editorial"}}],"identity":{"text":"Editorial"}},
+    {"page":"Opinion","container":{"id":"screen_home"},"steps":[{"tapOn":{"text":"Opinion"}}],"identity":{"text":"Opinion"}},
+    {"page":"Sports","container":{"id":"screen_home"},"precondition":"shift home section row left","steps":[{"tapOn":{"text":"Sports"}}],"identity":{"text":"Sports"}},
+    {"page":"Business","container":{"id":"screen_home"},"precondition":"shift home section row left","steps":[{"tapOn":{"text":"Business"}}],"identity":{"text":"Business"}},
+    {"page":"Sci-Tech","container":{"id":"screen_section"},"steps":[{"tapOn":{"id":"nav_menu"}},{"tapOn":{"text":"Science"}},{"tapOn":{"text":"Sci-Tech"}}],"identity":{"text":"Sci-Tech"}},
+    {"page":"Entertainment","container":{"id":"screen_section"},"steps":[{"tapOn":{"id":"nav_menu"}},{"tapOn":{"text":"Entertainment"}},{"tapOn":{"text":"Entertainment","index":1}}],"identity":{"text":"Entertainment"}},
+    {"page":"Books","container":{"id":"screen_section"},"steps":[{"tapOn":{"id":"nav_menu"}},{"scrollUntilVisible":{"text":"Books"}},{"tapOn":{"text":"Books"}},{"tapOn":{"text":"Books","index":1}}],"identity":{"text":"Books"}},
+    {"page":"Food","container":{"id":"screen_section"},"steps":[{"tapOn":{"id":"nav_menu"}},{"tapOn":{"text":"Life & Style"}},{"tapOn":{"text":"Food"}}],"identity":{"text":"Food"}},
+    {"page":"Latest News","actual_label":"News","container":{"id":"screen_section"},"steps":[{"tapOn":{"id":"nav_menu"}},{"tapOn":{"text":"News"}},{"tapOn":{"text":"News","index":1}}],"identity":{"text":"News"}}
+]

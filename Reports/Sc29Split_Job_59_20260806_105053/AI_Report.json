@@ -1,0 +1,240 @@
+{
+    "suite": {
+        "total": 3,
+        "passed": 2,
+        "failed": 1,
+        "not_found": 0,
+        "pass_rate": 66.67
+    },
+    "results": [
+        {
+            "id": "SC_29_INDIA",
+            "module": "Hamburger Menu",
+            "name": "Hamburger categories - India",
+            "status": "PASS",
+            "duration": 109.65,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc29Split_Job_59_20260806_105053\\SC_29_INDIA.log",
+            "screenshots": [
+                "screenshots/SC_29_INDIA/SC_29_INDIA_hamburger_menu.png",
+                "screenshots/SC_29_INDIA/SC_29_INDIA_india_india.png",
+                "screenshots/SC_29_INDIA/SC_29_INDIA_india_news.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI elements are present and aligned. No blank regions, missing components, or rendering issues are visible in the navigation drawer.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_29_INDIA_hamburger_menu.png",
+                    "image_path": "screenshots/SC_29_INDIA/SC_29_INDIA_hamburger_menu.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Screen is stuck in loading state; only placeholders visible, no real content rendered.",
+                    "issues": [
+                        "Placeholder skeletons visible throughout screen",
+                        "Content failed to load or render"
+                    ],
+                    "jira_title": "Content does not load, only placeholders visible",
+                    "jira_description": "The India news section is stuck displaying loading skeleton placeholders. Expected content (news articles) is missing, indicating a rendering or data loading issue.",
+                    "image": "SC_29_INDIA_india_india.png",
+                    "image_path": "screenshots/SC_29_INDIA/SC_29_INDIA_india_india.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components, navigation, and content cards are fully rendered without visual defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_29_INDIA_india_news.png",
+                    "image_path": "screenshots/SC_29_INDIA/SC_29_INDIA_india_news.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_29_WORLD",
+            "module": "Hamburger Menu",
+            "name": "Hamburger categories - World",
+            "status": "FAIL",
+            "duration": 91.59,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc29Split_Job_59_20260806_105053\\SC_29_WORLD.log",
+            "screenshots": [
+                "screenshots/SC_29_WORLD/SC_29_WORLD_hamburger_menu.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present. Layout is correctly rendered for the navigation drawer. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_29_WORLD_hamburger_menu.png",
+                    "image_path": "screenshots/SC_29_WORLD/SC_29_WORLD_hamburger_menu.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_29_SPORT",
+            "module": "Hamburger Menu",
+            "name": "Hamburger categories - Sport",
+            "status": "PASS",
+            "duration": 344.05,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc29Split_Job_59_20260806_105053\\SC_29_SPORT.log",
+            "screenshots": [
+                "screenshots/SC_29_SPORT/SC_29_SPORT_hamburger_menu.png",
+                "screenshots/SC_29_SPORT/SC_29_SPORT_sport_athletics.png",
+                "screenshots/SC_29_SPORT/SC_29_SPORT_sport_cricket.png",
+                "screenshots/SC_29_SPORT/SC_29_SPORT_sport_football.png",
+                "screenshots/SC_29_SPORT/SC_29_SPORT_sport_hockey.png",
+                "screenshots/SC_29_SPORT/SC_29_SPORT_sport_motorsport.png",
+                "screenshots/SC_29_SPORT/SC_29_SPORT_sport_other_sports.png",
+                "screenshots/SC_29_SPORT/SC_29_SPORT_sport_races.png",
+                "screenshots/SC_29_SPORT/SC_29_SPORT_sport_sport.png",
+                "screenshots/SC_29_SPORT/SC_29_SPORT_sport_tennis.png"
+            ],
+            "ai_pass": 6,
+            "ai_fail": 4,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Side navigation drawer does not cover the full height and width of the screen, leaving visible underlying app content.",
+                    "issues": [
+                        "Side navigation drawer not fully covering the screen",
+                        "Underlying home screen content visible on the right"
+                    ],
+                    "jira_title": "Navigation drawer does not fully cover screen",
+                    "jira_description": "The side navigation drawer only partially covers the screen, leaving the underlying home screen visible on the right edge and at the bottom. This is a critical UI defect as the navigation drawer should obscure the content below for focus and clarity.",
+                    "image": "SC_29_SPORT_hamburger_menu.png",
+                    "image_path": "screenshots/SC_29_SPORT/SC_29_SPORT_hamburger_menu.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Placeholder content is displayed throughout indicating the actual UI content failed to load or render.",
+                    "issues": [
+                        "Article/text/image placeholders still visible",
+                        "Actual content is missing",
+                        "Screen not fully rendered"
+                    ],
+                    "jira_title": "Placeholder content visible instead of article list",
+                    "jira_description": "The Athletics screen displays only placeholder skeletons for article text and images. Actual articles are missing, and the UI appears to be in a perpetual loading state or failed to render content.",
+                    "image": "SC_29_SPORT_sport_athletics.png",
+                    "image_path": "screenshots/SC_29_SPORT/SC_29_SPORT_sport_athletics.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. Layout is properly aligned. No visible rendering or layout issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_29_SPORT_sport_cricket.png",
+                    "image_path": "screenshots/SC_29_SPORT/SC_29_SPORT_sport_cricket.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. Layout, alignment, and content regions are complete without overlap, cropping, or missing elements.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_29_SPORT_sport_football.png",
+                    "image_path": "screenshots/SC_29_SPORT/SC_29_SPORT_sport_football.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are visible and properly rendered. No issues detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_29_SPORT_sport_hockey.png",
+                    "image_path": "screenshots/SC_29_SPORT/SC_29_SPORT_sport_hockey.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and properly aligned. No evidence of rendering issues, missing elements, or layout problems.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_29_SPORT_sport_motorsport.png",
+                    "image_path": "screenshots/SC_29_SPORT/SC_29_SPORT_sport_motorsport.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Screen displays placeholder skeletons, indicating article and image data failed to load or render.",
+                    "issues": [
+                        "Placeholder skeletons visible instead of content",
+                        "Content failed to render"
+                    ],
+                    "jira_title": "Content not rendered, placeholder skeletons displayed",
+                    "jira_description": "The Other Sports section displays only loading placeholders (skeletons), indicating that the expected article and image content did not render. This likely represents a defect in either data loading or rendering.",
+                    "image": "SC_29_SPORT_sport_other_sports.png",
+                    "image_path": "screenshots/SC_29_SPORT/SC_29_SPORT_sport_other_sports.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered correctly with no visible defects or interruptions in content.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_29_SPORT_sport_races.png",
+                    "image_path": "screenshots/SC_29_SPORT/SC_29_SPORT_sport_races.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and rendered correctly. No evidence of layout issues or rendering defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_29_SPORT_sport_sport.png",
+                    "image_path": "screenshots/SC_29_SPORT/SC_29_SPORT_sport_sport.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Content placeholders are visible, indicating that the actual article cards or content failed to load/render.",
+                    "issues": [
+                        "Content placeholders are present",
+                        "Article content failed to render"
+                    ],
+                    "jira_title": "Tennis tab displays only placeholders, actual content missing",
+                    "jira_description": "On the Tennis tab, only placeholder cards are visible. The actual article cards and images failed to render, indicating an incomplete content load or rendering defect.",
+                    "image": "SC_29_SPORT_sport_tennis.png",
+                    "image_path": "screenshots/SC_29_SPORT/SC_29_SPORT_sport_tennis.png"
+                }
+            ]
+        }
+    ]
+}

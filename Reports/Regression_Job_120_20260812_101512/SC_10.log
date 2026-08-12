@@ -1,0 +1,23 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_10_Empty_Field_validation_on_login
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+  Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+  Wait for animation to end within 15000 ms... COMPLETED
+  Assert that "Email" is visible... COMPLETED
+  Tap on "Email"... COMPLETED
+  Input text ... COMPLETED
+  Wait for animation to end within 30000 ms... COMPLETED
+  Assert that "NEXT?" is visible... COMPLETED
+  Tap on "NEXT?"... COMPLETED
+  Assert that "Email is required" is visible... COMPLETED
+  Wait for animation to end within 80000 ms... COMPLETED
+Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+Take screenshot Screenshots/SC_10/SC_10_empty_credS_error... COMPLETED
+Kill com.mobstac.thehindu... COMPLETED
+
+
+===== STDERR =====
+

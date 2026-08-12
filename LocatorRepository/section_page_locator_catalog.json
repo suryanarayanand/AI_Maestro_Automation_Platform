@@ -1,0 +1,20 @@
+{
+    "captured_at": "2026-08-03",
+    "device": "R9ZY40T6PHN",
+    "pages": [
+        {"page":"Videos","source":"videos_page_20260803_143637.json","container":"screen_home","validated_text":"Videos","ids":["screen_home","article_card","nav_menu","nav_account","nav_home","nav_trending","nav_premium","nav_ebooks","nav_games"]},
+        {"page":"Photos","source":"photos_page_20260803_143749.json","container":"screen_home","validated_text":"Photos","ids":["screen_home","nav_menu","nav_account","nav_home","nav_trending","nav_premium","nav_ebooks","nav_games"]},
+        {"page":"Podcast","source":"podcast_page_20260803_143843.json","container":"screen_home","validated_text":"Podcast","ids":["screen_home","nav_menu","nav_account","nav_home","nav_trending","nav_premium","nav_ebooks","nav_games"],"stable_text_candidates":["Play Latest Episode","SEE ALL EPISODES"]},
+        {"page":"India","source":"india_page_20260803_143924.json","container":"screen_home","validated_text":"India","ids":["screen_home","article_card","nav_menu","nav_account","nav_home","nav_trending","nav_premium","nav_ebooks","nav_games"]},
+        {"page":"World","source":"world_page_20260803_144433.json","container":"screen_home","validated_text":"World","ids":["screen_home","article_card","nav_menu","nav_account","nav_home","nav_trending","nav_premium","nav_ebooks","nav_games"]},
+        {"page":"Editorial","source":"editorial_page_20260803_144555.json","container":"screen_home","validated_text":"Editorial","ids":["screen_home","nav_menu","nav_account","nav_home","nav_trending","nav_premium","nav_ebooks","nav_games"],"stable_text_candidates":["Recent Editorials"]},
+        {"page":"Opinion","source":"opinion_page_20260803_144829.json","container":"screen_home","validated_text":"Opinion","ids":["screen_home","article_card","nav_menu","nav_account","nav_home","nav_trending","nav_premium","nav_ebooks","nav_games"],"stable_text_candidates":["EDITORIAL","LEAD","COMMENT"]},
+        {"page":"Sports","source":"sports_page_20260803_144948.json","container":"screen_home","validated_text":"Sports","ids":["screen_home","article_card","nav_menu","nav_account","nav_home","nav_trending","nav_premium","nav_ebooks","nav_games"]},
+        {"page":"Business","source":"business_page_20260803_145450.json","container":"screen_home","validated_text":"Business","ids":["screen_home","article_card","nav_menu","nav_account","nav_home","nav_trending","nav_premium","nav_ebooks","nav_games"]},
+        {"page":"Sci-Tech","source":"scitech_page_20260803_150944.json","container":"screen_section","validated_text":"Sci-Tech","ids":["screen_section","article_card"],"stable_text_candidates":["Science","Technology","Health","Agriculture","Environment"]},
+        {"page":"Entertainment","source":"entertainment_page_20260803_151313.json","container":"screen_section","validated_text":"Entertainment","ids":["screen_section","article_card"],"stable_text_candidates":["Art","Dance","Movies","Music","Reviews","Theatre"]},
+        {"page":"Books","source":"books_page_20260803_151746.json","container":"screen_section","validated_text":"Books","ids":["screen_section","article_card"],"stable_text_candidates":["Reviews","Authors"]},
+        {"page":"Food","source":"food_page_20260803_151053.json","container":"screen_section","validated_text":"Food","ids":["screen_section","article_card"],"stable_text_candidates":["Fashion","Fitness","Homes and gardens","Luxury"]},
+        {"page":"Latest News","source":"latest_news_page_20260803_151535.json","actual_label":"News","container":"screen_section","validated_text":"News","ids":["screen_section","article_card"],"stable_text_candidates":["India","World"]}
+    ]
+}

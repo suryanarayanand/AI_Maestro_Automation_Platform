@@ -1,0 +1,11 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow TH_0006
+Launch app "com.mobstac.thehindu"... COMPLETED
+Assert that id: screen_home is visible... COMPLETED
+Take screenshot Screenshots/Generated/TH_0006_foreground_application_baseline... COMPLETED
+
+
+===== STDERR =====
+

@@ -1,0 +1,80 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_102_Busines_Page_DarkTheme
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Wait for animation to end... COMPLETED
+Run ../Common/LOGIN.yaml...
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "Email" is visible... COMPLETED
+  Tap on "Email"... COMPLETED
+  Input text product.testing@thehindu.co.in... COMPLETED
+  Hide Keyboard... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "NEXT.*|Next.*|HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible...
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible... SKIPPED
+  Assert that "NEXT.*|Next.*" is visible... COMPLETED
+  Tap on "NEXT.*|Next.*"... COMPLETED
+  Assert that "password" is visible... COMPLETED
+  Tap on "password"... COMPLETED
+  Input text Test@123... COMPLETED
+  Hide Keyboard... COMPLETED
+  Assert that "LOGIN.*" is visible... COMPLETED
+  Tap on "LOGIN.*"... COMPLETED
+  Assert that "Home" is visible... COMPLETED
+Run ../Common/LOGIN.yaml... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Assert that "Account" is visible... COMPLETED
+Tap on "Account"... COMPLETED
+Assert that "ACCOUNT SETTINGS" is visible... COMPLETED
+Assert that "Appearance" is visible... COMPLETED
+Tap on "Appearance"... COMPLETED
+Tap on "Dark
+Mode"... COMPLETED
+Press back... COMPLETED
+Press back... COMPLETED
+Repeat 5 times...
+  Swiping in LEFT direction in 400 ms... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 5 times... COMPLETED
+Run flow when "Business" is visible...
+  Tap on "Business"... COMPLETED
+Run flow when "Business" is visible... COMPLETED
+Take screenshot Screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_dark_theme... COMPLETED
+Tap on point (50%, 50%)... COMPLETED
+Run flow when "Summary" is visible...
+  Tap on "Close sheet"... COMPLETED
+Run flow when "Summary" is visible... COMPLETED
+Take screenshot Screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_dark_theme_01... COMPLETED
+Assert that "AI summary" is visible... COMPLETED
+Assert that "Text size" is visible... COMPLETED
+Assert that "Bookmark" is visible... COMPLETED
+Assert that "Share" is visible... COMPLETED
+Assert that "Comment" is visible... COMPLETED
+Take screenshot Screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_01... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_02... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_03... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_04... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_05... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+
+
+===== STDERR =====
+

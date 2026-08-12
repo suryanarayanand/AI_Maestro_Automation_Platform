@@ -1,0 +1,28 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ai-adapted
+---
+
+- launchApp:
+    clearState: false
+
+- runFlow: "../Common/LOGIN.yaml"
+
+- tapOn:
+    id: "nav_ebooks"
+
+- assertVisible:
+    id: "screen_ebooks"
+
+- takeScreenshot: "Screenshots/Generated/TH_0011_e_paper_home_page"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_ebooks"
+
+- takeScreenshot: "Screenshots/Generated/TH_0011_e_paper_listing_page"

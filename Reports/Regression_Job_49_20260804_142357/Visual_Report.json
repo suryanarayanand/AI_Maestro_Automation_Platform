@@ -1,0 +1,387 @@
+{
+    "suite": {
+        "total": 13,
+        "passed": 2,
+        "failed": 8,
+        "pass_rate": 15.38
+    },
+    "reference": {
+        "role": "Production reference",
+        "serial": "46201FDAP0048X",
+        "manufacturer": "Google",
+        "model": "Pixel 9 Pro",
+        "android": "16",
+        "resolution": "Physical size: 960x2142",
+        "density": "Physical density: 360",
+        "package": "com.mobstac.thehindu",
+        "version_name": "2501.20.802",
+        "version_code": "568"
+    },
+    "actual": {
+        "role": "Internal test actual",
+        "serial": "R9ZY40T6PHN",
+        "manufacturer": "samsung",
+        "model": "SM-E066B",
+        "android": "16",
+        "resolution": "Physical size: 720x1600",
+        "density": "Physical density: 300",
+        "package": "com.mobstac.thehindu",
+        "version_name": "2501.20.807",
+        "version_code": "573"
+    },
+    "results": [
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_02"
+        },
+        {
+            "passed": 1,
+            "failed": 1,
+            "total": 2,
+            "details": [
+                {
+                    "image": "SC_03_TaboolaAd_IndiaPage_undefined.png",
+                    "status": "FAIL",
+                    "similarity": 82.66,
+                    "threshold": 95.0,
+                    "difference_count": 64,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_03/./reference_SC_03_TaboolaAd_IndiaPage_undefined.png",
+                    "actual": "comparison/SC_03/./actual_SC_03_TaboolaAd_IndiaPage_undefined.png",
+                    "difference": "comparison/SC_03/./diff_SC_03_TaboolaAd_IndiaPage_undefined.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI defects detected. All highlighted differences are related to dynamic content, news headlines, author names, timestamps, and advertisements, which are to be ignored per instructions.",
+                        "issues": []
+                    }
+                },
+                {
+                    "image": "SC_03_TaboolaAd_TrendingPage_undefined.png",
+                    "status": "PASS",
+                    "similarity": 99.81,
+                    "threshold": 95.0,
+                    "difference_count": 10,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_03/./reference_SC_03_TaboolaAd_TrendingPage_undefined.png",
+                    "actual": "comparison/SC_03/./actual_SC_03_TaboolaAd_TrendingPage_undefined.png",
+                    "difference": "comparison/SC_03/./diff_SC_03_TaboolaAd_TrendingPage_undefined.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI issues detected. All differences are related to dynamic or ignored content.",
+                        "issues": []
+                    }
+                }
+            ],
+            "scenario": "SC_03"
+        },
+        {
+            "passed": 0,
+            "failed": 4,
+            "total": 4,
+            "details": [
+                {
+                    "image": "Subscriber_No_Ads_Article_1.png",
+                    "status": "FAIL",
+                    "similarity": 59.04,
+                    "threshold": 95.0,
+                    "difference_count": 83,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_04/./reference_Subscriber_No_Ads_Article_1.png",
+                    "actual": "comparison/SC_04/./actual_Subscriber_No_Ads_Article_1.png",
+                    "difference": "comparison/SC_04/./diff_Subscriber_No_Ads_Article_1.png",
+                    "ai_analysis": {
+                        "overall_status": "FAIL",
+                        "issue_count": 2,
+                        "summary": "Two major UI defects detected: primary news article image missing and significant empty space in main content area.",
+                        "issues": [
+                            {
+                                "severity": "Critical",
+                                "component": "Main Content",
+                                "title": "Primary news article image missing",
+                                "description": "The main image corresponding to the headline news article is missing, leaving a large blank area. This breaks the layout consistency and affects the user experience.",
+                                "recommendation": "Ensure that all news articles have the expected images loaded per design. If unavailable, display a placeholder."
+                            },
+                            {
+                                "severity": "High",
+                                "component": "Layout",
+                                "title": "Excessive empty space in content area",
+                                "description": "There is significant vertical empty space above the headline text where the article image should be. This leads to inefficient use of screen real estate and can confuse users.",
+                                "recommendation": "Fix the layout logic to collapse empty space when images/content are missing, maintaining proper alignment and padding."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "image": "Subscriber_No_Ads_Article_2.png",
+                    "status": "FAIL",
+                    "similarity": 64.07,
+                    "threshold": 95.0,
+                    "difference_count": 127,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_04/./reference_Subscriber_No_Ads_Article_2.png",
+                    "actual": "comparison/SC_04/./actual_Subscriber_No_Ads_Article_2.png",
+                    "difference": "comparison/SC_04/./diff_Subscriber_No_Ads_Article_2.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI issues detected. All detected differences are related to dynamic content or non-UI impacting areas.",
+                        "issues": []
+                    }
+                },
+                {
+                    "image": "Subscriber_No_Ads_Article_3.png",
+                    "status": "FAIL",
+                    "similarity": 68.09,
+                    "threshold": 95.0,
+                    "difference_count": 393,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_04/./reference_Subscriber_No_Ads_Article_3.png",
+                    "actual": "comparison/SC_04/./actual_Subscriber_No_Ads_Article_3.png",
+                    "difference": "comparison/SC_04/./diff_Subscriber_No_Ads_Article_3.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI issues detected in header, navigation, toolbar, icons, buttons, themes, colors, alignment, padding, margins, or layout. All highlighted differences are caused by dynamic content, news, timestamps, notifications, or data-related changes, which are excluded from the scope of issues."
+                    }
+                },
+                {
+                    "image": "Subscriber_No_Ads_Article_4.png",
+                    "status": "FAIL",
+                    "similarity": 68.02,
+                    "threshold": 95.0,
+                    "difference_count": 391,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_04/./reference_Subscriber_No_Ads_Article_4.png",
+                    "actual": "comparison/SC_04/./actual_Subscriber_No_Ads_Article_4.png",
+                    "difference": "comparison/SC_04/./diff_Subscriber_No_Ads_Article_4.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI issues detected. All detected differences are related to dynamic content or ignored elements.",
+                        "issues": []
+                    }
+                }
+            ],
+            "scenario": "SC_04"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_05"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_06"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_07"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_08"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_09"
+        },
+        {
+            "passed": 1,
+            "failed": 0,
+            "total": 1,
+            "details": [
+                {
+                    "image": "SC_10_empty_credS_error.png",
+                    "status": "PASS",
+                    "similarity": 99.7,
+                    "threshold": 95.0,
+                    "difference_count": 8,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_10/./reference_SC_10_empty_credS_error.png",
+                    "actual": "comparison/SC_10/./actual_SC_10_empty_credS_error.png",
+                    "difference": "comparison/SC_10/./diff_SC_10_empty_credS_error.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI issues detected. All differences are limited to ignored dynamic elements in the status bar.",
+                        "issues": []
+                    }
+                }
+            ],
+            "scenario": "SC_10"
+        },
+        {
+            "passed": 0,
+            "failed": 2,
+            "total": 2,
+            "details": [
+                {
+                    "image": "Sc_011_article00.png",
+                    "status": "FAIL",
+                    "similarity": 43.66,
+                    "threshold": 95.0,
+                    "difference_count": 125,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_11/./reference_Sc_011_article00.png",
+                    "actual": "comparison/SC_11/./actual_Sc_011_article00.png",
+                    "difference": "comparison/SC_11/./diff_Sc_011_article00.png",
+                    "ai_analysis": {
+                        "overall_status": "FAIL",
+                        "issue_count": 2,
+                        "summary": "Two genuine UI regression issues detected in core UI components.",
+                        "issues": [
+                            {
+                                "severity": "High",
+                                "component": "Header",
+                                "title": "Header alignment and font inconsistencies",
+                                "description": "The header section displays alignment and font rendering differences. Elements are misaligned compared to the reference, and text style is inconsistent, impacting the visual hierarchy.",
+                                "recommendation": "Check and correct the header layout constraints, and ensure the correct font, size, and style are applied according to design specifications."
+                            },
+                            {
+                                "severity": "Medium",
+                                "component": "Toolbar & Bottom Navigation",
+                                "title": "Icon and button position shifts",
+                                "description": "Icons and action buttons in the toolbar and bottom navigation appear slightly shifted. The 'SUBSCRIBE' button and associated icons are out of alignment, which could affect usability and visual appeal.",
+                                "recommendation": "Review spacing, padding, and margin values for toolbar and bottom navigation components, and align UI elements to match the reference screenshot."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "image": "Sc_011_article01.png",
+                    "status": "FAIL",
+                    "similarity": 50.73,
+                    "threshold": 95.0,
+                    "difference_count": 119,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_11/./reference_Sc_011_article01.png",
+                    "actual": "comparison/SC_11/./actual_Sc_011_article01.png",
+                    "difference": "comparison/SC_11/./diff_Sc_011_article01.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI issues detected. All highlighted differences are due to dynamic/article content, ads, or ignored regions.",
+                        "issues": []
+                    }
+                }
+            ],
+            "scenario": "SC_11"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 2,
+            "details": [
+                {
+                    "image": "SC_12_Subscriber_Article_page.png",
+                    "status": "NOT FOUND",
+                    "similarity": 0,
+                    "threshold": 95.0,
+                    "difference_count": 0,
+                    "reference": "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_12\\SC_12_Subscriber_Article_page.png",
+                    "actual": "",
+                    "difference": ""
+                },
+                {
+                    "image": "SC_12_Subscriber_Article_page_1.png",
+                    "status": "NOT FOUND",
+                    "similarity": 0,
+                    "threshold": 95.0,
+                    "difference_count": 0,
+                    "reference": "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_12\\SC_12_Subscriber_Article_page_1.png",
+                    "actual": "",
+                    "difference": ""
+                }
+            ],
+            "scenario": "SC_12"
+        },
+        {
+            "passed": 0,
+            "failed": 1,
+            "total": 2,
+            "details": [
+                {
+                    "image": "SC_13_copied_successfully.png",
+                    "status": "NOT FOUND",
+                    "similarity": 0,
+                    "threshold": 95.0,
+                    "difference_count": 0,
+                    "reference": "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_13\\SC_13_copied_successfully.png",
+                    "actual": "",
+                    "difference": ""
+                },
+                {
+                    "image": "SC_13_share_article.png",
+                    "status": "FAIL",
+                    "similarity": 70.37,
+                    "threshold": 95.0,
+                    "difference_count": 135,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_13/./reference_SC_13_share_article.png",
+                    "actual": "comparison/SC_13/./actual_SC_13_share_article.png",
+                    "difference": "comparison/SC_13/./diff_SC_13_share_article.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI defects detected. All detected differences are limited to dynamic and content changes, not structural UI issues.",
+                        "issues": []
+                    }
+                }
+            ],
+            "scenario": "SC_13"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_14"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_15"
+        }
+    ]
+}

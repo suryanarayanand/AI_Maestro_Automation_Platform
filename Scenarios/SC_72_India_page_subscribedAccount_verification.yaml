@@ -1,0 +1,96 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - india
+  - account
+---
+# India page subscribedAccount verification (SC-72).
+# Launch App
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Navigate to India Section
+- extendedWaitUntil:
+    visible: "India"
+    timeout: 15000
+- tapOn: "India"
+
+# India Page Validation
+- takeScreenshot: "Screenshots/SC_72/SC_72_India_Page_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_72/SC_72_India_Page_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_72/SC_72_India_Page_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_72/SC_72_India_Page_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_72/SC_72_India_Page_05"
+- scroll
+- takeScreenshot: "Screenshots/SC_72/SC_72_India_Page_06"
+- scroll
+- takeScreenshot: "Screenshots/SC_72/SC_72_India_Page_07"
+- scroll
+- takeScreenshot: "Screenshots/SC_72/SC_72_India_Page_08"
+- scroll
+- takeScreenshot: "Screenshots/SC_72/SC_72_India_Page_09"
+- scroll
+- takeScreenshot: "Screenshots/SC_72/SC_72_India_Page_10"
+
+# Verify Show More Option
+- repeat:
+    times: 3
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "SHOW MORE"
+          commands:
+            - tapOn: "SHOW MORE"
+            - takeScreenshot: "Screenshots/SC_72/SC_72_Show_More_Option_India_Page"
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_72/SC_72_India_Page_11"
+- scroll
+- takeScreenshot: "Screenshots/SC_72/SC_72_India_Page_12"
+- scroll
+- takeScreenshot: "Screenshots/SC_72/SC_72_India_Page_13"
+- scroll
+- takeScreenshot: "Screenshots/SC_72/SC_72_India_Page_14"
+
+# Verify Show More Option Again
+- repeat:
+    times: 3
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "SHOW MORE"
+          commands:
+            - tapOn: "SHOW MORE"
+            - takeScreenshot: "Screenshots/SC_72/SC_72_Show_More_Option_India_Page"
+      - scroll
+      - waitForAnimationToEnd
+- scroll
+- takeScreenshot: "Screenshots/SC_72/SC_72_India_Page_15"
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+- repeat:
+    times: 15
+    commands:
+      - assertNotVisible:
+          text: "Webpage not available"
+      - scroll
+      - takeScreenshot: "Screenshots/SC_74/SC_74_Web_Page_Not_Available"
+      - waitForAnimationToEnd

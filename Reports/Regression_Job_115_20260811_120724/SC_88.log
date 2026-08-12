@@ -1,0 +1,41 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_88_Opinion_Article_Navigation_Interaction_Login_Validation
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Wait for animation to end... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Wait for animation to end... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Repeat 3 times...
+  Swiping in LEFT direction in 400 ms... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 3 times... COMPLETED
+Assert that "Opinion" is visible... COMPLETED
+Tap on "Opinion"... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account... COMPLETED
+Scrolling DOWN until "COMMENT" is visible with speed 40, visibility percentage 100%, timeout 20000 ms, with centering disabled... COMPLETED
+Tap on "COMMENT"... COMPLETED
+Take screenshot Screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account_Article_Via_Comment_Section... COMPLETED
+Assert that "Text size" is visible... FAILED
+
+Assertion is false: "Text size" is visible
+
+Assertion '"Text size" is visible' failed. Check the UI hierarchy in debug artifacts to verify the element state and properties.
+
+Possible causes:
+- Element selector may be incorrect - check if there are similar elements with slightly different names/properties.
+- Element may be temporarily unavailable due to loading state
+- This could be a real regression that needs to be addressed
+
+==== Debug output (logs & screenshots) ====
+
+C:\Users\12503\.maestro\tests\2026-08-11_122615
+
+
+===== STDERR =====
+

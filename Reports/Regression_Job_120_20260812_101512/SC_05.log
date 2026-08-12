@@ -1,0 +1,81 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_05_Premium_access_for_anonymous_user
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Wait for animation to end... COMPLETED
+Assert that "Premium" is visible... COMPLETED
+Tap on "Premium"... COMPLETED
+Take screenshot Screenshots/SC_05/SC05_premiumpage_nonsubscriber... COMPLETED
+Assert that "All Stories" is visible... COMPLETED
+Tap on "All Stories"... COMPLETED
+Assert that "Briefing" is visible... COMPLETED
+Tap on "Briefing"... COMPLETED
+Assert that "SUBSCRIBE" is visible... COMPLETED
+Tap on "SUBSCRIBE"... COMPLETED
+Press back... COMPLETED
+Assert that "All Stories" is visible... COMPLETED
+Tap on "All Stories"... COMPLETED
+Tap on point (0%,16%)... COMPLETED
+Repeat 10 times...
+  Run flow when "ADVERTISEMENT" is visible...
+  Run flow when "ADVERTISEMENT" is visible... SKIPPED
+  Scroll vertically... COMPLETED
+  Wait for animation to end... COMPLETED
+io.grpc.StatusRuntimeException: UNAVAILABLE
+	at io.grpc.stub.ClientCalls.toStatusRuntimeException(ClientCalls.java:275)
+	at io.grpc.stub.ClientCalls.getUnchecked(ClientCalls.java:256)
+	at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:169)
+	at maestro_android.MaestroDriverGrpc$MaestroDriverBlockingStub.viewHierarchy(MaestroDriverGrpc.java:747)
+	at maestro.drivers.AndroidDriver.callViewHierarchy(AndroidDriver.kt:366)
+	at maestro.drivers.AndroidDriver.callViewHierarchy(AndroidDriver.kt:392)
+	at maestro.drivers.AndroidDriver.callViewHierarchy$default(AndroidDriver.kt:364)
+	at maestro.drivers.AndroidDriver.contentDescriptor$lambda$17(AndroidDriver.kt:326)
+	at maestro.utils.Metrics.measured(Metrics.kt:48)
+	at maestro.drivers.AndroidDriver.contentDescriptor(AndroidDriver.kt:325)
+	at maestro.ViewHierarchy$Companion.from-8JJjmZI(ViewHierarchy.kt:29)
+	at maestro.utils.ScreenshotUtils$Companion.viewHierarchy-c1iYVAs(ScreenshotUtils.kt:99)
+	at maestro.utils.ScreenshotUtils$Companion.waitForAppToSettle-OpTFbEc(ScreenshotUtils.kt:58)
+	at maestro.drivers.AndroidDriver$waitForAppToSettle$1.invoke-prqvCes(AndroidDriver.kt:741)
+	at maestro.drivers.AndroidDriver$waitForAppToSettle$1.invoke(AndroidDriver.kt:737)
+	at maestro.utils.Metrics.measured(Metrics.kt:48)
+	at maestro.drivers.AndroidDriver.waitForAppToSettle-5RpGHs4(AndroidDriver.kt:737)
+	at maestro.Maestro$waitForAppToSettle$2.invoke-F9mIFpk(Maestro.kt:477)
+	at maestro.Maestro$waitForAppToSettle$2.invoke(Maestro.kt:476)
+	at kotlinx.coroutines.InterruptibleKt.runInterruptibleInExpectedContext(Interruptible.kt:48)
+	at kotlinx.coroutines.InterruptibleKt.access$runInterruptibleInExpectedContext(Interruptible.kt:1)
+	at kotlinx.coroutines.InterruptibleKt$runInterruptible$2.invokeSuspend(Interruptible.kt:40)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:124)
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:586)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:820)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:717)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:704)
+Caused by: java.io.IOException: Command failed (host:transport:R9ZY40T6PHN): device 'R9ZY40T6PHN' not found
+	at dadb.adbserver.AdbServer.send$dadb(AdbServer.kt:103)
+	at dadb.adbserver.AdbServerDadb.open(AdbServer.kt:148)
+	at maestro.drivers.AndroidDriver.channel$lambda$0(AndroidDriver.kt:81)
+	at maestro.android.AdbSocket.connect(AdbSocketFactory.kt:40)
+	at maestro.android.AdbSocket.connect(AdbSocketFactory.kt:44)
+	at maestro.android.AdbSocketFactory.createSocket(AdbSocketFactory.kt:19)
+	at maestro.android.AdbSocketFactory.createSocket(AdbSocketFactory.kt:25)
+	at io.grpc.okhttp.OkHttpClientTransport$3.run(OkHttpClientTransport.java:535)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+
+==== Debug output (logs & screenshots) ====
+
+C:\Users\12503\.maestro\tests\2026-08-12_115121
+
+
+===== STDERR =====
+

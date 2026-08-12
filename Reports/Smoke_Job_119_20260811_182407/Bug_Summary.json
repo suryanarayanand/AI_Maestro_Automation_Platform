@@ -1,0 +1,222 @@
+{
+    "suite": "Smoke",
+    "execution_time": 451.24,
+    "summary": {
+        "total": 2,
+        "passed": 0,
+        "failed": 2,
+        "critical": 2,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.813",
+            "version_code": "579"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Automated Maestro execution reports functional success for the tested scenarios (SC_81, SC_88), but advanced visual analysis reveals significant high-severity UI/UX regressions. Both scenarios display multiple critical visual issues: large persistent blank regions imply incomplete or failed content/ad rendering; in several instances, advertisement banners overlay or obscure user content and paywalls, breaching UX and likely policy standards. There is no evidence of dynamic-content noise; these findings represent consistent, reproducible failures. Functional flows were not blocked, but user experience and page integrity are critically compromised, especially regarding ad placements and paywall interaction.",
+        "release_recommendation": "Do not release. Address high-severity UI/UX visual defects, ensure advertisement rendering and containment behave as expected, and validate that paywall and core content remain free from overlapping or missing elements.",
+        "top_risks": [
+            "Advertisement overlays and blocks key content",
+            "Large blank/unrendered regions disrupt UI",
+            "Advertisements visible on paywall/promotional screens",
+            "Broken containment of advertisements and paywall/modal elements",
+            "Bottom navigation overlaps and obscures user content"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_81",
+            "scenario_name": "SC 81 World page article Anonymous Account",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 107.81,
+            "log_file": "SC_81.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_119_20260811_182407\\SC_81.log",
+            "screenshots": [
+                "screenshots/SC_81/SC_81_World_Page_AI_Summary.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_01.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_02.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_03.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_04.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_05.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_06.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_07.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_08.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_09.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_10.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_11.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_12.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_13.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_14.png",
+                "screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_15.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "A large blank white region is present above the advertisement banner, with two 'ADVERTISEMENT' labels indicating a missing or failed ad render.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Large blank area above advertisement",
+                        "Multiple 'ADVERTISEMENT' labels without corresponding ads",
+                        "Evidence of missing ad content"
+                    ]
+                },
+                {
+                    "reason": "Visible blank advertisement container between article content and banner ad indicates incomplete ad rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Empty advertisement placeholder"
+                    ]
+                },
+                {
+                    "reason": "Large unexpected blank white region interrupts the application content between 'Post a comment' and the advertisement section indicating incomplete rendering or missing UI.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Unexpected large blank area within app content",
+                        "Possible missing cards or incomplete rendering"
+                    ]
+                },
+                {
+                    "reason": "Advertisement banner overlays and blocks visible content of a news article.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement banner overlaying application content",
+                        "News article text and image partially blocked by advertisement"
+                    ]
+                },
+                {
+                    "reason": "There is a large blank area under the 'ADVERTISEMENT' label, indicating an empty advertisement placeholder.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Empty advertisement placeholder"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "SC_88",
+            "scenario_name": "SC 88 Opinion Article Navigation Interaction Login Validation",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 257.2,
+            "log_file": "SC_88.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_119_20260811_182407\\SC_88.log",
+            "screenshots": [
+                "screenshots/SC_88/SC_88_Opinion_Page_After_Clicking_AI_Summary_Anonymous.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_01.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_02.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account_Article_Via_Comment_Section.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Article_01.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Article_02.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Article_03.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Article_04.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Article_05.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_01.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_02.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_03.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_04.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_05.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_06.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_07.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_08.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_09.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Advertisement is visible behind the subscription paywall modal.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement visible behind paywall modal"
+                    ]
+                },
+                {
+                    "reason": "Advertisement is visible on the subscription paywall, which is not expected for a subscriber acquisition/promotional screen.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement visible on subscription paywall"
+                    ]
+                },
+                {
+                    "reason": "Advertisement is visible on the subscription paywall, which should not display ads to users deciding whether to subscribe.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement visible on subscription paywall"
+                    ]
+                },
+                {
+                    "reason": "Advertisement is visible below the paywall/subscription prompt.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement visible on subscription paywall"
+                    ]
+                },
+                {
+                    "reason": "A large unexpected blank area is visible at the top of the screen, indicating missing or incomplete rendering of content.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Large blank area at the top of the screen",
+                        "Possible missing header or primary content"
+                    ]
+                },
+                {
+                    "reason": "Bottom UI toolbar is overlapping the article content and obscuring text.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Bottom navigation overlaps article content",
+                        "Obscured news article"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

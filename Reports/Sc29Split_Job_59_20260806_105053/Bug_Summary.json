@@ -1,0 +1,180 @@
+{
+    "suite": "Sc29Split",
+    "execution_time": 581.57,
+    "summary": {
+        "total": 3,
+        "passed": 0,
+        "failed": 3,
+        "critical": 3,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.808",
+            "version_code": "574"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Major functional failures were detected in key user scenarios during Maestro automation runs, particularly affecting content loading and navigation drawer functionality. Multiple tests passed execution but showed severe UI and functional issues such as persistent loading placeholders and incomplete rendering of core content, indicating back-end or rendering pipeline failures. One scenario failed completely at execution level without further data. The visual evidence and AI analysis suggest systemic reliability issues affecting both usability and user experience.",
+        "release_recommendation": "Block release. Issues include content failing to load or render and critical navigation UI defects, which directly impact fundamental app functionality and user flows.",
+        "top_risks": [
+            "Content fails to load, with only placeholders visible in key scenarios",
+            "Side navigation drawer does not fully overlay the screen, compromising app navigation",
+            "Functional failure in scenario SC_29_WORLD with no rendered content or detail",
+            "Visual instability raises the risk of degraded user experience and usability",
+            "Potential back-end and rendering pipeline reliability issues"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_29_INDIA",
+            "scenario_name": "Hamburger categories - India",
+            "module": "Hamburger Menu",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 109.65,
+            "log_file": "SC_29_INDIA.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc29Split_Job_59_20260806_105053\\SC_29_INDIA.log",
+            "screenshots": [
+                "screenshots/SC_29_INDIA/SC_29_INDIA_hamburger_menu.png",
+                "screenshots/SC_29_INDIA/SC_29_INDIA_india_india.png",
+                "screenshots/SC_29_INDIA/SC_29_INDIA_india_news.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Screen is stuck in loading state; only placeholders visible, no real content rendered.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Placeholder skeletons visible throughout screen",
+                        "Content failed to load or render"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "SC_29_WORLD",
+            "scenario_name": "Hamburger categories - World",
+            "module": "Hamburger Menu",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 91.59,
+            "log_file": "SC_29_WORLD.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc29Split_Job_59_20260806_105053\\SC_29_WORLD.log",
+            "screenshots": [
+                "screenshots/SC_29_WORLD/SC_29_WORLD_hamburger_menu.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "SC_29_SPORT",
+            "scenario_name": "Hamburger categories - Sport",
+            "module": "Hamburger Menu",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 344.05,
+            "log_file": "SC_29_SPORT.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc29Split_Job_59_20260806_105053\\SC_29_SPORT.log",
+            "screenshots": [
+                "screenshots/SC_29_SPORT/SC_29_SPORT_hamburger_menu.png",
+                "screenshots/SC_29_SPORT/SC_29_SPORT_sport_athletics.png",
+                "screenshots/SC_29_SPORT/SC_29_SPORT_sport_cricket.png",
+                "screenshots/SC_29_SPORT/SC_29_SPORT_sport_football.png",
+                "screenshots/SC_29_SPORT/SC_29_SPORT_sport_hockey.png",
+                "screenshots/SC_29_SPORT/SC_29_SPORT_sport_motorsport.png",
+                "screenshots/SC_29_SPORT/SC_29_SPORT_sport_other_sports.png",
+                "screenshots/SC_29_SPORT/SC_29_SPORT_sport_races.png",
+                "screenshots/SC_29_SPORT/SC_29_SPORT_sport_sport.png",
+                "screenshots/SC_29_SPORT/SC_29_SPORT_sport_tennis.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Side navigation drawer does not cover the full height and width of the screen, leaving visible underlying app content.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Side navigation drawer not fully covering the screen",
+                        "Underlying home screen content visible on the right"
+                    ]
+                },
+                {
+                    "reason": "Placeholder content is displayed throughout indicating the actual UI content failed to load or render.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Article/text/image placeholders still visible",
+                        "Actual content is missing",
+                        "Screen not fully rendered"
+                    ]
+                },
+                {
+                    "reason": "Screen displays placeholder skeletons, indicating article and image data failed to load or render.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Placeholder skeletons visible instead of content",
+                        "Content failed to render"
+                    ]
+                },
+                {
+                    "reason": "Content placeholders are visible, indicating that the actual article cards or content failed to load/render.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Content placeholders are present",
+                        "Article content failed to render"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

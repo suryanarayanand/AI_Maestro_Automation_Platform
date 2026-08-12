@@ -1,0 +1,77 @@
+{
+    "suite": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "not_found": 0,
+        "pass_rate": 100.0
+    },
+    "results": [
+        {
+            "id": "SC_27_SUDOKU",
+            "module": "Subscriber Games",
+            "name": "Subscriber Games - Mini Sudoku",
+            "status": "PASS",
+            "duration": 86.53,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Validatedgames_Job_77_20260806_181743\\SC_27_SUDOKU.log",
+            "screenshots": [
+                "screenshots/SC_27_SUDOKU/SC_27_Sudoku_Mini.png",
+                "screenshots/SC_27_SUDOKU/SC_27_Sudoku_Mini_List.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are visible and correctly rendered. No UI defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Sudoku_Mini.png",
+                    "image_path": "screenshots/SC_27_SUDOKU/SC_27_Sudoku_Mini.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present, layout is consistent, and there are no visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Sudoku_Mini_List.png",
+                    "image_path": "screenshots/SC_27_SUDOKU/SC_27_Sudoku_Mini_List.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27_THE_HINDU_MINI",
+            "module": "Subscriber Games",
+            "name": "Subscriber Games - The Hindu Mini",
+            "status": "PASS",
+            "duration": 93.51,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Validatedgames_Job_77_20260806_181743\\SC_27_THE_HINDU_MINI.log",
+            "screenshots": [
+                "screenshots/SC_27_THE_HINDU_MINI/SC_27_The_Hindu_Mini.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and properly rendered. No blank or missing areas inside content. No overlap, cropping, or misalignment issues visible.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_The_Hindu_Mini.png",
+                    "image_path": "screenshots/SC_27_THE_HINDU_MINI/SC_27_The_Hindu_Mini.png"
+                }
+            ]
+        }
+    ]
+}

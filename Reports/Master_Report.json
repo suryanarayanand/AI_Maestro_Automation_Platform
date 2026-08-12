@@ -1,0 +1,545 @@
+{
+    "framework": {
+        "total_runs": 58,
+        "smoke_runs": 24,
+        "sanity_runs": 1,
+        "regression_runs": 13
+    },
+    "execution": {
+        "passed_runs": 26,
+        "failed_runs": 32,
+        "pass_rate": 44.83
+    },
+    "visual": {
+        "total_images": 52,
+        "passed_images": 12,
+        "failed_images": 40
+    },
+    "ai": {
+        "issues": 32
+    },
+    "executions": [
+        {
+            "folder": "Excelpilotgames_Job_93_20260810_110937",
+            "suite": "Excelpilotgames",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Excelpilotgames_Job_94_20260810_112229",
+            "suite": "Excelpilotgames",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Excelpilotgames_Job_95_20260810_112539",
+            "suite": "Excelpilotgames",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Excelpilotgamesretry_Job_97_20260810_113522",
+            "suite": "Excelpilotgamesretry",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Locatorsmoke_Job_122_20260812_124500",
+            "suite": "Locatorsmoke",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Locatorsmoke_Job_124_20260812_124826",
+            "suite": "Locatorsmoke",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Locatorsmoke_Job_125_20260812_125100",
+            "suite": "Locatorsmoke",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Regression_Job_101_20260810_122126",
+            "suite": "Regression",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Regression_Job_102_20260810_123639",
+            "suite": "Regression",
+            "status": "FAIL",
+            "images": 10,
+            "passed_images": 0,
+            "failed_images": 10,
+            "ai_issues": 14
+        },
+        {
+            "folder": "Regression_Job_107_20260810_163458",
+            "suite": "Regression",
+            "status": "PASS",
+            "images": 6,
+            "passed_images": 1,
+            "failed_images": 5,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Regression_Job_110_20260810_181211",
+            "suite": "Regression",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Regression_Job_111_20260811_110804",
+            "suite": "Regression",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Regression_Job_115_20260811_120724",
+            "suite": "Regression",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Regression_Job_120_20260812_101512",
+            "suite": "Regression",
+            "status": "FAIL",
+            "images": 11,
+            "passed_images": 1,
+            "failed_images": 10,
+            "ai_issues": 9
+        },
+        {
+            "folder": "Regression_Job_121_20260812_123518",
+            "suite": "Regression",
+            "status": "PASS",
+            "images": 5,
+            "passed_images": 4,
+            "failed_images": 1,
+            "ai_issues": 2
+        },
+        {
+            "folder": "Regression_Job_48_20260804_141503",
+            "suite": "Regression",
+            "status": "PASS",
+            "images": 1,
+            "passed_images": 0,
+            "failed_images": 1,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Regression_Job_49_20260804_142357",
+            "suite": "Regression",
+            "status": "FAIL",
+            "images": 10,
+            "passed_images": 2,
+            "failed_images": 8,
+            "ai_issues": 4
+        },
+        {
+            "folder": "Regression_Job_50_20260804_151218",
+            "suite": "Regression",
+            "status": "FAIL",
+            "images": 7,
+            "passed_images": 4,
+            "failed_images": 3,
+            "ai_issues": 3
+        },
+        {
+            "folder": "Regression_Job_51_20260804_162619",
+            "suite": "Regression",
+            "status": "FAIL",
+            "images": 2,
+            "passed_images": 0,
+            "failed_images": 2,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Regression_Job_52_20260804_164034",
+            "suite": "Regression",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Sanity_Job_88_20260810_104458",
+            "suite": "Sanity",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Sc27Allgames_Job_79_20260806_183201",
+            "suite": "Sc27Allgames",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Sc27Allgames_Job_84_20260807_112719",
+            "suite": "Sc27Allgames",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Sc27Remaininggames_Job_82_20260807_110247",
+            "suite": "Sc27Remaininggames",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Sc27Remaininggames_Job_83_20260807_110919",
+            "suite": "Sc27Remaininggames",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Sc27Sudoku_Job_80_20260807_104050",
+            "suite": "Sc27Sudoku",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Sc27Validatedgames_Job_77_20260806_181743",
+            "suite": "Sc27Validatedgames",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Sc27Validatedgames_Job_78_20260806_183021",
+            "suite": "Sc27Validatedgames",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Sc27Validatedgames_Job_81_20260807_104245",
+            "suite": "Sc27Validatedgames",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Sc27Validatedgames_Job_87_20260807_181110",
+            "suite": "Sc27Validatedgames",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Sc29Split_Job_59_20260806_105053",
+            "suite": "Sc29Split",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Sc29Split_Job_64_20260806_112707",
+            "suite": "Sc29Split",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Sc29Worldretry_Job_60_20260806_110318",
+            "suite": "Sc29Worldretry",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Sc29Worldretry_Job_74_20260806_175049",
+            "suite": "Sc29Worldretry",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_100_20260810_121724",
+            "suite": "Smoke",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_103_20260810_151523",
+            "suite": "Smoke",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_108_20260810_171300",
+            "suite": "Smoke",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_109_20260810_180502",
+            "suite": "Smoke",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_112_20260811_112730",
+            "suite": "Smoke",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_113_20260811_115528",
+            "suite": "Smoke",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_114_20260811_120216",
+            "suite": "Smoke",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_117_20260811_163044",
+            "suite": "Smoke",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_118_20260811_180846",
+            "suite": "Smoke",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_119_20260811_182407",
+            "suite": "Smoke",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_123_20260812_124811",
+            "suite": "Smoke",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_126_20260812_153551",
+            "suite": "Smoke",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_127_20260812_153624",
+            "suite": "Smoke",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_47_20260804_120914",
+            "suite": "Smoke",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_76_20260806_180920",
+            "suite": "Smoke",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_85_20260807_180712",
+            "suite": "Smoke",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_86_20260807_180958",
+            "suite": "Smoke",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_89_20260810_104527",
+            "suite": "Smoke",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_90_20260810_104640",
+            "suite": "Smoke",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_91_20260810_104922",
+            "suite": "Smoke",
+            "status": "PASS",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_92_20260810_110618",
+            "suite": "Smoke",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_96_20260810_113220",
+            "suite": "Smoke",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_98_20260810_120711",
+            "suite": "Smoke",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        },
+        {
+            "folder": "Smoke_Job_99_20260810_121533",
+            "suite": "Smoke",
+            "status": "FAIL",
+            "images": 0,
+            "passed_images": 0,
+            "failed_images": 0,
+            "ai_issues": 0
+        }
+    ]
+}

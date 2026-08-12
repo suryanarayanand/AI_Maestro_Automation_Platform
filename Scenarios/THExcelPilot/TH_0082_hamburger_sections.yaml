@@ -1,0 +1,47 @@
+appId: com.mobstac.thehindu
+tags:
+  - excel
+  - pilot
+  - smoke
+  - hamburger
+---
+# Excel source: TH_0082 | Unassigned | Hamburger Menu
+# Validation requirement:
+# - Verify various sections are appearing in the menu and navigating to the respective section page when it is tapped
+- launchApp:
+    clearState: false
+- runFlow:
+    when:
+      visible: "Skip"
+    commands:
+      - tapOn: "Skip"
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 15000
+- tapOn:
+    id: "nav_menu"
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_hamburger"
+- assertVisible:
+    text: "Sport"
+- assertVisible:
+    text: "Business"
+- tapOn:
+    text: "Sport"
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_section"
+- takeScreenshot: "Screenshots/THExcelPilot/TH_0082_sport"
+- tapOn:
+    id: "nav_menu"
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_hamburger"
+- tapOn:
+    text: "Business"
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_section"
+- takeScreenshot: "Screenshots/THExcelPilot/TH_0082_business"

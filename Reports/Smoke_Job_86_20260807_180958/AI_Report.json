@@ -1,0 +1,50 @@
+{
+    "suite": {
+        "total": 3,
+        "passed": 0,
+        "failed": 2,
+        "not_found": 0,
+        "pass_rate": 0.0
+    },
+    "results": [
+        {
+            "id": "SC_28",
+            "module": "Unassigned",
+            "name": "SC 28 Anonymous Games validation",
+            "status": "FAIL",
+            "duration": 7.53,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_86_20260807_180958\\SC_28.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "SC_29",
+            "module": "Unassigned",
+            "name": "SC 29 Category navigation anonymous",
+            "status": "FAIL",
+            "duration": 7.27,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_86_20260807_180958\\SC_29.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "SC_30",
+            "module": "Unassigned",
+            "name": "SC 30 BreifingSection premium subscriber account",
+            "status": "CANCELLED",
+            "duration": 39.55,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_86_20260807_180958\\SC_30.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        }
+    ]
+}

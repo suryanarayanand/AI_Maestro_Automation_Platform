@@ -1,0 +1,125 @@
+{
+    "suite": {
+        "total": 3,
+        "passed": 3,
+        "failed": 0,
+        "not_found": 0,
+        "pass_rate": 100.0
+    },
+    "results": [
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "name": "SC 27 EASY DOWN",
+            "status": "PASS",
+            "duration": 106.59,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_109_20260810_180502\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_Easy_Down.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No layout, rendering, or text issues detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Easy_Down.png",
+                    "image_path": "screenshots/SC_27/SC_27_Easy_Down.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "name": "SC 27 NEWS QUIZ",
+            "status": "PASS",
+            "duration": 94.63,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_109_20260810_180502\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_News_Quiz.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present; no visible defects in layout, rendering, or navigation.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Easy_Down.png",
+                    "image_path": "screenshots/SC_27/SC_27_Easy_Down.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and properly rendered. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_News_Quiz.png",
+                    "image_path": "screenshots/SC_27/SC_27_News_Quiz.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27",
+            "module": "Unassigned",
+            "name": "SC 27 WORD ROW",
+            "status": "PASS",
+            "duration": 96.32,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_109_20260810_180502\\SC_27.log",
+            "screenshots": [
+                "screenshots/SC_27/SC_27_Word_Row.png"
+            ],
+            "ai_pass": 3,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and properly rendered. No evidence of layout, rendering, or text defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Easy_Down.png",
+                    "image_path": "screenshots/SC_27/SC_27_Easy_Down.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and there are no visual defects. Layout, buttons, and text are correctly aligned.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_News_Quiz.png",
+                    "image_path": "screenshots/SC_27/SC_27_News_Quiz.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and properly rendered. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Word_Row.png",
+                    "image_path": "screenshots/SC_27/SC_27_Word_Row.png"
+                }
+            ]
+        }
+    ]
+}

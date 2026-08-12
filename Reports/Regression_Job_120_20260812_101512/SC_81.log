@@ -1,0 +1,60 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_81_World_page_article_Anonymous_Account
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Assert that "The Hindu" is visible... COMPLETED
+Assert that "World" is visible... COMPLETED
+Tap on "World"... COMPLETED
+Tap on point (50%,50%)... COMPLETED
+Wait for animation to end... COMPLETED
+Run flow when "Summary" is visible...
+  Tap on "Close sheet"... COMPLETED
+Run flow when "Summary" is visible... COMPLETED
+Wait for animation to end... COMPLETED
+Assert that "Text size" is visible... COMPLETED
+Wait for animation to end... COMPLETED
+Assert that "Bookmark" is visible... COMPLETED
+Assert that "Share" is visible... COMPLETED
+Assert that "Comment" is visible... COMPLETED
+Assert that "Listen to article" is visible... COMPLETED
+Run flow when "AI summary" is visible...
+  Take screenshot Screenshots/SC_81/SC_81_World_Page_AI_Summary... COMPLETED
+Run flow when "AI summary" is visible... COMPLETED
+Take screenshot Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_01... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_02... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_03... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_04... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_05... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_06... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_07... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_08... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_09... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_10... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_11... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_12... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_13... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_14... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_15... COMPLETED
+
+
+===== STDERR =====
+

@@ -1,0 +1,44 @@
+appId: com.mobstac.thehindu
+tags:
+  - auth
+---
+# Empty Field validation on login (SC-10).
+# Launch App
+- launchApp:
+    clearState: true
+
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+# Login with Empty Email
+- runFlow:
+    when:
+      visible:
+        text: "HAVE AN ACCOUNT? LOGIN"
+    commands:
+      - tapOn: "HAVE AN ACCOUNT? LOGIN"
+      - waitForAnimationToEnd:
+          timeout: 15000
+      - extendedWaitUntil:
+          visible:
+            text: "Email"
+          timeout: 150000
+      - tapOn: "Email"
+      - inputText: ""
+      - waitForAnimationToEnd:
+          timeout: 30000
+      - extendedWaitUntil:
+          visible:
+            text: "NEXT→"
+          timeout: 80000
+      - tapOn: "NEXT→"
+      - extendedWaitUntil:
+          visible:
+            text: "Email is required"
+          timeout: 15000
+      - waitForAnimationToEnd:
+          timeout: 80000
+
+# Verify Empty Email Validation
+- takeScreenshot: "Screenshots/SC_10/SC_10_empty_credS_error"
+
+# Close Application
+- killApp

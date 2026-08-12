@@ -1,0 +1,86 @@
+{
+    "suite": "Locatorsmoke",
+    "execution_time": 78.84,
+    "summary": {
+        "total": 1,
+        "passed": 0,
+        "failed": 1,
+        "critical": 1,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.813",
+            "version_code": "579"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Scenario TH_0062 failed due to a critical functional issue detected by both Maestro execution and Screenshot AI. The functional failure is evidenced by skeleton loaders being persistently visible, indicating that important content did not load and the screen rendering is incomplete. No purely visual or dynamic-content noise findings were present in the evidence.",
+        "release_recommendation": "Block release until root cause is identified and confirmed fixed, as this issue results in incomplete functionality visible to end-users.",
+        "top_risks": [
+            "Content fails to load, leading to incomplete user experience.",
+            "Persistent skeleton loaders create user confusion and may block core workflows.",
+            "Potential downstream impacts if screen dependencies are affected by missing content."
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "TH_0062",
+            "scenario_name": "Subscribe button Appearance",
+            "module": "AI Generated",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Screenshot AI",
+            "execution_time": 67.26,
+            "log_file": "TH_0062.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Locatorsmoke_Job_122_20260812_124500\\TH_0062.log",
+            "screenshots": [
+                "screenshots/TH_0062/TH_0062_non_subscriber_article_floating_bar_evidence.png",
+                "screenshots/TH_0062/TH_0062_non_subscriber_home_header_evidence.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run",
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Skeleton loaders are visible indicating the content failed to load or is stuck, resulting in incomplete screen rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Skeleton loader placeholders visible",
+                        "Content failed to render",
+                        "Incomplete screen rendering"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

@@ -1,0 +1,171 @@
+appId: com.mobstac.thehindu
+tags:
+  - light_theme
+  - sports
+  - theme
+---
+# Sports page light Theme (SC-95).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+- runFlow: ../Common/Light_theme_changing.yaml
+
+# Relaunch the app because navigating back causes the app to crash.
+# - stopApp
+- launchApp
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Navigate to Sports Section
+- repeat:
+    times: 4
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible:
+        text: "Sports"
+    commands:
+      - tapOn: "Sports"
+
+# Sports Page Validation
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_95/SC_95_SportsPage_LightTheme_01"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_95/SC_95_SportsPage_LightTheme_02"
+- scroll
+- waitForAnimationToEnd
+
+# Subscription Pop-up Validation
+- runFlow:
+    when:
+      visible:
+        text: "Save 40% when you subscribe."
+    commands:
+      - tapOn: "SUBSCRIBE AT 40% OFF"
+      - takeScreenshot: "Screenshots/SC_95/SC_95_Subscription_Popup_At_Sports_Section_LightTheme"
+      - tapOn: "Close sheet"
+- runFlow:
+    when:
+      visible:
+        text: "Three days of The Hindu, free and without limits."
+    commands:
+      - tapOn: "READ FREE FOR 3 DAYS"
+      - takeScreenshot: "Screenshots/SC_95/SC_95_Subscription_Popup_At_Sports_Section_LightTheme"
+      - tapOn: "Close sheet"
+- runFlow:
+    when:
+      visible:
+        text: "Seven days of The Hindu, free and without limits."
+    commands:
+      - tapOn: "READ FREE FOR 7 DAYS"
+      - takeScreenshot: "Screenshots/SC_95/SC_95_Subscription_Popup_At_Sports_Section_LightTheme"
+      - tapOn: "Close sheet"
+- takeScreenshot: "Screenshots/SC_95/SC_95_SportsPage_LightTheme_03"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_95/SC_95_SportsPage_LightTheme_04"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_95/SC_95_SportsPage_LightTheme_05"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_95/SC_95_SportsPage_LightTheme_06"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_95/SC_95_SportsPage_LightTheme_07"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_95/SC_95_SportsPage_LightTheme_08"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_95/SC_95_SportsPage_LightTheme_09"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_95/SC_95_SportsPage_LightTheme_10"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_95/SC_95_SportsPage_LightTheme_11"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_95/SC_95_SportsPage_LightTheme_12"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_95/SC_95_SportsPage_LightTheme_13"
+
+# Open Sports Article
+- repeat:
+    times: 15
+    commands:
+      - swipe:
+          direction: DOWN
+- scrollUntilVisible:
+    element: "DATA"
+- tapOn: "DATA"
+
+# Verify Article Actions
+- assertVisible: "AI summary"
+- assertVisible:
+    text: "Text size"
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+- takeScreenshot: "Screenshots/SC_95/SC_95_SportsPage_LightTheme_Specific_Article_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_95/SC_95_SportsPage_LightTheme_Specific_Article_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_95/SC_95_SportsPage_LightTheme_Specific_Article_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_95/SC_95_SportsPage_LightTheme_Specific_Article_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_95/SC_95_SportsPage_LightTheme_Specific_Article_05"
+
+# Verify Comment Section
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+- repeat:
+    times: 10
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Post a comment"
+          commands:
+            - takeScreenshot: "Screenshots/SC_95/SC_95_Post_A_Comment_Tab"
+      - scroll
+
+# Verify Web Page Availability
+- repeat:
+    times: 15
+    commands:
+      - swipe:
+          direction: DOWN
+- repeat:
+    times: 15
+    commands:
+      - assertNotVisible:
+          text: "Webpage not available"
+      - scroll
+      - takeScreenshot: "Screenshots/SC_95/SC_95_Web_Page_Not_Available"
+      - waitForAnimationToEnd

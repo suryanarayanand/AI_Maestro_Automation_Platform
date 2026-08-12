@@ -1,0 +1,16 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+---
+
+- tapOn:
+    id: "nav_home"
+
+- assertVisible:
+    id: "screen_home"
+
+- tapOn:
+    text: "India"
+
+- assertVisible:
+    text: "India"

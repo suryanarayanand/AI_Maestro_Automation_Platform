@@ -1,0 +1,27 @@
+appId: com.mobstac.thehindu
+tags:
+  - common
+  - baseline
+---
+- launchApp:
+    clearState: false
+- repeat:
+    times: 2
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Skip"
+          commands:
+            - tapOn:
+                text: "Skip"
+      - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: "Home"
+    timeout: 30000
+- tapOn:
+    point: "10%,90%"
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Home"

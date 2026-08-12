@@ -1,0 +1,8 @@
+Flask
+gunicorn
+waitress
+openai
+openpyxl
+Pillow
+opencv-python
+numpy

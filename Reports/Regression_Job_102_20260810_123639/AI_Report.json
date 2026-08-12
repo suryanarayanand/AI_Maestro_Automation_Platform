@@ -1,0 +1,835 @@
+{
+    "suite": {
+        "total": 32,
+        "passed": 22,
+        "failed": 10,
+        "not_found": 0,
+        "pass_rate": 68.75
+    },
+    "results": [
+        {
+            "id": "COMPLEX_001",
+            "module": "Unassigned",
+            "name": "COMPLEX 001",
+            "status": "PASS",
+            "duration": 52.91,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\COMPLEX_001.log",
+            "screenshots": [
+                "screenshots/COMPLEX_001/COMPLEX_001_hamburger_navigation_menu.png",
+                "screenshots/COMPLEX_001/COMPLEX_001_home_closing_menu.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are visible in the menu overlay. No layout, rendering, or alignment issues are present.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_001_hamburger_navigation_menu.png",
+                    "image_path": "screenshots/COMPLEX_001/COMPLEX_001_hamburger_navigation_menu.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and there are no visible layout, rendering, or text defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_001_home_closing_menu.png",
+                    "image_path": "screenshots/COMPLEX_001/COMPLEX_001_home_closing_menu.png"
+                }
+            ]
+        },
+        {
+            "id": "COMPLEX_002",
+            "module": "Unassigned",
+            "name": "COMPLEX 002",
+            "status": "PASS",
+            "duration": 93.82,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\COMPLEX_002.log",
+            "screenshots": [
+                "screenshots/COMPLEX_002/COMPLEX_002_games_page_sudoku.png",
+                "screenshots/COMPLEX_002/COMPLEX_002_sudoku_landing_page.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered correctly, with no evidence of missing, overlapping, or corrupted UI elements. Layout, navigation, and images are intact.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_002_games_page_sudoku.png",
+                    "image_path": "screenshots/COMPLEX_002/COMPLEX_002_games_page_sudoku.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "There is a typo in the description: 'Sudoko' instead of 'Sudoku' and 'coumns' instead of 'columns'.",
+                    "issues": [
+                        "Misspelled 'Sudoku' as 'Sudoko'",
+                        "Misspelled 'columns' as 'coumns' in the description"
+                    ],
+                    "jira_title": "Typos in puzzle name and description on Sudoku selection screen",
+                    "jira_description": "The word 'Sudoku' is misspelled as 'Sudoko' in the title. The word 'columns' is misspelled as 'coumns' in the description. Both should be corrected for clarity and professionalism.",
+                    "image": "COMPLEX_002_sudoku_landing_page.png",
+                    "image_path": "screenshots/COMPLEX_002/COMPLEX_002_sudoku_landing_page.png"
+                }
+            ]
+        },
+        {
+            "id": "COMPLEX_003",
+            "module": "AI Generated",
+            "name": "Dark Mode Appearance Validation",
+            "status": "PASS",
+            "duration": 69.38,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\COMPLEX_003.log",
+            "screenshots": [
+                "screenshots/COMPLEX_003/COMPLEX_003_dark_mode_enabled.png",
+                "screenshots/COMPLEX_003/COMPLEX_003_home_page_in_dark_mode.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "UI is fully rendered, all expected elements for the Appearance screen are present and there are no visual defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_003_dark_mode_enabled.png",
+                    "image_path": "screenshots/COMPLEX_003/COMPLEX_003_dark_mode_enabled.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and correctly rendered. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_003_home_page_in_dark_mode.png",
+                    "image_path": "screenshots/COMPLEX_003/COMPLEX_003_home_page_in_dark_mode.png"
+                }
+            ]
+        },
+        {
+            "id": "COMPLEX_004",
+            "module": "Unassigned",
+            "name": "COMPLEX 004",
+            "status": "PASS",
+            "duration": 124.23,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\COMPLEX_004.log",
+            "screenshots": [
+                "screenshots/COMPLEX_004/COMPLEX_004_easy_down_destination.png",
+                "screenshots/COMPLEX_004/COMPLEX_004_scroll_down_and_games_catalogue.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Screen is entirely blank except for the status bar; application content appears missing, indicating incomplete rendering.",
+                    "issues": [
+                        "Blank white area",
+                        "Missing application content",
+                        "Incomplete rendering"
+                    ],
+                    "jira_title": "Application screen is blank with missing content",
+                    "jira_description": "The application displays only the status bar. All expected UI components are missing and a large blank white area is visible, indicating a rendering or loading failure.",
+                    "image": "COMPLEX_004_easy_down_destination.png",
+                    "image_path": "screenshots/COMPLEX_004/COMPLEX_004_easy_down_destination.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and rendered correctly. Layout, images, text, toolbar, and bottom navigation are visually intact.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_004_scroll_down_and_games_catalogue.png",
+                    "image_path": "screenshots/COMPLEX_004/COMPLEX_004_scroll_down_and_games_catalogue.png"
+                }
+            ]
+        },
+        {
+            "id": "COMPLEX_005",
+            "module": "Unassigned",
+            "name": "COMPLEX 005",
+            "status": "PASS",
+            "duration": 61.16,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\COMPLEX_005.log",
+            "screenshots": [
+                "screenshots/COMPLEX_005/COMPLEX_005_games_page_from_bottom_navigation.png",
+                "screenshots/COMPLEX_005/COMPLEX_005_home_page_back_navigation.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All visible UI components are rendered correctly with no evidence of missing or broken UI elements.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_005_games_page_from_bottom_navigation.png",
+                    "image_path": "screenshots/COMPLEX_005/COMPLEX_005_games_page_from_bottom_navigation.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present with no visible defects. Layout, images, navigation, and text are rendered correctly.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_005_home_page_back_navigation.png",
+                    "image_path": "screenshots/COMPLEX_005/COMPLEX_005_home_page_back_navigation.png"
+                }
+            ]
+        },
+        {
+            "id": "TH_1181",
+            "module": "Unassigned",
+            "name": "TH 1181",
+            "status": "FAIL",
+            "duration": 148.38,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\TH_1181.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "TH_5634",
+            "module": "Unassigned",
+            "name": "TH 5634",
+            "status": "PASS",
+            "duration": 105.32,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\TH_5634.log",
+            "screenshots": [
+                "screenshots/TH_5634/TH_5634_games_screen_back_navigation.png",
+                "screenshots/TH_5634/TH_5634_sudoku_landing_page.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are fully rendered; no visible defects or layout issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "TH_5634_games_screen_back_navigation.png",
+                    "image_path": "screenshots/TH_5634/TH_5634_games_screen_back_navigation.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "Text spelling error in title and description.",
+                    "issues": [
+                        "Title 'Sudoko' is misspelled, should be 'Sudoku'",
+                        "Description contains 'row,coumns' instead of 'rows,columns'"
+                    ],
+                    "jira_title": "Misspelled text in Sudoku selection screen",
+                    "jira_description": "The title 'Sudoko' is misspelled; it should be 'Sudoku'. The description also has a typo: 'row,coumns' should be 'rows,columns'.",
+                    "image": "TH_5634_sudoku_landing_page.png",
+                    "image_path": "screenshots/TH_5634/TH_5634_sudoku_landing_page.png"
+                }
+            ]
+        },
+        {
+            "id": "TH_5716",
+            "module": "Unassigned",
+            "name": "TH 5716",
+            "status": "PASS",
+            "duration": 66.79,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\TH_5716.log",
+            "screenshots": [
+                "screenshots/TH_5716/TH_5716_games_page_navigation_state.png",
+                "screenshots/TH_5716/TH_5716_games_tab_visible_on_home.png",
+                "screenshots/TH_5716/TH_5716_home_restored_back_navigation.png"
+            ],
+            "ai_pass": 3,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "TH_5716_games_page_navigation_state.png",
+                    "image_path": "screenshots/TH_5716/TH_5716_games_page_navigation_state.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered correctly, with no visible defects or missing elements.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "TH_5716_games_tab_visible_on_home.png",
+                    "image_path": "screenshots/TH_5716/TH_5716_games_tab_visible_on_home.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are visible and properly rendered. No layout, rendering, or text defects observed.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "TH_5716_home_restored_back_navigation.png",
+                    "image_path": "screenshots/TH_5716/TH_5716_home_restored_back_navigation.png"
+                }
+            ]
+        },
+        {
+            "id": "TH_5818",
+            "module": "Unassigned",
+            "name": "TH 5818",
+            "status": "PASS",
+            "duration": 106.16,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\TH_5818.log",
+            "screenshots": [
+                "screenshots/TH_5818/TH_5818_easy_down_game_listing.png",
+                "screenshots/TH_5818/TH_5818_easy_down_post_tap_state.png",
+                "screenshots/TH_5818/TH_5818_games_page_back_navigation.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and rendered correctly. No layout, rendering, or text issues visible.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "TH_5818_easy_down_game_listing.png",
+                    "image_path": "screenshots/TH_5818/TH_5818_easy_down_game_listing.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Large blank area indicates missing or failed content rendering.",
+                    "issues": [
+                        "Blank white area replaces expected UI",
+                        "No visible application content",
+                        "Incomplete rendering"
+                    ],
+                    "jira_title": "App screen displays large blank white area",
+                    "jira_description": "The application screen contains only a large blank white region, indicating that UI elements failed to render. No content, toolbar, or navigation is displayed.",
+                    "image": "TH_5818_easy_down_post_tap_state.png",
+                    "image_path": "screenshots/TH_5818/TH_5818_easy_down_post_tap_state.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are fully rendered and aligned. No missing or overlapping elements.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "TH_5818_games_page_back_navigation.png",
+                    "image_path": "screenshots/TH_5818/TH_5818_games_page_back_navigation.png"
+                }
+            ]
+        },
+        {
+            "id": "PILOT_SC_02",
+            "module": "Unassigned",
+            "name": "PILOT SC 02",
+            "status": "PASS",
+            "duration": 34.67,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\PILOT_SC_02.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "PILOT_SC_03",
+            "module": "Unassigned",
+            "name": "PILOT SC 03",
+            "status": "PASS",
+            "duration": 33.88,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\PILOT_SC_03.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "PILOT_SC_05",
+            "module": "Unassigned",
+            "name": "PILOT SC 05",
+            "status": "PASS",
+            "duration": 19.92,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\PILOT_SC_05.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "capture_duplicate_hamburger_child",
+            "module": "Unassigned",
+            "name": "capture duplicate hamburger child",
+            "status": "FAIL",
+            "duration": 102.3,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\capture_duplicate_hamburger_child.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "capture_hamburger_child",
+            "module": "Unassigned",
+            "name": "capture hamburger child",
+            "status": "FAIL",
+            "duration": 91.67,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\capture_hamburger_child.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "capture_home_section",
+            "module": "Unassigned",
+            "name": "capture home section",
+            "status": "FAIL",
+            "duration": 43.19,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\capture_home_section.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "capture_shifted_home_section",
+            "module": "Unassigned",
+            "name": "capture shifted home section",
+            "status": "FAIL",
+            "duration": 84.79,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\capture_shifted_home_section.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "expand_hamburger_category",
+            "module": "Unassigned",
+            "name": "expand hamburger category",
+            "status": "FAIL",
+            "duration": 66.39,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\expand_hamburger_category.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "open_hamburger",
+            "module": "Unassigned",
+            "name": "open hamburger",
+            "status": "FAIL",
+            "duration": 17.34,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\open_hamburger.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "LOC_BOOKS",
+            "module": "Validated Section Locators",
+            "name": "Validated locator smoke - Books",
+            "status": "PASS",
+            "duration": 63.48,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_BOOKS.log",
+            "screenshots": [
+                "screenshots/LOC_BOOKS/books_page.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visual defects observed.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "books_page.png",
+                    "image_path": "screenshots/LOC_BOOKS/books_page.png"
+                }
+            ]
+        },
+        {
+            "id": "LOC_BUSINESS",
+            "module": "Validated Section Locators",
+            "name": "Validated locator smoke - Business",
+            "status": "PASS",
+            "duration": 93.07,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_BUSINESS.log",
+            "screenshots": [
+                "screenshots/LOC_BUSINESS/business_page.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are rendered with no visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "business_page.png",
+                    "image_path": "screenshots/LOC_BUSINESS/business_page.png"
+                }
+            ]
+        },
+        {
+            "id": "LOC_EDITORIAL",
+            "module": "Validated Section Locators",
+            "name": "Validated locator smoke - Editorial",
+            "status": "PASS",
+            "duration": 49.79,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_EDITORIAL.log",
+            "screenshots": [
+                "screenshots/LOC_EDITORIAL/editorial_page.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and rendered correctly. No evidence of missing content or layout defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "editorial_page.png",
+                    "image_path": "screenshots/LOC_EDITORIAL/editorial_page.png"
+                }
+            ]
+        },
+        {
+            "id": "LOC_ENTERTAINMENT",
+            "module": "Validated Section Locators",
+            "name": "Validated locator smoke - Entertainment",
+            "status": "PASS",
+            "duration": 63.49,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_ENTERTAINMENT.log",
+            "screenshots": [
+                "screenshots/LOC_ENTERTAINMENT/entertainment_page.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered correctly with no visible layout, rendering, or text defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "entertainment_page.png",
+                    "image_path": "screenshots/LOC_ENTERTAINMENT/entertainment_page.png"
+                }
+            ]
+        },
+        {
+            "id": "LOC_FOOD",
+            "module": "Validated Section Locators",
+            "name": "Validated locator smoke - Food",
+            "status": "PASS",
+            "duration": 67.16,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_FOOD.log",
+            "screenshots": [
+                "screenshots/LOC_FOOD/food_page.png"
+            ],
+            "ai_pass": 0,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Screen shows only loading placeholders and no real content, indicating content failed to render.",
+                    "issues": [
+                        "Only skeleton placeholders visible",
+                        "No actual articles or images rendered",
+                        "Content failed to load"
+                    ],
+                    "jira_title": "Food tab shows only skeletons, no content rendered",
+                    "jira_description": "Navigating to the Food tab results in a screen with only loading placeholders visible. No article titles, images, or actual content are rendered, which indicates incomplete or failed content rendering.",
+                    "image": "food_page.png",
+                    "image_path": "screenshots/LOC_FOOD/food_page.png"
+                }
+            ]
+        },
+        {
+            "id": "LOC_INDIA",
+            "module": "Validated Section Locators",
+            "name": "Validated locator smoke - India",
+            "status": "PASS",
+            "duration": 71.02,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_INDIA.log",
+            "screenshots": [
+                "screenshots/LOC_INDIA/india_page.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present with no visible rendering, layout, or overlapping issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "india_page.png",
+                    "image_path": "screenshots/LOC_INDIA/india_page.png"
+                }
+            ]
+        },
+        {
+            "id": "LOC_LATEST_NEWS",
+            "module": "Validated Section Locators",
+            "name": "Validated locator smoke - Latest News",
+            "status": "PASS",
+            "duration": 61.37,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_LATEST_NEWS.log",
+            "screenshots": [
+                "screenshots/LOC_LATEST_NEWS/latest_news_page.png"
+            ],
+            "ai_pass": 0,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Content placeholders are still visible, indicating the content failed to load or is stuck in a loading state.",
+                    "issues": [
+                        "Placeholder content visible",
+                        "Content not rendered",
+                        "Stuck loading state"
+                    ],
+                    "jira_title": "News screen stuck on placeholder loading state",
+                    "jira_description": "The News screen displays placeholder cards and no real content has rendered, indicating the page is stuck in a loading state or content has failed to load.",
+                    "image": "latest_news_page.png",
+                    "image_path": "screenshots/LOC_LATEST_NEWS/latest_news_page.png"
+                }
+            ]
+        },
+        {
+            "id": "LOC_OPINION",
+            "module": "Validated Section Locators",
+            "name": "Validated locator smoke - Opinion",
+            "status": "PASS",
+            "duration": 51.22,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_OPINION.log",
+            "screenshots": [
+                "screenshots/LOC_OPINION/opinion_page.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present, no visual defects or layout issues detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "opinion_page.png",
+                    "image_path": "screenshots/LOC_OPINION/opinion_page.png"
+                }
+            ]
+        },
+        {
+            "id": "LOC_PHOTOS",
+            "module": "Validated Section Locators",
+            "name": "Validated locator smoke - Photos",
+            "status": "PASS",
+            "duration": 55.19,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_PHOTOS.log",
+            "screenshots": [
+                "screenshots/LOC_PHOTOS/photos_page.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly with no visible layout, rendering, text, or navigation issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "photos_page.png",
+                    "image_path": "screenshots/LOC_PHOTOS/photos_page.png"
+                }
+            ]
+        },
+        {
+            "id": "LOC_PODCAST",
+            "module": "Validated Section Locators",
+            "name": "Validated locator smoke - Podcast",
+            "status": "PASS",
+            "duration": 58.28,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_PODCAST.log",
+            "screenshots": [
+                "screenshots/LOC_PODCAST/podcast_page.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and properly aligned. No visible UI defects or rendering issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "podcast_page.png",
+                    "image_path": "screenshots/LOC_PODCAST/podcast_page.png"
+                }
+            ]
+        },
+        {
+            "id": "LOC_SCI_TECH",
+            "module": "Validated Section Locators",
+            "name": "Validated locator smoke - Sci-Tech",
+            "status": "PASS",
+            "duration": 63.18,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_SCI_TECH.log",
+            "screenshots": [
+                "screenshots/LOC_SCI_TECH/sci_tech_page.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "sci_tech_page.png",
+                    "image_path": "screenshots/LOC_SCI_TECH/sci_tech_page.png"
+                }
+            ]
+        },
+        {
+            "id": "LOC_SPORTS",
+            "module": "Validated Section Locators",
+            "name": "Validated locator smoke - Sports",
+            "status": "FAIL",
+            "duration": 3321.54,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_SPORTS.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "LOC_VIDEOS",
+            "module": "Validated Section Locators",
+            "name": "Validated locator smoke - Videos",
+            "status": "FAIL",
+            "duration": 1841.33,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_VIDEOS.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "LOC_WORLD",
+            "module": "Validated Section Locators",
+            "name": "Validated locator smoke - World",
+            "status": "FAIL",
+            "duration": 112.92,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_WORLD.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        }
+    ]
+}

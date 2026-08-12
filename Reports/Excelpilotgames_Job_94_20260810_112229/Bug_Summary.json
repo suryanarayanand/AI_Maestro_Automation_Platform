@@ -1,0 +1,119 @@
+{
+    "suite": "Excelpilotgames",
+    "execution_time": 83.88,
+    "summary": {
+        "total": 3,
+        "passed": 0,
+        "failed": 3,
+        "critical": 3,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.811",
+            "version_code": "577"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Three critical test scenarios (TH_5634, TH_5716, TH_5818) failed during Maestro execution. No AI screenshot analysis or cross-device visual evidence was available to further classify the failures as visual, functional, or dynamic-content driven. The repeated failures suggest core functional issues rather than visual regressions or dynamic data discrepancies.",
+        "release_recommendation": "Hold release. Failures must be analyzed and addressed, as functional test coverage is not passing and root cause is unknown.",
+        "top_risks": [
+            "Multiple unresolved functional failures",
+            "Lack of visual and AI evidence limits triage ability",
+            "Potential gaps in automated reporting or monitoring",
+            "Functional instability in key user scenarios"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "TH_5634",
+            "scenario_name": "Landing/Home Screen",
+            "module": "AI Generated",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 44.69,
+            "log_file": "TH_5634.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Excelpilotgames_Job_94_20260810_112229\\TH_5634.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "TH_5716",
+            "scenario_name": "Games Landing Page Navigation",
+            "module": "AI Generated",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 28.51,
+            "log_file": "TH_5716.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Excelpilotgames_Job_94_20260810_112229\\TH_5716.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "TH_5818",
+            "scenario_name": "Easy down game listing",
+            "module": "AI Generated",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 10.25,
+            "log_file": "TH_5818.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Excelpilotgames_Job_94_20260810_112229\\TH_5818.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

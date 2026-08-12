@@ -1,0 +1,152 @@
+appId: com.mobstac.thehindu
+tags:
+  - auth
+  - premium
+---
+# Login from premium tab (SC-56).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Test Scenario
+# Verify the Premium page for an anonymous user.
+# Initially, the Premium page displays the Unlock Briefing and subscription benefits.
+# Log in from the subscription page, capture screenshots, and verify all Premium tabs.
+# Log out, then verify the Premium page again and log in through the Specials section.
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Welcome to a new\nThe Hindu experience"
+    timeout: 5000
+- tapOn: "Skip"
+
+# Navigate to Premium Section
+- extendedWaitUntil:
+    visible: "Premium"
+    timeout: 5000
+- tapOn: "Premium"
+- takeScreenshot: "Screenshots/SC_56/SC_56_Premium_Page_Anonymous_Account"
+- extendedWaitUntil:
+    visible: "SUBSCRIBE"
+- tapOn:
+    point: 4%,79%
+
+# Verify Subscription Page
+- extendedWaitUntil:
+    visible: "Yearly"
+    timeout: 5000
+- extendedWaitUntil:
+    visible: "Monthly"
+    timeout: 5000
+- extendedWaitUntil:
+    visible: "Already a subscriber? Login"
+    timeout: 5000
+- tapOn: "Already a subscriber? Login"
+
+# Login
+- runFlow: ../Common/Login_via_pages_or_Article.yaml
+- takeScreenshot: "Screenshots/SC_56/SC_56_After_Login"
+
+# Verify Briefing Section
+- extendedWaitUntil:
+    visible: "Briefing\nTab 1 of 5"
+    timeout: 5000
+- assertVisible: "OKAY"
+- tapOn: "OKAY"
+- repeat:
+    times: 3
+    commands:
+      - scroll
+- swipe:
+    direction: LEFT
+
+# Verify Specials Section
+- extendedWaitUntil:
+    visible: "Specials\nTab 2 of 5"
+    timeout: 5000
+- assertVisible: "OKAY"
+- tapOn: "OKAY"
+- repeat:
+    times: 3
+    commands:
+      - scroll
+- swipe:
+    direction: LEFT
+
+# Verify Packages Section
+- extendedWaitUntil:
+    visible: "Packages\nTab 3 of 5"
+    timeout: 5000
+- tapOn: "Packages\nTab 3 of 5"
+- assertVisible: "OKAY"
+- tapOn: "OKAY"
+- swipe:
+    direction: LEFT
+
+# Verify Webinar Section
+- extendedWaitUntil:
+    visible: "Webinar\nTab 4 of 5"
+    timeout: 5000
+- tapOn: "Webinar\nTab 4 of 5"
+- assertVisible: "OKAY"
+- tapOn: "OKAY"
+- swipe:
+    direction: LEFT
+
+# Verify All Stories Section
+- extendedWaitUntil:
+    visible: "All Stories\nTab 5 of 5"
+    timeout: 5000
+- tapOn: "All Stories\nTab 5 of 5"
+- assertVisible: "OKAY"
+- tapOn: "OKAY"
+- swipe:
+    direction: LEFT
+
+# Logout
+- tapOn:
+    point: 88%,4%
+- scroll
+- assertVisible: "LOGOUT"
+- tapOn: "LOGOUT"
+
+# Navigate to Specials Section
+- extendedWaitUntil:
+    visible: "Specials\nTab 2 of 5"
+    timeout: 5000
+- tapOn: "Specials\nTab 2 of 5"
+- assertVisible: "SEE MORE"
+- tapOn: "SEE MORE"
+- tapOn:
+    point: 50%,30%
+
+# Close Promotional Popup
+- runFlow:
+    when:
+      visible:
+        text: "Dear Reader, this event is free for you to attend."
+    commands:
+      - back
+
+# Verify Subscription Page
+- assertVisible: "SUBSCRIBE"
+- tapOn: "SUBSCRIBE"
+- tapOn: "Already a subscriber? Login"
+
+# Login
+- runFlow: ../Common/Login_via_pages_or_Article.yaml
+
+# Navigate Back
+- back
+- assertVisible: "Home\nTab 4 of 16"
+
+# Close Application
+- stopApp

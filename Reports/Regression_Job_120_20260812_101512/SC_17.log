@@ -1,0 +1,32 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_17_sigin_with_google_Account
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Assert that "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+Assert that "thehindu-logo" is visible... COMPLETED
+Assert that "Login to your account" is visible... COMPLETED
+Assert that "Don�t have an account ? " is visible... COMPLETED
+Assert that "Sign in with Apple" is visible... COMPLETED
+Assert that "Sign in with Google" is visible... COMPLETED
+Assert that "If you have an account with The Hindu Businessline,
+The Hindu e-Paper, Frontline, or Sportstar.
+You can use the same account to login here." is visible... COMPLETED
+Tap on "Sign in with Google"... COMPLETED
+Take screenshot Screenshots/SC_17/SC_17_google_signin_page... COMPLETED
+Run flow when "Choose an account" is visible...
+  Assert that "to continue to The Hindu" is visible... COMPLETED
+  Assert that "Add another account" is visible... COMPLETED
+  Take screenshot Screenshots/SC_17/Google_Account_Selection... COMPLETED
+Run flow when "Choose an account" is visible... COMPLETED
+Run flow when "Sign in with Google" is visible...
+Run flow when "Sign in with Google" is visible... SKIPPED
+Run flow when "Sign in with Google" is visible...
+Run flow when "Sign in with Google" is visible... SKIPPED
+Press back... COMPLETED
+Kill com.mobstac.thehindu... COMPLETED
+
+
+===== STDERR =====
+

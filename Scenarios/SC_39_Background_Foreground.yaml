@@ -1,0 +1,50 @@
+appId: com.mobstac.thehindu
+tags:
+  - lifecycle
+---
+# Background Foreground (SC-39).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 5000
+- tapOn: "Skip"
+
+# Navigate to India Section
+- extendedWaitUntil:
+    visible: "India"
+    timeout: 10000
+- tapOn: "India"
+- waitForAnimationToEnd:
+    timeout: 5000
+- repeat:
+    times: 1
+    commands:
+      - scroll
+
+# Send App to Background
+- pressKey: HOME
+
+# Wait for 30 Seconds
+- extendedWaitUntil:
+    notVisible:
+      text: "India"
+    timeout: 30000
+
+# Bring App to Foreground
+- launchApp
+
+# Verify App State is Preserved
+- assertVisible:
+    text: "INDIA"
+- takeScreenshot: "Screenshots/SC_39/SC_39_India_Foreground"
+
+# Close Application
+- killApp

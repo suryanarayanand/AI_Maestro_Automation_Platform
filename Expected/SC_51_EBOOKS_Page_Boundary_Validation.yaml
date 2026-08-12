@@ -1,0 +1,92 @@
+appId: com.mobstac.thehindu
+tags:
+  - ebooks
+  - boundary_test
+---
+# EBOOKS Page Boundary Validation (SC-51).
+# Launch App
+- launchApp:
+    clearState: true
+    # stopApp: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Navigate to eBooks Section
+- extendedWaitUntil:
+    visible: "eBooks"
+    timeout: 15000
+- tapOn: "eBooks"
+
+# - extendedWaitUntil:
+#     visible: "GAMES\nTab 5 of 5"
+#     timeout: 5000
+# - tapOn: "GAMES\nTab 5 of 5"
+# Open Main eBook
+- waitForAnimationToEnd:
+    timeout: 1800
+
+# - tapOn:
+#     point: 77%,34%
+- tapOn:
+    point: 13%,18%
+- waitForAnimationToEnd:
+    timeout: 1800
+
+# Login
+# # Login through the eBook subscription popup
+# - extendedWaitUntil:
+#     visible: "Support award-winning Journalism"
+#     timeout: 15000
+#
+# - assertVisible: "Monthly"
+#
+# - extendedWaitUntil:
+#     visible: "Already a subscriber? Login"
+#     timeout: 15000
+# - tapOn: "Already a subscriber? Login"
+#
+# - runFlow: ../Common/LOGIN.yaml
+- runFlow: ../Common/Login_via_pages_or_Article.yaml
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Open Main eBook
+- waitForAnimationToEnd:
+    timeout: 1800
+- tapOn:
+    point: 77%,34%
+
+# Article Validation
+# For this football eBook only, the below wait time is required.
+- waitForAnimationToEnd:
+    timeout: 12000
+- takeScreenshot: "Screenshots/SC_51/SC_51_eBook_First_Page"
+- repeat:
+    times: 30
+    commands:
+      - swipe:
+          direction: LEFT
+- takeScreenshot: "Screenshots/SC_51/SC_51_eBook_Last_Page_Validation"
+
+# Close Application
+- stopApp

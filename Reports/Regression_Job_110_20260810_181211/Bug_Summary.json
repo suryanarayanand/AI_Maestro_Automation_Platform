@@ -1,0 +1,122 @@
+{
+    "suite": "Regression",
+    "execution_time": 289.22,
+    "summary": {
+        "total": 5,
+        "passed": 2,
+        "failed": 3,
+        "critical": 3,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.813",
+            "version_code": "579"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Two critical test scenarios (SC_100 and SC_101) failed during Maestro execution, with neither scenario accompanied by visual evidence or screenshot AI indicators. One scenario (SC_105) was cancelled and did not execute. No visual-only issues or dynamic-content noise were detected. The failures appear to be strictly functional in nature.",
+        "release_recommendation": "Do not release. Functional failures in key scenarios prevent a safe release at this stage.",
+        "top_risks": [
+            "Core functionality failing in SC_100",
+            "Core functionality failing in SC_101",
+            "Unexecuted scenario SC_105 may hide undiscovered issues"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_100",
+            "scenario_name": "SC 100 Busines Page specific article Anonymous Acc",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 89.57,
+            "log_file": "SC_100.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_110_20260810_181211\\SC_100.log",
+            "screenshots": [
+                "screenshots/SC_100/SC_100_Business_Page_Anonymous_Account.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "SC_101",
+            "scenario_name": "SC 101 Busines Page specific article Subscribed Acc",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 129.03,
+            "log_file": "SC_101.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_110_20260810_181211\\SC_101.log",
+            "screenshots": [
+                "screenshots/SC_101/SC_101_Business_Page_Subscribed_Account.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "SC_105",
+            "scenario_name": "SC 105 magicLink",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "CANCELLED",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 16.16,
+            "log_file": "SC_105.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_110_20260810_181211\\SC_105.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

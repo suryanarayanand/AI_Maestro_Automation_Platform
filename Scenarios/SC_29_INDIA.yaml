@@ -1,0 +1,102 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - category-navigation
+---
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "nav_menu"
+    timeout: 15000
+
+- retry:
+    maxRetries: 2
+    commands:
+      - tapOn:
+          id: "nav_menu"
+      - extendedWaitUntil:
+          visible:
+            id: "screen_hamburger"
+          timeout: 10000
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- takeScreenshot: "Screenshots/Generated/SC_29_INDIA_hamburger_menu"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "nav_menu"
+    timeout: 15000
+
+- retry:
+    maxRetries: 2
+    commands:
+      - tapOn:
+          id: "nav_menu"
+      - extendedWaitUntil:
+          visible:
+            id: "screen_hamburger"
+          timeout: 10000
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "India"
+    index: 0
+
+- tapOn:
+    text: "News"
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_INDIA_india_news"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "nav_menu"
+    timeout: 15000
+
+- retry:
+    maxRetries: 2
+    commands:
+      - tapOn:
+          id: "nav_menu"
+      - extendedWaitUntil:
+          visible:
+            id: "screen_hamburger"
+          timeout: 10000
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "India"
+    index: 0
+
+- tapOn:
+    text: "India"
+    index: 1
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_INDIA_india_india"

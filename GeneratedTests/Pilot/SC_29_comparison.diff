@@ -1,0 +1,764 @@
+--- existing/SC_29_Category_navigation_anonymous.yaml
++++ generated/SC_29_generated.yaml
+@@ -1,748 +1,20 @@
+ appId: com.mobstac.thehindu
+ tags:
+-  - anonymous
+-  - navigation
+-  - category
++  - generated
++  - pilot
+ ---
+-# Category navigation anonymous (SC-29).
+-- launchApp:
+-    clearState: true
+-# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+-- extendedWaitUntil:
+-    visible: "Skip"
+-    timeout: 15000
+-- tapOn: "Skip"
+-- extendedWaitUntil:
+-    visible: "Skip"
+-    timeout: 15000
+-- tapOn: "Skip"
++
+ - tapOn:
+-    point: 0%,3%
+-- waitForAnimationToEnd
+-- takeScreenshot: "Screenshots/SC_29/SC_29_hamburger_menu_Options"
+-- waitForAnimationToEnd
++    id: "nav_menu"
+ 
+-# India options
+-- extendedWaitUntil:
+-    visible: "India"
+-    timeout: 1000
+-- tapOn: "India"
+-- tapOn: "News"
++- tapOn:
++    text: "India"
+ 
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_IndiaOption_News"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#        - scroll
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_IndiaOption_News_01"
+-# - back
+-# - waitForAnimationToEnd
+-# - assertVisible: "India"
+-# - tapOn: "India"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_IndiaOption_India"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#        - scroll
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_IndiaOption_India_01"
+-# - back
+-# - waitForAnimationToEnd
+-# - assertVisible: "World"
+-# - tapOn: "World"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_IndiaOption_world"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#        - scroll
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_IndiaOption_world_01"
+-# - back
+-# - waitForAnimationToEnd
+-# World
+-# - assertVisible: "World"
+-# - tapOn: "World"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_WorldOption"
+-# - assertVisible: "News"
+-# - tapOn: "News"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_WorldOption_News"
+-# - back
+-# - assertVisible:
+-#     text: "India"
+-#     index: 1
+-# - tapOn:
+-#     text: "India"
+-#     index: 1
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_WorldOption_India"
+-# - swipe:
+-#     direction: LEFT
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_WorldOption_World"
+-# - back
+-#Sports
+-# - assertVisible: "Sport"
+-# - tapOn: "Sport"
+-# - extendedWaitUntil:
+-#     visible: "Sport"
+-#     timeout: 5000
+-# - tapOn: "Sport"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_SportsOption_Sports"
+-# - repeat:
+-#     times: 5
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_SportsOption_Sports_01"
+-# - back
+-# - assertVisible: "Cricket"
+-# - tapOn: "Cricket"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_SportsOption_Cricket"
+-# - repeat:
+-#     times: 5
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_SportsOption_Cricket_01"
+-# - back
+-# - assertVisible: "Football"
+-# - tapOn: "Football"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_SportsOption_football"
+-# - repeat:
+-#     times: 5
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_SportsOption_football_01"
+-# - back
+-# - assertVisible: "Hockey"
+-# - tapOn: "Hockey"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_SportsOption_hockey"
+-# - repeat:
+-#     times: 5
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29__SportsOption_hockey_01"
+-# - assertVisible: "Tennis"
+-# - tapOn: "Tennis"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_SportsOption_Tennis"
+-# - repeat:
+-#     times: 5
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_SportsOption_Tennis_01"
+-# - back
+-# - assertVisible: "Athletics"
+-# - tapOn: "Athletics"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_SportsOption_Atheetics"
+-# - repeat:
+-#     times: 5
+-#     commands:
+-#       - scroll
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_SportsOption_Atheetics_01"
+-# - back
+-# - tapOn: "Motorsport"
+-# - assertVisible: "Motorsport"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_SportsOption_Motorsport"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_SportsOption_Motorsport_01"
+-# - back
+-# - assertVisible: "Races"
+-# - tapOn: "Races"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_SportsOption_Races"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_SportsOption_Races_01"
+-# - back
+-# - assertVisible: "Other Sports"
+-# - tapOn: "Other Sports"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_SportsOption_otherSports"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_SportsOption_otherSports_01"
+-# - back
+-#DATA
+-# - extendedWaitUntil:
+-#     visible: "Data"
+-#     timeout: 5000
+-# - tapOn : "Data"
+-# - tapOn: "Data"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_DataOption"
+-# - scroll
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_DataOption_01"
+-# - back
+-#HEALTH
+-# - assertVisible: "Health"
+-# - tapOn: "Health"
+-# - assertVisible: "Sci-Tech"
+-# - tapOn: "Sci-Tech"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_HealthOption_Sci-tech"
+-# - scroll
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_HealthOption_Sci-tech_01"
+-# - scroll
+-# - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_HealthOption_Sci-tech_02"
+-# - back
+-# - assertVisible: "Science"
+-# - tapOn: "Science"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_HealthOption_Science"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_HealthOption_Science_01"
+-# - back
+-- scroll
++- assertVisible:
++    text: "India"
+ 
+-#Opinion
+-# - assertVisible: "Opinion"
+-# - tapOn: "Opinion"
+-# - scrollUntilVisible:
+-#     element: "Opinion"
+-# - tapOn: "Opinion"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_opinion"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_opinion_01"
+-# - back
+-# - assertVisible: "Cartoon"
+-# - tapOn: "Cartoon"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_cartoon"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_cartoon_01"
+-# - back
+-# - assertVisible: "Columns"
+-# - tapOn: "Columns"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_Columns"
+-# - repeat:
+-#     times: 2
+-#     commands:
+-#       - scroll
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_Columns_01"
+-# - assertVisible: "Comment"
+-# - tapOn: "Comment"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_Comment"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_Comment_01"
+-# - back
+-# - assertVisible: "Editorial"
+-# - tapOn: "Editorial"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_Editorial"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_Editorial_01"
+-# - back
+-# - assertVisible: "Interview"
+-# - tapOn: "Interview"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_Interview"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_Interview_01"
+-# - back
+-# - assertVisible: "Lead"
+-# - tapOn: "Lead"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_Lead"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_Lead_01"
+-# - back
+-# - assertVisible: "Letters"
+-# - tapOn: "Letters"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_Letters"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_Letters_01"
+-# - back
+-# - assertVisible: "Open Page"
+-# - tapOn: "Open Page"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_Open Pages"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_Open Pages_01"
+-# - back
+-# - assertVisible: "Readers' Editor"
+-# - tapOn: "Readers' Editor"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_Readers' Editor"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_Readers' Editor_01"
+-# - back
+-# - assertVisible: "Corrections & Clarifications"
+-# - tapOn: "Corrections & Clarifications"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_Corrections & Clarificationss"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Opinonoptions_Corrections & Clarifications_01"
+-# - back
+-#SCIENCE
+-# - assertVisible: "Science"
+-# - tapOn: "Science"
+-# - assertVisible: "Sci-Tech"
+-# - tapOn: "Sci-Tech"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Science_Sci-tech"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Science_Sci-tech_01"
+-# - back
+-# - assertVisible: "Science"
+-# - tapOn: "Science"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Science_Science"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Science_Science_01"
+-# - back
+-# - assertVisible: "Technology"
+-# - tapOn: "Technology"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Science_Technology"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Science_Technology_01"
+-# - back
+-# - assertVisible: "Health"
+-# - tapOn: "Health"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Science_Health"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Science_Health_01"
+-# - back
+-# - assertVisible: "Agriculture"
+-# - tapOn: "Agriculture"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Science_Agriculture"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Science_Agriculture_01"
+-# - back
+-# - assertVisible: "Environment"
+-# - tapOn: "Environment"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Science_Environment"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Science_Environment_01"
+-# - back
+-# - assertVisible: "Gadgets"
+-# - tapOn: "Gadgets"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Science_Gadgets"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Science_Gadgets_01"
+-# - back
+-# - assertVisible: "Internet"
+-# - tapOn: "Internet"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Science_Internet"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Science_Internet_01"
+-# - back
+-#ENTERTAINMENT
+-# - assertVisible: "Entertainment"
+-# - tapOn: "Entertainment"
+-# - tapOn: "Entertainment"
+-# - tapOn: "Entertainment"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_EntertainmentOption_Entertainment"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_EntertainmentOption_Entertainment_01"
+-# - back
+-# - assertVisible: "Art"
+-# - tapOn: "Art"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_EntertainmentOption_Art"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_EntertainmentOption_Art_01"
+-# - back
+-# - assertVisible: "Dance"
+-# - tapOn: "Dance"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_EntertainmentOption_Dance"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_EntertainmentOption_Dance_01"
+-# - back
+-# - assertVisible: "Movies"
+-# - tapOn: "Movies"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29EntertainmentOption_Movies"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_EntertainmentOption_Dance_01"
+-# - back
+-# - assertVisible: "Music"
+-# - tapOn: "Music"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_EntertainmentOption_Music"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_EntertainmentOption_Music_01"
+-# - back
+-# - assertVisible: "Reviews"
+-# - tapOn: "Reviews"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_EntertainmentOption_Reviews"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_EntertainmentOption_Reviews_01"
+-# - back
+-# - assertVisible: "Theatre"
+-# - tapOn: "Theatre"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_EntertainmentOption_Theatre"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_EntertainmentOption_Theatre_01"
+-# - back
+-# - assertVisible: "News"
+-# - tapOn: "News"
+-# - assertVisible: "News"
+-# - tapOn: "News"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_NewsOption_News"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-        # - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_NewsOption_News_01"
+-# - back
+-# - assertVisible: "India"
+-# - tapOn: "India"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_NewsOption_India"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_NewsOption_India_01"
+-# - back
+-# - assertVisible: "World"
+-# - tapOn: "World"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_NewsOption_World"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_NewsOption_World_01"
+-# - back
+-#BUSINESS
+-# - assertVisible: "Business"
+-# - tapOn: "Business"
+-# - tapOn: "Business"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_BusinessOption_Business"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_BusinessOption_Business_01"
+-# - back
+-# - assertVisible: "Agri-Business"
+-# - tapOn: "Agri-Business"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_BusinessOption_Agri-Business"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_BusinessOption_Agri-Business_01"
+-# - back
+-# - assertVisible: "Economy"
+-# - tapOn: "Economy"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_BusinessOption_Economy"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_BusinessOption_Economy_01"
+-# - back
+-# - assertVisible: "Industry"
+-# - tapOn: "Industry"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_BusinessOption_Industry"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_BusinessOption_Industry_01"
+-# - back
+-# - assertVisible: "Markets"
+-# - tapOn: "Markets"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_BusinessOption_Markets"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_BusinessOption_Markets_01"
+-# - back
+-# - assertVisible: "Budget"
+-# - tapOn: "Budget"
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_BusinessOption_Budget"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_BusinessOption_Budget_01"
+-# - back
+-#LIFE_AND_STYLE
+-# - assertVisible: "Life & Style"
+-# - tapOn: "Life & Style"
+-# - tapOn: "Life & Style"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Life_and_styleOption_life&Style"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Life_and_styleOption_life&Style_01"
+-# - back
+-# - tapOn: "Fashion"
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Life_and_styleOption_Fashion"
+-# - repeat:
+-#     times: 3
+-#     commands:
+-#       - scroll
+-# - waitForAnimationToEnd
+-# - waitForAnimationToEnd
+-# - takeScreenshot: "Screenshots/SC_29/SC_29_Life_and_styleOption_Fashion_01"
+-# - back
+-- assertVisible: "Fitness"
+-- tapOn: "Fitness"
+-- waitForAnimationToEnd
+-- takeScreenshot: "Screenshots/SC_29/SC_29_Life_and_styleOption_Fitness"
+-- repeat:
+-    times: 3
+-    commands:
+-      - scroll
+-- waitForAnimationToEnd
+-- takeScreenshot: "Screenshots/SC_29/SC_29_Life_and_styleOption_Fitness_01"
+-- back
+-- assertVisible: "Food"
+-- tapOn: "Food"
+-- waitForAnimationToEnd
+-- takeScreenshot: "Screenshots/SC_29/SC_29_Life_and_styleOption_Food"
+-- repeat:
+-    times: 3
+-    commands:
+-      - scroll
+-- waitForAnimationToEnd
+-- takeScreenshot: "Screenshots/SC_29/SC_29_Life_and_styleOption_Food_01"
+-- back
+-- assertVisible: "Homes and gardens"
+-- tapOn: "Homes and gardens"
+-- waitForAnimationToEnd
+-- takeScreenshot: "Screenshots/SC_29/SC_29_Life_and_styleOption_Homes and gardens"
+-- repeat:
+-    times: 3
+-    commands:
+-      - scroll
+-- waitForAnimationToEnd
+-- takeScreenshot: "Screenshots/SC_29/SC_29_Life_and_styleOption_Homes and gardens_01"
+-- back
+-- assertVisible: "Luxury"
++- tapOn:
++    text: "World"
++
++- assertVisible:
++    text: "World"

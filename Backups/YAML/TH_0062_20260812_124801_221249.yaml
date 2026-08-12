@@ -1,0 +1,36 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ai-adapted
+---
+
+- launchApp:
+    clearState: false
+
+- runFlow: "../Common/Anonymous_account_onboarding.yaml"
+
+- assertVisible:
+    id: "screen_home"
+
+- takeScreenshot: "Screenshots/Generated/TH_0062_non_subscriber_home_header_evidence"
+
+- tapOn:
+    id: "article_card"
+
+- takeScreenshot: "Screenshots/Generated/TH_0062_non_subscriber_article_floating_bar_evidence"
+
+- launchApp:
+    clearState: false
+    stopApp: true
+
+- runFlow: "../Common/FreeUser_login.yaml"
+
+- assertVisible:
+    id: "screen_home"
+
+- takeScreenshot: "Screenshots/Generated/TH_0062_free_trial_home_header_evidence"
+
+- tapOn:
+    id: "article_card"
+
+- takeScreenshot: "Screenshots/Generated/TH_0062_free_trial_article_floating_bar_evidence"

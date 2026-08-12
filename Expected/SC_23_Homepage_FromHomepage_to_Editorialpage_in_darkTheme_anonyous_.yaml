@@ -1,0 +1,97 @@
+appId: com.mobstac.thehindu
+tags:
+  - dark_theme
+  - editorial
+  - home
+  - theme
+---
+# Homepage FromHomepage to Editorialpage in darkTheme anonyous (SC-23).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Home Page Validation
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: DOWN
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_23/SC_23_Home_Page"
+
+# Navigate to Appearance Settings
+- tapOn:
+    point: 88%,5%
+- extendedWaitUntil:
+    visible: "Appearance"
+    timeout: 15000
+- tapOn: "Appearance"
+
+# Verify Dark Theme
+- assertVisible: "Dark\nMode"
+- tapOn: "Dark\nMode"
+- takeScreenshot: "Screenshots/SC_23/SC_23_Dark_Theme"
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+- back
+
+# - stopApp
+- launchApp
+
+# Home Page Validation
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: DOWN
+- takeScreenshot: "Screenshots/SC_23/SC_23_Dark_Theme_Home_Page_1"
+- scroll
+- takeScreenshot: "Screenshots/SC_23/SC_23_Dark_Theme_Home_Page_2"
+- scroll
+- takeScreenshot: "Screenshots/SC_23/SC_23_Dark_Theme_Home_Page_3"
+- scroll
+- takeScreenshot: "Screenshots/SC_23/SC_23_Dark_Theme_Home_Page_4"
+- scroll
+
+# Navigate to Editorial Section
+# Editorial is dynamic, so "SEE MORE" is used when available.
+- runFlow:
+    when:
+      visible:
+        text: "SEE MORE"
+    commands:
+      - tapOn: "SEE MORE"
+- assertVisible: "Editorial"
+
+# Editorial Page Validation
+- takeScreenshot: "Screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_1"
+- scroll
+- takeScreenshot: "Screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_2"
+- scroll
+- takeScreenshot: "Screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_3"
+- scroll
+- takeScreenshot: "Screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_4"
+- scroll
+- takeScreenshot: "Screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_5"
+- scroll
+- takeScreenshot: "Screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_6"
+- scroll
+- takeScreenshot: "Screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_7"
+- scroll
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+- back
+
+# - stopApp
+- launchApp

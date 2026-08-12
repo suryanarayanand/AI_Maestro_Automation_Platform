@@ -1,0 +1,59 @@
+appId: com.mobstac.thehindu
+tags:
+  - auth
+  - games
+---
+# login from gamepage (SC-55).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Navigate to Games Section
+- extendedWaitUntil:
+    visible: "Games"
+    timeout: 5000
+- tapOn: "Games"
+- extendedWaitUntil:
+    visible: "TO UNLOCK AND PLAY ALL FREE GAMES, LOGIN"
+    timeout: 5000
+- takeScreenshot: "Screenshots/SC_55/SC_55_Anonymous_Account_Games_Page"
+
+# Login from Games Page
+- runFlow:
+    when:
+      visible: "Sudoku"
+    commands:
+      - assertVisible: "LOGIN TO PLAY"
+      - tapOn: "LOGIN TO PLAY"
+
+# - runFlow:
+#     when:
+#         visible: "The Hindu Mini"
+#     commands:
+#         - assertVisible: "LOGIN TO PLAY"
+#         - tapOn: "LOGIN TO PLAY"
+# Login
+- runFlow: ../Common/Login_via_pages_or_Article.yaml
+- takeScreenshot: "Screenshots/SC_55/SC_55_After_Login"
+
+# Verify Games Page
+- assertVisible: "PLAY NOW"
+
+# - assertVisible: "PREMIUM PLAY, NOW YOURS"
+- scrollUntilVisible:
+    element: "Word Search"
+- assertVisible: "Word Search"
+
+# Close Application
+- stopApp

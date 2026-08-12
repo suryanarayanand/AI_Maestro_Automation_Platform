@@ -1,0 +1,70 @@
+--- existing/SC_22_Appearance_theme_validation.yaml
++++ generated/SC_22_generated.yaml
+@@ -1,61 +1,11 @@
+ appId: com.mobstac.thehindu
+ tags:
+-  - theme
++  - generated
++  - pilot
+ ---
+-# Appearance theme validation (SC-22).
+-# Launch App
+-- launchApp:
+-    clearState: true
+-# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+ 
+-# Skip Onboarding
+-- extendedWaitUntil:
+-    visible: "Skip"
+-    timeout: 15000
+-- tapOn: "Skip"
+-- extendedWaitUntil:
+-    visible: "Skip"
+-    timeout: 15000
+-- tapOn: "Skip"
+-- waitForAnimationToEnd
++- tapOn:
++    text: "Account"
+ 
+-# Navigate to Account Page
+-- assertVisible: "Account"
+-- tapOn: "Account"
+-- takeScreenshot: "Screenshots/SC_22/SC_22_Account_Settings_Page"
+-
+-# Navigate to Appearance Settings
+-- scrollUntilVisible:
+-    element: "APPLICATION SETTINGS"
+-- assertVisible: "Appearance"
+-- tapOn: "Appearance"
+-- takeScreenshot: "Screenshots/SC_22/SC_22_Appearance"
+-
+-# Verify Appearance Options
+-- assertVisible: "Light\nMode"
+-- assertVisible: "System\nDefault"
+-- assertVisible: "Dark\nMode"
+-
+-# Verify Dark Theme
+-- tapOn: "System\nDefault"
+-- tapOn: "Dark\nMode"
+-- takeScreenshot: "Screenshots/SC_22/SC_22_Appearance_Dark_Theme"
+-- waitForAnimationToEnd
+-
+-# Verify Light Theme
+-- tapOn: "Light\nMode"
+-- takeScreenshot: "Screenshots/SC_22/SC_22_Appearance_Light_Theme"
+-- tapOn: "Dark\nMode"
+-
+-# Relaunch the App Because Navigating Back Causes the App to Crash
+-- back
+-
+-# - stopApp
+-- launchApp
+-
+-# Home Page Validation
+-- repeat:
+-    times: 3
+-    commands:
+-      - scroll
+-- takeScreenshot: "Screenshots/SC_22/SC_22_Appearance_Dark_Theme_Home_Page"
++- assertVisible:
++    text: "Account"

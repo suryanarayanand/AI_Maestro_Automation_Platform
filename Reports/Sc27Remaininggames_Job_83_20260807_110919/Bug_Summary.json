@@ -1,0 +1,177 @@
+{
+    "suite": "Sc27Remaininggames",
+    "execution_time": 710.02,
+    "summary": {
+        "total": 6,
+        "passed": 1,
+        "failed": 5,
+        "critical": 5,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.808",
+            "version_code": "574"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Multiple critical failures were detected during automated testing of Scenario 27. Four functional test cases failed to execute successfully, indicating likely functional regressions in the EASY_DOWN, WORD_ROW, WORD_FLOWER, and NEWS_QUIZ flows. Additionally, a major visual defect was reported by screenshot AI in the WORD_SEARCH scenario: several words in the list are cropped and unreadable. No dynamic-content noise or cross-device-only anomalies were identified; all reported issues are consistent across sources and devices.",
+        "release_recommendation": "Do not release. Immediate investigation and fixes are required for both functional and visual issues before considering further release candidates.",
+        "top_risks": [
+            "Critical functional regressions in key user flows",
+            "Major visual defect: unreadable/cropped text in word list",
+            "Potential for negative user retention due to broken or unreadable interface elements"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_27_EASY_DOWN",
+            "scenario_name": "Easy Down",
+            "module": "Subscriber Games",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 105.61,
+            "log_file": "SC_27_EASY_DOWN.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Remaininggames_Job_83_20260807_110919\\SC_27_EASY_DOWN.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "SC_27_WORD_ROW",
+            "scenario_name": "Word Row",
+            "module": "Subscriber Games",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 112.13,
+            "log_file": "SC_27_WORD_ROW.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Remaininggames_Job_83_20260807_110919\\SC_27_WORD_ROW.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "SC_27_WORD_FLOWER",
+            "scenario_name": "Word Flower",
+            "module": "Subscriber Games",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 113.97,
+            "log_file": "SC_27_WORD_FLOWER.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Remaininggames_Job_83_20260807_110919\\SC_27_WORD_FLOWER.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-004",
+            "scenario_id": "SC_27_WORD_SEARCH",
+            "scenario_name": "Word Search",
+            "module": "Subscriber Games",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 100.21,
+            "log_file": "SC_27_WORD_SEARCH.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Remaininggames_Job_83_20260807_110919\\SC_27_WORD_SEARCH.log",
+            "screenshots": [
+                "screenshots/SC_27_WORD_SEARCH/SC_27_Word_Search.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Several words in the word list are visibly cut off on the right side. The text is cropped, making some words unreadable.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Cropped text in word list",
+                        "Some words cut off on the right"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-005",
+            "scenario_id": "SC_27_NEWS_QUIZ",
+            "scenario_name": "News Quiz",
+            "module": "Subscriber Games",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 173.16,
+            "log_file": "SC_27_NEWS_QUIZ.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Remaininggames_Job_83_20260807_110919\\SC_27_NEWS_QUIZ.log",
+            "screenshots": [
+                "screenshots/SC_27_NEWS_QUIZ/SC_27_Word_Flower.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

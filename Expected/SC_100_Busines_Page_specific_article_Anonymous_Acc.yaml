@@ -1,0 +1,159 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - business
+  - article
+---
+# Busines Page specific article Anonymous Acc (SC-100).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- waitForAnimationToEnd
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Verify Anonymous Home Page
+- assertVisible: "SUBSCRIBE"
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Navigate to Business Section
+- repeat:
+    times: 5
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible:
+        text: "Business"
+    commands:
+      - tapOn: "Business"
+
+# Verify Business Section
+- takeScreenshot: "Screenshots/SC_100/SC_100_Business_Page_Anonymous_Account"
+- tapOn:
+    point: 50%, 50%
+
+# Verify Article Actions
+- assertVisible: "AI summary"
+- assertVisible:
+    text: "Text size"
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+- takeScreenshot: "Screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_01"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_02"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_03"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_04"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_05"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_06"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_07"
+- scroll
+- waitForAnimationToEnd
+
+# # ==========================================
+# # Navigate Up
+# # ==========================================
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Advertisement
+- repeat:
+    times: 10
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "ADVERTISEMENT"
+          commands:
+            - takeScreenshot: "Screenshots/SC_100/SC_100_Advertisement"
+      - scroll
+      - waitForAnimationToEnd
+
+# Navigate Up
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Taboola Advertisement
+- repeat:
+    times: 10
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Image for Taboola Advertising Unit"
+          commands:
+            - takeScreenshot: "Screenshots/SC_100/SC_100_Taboola_Ad"
+      - scroll
+
+# Navigate Up
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Support Journalism
+- repeat:
+    times: 10
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Support Journalism"
+          commands:
+            - takeScreenshot: "Screenshots/SC_100/SC_100_Support_Journalism"
+      - scroll
+
+# Navigate Up
+- repeat:
+    times: 25
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Web Page Availability
+- repeat:
+    times: 25
+    commands:
+      - assertNotVisible:
+          text: "Web page not available"
+      - scroll
+      - takeScreenshot: "Screenshots/SC_100/SC_100_Web_Page_Availability"
+      - waitForAnimationToEnd

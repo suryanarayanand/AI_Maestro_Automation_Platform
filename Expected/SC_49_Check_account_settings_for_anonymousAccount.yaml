@@ -1,0 +1,131 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - account
+  - settings
+---
+# Check account settings for anonymousAccount (SC-49).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Verify Anonymous Home Page
+- assertVisible: "SUBSCRIBE"
+- takeScreenshot: "Screenshots/SC_49/SC_49_Anonymous_Account_Home_Page"
+
+# Verify Login Page
+- tapOn: "Account"
+- extendedWaitUntil:
+    visible: "SIGN-UP FOR A FREE TRIAL"
+    timeout: 15000
+- takeScreenshot: "Screenshots/SC_49/SC_49_Anonymous_Account_Page"
+- assertVisible: "Login"
+- tapOn: "Login"
+- back
+
+# - extendedWaitUntil:
+#      visible: "SIGN-UP FOR A FREE TRIAL"
+#      timeout: 15000
+# - extendedWaitUntil:
+#      visible: "ACCOUNT SETTINGS"
+#      timeout: 15000
+# Verify Create Account Page
+- tapOn: "Account"
+- extendedWaitUntil:
+    visible: "SIGN-UP FOR A FREE TRIAL"
+    timeout: 15000
+- extendedWaitUntil:
+    visible: "Create account"
+    timeout: 15000
+- tapOn: "Create account"
+- takeScreenshot: "Screenshots/SC_49/SC_49_Create_Account_Page"
+- back
+
+# Verify Subscription Page
+- extendedWaitUntil:
+    visible: "Subscribe"
+    timeout: 15000
+- tapOn: "Subscribe"
+- assertVisible: "Yearly"
+- assertVisible: "Monthly"
+- assertVisible: "Already a subscriber? Login"
+- takeScreenshot: "Screenshots/SC_49/SC_49_Subscription_Page"
+- tapOn: "X"
+
+# Verify Notification Inbox
+- tapOn: "Account"
+- extendedWaitUntil:
+    visible: "Notification Inbox"
+    timeout: 15000
+- tapOn: "Notification Inbox"
+- takeScreenshot: "Screenshots/SC_49/SC_49_Notification_Inbox"
+- back
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Verify History Page
+- tapOn: "Account"
+- extendedWaitUntil:
+    visible: "History"
+    timeout: 15000
+- tapOn: "History"
+- takeScreenshot: "Screenshots/SC_49/SC_49_History_Page"
+- back
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Verify Bookmarks Page
+- tapOn: "Account"
+- extendedWaitUntil:
+    visible: "Bookmarks"
+    timeout: 15000
+- tapOn: "Bookmarks"
+- takeScreenshot: "Screenshots/SC_49/SC_49_Bookmarks_Page"
+- back
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Verify Text Size Settings
+- tapOn: "Account"
+- scroll
+- assertVisible: "APPLICATION SETTINGS"
+- extendedWaitUntil:
+    visible: "Text Size"
+    timeout: 15000
+- takeScreenshot: "Screenshots/SC_49/SC_49_Text_Size"
+- tapOn: "Text Size"
+
+# Navigate to Appearance Settings
+- runFlow:
+    when:
+      visible:
+        text: "Appearance"
+    commands:
+      - tapOn: "Appearance"
+      - takeScreenshot: "Screenshots/SC_49/SC_49_Appearance"
+
+# Close Application
+- stopApp

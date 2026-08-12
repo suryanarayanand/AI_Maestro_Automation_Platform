@@ -1,0 +1,113 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - account
+  - podcast
+---
+# Podcast Section Subscriber account (SC-15).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Navigate to Podcast Section
+- extendedWaitUntil:
+    visible: "Podcast"
+    timeout: 15000
+- tapOn: "Podcast"
+
+# Podcast Page Validation
+- takeScreenshot: "Screenshots/SC_15/SC_15_Podcast_Page_00"
+- repeat:
+    times: 2
+    commands:
+      - scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_15/SC_15_Podcast_Page_top_01"
+- waitForAnimationToEnd:
+    timeout: 10000
+- repeat:
+    times: 2
+    commands:
+      - scroll
+- waitForAnimationToEnd
+- waitForAnimationToEnd:
+    timeout: 10000
+- takeScreenshot: "Screenshots/SC_15/SC_15_Podcast_Page_middle_01"
+- repeat:
+    times: 2
+    commands:
+      - scroll
+- waitForAnimationToEnd
+- waitForAnimationToEnd:
+    timeout: 10000
+- takeScreenshot: "Screenshots/SC_15/SC_15_Podcast_Page_bottom"
+- repeat:
+    times: 8
+    commands:
+      - swipe:
+          direction: DOWN
+- waitForAnimationToEnd
+
+# Open First Podcast
+- tapOn:
+    point: 4%,18%
+- extendedWaitUntil:
+    visible: "Play Latest Episode"
+    timeout: 15000
+- tapOn: "Play Latest Episode"
+- takeScreenshot: "Screenshots/SC_15/SC_15_first_Podcast_playing_the_latest"
+
+# Verify Podcast Player Controls
+- assertVisible:
+    point: 7%,70%
+- assertVisible: "×"
+- assertVisible: "Ⅱ"
+- assertVisible: "↷\n10s"
+- assertVisible: "↶\n10s"
+- assertVisible: "⟳ 2X Speed"
+- takeScreenshot: "Screenshots/SC_15/SC_15_first_Podcast_player_controls"
+
+# Verify Play Functionality
+- tapOn:
+    point: 43%,80%
+- takeScreenshot: "Screenshots/SC_15/SC_15_first_Podcast_startedplaying"
+
+# Verify Fast Forward Functionality
+- repeat:
+    times: 8
+    commands:
+      - tapOn: "↷\n10s"
+- takeScreenshot: "Screenshots/SC_15/SC_15_first_Podcast_fastforwarded"
+
+# Verify Rewind Functionality
+- repeat:
+    times: 8
+    commands:
+      - tapOn: "↶\n10s"
+- takeScreenshot: "Screenshots/SC_15/SC_15_first_Podcast_Rewinded"
+
+# Verify Pause Functionality
+- tapOn: "Ⅱ"
+- takeScreenshot: "Screenshots/SC_15/SC_15_first_Podcast_paused_playing"
+
+# Verify Playback Speed
+- tapOn: "⟳ 2X Speed"
+- takeScreenshot: "Screenshots/SC_15/SC_15_first_Podcast_2Xspeed"
+
+# Verify Resume Functionality
+- tapOn: "▶"
+- takeScreenshot: "Screenshots/SC_15/SC_15_first_Podcast_resumed_playing"
+
+# Close Podcast Player
+- tapOn: "×"
+- takeScreenshot: "Screenshots/SC_15/SC_15_first_Podcast_closedFrom_playing"

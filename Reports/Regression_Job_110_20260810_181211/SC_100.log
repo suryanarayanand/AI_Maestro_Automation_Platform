@@ -1,0 +1,40 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_100_Busines_Page_specific_article_Anonymous_Acc
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Wait for animation to end... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Assert that "SUBSCRIBE" is visible... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Repeat 5 times...
+  Swiping in LEFT direction in 400 ms... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 5 times... COMPLETED
+Run flow when "Business" is visible...
+  Tap on "Business"... COMPLETED
+Run flow when "Business" is visible... COMPLETED
+Take screenshot Screenshots/SC_100/SC_100_Business_Page_Anonymous_Account... COMPLETED
+Tap on point (50%, 50%)... COMPLETED
+Assert that "AI summary" is visible... FAILED
+
+Assertion is false: "AI summary" is visible
+
+Assertion '"AI summary" is visible' failed. Check the UI hierarchy in debug artifacts to verify the element state and properties.
+
+Possible causes:
+- Element selector may be incorrect - check if there are similar elements with slightly different names/properties.
+- Element may be temporarily unavailable due to loading state
+- This could be a real regression that needs to be addressed
+
+==== Debug output (logs & screenshots) ====
+
+C:\Users\12503\.maestro\tests\2026-08-10_181213
+
+
+===== STDERR =====
+

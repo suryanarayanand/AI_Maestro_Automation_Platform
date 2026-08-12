@@ -1,0 +1,956 @@
+{
+    "suite": {
+        "total": 16,
+        "passed": 7,
+        "failed": 9,
+        "not_found": 0,
+        "pass_rate": 43.75
+    },
+    "results": [
+        {
+            "id": "SC_07",
+            "module": "Account",
+            "name": "Logout_function",
+            "status": "FAIL",
+            "duration": 78.68,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_07.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "SC_08",
+            "module": "Account",
+            "name": "Verify_Account_Subscription_details",
+            "status": "FAIL",
+            "duration": 83.82,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_08.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "SC_12",
+            "module": "Article",
+            "name": "Subscriber_Article_Full_Read_Access",
+            "status": "FAIL",
+            "duration": 377.14,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_12.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "SC_13",
+            "module": "Article",
+            "name": "Article_Share_Functionality",
+            "status": "FAIL",
+            "duration": 182.58,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_13.log",
+            "screenshots": [
+                "screenshots/SC_13/SC_13_share_article.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are properly rendered, no overlaps, cropping, or missing elements. Sharing sheet overlay is expected UI behavior.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_13_share_article.png",
+                    "image_path": "screenshots/SC_13/SC_13_share_article.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_14",
+            "module": "Article",
+            "name": "Article_Font_Size_Validation",
+            "status": "FAIL",
+            "duration": 102.59,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_14.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "SC_15",
+            "module": "Podcast",
+            "name": "Podcast_Section_Subscriber_account",
+            "status": "FAIL",
+            "duration": 138.56,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_15.log",
+            "screenshots": [
+                "screenshots/SC_15/SC_15_first_Podcast_playing_the_latest.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_00.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_bottom.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_middle_01.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_top_01.png"
+            ],
+            "ai_pass": 4,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and fully rendered. No visible UI defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_15_first_Podcast_playing_the_latest.png",
+                    "image_path": "screenshots/SC_15/SC_15_first_Podcast_playing_the_latest.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Podcast content failed to load; only placeholders and a stuck loading indicator are visible.",
+                    "issues": [
+                        "Stuck loading indicator",
+                        "Placeholder content visible",
+                        "Podcast content missing",
+                        "Incomplete rendering"
+                    ],
+                    "jira_title": "Podcast screen shows stuck loading and missing content",
+                    "jira_description": "The Podcast tab displays placeholder content and a stuck loading indicator, with no actual podcast data rendered. This indicates a rendering or data loading defect.",
+                    "image": "SC_15_Podcast_Page_00.png",
+                    "image_path": "screenshots/SC_15/SC_15_Podcast_Page_00.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and correctly rendered. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_15_Podcast_Page_bottom.png",
+                    "image_path": "screenshots/SC_15/SC_15_Podcast_Page_bottom.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and properly aligned. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_15_Podcast_Page_middle_01.png",
+                    "image_path": "screenshots/SC_15/SC_15_Podcast_Page_middle_01.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present. No visual defects, missing content, overlap, or rendering issues detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_15_Podcast_Page_top_01.png",
+                    "image_path": "screenshots/SC_15/SC_15_Podcast_Page_top_01.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_16",
+            "module": "Unassigned",
+            "name": "SC 16 login with appleid",
+            "status": "FAIL",
+            "duration": 51.24,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_16.log",
+            "screenshots": [
+                "screenshots/SC_16/SC_16_Apple_signin_page.png",
+                "screenshots/SC_16/SC_16_signin_error_via_AppleID.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "The screen is fully rendered with all expected UI components present. No evidence of missing or overlapping elements, broken images, or blank areas replacing UI.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_16_Apple_signin_page.png",
+                    "image_path": "screenshots/SC_16/SC_16_Apple_signin_page.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Error state shown with invalid_request and a large blank area replaces UI content. No actionable UI provided for user to proceed.",
+                    "issues": [
+                        "Blank white area replaces expected content",
+                        "No actionable button or option to retry, dismiss, or navigate back",
+                        "Error state is not user-friendly"
+                    ],
+                    "jira_title": "Error screen has blank area and lacks recovery options",
+                    "jira_description": "The error state for an invalid web redirect URL displays a large blank region, with no actionable UI (such as retry, dismiss, or back button), leaving users without clear next steps.",
+                    "image": "SC_16_signin_error_via_AppleID.png",
+                    "image_path": "screenshots/SC_16/SC_16_signin_error_via_AppleID.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_17",
+            "module": "Unassigned",
+            "name": "SC 17 sigin with google Account",
+            "status": "PASS",
+            "duration": 41.36,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_17.log",
+            "screenshots": [
+                "screenshots/SC_17/Google_Account_Selection.png",
+                "screenshots/SC_17/SC_17_google_signin_page.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No evidence of missing, cropped, or overlapping content.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "Google_Account_Selection.png",
+                    "image_path": "screenshots/SC_17/Google_Account_Selection.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and layout is complete with intended empty space below the content.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_17_google_signin_page.png",
+                    "image_path": "screenshots/SC_17/SC_17_google_signin_page.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_18",
+            "module": "Unassigned",
+            "name": "SC 18 Create New Account Option",
+            "status": "FAIL",
+            "duration": 50.0,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_18.log",
+            "screenshots": [
+                "screenshots/SC_18/SC_18_intialSetupScreen_01.png",
+                "screenshots/SC_18/SC_18_SignUp_page.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are visible and correctly rendered. No layout, rendering, or text defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_18_intialSetupScreen_01.png",
+                    "image_path": "screenshots/SC_18/SC_18_intialSetupScreen_01.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly, with no visible layout or rendering defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_18_SignUp_page.png",
+                    "image_path": "screenshots/SC_18/SC_18_SignUp_page.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_19",
+            "module": "Advertisement",
+            "name": "ad_navigation",
+            "status": "PASS",
+            "duration": 240.11,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_19.log",
+            "screenshots": [
+                "screenshots/SC_19/SC_19_Ad_Page_04.png"
+            ],
+            "ai_pass": 0,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Large unexpected blank area is present in the middle of the screen where live updates content should be displayed.",
+                    "issues": [
+                        "Large blank area in Live updates section",
+                        "Incomplete rendering of live updates"
+                    ],
+                    "jira_title": "Live updates section displays a large blank area",
+                    "jira_description": "A large unexpected blank area is visible in the Live updates section, indicating that updates or expected UI content failed to render.",
+                    "image": "SC_19_Ad_Page_04.png",
+                    "image_path": "screenshots/SC_19/SC_19_Ad_Page_04.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_20",
+            "module": "Unassigned",
+            "name": "SC 20 Signup Option Validation",
+            "status": "FAIL",
+            "duration": 50.96,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_20.log",
+            "screenshots": [
+                "screenshots/SC_20/SC_20_SignUp_page.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and correctly rendered. No visual defects identified.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_20_SignUp_page.png",
+                    "image_path": "screenshots/SC_20/SC_20_SignUp_page.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_21",
+            "module": "Unassigned",
+            "name": "SC 21 Whats new option subscribed user",
+            "status": "PASS",
+            "duration": 97.17,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_21.log",
+            "screenshots": [
+                "screenshots/SC_21/SC_21_01_Revamped_Home_Page.png",
+                "screenshots/SC_21/SC_21_02_Quick_Access.png",
+                "screenshots/SC_21/SC_21_03_Trending.png",
+                "screenshots/SC_21/SC_21_04_Premium.png",
+                "screenshots/SC_21/SC_21_05_Ebooks.png",
+                "screenshots/SC_21/SC_21_06_TH_Games.png",
+                "screenshots/SC_21/SC_21_07_More.png",
+                "screenshots/SC_21/SC_21_08_Home_Page.png"
+            ],
+            "ai_pass": 8,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI elements are present and rendered correctly. No visible UI defects found.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_21_01_Revamped_Home_Page.png",
+                    "image_path": "screenshots/SC_21/SC_21_01_Revamped_Home_Page.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No evidence of layout, rendering, or navigation defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_21_02_Quick_Access.png",
+                    "image_path": "screenshots/SC_21/SC_21_02_Quick_Access.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly displayed. No visual defects observed.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_21_03_Trending.png",
+                    "image_path": "screenshots/SC_21/SC_21_03_Trending.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI elements are rendered. No blank areas, overlaps, or missing components. Layout is complete.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_21_04_Premium.png",
+                    "image_path": "screenshots/SC_21/SC_21_04_Premium.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_21_05_Ebooks.png",
+                    "image_path": "screenshots/SC_21/SC_21_05_Ebooks.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered correctly. No visible UI defects, cropping, overlap, or blank UI areas. The popup and bottom navigation bar are correctly displayed.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_21_06_TH_Games.png",
+                    "image_path": "screenshots/SC_21/SC_21_06_TH_Games.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visual defects observed.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_21_07_More.png",
+                    "image_path": "screenshots/SC_21/SC_21_07_More.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and properly rendered. There are no visible defects or layout issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_21_08_Home_Page.png",
+                    "image_path": "screenshots/SC_21/SC_21_08_Home_Page.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_22",
+            "module": "Settings",
+            "name": "Appearance theme validation",
+            "status": "PASS",
+            "duration": 60.99,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_22.log",
+            "screenshots": [
+                "screenshots/SC_22/SC_22_Account_Settings_Page.png",
+                "screenshots/SC_22/SC_22_Appearance.png",
+                "screenshots/SC_22/SC_22_Appearance_Dark_Theme.png",
+                "screenshots/SC_22/SC_22_Appearance_Dark_Theme_Home_Page.png",
+                "screenshots/SC_22/SC_22_Appearance_Light_Theme.png"
+            ],
+            "ai_pass": 4,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_22_Account_Settings_Page.png",
+                    "image_path": "screenshots/SC_22/SC_22_Account_Settings_Page.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and aligned. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_22_Appearance.png",
+                    "image_path": "screenshots/SC_22/SC_22_Appearance.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and properly rendered. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_22_Appearance_Dark_Theme.png",
+                    "image_path": "screenshots/SC_22/SC_22_Appearance_Dark_Theme.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Text 'unit:/22390678/TH_Android_HP_Sticky_A SDK loaded / impression' above the advertisement indicates a UI rendering defect.",
+                    "issues": [
+                        "Debug or placeholder SDK text visible above advertisement"
+                    ],
+                    "jira_title": "Debug SDK text visible above advertisement",
+                    "jira_description": "A debug or placeholder SDK text 'unit:/22390678/TH_Android_HP_Sticky_A SDK loaded / impression' is shown above the advertisement, which is a UI defect and should not be visible in production.",
+                    "image": "SC_22_Appearance_Dark_Theme_Home_Page.png",
+                    "image_path": "screenshots/SC_22/SC_22_Appearance_Dark_Theme_Home_Page.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present with correct alignment; empty space is expected for this settings screen.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_22_Appearance_Light_Theme.png",
+                    "image_path": "screenshots/SC_22/SC_22_Appearance_Light_Theme.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_23",
+            "module": "Unassigned",
+            "name": "SC 23 Homepage FromHomepage to Editorialpage in darkTheme anonyous ",
+            "status": "PASS",
+            "duration": 112.09,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_23.log",
+            "screenshots": [
+                "screenshots/SC_23/SC_23_Dark_Theme.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_1.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_2.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_3.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_4.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_5.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_6.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_7.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_1.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_2.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_3.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_4.png",
+                "screenshots/SC_23/SC_23_Home_Page.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 11,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements for the Appearance settings screen are present and properly rendered. The empty black space is appropriate for a settings screen with few options.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_23_Dark_Theme.png",
+                    "image_path": "screenshots/SC_23/SC_23_Dark_Theme.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "A large blank black region is present inside the main content area, indicating incomplete or missing UI.",
+                    "issues": [
+                        "Unexpected blank black area inside application content",
+                        "Missing or failed to render advertisement/content"
+                    ],
+                    "jira_title": "Large blank area inside main content",
+                    "jira_description": "A significant blank black area appears within the content region, suggesting advertisement or content failed to render, leading to incomplete UI rendering.",
+                    "image": "SC_23_Dark_Theme_Editorial_Page_1.png",
+                    "image_path": "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_1.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement labeling and rendering error visible with ad unit and SDK message overlaid on the ad image.",
+                    "issues": [
+                        "Advertisement unit path and SDK loaded / impression message are visible over the advertisement image",
+                        "Advertisement rendering defect"
+                    ],
+                    "jira_title": "Advertisement displays ad unit path and SDK impression message",
+                    "jira_description": "The advertisement container shows '/22390678/TH_Android_HP_Sticky_A SDK loaded / impression' as an overlay on the ad image, which is a rendering defect and should not be visible to users.",
+                    "image": "SC_23_Dark_Theme_Editorial_Page_2.png",
+                    "image_path": "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_2.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Debug/ad unit and SDK status text are visible in production UI.",
+                    "issues": [
+                        "Debug information ('unit:' and 'status: loaded') visible under the main advertisement banner",
+                        "Debug information ('unit:', 'SDK loaded / impression') visible above sticky advertisement",
+                        "Production UI should not display testing or SDK status text"
+                    ],
+                    "jira_title": "Debug and SDK status information visible in production UI",
+                    "jira_description": "The screen displays debug and SDK status information such as 'unit:', 'status: loaded', and 'SDK loaded / impression' beneath advertisement slots. These technical messages should not be visible to end users and indicate incorrect inclusion of debug/test output in the release UI.",
+                    "image": "SC_23_Dark_Theme_Editorial_Page_3.png",
+                    "image_path": "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_3.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Visible advertisement container displays debug or placeholder information instead of a normal ad.",
+                    "issues": [
+                        "Advertisement area contains unit path and SDK debug information",
+                        "Non-production placeholder shown in ad area"
+                    ],
+                    "jira_title": "Advertisement area displays placeholder or debug content",
+                    "jira_description": "The advertisement region on the home screen shows 'unit:/22390678/TH_Android_HP_Sticky_A SDK loaded / impression' indicating debug or placeholder content instead of a valid advertisement.",
+                    "image": "SC_23_Dark_Theme_Editorial_Page_4.png",
+                    "image_path": "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_4.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and correctly rendered; no clear evidence of layout or rendering defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_23_Dark_Theme_Editorial_Page_5.png",
+                    "image_path": "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_5.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Debug or ad unit SDK logs ('unit:/22390678/TH_Android_HP_Sticky_A SDK loaded / impression') are visible above the advertisement banner, which is an unexpected UI element.",
+                    "issues": [
+                        "Debug/SDK log text visible above advertisement",
+                        "Unintended debug output in production UI"
+                    ],
+                    "jira_title": "Debug/SDK log text visible above advertisement",
+                    "jira_description": "A debug or SDK log message 'unit:/22390678/TH_Android_HP_Sticky_A SDK loaded / impression' is displayed above the advertisement banner, which should not be visible in the end-user UI. This output needs to be removed for production.",
+                    "image": "SC_23_Dark_Theme_Editorial_Page_6.png",
+                    "image_path": "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_6.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Internal advertisement unit and status/debug information is visible to end users.",
+                    "issues": [
+                        "Internal ad unit paths and status (e.g., unit:/22390678/TH_Android_HP_Mid04_A, status:loaded) are visible on screen",
+                        "SDK loaded / impression technical text visible",
+                        "Debug/technical details should not be shown to users in production UI"
+                    ],
+                    "jira_title": "Internal advertisement unit/debug info visible to end users",
+                    "jira_description": "Internal ad unit identification paths, statuses, and SDK impression logs are shown as visible text in the production UI. This technical/debug information should not be exposed to end users.",
+                    "image": "SC_23_Dark_Theme_Editorial_Page_7.png",
+                    "image_path": "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_7.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement container displays debug or SDK information above the actual advertisement, indicating an incomplete or broken ad rendering.",
+                    "issues": [
+                        "Advertisement SDK/debug information visible",
+                        "Broken advertisement rendering"
+                    ],
+                    "jira_title": "Advertisement container displays SDK/debug information",
+                    "jira_description": "The advertisement container above the ad is rendering debug or SDK information (unit path and 'SDK loaded / impression'), indicating incomplete or incorrect advertisement rendering.",
+                    "image": "SC_23_Dark_Theme_Home_Page_1.png",
+                    "image_path": "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_1.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement container has exposed debug information and SDK impression text visible in the UI, which is a clear rendering defect.",
+                    "issues": [
+                        "Debug/SDK impression text visible above advertisement",
+                        "Exposed technical information inside advertisement container"
+                    ],
+                    "jira_title": "Advertisement container displays SDK debug/impression text",
+                    "jira_description": "The advertisement container shows technical debug or SDK text ('unit:/22390678/TH_Android_HP_Sticky_A SDK loaded / impression'), which should not be visible to end users. This is a clear rendering defect.",
+                    "image": "SC_23_Dark_Theme_Home_Page_2.png",
+                    "image_path": "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_2.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Technical advertisement banner with SDK loaded / impression string is visibly overlaid above the actual advertisement content.",
+                    "issues": [
+                        "SDK loaded / impression technical string visible above advertisement",
+                        "Unintended technical overlay in user UI"
+                    ],
+                    "jira_title": "Technical SDK overlay is visible above advertisement banner",
+                    "jira_description": "A technical string 'unit:/22390678/TH_Android_HP_Sticky_A SDK loaded / impression' is displayed above the advertisement banner, which should not be visible to users. This breaks user experience and clutters the UI.",
+                    "image": "SC_23_Dark_Theme_Home_Page_3.png",
+                    "image_path": "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_3.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Large black area and advertisement placeholder visible with debug text indicating incomplete or broken ad rendering.",
+                    "issues": [
+                        "Large black blank advertisement container",
+                        "Advertisement placeholder visible",
+                        "Debug text visible: 'unit:/22390678/TH__Android__HP__Sticky__A SDK loaded / impression'",
+                        "Empty space interrupts application content"
+                    ],
+                    "jira_title": "Broken advertisement rendering with empty placeholder and debug text",
+                    "jira_description": "A large black area is visible where advertisement content should be shown. The advertisement placeholder is displayed with debug text ('unit:/22390678/TH__Android__HP__Sticky__A SDK loaded / impression'), indicating broken or incomplete ad rendering and an interrupted user experience.",
+                    "image": "SC_23_Dark_Theme_Home_Page_4.png",
+                    "image_path": "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_4.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "SDK loaded / impression debug message is visible above the advertisement banner.",
+                    "issues": [
+                        "SDK loaded / impression debug message visible",
+                        "Non-user facing technical debug output in production UI"
+                    ],
+                    "jira_title": "SDK debug message visible above advertisement banner",
+                    "jira_description": "A technical debug message 'SDK loaded / impression' along with unit ID is visible above the advertisement banner, which should not be present in the user-facing UI.",
+                    "image": "SC_23_Home_Page.png",
+                    "image_path": "screenshots/SC_23/SC_23_Home_Page.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_24",
+            "module": "Unassigned",
+            "name": "SC 24 Subscriber E-Book access",
+            "status": "PASS",
+            "duration": 94.48,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_24.log",
+            "screenshots": [
+                "screenshots/SC_24/SC_24_eBook_01.png",
+                "screenshots/SC_24/SC_24_eBook_01_Cover.png",
+                "screenshots/SC_24/SC_24_eBooks_Page.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and rendered correctly. No evidence of missing or overlapping content.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_24_eBook_01.png",
+                    "image_path": "screenshots/SC_24/SC_24_eBook_01.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Loading indicator is visible for an extended duration with a large blank area, indicating incomplete rendering or stuck loading state.",
+                    "issues": [
+                        "Stuck loading indicator",
+                        "Incomplete screen rendering",
+                        "Blank content area"
+                    ],
+                    "jira_title": "eBook screen stuck on loading indicator",
+                    "jira_description": "The eBook screen displays a loading indicator with a large blank area, indicating that the content has not rendered and the screen is stuck in a loading state.",
+                    "image": "SC_24_eBook_01_Cover.png",
+                    "image_path": "screenshots/SC_24/SC_24_eBook_01_Cover.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and rendered correctly. No visual defects or layout issues are visible.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_24_eBooks_Page.png",
+                    "image_path": "screenshots/SC_24/SC_24_eBooks_Page.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_25",
+            "module": "Unassigned",
+            "name": "SC 25 Homepage FromHomepage to Comments Drak theme ananoymous",
+            "status": "PASS",
+            "duration": 126.22,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_25.log",
+            "screenshots": [
+                "screenshots/SC_25/SC_25_Comment_Section.png",
+                "screenshots/SC_25/SC_25_Dark_Theme.png",
+                "screenshots/SC_25/SC_25_Home_Page.png",
+                "screenshots/SC_25/SC_25_Opinion_Page_01.png",
+                "screenshots/SC_25/SC_25_Opinion_Page_02.png",
+                "screenshots/SC_25/SC_25_Opinion_Page_03.png",
+                "screenshots/SC_25/SC_25_Opinion_Page_04.png",
+                "screenshots/SC_25/SC_25_Opinion_Page_05.png",
+                "screenshots/SC_25/SC_25_Opinion_Page_06.png",
+                "screenshots/SC_25/SC_25_Opinion_Section.png"
+            ],
+            "ai_pass": 3,
+            "ai_fail": 7,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Advertisement SDK/debug text 'unit:/22390678/TH_Android_HP_Mid03_A...' is visibly rendered below the advertisement image.",
+                    "issues": [
+                        "Advertisement SDK/debug text visible",
+                        "Unintended text overlaps application content"
+                    ],
+                    "jira_title": "Advertisement SDK or debug text visible in UI",
+                    "jira_description": "SDK/debug information such as 'unit:/22390678/TH_Android_HP_Mid03_A...' is visibly rendered directly below the main advertisement image, which should not be visible in a production environment. This overlaps with the expected application layout and creates a low-quality user experience.",
+                    "image": "SC_25_Comment_Section.png",
+                    "image_path": "screenshots/SC_25/SC_25_Comment_Section.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "UI layout is complete, all elements are present, and there is no evidence of missing or cropped components.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_25_Dark_Theme.png",
+                    "image_path": "screenshots/SC_25/SC_25_Dark_Theme.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Screen appears stuck on a loading state with placeholder skeletons and a loading spinner visible in the main content area.",
+                    "issues": [
+                        "Loading spinner is stuck on content area",
+                        "Only skeleton placeholders visible",
+                        "Main content not rendered"
+                    ],
+                    "jira_title": "Home screen stuck on loading with placeholders",
+                    "jira_description": "The Home screen displays only skeleton placeholders and a loading spinner, indicating the content is not rendered and the loading indicator may be stuck.",
+                    "image": "SC_25_Home_Page.png",
+                    "image_path": "screenshots/SC_25/SC_25_Home_Page.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Visible advertisement SDK debug information is displayed above the advertisement, which is not user-facing content.",
+                    "issues": [
+                        "Advertisement SDK debug info visible",
+                        "Non-production debug text overlays UI"
+                    ],
+                    "jira_title": "Advertisement SDK debug information visible in production UI",
+                    "jira_description": "The screen shows advertisement SDK debug information ('unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression') above the advertisement banner which should not be visible to end users.",
+                    "image": "SC_25_Opinion_Page_01.png",
+                    "image_path": "screenshots/SC_25/SC_25_Opinion_Page_01.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Raw ad unit information and SDK status messages are visibly rendered in the content area.",
+                    "issues": [
+                        "Raw ad unit path and status visible: 'unit:/22390678/TH_Android_Topic_Mid01_A status: loaded'",
+                        "SDK debug information visible: 'unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression'"
+                    ],
+                    "jira_title": "Raw advertisement debug information displayed in content area",
+                    "jira_description": "Raw ad unit paths and SDK debug/status messages are rendered in the UI, which should not be visible to end users. This indicates an environment or integration leak that disrupts the user experience.",
+                    "image": "SC_25_Opinion_Page_02.png",
+                    "image_path": "screenshots/SC_25/SC_25_Opinion_Page_02.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Debug ad unit and status strings are visible within the main content area.",
+                    "issues": [
+                        "Ad unit debug/status text is visible to users",
+                        "SDK loaded / impression diagnostic info shown in content"
+                    ],
+                    "jira_title": "Ad unit debug/status information visible in production UI",
+                    "jira_description": "Diagnostic text (such as unit: /22390678/TH_Android_Topic__Mid01__A status: loaded and SDK loaded / impression) is visible in the user-facing content area. This should be hidden from production users.",
+                    "image": "SC_25_Opinion_Page_03.png",
+                    "image_path": "screenshots/SC_25/SC_25_Opinion_Page_03.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI elements are present and rendered correctly. No missing or overlapping components, and advertisements are displayed with proper labeling and without empty placeholders.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_25_Opinion_Page_04.png",
+                    "image_path": "screenshots/SC_25/SC_25_Opinion_Page_04.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Internal advertisement unit debug information and SDK status are visible to end users. These technical details should not be shown in production UI.",
+                    "issues": [
+                        "Visible advertisement unit debug information",
+                        "Visible SDK status/output"
+                    ],
+                    "jira_title": "Advertisement debug information and SDK messages visible in UI",
+                    "jira_description": "Advertisement unit debug info (e.g., unit paths, SDK loaded/impression status) is displayed to users in the app UI. These details should be hidden from end users in production builds.",
+                    "image": "SC_25_Opinion_Page_05.png",
+                    "image_path": "screenshots/SC_25/SC_25_Opinion_Page_05.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All visible UI elements are correctly rendered. No layout or rendering defects are present.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_25_Opinion_Page_06.png",
+                    "image_path": "screenshots/SC_25/SC_25_Opinion_Page_06.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Debug ad unit and SDK status text is visible to end users, which is not intended for production UI.",
+                    "issues": [
+                        "Ad unit path and status text visible in UI",
+                        "SDK loaded/impression debug text visible in UI"
+                    ],
+                    "jira_title": "Advertisement debug information visible to users",
+                    "jira_description": "Ad unit path, status text, and SDK loaded/impression debug information are visible inline with the content and ads, which should not be visible in the production version of the app.",
+                    "image": "SC_25_Opinion_Section.png",
+                    "image_path": "screenshots/SC_25/SC_25_Opinion_Section.png"
+                }
+            ]
+        }
+    ]
+}

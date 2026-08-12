@@ -1,0 +1,17 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - pilot
+---
+
+- tapOn:
+    text: "Home"
+
+- assertVisible:
+    text: "Home"
+
+- tapOn:
+    text: "World"
+
+- assertVisible:
+    text: "World"

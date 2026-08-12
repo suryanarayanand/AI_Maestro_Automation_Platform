@@ -1,0 +1,361 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - category-navigation
+---
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "nav_menu"
+    timeout: 15000
+
+- retry:
+    maxRetries: 2
+    commands:
+      - tapOn:
+          id: "nav_menu"
+      - extendedWaitUntil:
+          visible:
+            id: "screen_hamburger"
+          timeout: 10000
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- takeScreenshot: "Screenshots/Generated/SC_29_SPORT_hamburger_menu"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "nav_menu"
+    timeout: 15000
+
+- retry:
+    maxRetries: 2
+    commands:
+      - tapOn:
+          id: "nav_menu"
+      - extendedWaitUntil:
+          visible:
+            id: "screen_hamburger"
+          timeout: 10000
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "Sport"
+    index: 0
+
+- tapOn:
+    text: "Sport"
+    index: 1
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_SPORT_sport_sport"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "nav_menu"
+    timeout: 15000
+
+- retry:
+    maxRetries: 2
+    commands:
+      - tapOn:
+          id: "nav_menu"
+      - extendedWaitUntil:
+          visible:
+            id: "screen_hamburger"
+          timeout: 10000
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "Sport"
+    index: 0
+
+- tapOn:
+    text: "Cricket"
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_SPORT_sport_cricket"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "nav_menu"
+    timeout: 15000
+
+- retry:
+    maxRetries: 2
+    commands:
+      - tapOn:
+          id: "nav_menu"
+      - extendedWaitUntil:
+          visible:
+            id: "screen_hamburger"
+          timeout: 10000
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "Sport"
+    index: 0
+
+- tapOn:
+    text: "Football"
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_SPORT_sport_football"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "nav_menu"
+    timeout: 15000
+
+- retry:
+    maxRetries: 2
+    commands:
+      - tapOn:
+          id: "nav_menu"
+      - extendedWaitUntil:
+          visible:
+            id: "screen_hamburger"
+          timeout: 10000
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "Sport"
+    index: 0
+
+- tapOn:
+    text: "Hockey"
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_SPORT_sport_hockey"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "nav_menu"
+    timeout: 15000
+
+- retry:
+    maxRetries: 2
+    commands:
+      - tapOn:
+          id: "nav_menu"
+      - extendedWaitUntil:
+          visible:
+            id: "screen_hamburger"
+          timeout: 10000
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "Sport"
+    index: 0
+
+- tapOn:
+    text: "Tennis"
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_SPORT_sport_tennis"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "nav_menu"
+    timeout: 15000
+
+- retry:
+    maxRetries: 2
+    commands:
+      - tapOn:
+          id: "nav_menu"
+      - extendedWaitUntil:
+          visible:
+            id: "screen_hamburger"
+          timeout: 10000
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "Sport"
+    index: 0
+
+- tapOn:
+    text: "Athletics"
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_SPORT_sport_athletics"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "nav_menu"
+    timeout: 15000
+
+- retry:
+    maxRetries: 2
+    commands:
+      - tapOn:
+          id: "nav_menu"
+      - extendedWaitUntil:
+          visible:
+            id: "screen_hamburger"
+          timeout: 10000
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "Sport"
+    index: 0
+
+- tapOn:
+    text: "Motorsport"
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_SPORT_sport_motorsport"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "nav_menu"
+    timeout: 15000
+
+- retry:
+    maxRetries: 2
+    commands:
+      - tapOn:
+          id: "nav_menu"
+      - extendedWaitUntil:
+          visible:
+            id: "screen_hamburger"
+          timeout: 10000
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "Sport"
+    index: 0
+
+- tapOn:
+    text: "Races"
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_SPORT_sport_races"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "nav_menu"
+    timeout: 15000
+
+- retry:
+    maxRetries: 2
+    commands:
+      - tapOn:
+          id: "nav_menu"
+      - extendedWaitUntil:
+          visible:
+            id: "screen_hamburger"
+          timeout: 10000
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "Sport"
+    index: 0
+
+- tapOn:
+    text: "Other Sports"
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_SPORT_sport_other_sports"

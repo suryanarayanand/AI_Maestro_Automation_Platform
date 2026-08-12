@@ -1,0 +1,609 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Bug Investigation Dashboard</title>
+
+<style>
+.bug-card{
+
+    background:white;
+
+    margin-top:25px;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+.bug-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.bug-body{
+
+    display:flex;
+
+    gap:30px;
+
+    margin-top:20px;
+
+    margin-bottom:20px;
+
+}
+
+.info{
+
+    min-width:140px;
+
+}
+
+.severity{
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+.major{
+
+    background:#f59e0b;
+
+}
+
+.critical{
+
+    background:#dc2626;
+
+}
+
+.minor{
+
+    background:#16a34a;
+
+}
+.screenshot-section{
+
+    margin-top:25px;
+
+}
+
+.bug-image{
+
+    width:350px;
+
+    max-width:100%;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.bug-image:hover{
+
+    transform:scale(1.02);
+
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+
+}
+
+.gallery{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:15px;
+
+}
+
+.gallery-image{
+
+    width:180px;
+
+    border-radius:8px;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.gallery-image:hover{
+
+    transform:scale(1.05);
+
+}
+body{
+    margin:0;
+    padding:0;
+    background:#f5f7fb;
+    font-family:Segoe UI,Arial,sans-serif;
+}
+
+.container{
+    width:95%;
+    margin:auto;
+    padding:20px;
+}
+
+.header{
+    background:#1f2937;
+    color:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.card{
+    background:white;
+    width:180px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.card h2{
+    margin:0;
+    font-size:36px;
+}
+
+.card p{
+    color:#666;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    
+<div class="header">
+
+<h1>🐞 Bug Investigation Dashboard</h1>
+
+<p>
+
+<b>Suite:</b> Regression
+
+&nbsp;&nbsp;&nbsp;
+
+<b>Execution:</b> 428.81 sec
+
+</p>
+
+</div>
+
+
+    
+<div class="cards">
+
+<div class="card">
+<h2>4</h2>
+<p>Total</p>
+</div>
+
+<div class="card">
+<h2>3</h2>
+<p>Failed</p>
+</div>
+
+<div class="card">
+<h2>3</h2>
+<p>Critical</p>
+</div>
+
+<div class="card">
+<h2>0</h2>
+<p>Major</p>
+</div>
+
+<div class="card">
+<h2>0</h2>
+<p>Minor</p>
+</div>
+
+</div>
+
+
+    
+<div class="bug-card">
+<h2>Combined AI Assessment</h2>
+<p><b>Executive summary</b><br>Automated testing across multiple scenarios revealed consistent failures in content rendering, with skeleton placeholders remaining visible in place of main articles and images. Functional defects are observed in the main feed's inability to fully load, confirmed both by Screenshot AI and cross-device visual evidence. A minor visual misalignment was also noted in the advertisement label, but this does not impact app functionality. Some dynamic visual differences are attributed to actual defects, not transient content noise.</p>
+<p><b>Release recommendation</b><br>Do NOT release; functional blocking issues are present. Critical rendering defects prevent core content from loading, which must be addressed before production rollout.</p>
+<ul><li>Main content feed fails to render (blocking functional defect)</li><li>Screens persistently show skeleton loaders and placeholders</li><li>Home page critical path is broken—users cannot see articles</li><li>Possible advertisement label misalignment (low risk)</li><li>Potential data loading logic or backend instability</li></ul><hr>
+<p><b>Reference:</b> Google Pixel 9 Pro — App 2501.20.802</p>
+<p><b>Actual:</b> samsung SM-E066B — App 2501.20.813</p>
+</div>
+
+
+    <h2>Combined Findings</h2>
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-001</h2>
+
+            <h3>SC_22</h3>
+
+            <p>Appearance theme validation</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: PASS</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            95%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            76.33 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Screenshot AI, Visual
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Screenshot AI, Visual</p>
+
+    <p><b>Screenshot AI findings</b><br>Placeholders are still visible instead of fully rendered content, indicating incomplete rendering or loading defect.</p>
+
+    <p><b>Visual findings</b><br>Two genuine UI issues detected: main content not rendered (skeleton UI shown) and possible misalignment in Advertisement label.</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_22/SC_22_Account_Settings_Page.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_22/SC_22_Account_Settings_Page.png','_blank')">
+
+<img
+    src="screenshots/SC_22/SC_22_Appearance.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_22/SC_22_Appearance.png','_blank')">
+
+<img
+    src="screenshots/SC_22/SC_22_Appearance_Dark_Theme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_22/SC_22_Appearance_Dark_Theme.png','_blank')">
+
+<img
+    src="screenshots/SC_22/SC_22_Appearance_Dark_Theme_Home_Page.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_22/SC_22_Appearance_Dark_Theme_Home_Page.png','_blank')">
+
+<img
+    src="screenshots/SC_22/SC_22_Appearance_Light_Theme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_22/SC_22_Appearance_Light_Theme.png','_blank')">
+
+</div>
+</div>
+<div class="screenshot-section"><h3>Reference / Actual / Difference</h3><div class="gallery"><img src="comparison/SC_22/./reference_SC_22_Appearance_Dark_Theme_Home_Page.png" class="gallery-image" onclick="window.open('comparison/SC_22/./reference_SC_22_Appearance_Dark_Theme_Home_Page.png','_blank')"><img src="comparison/SC_22/./actual_SC_22_Appearance_Dark_Theme_Home_Page.png" class="gallery-image" onclick="window.open('comparison/SC_22/./actual_SC_22_Appearance_Dark_Theme_Home_Page.png','_blank')"><img src="comparison/SC_22/./diff_SC_22_Appearance_Dark_Theme_Home_Page.png" class="gallery-image" onclick="window.open('comparison/SC_22/./diff_SC_22_Appearance_Dark_Theme_Home_Page.png','_blank')"></div></div>
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-002</h2>
+
+            <h3>SC_23</h3>
+
+            <p>SC 23 gen</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: PASS</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            71.21 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Screenshot AI
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Screenshot AI</p>
+
+    <p><b>Screenshot AI findings</b><br>Multiple placeholder skeletons and loading bars visible instead of actual content, indicating incomplete rendering of the main UI.</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_23/SC_23_gen_enabling_dark_mode.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_23/SC_23_gen_enabling_dark_mode.png','_blank')">
+
+<img
+    src="screenshots/SC_23/SC_23_gen_home_page.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_23/SC_23_gen_home_page.png','_blank')">
+
+<img
+    src="screenshots/SC_23/SC_23_gen_scroll_through_editorial_page_and_at_different_sections.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_23/SC_23_gen_scroll_through_editorial_page_and_at_different_sections.png','_blank')">
+
+<img
+    src="screenshots/SC_23/SC_23_gen_scroll_through_home_page_and_at_different_sections_to_v.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_23/SC_23_gen_scroll_through_home_page_and_at_different_sections_to_v.png','_blank')">
+
+</div>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-003</h2>
+
+            <h3>SC_23</h3>
+
+            <p>SC 23 Homepage FromHomepage to Editorialpage in darkTheme anonyous </p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: CANCELLED</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            95%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            88.49 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run, Screenshot AI
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run, Screenshot AI</p>
+
+    <p><b>Screenshot AI findings</b><br>Screen displays placeholder skeletons instead of loaded article content, indicating incomplete rendering.<br>Multiple UI placeholders are visible, indicating that the actual content failed to render. The screen is stuck on loading skeletons.<br>Article placeholders are visible and actual content did not render. Screen is stuck in loading state.<br>Multiple content placeholders are visible, indicating that the actual content failed to load/render. These placeholders suggest incomplete rendering.</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_23/SC_23_Dark_Theme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_23/SC_23_Dark_Theme.png','_blank')">
+
+<img
+    src="screenshots/SC_23/SC_23_Dark_Theme_Home_Page_1.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_23/SC_23_Dark_Theme_Home_Page_1.png','_blank')">
+
+<img
+    src="screenshots/SC_23/SC_23_Dark_Theme_Home_Page_2.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_23/SC_23_Dark_Theme_Home_Page_2.png','_blank')">
+
+<img
+    src="screenshots/SC_23/SC_23_Dark_Theme_Home_Page_3.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_23/SC_23_Dark_Theme_Home_Page_3.png','_blank')">
+
+<img
+    src="screenshots/SC_23/SC_23_Dark_Theme_Home_Page_4.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_23/SC_23_Dark_Theme_Home_Page_4.png','_blank')">
+
+<img
+    src="screenshots/SC_23/SC_23_Home_Page.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_23/SC_23_Home_Page.png','_blank')">
+
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+</body>
+</html>

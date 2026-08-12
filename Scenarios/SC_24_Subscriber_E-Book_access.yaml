@@ -1,0 +1,79 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - ebooks
+---
+# Subscriber E Book access (SC-24).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+
+# Navigate to eBooks Section
+- assertVisible: "eBooks"
+- tapOn: "eBooks"
+- waitForAnimationToEnd
+
+# eBooks Page Validation
+- takeScreenshot: "Screenshots/SC_24/SC_24_eBooks_Page"
+
+# Open First eBook
+- tapOn:
+    point: 77%,34%
+- takeScreenshot: "Screenshots/SC_24/SC_24_eBook_01_Cover"
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: LEFT
+
+# eBook Validation
+- takeScreenshot: "Screenshots/SC_24/SC_24_eBook_01"
+
+# Navigate Back
+- back
+
+# Open Second eBook
+- repeat:
+    times: 3
+    commands:
+      - scroll
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_24/SC_24_eBooks_Page_02"
+- tapOn:
+    point: 7%,10%
+- takeScreenshot: "Screenshots/SC_24/SC_24_eBook_02_Cover"
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: LEFT
+- takeScreenshot: "Screenshots/SC_24/SC_24_eBook_02"
+- back
+# Open Third eBook
+# - tapOn:
+#     point: 7%,30%
+# - takeScreenshot: "Screenshots/SC_24/SC_24_eBook_03_Cover"
+# - repeat:
+#     times: 10
+#     commands:
+#       - swipe:
+#           direction: LEFT
+# - takeScreenshot: "Screenshots/SC_24/SC_24_eBook_03"
+# Open Fourth eBook
+# - tapOn:
+#     point: 54%,44%
+# - takeScreenshot: "Screenshots/SC_24/SC_24_eBook_04_Cover"
+# - repeat:
+#     times: 10
+#     commands:
+#       - swipe:
+#           direction: LEFT
+# - takeScreenshot: "Screenshots/SC_24/SC_24_eBook_04"
+# - back
+# - scroll
+# - scroll

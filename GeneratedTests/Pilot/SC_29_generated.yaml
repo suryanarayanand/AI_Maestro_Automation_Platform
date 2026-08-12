@@ -1,0 +1,20 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - pilot
+---
+
+- tapOn:
+    id: "nav_menu"
+
+- tapOn:
+    text: "India"
+
+- assertVisible:
+    text: "India"
+
+- tapOn:
+    text: "World"
+
+- assertVisible:
+    text: "World"

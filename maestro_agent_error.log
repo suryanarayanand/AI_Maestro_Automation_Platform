@@ -1,0 +1,37 @@
+Traceback (most recent call last):
+  File "D:\AI_Maestro_Automation_Platform\maestro_agent.py", line 319, in <module>
+    if __name__ == "__main__": main()
+                               ~~~~^^
+  File "D:\AI_Maestro_Automation_Platform\maestro_agent.py", line 315, in main
+    job = api("/api/agent/jobs/claim", "POST", {"agent": AGENT})
+  File "D:\AI_Maestro_Automation_Platform\maestro_agent.py", line 139, in api
+    with urlopen(request, timeout=30) as response:
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\12503\AppData\Local\Python\pythoncore-3.14-64\Lib\urllib\request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\12503\AppData\Local\Python\pythoncore-3.14-64\Lib\urllib\request.py", line 487, in open
+    response = self._open(req, data)
+  File "C:\Users\12503\AppData\Local\Python\pythoncore-3.14-64\Lib\urllib\request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "C:\Users\12503\AppData\Local\Python\pythoncore-3.14-64\Lib\urllib\request.py", line 464, in _call_chain
+    result = func(*args)
+  File "C:\Users\12503\AppData\Local\Python\pythoncore-3.14-64\Lib\urllib\request.py", line 1350, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\12503\AppData\Local\Python\pythoncore-3.14-64\Lib\urllib\request.py", line 1325, in do_open
+    r = h.getresponse()
+  File "C:\Users\12503\AppData\Local\Python\pythoncore-3.14-64\Lib\http\client.py", line 1459, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\12503\AppData\Local\Python\pythoncore-3.14-64\Lib\http\client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\12503\AppData\Local\Python\pythoncore-3.14-64\Lib\http\client.py", line 297, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\12503\AppData\Local\Python\pythoncore-3.14-64\Lib\socket.py", line 729, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine

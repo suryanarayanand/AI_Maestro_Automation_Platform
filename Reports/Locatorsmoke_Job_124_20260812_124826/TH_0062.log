@@ -1,0 +1,40 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow TH_0062
+Launch app "com.mobstac.thehindu"... COMPLETED
+Run ../Common/Anonymous_account_onboarding.yaml...
+  Run flow when "Skip" is visible...
+    Tap on "Skip"... COMPLETED
+  Run flow when "Skip" is visible... COMPLETED
+  Assert that "SUBSCRIBE" is visible... COMPLETED
+Run ../Common/Anonymous_account_onboarding.yaml... COMPLETED
+Assert that id: screen_home is visible... COMPLETED
+Take screenshot Screenshots/Generated/TH_0062_non_subscriber_home_header_evidence... COMPLETED
+Tap on id: article_card... COMPLETED
+Run flow when "Summary" is visible...
+  Tap on "Close sheet"... COMPLETED
+Run flow when "Summary" is visible... COMPLETED
+Take screenshot Screenshots/Generated/TH_0062_non_subscriber_article_floating_bar_evidence... COMPLETED
+Launch app "com.mobstac.thehindu"... COMPLETED
+Run ../Common/FreeUser_login.yaml...
+  Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Run ../Common/FreeUser_login.yaml... COMPLETED
+Assert that id: screen_home is visible... FAILED
+
+Assertion is false: id: screen_home is visible
+
+Assertion 'id: screen_home is visible' failed. Check the UI hierarchy in debug artifacts to verify the element state and properties.
+
+Possible causes:
+- Element selector may be incorrect - check if there are similar elements with slightly different names/properties.
+- Element may be temporarily unavailable due to loading state
+- This could be a real regression that needs to be addressed
+
+==== Debug output (logs & screenshots) ====
+
+C:\Users\12503\.maestro\tests\2026-08-12_124830
+
+
+===== STDERR =====
+

@@ -1,0 +1,90 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_100_Busines_Page_specific_article_Anonymous_Acc
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Wait for animation to end... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Assert that "SUBSCRIBE" is visible... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Repeat 5 times...
+  Swiping in LEFT direction in 400 ms... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 5 times... COMPLETED
+Run flow when "Business" is visible...
+  Tap on "Business"... COMPLETED
+Run flow when "Business" is visible... COMPLETED
+Take screenshot Screenshots/SC_100/SC_100_Business_Page_Anonymous_Account... COMPLETED
+Tap on point (50%, 50%)... COMPLETED
+Run flow when "Summary" is visible...
+  Tap on "Close sheet"... COMPLETED
+Run flow when "Summary" is visible... COMPLETED
+Assert that "AI summary" is visible... COMPLETED
+Assert that "Text size" is visible... COMPLETED
+Assert that "Bookmark" is visible... COMPLETED
+Assert that "Share" is visible... COMPLETED
+Assert that "Comment" is visible... COMPLETED
+Take screenshot Screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_01... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_02... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_03... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_04... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_05... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_06... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_100/SC_100_Business_Page_Anonymous_Account_specific_Article_07... COMPLETED
+Scroll vertically... COMPLETED
+Wait for animation to end... COMPLETED
+Repeat 10 times...
+  Swiping in DOWN direction in 400 ms... COMPLETED
+Repeat 10 times... COMPLETED
+Repeat 10 times...
+  Run flow when "ADVERTISEMENT" is visible...
+    Take screenshot Screenshots/SC_100/SC_100_Advertisement... COMPLETED
+  Run flow when "ADVERTISEMENT" is visible... COMPLETED
+  Scroll vertically... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 10 times... COMPLETED
+Repeat 10 times...
+  Swiping in DOWN direction in 400 ms... COMPLETED
+Repeat 10 times... COMPLETED
+Repeat 10 times...
+  Run flow when "Image for Taboola Advertising Unit" is visible...
+  Run flow when "Image for Taboola Advertising Unit" is visible... SKIPPED
+  Scroll vertically... COMPLETED
+Repeat 10 times... COMPLETED
+Repeat 10 times...
+  Swiping in DOWN direction in 400 ms... COMPLETED
+Repeat 10 times... COMPLETED
+Repeat 10 times...
+  Run flow when "Support Journalism" is visible...
+  Run flow when "Support Journalism" is visible... SKIPPED
+  Scroll vertically... COMPLETED
+    Take screenshot Screenshots/SC_100/SC_100_Support_Journalism... COMPLETED
+Repeat 10 times... COMPLETED
+Repeat 25 times...
+  Swiping in DOWN direction in 400 ms... COMPLETED
+Repeat 25 times... COMPLETED
+Repeat 25 times...
+  Assert that "Web page not available" is not visible... COMPLETED
+  Scroll vertically... COMPLETED
+  Take screenshot Screenshots/SC_100/SC_100_Web_Page_Availability... COMPLETED
+Repeat 25 times... COMPLETED
+
+
+===== STDERR =====
+

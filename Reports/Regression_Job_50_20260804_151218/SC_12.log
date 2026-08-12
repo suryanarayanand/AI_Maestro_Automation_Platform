@@ -1,0 +1,15 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_12_Subscriber_Article_Full_Read_Access
+Launch app "com.mobstac.thehindu" with clear state... FAILED
+
+Unable to launch app com.mobstac.thehindu
+
+==== Debug output (logs & screenshots) ====
+
+C:\Users\12503\.maestro\tests\2026-08-04_151503
+
+
+===== STDERR =====
+

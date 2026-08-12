@@ -1,0 +1,86 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_90_opinionPage_lightTheme
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Run ../Common/LOGIN.yaml...
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "Email" is visible... COMPLETED
+  Tap on "Email"... COMPLETED
+  Input text product.testing@thehindu.co.in... COMPLETED
+  Hide Keyboard... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "NEXT.*|Next.*|HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible...
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible... SKIPPED
+  Assert that "NEXT.*|Next.*" is visible... COMPLETED
+  Tap on "NEXT.*|Next.*"... COMPLETED
+  Assert that "password" is visible... COMPLETED
+  Tap on "password"... COMPLETED
+  Input text Test@123... COMPLETED
+  Hide Keyboard... COMPLETED
+  Assert that "LOGIN.*" is visible... COMPLETED
+  Tap on "LOGIN.*"... COMPLETED
+  Assert that "Home" is visible... COMPLETED
+Run ../Common/LOGIN.yaml... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Assert that "Account" is visible... COMPLETED
+Tap on "Account"... COMPLETED
+Assert that "Appearance" is visible... COMPLETED
+Tap on "Appearance"... COMPLETED
+Assert that "Light
+Mode" is visible... COMPLETED
+Tap on "Light
+Mode"... COMPLETED
+Press back... COMPLETED
+Launch app "com.mobstac.thehindu"... COMPLETED
+Repeat 3 times...
+  Swiping in LEFT direction in 400 ms... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 3 times... COMPLETED
+Assert that "Opinion" is visible... COMPLETED
+Tap on "Opinion"... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_LightTheme... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_01_LightTheme... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_02_LightTheme... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_03_LightTheme... COMPLETED
+Run flow when "SHOW MORE" is visible...
+Run flow when "SHOW MORE" is visible... SKIPPED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_04_LightTheme... COMPLETED
+Wait for animation to end... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_90/SC_90_Opinion_Page_Article_05_LightTheme... COMPLETED
+Wait for animation to end... COMPLETED
+Scrolling DOWN until "Cartoon" is visible with speed 40, visibility percentage 100%, timeout 20000 ms, with centering disabled... FAILED
+
+No visible element found: "Cartoon"
+
+Could not find a visible element matching selector: "Cartoon"
+Tip: Try adjusting the following settings to improve detection:
+- `timeout`: current = 20000ms ? Increase if you need more time to find the element
+- `speed`: current = 40 (0-100 scale) ? Increase for faster scrolling if element is far away
+- `waitToSettleTimeoutMs`: current = Not defined ? Set this value (e.g., 500ms) if your UI updates frequently between scrolls
+- `visibilityPercentage`: current = 100% ? Lower this value if you want to detect partially visible elements
+- `centerElement`: current = false ? Enable if you want the element to be centered after finding it
+
+
+==== Debug output (logs & screenshots) ====
+
+C:\Users\12503\.maestro\tests\2026-08-11_122920
+
+
+===== STDERR =====
+

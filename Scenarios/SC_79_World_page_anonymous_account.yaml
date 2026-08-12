@@ -1,0 +1,65 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - world
+  - account
+---
+# World page anonymous account (SC-79).
+# Launch App
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Navigate to World Section
+- extendedWaitUntil:
+    visible: "World"
+    timeout: 15000
+- tapOn: "World"
+- assertVisible: "SUBSCRIBE"
+
+# Refresh World Page
+- swipe:
+    direction: DOWN
+- takeScreenshot: "Screenshots/SC_79/SC_79_World_Page_After_Refresh"
+
+# World Page Validation
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_79/SC_79_World_Page_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_79/SC_79_World_Page_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_79/SC_79_World_Page_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_79/SC_79_World_Page_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_79/SC_79_World_Page_05"
+- scroll
+- takeScreenshot: "Screenshots/SC_79/SC_79_World_Page_06"
+- scroll
+- takeScreenshot: "Screenshots/SC_79/SC_79_World_Page_07"
+- scroll
+- takeScreenshot: "Screenshots/SC_79/SC_79_World_Page_08"
+- scroll
+- takeScreenshot: "Screenshots/SC_79/SC_79_World_Page_09"
+- scroll
+- takeScreenshot: "Screenshots/SC_79/SC_79_World_Page_10"
+- scroll
+- takeScreenshot: "Screenshots/SC_79/SC_79_World_Page_11"
+- scroll
+- takeScreenshot: "Screenshots/SC_79/SC_79_World_Page_12"
+- scroll
+- takeScreenshot: "Screenshots/SC_79/SC_79_World_Page_13"
+- scroll
+- takeScreenshot: "Screenshots/SC_79/SC_79_World_Page_14"
+- scroll
+- takeScreenshot: "Screenshots/SC_79/SC_79_World_Page_15"
+- scroll

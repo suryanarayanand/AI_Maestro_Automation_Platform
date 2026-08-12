@@ -1,0 +1,44 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_84_Editorial_Page_specific_article_anonymous
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Assert that "SUBSCRIBE" is visible... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Assert that "Editorial" is visible... COMPLETED
+Tap on "Editorial"... COMPLETED
+Take screenshot Screenshots/SC_84/SC_84_Editorial_Page_Anonymous_Account_01... COMPLETED
+Scroll vertically... COMPLETED
+Tap on point (50%,50%)... COMPLETED
+Run flow when "Summary" is visible...
+  Tap on "Close sheet"... COMPLETED
+Run flow when "Summary" is visible... COMPLETED
+Take screenshot Screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_01... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_02... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_03... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_04... COMPLETED
+Scroll vertically... COMPLETED
+Assert that "Text size" is visible... COMPLETED
+Wait for animation to end... COMPLETED
+Assert that "Bookmark" is visible... COMPLETED
+Assert that "Share" is visible... COMPLETED
+Assert that "Comment" is visible... COMPLETED
+Repeat 8 times...
+  Swiping in DOWN direction in 400 ms... COMPLETED
+Repeat 8 times... COMPLETED
+Repeat 20 times...
+  Run flow when "Image for Taboola Advertising Unit" is visible...
+  Run flow when "Image for Taboola Advertising Unit" is visible... SKIPPED
+  Scroll vertically... COMPLETED
+    Take screenshot Screenshots/SC_84/SC_84_Taboola_Ad_${TIMESTAMP}... COMPLETED
+Repeat 20 times... COMPLETED
+
+
+===== STDERR =====
+

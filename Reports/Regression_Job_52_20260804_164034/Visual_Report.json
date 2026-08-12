@@ -1,0 +1,69 @@
+{
+    "suite": {
+        "total": 2,
+        "passed": 0,
+        "failed": 0,
+        "pass_rate": 0.0
+    },
+    "reference": {
+        "role": "Production reference",
+        "serial": "46201FDAP0048X",
+        "manufacturer": "Google",
+        "model": "Pixel 9 Pro",
+        "android": "16",
+        "resolution": "Physical size: 960x2142",
+        "density": "Physical density: 360",
+        "package": "com.mobstac.thehindu",
+        "version_name": "2501.20.802",
+        "version_code": "568"
+    },
+    "actual": {
+        "role": "Internal test actual",
+        "serial": "R9ZY40T6PHN",
+        "manufacturer": "samsung",
+        "model": "SM-E066B",
+        "android": "16",
+        "resolution": "Physical size: 720x1600",
+        "density": "Physical density: 300",
+        "package": "com.mobstac.thehindu",
+        "version_name": "2501.20.807",
+        "version_code": "573"
+    },
+    "results": [
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 2,
+            "details": [
+                {
+                    "image": "SC_12_Subscriber_Article_page.png",
+                    "status": "NOT FOUND",
+                    "similarity": 0,
+                    "threshold": 95.0,
+                    "difference_count": 0,
+                    "reference": "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_12\\SC_12_Subscriber_Article_page.png",
+                    "actual": "",
+                    "difference": ""
+                },
+                {
+                    "image": "SC_12_Subscriber_Article_page_1.png",
+                    "status": "NOT FOUND",
+                    "similarity": 0,
+                    "threshold": 95.0,
+                    "difference_count": 0,
+                    "reference": "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_12\\SC_12_Subscriber_Article_page_1.png",
+                    "actual": "",
+                    "difference": ""
+                }
+            ],
+            "scenario": "SC_12"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_16"
+        }
+    ]
+}

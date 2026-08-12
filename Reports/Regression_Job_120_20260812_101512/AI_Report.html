@@ -1,0 +1,4154 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>AI Automation Report</title>
+
+<style>
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    margin: 30px;
+}
+
+h1 {
+    color: #1f4e79;
+}
+
+h2 {
+    color: #1f4e79;
+    margin-top: 40px;
+}
+
+.summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    width: 180px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    text-align: center;
+}
+
+.card h2 {
+    margin: 10px 0 0;
+    font-size: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+
+th {
+    background: #1f4e79;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+}
+
+tr:hover {
+    background: #f8f8f8;
+}
+
+.scenario {
+    text-align: left;
+    padding-left: 15px;
+}
+
+.status-pass {
+    background: #28a745;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status-fail {
+    background: #dc3545;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status-notfound {
+    background: orange;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status-error {
+    background: #6c757d;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.toolbar label {
+    font-size: 15px;
+    color: #333;
+}
+
+.scenario-block {
+    margin-bottom: 25px;
+}
+
+.scenario-block h3 {
+    color: #1f4e79;
+    border-bottom: 2px solid #1f4e79;
+    padding-bottom: 6px;
+}
+
+.finding {
+    display: flex;
+    gap: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.finding-fail {
+    border-left: 6px solid #dc3545;
+}
+
+.finding-pass {
+    border-left: 6px solid #28a745;
+}
+
+.finding-error {
+    border-left: 6px solid #6c757d;
+}
+
+.finding-image {
+    flex: 0 0 260px;
+}
+
+.finding-image img {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    cursor: zoom-in;
+}
+
+.finding-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.finding-details p {
+    margin: 6px 0;
+}
+
+.finding-details ul {
+    margin: 4px 0 10px 20px;
+}
+
+.jira-box {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-top: 8px;
+}
+
+.footer {
+    margin-top: 30px;
+    color: gray;
+    text-align: center;
+}
+
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,.85);
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    cursor: zoom-out;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 6px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Automation AI Report</h1>
+
+<div class="summary">
+
+<div class="card">
+<h3>Total Tests</h3>
+<h2>30</h2>
+</div>
+
+<div class="card">
+<h3>Passed</h3>
+<h2 style="color:green;">24</h2>
+</div>
+
+<div class="card">
+<h3>Failed</h3>
+<h2 style="color:red;">6</h2>
+</div>
+
+<div class="card">
+<h3>Not Found</h3>
+<h2 style="color:orange;">0</h2>
+</div>
+
+<div class="card">
+<h3>Pass Rate</h3>
+<h2>80.0%</h2>
+</div>
+
+</div>
+
+<h2>Scenario Results</h2>
+
+<table>
+
+<tr>
+
+<th>Scenario ID</th>
+<th>Module</th>
+<th>Scenario</th>
+<th>Status</th>
+<th>Duration (sec)</th>
+<th>AI Total</th>
+<th>AI PASS</th>
+<th>AI FAIL</th>
+
+</tr>
+
+<tr>
+
+<td>SC_80</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 80 World page article subsscribedAccount</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>244.34</td>
+
+<td>25</td>
+
+<td>25</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_81</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 81 World page article Anonymous Account</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>130.13</td>
+
+<td>16</td>
+
+<td>10</td>
+
+<td>6</td>
+
+</tr>
+
+<tr>
+
+<td>SC_82</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 82 EditorialPage Anonymous acc</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>156.94</td>
+
+<td>16</td>
+
+<td>5</td>
+
+<td>11</td>
+
+</tr>
+
+<tr>
+
+<td>SC_83</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 83 EditorialPage Subscribed acc</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>153.42</td>
+
+<td>15</td>
+
+<td>15</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_84</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 84 Editorial Page specific article anonymous</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>288.32</td>
+
+<td>6</td>
+
+<td>4</td>
+
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>SC_85</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 85 Editorial Page specific article Subscribed Account</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>367.34</td>
+
+<td>6</td>
+
+<td>6</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_86</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 86 Editorial Page anonymous light theme</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>456.91</td>
+
+<td>9</td>
+
+<td>4</td>
+
+<td>5</td>
+
+</tr>
+
+<tr>
+
+<td>SC_87</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 87 Editorial Page anonymous DarkTheme</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>1030.55</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_88</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 88 Opinion Article Navigation Interaction Login Validation</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>218.68</td>
+
+<td>20</td>
+
+<td>15</td>
+
+<td>5</td>
+
+</tr>
+
+<tr>
+
+<td>SC_89</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 89 Opinion Article EndToEnd Subscriber Feature Validation</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>239.56</td>
+
+<td>15</td>
+
+<td>13</td>
+
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>SC_90</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 90 opinionPage lightTheme</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>262.52</td>
+
+<td>24</td>
+
+<td>20</td>
+
+<td>4</td>
+
+</tr>
+
+<tr>
+
+<td>SC_02</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 02 Verify Home Trending page for subscriber</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>256.95</td>
+
+<td>9</td>
+
+<td>9</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_03</td>
+
+<td>Advertisement</td>
+
+<td class="scenario">Verify Ads Taboola for anonymous user</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>1051.07</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_04</td>
+
+<td>Advertisement</td>
+
+<td class="scenario">Verify Ads Taboola for anonymous subscriber</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>516.08</td>
+
+<td>4</td>
+
+<td>3</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>SC_05</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 05 Premium access for anonymous user</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>194.66</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_06</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 06 Premium access for subscriber</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>126.31</td>
+
+<td>3</td>
+
+<td>2</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>SC_07</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 07 Logout function</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>104.59</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>Sc_08</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">Sc 08 Verify Account Subscription details</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>116.17</td>
+
+<td>2</td>
+
+<td>2</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_09</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 09 Invalid Credentials Error Handling</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>69.18</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_10</td>
+
+<td>Account</td>
+
+<td class="scenario">Empty Field validation on login</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>44.95</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_11</td>
+
+<td>Articles</td>
+
+<td class="scenario">Anonymous article navigation</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>50.27</td>
+
+<td>2</td>
+
+<td>1</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>SC_12</td>
+
+<td>Articles</td>
+
+<td class="scenario">Subscriber_Article_Full_Read_Access</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>85.39</td>
+
+<td>3</td>
+
+<td>3</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_13</td>
+
+<td>Articles</td>
+
+<td class="scenario">Article Share Functionality</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>136.32</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_14</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 14 Article Font Size Validation</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>107.86</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_15</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 15 Podcast Section Subscriber account</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>147.74</td>
+
+<td>5</td>
+
+<td>2</td>
+
+<td>3</td>
+
+</tr>
+
+<tr>
+
+<td>SC_16</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 16 login with appleid</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>62.8</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_17</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 17 sigin with google Account</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>48.96</td>
+
+<td>2</td>
+
+<td>2</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_18</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 18 Create New Account Option</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>79.23</td>
+
+<td>2</td>
+
+<td>2</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_19</td>
+
+<td>Advertisement</td>
+
+<td class="scenario">ad_navigation</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>235.28</td>
+
+<td>2</td>
+
+<td>1</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>SC_20</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 20 Signup Option Validation</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>72.7</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+
+</table>
+
+<br>
+
+<h2>AI Screenshot Summary</h2>
+
+<div class="summary">
+
+<div class="card">
+<h3>Total Screenshots</h3>
+<h2>193</h2>
+</div>
+
+<div class="card">
+<h3>AI PASS</h3>
+<h2 style="color:green;">151</h2>
+</div>
+
+<div class="card">
+<h3>AI FAIL</h3>
+<h2 style="color:red;">42</h2>
+</div>
+
+<div class="card">
+<h3>AI ERROR</h3>
+<h2 style="color:#6c757d;">0</h2>
+</div>
+
+</div>
+
+<h2>Detailed AI Findings</h2>
+
+<div class="toolbar">
+    <input type="checkbox" id="failuresOnly" onchange="toggleFailuresOnly()">
+    <label for="failuresOnly">Show failures only</label>
+</div>
+<div class="scenario-block"><h3>SC_80 &mdash; SC 80 World page article subsscribedAccount</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_AI_Summary.png" alt="SC_80_World_Page_AI_Summary.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_AI_Summary.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No evidence of layout, rendering, or text issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_01.png" alt="SC_80_World_Page_Subscribed_Account_Article_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present with no visible rendering, alignment, or text issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_02.png" alt="SC_80_World_Page_Subscribed_Account_Article_02.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_02.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI elements are rendered correctly. No visual defects present.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_03.png" alt="SC_80_World_Page_Subscribed_Account_Article_03.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_03.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered, no overlapping, cropping, or blank regions inside content. The layout looks complete.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_04.png" alt="SC_80_World_Page_Subscribed_Account_Article_04.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_04.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components appear fully rendered with no visible defects. The bottom overlay is correctly placed and no content is missing or overlapped.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_05.png" alt="SC_80_World_Page_Subscribed_Account_Article_05.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_05.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are rendered correctly without visible defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_06.png" alt="SC_80_World_Page_Subscribed_Account_Article_06.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_06.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and rendered correctly. No visible layout, rendering, or text defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_07.png" alt="SC_80_World_Page_Subscribed_Account_Article_07.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_07.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and there are no visible layout or rendering defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_08.png" alt="SC_80_World_Page_Subscribed_Account_Article_08.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_08.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present. No visible layout, rendering, or text issues detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_09.png" alt="SC_80_World_Page_Subscribed_Account_Article_09.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_09.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are fully rendered and correctly aligned. No visible defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_10.png" alt="SC_80_World_Page_Subscribed_Account_Article_10.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_10.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_11.png" alt="SC_80_World_Page_Subscribed_Account_Article_11.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_11.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly without any visible defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_12.png" alt="SC_80_World_Page_Subscribed_Account_Article_12.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_12.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are visible and correctly rendered without any visual defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_13.png" alt="SC_80_World_Page_Subscribed_Account_Article_13.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_13.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_14.png" alt="SC_80_World_Page_Subscribed_Account_Article_14.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_14.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and properly rendered with no visible defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_15.png" alt="SC_80_World_Page_Subscribed_Account_Article_15.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_15.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and completely rendered. No visible UI defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_16.png" alt="SC_80_World_Page_Subscribed_Account_Article_16.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_16.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present and rendered correctly, no visible defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_17.png" alt="SC_80_World_Page_Subscribed_Account_Article_17.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_17.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI elements, images, and text are fully rendered without visible defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_18.png" alt="SC_80_World_Page_Subscribed_Account_Article_18.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_18.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All visible UI components are rendered correctly with no visual defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_19.png" alt="SC_80_World_Page_Subscribed_Account_Article_19.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_19.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and properly rendered; no visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_20.png" alt="SC_80_World_Page_Subscribed_Account_Article_20.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_20.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are rendered correctly. No visual defects or layout issues detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_21.png" alt="SC_80_World_Page_Subscribed_Account_Article_21.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_21.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly with no visible defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_22.png" alt="SC_80_World_Page_Subscribed_Account_Article_22.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_22.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly; no visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_23.png" alt="SC_80_World_Page_Subscribed_Account_Article_23.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_23.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are visible and correctly rendered. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_80/SC_80_World_Page_Subscribed_Account_Article_24.png" alt="SC_80_World_Page_Subscribed_Account_Article_24.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_80_World_Page_Subscribed_Account_Article_24.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present and rendered correctly. No visible UI defects.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_81 &mdash; SC 81 World page article Anonymous Account</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_81/SC_81_World_Page_AI_Summary.png" alt="SC_81_World_Page_AI_Summary.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_81_World_Page_AI_Summary.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered completely. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_01.png" alt="SC_81_World_Page_Anonymous_Account_Article_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_81_World_Page_Anonymous_Account_Article_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and correctly rendered. No layout, rendering, or alignment issues detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_02.png" alt="SC_81_World_Page_Anonymous_Account_Article_02.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_81_World_Page_Anonymous_Account_Article_02.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> No visible UI defects; all components are rendered correctly and layout is consistent.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_03.png" alt="SC_81_World_Page_Anonymous_Account_Article_03.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_81_World_Page_Anonymous_Account_Article_03.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Two advertisement containers are stacked vertically with an empty advertisement container visible above the S.A. Engineering College ad, indicating a rendering defect.</p>
+        <p><strong>Issues:</strong></p><ul><li>Empty advertisement container</li><li>Stacked advertisement components</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Empty advertisement container visible</p>
+                    <p><strong>Jira Description:</strong> An empty advertisement placeholder is rendered above the S.A. Engineering College advertisement, indicating a display or rendering defect for advertisements.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_04.png" alt="SC_81_World_Page_Anonymous_Account_Article_04.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_81_World_Page_Anonymous_Account_Article_04.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present and rendered correctly. No blank region, cropped content, or visible UI defect.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_05.png" alt="SC_81_World_Page_Anonymous_Account_Article_05.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_81_World_Page_Anonymous_Account_Article_05.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and properly rendered; no blank areas, cropping, or overlapping detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_06.png" alt="SC_81_World_Page_Anonymous_Account_Article_06.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_81_World_Page_Anonymous_Account_Article_06.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Large blank area exists where an advertisement should be displayed, indicating incomplete or missing ad rendering.</p>
+        <p><strong>Issues:</strong></p><ul><li>Blank white area in place of advertisement</li><li>Incomplete ad rendering</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Large blank area where advertisement should appear</p>
+                    <p><strong>Jira Description:</strong> A significant blank white region is visible between content sections where an advertisement is expected, indicating a rendering defect or missing ad.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_07.png" alt="SC_81_World_Page_Anonymous_Account_Article_07.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_81_World_Page_Anonymous_Account_Article_07.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> A large blank area labeled 'ADVERTISEMENT' is present, but the advertisement container is mostly empty except for a small ad at the bottom. This indicates a rendering defect or empty advertisement placeholder.</p>
+        <p><strong>Issues:</strong></p><ul><li>Blank advertisement container</li><li>Empty advertisement placeholder</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Blank advertisement container visible</p>
+                    <p><strong>Jira Description:</strong> A large blank region is shown under the 'ADVERTISEMENT' label with only a small ad displayed at the very bottom, indicating an empty advertisement placeholder or rendering defect.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_08.png" alt="SC_81_World_Page_Anonymous_Account_Article_08.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_81_World_Page_Anonymous_Account_Article_08.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present with no visible defects or rendering issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_09.png" alt="SC_81_World_Page_Anonymous_Account_Article_09.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_81_World_Page_Anonymous_Account_Article_09.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Advertisement banner overlaps article content, partially obscuring text.</p>
+        <p><strong>Issues:</strong></p><ul><li>Advertisement overlaps article content</li><li>Text partially obscured by advertisement</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement banner overlaps and obscures article content</p>
+                    <p><strong>Jira Description:</strong> An advertisement banner is rendered over part of the article body, causing text to be partially obscured and unreadable. The advertisement should not overlap the article content.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_10.png" alt="SC_81_World_Page_Anonymous_Account_Article_10.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_81_World_Page_Anonymous_Account_Article_10.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and correctly rendered. No visual defects identified.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_11.png" alt="SC_81_World_Page_Anonymous_Account_Article_11.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_81_World_Page_Anonymous_Account_Article_11.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Advertisement overlaps readable article text.</p>
+        <p><strong>Issues:</strong></p><ul><li>Advertisement overlaps article content</li><li>Cropping of article text by advertisement</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement overlaps article content</p>
+                    <p><strong>Jira Description:</strong> An advertisement is displayed over the article, blocking and cropping part of the text content, rendering it unreadable for users.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_12.png" alt="SC_81_World_Page_Anonymous_Account_Article_12.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_81_World_Page_Anonymous_Account_Article_12.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> No UI defects detected; all elements are rendered and aligned correctly.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_13.png" alt="SC_81_World_Page_Anonymous_Account_Article_13.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_81_World_Page_Anonymous_Account_Article_13.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Large blank area between 'Post a comment' and the bottom advertisement indicates incomplete rendering or missing advertisement content.</p>
+        <p><strong>Issues:</strong></p><ul><li>Blank white area between content and advertisement</li><li>Possible incomplete rendering or missing ad</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Blank area visible between article content and advertisement</p>
+                    <p><strong>Jira Description:</strong> A large blank white region is present between the 'Post a comment' button and the bottom advertisement, indicating incomplete rendering or missing advertisement content.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_14.png" alt="SC_81_World_Page_Anonymous_Account_Article_14.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_81_World_Page_Anonymous_Account_Article_14.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. Advertisement, toolbar, and navigation are visible as expected. No layout, rendering, or overlap issues detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_15.png" alt="SC_81_World_Page_Anonymous_Account_Article_15.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_81_World_Page_Anonymous_Account_Article_15.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present and rendered correctly. No visible defects or layout issues.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_82 &mdash; SC 82 EditorialPage Anonymous acc</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_82/SC_82_Editorial_Page_Image_for_Taboola_Advertising_Unit.png" alt="SC_82_Editorial_Page_Image_for_Taboola_Advertising_Unit.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_82_Editorial_Page_Image_for_Taboola_Advertising_Unit.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are fully rendered, no visible layout or rendering defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_01.png" alt="SC_82_Editorial_Page_Subscribed_Account_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_82_Editorial_Page_Subscribed_Account_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Blank advertisement container is present. The advertisement section under the article content is empty.</p>
+        <p><strong>Issues:</strong></p><ul><li>Blank advertisement container</li><li>Empty advertisement placeholder</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Blank advertisement container visible under article content</p>
+                    <p><strong>Jira Description:</strong> A blank advertisement section is visible below the article content, indicating that the advertisement did not load or render as expected.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_02.png" alt="SC_82_Editorial_Page_Subscribed_Account_02.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_82_Editorial_Page_Subscribed_Account_02.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Blank advertisement container is visible above the bottom navigation bar.</p>
+        <p><strong>Issues:</strong></p><ul><li>Blank advertisement container</li><li>Empty advertisement placeholder</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Blank advertisement container visible above bottom navigation</p>
+                    <p><strong>Jira Description:</strong> A blank advertisement container is displayed above the bottom navigation bar. The advertisement placeholder is empty, indicating an expected ad failed to load or render.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_03.png" alt="SC_82_Editorial_Page_Subscribed_Account_03.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_82_Editorial_Page_Subscribed_Account_03.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Blank advertisement container is visible above the bottom navigation bar.</p>
+        <p><strong>Issues:</strong></p><ul><li>Blank advertisement container</li><li>Empty advertisement placeholder</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Blank advertisement container above navigation bar</p>
+                    <p><strong>Jira Description:</strong> A blank advertisement container is visible above the bottom navigation bar, indicating a UI rendering defect or missing advertisement content.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_04.png" alt="SC_82_Editorial_Page_Subscribed_Account_04.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_82_Editorial_Page_Subscribed_Account_04.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Blank advertisement container visible above bottom navigation.</p>
+        <p><strong>Issues:</strong></p><ul><li>Empty advertisement placeholder</li><li>Blank region where advertisement should display</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Blank advertisement container displayed on Editorial tab</p>
+                    <p><strong>Jira Description:</strong> A blank region labeled 'ADVERTISEMENT' is visible above the bottom navigation bar, indicating a missing or failed advertisement render. The container should not be blank.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_05.png" alt="SC_82_Editorial_Page_Subscribed_Account_05.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_82_Editorial_Page_Subscribed_Account_05.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Blank advertisement container is visible above the bottom navigation bar.</p>
+        <p><strong>Issues:</strong></p><ul><li>Blank advertisement container</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Blank advertisement container visible above bottom navigation</p>
+                    <p><strong>Jira Description:</strong> A blank region labeled 'ADVERTISEMENT' appears above the bottom navigation bar, indicating a missing or failed advertisement render.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_06.png" alt="SC_82_Editorial_Page_Subscribed_Account_06.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_82_Editorial_Page_Subscribed_Account_06.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> A large blank advertisement container is visible above the bottom navigation bar, but no actual advertisement is rendered.</p>
+        <p><strong>Issues:</strong></p><ul><li>Blank advertisement container</li><li>Empty advertisement placeholder</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Blank advertisement container visible</p>
+                    <p><strong>Jira Description:</strong> A blank advertisement container with only the label 'ADVERTISEMENT' is displayed above the bottom navigation bar, with no actual ad content. This appears as an empty placeholder and interrupts the main content.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_07.png" alt="SC_82_Editorial_Page_Subscribed_Account_07.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_82_Editorial_Page_Subscribed_Account_07.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Blank advertisement container is visible with the 'ADVERTISEMENT' label but no ad content present.</p>
+        <p><strong>Issues:</strong></p><ul><li>Empty advertisement placeholder</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Blank advertisement container visible</p>
+                    <p><strong>Jira Description:</strong> An empty advertisement container with the 'ADVERTISEMENT' label is visible at the bottom of the content, but the ad itself is missing. This results in unexpected blank space and incomplete ad rendering.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_08.png" alt="SC_82_Editorial_Page_Subscribed_Account_08.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_82_Editorial_Page_Subscribed_Account_08.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Advertisement container is visible but no advertisement is rendered, leaving an empty placeholder.</p>
+        <p><strong>Issues:</strong></p><ul><li>Empty advertisement placeholder</li><li>Blank advertisement container</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Empty advertisement container in Editorial tab</p>
+                    <p><strong>Jira Description:</strong> The Editorial tab displays an 'ADVERTISEMENT' label with a blank container beneath it, indicating that the advertisement failed to render or is missing, leaving unused UI space.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_09.png" alt="SC_82_Editorial_Page_Subscribed_Account_09.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_82_Editorial_Page_Subscribed_Account_09.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Advertisement container has cropped content; the word 'Search' is cut off at the top right inside the ad block.</p>
+        <p><strong>Issues:</strong></p><ul><li>Cropped text in advertisement container</li><li>Right edge of 'Search' text is not fully visible</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Cropped text in advertisement block</p>
+                    <p><strong>Jira Description:</strong> The advertisement container at the center of the screen has its top-right 'Search' text cropped, indicating a layout/rendering defect.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_10.png" alt="SC_82_Editorial_Page_Subscribed_Account_10.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_82_Editorial_Page_Subscribed_Account_10.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered correctly with no visible defects or layout issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_11.png" alt="SC_82_Editorial_Page_Subscribed_Account_11.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_82_Editorial_Page_Subscribed_Account_11.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and correctly rendered. No visual defects are evident.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_12.png" alt="SC_82_Editorial_Page_Subscribed_Account_12.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_82_Editorial_Page_Subscribed_Account_12.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Advertisement section overlaps or replaces navigation and content area.</p>
+        <p><strong>Issues:</strong></p><ul><li>Advertisement section is shown above bottom navigation and overlaps the content area</li><li>Unexpected large gray area labeled 'ADVERTISEMENT' between content and bottom navigation</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement section causes large unexpected gap above navigation</p>
+                    <p><strong>Jira Description:</strong> There is a large gray area with the label 'ADVERTISEMENT' above the bottom navigation bar, creating an unexpected gap and possibly overlapping or replacing expected content. This space disrupts the continuity of content and navigation.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_13.png" alt="SC_82_Editorial_Page_Subscribed_Account_13.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_82_Editorial_Page_Subscribed_Account_13.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> A large blank white region is visible above the bottom navigation bar labeled 'ADVERTISEMENT', indicating incomplete rendering or a missing ad component.</p>
+        <p><strong>Issues:</strong></p><ul><li>Blank white area above bottom navigation</li><li>Possible missing advertisement content</li><li>Incomplete section rendering</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Blank region and missing advertisement above bottom navigation</p>
+                    <p><strong>Jira Description:</strong> There is a large blank white area above the bottom navigation bar labeled 'ADVERTISEMENT', suggesting incomplete rendering or a missing advertisement component.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_14.png" alt="SC_82_Editorial_Page_Subscribed_Account_14.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_82_Editorial_Page_Subscribed_Account_14.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI elements are fully rendered and correctly aligned with no visible defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_15.png" alt="SC_82_Editorial_Page_Subscribed_Account_15.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_82_Editorial_Page_Subscribed_Account_15.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered completely. No visible layout, rendering, or text issues. Advertisement and dynamic content are present as expected.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_83 &mdash; SC 83 EditorialPage Subscribed acc</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_01.png" alt="SC_83_Editorial_Page_Anonymous_Account_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_83_Editorial_Page_Anonymous_Account_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are rendered correctly. No visible UI defects or layout issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_02.png" alt="SC_83_Editorial_Page_Anonymous_Account_02.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_83_Editorial_Page_Anonymous_Account_02.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and correctly rendered. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_03.png" alt="SC_83_Editorial_Page_Anonymous_Account_03.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_83_Editorial_Page_Anonymous_Account_03.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and there are no visible defects in the layout or rendering.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_04.png" alt="SC_83_Editorial_Page_Anonymous_Account_04.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_83_Editorial_Page_Anonymous_Account_04.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI elements are present and rendered correctly. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_05.png" alt="SC_83_Editorial_Page_Anonymous_Account_05.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_83_Editorial_Page_Anonymous_Account_05.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present with no visible defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_06.png" alt="SC_83_Editorial_Page_Anonymous_Account_06.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_83_Editorial_Page_Anonymous_Account_06.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI elements are present and correctly rendered with no evidence of layout, rendering, or navigation defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_07.png" alt="SC_83_Editorial_Page_Anonymous_Account_07.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_83_Editorial_Page_Anonymous_Account_07.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and correctly rendered. No visible layout, rendering, or text defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_08.png" alt="SC_83_Editorial_Page_Anonymous_Account_08.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_83_Editorial_Page_Anonymous_Account_08.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present, no visible UI defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_09.png" alt="SC_83_Editorial_Page_Anonymous_Account_09.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_83_Editorial_Page_Anonymous_Account_09.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present with no visible defects. Layout and bottom navigation are intact.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_10.png" alt="SC_83_Editorial_Page_Anonymous_Account_10.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_83_Editorial_Page_Anonymous_Account_10.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present. No visual defects or layout issues detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_11.png" alt="SC_83_Editorial_Page_Anonymous_Account_11.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_83_Editorial_Page_Anonymous_Account_11.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are visible and correctly rendered. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_12.png" alt="SC_83_Editorial_Page_Anonymous_Account_12.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_83_Editorial_Page_Anonymous_Account_12.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and correctly rendered. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_13.png" alt="SC_83_Editorial_Page_Anonymous_Account_13.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_83_Editorial_Page_Anonymous_Account_13.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and properly rendered. No blank areas, alignment, cropping, or rendering issues detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_14.png" alt="SC_83_Editorial_Page_Anonymous_Account_14.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_83_Editorial_Page_Anonymous_Account_14.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and rendered correctly. No visible defects or interruptions in layout.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_15.png" alt="SC_83_Editorial_Page_Anonymous_Account_15.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_83_Editorial_Page_Anonymous_Account_15.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and rendered correctly. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_84 &mdash; SC 84 Editorial Page specific article anonymous</h3>
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_84/SC_84_Editorial_Page_Anonymous_Account_01.png" alt="SC_84_Editorial_Page_Anonymous_Account_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_84_Editorial_Page_Anonymous_Account_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Blank advertisement container is visible without any ad content.</p>
+        <p><strong>Issues:</strong></p><ul><li>Blank advertisement container</li><li>Empty advertisement placeholder</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Blank advertisement container displayed</p>
+                    <p><strong>Jira Description:</strong> The advertisement section appears as a blank placeholder without any ad content, indicating a rendering or loading defect.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_01.png" alt="SC_84_Editorial_Page_Specific_Article_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_84_Editorial_Page_Specific_Article_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and fully rendered. No visual UI defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_02.png" alt="SC_84_Editorial_Page_Specific_Article_02.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_84_Editorial_Page_Specific_Article_02.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are fully rendered with no visible defects or layout issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_03.png" alt="SC_84_Editorial_Page_Specific_Article_03.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_84_Editorial_Page_Specific_Article_03.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. Advertisement and content areas are properly placed with no visual defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_04.png" alt="SC_84_Editorial_Page_Specific_Article_04.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_84_Editorial_Page_Specific_Article_04.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> A large blank white area labeled as 'ADVERTISEMENT' contains no advertisement content, indicating a blank advertisement container.</p>
+        <p><strong>Issues:</strong></p><ul><li>Blank advertisement container</li><li>Empty advertisement placeholder</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Blank advertisement container visible in article page</p>
+                    <p><strong>Jira Description:</strong> A large blank area labeled as 'ADVERTISEMENT' is visible but contains no ad content, indicating a blank advertisement placeholder disrupting the layout.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_84/SC_84_Taboola_Ad_undefined.png" alt="SC_84_Taboola_Ad_undefined.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_84_Taboola_Ad_undefined.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered properly. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_85 &mdash; SC 85 Editorial Page specific article Subscribed Account</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_01.png" alt="SC_85_Editorial_Page_Specific_Article_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_85_Editorial_Page_Specific_Article_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and fully rendered; no visible layout, rendering, or alignment defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_02.png" alt="SC_85_Editorial_Page_Specific_Article_02.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_85_Editorial_Page_Specific_Article_02.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are rendered with no visible defects or layout issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_03.png" alt="SC_85_Editorial_Page_Specific_Article_03.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_85_Editorial_Page_Specific_Article_03.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered correctly with no visible defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_04.png" alt="SC_85_Editorial_Page_Specific_Article_04.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_85_Editorial_Page_Specific_Article_04.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present and correctly rendered. No visible layout, rendering, or text defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_85/SC_85_Editorial_Page_Subscribed_Account_01.png" alt="SC_85_Editorial_Page_Subscribed_Account_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_85_Editorial_Page_Subscribed_Account_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and correctly rendered with no visible UI or layout defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_85/SC_85_Taboola_Advertisement_Verification.png" alt="SC_85_Taboola_Advertisement_Verification.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_85_Taboola_Advertisement_Verification.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered with no visible defects. Layout, navigation, and images are present. No missing or cropped content.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_86 &mdash; SC 86 Editorial Page anonymous light theme</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_01.png" alt="SC_86_Editorial_Page_Anonymous_Account_LightTheme_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_86_Editorial_Page_Anonymous_Account_LightTheme_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI elements are correctly rendered and aligned. Advertisement and content areas are intact. No visible UI defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_02.png" alt="SC_86_Editorial_Page_Anonymous_Account_LightTheme_02.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_86_Editorial_Page_Anonymous_Account_LightTheme_02.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Advertisement is visible while the paywall is displayed on the article screen. Subscribers or paywall-locked users should not see advertisements.</p>
+        <p><strong>Issues:</strong></p><ul><li>Advertisement is visible on paywall screen</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement visible on paywall screen</p>
+                    <p><strong>Jira Description:</strong> An advertisement is displayed when the paywall appears, which should not happen as users at the paywall (locked content) should not see advertisements, especially subscribers.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_03.png" alt="SC_86_Editorial_Page_Anonymous_Account_LightTheme_03.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_86_Editorial_Page_Anonymous_Account_LightTheme_03.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Advertisement is visible on a subscriber login section.</p>
+        <p><strong>Issues:</strong></p><ul><li>Advertisement displayed on a subscriber/login section</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement visible for subscriber/login prompt</p>
+                    <p><strong>Jira Description:</strong> An advertisement is visible directly below the 'Already a subscriber? Login' section. Subscriber-related screens or login prompts should not display advertisements.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_04.png" alt="SC_86_Editorial_Page_Anonymous_Account_LightTheme_04.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_86_Editorial_Page_Anonymous_Account_LightTheme_04.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> UI components are rendered correctly with no visible layout, rendering, or alignment issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_05.png" alt="SC_86_Editorial_Page_Anonymous_Account_LightTheme_05.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_86_Editorial_Page_Anonymous_Account_LightTheme_05.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Advertisement banner overlaps article image resulting in layout corruption.</p>
+        <p><strong>Issues:</strong></p><ul><li>Advertisement overlaps content</li><li>Layout corruption</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement overlaps article image</p>
+                    <p><strong>Jira Description:</strong> The advertisement banner is rendered on top of the article image, causing a layout overlap and visual defect. The ad should not cover core content.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_01.png" alt="SC_86_Editorial_Page_Specific_Article_LightTheme_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_86_Editorial_Page_Specific_Article_LightTheme_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Advertisement banner is overlapping content below it.</p>
+        <p><strong>Issues:</strong></p><ul><li>Advertisement overlaps content</li><li>Layout is broken</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement banner overlaps content</p>
+                    <p><strong>Jira Description:</strong> An advertisement banner is overlapping the content section below it, causing a layout defect and making content unreadable.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_02.png" alt="SC_86_Editorial_Page_Specific_Article_LightTheme_02.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_86_Editorial_Page_Specific_Article_LightTheme_02.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Banner advertisement is partially overlapping visual content below, causing content to be cropped and unreadable.</p>
+        <p><strong>Issues:</strong></p><ul><li>Advertisement banner overlaps underlying image and content</li><li>Cropped visual content</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement banner overlaps content below</p>
+                    <p><strong>Jira Description:</strong> A banner advertisement is overlapping and cropping the underlying image and content, resulting in an incomplete and unreadable UI. The advertisement should not obscure any portion of the screen content.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_03.png" alt="SC_86_Editorial_Page_Specific_Article_LightTheme_03.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_86_Editorial_Page_Specific_Article_LightTheme_03.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> No visible UI defects found; all UI components are present and correctly rendered.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_04.png" alt="SC_86_Editorial_Page_Specific_Article_LightTheme_04.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_86_Editorial_Page_Specific_Article_LightTheme_04.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present; layout looks complete with no visible defects.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_88 &mdash; SC 88 Opinion Article Navigation Interaction Login Validation</h3>
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_After_Clicking_AI_Summary_Anonymous.png" alt="SC_88_Opinion_Page_After_Clicking_AI_Summary_Anonymous.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_After_Clicking_AI_Summary_Anonymous.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> An advertisement is visible behind the subscribe paywall modal, which should not happen as paywalls must block access to advertisements.</p>
+        <p><strong>Issues:</strong></p><ul><li>Advertisement visible behind subscription paywall</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement visible behind subscription paywall</p>
+                    <p><strong>Jira Description:</strong> An advertisement is displayed in the background while the subscription paywall modal is active. All ads should be fully hidden when a paywall is shown.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_01.png" alt="SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Advertisement is visible under the subscription paywall modal.</p>
+        <p><strong>Issues:</strong></p><ul><li>Advertisement visible when paywall is shown</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement visible under paywall</p>
+                    <p><strong>Jira Description:</strong> An advertisement is visible in the background when the subscription paywall modal is displayed. Ads should not be shown when paywall is presented.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_02.png" alt="SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_02.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_02.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Advertisement is visible underneath the subscriber paywall screen. Subscriber paywall should not display advertisements.</p>
+        <p><strong>Issues:</strong></p><ul><li>Advertisement visible behind paywall modal</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement visible on subscriber paywall screen</p>
+                    <p><strong>Jira Description:</strong> An advertisement is visible in the background behind the subscriber paywall overlay. Advertisements should not be displayed when the paywall is active, as this screen is intended for subscription only.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account.png" alt="SC_88_Opinion_Page_Anonymous_Account.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_Anonymous_Account.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and correctly rendered. No visible layout, rendering, or text issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account_Article_Via_Comment_Section.png" alt="SC_88_Opinion_Page_Anonymous_Account_Article_Via_Comment_Section.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_Anonymous_Account_Article_Via_Comment_Section.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and there are no visible layout or rendering defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_Article_01.png" alt="SC_88_Opinion_Page_Article_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_Article_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No visible UI defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_Article_02.png" alt="SC_88_Opinion_Page_Article_02.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_Article_02.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are visible, including toolbar, navigation, article content, and advertisements. No blank areas, overlaps, or rendering issues are evident.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_Article_03.png" alt="SC_88_Opinion_Page_Article_03.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_Article_03.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Advertisement is visible on a subscriber paywall screen where ads should not display.</p>
+        <p><strong>Issues:</strong></p><ul><li>Advertisement visible on paywall/subscriber screen</li><li>AD placeholder and ad content are present below subscription offer</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement present on subscription paywall screen</p>
+                    <p><strong>Jira Description:</strong> An advertisement is visible beneath the subscription paywall screen. Ad content and AD placeholder should not be shown when the subscription paywall is displayed.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_Article_04.png" alt="SC_88_Opinion_Page_Article_04.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_Article_04.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and properly rendered. No evidence of layout, rendering, or text issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_Article_05.png" alt="SC_88_Opinion_Page_Article_05.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_Article_05.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present. No visual defects such as missing or overlapping components, blank regions, or rendering issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_Subscription.png" alt="SC_88_Opinion_Page_Subscription.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_Subscription.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and properly rendered. No visible UI defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_01.png" alt="SC_88_Opinion_Page_Subscription_Page_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_Subscription_Page_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and fully rendered; no visible layout or rendering defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_02.png" alt="SC_88_Opinion_Page_Subscription_Page_02.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_Subscription_Page_02.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> A visible blank advertisement container is present; 'ADVERTISEMENT' label shows with empty space before the advertisement loads at the bottom.</p>
+        <p><strong>Issues:</strong></p><ul><li>Blank advertisement container</li><li>Empty advertisement placeholder</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Blank advertisement container visible</p>
+                    <p><strong>Jira Description:</strong> There is a visible empty advertisement container with an 'ADVERTISEMENT' label above the loaded advertisement banner, indicating a rendering defect or missing ad.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_03.png" alt="SC_88_Opinion_Page_Subscription_Page_03.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_Subscription_Page_03.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_04.png" alt="SC_88_Opinion_Page_Subscription_Page_04.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_Subscription_Page_04.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> The UI is fully rendered, all expected UI components are present, and there are no visible defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_05.png" alt="SC_88_Opinion_Page_Subscription_Page_05.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_Subscription_Page_05.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered properly. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_06.png" alt="SC_88_Opinion_Page_Subscription_Page_06.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_Subscription_Page_06.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are fully rendered and visually complete. No layout or rendering defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_07.png" alt="SC_88_Opinion_Page_Subscription_Page_07.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_Subscription_Page_07.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered correctly and no visible UI defects are present.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_08.png" alt="SC_88_Opinion_Page_Subscription_Page_08.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_Subscription_Page_08.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered correctly and no visual defects are present.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_09.png" alt="SC_88_Opinion_Page_Subscription_Page_09.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_88_Opinion_Page_Subscription_Page_09.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and correctly rendered. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_89 &mdash; SC 89 Opinion Article EndToEnd Subscriber Feature Validation</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_89/SC_89_Opinion_Page_Article_01.png" alt="SC_89_Opinion_Page_Article_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_89_Opinion_Page_Article_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendering is complete, with no evidence of UI defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_89/SC_89_Opinion_Page_Article_02.png" alt="SC_89_Opinion_Page_Article_02.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_89_Opinion_Page_Article_02.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and properly rendered. No visible UI defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_89/SC_89_Opinion_Page_Article_03.png" alt="SC_89_Opinion_Page_Article_03.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_89_Opinion_Page_Article_03.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present and rendered correctly. No visual defects observed.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_89/SC_89_Opinion_Page_Article_04.png" alt="SC_89_Opinion_Page_Article_04.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_89_Opinion_Page_Article_04.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present and rendering is complete. No visible defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_89/SC_89_Opinion_Page_Article_05.png" alt="SC_89_Opinion_Page_Article_05.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_89_Opinion_Page_Article_05.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are fully rendered with no visible defects or missing elements. Layout, images, and text are properly aligned.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_89/SC_89_Opinion_Page_Article_06.png" alt="SC_89_Opinion_Page_Article_06.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_89_Opinion_Page_Article_06.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and fully rendered. No visible defects found.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_89/SC_89_Opinion_Page_Article_07.png" alt="SC_89_Opinion_Page_Article_07.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_89_Opinion_Page_Article_07.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and properly rendered. No visible defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_89/SC_89_Opinion_Page_Article_08.png" alt="SC_89_Opinion_Page_Article_08.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_89_Opinion_Page_Article_08.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> UI is fully rendered with no visible defects in layout, text, images, or navigation.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_89/SC_89_Opinion_Page_Article_After_Clicking_AI_Summary.png" alt="SC_89_Opinion_Page_Article_After_Clicking_AI_Summary.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_89_Opinion_Page_Article_After_Clicking_AI_Summary.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered correctly with no visible defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_89/SC_89_Opinion_Page_Second_Article_01.png" alt="SC_89_Opinion_Page_Second_Article_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_89_Opinion_Page_Second_Article_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and properly rendered with no visible defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_89/SC_89_Opinion_Page_Second_Article_02.png" alt="SC_89_Opinion_Page_Second_Article_02.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_89_Opinion_Page_Second_Article_02.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Cartoon card in the second row is cropped on the right side, cutting off both text and the image.</p>
+        <p><strong>Issues:</strong></p><ul><li>Cropped card in horizontal scroll list</li><li>Text and image cut off</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Cartoon card is cropped in horizontal scroll</p>
+                    <p><strong>Jira Description:</strong> The cartoon card in the horizontal scroll (second row) is visibly cropped on the right side, resulting in both text and the image being cut off, which indicates a layout rendering issue.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_89/SC_89_Opinion_Page_Second_Article_03.png" alt="SC_89_Opinion_Page_Second_Article_03.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_89_Opinion_Page_Second_Article_03.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Unexpected blank area present in the content section above the 'Columns' header, suggesting missing or failed-to-render UI elements.</p>
+        <p><strong>Issues:</strong></p><ul><li>Unexpected blank area inside content</li><li>Potential missing or incomplete rendered card/container above 'Columns'</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Unexpected blank area in opinion tab content section</p>
+                    <p><strong>Jira Description:</strong> A large blank area is visible above the 'Columns' header and below the navigation tabs in the 'Opinion' section, indicating missing or incompletely rendered UI elements.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_89/SC_89_Opinion_Page_Second_Article_04.png" alt="SC_89_Opinion_Page_Second_Article_04.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_89_Opinion_Page_Second_Article_04.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present with no visible layout, rendering, or text issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_89/SC_89_Opinion_Page_Subscriber_Account.png" alt="SC_89_Opinion_Page_Subscriber_Account.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_89_Opinion_Page_Subscriber_Account.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and layout is rendered correctly.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_89/SC_89_Opinion_Page_Subscriber_Account_Article_Via_Comment_Section.png" alt="SC_89_Opinion_Page_Subscriber_Account_Article_Via_Comment_Section.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_89_Opinion_Page_Subscriber_Account_Article_Via_Comment_Section.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are visible and rendering is complete; no visual defects found.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_90 &mdash; SC 90 opinionPage lightTheme</h3>
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Cartoon_Section_01_LightTheme.png" alt="SC_90_Cartoon_Section_01_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_90_Cartoon_Section_01_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Content placeholders are visible, indicating that the content has not loaded and the page is incomplete.</p>
+        <p><strong>Issues:</strong></p><ul><li>Content placeholders visible</li><li>Incomplete content rendering</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Content not loaded – placeholders visible</p>
+                    <p><strong>Jira Description:</strong> The Cartoon section screen displays content placeholders instead of real content, indicating a loading or content rendering issue.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Cartoon_Section_02_LightTheme.png" alt="SC_90_Cartoon_Section_02_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Cartoon_Section_02_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and correctly rendered. No visible defects in layout, text, images, or navigation.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Cartoon_Section_03_LightTheme.png" alt="SC_90_Cartoon_Section_03_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Cartoon_Section_03_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are rendered. No visible UI defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Cartoon_Section_04_LightTheme.png" alt="SC_90_Cartoon_Section_04_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Cartoon_Section_04_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present with correct rendering, alignment, and no visible defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Cartoon_Section_05_LightTheme.png" alt="SC_90_Cartoon_Section_05_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Cartoon_Section_05_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> No visible UI defects. Layout is correctly rendered and all expected components are visible.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Cartoon_Section_06_LightTheme.png" alt="SC_90_Cartoon_Section_06_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Cartoon_Section_06_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present and correctly rendered. No visible layout, text, rendering, or functional UI defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Cartoon_Section_07_LightTheme.png" alt="SC_90_Cartoon_Section_07_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Cartoon_Section_07_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and properly rendered. No visible layout or rendering defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Cartoon_Section_08_LightTheme.png" alt="SC_90_Cartoon_Section_08_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Cartoon_Section_08_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered correctly. No visible UI defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Opinion_Page_Article_01_LightTheme.png" alt="SC_90_Opinion_Page_Article_01_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_90_Opinion_Page_Article_01_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Card in 'Cartoon' section is visibly cropped on the right side, cutting off both image and text.</p>
+        <p><strong>Issues:</strong></p><ul><li>Cropped card in 'Cartoon' section</li><li>Image and text in 'Cartoon' card cut off on the right</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Cartoon section card is cropped on the right</p>
+                    <p><strong>Jira Description:</strong> The 'Cartoon' section card is visibly cropped on the right side, cutting off both the cartoon image and its corresponding text. This indicates a layout rendering defect.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Opinion_Page_Article_02_LightTheme.png" alt="SC_90_Opinion_Page_Article_02_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_90_Opinion_Page_Article_02_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> There is a large blank area near the top of the screen inside the content, with only the 'SEE MORE' text visible. This suggests missing or incomplete UI rendering.</p>
+        <p><strong>Issues:</strong></p><ul><li>Unexpected blank area inside application content</li><li>Possible incomplete or missing UI components</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Blank area visible at top of Opinion tab content</p>
+                    <p><strong>Jira Description:</strong> A large blank area is visible near the top of the content in the Opinion tab above the Columns section, with only the 'SEE MORE' text present, indicating a rendering or missing content defect.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Opinion_Page_Article_03_LightTheme.png" alt="SC_90_Opinion_Page_Article_03_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Opinion_Page_Article_03_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present. No visible UI defects, misalignment, overlap, or rendering issues detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Opinion_Page_Article_04_LightTheme.png" alt="SC_90_Opinion_Page_Article_04_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_90_Opinion_Page_Article_04_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Content placeholders are visible, indicating the content did not render and is stuck loading.</p>
+        <p><strong>Issues:</strong></p><ul><li>Content placeholders visible</li><li>Article images and texts not rendered</li><li>Screen appears stuck on loading state</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Columns screen stuck with content placeholders</p>
+                    <p><strong>Jira Description:</strong> The Columns screen displays only content placeholders for articles and images, with no real content loaded, indicating a failure to render actual content.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Opinion_Page_Article_05_LightTheme.png" alt="SC_90_Opinion_Page_Article_05_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Opinion_Page_Article_05_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No visible layout, rendering, or text defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Opinion_Page_Article_06_LightTheme.png" alt="SC_90_Opinion_Page_Article_06_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Opinion_Page_Article_06_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are visible and rendered correctly without any layout or rendering issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Opinion_Page_Article_07_LightTheme.png" alt="SC_90_Opinion_Page_Article_07_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Opinion_Page_Article_07_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present, layout is correct, and there are no visible UI defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Opinion_Page_Article_08_LightTheme.png" alt="SC_90_Opinion_Page_Article_08_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Opinion_Page_Article_08_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI elements are rendered correctly and no visible defects are present.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Opinion_Page_Article_09_LightTheme.png" alt="SC_90_Opinion_Page_Article_09_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Opinion_Page_Article_09_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No evidence of missing, cropped, overlapping, or broken UI. Layout appears complete.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Opinion_Page_Article_10_LightTheme.png" alt="SC_90_Opinion_Page_Article_10_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Opinion_Page_Article_10_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All visible UI elements are fully rendered, well aligned, and no layout or rendering defects are present.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Opinion_Page_Article_11_LightTheme.png" alt="SC_90_Opinion_Page_Article_11_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Opinion_Page_Article_11_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present, layout is correct, and there are no visible rendering, alignment, or text issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Opinion_Page_Article_12_LightTheme.png" alt="SC_90_Opinion_Page_Article_12_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Opinion_Page_Article_12_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered correctly with no visible defects. Layout, navigation, images, and spacing appear complete and as expected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Opinion_Page_Article_13_LightTheme.png" alt="SC_90_Opinion_Page_Article_13_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Opinion_Page_Article_13_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and properly aligned. No visible rendering, layout, or text issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Opinion_Page_Article_14_LightTheme.png" alt="SC_90_Opinion_Page_Article_14_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Opinion_Page_Article_14_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and no visual defects are observed. Layout, alignment, and rendering are correct.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Opinion_Page_Article_15_LightTheme.png" alt="SC_90_Opinion_Page_Article_15_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Opinion_Page_Article_15_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present, no visible layout, rendering, or text issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_90/SC_90_Opinion_Page_LightTheme.png" alt="SC_90_Opinion_Page_LightTheme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_90_Opinion_Page_LightTheme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present, layout is complete, and there are no visible rendering or alignment issues.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_02 &mdash; SC 02 Verify Home Trending page for subscriber</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_02/Home/SC02_Home_page_bottom.png" alt="SC02_Home_page_bottom.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC02_Home_page_bottom.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_02/Home/SC02_Home_page_middle.png" alt="SC02_Home_page_middle.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC02_Home_page_middle.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and layout is complete. No visible UI defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_02/Home/SC02_Home_page_middle_1.png" alt="SC02_Home_page_middle_1.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC02_Home_page_middle_1.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and properly rendered; no visible layout, rendering, or text issues.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_02/Home/SC02_Home_page_middle_2.png" alt="SC02_Home_page_middle_2.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC02_Home_page_middle_2.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are visible and correctly rendered with no obvious UI defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_02/Home/SC02_Home_page_top.png" alt="SC02_Home_page_top.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC02_Home_page_top.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No visible layout, rendering, or text defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_02/Home/SC02_Home_page_top_1.png" alt="SC02_Home_page_top_1.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC02_Home_page_top_1.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and fully rendered. No visible UI defect.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_02/Home/SC02_Home_page_top_3.png" alt="SC02_Home_page_top_3.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC02_Home_page_top_3.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly with no visible defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_02/Trending/SC02_Trending_All_section.png" alt="SC02_Trending_All_section.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC02_Trending_All_section.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and properly rendered. No visible UI defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_02/Trending/SC02_Trending_NEWS_section.png" alt="SC02_Trending_NEWS_section.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC02_Trending_NEWS_section.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and correctly rendered. No visible UI defects.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_04 &mdash; Verify Ads Taboola for anonymous subscriber</h3>
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_04/Subscriber_No_Ads_Article_1.png" alt="Subscriber_No_Ads_Article_1.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> Subscriber_No_Ads_Article_1.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Large blank region under 'Live updates' indicates missing or incomplete content rendering.</p>
+        <p><strong>Issues:</strong></p><ul><li>Unexpected blank area inside content</li><li>Incomplete rendering of Live updates section</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Blank area under Live updates section</p>
+                    <p><strong>Jira Description:</strong> A large unexpected blank region appears below the 'Live updates' heading, suggesting missing or incompletely rendered content in the Live updates section.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_04/Subscriber_No_Ads_Article_2.png" alt="Subscriber_No_Ads_Article_2.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> Subscriber_No_Ads_Article_2.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No visible UI defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_04/Subscriber_No_Ads_Article_3.png" alt="Subscriber_No_Ads_Article_3.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> Subscriber_No_Ads_Article_3.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are fully rendered with no visible defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_04/Subscriber_No_Ads_Article_4.png" alt="Subscriber_No_Ads_Article_4.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> Subscriber_No_Ads_Article_4.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and the layout is rendered completely without any visible defects.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_05 &mdash; SC 05 Premium access for anonymous user</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_05/SC05_premiumpage_nonsubscriber.png" alt="SC05_premiumpage_nonsubscriber.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC05_premiumpage_nonsubscriber.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and rendered correctly. The overlay modal is displayed properly, and there are no visible layout, rendering, or text issues.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_06 &mdash; SC 06 Premium access for subscriber</h3>
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_06/Sc_06_paywall_premium00.png" alt="Sc_06_paywall_premium00.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> Sc_06_paywall_premium00.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Modal overlay (Briefing) covers main content but lacks proper dimming or separation, and appears to interrupt visibility of article content beneath.</p>
+        <p><strong>Issues:</strong></p><ul><li>Modal overlay obstructs main content</li><li>Underlying page content partially visible and readable under modal, causing functional and layout confusion</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Briefing modal overlay improperly interrupts main content</p>
+                    <p><strong>Jira Description:</strong> The 'Briefing' modal overlay does not sufficiently separate itself from the underlying page content, leaving the article content partially visible and readable beneath it. This results in an interrupted layout, causes confusion for the user, and affects overall usability.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_06/SC_06_paywall_premium_02.png" alt="SC_06_paywall_premium_02.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_06_paywall_premium_02.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and fully rendered. No visible defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_06/SC_06_paywall_premium_fails_subscribeIs_present_01.png" alt="SC_06_paywall_premium_fails_subscribeIs_present_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_06_paywall_premium_fails_subscribeIs_present_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present and correctly rendered. No evidence of missing content, layout defects, rendering issues, or overlapping elements.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_07 &mdash; SC 07 Logout function</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_07/SC_AccountPage.png" alt="SC_AccountPage.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_AccountPage.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and properly rendered. No evidence of missing, overlapped, or cropped elements.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>Sc_08 &mdash; Sc 08 Verify Account Subscription details</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/Sc_08/AccountPage/Sc_08_Purchase.png" alt="Sc_08_Purchase.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> Sc_08_Purchase.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and there are no visible layout or rendering defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/Sc_08/AccountPage/Sc_08_SUBSCRIPTIONS.png" alt="Sc_08_SUBSCRIPTIONS.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> Sc_08_SUBSCRIPTIONS.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered correctly without missing elements, overlapping, or rendering issues. The blank area at the bottom is expected after the end of the content list.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_09 &mdash; SC 09 Invalid Credentials Error Handling</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_09/SC_09_InvalidCredentials_Error.png" alt="SC_09_InvalidCredentials_Error.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_09_InvalidCredentials_Error.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are visible and correctly aligned. No UI elements are cropped, overlapped, or missing. Error message displays as expected after incorrect credentials.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_10 &mdash; Empty Field validation on login</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_10/SC_10_empty_credS_error.png" alt="SC_10_empty_credS_error.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_10_empty_credS_error.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are rendered. The empty space below is valid for this type of login screen.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_11 &mdash; Anonymous article navigation</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_11/Sc_011_article00.png" alt="Sc_011_article00.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> Sc_011_article00.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and properly rendered. No layout, rendering, or text defects visible.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_11/Sc_011_article01.png" alt="Sc_011_article01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> Sc_011_article01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Advertisement is visible below the paywall on a premium/subscriber screen where ads should not appear.</p>
+        <p><strong>Issues:</strong></p><ul><li>Advertisement visible below paywall</li><li>Ads should not be shown on paywalled/subscriber screens</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement visible below paywall for subscriber</p>
+                    <p><strong>Jira Description:</strong> An advertisement is displayed below the 'Keep reading — free for 3 days' paywall. Ads should not be visible on screens prompting for subscriber content, as these are premium experiences.</p>
+                </div>
+                
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_12 &mdash; Subscriber_Article_Full_Read_Access</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_12/SC_12_Subscriber_Article_page_1.png" alt="SC_12_Subscriber_Article_page_1.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_12_Subscriber_Article_page_1.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered correctly. No visual defects, missing elements, or layout issues are detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_12/SC_12_Subscriber_Article_page_2.png" alt="SC_12_Subscriber_Article_page_2.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_12_Subscriber_Article_page_2.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI elements are rendered correctly with no visible layout, text, or image defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_12/SC_12_Subscriber_Article_page_3.png" alt="SC_12_Subscriber_Article_page_3.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_12_Subscriber_Article_page_3.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All visible UI components appear correctly rendered with no evidence of missing elements, blank regions replacing UI, misalignment, overlap, or rendering defects.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_13 &mdash; Article Share Functionality</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_13/SC_13_share_article.png" alt="SC_13_share_article.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_13_share_article.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> No visible UI defects. Sharing bottom sheet overlays correctly, all text and icons are fully rendered.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_15 &mdash; SC 15 Podcast Section Subscriber account</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_15/SC_15_first_Podcast_playing_the_latest.png" alt="SC_15_first_Podcast_playing_the_latest.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_15_first_Podcast_playing_the_latest.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No visual defects observed.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_15/SC_15_Podcast_Page_00.png" alt="SC_15_Podcast_Page_00.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_15_Podcast_Page_00.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Podcast section shows a blank placeholder and loading skeletons, indicating content failed to render.</p>
+        <p><strong>Issues:</strong></p><ul><li>Blank placeholder in podcast section</li><li>Podcast content did not load</li><li>Incomplete rendering</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Podcast section displays blank placeholder and loading skeletons</p>
+                    <p><strong>Jira Description:</strong> The Podcast tab displays a large blank placeholder and skeleton loaders, indicating that content failed to load or render. This creates an incomplete user experience.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_15/SC_15_Podcast_Page_bottom.png" alt="SC_15_Podcast_Page_bottom.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_15_Podcast_Page_bottom.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI elements are fully rendered, navigation and content containers appear as expected, and no visual defects are present.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_15/SC_15_Podcast_Page_middle_01.png" alt="SC_15_Podcast_Page_middle_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_15_Podcast_Page_middle_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Multiple large placeholder containers are visible indicating incomplete content rendering.</p>
+        <p><strong>Issues:</strong></p><ul><li>Visible loading placeholders</li><li>Content failed to render</li><li>App appears stuck in loading state</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Podcast screen displays loading placeholders and fails to render content</p>
+                    <p><strong>Jira Description:</strong> On the Podcast screen, multiple large areas show loading placeholders instead of the actual content, indicating that the UI did not render expected data. Content appears missing, and the screen seems stuck in a loading state.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_15/SC_15_Podcast_Page_top_01.png" alt="SC_15_Podcast_Page_top_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_15_Podcast_Page_top_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Multiple placeholder elements are visible, indicating that screen content has not fully loaded or rendered.</p>
+        <p><strong>Issues:</strong></p><ul><li>Placeholder elements visible</li><li>Content appears missing or stuck in loading state</li><li>Incomplete rendering of podcast screen</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Podcast screen displays placeholders and fails to render content</p>
+                    <p><strong>Jira Description:</strong> The Podcast tab displays multiple placeholder elements instead of actual content, indicating a rendering or loading defect. The UI appears incomplete and should display loaded cards or podcasts rather than placeholders.</p>
+                </div>
+                
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_16 &mdash; SC 16 login with appleid</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_16/SC_16_Apple_signin_page.png" alt="SC_16_Apple_signin_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_16_Apple_signin_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. The empty space below is valid as the login page content has ended.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_17 &mdash; SC 17 sigin with google Account</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_17/Google_Account_Selection.png" alt="Google_Account_Selection.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> Google_Account_Selection.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and correctly rendered. No visual defects are visible.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_17/SC_17_google_signin_page.png" alt="SC_17_google_signin_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_17_google_signin_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and correctly rendered. Empty space below is valid for a login screen.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_18 &mdash; SC 18 Create New Account Option</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_18/SC_18_intialSetupScreen_01.png" alt="SC_18_intialSetupScreen_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_18_intialSetupScreen_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present, layout is complete, and there are no visible defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_18/SC_18_SignUp_page.png" alt="SC_18_SignUp_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_18_SignUp_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and aligned correctly. No visible UI defects.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_19 &mdash; ad_navigation</h3>
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_19/SC_19_Ad_Page_03.png" alt="SC_19_Ad_Page_03.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_19_Ad_Page_03.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Blank white area where Taboola content should be rendered; indicates an incomplete ad or content rendering.</p>
+        <p><strong>Issues:</strong></p><ul><li>Blank white area</li><li>Empty advertisement placeholder</li><li>Incomplete Taboola content rendering</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Blank white area and incomplete rendering for Taboola ad</p>
+                    <p><strong>Jira Description:</strong> A large blank white region is shown where Taboola ad content should render, indicating either a rendering issue or a missing advertisement placeholder.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_19/SC_19_Ad_Page_04.png" alt="SC_19_Ad_Page_04.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_19_Ad_Page_04.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are rendered correctly with no visual defects.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_20 &mdash; SC 20 Signup Option Validation</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_20/SC_20_SignUp_page.png" alt="SC_20_SignUp_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_20_SignUp_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present, layout is complete, and there are no visible UI defects.</p>
+        
+        
+    </div>
+</div>
+</div>
+<div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="">
+</div>
+
+<div class="footer">
+Generated by Automation Framework with AI Visual Analysis
+</div>
+
+<script>
+function toggleFailuresOnly() {
+    var onlyFailures = document.getElementById('failuresOnly').checked;
+    var findings = document.querySelectorAll('.finding');
+    findings.forEach(function (el) {
+        if (onlyFailures) {
+            el.style.display = (el.getAttribute('data-status') === 'FAIL') ? 'flex' : 'none';
+        } else {
+            el.style.display = 'flex';
+        }
+    });
+}
+
+function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+}
+</script>
+
+</body>
+
+</html>

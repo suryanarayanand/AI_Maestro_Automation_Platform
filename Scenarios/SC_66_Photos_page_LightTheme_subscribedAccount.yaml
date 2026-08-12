@@ -1,0 +1,179 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - light_theme
+  - photos
+  - account
+  - theme
+---
+# Photos page LightTheme subscribedAccount (SC-66).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Verify Logged-In Account
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+# Navigate to Appearance Settings
+- extendedWaitUntil:
+    visible: "Account"
+    timeout: 15000
+- tapOn: "Account"
+- extendedWaitUntil:
+    visible: "Appearance"
+    timeout: 15000
+- tapOn: "Appearance"
+
+# Verify Change Theme Option
+- assertVisible: "Light\nMode"
+- tapOn: "Light\nMode"
+- back
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Navigate to Photos Section
+- extendedWaitUntil:
+    visible: "Photos"
+    timeout: 15000
+- tapOn: "Photos"
+
+# Article Validation
+- takeScreenshot: "Screenshots/SC_66/SC_66_Photos_Page"
+- runFlow:
+    when:
+      visible:
+        text: ".*Request timeout.*"
+    commands:
+      - takeScreenshot: "Screenshots/SC_66/SC_66_Photos_Page_Request_Timeout"
+      - assertNotVisible:
+          text: ".*Request timeout.*"
+- repeat:
+    times: 2
+    commands:
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_66/SC_66_Photos_Page_01"
+- repeat:
+    times: 1
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "SHOW MORE"
+          commands:
+            - tapOn: "SHOW MORE"
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_66/SC_66_Photos_Page_02"
+- repeat:
+    times: 2
+    commands:
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_66/SC_66_Photos_Page_04"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_66/SC_66_Photos_Page_05"
+- repeat:
+    times: 1
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "SHOW MORE"
+          commands:
+            - tapOn: "SHOW MORE"
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_66/SC_66_Photos_Page_06"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_66/SC_66_Photos_Page_07"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_66/SC_66_Photos_Page_08"
+
+# Open Specific Article
+- repeat:
+    times: 15
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "The hunger for stability"
+          commands:
+            - tapOn: "The hunger for stability"
+      - swipe:
+          direction: DOWN
+- takeScreenshot: "Screenshots/SC_66/SC_66_The_Hunger_For_Stability"
+
+# Navigate Back
+- back
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Navigate to Photos Section
+- extendedWaitUntil:
+    visible: "Photos"
+    timeout: 15000
+- tapOn: "Photos"
+- runFlow:
+    when:
+      visible:
+        text: ".*Request timeout.*"
+    commands:
+      - takeScreenshot: "Screenshots/SC_66/SC_66_Photos_Page_Request_Timeout"
+      - assertNotVisible:
+          text: ".*Request timeout.*"
+
+# Open Specific Article
+- repeat:
+    times: 15
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "El Nino effect: Challenges to adaptation and resilience"
+          commands:
+            - tapOn: "El Nino effect: Challenges to adaptation and resilience"
+      - swipe:
+          direction: DOWN
+- takeScreenshot: "Screenshots/SC_66/SC_66_El_Nino_Article_01"
+- swipe:
+    direction: LEFT
+- takeScreenshot: "Screenshots/SC_66/SC_66_El_Nino_Article_02"
+- swipe:
+    direction: LEFT
+- takeScreenshot: "Screenshots/SC_66/SC_66_El_Nino_Article_03"
+- swipe:
+    direction: LEFT
+- takeScreenshot: "Screenshots/SC_66/SC_66_El_Nino_Article_04"
+
+# Close Application
+- killApp

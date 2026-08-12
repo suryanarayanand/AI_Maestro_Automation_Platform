@@ -1,0 +1,73 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_85_Editorial_Page_specific_article_Subscribed_Account
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Run ../Common/LOGIN.yaml...
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "Email" is visible... COMPLETED
+  Tap on "Email"... COMPLETED
+  Input text product.testing@thehindu.co.in... COMPLETED
+  Hide Keyboard... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "NEXT.*|Next.*|HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT.*LOGIN"... COMPLETED
+    Assert that "Email" is visible... COMPLETED
+    Tap on "Email"... COMPLETED
+    Input text product.testing@thehindu.co.in... COMPLETED
+    Hide Keyboard... COMPLETED
+    Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+  Assert that "NEXT.*|Next.*" is visible... COMPLETED
+  Tap on "NEXT.*|Next.*"... COMPLETED
+  Assert that "password" is visible... COMPLETED
+  Tap on "password"... COMPLETED
+  Input text Test@123... COMPLETED
+  Hide Keyboard... COMPLETED
+  Assert that "LOGIN.*" is visible... COMPLETED
+  Tap on "LOGIN.*"... COMPLETED
+  Assert that "Home" is visible... COMPLETED
+Run ../Common/LOGIN.yaml... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Assert that "Editorial" is visible... COMPLETED
+Tap on "Editorial"... COMPLETED
+Take screenshot Screenshots/SC_85/SC_85_Editorial_Page_Subscribed_Account_01... COMPLETED
+Scroll vertically... COMPLETED
+Tap on point (50%,50%)... COMPLETED
+Run flow when "Summary" is visible...
+  Tap on "Close sheet"... COMPLETED
+Run flow when "Summary" is visible... COMPLETED
+Take screenshot Screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_01... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_02... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_03... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_04... COMPLETED
+Scroll vertically... COMPLETED
+Assert that "Text size" is visible... COMPLETED
+Wait for animation to end... COMPLETED
+Assert that "Bookmark" is visible... COMPLETED
+Assert that "Share" is visible... COMPLETED
+Assert that "Comment" is visible... COMPLETED
+Repeat 8 times...
+  Swiping in DOWN direction in 400 ms... COMPLETED
+Repeat 8 times... COMPLETED
+Repeat 30 times...
+  Assert that "Image for Taboola Advertising Unit" is not visible... COMPLETED
+  Scroll vertically... COMPLETED
+  Take screenshot Screenshots/SC_85/SC_85_Taboola_Advertisement_Verification... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 30 times... COMPLETED
+
+
+===== STDERR =====
+

@@ -1,0 +1,134 @@
+{
+    "suite": {
+        "total": 6,
+        "passed": 2,
+        "failed": 4,
+        "not_found": 0,
+        "pass_rate": 33.33
+    },
+    "results": [
+        {
+            "id": "SC_27_EASY_DOWN",
+            "module": "Subscriber Games",
+            "name": "Easy Down",
+            "status": "FAIL",
+            "duration": 105.61,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Remaininggames_Job_83_20260807_110919\\SC_27_EASY_DOWN.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "SC_27_CRYPTIC_CROSSWORD",
+            "module": "Subscriber Games",
+            "name": "Cryptic Crossword",
+            "status": "PASS",
+            "duration": 93.84,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Remaininggames_Job_83_20260807_110919\\SC_27_CRYPTIC_CROSSWORD.log",
+            "screenshots": [
+                "screenshots/SC_27_CRYPTIC_CROSSWORD/SC_27_Cryptic_Crossword.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and properly aligned. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Cryptic_Crossword.png",
+                    "image_path": "screenshots/SC_27_CRYPTIC_CROSSWORD/SC_27_Cryptic_Crossword.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27_WORD_ROW",
+            "module": "Subscriber Games",
+            "name": "Word Row",
+            "status": "FAIL",
+            "duration": 112.13,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Remaininggames_Job_83_20260807_110919\\SC_27_WORD_ROW.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "SC_27_WORD_FLOWER",
+            "module": "Subscriber Games",
+            "name": "Word Flower",
+            "status": "FAIL",
+            "duration": 113.97,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Remaininggames_Job_83_20260807_110919\\SC_27_WORD_FLOWER.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "SC_27_WORD_SEARCH",
+            "module": "Subscriber Games",
+            "name": "Word Search",
+            "status": "PASS",
+            "duration": 100.21,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Remaininggames_Job_83_20260807_110919\\SC_27_WORD_SEARCH.log",
+            "screenshots": [
+                "screenshots/SC_27_WORD_SEARCH/SC_27_Word_Search.png"
+            ],
+            "ai_pass": 0,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Several words in the word list are visibly cut off on the right side. The text is cropped, making some words unreadable.",
+                    "issues": [
+                        "Cropped text in word list",
+                        "Some words cut off on the right"
+                    ],
+                    "jira_title": "Word list items are cropped on the right side",
+                    "jira_description": "The word list boxes on the bottom of the screen have visibly cropped text on the right edge, causing several search words to be unreadable. This is a UI rendering defect.",
+                    "image": "SC_27_Word_Search.png",
+                    "image_path": "screenshots/SC_27_WORD_SEARCH/SC_27_Word_Search.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27_NEWS_QUIZ",
+            "module": "Subscriber Games",
+            "name": "News Quiz",
+            "status": "FAIL",
+            "duration": 173.16,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Remaininggames_Job_83_20260807_110919\\SC_27_NEWS_QUIZ.log",
+            "screenshots": [
+                "screenshots/SC_27_NEWS_QUIZ/SC_27_Word_Flower.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and aligned. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Word_Flower.png",
+                    "image_path": "screenshots/SC_27_NEWS_QUIZ/SC_27_Word_Flower.png"
+                }
+            ]
+        }
+    ]
+}

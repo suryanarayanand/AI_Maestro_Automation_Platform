@@ -1,0 +1,9 @@
+appId: com.mobstac.thehindu
+tags:
+  - light_theme
+  - business
+  - theme
+---
+# Business page lightTheme (SC-103).
+- launchApp:
+    clearState: true

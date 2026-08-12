@@ -1,0 +1,21 @@
+appId: com.mobstac.thehindu
+tags:
+  - common
+  - subscriber
+  - games
+---
+- launchApp:
+    clearState: true
+- runFlow: LOGIN.yaml
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- tapOn:
+    id: "nav_games"
+- extendedWaitUntil:
+    visible:
+      id: "screen_games"
+    timeout: 20000
+- assertVisible:
+    id: "screen_games"

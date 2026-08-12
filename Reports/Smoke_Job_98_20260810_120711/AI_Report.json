@@ -1,0 +1,199 @@
+{
+    "suite": {
+        "total": 5,
+        "passed": 4,
+        "failed": 1,
+        "not_found": 0,
+        "pass_rate": 80.0
+    },
+    "results": [
+        {
+            "id": "COMPLEX_005",
+            "module": "AI Generated",
+            "name": "Home to Games and Back Navigation",
+            "status": "PASS",
+            "duration": 50.95,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_98_20260810_120711\\COMPLEX_005.log",
+            "screenshots": [
+                "screenshots/COMPLEX_005/COMPLEX_005_games_page_from_bottom_navigation.png",
+                "screenshots/COMPLEX_005/COMPLEX_005_home_page_back_navigation.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI elements are fully rendered without any visible defects or missing content.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_005_games_page_from_bottom_navigation.png",
+                    "image_path": "screenshots/COMPLEX_005/COMPLEX_005_games_page_from_bottom_navigation.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and the layout is rendered completely without defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_005_home_page_back_navigation.png",
+                    "image_path": "screenshots/COMPLEX_005/COMPLEX_005_home_page_back_navigation.png"
+                }
+            ]
+        },
+        {
+            "id": "COMPLEX_004",
+            "module": "AI Generated",
+            "name": "Games Landing and Easy Down Listing",
+            "status": "PASS",
+            "duration": 93.73,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_98_20260810_120711\\COMPLEX_004.log",
+            "screenshots": [
+                "screenshots/COMPLEX_004/COMPLEX_004_easy_down_destination.png",
+                "screenshots/COMPLEX_004/COMPLEX_004_scroll_down_and_games_catalogue.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Large blank white region indicates incomplete rendering or missing content in the main area of the application.",
+                    "issues": [
+                        "Blank white area inside application content",
+                        "Missing expected screen content"
+                    ],
+                    "jira_title": "Screen displays blank white area with missing content",
+                    "jira_description": "A large blank white region is visible on the screen below the toolbar, indicating that main content is missing or failed to render.",
+                    "image": "COMPLEX_004_easy_down_destination.png",
+                    "image_path": "screenshots/COMPLEX_004/COMPLEX_004_easy_down_destination.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and properly rendered with no evidence of layout, rendering, or text issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_004_scroll_down_and_games_catalogue.png",
+                    "image_path": "screenshots/COMPLEX_004/COMPLEX_004_scroll_down_and_games_catalogue.png"
+                }
+            ]
+        },
+        {
+            "id": "COMPLEX_003",
+            "module": "AI Generated",
+            "name": "Dark Mode Appearance Validation",
+            "status": "FAIL",
+            "duration": 70.3,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_98_20260810_120711\\COMPLEX_003.log",
+            "screenshots": [
+                "screenshots/COMPLEX_003/COMPLEX_003_dark_mode_enabled.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements for the Appearance settings screen are present and layout is correct. No evidence of rendering issues, missing content, or alignment problems.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_003_dark_mode_enabled.png",
+                    "image_path": "screenshots/COMPLEX_003/COMPLEX_003_dark_mode_enabled.png"
+                }
+            ]
+        },
+        {
+            "id": "COMPLEX_002",
+            "module": "AI Generated",
+            "name": "Subscriber Sudoku Navigation",
+            "status": "PASS",
+            "duration": 86.61,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_98_20260810_120711\\COMPLEX_002.log",
+            "screenshots": [
+                "screenshots/COMPLEX_002/COMPLEX_002_games_page_sudoku.png",
+                "screenshots/COMPLEX_002/COMPLEX_002_sudoku_landing_page.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and fully rendered. No obvious UI defects are visible.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_002_games_page_sudoku.png",
+                    "image_path": "screenshots/COMPLEX_002/COMPLEX_002_games_page_sudoku.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "There is a text typo in the description ('coumns' instead of 'columns').",
+                    "issues": [
+                        "Typo in description: 'coumns' should be 'columns'"
+                    ],
+                    "jira_title": "Typo in Sudoku puzzle description",
+                    "jira_description": "The description under 'Sudoko' contains a typo: 'row,coumns' should be 'row,columns'.",
+                    "image": "COMPLEX_002_sudoku_landing_page.png",
+                    "image_path": "screenshots/COMPLEX_002/COMPLEX_002_sudoku_landing_page.png"
+                }
+            ]
+        },
+        {
+            "id": "COMPLEX_001",
+            "module": "AI Generated",
+            "name": "Anonymous Home and Hamburger Navigation",
+            "status": "PASS",
+            "duration": 47.96,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_98_20260810_120711\\COMPLEX_001.log",
+            "screenshots": [
+                "screenshots/COMPLEX_001/COMPLEX_001_hamburger_navigation_menu.png",
+                "screenshots/COMPLEX_001/COMPLEX_001_home_closing_menu.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present, no visual defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_001_hamburger_navigation_menu.png",
+                    "image_path": "screenshots/COMPLEX_001/COMPLEX_001_hamburger_navigation_menu.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and fully rendered. No visible defects identified.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_001_home_closing_menu.png",
+                    "image_path": "screenshots/COMPLEX_001/COMPLEX_001_home_closing_menu.png"
+                }
+            ]
+        }
+    ]
+}

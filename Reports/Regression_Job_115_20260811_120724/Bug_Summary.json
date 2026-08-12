@@ -1,0 +1,657 @@
+{
+    "suite": "Regression",
+    "execution_time": 3946.81,
+    "summary": {
+        "total": 20,
+        "passed": 4,
+        "failed": 16,
+        "critical": 16,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.813",
+            "version_code": "579"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "The combined Maestro execution and cross-device screenshot AI evidence identify both functional and severe visual failures affecting high-visibility app areas. Multiple core user journeys failed functionally (SC_80, SC_81, SC_86, SC_87, SC_88, SC_89, SC_90, SC_93, SC_94, SC_95, SC_96, SC_97), with critical visual findings (blank content containers, overlapping/obscured content, rendering artifacts, broken advertisement banners, and persistent loading placeholders) confirmed by screenshot AI analysis. No significant noise from dynamic content or isolated cosmetic issues; findings are consistent and reproducible across scenarios.",
+        "release_recommendation": "Blocker – Release not recommended until root cause of widespread rendering and functional test failures are identified and addressed. Critical user experience and content integrity are compromised.",
+        "top_risks": [
+            "Core workflows are functionally broken (multiple test failures).",
+            "Blank/empty advertisement containers reduce monetization and degrade visual experience.",
+            "Advertisement banners overlapping or obscuring app content causes major layout corruption.",
+            "Rendering artifacts such as warning icons and placeholders persist in production views.",
+            "Content loading states are stuck, resulting in visible placeholder cards and incomplete data.",
+            "Rendering issues are consistent and repeatable across flows, indicating systemic instability."
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_80",
+            "scenario_name": "SC 80 World page article subsscribedAccount",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 106.99,
+            "log_file": "SC_80.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_115_20260811_120724\\SC_80.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "SC_81",
+            "scenario_name": "SC 81 World page article Anonymous Account",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 64.27,
+            "log_file": "SC_81.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_115_20260811_120724\\SC_81.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "SC_82",
+            "scenario_name": "SC 82 EditorialPage Anonymous acc",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 104.12,
+            "log_file": "SC_82.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_115_20260811_120724\\SC_82.log",
+            "screenshots": [
+                "screenshots/SC_82/SC_82_Editorial_Page_Image_for_Taboola_Advertising_Unit.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_01.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_02.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_03.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_04.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_05.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_06.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_07.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_08.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_09.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_10.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_11.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_12.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_13.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_14.png",
+                "screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_15.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Blank advertisement container is visible above the advertisement banner.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Empty advertisement placeholder"
+                    ]
+                },
+                {
+                    "reason": "Blank advertisement container is visible, indicating incomplete rendering where an ad should be displayed.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Empty advertisement placeholder"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-004",
+            "scenario_id": "SC_84",
+            "scenario_name": "SC 84 Editorial Page specific article anonymous",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 199.6,
+            "log_file": "SC_84.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_115_20260811_120724\\SC_84.log",
+            "screenshots": [
+                "screenshots/SC_84/SC_84_Editorial_Page_Anonymous_Account_01.png",
+                "screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_01.png",
+                "screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_02.png",
+                "screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_03.png",
+                "screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_04.png",
+                "screenshots/SC_84/SC_84_Taboola_Ad_undefined.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Large blank area present in the advertisement container, indicating incomplete rendering or a missing ad.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Large empty space under ADVERTISEMENT label"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-005",
+            "scenario_id": "SC_86",
+            "scenario_name": "SC 86 Editorial Page anonymous light theme",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 73.42,
+            "log_file": "SC_86.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_115_20260811_120724\\SC_86.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-006",
+            "scenario_id": "SC_87",
+            "scenario_name": "SC 87 Editorial Page anonymous DarkTheme",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 125.57,
+            "log_file": "SC_87.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_115_20260811_120724\\SC_87.log",
+            "screenshots": [
+                "screenshots/SC_87/SC_87_Editorial_Page_Anonymous_Account_DarkTheme_01.png",
+                "screenshots/SC_87/SC_87_Editorial_Page_Anonymous_Account_DarkTheme_02.png",
+                "screenshots/SC_87/SC_87_Editorial_Page_Anonymous_Account_DarkTheme_03.png",
+                "screenshots/SC_87/SC_87_Editorial_Page_Anonymous_Account_DarkTheme_04.png",
+                "screenshots/SC_87/SC_87_Editorial_Page_Anonymous_Account_DarkTheme_05.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-007",
+            "scenario_id": "SC_88",
+            "scenario_name": "SC 88 Opinion Article Navigation Interaction Login Validation",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 71.4,
+            "log_file": "SC_88.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_115_20260811_120724\\SC_88.log",
+            "screenshots": [
+                "screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account.png",
+                "screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account_Article_Via_Comment_Section.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-008",
+            "scenario_id": "SC_89",
+            "scenario_name": "SC 89 Opinion Article EndToEnd Subscriber Feature Validation",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 108.05,
+            "log_file": "SC_89.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_115_20260811_120724\\SC_89.log",
+            "screenshots": [
+                "screenshots/SC_89/SC_89_Opinion_Page_Subscriber_Account.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-009",
+            "scenario_id": "SC_90",
+            "scenario_name": "SC 90 opinionPage lightTheme",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Screenshot AI",
+            "execution_time": 143.81,
+            "log_file": "SC_90.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_115_20260811_120724\\SC_90.log",
+            "screenshots": [
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_01_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_02_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_03_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_04_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_Article_05_LightTheme.png",
+                "screenshots/SC_90/SC_90_Opinion_Page_LightTheme.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run",
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Large unexpected blank area appears below the tab bar and above the 'SEE MORE' button indicating missing or failed content rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Unexpected blank area inside application content",
+                        "Possible missing cards or content",
+                        "Broken or incomplete rendering above 'SEE MORE'"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-010",
+            "scenario_id": "SC_91",
+            "scenario_name": "SC 91 Sports page anonymous account",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 691.22,
+            "log_file": "SC_91.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_115_20260811_120724\\SC_91.log",
+            "screenshots": [
+                "screenshots/SC_91/SC_91_Advertisement.png",
+                "screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_01.png",
+                "screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_02.png",
+                "screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_03.png",
+                "screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_04.png",
+                "screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_05.png",
+                "screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_06.png",
+                "screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_07.png",
+                "screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_08.png",
+                "screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_09.png",
+                "screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_10.png",
+                "screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_11.png",
+                "screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_12.png",
+                "screenshots/SC_91/SC_91_SportsPage_Anonymous_Account_13.png",
+                "screenshots/SC_91/SC_91_Support_Journalism_Popup_undefined.png",
+                "screenshots/SC_91/SC_91_Taboola_Ad_undefined.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Advertisement banner is visibly broken with corrupted rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Broken advertisement rendering",
+                        "Corrupted advertisement banner"
+                    ]
+                },
+                {
+                    "reason": "An advertisement banner is overlapping and partially covering the Football section content.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement overlaps content",
+                        "Partially hidden Football card"
+                    ]
+                },
+                {
+                    "reason": "Advertisement overlaps with the 'Tennis' article content, causing a layout/rendering defect.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement overlays/obscures article content",
+                        "Broken layout"
+                    ]
+                },
+                {
+                    "reason": "A large horizontal advertisement is overlapping the 'Athletics' section title and content, causing clear layout corruption.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement overlaps content",
+                        "Layout corruption in content section"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-011",
+            "scenario_id": "SC_93",
+            "scenario_name": "SC 93 Sports page anonymous account article",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 83.66,
+            "log_file": "SC_93.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_115_20260811_120724\\SC_93.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-012",
+            "scenario_id": "SC_94",
+            "scenario_name": "SC 94 Sports page subscribed account article ",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 108.86,
+            "log_file": "SC_94.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_115_20260811_120724\\SC_94.log",
+            "screenshots": [
+                "screenshots/SC_94/SC_94_Sports_Article_Football_Subscribed_Account_01.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-013",
+            "scenario_id": "SC_95",
+            "scenario_name": "SC 95 Sports page light Theme",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Screenshot AI",
+            "execution_time": 174.03,
+            "log_file": "SC_95.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_115_20260811_120724\\SC_95.log",
+            "screenshots": [
+                "screenshots/SC_95/SC_95_SportsPage_LightTheme_01.png",
+                "screenshots/SC_95/SC_95_SportsPage_LightTheme_02.png",
+                "screenshots/SC_95/SC_95_SportsPage_LightTheme_03.png",
+                "screenshots/SC_95/SC_95_SportsPage_LightTheme_04.png",
+                "screenshots/SC_95/SC_95_SportsPage_LightTheme_05.png",
+                "screenshots/SC_95/SC_95_SportsPage_LightTheme_06.png",
+                "screenshots/SC_95/SC_95_SportsPage_LightTheme_07.png",
+                "screenshots/SC_95/SC_95_SportsPage_LightTheme_08.png",
+                "screenshots/SC_95/SC_95_SportsPage_LightTheme_09.png",
+                "screenshots/SC_95/SC_95_SportsPage_LightTheme_10.png",
+                "screenshots/SC_95/SC_95_SportsPage_LightTheme_11.png",
+                "screenshots/SC_95/SC_95_SportsPage_LightTheme_12.png",
+                "screenshots/SC_95/SC_95_SportsPage_LightTheme_13.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run",
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Blank advertisement container is visible, indicating incomplete rendering of the ad.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank advertisement container",
+                        "Empty advertisement placeholder"
+                    ]
+                },
+                {
+                    "reason": "A large blank white region is present between the article list and advertisement indicating incomplete rendering or missing advertisement.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Large blank white region inside content",
+                        "Possible missing advertisement content",
+                        "Interrupted content flow"
+                    ]
+                },
+                {
+                    "reason": "Advertisement banner overlaps with the application content, causing layout corruption.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement banner overlaps with content",
+                        "Layout overlap"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-014",
+            "scenario_id": "SC_96",
+            "scenario_name": "SC 96 subscribeOption from differentPage",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Screenshot AI",
+            "execution_time": 71.35,
+            "log_file": "SC_96.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_115_20260811_120724\\SC_96.log",
+            "screenshots": [
+                "screenshots/SC_96/SC_96_HomePage_Anonymous.png",
+                "screenshots/SC_96/SC_96_HomePage_Subscribe_Click.png",
+                "screenshots/SC_96/SC_96_Monthly_Plan.png",
+                "screenshots/SC_96/SC_96_Yearly_Plan.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run",
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Rendering artifacts are visible in the advertisement area, with two warning icons overlapping the ad content.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Rendering artifacts in advertisement area",
+                        "Warning icons overlapping advertisement"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-015",
+            "scenario_id": "SC_97",
+            "scenario_name": "SC 97 gift a article Subscribed Account",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Screenshot AI",
+            "execution_time": 157.01,
+            "log_file": "SC_97.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_115_20260811_120724\\SC_97.log",
+            "screenshots": [
+                "screenshots/SC_97/SC_97_Opinion_Page_Subscriber_Account.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run",
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Placeholder elements are visible in the article feed area, indicating incomplete content rendering or a loading state stuck.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Placeholder cards visible",
+                        "Partial rendering of article feed",
+                        "Loading state not cleared"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-016",
+            "scenario_id": "SC_99",
+            "scenario_name": "SC 99 Business page anonymous Acc",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 410.78,
+            "log_file": "SC_99.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_115_20260811_120724\\SC_99.log",
+            "screenshots": [
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_01.png",
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_02.png",
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_03.png",
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_04.png",
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_05.png",
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_06.png",
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_07.png",
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_08.png",
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_09.png",
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_10.png",
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_11.png",
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_12.png",
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_13.png",
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_14.png",
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_15.png",
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_16.png",
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_17.png",
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_18.png",
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_19.png",
+                "screenshots/SC_99/SC_99_Business_Page_Anonymous_Account_20.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Empty advertisement placeholder visible below a loaded advertisement banner.",
+                    "severity": "MEDIUM",
+                    "issues": [
+                        "Empty advertisement placeholder below ad banner"
+                    ]
+                },
+                {
+                    "reason": "A broken image icon and large empty area are visible in the advertisement container, indicating a rendering defect.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Broken image in advertisement container",
+                        "Empty advertisement placeholder"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

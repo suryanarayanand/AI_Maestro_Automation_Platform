@@ -1,0 +1,110 @@
+{
+    "suite": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "not_found": 0,
+        "pass_rate": 100.0
+    },
+    "results": [
+        {
+            "id": "SC_102",
+            "module": "Unassigned",
+            "name": "SC 102 Busines Page DarkTheme",
+            "status": "PASS",
+            "duration": 126.54,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_113_20260811_115528\\SC_102.log",
+            "screenshots": [
+                "screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_dark_theme.png",
+                "screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_dark_theme_01.png",
+                "screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_01.png",
+                "screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_02.png",
+                "screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_03.png",
+                "screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_04.png",
+                "screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_05.png"
+            ],
+            "ai_pass": 7,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present and rendered correctly. No visual defects observed.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_102_Business_Page_Subscribed_Account_dark_theme.png",
+                    "image_path": "screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_dark_theme.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI elements are rendered correctly with no visible layout or rendering issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_102_Business_Page_Subscribed_Account_dark_theme_01.png",
+                    "image_path": "screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_dark_theme_01.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and there are no visible layout, text, or rendering defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_102_Business_Page_Subscribed_Account_specific_Article_01.png",
+                    "image_path": "screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_01.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present with no visible defects. Layout, text, and controls render correctly with no overlaps, cropping, or unexpected blank areas.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_102_Business_Page_Subscribed_Account_specific_Article_02.png",
+                    "image_path": "screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_02.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and there are no visible rendering or layout defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_102_Business_Page_Subscribed_Account_specific_Article_03.png",
+                    "image_path": "screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_03.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and properly rendered. No blank regions, overlapping items, or visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_102_Business_Page_Subscribed_Account_specific_Article_04.png",
+                    "image_path": "screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_04.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visual defects or layout issues are visible.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_102_Business_Page_Subscribed_Account_specific_Article_05.png",
+                    "image_path": "screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_05.png"
+                }
+            ]
+        }
+    ]
+}

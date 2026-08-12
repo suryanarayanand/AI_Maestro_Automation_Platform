@@ -1,0 +1,28 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow TH_1181
+Run ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml...
+  Launch app "com.mobstac.thehindu"... COMPLETED
+  Repeat 2 times...
+    Run flow when "Skip" is visible...
+    Run flow when "Skip" is visible... SKIPPED
+    Wait for animation to end... COMPLETED
+  Repeat 2 times... COMPLETED
+  Assert that id: screen_home is visible... COMPLETED
+  Assert that id: screen_home is visible... COMPLETED
+Run ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml... COMPLETED
+Tap on id: nav_home... COMPLETED
+Assert that id: screen_home is visible... COMPLETED
+Swiping in UP direction in 400 ms... COMPLETED
+Swiping in UP direction in 400 ms... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/Generated/TH_1181_scrolled... COMPLETED
+Tap on id: nav_home... COMPLETED
+Wait for animation to end... COMPLETED
+Assert that id: screen_home is visible... COMPLETED
+Take screenshot Screenshots/Generated/TH_1181_reset_top... COMPLETED
+
+
+===== STDERR =====
+

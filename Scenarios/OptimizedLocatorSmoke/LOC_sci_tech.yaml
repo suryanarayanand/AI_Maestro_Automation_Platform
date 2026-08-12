@@ -1,0 +1,35 @@
+appId: com.mobstac.thehindu
+tags:
+  - locator-smoke
+  - sci_tech
+---
+- runFlow: ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml
+- tapOn:
+    id: "nav_menu"
+- extendedWaitUntil:
+    visible:
+      id: "screen_hamburger"
+    timeout: 15000
+- scrollUntilVisible:
+    element:
+      text: "Science"
+    direction: DOWN
+    timeout: 30000
+- tapOn:
+    text: "Science"
+- extendedWaitUntil:
+    visible:
+      text: "Sci-Tech"
+    timeout: 15000
+- tapOn:
+    text: "Sci-Tech"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "screen_section"
+    timeout: 20000
+- assertVisible:
+    id: "screen_section"
+- assertVisible:
+    text: "Sci-Tech"
+- takeScreenshot: "Screenshots/LocatorSmoke/sci_tech_page"

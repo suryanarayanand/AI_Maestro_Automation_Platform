@@ -1,0 +1,37 @@
+appId: com.mobstac.thehindu
+tags:
+  - mobile
+  - maestro
+  - games
+  - bottom-navigation
+  - back-navigation
+  - regression
+---
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- assertVisible:
+    id: "screen_home"
+
+- assertVisible:
+    id: "nav_games"
+
+- takeScreenshot: "Screenshots/Generated/TH_5716_games_tab_visible_on_home"
+
+- tapOn:
+    id: "nav_games"
+
+- assertVisible:
+    id: "screen_games"
+
+- assertVisible:
+    id: "nav_games"
+
+- takeScreenshot: "Screenshots/Generated/TH_5716_games_page_navigation_state"
+
+- back
+
+- assertVisible:
+    id: "screen_home"
+
+- takeScreenshot: "Screenshots/Generated/TH_5716_home_restored_back_navigation"

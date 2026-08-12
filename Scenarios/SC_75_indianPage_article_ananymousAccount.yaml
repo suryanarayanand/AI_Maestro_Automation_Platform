@@ -1,0 +1,182 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - india
+  - account
+  - article
+---
+# indianPage article ananymousAccount (SC-75).
+# Launch App
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "SUBSCRIBE"
+    timeout: 15000
+
+# Navigate to India Section
+- extendedWaitUntil:
+    visible: "India"
+    timeout: 15000
+- tapOn: "India"
+- tapOn:
+    point: 50%,50%
+
+# Verify Article Elements
+- runFlow:
+    when:
+      visible:
+        text: "AI summary"
+    commands:
+      - takeScreenshot: "Screenshots/SC_75/SC_75_AI_Summary"
+- assertVisible:
+    text: "Text size"
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+- extendedWaitUntil:
+    visible: "Listen to article"
+
+# India Article Validation
+- takeScreenshot: "Screenshots/SC_75/SC_75_India_Page_Anonymous_Account_Article_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_75/SC_75_India_Page_Anonymous_Account_Article_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_75/SC_75_India_Page_Anonymous_Account_Article_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_75/SC_75_India_Page_Anonymous_Account_Article_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_75/SC_75_India_Page_Anonymous_Account_Article_05"
+
+# Navigate Through Article
+- repeat:
+    times: 5
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Free Reading Prompt
+- repeat:
+    times: 3
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Keep reading — free for 3 days"
+          commands:
+            - takeScreenshot: "Screenshots/SC_75/SC_75_Keep_Reading_Free_India_Page_Anonymous"
+      - scroll
+
+# Verify Post a Comment Prompt
+- repeat:
+    times: 10
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Post a comment"
+          commands:
+            - takeScreenshot: "Screenshots/SC_75/SC_75_Post_A_Comment_Anonymous"
+      - scroll
+
+# Navigate to Advertisement Section
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Advertisement
+- repeat:
+    times: 10
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "ADVERTISEMENT"
+          commands:
+            - takeScreenshot: "Screenshots/SC_75/SC_75_Advertisement_Anonymous"
+      - scroll
+
+# Navigate to Taboola Advertisement Section
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Taboola Advertisement
+- repeat:
+    times: 10
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Image for Taboola Advertising Unit"
+          commands:
+            - takeScreenshot: "Screenshots/SC_75/SC_75_Taboola_Ad_${TIMESTAMP}"
+      - scroll
+
+# Continue Article Validation
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+- takeScreenshot: "Screenshots/SC_75/SC_75_India_Page_Anonymous_Account_Article_06"
+- scroll
+- takeScreenshot: "Screenshots/SC_75/SC_75_India_Page_Anonymous_Account_Article_07"
+- scroll
+- takeScreenshot: "Screenshots/SC_75/SC_75_India_Page_Anonymous_Account_Article_08"
+- scroll
+- takeScreenshot: "Screenshots/SC_75/SC_75_India_Page_Anonymous_Account_Article_09"
+- scroll
+- takeScreenshot: "Screenshots/SC_75/SC_75_India_Page_Anonymous_Account_Article_10"
+
+# Navigate to Support Journalism Section
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Support Journalism
+- repeat:
+    times: 10
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Support Journalism"
+          commands:
+            - takeScreenshot: "Screenshots/SC_75/SC_75_Support_Journalism"
+      - scroll
+
+# Navigate to Support Journalism Section
+- repeat:
+    times: 20
+    commands:
+      - swipe:
+          direction: DOWN
+- repeat:
+    times: 25
+    commands:
+      - assertNotVisible:
+          text: "Webpage not available"
+      - scroll
+      - takeScreenshot: "Screenshots/SC_74/SC_74_Web_Page_Not_Available"
+      - waitForAnimationToEnd

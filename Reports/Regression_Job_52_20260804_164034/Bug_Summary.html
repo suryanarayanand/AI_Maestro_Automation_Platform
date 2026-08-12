@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Bug Investigation Dashboard</title>
+
+<style>
+.bug-card{
+
+    background:white;
+
+    margin-top:25px;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+.bug-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.bug-body{
+
+    display:flex;
+
+    gap:30px;
+
+    margin-top:20px;
+
+    margin-bottom:20px;
+
+}
+
+.info{
+
+    min-width:140px;
+
+}
+
+.severity{
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+.major{
+
+    background:#f59e0b;
+
+}
+
+.critical{
+
+    background:#dc2626;
+
+}
+
+.minor{
+
+    background:#16a34a;
+
+}
+.screenshot-section{
+
+    margin-top:25px;
+
+}
+
+.bug-image{
+
+    width:350px;
+
+    max-width:100%;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.bug-image:hover{
+
+    transform:scale(1.02);
+
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+
+}
+
+.gallery{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:15px;
+
+}
+
+.gallery-image{
+
+    width:180px;
+
+    border-radius:8px;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.gallery-image:hover{
+
+    transform:scale(1.05);
+
+}
+body{
+    margin:0;
+    padding:0;
+    background:#f5f7fb;
+    font-family:Segoe UI,Arial,sans-serif;
+}
+
+.container{
+    width:95%;
+    margin:auto;
+    padding:20px;
+}
+
+.header{
+    background:#1f2937;
+    color:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.card{
+    background:white;
+    width:180px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.card h2{
+    margin:0;
+    font-size:36px;
+}
+
+.card p{
+    color:#666;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    
+<div class="header">
+
+<h1>🐞 Bug Investigation Dashboard</h1>
+
+<p>
+
+<b>Suite:</b> Regression
+
+&nbsp;&nbsp;&nbsp;
+
+<b>Execution:</b> 191.94 sec
+
+</p>
+
+</div>
+
+
+    
+<div class="cards">
+
+<div class="card">
+<h2>2</h2>
+<p>Total</p>
+</div>
+
+<div class="card">
+<h2>2</h2>
+<p>Failed</p>
+</div>
+
+<div class="card">
+<h2>2</h2>
+<p>Critical</p>
+</div>
+
+<div class="card">
+<h2>0</h2>
+<p>Major</p>
+</div>
+
+<div class="card">
+<h2>0</h2>
+<p>Minor</p>
+</div>
+
+</div>
+
+
+    
+<div class="bug-card">
+<h2>Combined AI Assessment</h2>
+<p><b>Executive summary</b><br>The Maestro test execution surfaced significant issues across both functional and visual verification layers. Scenario SC_12 failed with cross-device visual mismatches, but no specific functional or UI issues were called out by screenshot AI—indicating likely dynamic-content or rendering variances, not core functionality breaks. Scenario SC_16 was cancelled due to a critical functional failure: users encountering an error state see no actionable guidance or navigation, leaving the interface in a blank, unrecoverable state. This represents a severe usability and flow-blocking bug. No spurious noise or benign visual regressions were present.</p>
+<p><b>Release recommendation</b><br>Release not recommended until the critical error-handling and recovery UI issues from SC_16 are remediated.</p>
+<ul><li>Irrecoverable error state with no navigation options (SC_16)</li><li>User abandonment during error experience due to lack of actionable UI (SC_16)</li><li>Potential device- or data-driven visual inconsistency (SC_12), but non-blocking</li></ul><hr>
+<p><b>Reference:</b> Google Pixel 9 Pro — App 2501.20.802</p>
+<p><b>Actual:</b> samsung SM-E066B — App 2501.20.807</p>
+</div>
+
+
+    <h2>Combined Findings</h2>
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-001</h2>
+
+            <h3>SC_12</h3>
+
+            <p>Subscriber_Article_Full_Read_Access</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: FAIL</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            95%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            144.64 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run, Visual
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run, Visual</p>
+
+    <p><b>Screenshot AI findings</b><br>None</p>
+
+    <p><b>Visual findings</b><br><br></p>
+
+
+
+<div class="screenshot-section">
+<h3>Screenshot evidence</h3>
+<p>No screenshot was captured before this failure.</p>
+</div>
+<div class="screenshot-section"><h3>Reference / Actual / Difference</h3><div class="gallery"><img src="D:\AI_Maestro_Automation_Platform\.maestro\screenshots\Baselines\Screenshots\SC_12\SC_12_Subscriber_Article_page.png" class="gallery-image" onclick="window.open('D:\AI_Maestro_Automation_Platform\.maestro\screenshots\Baselines\Screenshots\SC_12\SC_12_Subscriber_Article_page.png','_blank')"><img src="D:\AI_Maestro_Automation_Platform\.maestro\screenshots\Baselines\Screenshots\SC_12\SC_12_Subscriber_Article_page_1.png" class="gallery-image" onclick="window.open('D:\AI_Maestro_Automation_Platform\.maestro\screenshots\Baselines\Screenshots\SC_12\SC_12_Subscriber_Article_page_1.png','_blank')"></div></div>
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-002</h2>
+
+            <h3>SC_16</h3>
+
+            <p>SC 16 login with appleid</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: CANCELLED</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            95%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            41.3 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run, Screenshot AI
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run, Screenshot AI</p>
+
+    <p><b>Screenshot AI findings</b><br>Error state displayed with no guidance or actionable UI provided; large blank area and no navigation or recovery options.</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_16/SC_16_Apple_signin_page.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_16/SC_16_Apple_signin_page.png','_blank')">
+
+<img
+    src="screenshots/SC_16/SC_16_signin_error_via_AppleID.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_16/SC_16_signin_error_via_AppleID.png','_blank')">
+
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_18_Create_New_Account_Option
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Assert that "Save articles to read later" is visible... COMPLETED
+Assert that "Unlock more stories" is visible... COMPLETED
+Take screenshot Screenshots/SC_18/SC_18_intialSetupScreen_01... COMPLETED
+Assert that "CREATE A FREE ACCOUNT" is visible... COMPLETED
+Tap on "CREATE A FREE ACCOUNT"... COMPLETED
+Assert that "thehindu-logo" is visible... COMPLETED
+Assert that "Already have an account? " is visible... COMPLETED
+Assert that "Sign In" is visible... COMPLETED
+Assert that "Sign in with Apple" is visible... COMPLETED
+Assert that "Sign in with Google" is visible... COMPLETED
+Assert that "Sign up" is visible... COMPLETED
+Tap on "Sign up"... COMPLETED
+Take screenshot Screenshots/SC_18/SC_18_SignUp_page... COMPLETED
+Assert that "Email" is visible... COMPLETED
+Assert that "Password" is visible... COMPLETED
+Assert that "I'd like to receive updates and offers from THG via email and messages" is visible... COMPLETED
+Assert that "Stay logged in" is visible... COMPLETED
+Assert that "Contact me via Whatsapp" is visible... COMPLETED
+Assert that "Terms of Use" is visible... COMPLETED
+Assert that "Privacy Policy" is visible... COMPLETED
+Assert that "SIGN UP ?" is visible... COMPLETED
+Tap on "email"... COMPLETED
+Input text random TEXT_EMAIL_ADDRESS... COMPLETED
+Tap on "password"... COMPLETED
+Input text Test@123... COMPLETED
+Tap on point (6%,50%)... COMPLETED
+Input text random NUMBER... COMPLETED
+Tap on "Show password"... COMPLETED
+Assert that "SIGN UP ?" is visible... COMPLETED
+Tap on "SIGN UP ?"... COMPLETED
+Run flow when "Sign up" is visible...
+Run flow when "Sign up" is visible... SKIPPED
+Kill com.mobstac.thehindu... COMPLETED
+
+
+===== STDERR =====
+

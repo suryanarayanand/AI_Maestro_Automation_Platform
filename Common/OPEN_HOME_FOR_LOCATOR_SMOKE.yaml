@@ -1,0 +1,24 @@
+appId: com.mobstac.thehindu
+tags:
+  - common
+  - locator-smoke
+---
+- launchApp:
+    clearState: false
+- repeat:
+    times: 2
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Skip"
+          commands:
+            - tapOn:
+                text: "Skip"
+      - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- assertVisible:
+    id: "screen_home"

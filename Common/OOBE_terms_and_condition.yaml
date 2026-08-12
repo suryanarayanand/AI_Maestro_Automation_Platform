@@ -1,0 +1,10 @@
+appId: com.mobstac.thehindu
+tags:
+  - common
+  - onboarding
+---
+- runFlow:
+    when:
+      visible: "WE VALUE YOUR PRIVACY"
+    commands:
+      - tapOn: "ACCEPT ALL"

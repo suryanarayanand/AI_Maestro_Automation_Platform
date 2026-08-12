@@ -1,0 +1,75 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+---
+# Whats new option subscribed user (SC-21).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+- waitForAnimationToEnd
+
+# Verify What's New Walkthrough
+- runFlow:
+    when:
+      visible:
+        text: "SEE WHAT'S NEW"
+    commands:
+      # Welcome Popup
+      - tapOn: "SEE WHAT'S NEW"
+      # Revamped Home
+      - extendedWaitUntil:
+          visible: ".*Revamped Home.*"
+          timeout: 10000
+      - takeScreenshot: "Screenshots/SC_21/SC_21_01_Revamped_Home_Page"
+      - tapOn:
+          point: 30%,30%
+      # Quick Access Sections
+      - extendedWaitUntil:
+          visible: ".*Quick Access Sections.*"
+          timeout: 10000
+      - takeScreenshot: "Screenshots/SC_21/SC_21_02_Quick_Access"
+      - tapOn:
+          point: 60%,70%
+      # Trending Stories
+      - extendedWaitUntil:
+          visible: ".*Trending Stories.*"
+          timeout: 10000
+      - takeScreenshot: "Screenshots/SC_21/SC_21_03_Trending"
+      - tapOn:
+          point: 50%,50%
+      # Premium
+      - extendedWaitUntil:
+          visible: ".*The Finest of our Reporting.*"
+          timeout: 10000
+      - takeScreenshot: "Screenshots/SC_21/SC_21_04_Premium"
+      - tapOn:
+          point: 50%,50%
+      # eBooks
+      - extendedWaitUntil:
+          visible: ".*eBooks.*"
+          timeout: 10000
+      - takeScreenshot: "Screenshots/SC_21/SC_21_05_Ebooks"
+      - tapOn:
+          point: 50%,50%
+      # TH Games
+      - extendedWaitUntil:
+          visible: ".*TH Games.*"
+          timeout: 10000
+      - takeScreenshot: "Screenshots/SC_21/SC_21_06_TH_Games"
+      - tapOn:
+          point: 50%,50%
+      # More Features
+      - extendedWaitUntil:
+          visible: ".*Looking for more?.*"
+          timeout: 10000
+      - takeScreenshot: "Screenshots/SC_21/SC_21_07_More"
+      - tapOn:
+          point: 50%,50%
+      - waitForAnimationToEnd
+      # Home Page Validation
+      - extendedWaitUntil:
+          visible: "Home"
+          timeout: 10000
+      - takeScreenshot: "Screenshots/SC_21/SC_21_08_Home_Page"

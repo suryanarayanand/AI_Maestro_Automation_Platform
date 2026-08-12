@@ -1,0 +1,158 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - dark_theme
+  - photos
+  - account
+  - theme
+---
+# Photos page darkTheme subscribedAccount (SC-65).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+# Login
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Verify Logged-In Account
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+# Verify Change Theme Option
+- runFlow: ../Common/Dark_theme_changing.yaml
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Navigate to Photos Section
+- extendedWaitUntil:
+    visible: "Photos"
+    timeout: 15000
+- tapOn: "Photos"
+
+# Article Validation
+- takeScreenshot: "Screenshots/SC_65/SC_65_Photos_Page"
+- assertNotVisible:
+    text: ".*Request timeout.*"
+- takeScreenshot: "Screenshots/SC_65/SC_65_Photos_Page_No_Error"
+- repeat:
+    times: 2
+    commands:
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_65/SC_65_Photos_Page_01"
+- repeat:
+    times: 1
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "SHOW MORE"
+          commands:
+            - tapOn: "SHOW MORE"
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_65/SC_65_Photos_Page_02"
+- repeat:
+    times: 2
+    commands:
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_65/SC_65_Photos_Page_04"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_65/SC_65_Photos_Page_05"
+- repeat:
+    times: 1
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "SHOW MORE"
+          commands:
+            - tapOn: "SHOW MORE"
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_65/SC_65_Photos_Page_06"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_65/SC_65_Photos_Page_07"
+- repeat:
+    times: 1
+    commands:
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_65/SC_65_Photos_Page_08"
+
+# Open Specific Article
+- repeat:
+    times: 15
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "The hunger for stability"
+          commands:
+            - tapOn: "The hunger for stability"
+      - swipe:
+          direction: DOWN
+- takeScreenshot: "Screenshots/SC_65/SC_65_The_Hunger_For_Stability"
+
+# Navigate Back
+- back
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Navigate to Photos Section
+- extendedWaitUntil:
+    visible: "Photos"
+    timeout: 15000
+- tapOn: "Photos"
+
+# Open Specific Article
+- repeat:
+    times: 15
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "El Nino effect: Challenges to adaptation and resilience"
+          commands:
+            - tapOn: "El Nino effect: Challenges to adaptation and resilience"
+      - swipe:
+          direction: DOWN
+- takeScreenshot: "Screenshots/SC_65/SC_65_El_Nino_Article_01"
+- swipe:
+    direction: LEFT
+- takeScreenshot: "Screenshots/SC_65/SC_65_El_Nino_Article_02"
+- swipe:
+    direction: LEFT
+- takeScreenshot: "Screenshots/SC_65/SC_65_El_Nino_Article_03"
+- swipe:
+    direction: LEFT
+- takeScreenshot: "Screenshots/SC_65/SC_65_El_Nino_Article_04"
+- scroll
+- assertVisible: "READ FULL ARTICLE"
+- tapOn: "READ FULL ARTICLE"
+- scroll
+- takeScreenshot: "Screenshots/SC_65/SC_65_El_Nino_Article_05"
+
+# Close Application
+- killApp

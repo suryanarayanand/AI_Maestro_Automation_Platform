@@ -1,0 +1,53 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - games
+---
+# Anonymous Games validation (SC-28).
+# Launch App
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- waitForAnimationToEnd
+
+# Navigate to Games Section
+- extendedWaitUntil:
+    visible: "Games"
+    timeout: 15000
+- tapOn: "Games"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_28/SC_28_Games_Page_Anonymous_Account"
+
+# Verify Anonymous User Access
+- retry:
+    maxRetries: 3
+    commands:
+      - assertVisible:
+          text: ".*LOGIN.*"
+
+# Verify Sudoku Subscription Prompt
+- scrollUntilVisible: ".*Sudoku.*"
+- tapOn: ".*Sudoku.*"
+- waitForAnimationToEnd
+- retry:
+    maxRetries: 3
+    commands:
+      - assertVisible:
+          text: ".*Subscribe.*"
+- assertVisible: "Yearly"
+- assertVisible: "Monthly"
+- takeScreenshot: "Screenshots/SC_28/SC_28_Sudoku_Subscription_Prompt"
+
+# Navigate Back
+- back

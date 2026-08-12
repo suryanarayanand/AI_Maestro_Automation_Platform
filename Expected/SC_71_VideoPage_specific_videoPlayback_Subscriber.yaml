@@ -1,0 +1,168 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - video
+---
+# VideoPage specific videoPlayback Subscriber (SC-71).
+# Launch App
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Open Videos Section
+- assertVisible: "Videos"
+- tapOn: "Videos"
+- runFlow:
+    when:
+      visible:
+        text: ".*h ago|.*day.*ago"
+    commands:
+      - tapOn:
+          text: ".*h ago|.*day.*ago"
+
+# Verify Video Playback
+- assertVisible: "Play"
+- tapOn: "Play"
+- takeScreenshot: "Screenshots/SC_71/SC_71_Video_Playback_Play"
+- waitForAnimationToEnd
+
+# Verify Fullscreen
+- doubleTapOn:
+    point: 1%,50%
+- tapOn: "Fullscreen"
+- takeScreenshot: "Screenshots/SC_71/SC_71_Video_Playback_Fullscreen"
+- waitForAnimationToEnd
+- tapOn:
+    point: 1%,39%
+- tapOn: "Exit Fullscreen"
+- takeScreenshot: "Screenshots/SC_71/SC_71_Video_Playback_Exit_Fullscreen"
+- runFlow:
+    when:
+      visible:
+        text: "Replay"
+    commands:
+      - tapOn: "Replay"
+- waitForAnimationToEnd
+
+# Verify Rewind
+- doubleTapOn:
+    point: 1%,50%
+- tapOn: "Rewind 15 seconds"
+- takeScreenshot: "Screenshots/SC_71/SC_71_Video_Playback_Rewind"
+- runFlow:
+    when:
+      visible:
+        text: "Replay"
+    commands:
+      - tapOn: "Replay"
+- waitForAnimationToEnd
+
+# Verify Fast Forward
+- doubleTapOn:
+    point: 1%,50%
+- tapOn: "fast forward 15 seconds"
+- takeScreenshot: "Screenshots/SC_71/SC_71_Video_Playback_Fast_Forward"
+- runFlow:
+    when:
+      visible:
+        text: "Replay"
+    commands:
+      - tapOn: "Replay"
+- waitForAnimationToEnd
+
+# Verify Playback Rate
+- doubleTapOn:
+    point: 1%,50%
+- tapOn: "menu"
+- takeScreenshot: "Screenshots/SC_71/SC_71_Video_Playback_Menu"
+- tapOn:
+    id: "menu_mainmenu_option_playback_rate"
+- takeScreenshot: "Screenshots/SC_71/SC_71_Video_Playback_Menu_Playback_Rate"
+- tapOn: "0.5x"
+- takeScreenshot: "Screenshots/SC_71/SC_71_Video_Playback_Playback_Rate_0.5x"
+- doubleTapOn:
+    point: 1%,50%
+- runFlow:
+    when:
+      visible:
+        text: "Replay"
+    commands:
+      - tapOn: "Replay"
+- waitForAnimationToEnd
+- doubleTapOn:
+    point: 1%,50%
+- tapOn: "menu"
+- tapOn: "Playback Rates"
+- tapOn: "Normal"
+- waitForAnimationToEnd
+- doubleTapOn:
+    point: 1%,50%
+- runFlow:
+    when:
+      visible:
+        text: "Replay"
+    commands:
+      - tapOn: "Replay"
+- waitForAnimationToEnd
+
+# Verify Video Quality
+- doubleTapOn:
+    point: 1%,50%
+- tapOn: "menu"
+- tapOn:
+    id: "menu_mainmenu_option_quality"
+- takeScreenshot: "Screenshots/SC_71/SC_71_Video_Playback_Menu_Quality"
+- tapOn: ".*1080p.*"
+- takeScreenshot: "Screenshots/SC_71/SC_71_Video_Playback_Quality_1080p"
+- waitForAnimationToEnd
+- doubleTapOn:
+    point: 1%,50%
+- runFlow:
+    when:
+      visible:
+        text: "Replay"
+    commands:
+      - tapOn: "Replay"
+- waitForAnimationToEnd
+
+# Pause Video
+- doubleTapOn:
+    point: 1%,50%
+- tapOn: "Pause"
+
+# Additional Validations (Disabled)
+# - tapOn:
+#     text: "Share"
+#     index: 1
+#
+# - takeScreenshot: "Screenshots/SC_71/SC_71_Video_Playback_Share"
+#
+# - back
+#
+# - tapOn:
+#     text: "Text size"
+#     index: 1
+#
+# - takeScreenshot: "Screenshots/SC_71/SC_71_Video_Playback_Text_Size"
+#
+# - tapOn: "CLOSE"
+#
+# - tapOn:
+#     text: "Comment"
+#     index: 1
+#
+# - takeScreenshot: "Screenshots/SC_71/SC_71_Video_Playback_Comment"
+#
+# - tapOn: "Close sheet"
+#
+# - back
+# Close App
+- stopApp

@@ -1,0 +1,209 @@
+appId: com.mobstac.thehindu
+tags:
+  - article
+  - offline
+---
+# Offline cached article (SC-38).
+# Launch App
+- launchApp:
+    clearState: true
+    # stopApp: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Permissions
+- runFlow:
+    when:
+      visible:
+        text: "Allow"
+    commands:
+      - tapOn: "Allow"
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+      - extendedWaitUntil:
+          visible:
+            text: "skip"
+          timeout: 15000
+      - tapOn: "skip"
+
+# Navigate to India Section
+- extendedWaitUntil:
+    visible: "India"
+    timeout: 10000
+- tapOn: "India"
+- waitForAnimationToEnd:
+    timeout: 5000
+
+# Open First Article
+- tapOn:
+    point: 0%,17%
+
+# - runFlow:
+#     when:
+#       visible:
+#         text: "Close"
+#     commands:
+#       - tapOn: "Close"
+- runFlow:
+    when:
+      visible:
+        text: "Summary"
+    commands:
+      - back
+
+# Article Validation (Online)
+- takeScreenshot: "Screenshots/SC_38/SC_38_Article_Online_01"
+- runFlow:
+    when:
+      visible:
+        text: "Close"
+    commands:
+      - tapOn: "Close"
+- scroll
+- takeScreenshot: "Screenshots/SC_38/SC_38_Article_Online_02"
+- swipe:
+    start: 50%,20%
+    end: 50%,80%
+- takeScreenshot: "Screenshots/SC_38/SC_38_Article_Online_03"
+
+# Navigate Back
+- back
+
+# Disable Network Connection
+- pressKey: home
+- stopApp: com.mobstac.thehindu
+
+# Open Android Settings
+- launchApp:
+    appId: com.android.settings
+- runFlow:
+    when:
+      visible:
+        text: "Wi-Fi"
+    commands:
+      - assertVisible: "Wi-Fi"
+      - tapOn: "Wi-Fi"
+      - assertVisible: "On"
+      - tapOn: "On"
+- runFlow:
+    when:
+      visible:
+        text: "Network & internet"
+    commands:
+      - assertVisible: "Network & internet"
+      - tapOn: "Network & internet"
+      - assertVisible: "Internet"
+      - tapOn: "Internet"
+      - assertVisible: "Use Wi-Fi"
+      - tapOn:
+          id: "switchWidget"
+- runFlow:
+    when:
+      visible:
+        text: "Connections"
+    commands:
+      - assertVisible: "Connections"
+      - tapOn: "Connections"
+      - assertVisible: "Wi-Fi"
+      - tapOn: "Wi-Fi"
+
+#      - assertVisible: "On"
+#      - tapOn:
+#          text: "On"
+#          index: 1
+- setAirplaneMode: enabled
+- tapOn:
+    text:
+    index: 1
+- pressKey: home
+
+# Relaunch the App
+- launchApp: com.mobstac.thehindu
+
+# Verify Offline Error Message
+- assertVisible: ".*Unable to resolve host \"www.thehindu.com.*"
+
+# - runFlow:
+#     when:
+#       visible:
+#         text: "Allow"
+#     commands:
+#       - tapOn: "Allow"
+# - runFlow:
+#     when:
+#       visible:
+#         text: "Skip"
+#     commands:
+#       - tapOn: "Skip"
+#       - extendedWaitUntil:
+#           visible:
+#             text: "skip"
+#           timeout: 15000
+#       - tapOn: "skip"
+# Offline Article Validation (Commented)
+# - takeScreenshot: "Screenshots/SC_38/SC_38_India_Offline"
+# - extendedWaitUntil:
+#     visible: "India\nTab 6 of 16"
+#     timeout: 10000
+# - tapOn: "India\nTab 6 of 16"
+# - waitForAnimationToEnd:
+#     timeout: 5000
+# - runFlow:
+#     when:
+#       visible:
+#         text: "Summary"
+#     commands:
+#       - back
+# - takeScreenshot: "Screenshots/SC_38/SC_38_Article_Offline_01"
+# - runFlow:
+#     when:
+#       visible:
+#         text: "Close"
+#     commands:
+#       - tapOn: "Close"
+# - scroll
+# - takeScreenshot: "Screenshots/SC_38/SC_38_Article_Offline_02"
+# - swipe:
+#     start: 50%,20%
+#     end: 50%,80%
+# - takeScreenshot: "Screenshots/SC_38/SC_38_Article_Offline_03"
+# - back
+# - setAirplaneMode: enabled
+# - runFlow:
+#     when:
+#       visible:
+#         text: "Wi-Fi"
+#     commands:
+#       - assertVisible: "Wi-Fi"
+#       - tapOn: "Wi-Fi"
+#       - assertVisible: "On"
+#       - tapOn: "On"
+# - runFlow:
+#     when:
+#       visible:
+#         text: "Network & internet"
+#     commands:
+#       - assertVisible: "Network & internet"
+#       - tapOn: "Network & internet"
+#       - assertVisible: "Internet"
+#       - tapOn: "Internet"
+#       - assertVisible: "Use Wi-Fi"
+#       - tapOn:
+#           id: "switchWidget"
+# - runFlow:
+#     when:
+#       visible:
+#         text: "Connections"
+#     commands:
+#       - assertVisible: "Connections"
+#       - tapOn: "Connections"
+#       - assertVisible: "Wi-Fi"
+#       - tapOn: "Wi-Fi"
+# Close Application
+- killApp

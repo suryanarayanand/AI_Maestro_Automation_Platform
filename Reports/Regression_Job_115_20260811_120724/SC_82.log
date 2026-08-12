@@ -1,0 +1,58 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_82_EditorialPage_Anonymous_acc
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Assert that "SUBSCRIBE" is visible... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Assert that "Editorial" is visible... COMPLETED
+Tap on "Editorial"... COMPLETED
+Take screenshot Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_01... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_02... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_03... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_04... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_05... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_06... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_07... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_08... COMPLETED
+Run flow when "SHOW MORE" is visible...
+Run flow when "SHOW MORE" is visible... SKIPPED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_09... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_10... COMPLETED
+Run flow when "SHOW MORE" is visible...
+  Tap on "SHOW MORE"... COMPLETED
+Run flow when "SHOW MORE" is visible... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_11... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_12... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_13... COMPLETED
+Run flow when "Image for Taboola Advertising Unit" is visible...
+  Take screenshot Screenshots/SC_82/SC_82_Editorial_Page_Image_for_Taboola_Advertising_Unit... COMPLETED
+Run flow when "Image for Taboola Advertising Unit" is visible... COMPLETED
+Scroll vertically... COMPLETED
+Run flow when "AI summary" is visible...
+Run flow when "AI summary" is visible... SKIPPED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_14... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_82/SC_82_Editorial_Page_Subscribed_Account_15... COMPLETED
+Run flow when "SHOW MORE" is visible...
+Run flow when "SHOW MORE" is visible... SKIPPED
+
+
+===== STDERR =====
+

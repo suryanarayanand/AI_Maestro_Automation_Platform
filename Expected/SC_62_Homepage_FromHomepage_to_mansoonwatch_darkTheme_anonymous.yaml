@@ -1,0 +1,134 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - dark_theme
+  - monsoon_watch
+  - home
+  - theme
+---
+# Homepage FromHomepage to mansoonwatch darkTheme anonymous (SC-62).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Verify Anonymous Home Page
+- assertVisible: "SUBSCRIBE"
+
+# Navigate to Appearance Settings
+- tapOn:
+    point: 88%,5%
+- extendedWaitUntil:
+    visible: "Appearance"
+    timeout: 15000
+- tapOn: "Appearance"
+
+# Verify Change Theme Option
+- assertVisible: "Dark\nMode"
+- tapOn: "Dark\nMode"
+- back
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Navigate to Monsoon Watch Section
+- repeat:
+    times: 20
+    commands:
+      - scroll
+      - waitForAnimationToEnd
+      - runFlow:
+          when:
+            visible:
+              text: "Monsoon Watch"
+          commands:
+            - takeScreenshot: "Screenshots/SC_62/SC_62_Monsoon_Watch_Section"
+- takeScreenshot: "Screenshots/SC_62/SC_62_Monsoon_Watch_Section"
+
+# Open First Article
+- tapOn:
+    point: 63%,52%
+
+# Article Validation
+- takeScreenshot: "Screenshots/SC_62/SC_62_Monsoon_Watch_Article_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_62/SC_62_Monsoon_Watch_Article_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_62/SC_62_Monsoon_Watch_Article_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_62/SC_62_Monsoon_Watch_Article_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_62/SC_62_Monsoon_Watch_Article_05"
+- scroll
+- takeScreenshot: "Screenshots/SC_62/SC_62_Monsoon_Watch_Article_06"
+- scroll
+- takeScreenshot: "Screenshots/SC_62/SC_62_Monsoon_Watch_Article_07"
+
+# Navigate Back
+- back
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Navigate to Monsoon Watch Section
+- repeat:
+    times: 20
+    commands:
+      - scroll
+      - waitForAnimationToEnd
+      - runFlow:
+          when:
+            visible:
+              text: "Monsoon Watch"
+          commands:
+            - takeScreenshot: "Screenshots/SC_62/SC_62_Monsoon_Watch_Section"
+- assertVisible: "Monsoon Watch"
+
+# - scrollUntilVisible:
+#     element: "Monsoon Watch"
+# Open Monsoon Watch Carousel
+- tapOn:
+    point: 63%,52%
+- takeScreenshot: "Screenshots/SC_62/SC_62_Monsoon_Watch_Carousel_01"
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_62/SC_62_Monsoon_Watch_Carousel_02"
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_62/SC_62_Monsoon_Watch_Carousel_03"
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_62/SC_62_Monsoon_Watch_Carousel_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_62/SC_62_Monsoon_Watch_Carousel_05"
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_62/SC_62_Monsoon_Watch_Carousel_06"
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_62/SC_62_Monsoon_Watch_Carousel_07"
+
+# Navigate Back
+- back
+
+# Close Application
+- stopApp

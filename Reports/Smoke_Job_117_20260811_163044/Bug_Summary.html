@@ -1,0 +1,885 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Bug Investigation Dashboard</title>
+
+<style>
+.bug-card{
+
+    background:white;
+
+    margin-top:25px;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+.bug-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.bug-body{
+
+    display:flex;
+
+    gap:30px;
+
+    margin-top:20px;
+
+    margin-bottom:20px;
+
+}
+
+.info{
+
+    min-width:140px;
+
+}
+
+.severity{
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+.major{
+
+    background:#f59e0b;
+
+}
+
+.critical{
+
+    background:#dc2626;
+
+}
+
+.minor{
+
+    background:#16a34a;
+
+}
+.screenshot-section{
+
+    margin-top:25px;
+
+}
+
+.bug-image{
+
+    width:350px;
+
+    max-width:100%;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.bug-image:hover{
+
+    transform:scale(1.02);
+
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+
+}
+
+.gallery{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:15px;
+
+}
+
+.gallery-image{
+
+    width:180px;
+
+    border-radius:8px;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.gallery-image:hover{
+
+    transform:scale(1.05);
+
+}
+body{
+    margin:0;
+    padding:0;
+    background:#f5f7fb;
+    font-family:Segoe UI,Arial,sans-serif;
+}
+
+.container{
+    width:95%;
+    margin:auto;
+    padding:20px;
+}
+
+.header{
+    background:#1f2937;
+    color:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.card{
+    background:white;
+    width:180px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.card h2{
+    margin:0;
+    font-size:36px;
+}
+
+.card p{
+    color:#666;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    
+<div class="header">
+
+<h1>🐞 Bug Investigation Dashboard</h1>
+
+<p>
+
+<b>Suite:</b> Smoke
+
+&nbsp;&nbsp;&nbsp;
+
+<b>Execution:</b> 2055.18 sec
+
+</p>
+
+</div>
+
+
+    
+<div class="cards">
+
+<div class="card">
+<h2>7</h2>
+<p>Total</p>
+</div>
+
+<div class="card">
+<h2>4</h2>
+<p>Failed</p>
+</div>
+
+<div class="card">
+<h2>4</h2>
+<p>Critical</p>
+</div>
+
+<div class="card">
+<h2>0</h2>
+<p>Major</p>
+</div>
+
+<div class="card">
+<h2>0</h2>
+<p>Minor</p>
+</div>
+
+</div>
+
+
+    
+<div class="bug-card">
+<h2>Combined AI Assessment</h2>
+<p><b>Executive summary</b><br>Testing across recent app builds identified a mix of critical functional and high-severity visual issues. Multiple scenarios exposed rendering failures—most notably incomplete or missing advertisement containers, blank UI regions, and critical content that failed to appear. Several visual findings, confirmed by AI screenshot analysis, show improper ad rendering (including on paywall/subscriber screens), broken layouts, and missing or duplicate content elements. At least one test scenario (SC_88) failed with no detail, indicating a potential underlying functional problem. Some noise from dynamic content was observed, but key findings center on systemic rendering and layout failures likely impacting both functionality and user trust.</p>
+<p><b>Release recommendation</b><br>Do not release. Blocker-level rendering and ad/UI defects must be resolved before ship. Further root cause analysis is required for both functional and persistent visual failures.</p>
+<ul><li>Blank advertisement containers and incomplete ad rendering</li><li>Advertisements shown on paywall/subscriber offer screens</li><li>UI layout defects: blank areas, missing or repeated content sections</li><li>Functional test failure (SC_88) without diagnostic details</li><li>Loading skeletons and missing main content after load</li><li>Overlapping advertisement banners with primary navigation or content</li></ul><hr>
+<p><b>Reference:</b> Google Pixel 9 Pro — App 2501.20.802</p>
+<p><b>Actual:</b> samsung SM-E066B — App 2501.20.813</p>
+</div>
+
+
+    <h2>Combined Findings</h2>
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-001</h2>
+
+            <h3>SC_81</h3>
+
+            <p>SC 81 World page article Anonymous Account</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: FAIL</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            95%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            334.18 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run, Screenshot AI
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run, Screenshot AI</p>
+
+    <p><b>Screenshot AI findings</b><br>A large blank area is visible below the 'ADVERTISEMENT' label, indicating a missing or failed advertisement render.<br>Large blank area with only 'ADVERTISEMENT' label, indicating missing or failed ad rendering.<br>Large unexpected blank areas and repeated 'Support Journalism' and advertisement containers indicate incomplete rendering and layout defects.<br>A large blank area is present where an advertisement is labeled but not rendered, indicating a rendering defect.</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_81/SC_81_Taboola_Advertisement_Verification.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_81/SC_81_Taboola_Advertisement_Verification.png','_blank')">
+
+<img
+    src="screenshots/SC_81/SC_81_World_Page_AI_Summary.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_81/SC_81_World_Page_AI_Summary.png','_blank')">
+
+<img
+    src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_01.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_01.png','_blank')">
+
+<img
+    src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_02.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_02.png','_blank')">
+
+<img
+    src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_03.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_03.png','_blank')">
+
+<img
+    src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_04.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_04.png','_blank')">
+
+<img
+    src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_05.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_05.png','_blank')">
+
+<img
+    src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_06.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_06.png','_blank')">
+
+<img
+    src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_07.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_07.png','_blank')">
+
+<img
+    src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_08.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_08.png','_blank')">
+
+<img
+    src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_09.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_09.png','_blank')">
+
+<img
+    src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_10.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_10.png','_blank')">
+
+<img
+    src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_11.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_11.png','_blank')">
+
+<img
+    src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_12.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_12.png','_blank')">
+
+<img
+    src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_13.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_13.png','_blank')">
+
+<img
+    src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_14.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_14.png','_blank')">
+
+<img
+    src="screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_15.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_81/SC_81_World_Page_Anonymous_Account_Article_15.png','_blank')">
+
+</div>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-002</h2>
+
+            <h3>SC_86</h3>
+
+            <p>SC 86 Editorial Page anonymous light theme</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: PASS</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            356.21 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Screenshot AI
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Screenshot AI</p>
+
+    <p><b>Screenshot AI findings</b><br>Advertisement visible on a paywall/subscriber offer screen.<br>Banner advertisement overlaps main content and UI controls, causing layout defect.</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_01.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_01.png','_blank')">
+
+<img
+    src="screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_02.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_02.png','_blank')">
+
+<img
+    src="screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_03.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_03.png','_blank')">
+
+<img
+    src="screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_04.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_04.png','_blank')">
+
+<img
+    src="screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_05.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_86/SC_86_Editorial_Page_Anonymous_Account_LightTheme_05.png','_blank')">
+
+<img
+    src="screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_01.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_01.png','_blank')">
+
+<img
+    src="screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_02.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_02.png','_blank')">
+
+<img
+    src="screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_03.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_03.png','_blank')">
+
+<img
+    src="screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_04.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_86/SC_86_Editorial_Page_Specific_Article_LightTheme_04.png','_blank')">
+
+</div>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-003</h2>
+
+            <h3>SC_88</h3>
+
+            <p>SC 88 Opinion Article Navigation Interaction Login Validation</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: FAIL</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            94.3 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run</p>
+
+    <p><b>Screenshot AI findings</b><br>None</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account.png','_blank')">
+
+<img
+    src="screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account_Article_Via_Comment_Section.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account_Article_Via_Comment_Section.png','_blank')">
+
+</div>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-004</h2>
+
+            <h3>SC_90</h3>
+
+            <p>SC 90 opinionPage lightTheme</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: PASS</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            275.56 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Screenshot AI
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Screenshot AI</p>
+
+    <p><b>Screenshot AI findings</b><br>Placeholder loading skeletons are visible indicating the article content did not load as expected.<br>Unexpected blank area interrupts application content above 'SEE MORE', indicating missing or partially rendered UI elements.</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_90/SC_90_Cartoon_Section_01_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Cartoon_Section_01_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Cartoon_Section_02_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Cartoon_Section_02_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Cartoon_Section_03_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Cartoon_Section_03_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Cartoon_Section_04_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Cartoon_Section_04_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Cartoon_Section_05_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Cartoon_Section_05_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Cartoon_Section_06_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Cartoon_Section_06_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Cartoon_Section_07_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Cartoon_Section_07_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Cartoon_Section_08_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Cartoon_Section_08_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Opinion_Page_Article_01_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Opinion_Page_Article_01_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Opinion_Page_Article_02_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Opinion_Page_Article_02_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Opinion_Page_Article_03_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Opinion_Page_Article_03_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Opinion_Page_Article_04_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Opinion_Page_Article_04_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Opinion_Page_Article_05_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Opinion_Page_Article_05_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Opinion_Page_Article_06_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Opinion_Page_Article_06_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Opinion_Page_Article_07_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Opinion_Page_Article_07_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Opinion_Page_Article_08_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Opinion_Page_Article_08_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Opinion_Page_Article_09_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Opinion_Page_Article_09_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Opinion_Page_Article_10_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Opinion_Page_Article_10_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Opinion_Page_Article_11_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Opinion_Page_Article_11_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Opinion_Page_Article_12_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Opinion_Page_Article_12_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Opinion_Page_Article_13_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Opinion_Page_Article_13_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Opinion_Page_Article_14_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Opinion_Page_Article_14_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Opinion_Page_Article_15_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Opinion_Page_Article_15_LightTheme.png','_blank')">
+
+<img
+    src="screenshots/SC_90/SC_90_Opinion_Page_LightTheme.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_90/SC_90_Opinion_Page_LightTheme.png','_blank')">
+
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+</body>
+</html>

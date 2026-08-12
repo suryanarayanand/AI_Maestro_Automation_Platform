@@ -1,0 +1,55 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow TH_5634
+Run ../Common/OPEN_SUBSCRIBER_GAMES.yaml...
+  Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+  Run LOGIN.yaml...
+    Wait for animation to end... COMPLETED
+    Wait for animation to end... COMPLETED
+    Wait for animation to end... COMPLETED
+    Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+      Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+    Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+    Wait for animation to end... COMPLETED
+    Assert that "Email" is visible... COMPLETED
+    Tap on "Email"... COMPLETED
+    Input text product.testing@thehindu.co.in... COMPLETED
+    Hide Keyboard... COMPLETED
+    Wait for animation to end... COMPLETED
+    Assert that "NEXT.*|Next.*|HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+    Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible...
+      Tap on "HAVE AN ACCOUNT.*LOGIN"... COMPLETED
+      Assert that "Email" is visible... COMPLETED
+      Tap on "Email"... COMPLETED
+      Input text product.testing@thehindu.co.in... COMPLETED
+      Hide Keyboard... COMPLETED
+      Wait for animation to end... COMPLETED
+    Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+    Assert that "NEXT.*|Next.*" is visible... COMPLETED
+    Tap on "NEXT.*|Next.*"... COMPLETED
+    Assert that "password" is visible... COMPLETED
+    Tap on "password"... COMPLETED
+    Input text Test@123... COMPLETED
+    Hide Keyboard... COMPLETED
+    Assert that "LOGIN.*" is visible... COMPLETED
+    Tap on "LOGIN.*"... COMPLETED
+    Assert that "Home" is visible... COMPLETED
+  Run LOGIN.yaml... COMPLETED
+  Assert that id: screen_home is visible... COMPLETED
+  Tap on id: nav_games... COMPLETED
+  Assert that id: screen_games is visible... COMPLETED
+  Assert that id: screen_games is visible... COMPLETED
+Run ../Common/OPEN_SUBSCRIBER_GAMES.yaml... COMPLETED
+Assert that id: screen_games is visible... COMPLETED
+Assert that "Sudoku" is visible... COMPLETED
+Tap on "Sudoku"... COMPLETED
+Assert that "Sudoku" is visible... COMPLETED
+Take screenshot Screenshots/Generated/TH_5634_sudoku_landing_page... COMPLETED
+Press back... COMPLETED
+Assert that id: screen_games is visible... COMPLETED
+Take screenshot Screenshots/Generated/TH_5634_games_screen_back_navigation... COMPLETED
+
+
+===== STDERR =====
+

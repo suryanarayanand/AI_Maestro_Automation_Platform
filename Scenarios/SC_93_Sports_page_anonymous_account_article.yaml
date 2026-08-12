@@ -1,0 +1,256 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - sports
+  - account
+  - article
+---
+# Sports page anonymous account article (SC-93).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Navigate to Sports Section
+- repeat:
+    times: 4
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible:
+        text: "Sports"
+    commands:
+      - tapOn: "Sports"
+
+# Open Data Article
+- scrollUntilVisible:
+    element: "DATA"
+- tapOn: "DATA"
+- takeScreenshot: "Screenshots/SC_93/SC_93_Sports_Article_Data_Anonymous_Account_01"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_93/SC_93_Sports_Article_Data_Anonymous_Account_02"
+- scroll
+
+# Verify Article Actions
+- assertVisible:
+    text: "Text size"
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+
+# Verify Subscription Pop-up
+- runFlow:
+    when:
+      visible:
+        text: "Save 40% when you subscribe."
+    commands:
+      - tapOn: "SUBSCRIBE AT 40% OFF"
+      - takeScreenshot: "Screenshots/SC_93/SC_93_Subscription_Popup_At_Sports_Section"
+      - tapOn: "Close sheet"
+- runFlow:
+    when:
+      visible:
+        text: "Three days of The Hindu, free and without limits."
+    commands:
+      - tapOn: "READ FREE FOR 3 DAYS"
+      - takeScreenshot: "Screenshots/SC_93/SC_93_Subscription_Popup_At_Sports_Section"
+      - tapOn: "Close sheet"
+- runFlow:
+    when:
+      visible:
+        text: "Seven days of The Hindu, free and without limits."
+    commands:
+      - tapOn: "READ FREE FOR 7 DAYS"
+      - takeScreenshot: "Screenshots/SC_93/SC_93_Subscription_Popup_At_Sports_Section"
+      - tapOn: "Close sheet"
+
+# Verify Comment Section
+- runFlow:
+    when:
+      visible:
+        text: "Post a comment"
+    commands:
+      - tapOn: "Post a comment"
+      - takeScreenshot: "Screenshots/SC_93/SC_93_Post_A_Comment_Tab_On_Sports_Section"
+      - tapOn: "Close sheet"
+
+# Continue Article Validation
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_93/SC_93_Sports_Article_Data_Anonymous_Account_03"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_93/SC_93_Sports_Article_Data_Anonymous_Account_04"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_93/SC_93_Sports_Article_Data_Anonymous_Account_05"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_93/SC_93_Sports_Article_Data_Anonymous_Account_06"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_93/SC_93_Sports_Article_Data_Anonymous_Account_07"
+- scroll
+- waitForAnimationToEnd
+
+# Verify Web Page Availability
+- repeat:
+    times: 10
+    commands:
+      - assertNotVisible:
+          text: "Web page not available"
+      - scroll
+      - takeScreenshot: "Screenshots/SC_93/SC_93_Web_Page_Not_Available"
+      - waitForAnimationToEnd
+
+# Navigate Up
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Advertisements
+- repeat:
+    times: 20
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "ADVERTISEMENT"
+          commands:
+            - takeScreenshot: "Screenshots/SC_93/SC_93_Advertisement"
+      - scroll
+      - waitForAnimationToEnd
+
+# Navigate Up
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Taboola Ads
+- repeat:
+    times: 25
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Image for Taboola Advertising Unit"
+          commands:
+            - takeScreenshot: "Screenshots/SC_93/SC_93_Taboola_Ad_${TIMESTAMP}"
+      - scroll
+
+# Navigate Up
+- repeat:
+    times: 20
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Support Journalism Section
+- repeat:
+    times: 25
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Support Journalism"
+          commands:
+            - takeScreenshot: "Screenshots/SC_93/SC_93_Support_Journalism_Popup_${TIMESTAMP}"
+      - scroll
+- back
+
+# Relaunch the app because navigating back causes the app to crash.
+# - stopApp
+- launchApp
+- assertVisible: "SUBSCRIBE"
+
+# Navigate to Sports Section
+- repeat:
+    times: 4
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible:
+        text: "Sports"
+    commands:
+      - tapOn: "Sports"
+
+# Open News Article
+- scrollUntilVisible:
+    element: "NEWS"
+- tapOn: "NEWS"
+
+# Navigate Up
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Advertisements
+- repeat:
+    times: 20
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "ADVERTISEMENT"
+          commands:
+            - takeScreenshot: "Screenshots/SC_93/SC_93_Advertisement"
+      - scroll
+      - waitForAnimationToEnd
+
+# Navigate Up
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Taboola Ads
+- repeat:
+    times: 25
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Image for Taboola Advertising Unit"
+          commands:
+            - takeScreenshot: "Screenshots/SC_93/SC_93_Taboola_Ad_${TIMESTAMP}"
+      - scroll
+
+# Navigate Up
+- repeat:
+    times: 20
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Support Journalism Section
+- repeat:
+    times: 25
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Support Journalism"
+          commands:
+            - takeScreenshot: "Screenshots/SC_93/SC_93_Support_Journalism_Popup_${TIMESTAMP}"
+      - scroll

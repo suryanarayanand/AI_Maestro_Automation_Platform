@@ -1,0 +1,91 @@
+{
+    "suite": "Sanity",
+    "execution_time": 2.77,
+    "summary": {
+        "total": 1,
+        "passed": 0,
+        "failed": 1,
+        "critical": 1,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.808",
+            "version_code": "574"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Maestro test execution for scenario SC_03 was cancelled, resulting in incomplete functional validation. Visual evidence from screenshot AI and cross-device comparison did not reveal any documented visual discrepancies or issues. The only detected differences are likely due to dynamic content (ads) and not indicative of a visual regression. No functional failures could be assessed due to lack of test execution, and there are no visual-only findings requiring remediation.",
+        "release_recommendation": "No release recommendation can be made for scenario SC_03 due to incomplete test execution. Recommend re-running the scenario with Maestro to ensure both functional and visual aspects are properly validated.",
+        "top_risks": [
+            "Functional coverage gap due to cancelled test execution",
+            "Potential missed functional regressions in SC_03",
+            "Automated visual checks inconclusive due to dynamic ad content"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_03",
+            "scenario_name": "Verify Ads Taboola for anonymous user",
+            "module": "Advertisement",
+            "status": "ISSUE",
+            "execution_status": "CANCELLED",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Visual",
+            "execution_time": 2.59,
+            "log_file": "SC_03.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sanity_Job_88_20260810_104458\\SC_03.log",
+            "screenshots": [],
+            "comparison_images": [
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_03\\SC_03_TaboolaAd_IndiaPage_undefined.png",
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_03\\SC_03_TaboolaAd_TrendingPage_undefined.png"
+            ],
+            "sources": [
+                "Run",
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "SC_03_TaboolaAd_IndiaPage_undefined.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                },
+                {
+                    "image": "SC_03_TaboolaAd_TrendingPage_undefined.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

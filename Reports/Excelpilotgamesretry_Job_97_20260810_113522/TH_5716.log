@@ -1,0 +1,14 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow TH_5716
+Run ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml...
+  Launch app "com.mobstac.thehindu"... COMPLETED
+  Repeat 2 times...
+    Run flow when "Skip" is visible...
+      Tap on "Skip"... COMPLETED
+    Run flow when "Skip" is visible... COMPLETED
+    Wait for animation to end...
+
+===== STDERR =====
+

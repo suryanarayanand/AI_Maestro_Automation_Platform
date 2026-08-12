@@ -1,0 +1,12 @@
+{
+    "suite": "LocatorSmoke",
+    "tests": [
+        {
+            "id": "TH_0062",
+            "module": "AI Generated",
+            "priority": "P2",
+            "name": "Subscribe button Appearance",
+            "yaml": "TH_0062.yaml"
+        }
+    ]
+}

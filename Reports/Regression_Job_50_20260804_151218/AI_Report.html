@@ -1,0 +1,1623 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>AI Automation Report</title>
+
+<style>
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    margin: 30px;
+}
+
+h1 {
+    color: #1f4e79;
+}
+
+h2 {
+    color: #1f4e79;
+    margin-top: 40px;
+}
+
+.summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    width: 180px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    text-align: center;
+}
+
+.card h2 {
+    margin: 10px 0 0;
+    font-size: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+
+th {
+    background: #1f4e79;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+}
+
+tr:hover {
+    background: #f8f8f8;
+}
+
+.scenario {
+    text-align: left;
+    padding-left: 15px;
+}
+
+.status-pass {
+    background: #28a745;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status-fail {
+    background: #dc3545;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status-notfound {
+    background: orange;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status-error {
+    background: #6c757d;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.toolbar label {
+    font-size: 15px;
+    color: #333;
+}
+
+.scenario-block {
+    margin-bottom: 25px;
+}
+
+.scenario-block h3 {
+    color: #1f4e79;
+    border-bottom: 2px solid #1f4e79;
+    padding-bottom: 6px;
+}
+
+.finding {
+    display: flex;
+    gap: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.finding-fail {
+    border-left: 6px solid #dc3545;
+}
+
+.finding-pass {
+    border-left: 6px solid #28a745;
+}
+
+.finding-error {
+    border-left: 6px solid #6c757d;
+}
+
+.finding-image {
+    flex: 0 0 260px;
+}
+
+.finding-image img {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    cursor: zoom-in;
+}
+
+.finding-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.finding-details p {
+    margin: 6px 0;
+}
+
+.finding-details ul {
+    margin: 4px 0 10px 20px;
+}
+
+.jira-box {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-top: 8px;
+}
+
+.footer {
+    margin-top: 30px;
+    color: gray;
+    text-align: center;
+}
+
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,.85);
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    cursor: zoom-out;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 6px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Automation AI Report</h1>
+
+<div class="summary">
+
+<div class="card">
+<h3>Total Tests</h3>
+<h2>16</h2>
+</div>
+
+<div class="card">
+<h3>Passed</h3>
+<h2 style="color:green;">7</h2>
+</div>
+
+<div class="card">
+<h3>Failed</h3>
+<h2 style="color:red;">9</h2>
+</div>
+
+<div class="card">
+<h3>Not Found</h3>
+<h2 style="color:orange;">0</h2>
+</div>
+
+<div class="card">
+<h3>Pass Rate</h3>
+<h2>43.75%</h2>
+</div>
+
+</div>
+
+<h2>Scenario Results</h2>
+
+<table>
+
+<tr>
+
+<th>Scenario ID</th>
+<th>Module</th>
+<th>Scenario</th>
+<th>Status</th>
+<th>Duration (sec)</th>
+<th>AI Total</th>
+<th>AI PASS</th>
+<th>AI FAIL</th>
+
+</tr>
+
+<tr>
+
+<td>SC_07</td>
+
+<td>Account</td>
+
+<td class="scenario">Logout_function</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>78.68</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_08</td>
+
+<td>Account</td>
+
+<td class="scenario">Verify_Account_Subscription_details</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>83.82</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_12</td>
+
+<td>Article</td>
+
+<td class="scenario">Subscriber_Article_Full_Read_Access</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>377.14</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_13</td>
+
+<td>Article</td>
+
+<td class="scenario">Article_Share_Functionality</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>182.58</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_14</td>
+
+<td>Article</td>
+
+<td class="scenario">Article_Font_Size_Validation</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>102.59</td>
+
+<td>0</td>
+
+<td>0</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_15</td>
+
+<td>Podcast</td>
+
+<td class="scenario">Podcast_Section_Subscriber_account</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>138.56</td>
+
+<td>5</td>
+
+<td>4</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>SC_16</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 16 login with appleid</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>51.24</td>
+
+<td>2</td>
+
+<td>1</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>SC_17</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 17 sigin with google Account</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>41.36</td>
+
+<td>2</td>
+
+<td>2</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_18</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 18 Create New Account Option</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>50.0</td>
+
+<td>2</td>
+
+<td>2</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_19</td>
+
+<td>Advertisement</td>
+
+<td class="scenario">ad_navigation</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>240.11</td>
+
+<td>1</td>
+
+<td>0</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>SC_20</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 20 Signup Option Validation</td>
+
+<td>
+<span class="status-fail">
+FAIL
+</span>
+</td>
+
+<td>50.96</td>
+
+<td>1</td>
+
+<td>1</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_21</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 21 Whats new option subscribed user</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>97.17</td>
+
+<td>8</td>
+
+<td>8</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>SC_22</td>
+
+<td>Settings</td>
+
+<td class="scenario">Appearance theme validation</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>60.99</td>
+
+<td>5</td>
+
+<td>4</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>SC_23</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 23 Homepage FromHomepage to Editorialpage in darkTheme anonyous </td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>112.09</td>
+
+<td>13</td>
+
+<td>2</td>
+
+<td>11</td>
+
+</tr>
+
+<tr>
+
+<td>SC_24</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 24 Subscriber E-Book access</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>94.48</td>
+
+<td>3</td>
+
+<td>2</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>SC_25</td>
+
+<td>Unassigned</td>
+
+<td class="scenario">SC 25 Homepage FromHomepage to Comments Drak theme ananoymous</td>
+
+<td>
+<span class="status-pass">
+PASS
+</span>
+</td>
+
+<td>126.22</td>
+
+<td>10</td>
+
+<td>3</td>
+
+<td>7</td>
+
+</tr>
+
+
+</table>
+
+<br>
+
+<h2>AI Screenshot Summary</h2>
+
+<div class="summary">
+
+<div class="card">
+<h3>Total Screenshots</h3>
+<h2>53</h2>
+</div>
+
+<div class="card">
+<h3>AI PASS</h3>
+<h2 style="color:green;">30</h2>
+</div>
+
+<div class="card">
+<h3>AI FAIL</h3>
+<h2 style="color:red;">23</h2>
+</div>
+
+<div class="card">
+<h3>AI ERROR</h3>
+<h2 style="color:#6c757d;">0</h2>
+</div>
+
+</div>
+
+<h2>Detailed AI Findings</h2>
+
+<div class="toolbar">
+    <input type="checkbox" id="failuresOnly" onchange="toggleFailuresOnly()">
+    <label for="failuresOnly">Show failures only</label>
+</div>
+<div class="scenario-block"><h3>SC_13 &mdash; Article_Share_Functionality</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_13/SC_13_share_article.png" alt="SC_13_share_article.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_13_share_article.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are properly rendered, no overlaps, cropping, or missing elements. Sharing sheet overlay is expected UI behavior.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_15 &mdash; Podcast_Section_Subscriber_account</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_15/SC_15_first_Podcast_playing_the_latest.png" alt="SC_15_first_Podcast_playing_the_latest.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_15_first_Podcast_playing_the_latest.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and fully rendered. No visible UI defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_15/SC_15_Podcast_Page_00.png" alt="SC_15_Podcast_Page_00.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_15_Podcast_Page_00.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Podcast content failed to load; only placeholders and a stuck loading indicator are visible.</p>
+        <p><strong>Issues:</strong></p><ul><li>Stuck loading indicator</li><li>Placeholder content visible</li><li>Podcast content missing</li><li>Incomplete rendering</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Podcast screen shows stuck loading and missing content</p>
+                    <p><strong>Jira Description:</strong> The Podcast tab displays placeholder content and a stuck loading indicator, with no actual podcast data rendered. This indicates a rendering or data loading defect.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_15/SC_15_Podcast_Page_bottom.png" alt="SC_15_Podcast_Page_bottom.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_15_Podcast_Page_bottom.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present and correctly rendered. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_15/SC_15_Podcast_Page_middle_01.png" alt="SC_15_Podcast_Page_middle_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_15_Podcast_Page_middle_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present and properly aligned. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_15/SC_15_Podcast_Page_top_01.png" alt="SC_15_Podcast_Page_top_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_15_Podcast_Page_top_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present. No visual defects, missing content, overlap, or rendering issues detected.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_16 &mdash; SC 16 login with appleid</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_16/SC_16_Apple_signin_page.png" alt="SC_16_Apple_signin_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_16_Apple_signin_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> The screen is fully rendered with all expected UI components present. No evidence of missing or overlapping elements, broken images, or blank areas replacing UI.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_16/SC_16_signin_error_via_AppleID.png" alt="SC_16_signin_error_via_AppleID.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_16_signin_error_via_AppleID.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Error state shown with invalid_request and a large blank area replaces UI content. No actionable UI provided for user to proceed.</p>
+        <p><strong>Issues:</strong></p><ul><li>Blank white area replaces expected content</li><li>No actionable button or option to retry, dismiss, or navigate back</li><li>Error state is not user-friendly</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Error screen has blank area and lacks recovery options</p>
+                    <p><strong>Jira Description:</strong> The error state for an invalid web redirect URL displays a large blank region, with no actionable UI (such as retry, dismiss, or back button), leaving users without clear next steps.</p>
+                </div>
+                
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_17 &mdash; SC 17 sigin with google Account</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_17/Google_Account_Selection.png" alt="Google_Account_Selection.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> Google_Account_Selection.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No evidence of missing, cropped, or overlapping content.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_17/SC_17_google_signin_page.png" alt="SC_17_google_signin_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_17_google_signin_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and layout is complete with intended empty space below the content.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_18 &mdash; SC 18 Create New Account Option</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_18/SC_18_intialSetupScreen_01.png" alt="SC_18_intialSetupScreen_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_18_intialSetupScreen_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are visible and correctly rendered. No layout, rendering, or text defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_18/SC_18_SignUp_page.png" alt="SC_18_SignUp_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_18_SignUp_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly, with no visible layout or rendering defects.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_19 &mdash; ad_navigation</h3>
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_19/SC_19_Ad_Page_04.png" alt="SC_19_Ad_Page_04.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_19_Ad_Page_04.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Large unexpected blank area is present in the middle of the screen where live updates content should be displayed.</p>
+        <p><strong>Issues:</strong></p><ul><li>Large blank area in Live updates section</li><li>Incomplete rendering of live updates</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Live updates section displays a large blank area</p>
+                    <p><strong>Jira Description:</strong> A large unexpected blank area is visible in the Live updates section, indicating that updates or expected UI content failed to render.</p>
+                </div>
+                
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_20 &mdash; SC 20 Signup Option Validation</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_20/SC_20_SignUp_page.png" alt="SC_20_SignUp_page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_20_SignUp_page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and correctly rendered. No visual defects identified.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_21 &mdash; SC 21 Whats new option subscribed user</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_21/SC_21_01_Revamped_Home_Page.png" alt="SC_21_01_Revamped_Home_Page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_21_01_Revamped_Home_Page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI elements are present and rendered correctly. No visible UI defects found.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_21/SC_21_02_Quick_Access.png" alt="SC_21_02_Quick_Access.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_21_02_Quick_Access.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No evidence of layout, rendering, or navigation defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_21/SC_21_03_Trending.png" alt="SC_21_03_Trending.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_21_03_Trending.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and correctly displayed. No visual defects observed.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_21/SC_21_04_Premium.png" alt="SC_21_04_Premium.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_21_04_Premium.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI elements are rendered. No blank areas, overlaps, or missing components. Layout is complete.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_21/SC_21_05_Ebooks.png" alt="SC_21_05_Ebooks.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_21_05_Ebooks.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and correctly rendered. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_21/SC_21_06_TH_Games.png" alt="SC_21_06_TH_Games.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_21_06_TH_Games.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are rendered correctly. No visible UI defects, cropping, overlap, or blank UI areas. The popup and bottom navigation bar are correctly displayed.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_21/SC_21_07_More.png" alt="SC_21_07_More.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_21_07_More.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No visual defects observed.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_21/SC_21_08_Home_Page.png" alt="SC_21_08_Home_Page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_21_08_Home_Page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and properly rendered. There are no visible defects or layout issues.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_22 &mdash; Appearance theme validation</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_22/SC_22_Account_Settings_Page.png" alt="SC_22_Account_Settings_Page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_22_Account_Settings_Page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and rendered correctly. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_22/SC_22_Appearance.png" alt="SC_22_Appearance.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_22_Appearance.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and aligned. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_22/SC_22_Appearance_Dark_Theme.png" alt="SC_22_Appearance_Dark_Theme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_22_Appearance_Dark_Theme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI components are present and properly rendered. No visual defects detected.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_22/SC_22_Appearance_Dark_Theme_Home_Page.png" alt="SC_22_Appearance_Dark_Theme_Home_Page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_22_Appearance_Dark_Theme_Home_Page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Text 'unit:/22390678/TH_Android_HP_Sticky_A SDK loaded / impression' above the advertisement indicates a UI rendering defect.</p>
+        <p><strong>Issues:</strong></p><ul><li>Debug or placeholder SDK text visible above advertisement</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Debug SDK text visible above advertisement</p>
+                    <p><strong>Jira Description:</strong> A debug or placeholder SDK text 'unit:/22390678/TH_Android_HP_Sticky_A SDK loaded / impression' is shown above the advertisement, which is a UI defect and should not be visible in production.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_22/SC_22_Appearance_Light_Theme.png" alt="SC_22_Appearance_Light_Theme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_22_Appearance_Light_Theme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present with correct alignment; empty space is expected for this settings screen.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_23 &mdash; SC 23 Homepage FromHomepage to Editorialpage in darkTheme anonyous </h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_Dark_Theme.png" alt="SC_23_Dark_Theme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_23_Dark_Theme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements for the Appearance settings screen are present and properly rendered. The empty black space is appropriate for a settings screen with few options.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_1.png" alt="SC_23_Dark_Theme_Editorial_Page_1.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_23_Dark_Theme_Editorial_Page_1.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> A large blank black region is present inside the main content area, indicating incomplete or missing UI.</p>
+        <p><strong>Issues:</strong></p><ul><li>Unexpected blank black area inside application content</li><li>Missing or failed to render advertisement/content</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Large blank area inside main content</p>
+                    <p><strong>Jira Description:</strong> A significant blank black area appears within the content region, suggesting advertisement or content failed to render, leading to incomplete UI rendering.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_2.png" alt="SC_23_Dark_Theme_Editorial_Page_2.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_23_Dark_Theme_Editorial_Page_2.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Advertisement labeling and rendering error visible with ad unit and SDK message overlaid on the ad image.</p>
+        <p><strong>Issues:</strong></p><ul><li>Advertisement unit path and SDK loaded / impression message are visible over the advertisement image</li><li>Advertisement rendering defect</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement displays ad unit path and SDK impression message</p>
+                    <p><strong>Jira Description:</strong> The advertisement container shows '/22390678/TH_Android_HP_Sticky_A SDK loaded / impression' as an overlay on the ad image, which is a rendering defect and should not be visible to users.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_3.png" alt="SC_23_Dark_Theme_Editorial_Page_3.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_23_Dark_Theme_Editorial_Page_3.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Debug/ad unit and SDK status text are visible in production UI.</p>
+        <p><strong>Issues:</strong></p><ul><li>Debug information ('unit:' and 'status: loaded') visible under the main advertisement banner</li><li>Debug information ('unit:', 'SDK loaded / impression') visible above sticky advertisement</li><li>Production UI should not display testing or SDK status text</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Debug and SDK status information visible in production UI</p>
+                    <p><strong>Jira Description:</strong> The screen displays debug and SDK status information such as 'unit:', 'status: loaded', and 'SDK loaded / impression' beneath advertisement slots. These technical messages should not be visible to end users and indicate incorrect inclusion of debug/test output in the release UI.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_4.png" alt="SC_23_Dark_Theme_Editorial_Page_4.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_23_Dark_Theme_Editorial_Page_4.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Visible advertisement container displays debug or placeholder information instead of a normal ad.</p>
+        <p><strong>Issues:</strong></p><ul><li>Advertisement area contains unit path and SDK debug information</li><li>Non-production placeholder shown in ad area</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement area displays placeholder or debug content</p>
+                    <p><strong>Jira Description:</strong> The advertisement region on the home screen shows 'unit:/22390678/TH_Android_HP_Sticky_A SDK loaded / impression' indicating debug or placeholder content instead of a valid advertisement.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_5.png" alt="SC_23_Dark_Theme_Editorial_Page_5.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_23_Dark_Theme_Editorial_Page_5.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present and correctly rendered; no clear evidence of layout or rendering defects.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_6.png" alt="SC_23_Dark_Theme_Editorial_Page_6.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_23_Dark_Theme_Editorial_Page_6.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Debug or ad unit SDK logs ('unit:/22390678/TH_Android_HP_Sticky_A SDK loaded / impression') are visible above the advertisement banner, which is an unexpected UI element.</p>
+        <p><strong>Issues:</strong></p><ul><li>Debug/SDK log text visible above advertisement</li><li>Unintended debug output in production UI</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Debug/SDK log text visible above advertisement</p>
+                    <p><strong>Jira Description:</strong> A debug or SDK log message 'unit:/22390678/TH_Android_HP_Sticky_A SDK loaded / impression' is displayed above the advertisement banner, which should not be visible in the end-user UI. This output needs to be removed for production.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_7.png" alt="SC_23_Dark_Theme_Editorial_Page_7.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_23_Dark_Theme_Editorial_Page_7.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Internal advertisement unit and status/debug information is visible to end users.</p>
+        <p><strong>Issues:</strong></p><ul><li>Internal ad unit paths and status (e.g., unit:/22390678/TH_Android_HP_Mid04_A, status:loaded) are visible on screen</li><li>SDK loaded / impression technical text visible</li><li>Debug/technical details should not be shown to users in production UI</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Internal advertisement unit/debug info visible to end users</p>
+                    <p><strong>Jira Description:</strong> Internal ad unit identification paths, statuses, and SDK impression logs are shown as visible text in the production UI. This technical/debug information should not be exposed to end users.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_Dark_Theme_Home_Page_1.png" alt="SC_23_Dark_Theme_Home_Page_1.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_23_Dark_Theme_Home_Page_1.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Advertisement container displays debug or SDK information above the actual advertisement, indicating an incomplete or broken ad rendering.</p>
+        <p><strong>Issues:</strong></p><ul><li>Advertisement SDK/debug information visible</li><li>Broken advertisement rendering</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement container displays SDK/debug information</p>
+                    <p><strong>Jira Description:</strong> The advertisement container above the ad is rendering debug or SDK information (unit path and 'SDK loaded / impression'), indicating incomplete or incorrect advertisement rendering.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_Dark_Theme_Home_Page_2.png" alt="SC_23_Dark_Theme_Home_Page_2.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_23_Dark_Theme_Home_Page_2.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Advertisement container has exposed debug information and SDK impression text visible in the UI, which is a clear rendering defect.</p>
+        <p><strong>Issues:</strong></p><ul><li>Debug/SDK impression text visible above advertisement</li><li>Exposed technical information inside advertisement container</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement container displays SDK debug/impression text</p>
+                    <p><strong>Jira Description:</strong> The advertisement container shows technical debug or SDK text ('unit:/22390678/TH_Android_HP_Sticky_A SDK loaded / impression'), which should not be visible to end users. This is a clear rendering defect.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_Dark_Theme_Home_Page_3.png" alt="SC_23_Dark_Theme_Home_Page_3.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_23_Dark_Theme_Home_Page_3.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Technical advertisement banner with SDK loaded / impression string is visibly overlaid above the actual advertisement content.</p>
+        <p><strong>Issues:</strong></p><ul><li>SDK loaded / impression technical string visible above advertisement</li><li>Unintended technical overlay in user UI</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Technical SDK overlay is visible above advertisement banner</p>
+                    <p><strong>Jira Description:</strong> A technical string 'unit:/22390678/TH_Android_HP_Sticky_A SDK loaded / impression' is displayed above the advertisement banner, which should not be visible to users. This breaks user experience and clutters the UI.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_Dark_Theme_Home_Page_4.png" alt="SC_23_Dark_Theme_Home_Page_4.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_23_Dark_Theme_Home_Page_4.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Large black area and advertisement placeholder visible with debug text indicating incomplete or broken ad rendering.</p>
+        <p><strong>Issues:</strong></p><ul><li>Large black blank advertisement container</li><li>Advertisement placeholder visible</li><li>Debug text visible: 'unit:/22390678/TH__Android__HP__Sticky__A SDK loaded / impression'</li><li>Empty space interrupts application content</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Broken advertisement rendering with empty placeholder and debug text</p>
+                    <p><strong>Jira Description:</strong> A large black area is visible where advertisement content should be shown. The advertisement placeholder is displayed with debug text ('unit:/22390678/TH__Android__HP__Sticky__A SDK loaded / impression'), indicating broken or incomplete ad rendering and an interrupted user experience.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_23/SC_23_Home_Page.png" alt="SC_23_Home_Page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_23_Home_Page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> SDK loaded / impression debug message is visible above the advertisement banner.</p>
+        <p><strong>Issues:</strong></p><ul><li>SDK loaded / impression debug message visible</li><li>Non-user facing technical debug output in production UI</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> SDK debug message visible above advertisement banner</p>
+                    <p><strong>Jira Description:</strong> A technical debug message 'SDK loaded / impression' along with unit ID is visible above the advertisement banner, which should not be present in the user-facing UI.</p>
+                </div>
+                
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_24 &mdash; SC 24 Subscriber E-Book access</h3>
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_24/SC_24_eBook_01.png" alt="SC_24_eBook_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_24_eBook_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI components are present and rendered correctly. No evidence of missing or overlapping content.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_24/SC_24_eBook_01_Cover.png" alt="SC_24_eBook_01_Cover.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_24_eBook_01_Cover.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Loading indicator is visible for an extended duration with a large blank area, indicating incomplete rendering or stuck loading state.</p>
+        <p><strong>Issues:</strong></p><ul><li>Stuck loading indicator</li><li>Incomplete screen rendering</li><li>Blank content area</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> eBook screen stuck on loading indicator</p>
+                    <p><strong>Jira Description:</strong> The eBook screen displays a loading indicator with a large blank area, indicating that the content has not rendered and the screen is stuck in a loading state.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_24/SC_24_eBooks_Page.png" alt="SC_24_eBooks_Page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_24_eBooks_Page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All expected UI elements are present and rendered correctly. No visual defects or layout issues are visible.</p>
+        
+        
+    </div>
+</div>
+</div><div class="scenario-block"><h3>SC_25 &mdash; SC 25 Homepage FromHomepage to Comments Drak theme ananoymous</h3>
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_25/SC_25_Comment_Section.png" alt="SC_25_Comment_Section.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_25_Comment_Section.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Advertisement SDK/debug text 'unit:/22390678/TH_Android_HP_Mid03_A...' is visibly rendered below the advertisement image.</p>
+        <p><strong>Issues:</strong></p><ul><li>Advertisement SDK/debug text visible</li><li>Unintended text overlaps application content</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement SDK or debug text visible in UI</p>
+                    <p><strong>Jira Description:</strong> SDK/debug information such as 'unit:/22390678/TH_Android_HP_Mid03_A...' is visibly rendered directly below the main advertisement image, which should not be visible in a production environment. This overlaps with the expected application layout and creates a low-quality user experience.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_25/SC_25_Dark_Theme.png" alt="SC_25_Dark_Theme.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_25_Dark_Theme.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> UI layout is complete, all elements are present, and there is no evidence of missing or cropped components.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_25/SC_25_Home_Page.png" alt="SC_25_Home_Page.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_25_Home_Page.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Screen appears stuck on a loading state with placeholder skeletons and a loading spinner visible in the main content area.</p>
+        <p><strong>Issues:</strong></p><ul><li>Loading spinner is stuck on content area</li><li>Only skeleton placeholders visible</li><li>Main content not rendered</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Home screen stuck on loading with placeholders</p>
+                    <p><strong>Jira Description:</strong> The Home screen displays only skeleton placeholders and a loading spinner, indicating the content is not rendered and the loading indicator may be stuck.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_25/SC_25_Opinion_Page_01.png" alt="SC_25_Opinion_Page_01.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_25_Opinion_Page_01.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Visible advertisement SDK debug information is displayed above the advertisement, which is not user-facing content.</p>
+        <p><strong>Issues:</strong></p><ul><li>Advertisement SDK debug info visible</li><li>Non-production debug text overlays UI</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement SDK debug information visible in production UI</p>
+                    <p><strong>Jira Description:</strong> The screen shows advertisement SDK debug information ('unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression') above the advertisement banner which should not be visible to end users.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_25/SC_25_Opinion_Page_02.png" alt="SC_25_Opinion_Page_02.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_25_Opinion_Page_02.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Raw ad unit information and SDK status messages are visibly rendered in the content area.</p>
+        <p><strong>Issues:</strong></p><ul><li>Raw ad unit path and status visible: 'unit:/22390678/TH_Android_Topic_Mid01_A status: loaded'</li><li>SDK debug information visible: 'unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression'</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Raw advertisement debug information displayed in content area</p>
+                    <p><strong>Jira Description:</strong> Raw ad unit paths and SDK debug/status messages are rendered in the UI, which should not be visible to end users. This indicates an environment or integration leak that disrupts the user experience.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_25/SC_25_Opinion_Page_03.png" alt="SC_25_Opinion_Page_03.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_25_Opinion_Page_03.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Debug ad unit and status strings are visible within the main content area.</p>
+        <p><strong>Issues:</strong></p><ul><li>Ad unit debug/status text is visible to users</li><li>SDK loaded / impression diagnostic info shown in content</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Ad unit debug/status information visible in production UI</p>
+                    <p><strong>Jira Description:</strong> Diagnostic text (such as unit: /22390678/TH_Android_Topic__Mid01__A status: loaded and SDK loaded / impression) is visible in the user-facing content area. This should be hidden from production users.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_25/SC_25_Opinion_Page_04.png" alt="SC_25_Opinion_Page_04.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_25_Opinion_Page_04.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All UI elements are present and rendered correctly. No missing or overlapping components, and advertisements are displayed with proper labeling and without empty placeholders.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_25/SC_25_Opinion_Page_05.png" alt="SC_25_Opinion_Page_05.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_25_Opinion_Page_05.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Internal advertisement unit debug information and SDK status are visible to end users. These technical details should not be shown in production UI.</p>
+        <p><strong>Issues:</strong></p><ul><li>Visible advertisement unit debug information</li><li>Visible SDK status/output</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement debug information and SDK messages visible in UI</p>
+                    <p><strong>Jira Description:</strong> Advertisement unit debug info (e.g., unit paths, SDK loaded/impression status) is displayed to users in the app UI. These details should be hidden from end users in production builds.</p>
+                </div>
+                
+    </div>
+</div>
+
+<div class="finding finding-pass" data-status="PASS">
+    <div class="finding-image">
+        <img src="screenshots/SC_25/SC_25_Opinion_Page_06.png" alt="SC_25_Opinion_Page_06.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-pass">PASS</span>
+        <p><strong>Image:</strong> SC_25_Opinion_Page_06.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> LOW</p>
+        <p><strong>Reason:</strong> All visible UI elements are correctly rendered. No layout or rendering defects are present.</p>
+        
+        
+    </div>
+</div>
+
+<div class="finding finding-fail" data-status="FAIL">
+    <div class="finding-image">
+        <img src="screenshots/SC_25/SC_25_Opinion_Section.png" alt="SC_25_Opinion_Section.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="finding-details">
+        <span class="status-fail">FAIL</span>
+        <p><strong>Image:</strong> SC_25_Opinion_Section.png</p>
+        <p><strong>Confidence:</strong> High
+           &nbsp;&nbsp; <strong>Severity:</strong> HIGH</p>
+        <p><strong>Reason:</strong> Debug ad unit and SDK status text is visible to end users, which is not intended for production UI.</p>
+        <p><strong>Issues:</strong></p><ul><li>Ad unit path and status text visible in UI</li><li>SDK loaded/impression debug text visible in UI</li></ul>
+        
+                <div class="jira-box">
+                    <p><strong>Jira Title:</strong> Advertisement debug information visible to users</p>
+                    <p><strong>Jira Description:</strong> Ad unit path, status text, and SDK loaded/impression debug information are visible inline with the content and ads, which should not be visible in the production version of the app.</p>
+                </div>
+                
+    </div>
+</div>
+</div>
+<div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="">
+</div>
+
+<div class="footer">
+Generated by Automation Framework with AI Visual Analysis
+</div>
+
+<script>
+function toggleFailuresOnly() {
+    var onlyFailures = document.getElementById('failuresOnly').checked;
+    var findings = document.querySelectorAll('.finding');
+    findings.forEach(function (el) {
+        if (onlyFailures) {
+            el.style.display = (el.getAttribute('data-status') === 'FAIL') ? 'flex' : 'none';
+        } else {
+            el.style.display = 'flex';
+        }
+    });
+}
+
+function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+}
+</script>
+
+</body>
+
+</html>

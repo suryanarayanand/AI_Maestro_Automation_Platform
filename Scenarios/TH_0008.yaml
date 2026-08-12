@@ -1,0 +1,18 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ai-adapted
+---
+
+- launchApp:
+    clearState: false
+
+- runFlow: "../Common/Anonymous_account_onboarding.yaml"
+
+- tapOn:
+    id: "nav_account"
+
+- assertVisible:
+    id: "screen_user_menu"
+
+- takeScreenshot: "Screenshots/Generated/TH_0008_account_access_entry_point"

@@ -1,0 +1,7 @@
+appId: com.mobstac.thehindu
+tags:
+  - auth
+---
+# magicLink (SC-105).
+- launchApp:
+    clearState: true

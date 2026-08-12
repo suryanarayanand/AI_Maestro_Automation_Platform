@@ -1,0 +1,50 @@
+{
+    "suite": {
+        "total": 3,
+        "passed": 0,
+        "failed": 3,
+        "not_found": 0,
+        "pass_rate": 0.0
+    },
+    "results": [
+        {
+            "id": "PILOT_SC_02",
+            "module": "Unassigned",
+            "name": "PILOT SC 02",
+            "status": "FAIL",
+            "duration": 10.23,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_90_20260810_104640\\PILOT_SC_02.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "PILOT_SC_03",
+            "module": "Unassigned",
+            "name": "PILOT SC 03",
+            "status": "FAIL",
+            "duration": 10.26,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_90_20260810_104640\\PILOT_SC_03.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "PILOT_SC_05",
+            "module": "AI Generated",
+            "name": "Anonymous Premium navigation",
+            "status": "FAIL",
+            "duration": 10.27,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_90_20260810_104640\\PILOT_SC_05.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        }
+    ]
+}

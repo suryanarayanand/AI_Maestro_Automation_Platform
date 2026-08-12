@@ -1,0 +1,958 @@
+{
+    "suite": "Regression",
+    "execution_time": 7383.4,
+    "summary": {
+        "total": 32,
+        "passed": 8,
+        "failed": 24,
+        "critical": 19,
+        "major": 0,
+        "minor": 5
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.811",
+            "version_code": "577"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "The QA cycle identified both functional and critical visual defects impacting release readiness. Multiple scenarios failed functional automated checks, notably in the hamburger navigation, home, and media-related sections. Visual analysis detected several high and critical severity UI regressions including blank screens, missing primary content, broken rendering, inconsistent navigation, and genuine header misalignments across core modules. Dynamic content and live notifications accounted for some visual differences but were excluded from material findings. Notable minor issues include text typos but the main risk is due to persistent core content not loading or rendering failures, and repeated navigation breakdowns on multiple devices.",
+        "release_recommendation": "Do not release. There are critical functional failures (e.g., core navigation and content not rendering, multiple blank pages) and severe UI regressions affecting primary user journeys. Immediate remediation and a full retest are required before release.",
+        "top_risks": [
+            "Core navigation (hamburger menu, home, section access) fails functional checks",
+            "Multiple screens show blank areas or full missing content (incomplete rendering issues)",
+            "Main feeds (Food, Latest News) fail to load primary articles due to backend/API/UI state bugs",
+            "High and critical header/navbar/UI misalignments in key sections (Business, Entertainment, Opinion, Editorial, Photos)",
+            "Bottom navigation bar missing in 'Latest News' and visually inconsistent elsewhere",
+            "Persistent skeleton loaders on multiple pages indicate major data fetching/rendering failures",
+            "Critical mismatch between actual and reference navigation/tab layouts in 'Food'",
+            "Functional test failures in core media sections (Sports, Videos, World)",
+            "Dynamic content differences and notification badge counts are not actionable, but true static UI regressions remain unresolved"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "COMPLEX_002",
+            "scenario_name": "COMPLEX 002",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Minor",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 93.82,
+            "log_file": "COMPLEX_002.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\COMPLEX_002.log",
+            "screenshots": [
+                "screenshots/COMPLEX_002/COMPLEX_002_games_page_sudoku.png",
+                "screenshots/COMPLEX_002/COMPLEX_002_sudoku_landing_page.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "There is a typo in the description: 'Sudoko' instead of 'Sudoku' and 'coumns' instead of 'columns'.",
+                    "severity": "LOW",
+                    "issues": [
+                        "Misspelled 'Sudoku' as 'Sudoko'",
+                        "Misspelled 'columns' as 'coumns' in the description"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "COMPLEX_004",
+            "scenario_name": "COMPLEX 004",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 124.23,
+            "log_file": "COMPLEX_004.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\COMPLEX_004.log",
+            "screenshots": [
+                "screenshots/COMPLEX_004/COMPLEX_004_easy_down_destination.png",
+                "screenshots/COMPLEX_004/COMPLEX_004_scroll_down_and_games_catalogue.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Screen is entirely blank except for the status bar; application content appears missing, indicating incomplete rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank white area",
+                        "Missing application content",
+                        "Incomplete rendering"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "TH_1181",
+            "scenario_name": "TH 1181",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 148.38,
+            "log_file": "TH_1181.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\TH_1181.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-004",
+            "scenario_id": "TH_5634",
+            "scenario_name": "TH 5634",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Minor",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 105.32,
+            "log_file": "TH_5634.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\TH_5634.log",
+            "screenshots": [
+                "screenshots/TH_5634/TH_5634_games_screen_back_navigation.png",
+                "screenshots/TH_5634/TH_5634_sudoku_landing_page.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Text spelling error in title and description.",
+                    "severity": "LOW",
+                    "issues": [
+                        "Title 'Sudoko' is misspelled, should be 'Sudoku'",
+                        "Description contains 'row,coumns' instead of 'rows,columns'"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-005",
+            "scenario_id": "TH_5818",
+            "scenario_name": "TH 5818",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 106.16,
+            "log_file": "TH_5818.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\TH_5818.log",
+            "screenshots": [
+                "screenshots/TH_5818/TH_5818_easy_down_game_listing.png",
+                "screenshots/TH_5818/TH_5818_easy_down_post_tap_state.png",
+                "screenshots/TH_5818/TH_5818_games_page_back_navigation.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Large blank area indicates missing or failed content rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank white area replaces expected UI",
+                        "No visible application content",
+                        "Incomplete rendering"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-006",
+            "scenario_id": "capture_duplicate_hamburger_child",
+            "scenario_name": "capture duplicate hamburger child",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 102.3,
+            "log_file": "capture_duplicate_hamburger_child.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\capture_duplicate_hamburger_child.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-007",
+            "scenario_id": "capture_hamburger_child",
+            "scenario_name": "capture hamburger child",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 91.67,
+            "log_file": "capture_hamburger_child.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\capture_hamburger_child.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-008",
+            "scenario_id": "capture_home_section",
+            "scenario_name": "capture home section",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 43.19,
+            "log_file": "capture_home_section.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\capture_home_section.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-009",
+            "scenario_id": "capture_shifted_home_section",
+            "scenario_name": "capture shifted home section",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 84.79,
+            "log_file": "capture_shifted_home_section.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\capture_shifted_home_section.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-010",
+            "scenario_id": "expand_hamburger_category",
+            "scenario_name": "expand hamburger category",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 66.39,
+            "log_file": "expand_hamburger_category.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\expand_hamburger_category.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-011",
+            "scenario_id": "open_hamburger",
+            "scenario_name": "open hamburger",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 17.34,
+            "log_file": "open_hamburger.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\open_hamburger.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-012",
+            "scenario_id": "LOC_BUSINESS",
+            "scenario_name": "Validated locator smoke - Business",
+            "module": "Validated Section Locators",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Visual",
+            "execution_time": 93.07,
+            "log_file": "LOC_BUSINESS.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_BUSINESS.log",
+            "screenshots": [
+                "screenshots/LOC_BUSINESS/business_page.png"
+            ],
+            "comparison_images": [
+                "comparison/LOC_BUSINESS/./reference_business_page.png",
+                "comparison/LOC_BUSINESS/./actual_business_page.png",
+                "comparison/LOC_BUSINESS/./diff_business_page.png"
+            ],
+            "sources": [
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "business_page.png",
+                    "similarity": 41.41,
+                    "normalized": true,
+                    "summary": "Two genuine UI issues detected in the header and toolbar regions.",
+                    "issues": [
+                        {
+                            "severity": "High",
+                            "component": "Header",
+                            "title": "Header logo and toolbar misalignment",
+                            "description": "The header logo and toolbar icons (hamburger menu, subscribe, user/profile) are misaligned and not matching the reference. The spacing and placement differ, impacting visual consistency.",
+                            "recommendation": "Align the header and toolbar components as per the reference screenshot, ensuring equal spacing and layout."
+                        },
+                        {
+                            "severity": "Medium",
+                            "component": "Navigation Bar",
+                            "title": "Bottom navigation bar height and icon alignment discrepancy",
+                            "description": "The height and padding of the bottom navigation bar, as well as the alignment of navigation icons, do not match the reference, potentially causing an inconsistent appearance.",
+                            "recommendation": "Verify and fix the navigation bar dimensions and ensure all icons are vertically centered with the correct padding."
+                        }
+                    ]
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-013",
+            "scenario_id": "LOC_EDITORIAL",
+            "scenario_name": "Validated locator smoke - Editorial",
+            "module": "Validated Section Locators",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Visual",
+            "execution_time": 49.79,
+            "log_file": "LOC_EDITORIAL.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_EDITORIAL.log",
+            "screenshots": [
+                "screenshots/LOC_EDITORIAL/editorial_page.png"
+            ],
+            "comparison_images": [
+                "comparison/LOC_EDITORIAL/./reference_editorial_page.png",
+                "comparison/LOC_EDITORIAL/./actual_editorial_page.png",
+                "comparison/LOC_EDITORIAL/./diff_editorial_page.png"
+            ],
+            "sources": [
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "editorial_page.png",
+                    "similarity": 55.89,
+                    "normalized": true,
+                    "summary": "Two genuine UI issues detected: header nav overflow and minor navigation bar icon misalignment.",
+                    "issues": [
+                        {
+                            "severity": "High",
+                            "component": "Header Navigation Bar",
+                            "title": "Overflowing navigation items",
+                            "description": "The header horizontal navigation bar now includes an additional menu item ('Podcast') that overflows and causes the navigation text to be clipped at the right edge.",
+                            "recommendation": "Implement horizontal scrolling or resize/reduce navigation items to fit available space."
+                        },
+                        {
+                            "severity": "Low",
+                            "component": "Bottom Navigation Bar",
+                            "title": "Slight misalignment of navigation icons",
+                            "description": "Bottom navigation icons and labels show subtle alignment and spacing differences compared to the reference screenshot.",
+                            "recommendation": "Verify bottom navigation layout for consistent spacing and centering across devices."
+                        }
+                    ]
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-014",
+            "scenario_id": "LOC_ENTERTAINMENT",
+            "scenario_name": "Validated locator smoke - Entertainment",
+            "module": "Validated Section Locators",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Visual",
+            "execution_time": 63.49,
+            "log_file": "LOC_ENTERTAINMENT.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_ENTERTAINMENT.log",
+            "screenshots": [
+                "screenshots/LOC_ENTERTAINMENT/entertainment_page.png"
+            ],
+            "comparison_images": [
+                "comparison/LOC_ENTERTAINMENT/./reference_entertainment_page.png",
+                "comparison/LOC_ENTERTAINMENT/./actual_entertainment_page.png",
+                "comparison/LOC_ENTERTAINMENT/./diff_entertainment_page.png"
+            ],
+            "sources": [
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "entertainment_page.png",
+                    "similarity": 44.59,
+                    "normalized": true,
+                    "summary": "Two genuine UI defects detected in the header and top icon alignment.",
+                    "issues": [
+                        {
+                            "severity": "High",
+                            "component": "Header",
+                            "title": "Header/logo alignment and spacing regression",
+                            "description": "The 'Entertainment' section header, logo, and back arrow are misaligned relative to the reference image, with increased height and spacing between elements.",
+                            "recommendation": "Adjust header layout to match reference alignment and spacing."
+                        },
+                        {
+                            "severity": "Medium",
+                            "component": "Toolbar",
+                            "title": "Notification and top-right icon badge misplacement",
+                            "description": "The notification icon and badge at the top right are misaligned or overlapping slightly with the toolbar, differing from the reference layout.",
+                            "recommendation": "Verify notification icon and badge alignment within toolbar bounds."
+                        }
+                    ]
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-015",
+            "scenario_id": "LOC_FOOD",
+            "scenario_name": "Validated locator smoke - Food",
+            "module": "Validated Section Locators",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Screenshot AI, Visual",
+            "execution_time": 67.16,
+            "log_file": "LOC_FOOD.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_FOOD.log",
+            "screenshots": [
+                "screenshots/LOC_FOOD/food_page.png"
+            ],
+            "comparison_images": [
+                "comparison/LOC_FOOD/./reference_food_page.png",
+                "comparison/LOC_FOOD/./actual_food_page.png",
+                "comparison/LOC_FOOD/./diff_food_page.png"
+            ],
+            "sources": [
+                "Screenshot AI",
+                "Visual"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Screen shows only loading placeholders and no real content, indicating content failed to render.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Only skeleton placeholders visible",
+                        "No actual articles or images rendered",
+                        "Content failed to load"
+                    ]
+                }
+            ],
+            "visual_findings": [
+                {
+                    "image": "food_page.png",
+                    "similarity": 41.15,
+                    "normalized": true,
+                    "summary": "Two major visual defects detected: missing main content and incorrect tab bar content.",
+                    "issues": [
+                        {
+                            "severity": "Critical",
+                            "component": "Main Content Area",
+                            "title": "Main content missing",
+                            "description": "The actual screenshot displays only placeholder skeleton loaders instead of the food articles, images, and story content present in the reference screenshot.",
+                            "recommendation": "Ensure feed data loads correctly and is rendered in the UI; investigate backend/API/data state."
+                        },
+                        {
+                            "severity": "High",
+                            "component": "Top Navigation Tabs",
+                            "title": "Top navigation tab bar content is different",
+                            "description": "The actual screenshot shows category tabs (Life & Style, Fashion, Fitness, Food, etc.) which do not match the reference tabs (All, Recipes, Dining, Features, Guides).",
+                            "recommendation": "Verify top tab configuration and tab bar source; synchronize navigation categories to match the expected design for the 'Food' section."
+                        }
+                    ]
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-016",
+            "scenario_id": "LOC_INDIA",
+            "scenario_name": "Validated locator smoke - India",
+            "module": "Validated Section Locators",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Minor",
+            "confidence": 80,
+            "reason": "Evidence detected by Visual",
+            "execution_time": 71.02,
+            "log_file": "LOC_INDIA.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_INDIA.log",
+            "screenshots": [
+                "screenshots/LOC_INDIA/india_page.png"
+            ],
+            "comparison_images": [
+                "comparison/LOC_INDIA/./reference_india_page.png",
+                "comparison/LOC_INDIA/./actual_india_page.png",
+                "comparison/LOC_INDIA/./diff_india_page.png"
+            ],
+            "sources": [
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "india_page.png",
+                    "similarity": 38.84,
+                    "normalized": true,
+                    "summary": "No genuine UI defects detected. All differences are related to dynamic content, news items, or notifications and are not relevant for visual regression of static UI elements.",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-017",
+            "scenario_id": "LOC_LATEST_NEWS",
+            "scenario_name": "Validated locator smoke - Latest News",
+            "module": "Validated Section Locators",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Screenshot AI, Visual",
+            "execution_time": 61.37,
+            "log_file": "LOC_LATEST_NEWS.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_LATEST_NEWS.log",
+            "screenshots": [
+                "screenshots/LOC_LATEST_NEWS/latest_news_page.png"
+            ],
+            "comparison_images": [
+                "comparison/LOC_LATEST_NEWS/./reference_latest_news_page.png",
+                "comparison/LOC_LATEST_NEWS/./actual_latest_news_page.png",
+                "comparison/LOC_LATEST_NEWS/./diff_latest_news_page.png"
+            ],
+            "sources": [
+                "Screenshot AI",
+                "Visual"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Content placeholders are still visible, indicating the content failed to load or is stuck in a loading state.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Placeholder content visible",
+                        "Content not rendered",
+                        "Stuck loading state"
+                    ]
+                }
+            ],
+            "visual_findings": [
+                {
+                    "image": "latest_news_page.png",
+                    "similarity": 43.82,
+                    "normalized": true,
+                    "summary": "Two critical visual defects detected in the main UI layout.",
+                    "issues": [
+                        {
+                            "severity": "High",
+                            "component": "Main Content / Article Feed",
+                            "title": "Main news feed missing",
+                            "description": "Actual screenshot is showing skeleton loaders/placeholders instead of real content/articles. All data and images are absent.",
+                            "recommendation": "Verify API/data loading, or check for UI state bug preventing main content from rendering."
+                        },
+                        {
+                            "severity": "High",
+                            "component": "Bottom Navigation Bar",
+                            "title": "Bottom navigation bar missing",
+                            "description": "The entire bottom navigation bar with actions (Home, Back, etc.) is absent in the actual screenshot.",
+                            "recommendation": "Ensure the navigation bar is present and visible across all UI states."
+                        }
+                    ]
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-018",
+            "scenario_id": "LOC_OPINION",
+            "scenario_name": "Validated locator smoke - Opinion",
+            "module": "Validated Section Locators",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Visual",
+            "execution_time": 51.22,
+            "log_file": "LOC_OPINION.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_OPINION.log",
+            "screenshots": [
+                "screenshots/LOC_OPINION/opinion_page.png"
+            ],
+            "comparison_images": [
+                "comparison/LOC_OPINION/./reference_opinion_page.png",
+                "comparison/LOC_OPINION/./actual_opinion_page.png",
+                "comparison/LOC_OPINION/./diff_opinion_page.png"
+            ],
+            "sources": [
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "opinion_page.png",
+                    "similarity": 35.29,
+                    "normalized": true,
+                    "summary": "Two genuine UI issues detected related to header/menu alignment and top bar icon misplacement.",
+                    "issues": [
+                        {
+                            "severity": "High",
+                            "component": "Header",
+                            "title": "Header position and logo alignment changed",
+                            "description": "The header section, including the logo and menu icon, is slightly shifted in the actual screenshot, causing misalignment compared to the reference.",
+                            "recommendation": "Review and adjust the header container's alignment and sizing to match the reference layout."
+                        },
+                        {
+                            "severity": "Medium",
+                            "component": "Toolbar",
+                            "title": "Top right icon group misalignment",
+                            "description": "The set of icons in the top right (profile/notification/settings) are shifted in the actual UI, causing spacing and potential overlap issues.",
+                            "recommendation": "Check padding and margin in the top bar's icon container and ensure proper spacing per reference."
+                        }
+                    ]
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-019",
+            "scenario_id": "LOC_PHOTOS",
+            "scenario_name": "Validated locator smoke - Photos",
+            "module": "Validated Section Locators",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Visual",
+            "execution_time": 55.19,
+            "log_file": "LOC_PHOTOS.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_PHOTOS.log",
+            "screenshots": [
+                "screenshots/LOC_PHOTOS/photos_page.png"
+            ],
+            "comparison_images": [
+                "comparison/LOC_PHOTOS/./reference_photos_page.png",
+                "comparison/LOC_PHOTOS/./actual_photos_page.png",
+                "comparison/LOC_PHOTOS/./diff_photos_page.png"
+            ],
+            "sources": [
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "photos_page.png",
+                    "similarity": 36.86,
+                    "normalized": true,
+                    "summary": "Two visual UI issues detected: overlay icons on images and notification badge count mismatch.",
+                    "issues": [
+                        {
+                            "severity": "High",
+                            "component": "Photo Thumbnails",
+                            "title": "Overlay icons unexpectedly present on images",
+                            "description": "Camera and counter overlay icons are present on each photo thumbnail in the actual screenshot, which do not appear in the reference. This could obstruct image content and alter the intended design.",
+                            "recommendation": "Confirm if overlay icons are intended for this view. If not, remove them to restore original UI."
+                        },
+                        {
+                            "severity": "Medium",
+                            "component": "Header - Notification Badge",
+                            "title": "Notification badge count mismatch",
+                            "description": "The notification badge in the header shows a different unread count (1 vs 3) between actual and reference. This may confuse users about unread items if not intended.",
+                            "recommendation": "Ensure the correct notification count is displayed or clarify if the badge shows live/dynamic content."
+                        }
+                    ]
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-020",
+            "scenario_id": "LOC_PODCAST",
+            "scenario_name": "Validated locator smoke - Podcast",
+            "module": "Validated Section Locators",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Minor",
+            "confidence": 80,
+            "reason": "Evidence detected by Visual",
+            "execution_time": 58.28,
+            "log_file": "LOC_PODCAST.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_PODCAST.log",
+            "screenshots": [
+                "screenshots/LOC_PODCAST/podcast_page.png"
+            ],
+            "comparison_images": [
+                "comparison/LOC_PODCAST/./reference_podcast_page.png",
+                "comparison/LOC_PODCAST/./actual_podcast_page.png",
+                "comparison/LOC_PODCAST/./diff_podcast_page.png"
+            ],
+            "sources": [
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "podcast_page.png",
+                    "similarity": 45.62,
+                    "normalized": true,
+                    "summary": "No genuine UI issues detected based on provided focus criteria.",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-021",
+            "scenario_id": "LOC_SCI_TECH",
+            "scenario_name": "Validated locator smoke - Sci-Tech",
+            "module": "Validated Section Locators",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Minor",
+            "confidence": 80,
+            "reason": "Evidence detected by Visual",
+            "execution_time": 63.18,
+            "log_file": "LOC_SCI_TECH.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_SCI_TECH.log",
+            "screenshots": [
+                "screenshots/LOC_SCI_TECH/sci_tech_page.png"
+            ],
+            "comparison_images": [
+                "comparison/LOC_SCI_TECH/./reference_sci_tech_page.png",
+                "comparison/LOC_SCI_TECH/./actual_sci_tech_page.png",
+                "comparison/LOC_SCI_TECH/./diff_sci_tech_page.png"
+            ],
+            "sources": [
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "sci_tech_page.png",
+                    "similarity": 38.88,
+                    "normalized": true,
+                    "summary": "No genuine UI defects detected in the controlled areas. All highlighted differences are related to dynamic content, device indicators, article data, or non-static assets.",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-022",
+            "scenario_id": "LOC_SPORTS",
+            "scenario_name": "Validated locator smoke - Sports",
+            "module": "Validated Section Locators",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Visual",
+            "execution_time": 3321.54,
+            "log_file": "LOC_SPORTS.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_SPORTS.log",
+            "screenshots": [],
+            "comparison_images": [
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\LOC_SPORTS\\sports_page.png"
+            ],
+            "sources": [
+                "Run",
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "sports_page.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-023",
+            "scenario_id": "LOC_VIDEOS",
+            "scenario_name": "Validated locator smoke - Videos",
+            "module": "Validated Section Locators",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Visual",
+            "execution_time": 1841.33,
+            "log_file": "LOC_VIDEOS.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_VIDEOS.log",
+            "screenshots": [],
+            "comparison_images": [
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\LOC_VIDEOS\\videos_page.png"
+            ],
+            "sources": [
+                "Run",
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "videos_page.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-024",
+            "scenario_id": "LOC_WORLD",
+            "scenario_name": "Validated locator smoke - World",
+            "module": "Validated Section Locators",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Visual",
+            "execution_time": 112.92,
+            "log_file": "LOC_WORLD.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_102_20260810_123639\\LOC_WORLD.log",
+            "screenshots": [],
+            "comparison_images": [
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\LOC_WORLD\\world_page.png"
+            ],
+            "sources": [
+                "Run",
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "world_page.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

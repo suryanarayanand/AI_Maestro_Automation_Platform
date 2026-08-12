@@ -1,0 +1,151 @@
+appId: com.mobstac.thehindu
+tags:
+  - auth
+  - opinion
+  - article
+  - navigation
+---
+# Opinion Article Navigation Interaction Login Validation (SC-88).
+# Launch App
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Navigate to Opinion Section
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- assertVisible: "Opinion"
+- tapOn: "Opinion"
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account"
+- scrollUntilVisible:
+    element: "COMMENT"
+- tapOn: "COMMENT"
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account_Article_Via_Comment_Section"
+
+- assertVisible: "Go beyond the headline — subscribe to access in-depth summaries and related insights."
+
+- tapOn: "SUBSCRIBE"
+- assertVisible: "Yearly"
+- assertVisible: "Monthly"
+- tapOn: "Close subscription options"
+
+
+# Verify Article Actions
+- assertVisible:
+    text: "Text size"
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+
+# Article Validation
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Article_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Article_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Article_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Article_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Article_05"
+
+# AI Summary
+- extendedWaitUntil:
+    visible: "AI summary"
+    timeout: 15000
+- tapOn: "AI summary"
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_After_Clicking_AI_Summary_Anonymous"
+- assertVisible: "SUBSCRIBE"
+- extendedWaitUntil:
+    visible: "SUBSCRIBE"
+    timeout: 15000
+- tapOn: "SUBSCRIBE"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_01"
+# - assertVisible: "Choose your plan"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_02"
+
+# - assertVisible: "LOGIN/SIGN-UP→"
+
+- assertVisible: ".*Login.*"
+- tapOn: ".*Login.*"
+
+- runFlow: ../Common/Login_via_pages_or_Article.yaml
+
+
+
+# - waitForAnimationToEnd
+# - takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_AI_Summary_Login_Sign_Up_Button"
+# - waitForAnimationToEnd
+# - extendedWaitUntil:
+#     visible: "SUBSCRIBE»"
+#     timeout: 15000
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_05"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_06"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_07"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_08"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_09"
+
+# Relaunch the app because navigating back causes the app to crash.
+# - stopApp
+- launchApp
+
+# Skip Intro Screen
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Verify Account Page
+- extendedWaitUntil:
+    visible: "Account"
+    timeout: 15000
+- tapOn: "Account"
+- extendedWaitUntil:
+    visible: "Account"
+    timeout: 15000
+- assertVisible: "Bookmarks"
+- scroll
+- assertVisible: "LOGOUT"
+- tapOn: "LOGOUT"
+- back
+

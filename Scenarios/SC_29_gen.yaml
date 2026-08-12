@@ -1,0 +1,368 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+---
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- tapOn:
+    id: "nav_menu"
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- takeScreenshot: "Screenshots/Generated/SC_29_gen_hamburger_menu"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- tapOn:
+    id: "nav_menu"
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "India"
+    index: 0
+
+- tapOn:
+    text: "News"
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_gen_india_news"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- tapOn:
+    id: "nav_menu"
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "India"
+    index: 0
+
+- tapOn:
+    text: "India"
+    index: 1
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_gen_india_india"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- tapOn:
+    id: "nav_menu"
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "World"
+    index: 0
+
+- tapOn:
+    text: "News"
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_gen_world_news"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- tapOn:
+    id: "nav_menu"
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "World"
+    index: 0
+
+- tapOn:
+    text: "India"
+    index: 1
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_gen_world_india"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- tapOn:
+    id: "nav_menu"
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "World"
+    index: 0
+
+- tapOn:
+    text: "World"
+    index: 1
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_gen_world_world"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- tapOn:
+    id: "nav_menu"
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "Sport"
+    index: 0
+
+- tapOn:
+    text: "Sport"
+    index: 1
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_gen_sport_sport"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- tapOn:
+    id: "nav_menu"
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "Sport"
+    index: 0
+
+- tapOn:
+    text: "Cricket"
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_gen_sport_cricket"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- tapOn:
+    id: "nav_menu"
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "Sport"
+    index: 0
+
+- tapOn:
+    text: "Football"
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_gen_sport_football"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- tapOn:
+    id: "nav_menu"
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "Sport"
+    index: 0
+
+- tapOn:
+    text: "Hockey"
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_gen_sport_hockey"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- tapOn:
+    id: "nav_menu"
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "Sport"
+    index: 0
+
+- tapOn:
+    text: "Tennis"
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_gen_sport_tennis"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- tapOn:
+    id: "nav_menu"
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "Sport"
+    index: 0
+
+- tapOn:
+    text: "Athletics"
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_gen_sport_athletics"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- tapOn:
+    id: "nav_menu"
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "Sport"
+    index: 0
+
+- tapOn:
+    text: "Motorsport"
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_gen_sport_motorsport"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- tapOn:
+    id: "nav_menu"
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "Sport"
+    index: 0
+
+- tapOn:
+    text: "Races"
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_gen_sport_races"
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- tapOn:
+    id: "nav_menu"
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "Sport"
+    index: 0
+
+- tapOn:
+    text: "Other Sports"
+
+- assertVisible:
+    id: "screen_section"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SC_29_gen_sport_other_sports"

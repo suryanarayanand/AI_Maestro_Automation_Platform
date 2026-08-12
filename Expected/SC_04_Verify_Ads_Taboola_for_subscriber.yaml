@@ -1,0 +1,87 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - ads
+---
+# Verify Ads Taboola for subscriber (SC-04).
+# Launch App
+- launchApp:
+    # clearState: true
+    stopApp: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+- waitForAnimationToEnd
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Navigate to Home Article
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Home"
+    timeout: 15000
+- waitForAnimationToEnd
+- tapOn:
+    point: 64%,27%
+- waitForAnimationToEnd
+
+# Verify Taboola Advertisement is Absent on Home Article
+- repeat:
+    times: 20
+    commands:
+      - assertNotVisible:
+          text: "Image for Taboola Advertising Unit"
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_04/Subscriber_No_Ads_Article_1"
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+- launchApp
+
+# Navigate to Trending Section
+- extendedWaitUntil:
+    visible: "Trending"
+    timeout: 15000
+- tapOn: "Trending"
+- tapOn:
+    point: 6%,20%
+
+# Verify Taboola Advertisement is Absent on Trending Article
+- repeat:
+    times: 20
+    commands:
+      - assertNotVisible:
+          text: "Image for Taboola Advertising Unit"
+      - scroll
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_04/Subscriber_No_Ads_Article_2"
+
+# Verify Advertisement is Absent
+- repeat:
+    times: 20
+    commands:
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_04/Subscriber_No_Ads_Article_3"
+
+# Verify Advertisement is Absent Again
+- repeat:
+    times: 20
+    commands:
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_04/Subscriber_No_Ads_Article_4"
+
+# Close Application
+- killApp

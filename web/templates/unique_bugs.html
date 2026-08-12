@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Unique Bugs{% endblock %}
+{% block page_title %}Unique bug summary{% endblock %}
+{% block content %}
+<p class="page-intro">Consolidated findings across every Bug Summary. Repeated and meaningfully similar bugs are grouped into one record.</p>
+<p class="text-muted"><strong>Generated on:</strong> {{ report.generated_at_display }}</p>
+<div class="metric-grid">
+    <div class="metric"><small>Source reports</small><strong>{{ report.summary.source_reports }}</strong></div>
+    <div class="metric"><small>Original bugs</small><strong>{{ report.summary.source_bugs }}</strong></div>
+    <div class="metric"><small>Unique bugs</small><strong>{{ report.summary.unique_bugs }}</strong></div>
+    <div class="metric"><small>Duplicates removed</small><strong>{{ report.summary.duplicates_removed }}</strong></div>
+</div>
+<section class="surface"><div class="table-responsive"><table class="table align-middle">
+<thead><tr><th>ID</th><th>Severity</th><th>Bug details</th><th>Occurrences</th><th>Evidence</th></tr></thead><tbody>
+{% for bug in report.bugs %}<tr>
+    <td><strong>{{ bug.unique_id }}</strong><br><small>{{ bug.scenario_id }}</small></td>
+    <td><span class="status-pill {{ 'status-failed' if bug.severity|lower in ['critical','high'] else 'status-pending' }}">{{ bug.severity }}</span></td>
+    <td><strong>{{ bug.scenario_name }}</strong><p class="mb-1">{{ bug.details }}</p>{% if bug.related_scenarios|length > 1 %}<small>Related: {{ bug.related_scenarios|join(', ') }}</small>{% endif %}</td>
+    <td>{{ bug.occurrence_count }}</td>
+    <td>{% for source in bug.reports %}<a class="d-block" href="{{ url_for('report.report_details', report_name=source) }}">{{ source }}</a>{% endfor %}</td>
+</tr>{% else %}<tr><td colspan="5" class="text-muted">No bugs found.</td></tr>{% endfor %}
+</tbody></table></div></section>
+{% endblock %}

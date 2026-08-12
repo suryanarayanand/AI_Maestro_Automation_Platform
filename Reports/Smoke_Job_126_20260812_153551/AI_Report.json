@@ -1,0 +1,24 @@
+{
+    "suite": {
+        "total": 1,
+        "passed": 0,
+        "failed": 1,
+        "not_found": 0,
+        "pass_rate": 0.0
+    },
+    "results": [
+        {
+            "id": "TC_001",
+            "module": "AI Generated",
+            "name": "TC_001",
+            "status": "FAIL",
+            "duration": 9.35,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_126_20260812_153551\\TC_001.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        }
+    ]
+}

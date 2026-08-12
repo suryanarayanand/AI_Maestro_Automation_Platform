@@ -1,0 +1,118 @@
+{
+    "suite": {
+        "total": 6,
+        "passed": 1,
+        "failed": 5,
+        "not_found": 0,
+        "pass_rate": 16.67
+    },
+    "results": [
+        {
+            "id": "PILOT_SC_02",
+            "module": "Unassigned",
+            "name": "PILOT SC 02",
+            "status": "FAIL",
+            "duration": 36.72,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_92_20260810_110618\\PILOT_SC_02.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "PILOT_SC_03",
+            "module": "Unassigned",
+            "name": "PILOT SC 03",
+            "status": "FAIL",
+            "duration": 33.56,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_92_20260810_110618\\PILOT_SC_03.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "PILOT_SC_05",
+            "module": "AI Generated",
+            "name": "Anonymous Premium navigation",
+            "status": "FAIL",
+            "duration": 32.61,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_92_20260810_110618\\PILOT_SC_05.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "TH_5818",
+            "module": "AI Generated",
+            "name": "Easy down game listing",
+            "status": "FAIL",
+            "duration": 94.72,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_92_20260810_110618\\TH_5818.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "TH_5716",
+            "module": "AI Generated",
+            "name": "Games Landing Page Navigation",
+            "status": "FAIL",
+            "duration": 30.56,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_92_20260810_110618\\TH_5716.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "TH_5634",
+            "module": "AI Generated",
+            "name": "Landing/Home Screen",
+            "status": "PASS",
+            "duration": 82.55,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_92_20260810_110618\\TH_5634.log",
+            "screenshots": [
+                "screenshots/TH_5634/TH_5634_games_screen_back_navigation.png",
+                "screenshots/TH_5634/TH_5634_sudoku_landing_page.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are visible and correctly rendered. No visual defects identified.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "TH_5634_games_screen_back_navigation.png",
+                    "image_path": "screenshots/TH_5634/TH_5634_games_screen_back_navigation.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "There is a visible text typo in the word 'Sudoko' and 'row,coumns' in the description.",
+                    "issues": [
+                        "Typo in the title: 'Sudoko' should be 'Sudoku'",
+                        "Typo in the description: 'row,coumns' should be 'row, columns'"
+                    ],
+                    "jira_title": "Text typos in Sudoku selection screen",
+                    "jira_description": "There is a typo in the title: 'Sudoko' instead of 'Sudoku'. Also, the description has a typo: 'row,coumns' instead of 'row, columns'.",
+                    "image": "TH_5634_sudoku_landing_page.png",
+                    "image_path": "screenshots/TH_5634/TH_5634_sudoku_landing_page.png"
+                }
+            ]
+        }
+    ]
+}

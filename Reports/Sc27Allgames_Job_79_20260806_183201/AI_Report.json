@@ -1,0 +1,90 @@
+{
+    "suite": {
+        "total": 3,
+        "passed": 2,
+        "failed": 0,
+        "not_found": 0,
+        "pass_rate": 66.67
+    },
+    "results": [
+        {
+            "id": "SC_27_SUDOKU",
+            "module": "Subscriber Games",
+            "name": "Mini Sudoku",
+            "status": "PASS",
+            "duration": 89.83,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Allgames_Job_79_20260806_183201\\SC_27_SUDOKU.log",
+            "screenshots": [
+                "screenshots/SC_27_SUDOKU/SC_27_Sudoku_Mini.png",
+                "screenshots/SC_27_SUDOKU/SC_27_Sudoku_Mini_List.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Sudoku_Mini.png",
+                    "image_path": "screenshots/SC_27_SUDOKU/SC_27_Sudoku_Mini.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and properly rendered. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_Sudoku_Mini_List.png",
+                    "image_path": "screenshots/SC_27_SUDOKU/SC_27_Sudoku_Mini_List.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27_THE_HINDU_MINI",
+            "module": "Subscriber Games",
+            "name": "The Hindu Mini",
+            "status": "PASS",
+            "duration": 83.49,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Allgames_Job_79_20260806_183201\\SC_27_THE_HINDU_MINI.log",
+            "screenshots": [
+                "screenshots/SC_27_THE_HINDU_MINI/SC_27_The_Hindu_Mini.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visible UI defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_27_The_Hindu_Mini.png",
+                    "image_path": "screenshots/SC_27_THE_HINDU_MINI/SC_27_The_Hindu_Mini.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_27_EASY_DOWN",
+            "module": "Subscriber Games",
+            "name": "Easy Down",
+            "status": "CANCELLED",
+            "duration": 30.16,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sc27Allgames_Job_79_20260806_183201\\SC_27_EASY_DOWN.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        }
+    ]
+}

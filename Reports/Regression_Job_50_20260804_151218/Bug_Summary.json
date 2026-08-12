@@ -1,0 +1,725 @@
+{
+    "suite": "Regression",
+    "execution_time": 2655.3,
+    "summary": {
+        "total": 16,
+        "passed": 2,
+        "failed": 14,
+        "critical": 14,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.807",
+            "version_code": "573"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "The testing cycle surfaced multiple high-severity functional failures and critical visual/UI regressions across numerous core scenarios. Automated Maestro execution reveals consistent run-time failures for SC_07, SC_08, SC_12, SC_13, SC_14, SC_15, SC_16, SC_18, and SC_20, which are confirmed as functional problems rather than visual or dynamic-content artifacts. In parallel, cross-device visual validation and screenshot AI consistently flagged critical rendering issues, persistent loading/stuck states, missing navigation/UI components, and extensive debug/SDK information visible in the production UI—none of which are attributed to transient content or tolerable UI drift. Only a minority of scenarios (SC_19, SC_22, SC_23, SC_24, SC_25) reported partial or conditional passes, but each still presents unacceptable UI or advertisement rendering issues of high severity.",
+        "release_recommendation": "Do NOT release. The present build contains critical functional failures and severe UI/UX regressions that affect content accessibility, navigation, and user trust. Significant defects in rendering, navigation, core feature flows, and exposed debug content must be fixed and revalidated prior to any release.",
+        "top_risks": [
+            "Multiple high-severity functional failures preventing user flows (SC_07, SC_08, SC_12, SC_13, SC_14, SC_15, SC_16, SC_18, SC_20)",
+            "Critical UI components missing: header, navigation bar, or toolbar/tab bar (SC_19)",
+            "Widespread rendering of internal debug and SDK status information in production in main content and advertisement areas (SC_22, SC_23, SC_25)",
+            "Persistent blank, stuck, or incompletely rendered content (SC_15, SC_16, SC_19, SC_23, SC_24, SC_25)",
+            "Error states and blank screens lacking user guidance or recovery actions (SC_16)",
+            "Loading indicators and placeholders remain visible, blocking user interaction (SC_15, SC_24, SC_25)",
+            "Major advertisement rendering failures with exposed technical details, disrupting both UI integrity and monetization flows"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_07",
+            "scenario_name": "Logout_function",
+            "module": "Account",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 78.68,
+            "log_file": "SC_07.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_07.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "SC_08",
+            "scenario_name": "Verify_Account_Subscription_details",
+            "module": "Account",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 83.82,
+            "log_file": "SC_08.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_08.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "SC_12",
+            "scenario_name": "Subscriber_Article_Full_Read_Access",
+            "module": "Article",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Visual",
+            "execution_time": 377.14,
+            "log_file": "SC_12.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_12.log",
+            "screenshots": [],
+            "comparison_images": [
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_12\\SC_12_Subscriber_Article_page.png",
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_12\\SC_12_Subscriber_Article_page_1.png"
+            ],
+            "sources": [
+                "Run",
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "SC_12_Subscriber_Article_page.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                },
+                {
+                    "image": "SC_12_Subscriber_Article_page_1.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-004",
+            "scenario_id": "SC_13",
+            "scenario_name": "Article_Share_Functionality",
+            "module": "Article",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Visual",
+            "execution_time": 182.58,
+            "log_file": "SC_13.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_13.log",
+            "screenshots": [
+                "screenshots/SC_13/SC_13_share_article.png"
+            ],
+            "comparison_images": [
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_13\\SC_13_copied_successfully.png",
+                "comparison/SC_13/./reference_SC_13_share_article.png",
+                "comparison/SC_13/./actual_SC_13_share_article.png",
+                "comparison/SC_13/./diff_SC_13_share_article.png"
+            ],
+            "sources": [
+                "Run",
+                "Visual"
+            ],
+            "ai_findings": [],
+            "visual_findings": [
+                {
+                    "image": "SC_13_copied_successfully.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                },
+                {
+                    "image": "SC_13_share_article.png",
+                    "similarity": 67.81,
+                    "normalized": false,
+                    "summary": "No genuine UI defects detected. All marked differences relate to dynamic content or ignored areas. UI components such as header, toolbar, navigation bar, icons, buttons, theme, colors, alignment, and spacing appear correct.",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-005",
+            "scenario_id": "SC_14",
+            "scenario_name": "Article_Font_Size_Validation",
+            "module": "Article",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 102.59,
+            "log_file": "SC_14.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_14.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-006",
+            "scenario_id": "SC_15",
+            "scenario_name": "Podcast_Section_Subscriber_account",
+            "module": "Podcast",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Screenshot AI",
+            "execution_time": 138.56,
+            "log_file": "SC_15.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_15.log",
+            "screenshots": [
+                "screenshots/SC_15/SC_15_first_Podcast_playing_the_latest.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_00.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_bottom.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_middle_01.png",
+                "screenshots/SC_15/SC_15_Podcast_Page_top_01.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run",
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Podcast content failed to load; only placeholders and a stuck loading indicator are visible.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Stuck loading indicator",
+                        "Placeholder content visible",
+                        "Podcast content missing",
+                        "Incomplete rendering"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-007",
+            "scenario_id": "SC_16",
+            "scenario_name": "SC 16 login with appleid",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Run, Screenshot AI",
+            "execution_time": 51.24,
+            "log_file": "SC_16.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_16.log",
+            "screenshots": [
+                "screenshots/SC_16/SC_16_Apple_signin_page.png",
+                "screenshots/SC_16/SC_16_signin_error_via_AppleID.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run",
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Error state shown with invalid_request and a large blank area replaces UI content. No actionable UI provided for user to proceed.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Blank white area replaces expected content",
+                        "No actionable button or option to retry, dismiss, or navigate back",
+                        "Error state is not user-friendly"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-008",
+            "scenario_id": "SC_18",
+            "scenario_name": "SC 18 Create New Account Option",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 50.0,
+            "log_file": "SC_18.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_18.log",
+            "screenshots": [
+                "screenshots/SC_18/SC_18_intialSetupScreen_01.png",
+                "screenshots/SC_18/SC_18_SignUp_page.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-009",
+            "scenario_id": "SC_19",
+            "scenario_name": "ad_navigation",
+            "module": "Advertisement",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Screenshot AI, Visual",
+            "execution_time": 240.11,
+            "log_file": "SC_19.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_19.log",
+            "screenshots": [
+                "screenshots/SC_19/SC_19_Ad_Page_04.png"
+            ],
+            "comparison_images": [
+                "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_19\\SC_19_Ad_Page_03.png",
+                "comparison/SC_19/./reference_SC_19_Ad_Page_04.png",
+                "comparison/SC_19/./actual_SC_19_Ad_Page_04.png",
+                "comparison/SC_19/./diff_SC_19_Ad_Page_04.png"
+            ],
+            "sources": [
+                "Screenshot AI",
+                "Visual"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Large unexpected blank area is present in the middle of the screen where live updates content should be displayed.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Large blank area in Live updates section",
+                        "Incomplete rendering of live updates"
+                    ]
+                }
+            ],
+            "visual_findings": [
+                {
+                    "image": "SC_19_Ad_Page_03.png",
+                    "similarity": 0,
+                    "normalized": false,
+                    "summary": "",
+                    "issues": []
+                },
+                {
+                    "image": "SC_19_Ad_Page_04.png",
+                    "similarity": 51.86,
+                    "normalized": false,
+                    "summary": "Three genuine UI defects detected related to missing header, navigation, and toolbar.",
+                    "issues": [
+                        {
+                            "severity": "Critical",
+                            "component": "Header",
+                            "title": "Header missing",
+                            "description": "The application header containing the app logo, menu icon, and subscribe/settings icons is missing in the actual screenshot.",
+                            "recommendation": "Restore the header and verify visibility of all associated icons."
+                        },
+                        {
+                            "severity": "Critical",
+                            "component": "Navigation Bar",
+                            "title": "Bottom Navigation Bar missing",
+                            "description": "Bottom navigation bar with HOME, TRENDING, PREMIUM, EBOOKS, and GAMES is not present in the actual screenshot.",
+                            "recommendation": "Ensure the bottom navigation bar is always visible on main screens."
+                        },
+                        {
+                            "severity": "Major",
+                            "component": "Toolbar/Tab bar",
+                            "title": "Tab bar missing",
+                            "description": "The toolbar/tab bar with navigation to Videos, Photos, Podcast, Home, India, World, etc., is absent.",
+                            "recommendation": "Restore the toolbar/tab bar for content discovery and navigation."
+                        }
+                    ]
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-010",
+            "scenario_id": "SC_20",
+            "scenario_name": "SC 20 Signup Option Validation",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 50.96,
+            "log_file": "SC_20.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_20.log",
+            "screenshots": [
+                "screenshots/SC_20/SC_20_SignUp_page.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-011",
+            "scenario_id": "SC_22",
+            "scenario_name": "Appearance theme validation",
+            "module": "Settings",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 95,
+            "reason": "Evidence detected by Screenshot AI, Visual",
+            "execution_time": 60.99,
+            "log_file": "SC_22.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_22.log",
+            "screenshots": [
+                "screenshots/SC_22/SC_22_Account_Settings_Page.png",
+                "screenshots/SC_22/SC_22_Appearance.png",
+                "screenshots/SC_22/SC_22_Appearance_Dark_Theme.png",
+                "screenshots/SC_22/SC_22_Appearance_Dark_Theme_Home_Page.png",
+                "screenshots/SC_22/SC_22_Appearance_Light_Theme.png"
+            ],
+            "comparison_images": [
+                "comparison/SC_22/./reference_SC_22_Appearance_Dark_Theme_Home_Page.png",
+                "comparison/SC_22/./actual_SC_22_Appearance_Dark_Theme_Home_Page.png",
+                "comparison/SC_22/./diff_SC_22_Appearance_Dark_Theme_Home_Page.png"
+            ],
+            "sources": [
+                "Screenshot AI",
+                "Visual"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Text 'unit:/22390678/TH_Android_HP_Sticky_A SDK loaded / impression' above the advertisement indicates a UI rendering defect.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Debug or placeholder SDK text visible above advertisement"
+                    ]
+                }
+            ],
+            "visual_findings": [
+                {
+                    "image": "SC_22_Appearance_Dark_Theme_Home_Page.png",
+                    "similarity": 46.65,
+                    "normalized": false,
+                    "summary": "No genuine UI issues detected. All highlighted differences are related to dynamic content or data changes and do not represent visual regressions in the UI components.",
+                    "issues": []
+                }
+            ],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-012",
+            "scenario_id": "SC_23",
+            "scenario_name": "SC 23 Homepage FromHomepage to Editorialpage in darkTheme anonyous ",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 112.09,
+            "log_file": "SC_23.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_23.log",
+            "screenshots": [
+                "screenshots/SC_23/SC_23_Dark_Theme.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_1.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_2.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_3.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_4.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_5.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_6.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_7.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_1.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_2.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_3.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_4.png",
+                "screenshots/SC_23/SC_23_Home_Page.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "A large blank black region is present inside the main content area, indicating incomplete or missing UI.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Unexpected blank black area inside application content",
+                        "Missing or failed to render advertisement/content"
+                    ]
+                },
+                {
+                    "reason": "Advertisement labeling and rendering error visible with ad unit and SDK message overlaid on the ad image.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement unit path and SDK loaded / impression message are visible over the advertisement image",
+                        "Advertisement rendering defect"
+                    ]
+                },
+                {
+                    "reason": "Debug/ad unit and SDK status text are visible in production UI.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Debug information ('unit:' and 'status: loaded') visible under the main advertisement banner",
+                        "Debug information ('unit:', 'SDK loaded / impression') visible above sticky advertisement",
+                        "Production UI should not display testing or SDK status text"
+                    ]
+                },
+                {
+                    "reason": "Visible advertisement container displays debug or placeholder information instead of a normal ad.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement area contains unit path and SDK debug information",
+                        "Non-production placeholder shown in ad area"
+                    ]
+                },
+                {
+                    "reason": "Debug or ad unit SDK logs ('unit:/22390678/TH_Android_HP_Sticky_A SDK loaded / impression') are visible above the advertisement banner, which is an unexpected UI element.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Debug/SDK log text visible above advertisement",
+                        "Unintended debug output in production UI"
+                    ]
+                },
+                {
+                    "reason": "Internal advertisement unit and status/debug information is visible to end users.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Internal ad unit paths and status (e.g., unit:/22390678/TH_Android_HP_Mid04_A, status:loaded) are visible on screen",
+                        "SDK loaded / impression technical text visible",
+                        "Debug/technical details should not be shown to users in production UI"
+                    ]
+                },
+                {
+                    "reason": "Advertisement container displays debug or SDK information above the actual advertisement, indicating an incomplete or broken ad rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement SDK/debug information visible",
+                        "Broken advertisement rendering"
+                    ]
+                },
+                {
+                    "reason": "Advertisement container has exposed debug information and SDK impression text visible in the UI, which is a clear rendering defect.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Debug/SDK impression text visible above advertisement",
+                        "Exposed technical information inside advertisement container"
+                    ]
+                },
+                {
+                    "reason": "Technical advertisement banner with SDK loaded / impression string is visibly overlaid above the actual advertisement content.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "SDK loaded / impression technical string visible above advertisement",
+                        "Unintended technical overlay in user UI"
+                    ]
+                },
+                {
+                    "reason": "Large black area and advertisement placeholder visible with debug text indicating incomplete or broken ad rendering.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Large black blank advertisement container",
+                        "Advertisement placeholder visible",
+                        "Debug text visible: 'unit:/22390678/TH__Android__HP__Sticky__A SDK loaded / impression'",
+                        "Empty space interrupts application content"
+                    ]
+                },
+                {
+                    "reason": "SDK loaded / impression debug message is visible above the advertisement banner.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "SDK loaded / impression debug message visible",
+                        "Non-user facing technical debug output in production UI"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-013",
+            "scenario_id": "SC_24",
+            "scenario_name": "SC 24 Subscriber E-Book access",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 94.48,
+            "log_file": "SC_24.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_24.log",
+            "screenshots": [
+                "screenshots/SC_24/SC_24_eBook_01.png",
+                "screenshots/SC_24/SC_24_eBook_01_Cover.png",
+                "screenshots/SC_24/SC_24_eBooks_Page.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Loading indicator is visible for an extended duration with a large blank area, indicating incomplete rendering or stuck loading state.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Stuck loading indicator",
+                        "Incomplete screen rendering",
+                        "Blank content area"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-014",
+            "scenario_id": "SC_25",
+            "scenario_name": "SC 25 Homepage FromHomepage to Comments Drak theme ananoymous",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "PASS",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Screenshot AI",
+            "execution_time": 126.22,
+            "log_file": "SC_25.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_50_20260804_151218\\SC_25.log",
+            "screenshots": [
+                "screenshots/SC_25/SC_25_Comment_Section.png",
+                "screenshots/SC_25/SC_25_Dark_Theme.png",
+                "screenshots/SC_25/SC_25_Home_Page.png",
+                "screenshots/SC_25/SC_25_Opinion_Page_01.png",
+                "screenshots/SC_25/SC_25_Opinion_Page_02.png",
+                "screenshots/SC_25/SC_25_Opinion_Page_03.png",
+                "screenshots/SC_25/SC_25_Opinion_Page_04.png",
+                "screenshots/SC_25/SC_25_Opinion_Page_05.png",
+                "screenshots/SC_25/SC_25_Opinion_Page_06.png",
+                "screenshots/SC_25/SC_25_Opinion_Section.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Screenshot AI"
+            ],
+            "ai_findings": [
+                {
+                    "reason": "Advertisement SDK/debug text 'unit:/22390678/TH_Android_HP_Mid03_A...' is visibly rendered below the advertisement image.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement SDK/debug text visible",
+                        "Unintended text overlaps application content"
+                    ]
+                },
+                {
+                    "reason": "Screen appears stuck on a loading state with placeholder skeletons and a loading spinner visible in the main content area.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Loading spinner is stuck on content area",
+                        "Only skeleton placeholders visible",
+                        "Main content not rendered"
+                    ]
+                },
+                {
+                    "reason": "Visible advertisement SDK debug information is displayed above the advertisement, which is not user-facing content.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Advertisement SDK debug info visible",
+                        "Non-production debug text overlays UI"
+                    ]
+                },
+                {
+                    "reason": "Raw ad unit information and SDK status messages are visibly rendered in the content area.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Raw ad unit path and status visible: 'unit:/22390678/TH_Android_Topic_Mid01_A status: loaded'",
+                        "SDK debug information visible: 'unit:/22390678/TH_Android_Topic_Sticky_A SDK loaded / impression'"
+                    ]
+                },
+                {
+                    "reason": "Debug ad unit and status strings are visible within the main content area.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Ad unit debug/status text is visible to users",
+                        "SDK loaded / impression diagnostic info shown in content"
+                    ]
+                },
+                {
+                    "reason": "Internal advertisement unit debug information and SDK status are visible to end users. These technical details should not be shown in production UI.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Visible advertisement unit debug information",
+                        "Visible SDK status/output"
+                    ]
+                },
+                {
+                    "reason": "Debug ad unit and SDK status text is visible to end users, which is not intended for production UI.",
+                    "severity": "HIGH",
+                    "issues": [
+                        "Ad unit path and status text visible in UI",
+                        "SDK loaded/impression debug text visible in UI"
+                    ]
+                }
+            ],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

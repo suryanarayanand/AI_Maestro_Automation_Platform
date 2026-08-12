@@ -1,0 +1,18 @@
+appId: com.mobstac.thehindu
+tags:
+  - locator-smoke
+  - india
+---
+- runFlow: ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml
+- tapOn:
+    text: "India"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 20000
+- assertVisible:
+    id: "screen_home"
+- assertVisible:
+    text: "India"
+- takeScreenshot: "Screenshots/LocatorSmoke/india_page"

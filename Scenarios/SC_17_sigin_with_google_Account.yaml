@@ -1,0 +1,75 @@
+appId: com.mobstac.thehindu
+tags:
+  - google_login
+  - account
+---
+# sigin with google Account (SC-17).
+# Launch App
+- launchApp:
+    clearState: true
+    # stopApp: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Navigate to Login Page
+- assertVisible: "HAVE AN ACCOUNT? LOGIN"
+- tapOn: "HAVE AN ACCOUNT? LOGIN"
+
+# Verify Login Screen
+- extendedWaitUntil:
+    visible: "thehindu-logo"
+    timeout: 15000
+- extendedWaitUntil:
+    visible: "Login to your account"
+    timeout: 15000
+- extendedWaitUntil:
+    visible: "Don’t have an account ? "
+    timeout: 15000
+- assertVisible: "Sign in with Apple"
+- assertVisible: "Sign in with Google"
+- assertVisible: "If you have an account with The Hindu Businessline,\nThe Hindu e-Paper, Frontline, or Sportstar.\nYou can use the same account to login here."
+
+# Verify Google Sign-In
+- tapOn: "Sign in with Google"
+- takeScreenshot: "Screenshots/SC_17/SC_17_google_signin_page"
+
+# Verify Google Account Selection
+- runFlow:
+    when:
+      visible:
+        text: "Choose an account"
+    commands:
+      - assertVisible: "to continue to The Hindu"
+      - assertVisible: "Add another account"
+      - takeScreenshot: "Screenshots/SC_17/Google_Account_Selection"
+
+# Verify Google Sign-In Error
+- runFlow:
+    when:
+      visible:
+        text: "Sign in with Google"
+    commands:
+      - repeat:
+          times: 2
+          commands:
+            - takeScreenshot: "Screenshots/SC_17/SC_17_google_signin_page_error"
+            - assertNotVisible:
+                text: "Access blocked: This app's request is invalid"
+            - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible:
+        text: "Sign in with Google"
+    commands:
+      - repeat:
+          times: 2
+          commands:
+            - takeScreenshot: "Screenshots/SC_17/SC_17_google_signin_page_error"
+            - assertNotVisible:
+                text: "Access blocked: This app's request is invalid"
+            - waitForAnimationToEnd
+
+# Navigate Back
+- back
+
+# Close Application
+- killApp

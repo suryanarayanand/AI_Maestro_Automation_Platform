@@ -1,0 +1,164 @@
+{
+    "suite": "Smoke",
+    "execution_time": 35.01,
+    "summary": {
+        "total": 5,
+        "passed": 0,
+        "failed": 5,
+        "critical": 5,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "multiple-or-unavailable",
+            "manufacturer": "",
+            "model": "",
+            "android": "",
+            "resolution": "",
+            "density": "",
+            "package": "com.mobstac.thehindu",
+            "version_name": "",
+            "version_code": ""
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Multiple critical scenarios (SC_28, SC_29, SC_30, PILOT_SC_02, PILOT_SC_03) have failed during Maestro execution. No additional visual or screenshot-based issues were detected, and there is no evidence of visual-only defects or dynamic-content-related noise. All detected failures are functional in nature and represent blockers to release quality.",
+        "release_recommendation": "Do not release. Address functional failures across the affected scenarios before proceeding.",
+        "top_risks": [
+            "Critical functional test cases are failing",
+            "No visual or dynamic content issues noted—failures are confirmed functional",
+            "High likelihood of key features being broken in production"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "SC_28",
+            "scenario_name": "SC 28 Anonymous Games validation",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 7.23,
+            "log_file": "SC_28.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_85_20260807_180712\\SC_28.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "SC_29",
+            "scenario_name": "SC 29 Category navigation anonymous",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 6.13,
+            "log_file": "SC_29.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_85_20260807_180712\\SC_29.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "SC_30",
+            "scenario_name": "SC 30 BreifingSection premium subscriber account",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 7.2,
+            "log_file": "SC_30.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_85_20260807_180712\\SC_30.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-004",
+            "scenario_id": "PILOT_SC_02",
+            "scenario_name": "Home and Trending navigation",
+            "module": "AI Generated",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 7.38,
+            "log_file": "PILOT_SC_02.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_85_20260807_180712\\PILOT_SC_02.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-005",
+            "scenario_id": "PILOT_SC_03",
+            "scenario_name": "Anonymous Home and India navigation",
+            "module": "AI Generated",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 6.35,
+            "log_file": "PILOT_SC_03.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_85_20260807_180712\\PILOT_SC_03.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

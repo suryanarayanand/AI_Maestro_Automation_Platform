@@ -1,0 +1,99 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_89_Opinion_Article_EndToEnd_Subscriber_Feature_Validation
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Run ../Common/LOGIN.yaml...
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "Email" is visible... COMPLETED
+  Tap on "Email"... COMPLETED
+  Input text product.testing@thehindu.co.in... COMPLETED
+  Hide Keyboard... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "NEXT.*|Next.*|HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT.*LOGIN"... COMPLETED
+    Assert that "Email" is visible... COMPLETED
+    Tap on "Email"... COMPLETED
+    Input text product.testing@thehindu.co.in... COMPLETED
+    Hide Keyboard... COMPLETED
+    Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+  Assert that "NEXT.*|Next.*" is visible... COMPLETED
+  Tap on "NEXT.*|Next.*"... COMPLETED
+  Assert that "password" is visible... COMPLETED
+  Tap on "password"... COMPLETED
+  Input text Test@123... COMPLETED
+  Hide Keyboard... COMPLETED
+  Assert that "LOGIN.*" is visible... COMPLETED
+  Tap on "LOGIN.*"... COMPLETED
+  Assert that "Home" is visible... COMPLETED
+Run ../Common/LOGIN.yaml... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Repeat 3 times...
+  Swiping in LEFT direction in 400 ms... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 3 times... COMPLETED
+Assert that "Opinion" is visible... COMPLETED
+Tap on "Opinion"... COMPLETED
+Take screenshot Screenshots/SC_89/SC_89_Opinion_Page_Subscriber_Account... COMPLETED
+Scrolling DOWN until "Comment" is visible with speed 40, visibility percentage 100%, timeout 20000 ms, with centering disabled... COMPLETED
+Tap on "Comment"... COMPLETED
+Take screenshot Screenshots/SC_89/SC_89_Opinion_Page_Subscriber_Account_Article_Via_Comment_Section... COMPLETED
+Assert that "Summary" is visible... COMPLETED
+Tap on "Summary"... COMPLETED
+Take screenshot Screenshots/SC_89/SC_89_Opinion_Page_Article_After_Clicking_AI_Summary... COMPLETED
+Wait for animation to end... COMPLETED
+Tap on "Close sheet"... COMPLETED
+Assert that "Text size" is visible... COMPLETED
+Wait for animation to end... COMPLETED
+Assert that "Bookmark" is visible... COMPLETED
+Assert that "Share" is visible... COMPLETED
+Assert that "Comment" is visible... COMPLETED
+Take screenshot Screenshots/SC_89/SC_89_Opinion_Page_Article_01... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_89/SC_89_Opinion_Page_Article_02... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_89/SC_89_Opinion_Page_Article_03... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_89/SC_89_Opinion_Page_Article_04... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_89/SC_89_Opinion_Page_Article_05... COMPLETED
+Press back... COMPLETED
+Scrolling DOWN until "EDITORIAL" is visible with speed 40, visibility percentage 100%, timeout 15000 ms, with centering disabled... COMPLETED
+Tap on "EDITORIAL"... COMPLETED
+Take screenshot Screenshots/SC_89/SC_89_Opinion_Page_Article_06... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_89/SC_89_Opinion_Page_Article_07... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_89/SC_89_Opinion_Page_Article_08... COMPLETED
+Swiping in LEFT direction in 400 ms... COMPLETED
+Take screenshot Screenshots/SC_89/SC_89_Opinion_Page_Second_Article_01... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_89/SC_89_Opinion_Page_Second_Article_02... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_89/SC_89_Opinion_Page_Second_Article_03... COMPLETED
+Scroll vertically... COMPLETED
+Take screenshot Screenshots/SC_89/SC_89_Opinion_Page_Second_Article_04... COMPLETED
+Press back... COMPLETED
+Repeat 3 times...
+  Swiping in LEFT direction in 400 ms... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 3 times... COMPLETED
+Assert that "Opinion" is visible... COMPLETED
+Tap on "Opinion"... COMPLETED
+Scrolling DOWN until "LETTERS" is visible with speed 40, visibility percentage 100%, timeout 20000 ms, with centering disabled... COMPLETED
+Assert that "LETTERS" is visible... COMPLETED
+Tap on "LETTERS"... COMPLETED
+
+
+===== STDERR =====
+

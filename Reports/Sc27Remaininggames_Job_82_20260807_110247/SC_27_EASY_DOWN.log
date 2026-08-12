@@ -1,0 +1,21 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_27_EASY_DOWN
+Run ../Common/OPEN_SUBSCRIBER_GAMES.yaml...
+  Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+  Run LOGIN.yaml...
+    Wait for animation to end... COMPLETED
+    Wait for animation to end... COMPLETED
+    Wait for animation to end... COMPLETED
+    Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+      Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+    Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+    Wait for animation to end... COMPLETED
+    Assert that "Email" is visible... COMPLETED
+    Tap on "Email"... COMPLETED
+    Input text product.testing@thehindu.co.in... COMPLETED
+    Hide Keyboard...
+
+===== STDERR =====
+

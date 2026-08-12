@@ -1,0 +1,92 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - home
+  - theme
+---
+# Homepage FromHomepage to Comments Drak theme ananoymous (SC-25).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Home Page Validation
+- takeScreenshot: "Screenshots/SC_25/SC_25_Home_Page"
+
+# Navigate to Appearance Settings
+- tapOn:
+    point: 88%,5%
+- extendedWaitUntil:
+    visible: "Appearance"
+    timeout: 15000
+- tapOn: "Appearance"
+
+# Verify Dark Theme
+- assertVisible: "Dark\nMode"
+- tapOn: "Dark\nMode"
+- takeScreenshot: "Screenshots/SC_25/SC_25_Dark_Theme"
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+- back
+
+# - stopApp
+- launchApp
+
+# Navigate to Opinion Section
+- repeat:
+    times: 9
+    commands:
+      - scroll
+- scrollUntilVisible:
+    element: "Comment"
+- takeScreenshot: "Screenshots/SC_25/SC_25_Comment_Section"
+- repeat:
+    times: 4
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "SEE MORE"
+          commands:
+            - tapOn: "SEE MORE"
+      - scroll
+      - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Opinion"
+    timeout: 15000
+- takeScreenshot: "Screenshots/SC_25/SC_25_Opinion_Section"
+- repeat:
+    times: 2
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Opinion Page Validation
+- scroll
+- takeScreenshot: "Screenshots/SC_25/SC_25_Opinion_Page_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_25/SC_25_Opinion_Page_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_25/SC_25_Opinion_Page_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_25/SC_25_Opinion_Page_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_25/SC_25_Opinion_Page_05"
+- scroll
+- takeScreenshot: "Screenshots/SC_25/SC_25_Opinion_Page_06"
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+- back
+
+# - stopApp
+- launchApp

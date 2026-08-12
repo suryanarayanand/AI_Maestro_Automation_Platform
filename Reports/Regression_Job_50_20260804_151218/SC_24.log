@@ -1,0 +1,46 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_24_Subscriber_E-Book_access
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Run ../Common/LOGIN.yaml...
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "Email" is visible... COMPLETED
+  Tap on "Email"... COMPLETED
+  Input text product.testing@thehindu.co.in... COMPLETED
+  Hide Keyboard... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "NEXT.*|Next.*|HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible...
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible... SKIPPED
+  Assert that "NEXT.*|Next.*" is visible... COMPLETED
+  Tap on "NEXT.*|Next.*"... COMPLETED
+  Assert that "password" is visible... COMPLETED
+  Tap on "password"... COMPLETED
+  Input text Test@123... COMPLETED
+  Hide Keyboard... COMPLETED
+  Assert that "LOGIN.*" is visible... COMPLETED
+  Tap on "LOGIN.*"... COMPLETED
+  Assert that "Home" is visible... COMPLETED
+Run ../Common/LOGIN.yaml... COMPLETED
+Assert that "eBooks" is visible... COMPLETED
+Tap on "eBooks"... COMPLETED
+Wait for animation to end... COMPLETED
+Take screenshot Screenshots/SC_24/SC_24_eBooks_Page... COMPLETED
+Tap on point (77%,34%)... COMPLETED
+Take screenshot Screenshots/SC_24/SC_24_eBook_01_Cover... COMPLETED
+Repeat 10 times...
+  Swiping in LEFT direction in 400 ms... COMPLETED
+Repeat 10 times... COMPLETED
+Take screenshot Screenshots/SC_24/SC_24_eBook_01... COMPLETED
+Press back... COMPLETED
+
+
+===== STDERR =====
+

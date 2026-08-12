@@ -1,0 +1,28 @@
+appId: com.mobstac.thehindu
+tags:
+  - locator-capture
+---
+- launchApp:
+    clearState: false
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 20000
+- repeat:
+    times: 5
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: "${TARGET_SECTION}"
+    timeout: 15000
+- tapOn:
+    text: "${TARGET_SECTION}"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: "${TARGET_SECTION}"
+    timeout: 20000
+- takeScreenshot: "Screenshots/LocatorCapture/${CAPTURE_NAME}"

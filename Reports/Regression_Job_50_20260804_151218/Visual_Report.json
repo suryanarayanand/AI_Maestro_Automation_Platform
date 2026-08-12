@@ -1,0 +1,344 @@
+{
+    "suite": {
+        "total": 11,
+        "passed": 4,
+        "failed": 3,
+        "pass_rate": 36.36
+    },
+    "reference": {
+        "role": "Production reference",
+        "serial": "46201FDAP0048X",
+        "manufacturer": "Google",
+        "model": "Pixel 9 Pro",
+        "android": "16",
+        "resolution": "Physical size: 960x2142",
+        "density": "Physical density: 360",
+        "package": "com.mobstac.thehindu",
+        "version_name": "2501.20.802",
+        "version_code": "568"
+    },
+    "actual": {
+        "role": "Internal test actual",
+        "serial": "R9ZY40T6PHN",
+        "manufacturer": "samsung",
+        "model": "SM-E066B",
+        "android": "16",
+        "resolution": "Physical size: 720x1600",
+        "density": "Physical density: 300",
+        "package": "com.mobstac.thehindu",
+        "version_name": "2501.20.807",
+        "version_code": "573"
+    },
+    "results": [
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_07"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_08"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 2,
+            "details": [
+                {
+                    "image": "SC_12_Subscriber_Article_page.png",
+                    "status": "NOT FOUND",
+                    "similarity": 0,
+                    "threshold": 95.0,
+                    "difference_count": 0,
+                    "reference": "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_12\\SC_12_Subscriber_Article_page.png",
+                    "actual": "",
+                    "difference": ""
+                },
+                {
+                    "image": "SC_12_Subscriber_Article_page_1.png",
+                    "status": "NOT FOUND",
+                    "similarity": 0,
+                    "threshold": 95.0,
+                    "difference_count": 0,
+                    "reference": "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_12\\SC_12_Subscriber_Article_page_1.png",
+                    "actual": "",
+                    "difference": ""
+                }
+            ],
+            "scenario": "SC_12"
+        },
+        {
+            "passed": 0,
+            "failed": 1,
+            "total": 2,
+            "details": [
+                {
+                    "image": "SC_13_copied_successfully.png",
+                    "status": "NOT FOUND",
+                    "similarity": 0,
+                    "threshold": 95.0,
+                    "difference_count": 0,
+                    "reference": "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_13\\SC_13_copied_successfully.png",
+                    "actual": "",
+                    "difference": ""
+                },
+                {
+                    "image": "SC_13_share_article.png",
+                    "status": "FAIL",
+                    "similarity": 67.81,
+                    "threshold": 95.0,
+                    "difference_count": 173,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_13/./reference_SC_13_share_article.png",
+                    "actual": "comparison/SC_13/./actual_SC_13_share_article.png",
+                    "difference": "comparison/SC_13/./diff_SC_13_share_article.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI defects detected. All marked differences relate to dynamic content or ignored areas. UI components such as header, toolbar, navigation bar, icons, buttons, theme, colors, alignment, and spacing appear correct.",
+                        "issues": []
+                    }
+                }
+            ],
+            "scenario": "SC_13"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_14"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_15"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_16"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_17"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_18"
+        },
+        {
+            "passed": 0,
+            "failed": 1,
+            "total": 2,
+            "details": [
+                {
+                    "image": "SC_19_Ad_Page_03.png",
+                    "status": "NOT FOUND",
+                    "similarity": 0,
+                    "threshold": 95.0,
+                    "difference_count": 0,
+                    "reference": "D:\\AI_Maestro_Automation_Platform\\.maestro\\screenshots\\Baselines\\Screenshots\\SC_19\\SC_19_Ad_Page_03.png",
+                    "actual": "",
+                    "difference": ""
+                },
+                {
+                    "image": "SC_19_Ad_Page_04.png",
+                    "status": "FAIL",
+                    "similarity": 51.86,
+                    "threshold": 95.0,
+                    "difference_count": 90,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_19/./reference_SC_19_Ad_Page_04.png",
+                    "actual": "comparison/SC_19/./actual_SC_19_Ad_Page_04.png",
+                    "difference": "comparison/SC_19/./diff_SC_19_Ad_Page_04.png",
+                    "ai_analysis": {
+                        "overall_status": "FAIL",
+                        "issue_count": 3,
+                        "summary": "Three genuine UI defects detected related to missing header, navigation, and toolbar.",
+                        "issues": [
+                            {
+                                "severity": "Critical",
+                                "component": "Header",
+                                "title": "Header missing",
+                                "description": "The application header containing the app logo, menu icon, and subscribe/settings icons is missing in the actual screenshot.",
+                                "recommendation": "Restore the header and verify visibility of all associated icons."
+                            },
+                            {
+                                "severity": "Critical",
+                                "component": "Navigation Bar",
+                                "title": "Bottom Navigation Bar missing",
+                                "description": "Bottom navigation bar with HOME, TRENDING, PREMIUM, EBOOKS, and GAMES is not present in the actual screenshot.",
+                                "recommendation": "Ensure the bottom navigation bar is always visible on main screens."
+                            },
+                            {
+                                "severity": "Major",
+                                "component": "Toolbar/Tab bar",
+                                "title": "Tab bar missing",
+                                "description": "The toolbar/tab bar with navigation to Videos, Photos, Podcast, Home, India, World, etc., is absent.",
+                                "recommendation": "Restore the toolbar/tab bar for content discovery and navigation."
+                            }
+                        ]
+                    }
+                }
+            ],
+            "scenario": "SC_19"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_20"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_21"
+        },
+        {
+            "passed": 4,
+            "failed": 1,
+            "total": 5,
+            "details": [
+                {
+                    "image": "SC_22_Account_Settings_Page.png",
+                    "status": "PASS",
+                    "similarity": 99.75,
+                    "threshold": 95.0,
+                    "difference_count": 13,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_22/./reference_SC_22_Account_Settings_Page.png",
+                    "actual": "comparison/SC_22/./actual_SC_22_Account_Settings_Page.png",
+                    "difference": "comparison/SC_22/./diff_SC_22_Account_Settings_Page.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI regressions detected. All detected differences relate to ignored elements such as device time, system icons, or notification indicators. Core UI components are identical.",
+                        "issues": []
+                    }
+                },
+                {
+                    "image": "SC_22_Appearance.png",
+                    "status": "PASS",
+                    "similarity": 99.75,
+                    "threshold": 95.0,
+                    "difference_count": 13,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_22/./reference_SC_22_Appearance.png",
+                    "actual": "comparison/SC_22/./actual_SC_22_Appearance.png",
+                    "difference": "comparison/SC_22/./diff_SC_22_Appearance.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI issues detected. All detected differences are related to status bar icons and ignored dynamic content.",
+                        "issues": []
+                    }
+                },
+                {
+                    "image": "SC_22_Appearance_Dark_Theme.png",
+                    "status": "PASS",
+                    "similarity": 99.73,
+                    "threshold": 95.0,
+                    "difference_count": 10,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_22/./reference_SC_22_Appearance_Dark_Theme.png",
+                    "actual": "comparison/SC_22/./actual_SC_22_Appearance_Dark_Theme.png",
+                    "difference": "comparison/SC_22/./diff_SC_22_Appearance_Dark_Theme.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI issues detected. All visual differences are limited to the status bar and are to be ignored as per instructions.",
+                        "issues": []
+                    }
+                },
+                {
+                    "image": "SC_22_Appearance_Dark_Theme_Home_Page.png",
+                    "status": "FAIL",
+                    "similarity": 46.65,
+                    "threshold": 95.0,
+                    "difference_count": 44,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_22/./reference_SC_22_Appearance_Dark_Theme_Home_Page.png",
+                    "actual": "comparison/SC_22/./actual_SC_22_Appearance_Dark_Theme_Home_Page.png",
+                    "difference": "comparison/SC_22/./diff_SC_22_Appearance_Dark_Theme_Home_Page.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI issues detected. All highlighted differences are related to dynamic content or data changes and do not represent visual regressions in the UI components."
+                    }
+                },
+                {
+                    "image": "SC_22_Appearance_Light_Theme.png",
+                    "status": "PASS",
+                    "similarity": 99.75,
+                    "threshold": 95.0,
+                    "difference_count": 13,
+                    "reference_size": "720x1600",
+                    "actual_size": "720x1600",
+                    "normalized": false,
+                    "reference": "comparison/SC_22/./reference_SC_22_Appearance_Light_Theme.png",
+                    "actual": "comparison/SC_22/./actual_SC_22_Appearance_Light_Theme.png",
+                    "difference": "comparison/SC_22/./diff_SC_22_Appearance_Light_Theme.png",
+                    "ai_analysis": {
+                        "overall_status": "PASS",
+                        "issue_count": 0,
+                        "summary": "No genuine UI issues detected in header, navigation, buttons, theme, alignment, or layout.",
+                        "issues": []
+                    }
+                }
+            ],
+            "scenario": "SC_22"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_23"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_24"
+        },
+        {
+            "passed": 0,
+            "failed": 0,
+            "total": 0,
+            "details": [],
+            "scenario": "SC_25"
+        }
+    ]
+}

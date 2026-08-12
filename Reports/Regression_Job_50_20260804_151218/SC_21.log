@@ -1,0 +1,63 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_21_Whats_new_option_subscribed_user
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Run ../Common/LOGIN.yaml...
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "Email" is visible... COMPLETED
+  Tap on "Email"... COMPLETED
+  Input text product.testing@thehindu.co.in... COMPLETED
+  Hide Keyboard... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "NEXT.*|Next.*|HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible...
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible... SKIPPED
+  Assert that "NEXT.*|Next.*" is visible... COMPLETED
+  Tap on "NEXT.*|Next.*"... COMPLETED
+  Assert that "password" is visible... COMPLETED
+  Tap on "password"... COMPLETED
+  Input text Test@123... COMPLETED
+  Hide Keyboard... COMPLETED
+  Assert that "LOGIN.*" is visible... COMPLETED
+  Tap on "LOGIN.*"... COMPLETED
+  Assert that "Home" is visible... COMPLETED
+Run ../Common/LOGIN.yaml... COMPLETED
+Wait for animation to end... COMPLETED
+Run flow when "SEE WHAT'S NEW" is visible...
+  Tap on "SEE WHAT'S NEW"... COMPLETED
+  Assert that ".*Revamped Home.*" is visible... COMPLETED
+  Take screenshot Screenshots/SC_21/SC_21_01_Revamped_Home_Page... COMPLETED
+  Tap on point (30%,30%)... COMPLETED
+  Assert that ".*Quick Access Sections.*" is visible... COMPLETED
+  Take screenshot Screenshots/SC_21/SC_21_02_Quick_Access... COMPLETED
+  Tap on point (60%,70%)... COMPLETED
+  Assert that ".*Trending Stories.*" is visible... COMPLETED
+  Take screenshot Screenshots/SC_21/SC_21_03_Trending... COMPLETED
+  Tap on point (50%,50%)... COMPLETED
+  Assert that ".*The Finest of our Reporting.*" is visible... COMPLETED
+  Take screenshot Screenshots/SC_21/SC_21_04_Premium... COMPLETED
+  Tap on point (50%,50%)... COMPLETED
+  Assert that ".*eBooks.*" is visible... COMPLETED
+  Take screenshot Screenshots/SC_21/SC_21_05_Ebooks... COMPLETED
+  Tap on point (50%,50%)... COMPLETED
+  Assert that ".*TH Games.*" is visible... COMPLETED
+  Take screenshot Screenshots/SC_21/SC_21_06_TH_Games... COMPLETED
+  Tap on point (50%,50%)... COMPLETED
+  Assert that ".*Looking for more?.*" is visible... COMPLETED
+  Take screenshot Screenshots/SC_21/SC_21_07_More... COMPLETED
+  Tap on point (50%,50%)... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "Home" is visible... COMPLETED
+  Take screenshot Screenshots/SC_21/SC_21_08_Home_Page... COMPLETED
+Run flow when "SEE WHAT'S NEW" is visible... COMPLETED
+
+
+===== STDERR =====
+

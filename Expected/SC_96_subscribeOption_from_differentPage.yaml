@@ -1,0 +1,135 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+---
+# subscribeOption from differentPage (SC-96).
+- launchApp:
+    clearState: true
+
+# Launch Application
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- waitForAnimationToEnd
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+- waitForAnimationToEnd
+- assertVisible: "Welcome to a new\nThe Hindu experience"
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_96/SC_96_HomePage_Anonymous"
+
+# Homepage Subscribe
+- extendedWaitUntil:
+    visible: "SUBSCRIBE"
+    timeout: 15000
+- tapOn: "SUBSCRIBE"
+- takeScreenshot: "Screenshots/SC_96/SC_96_HomePage_Subscribe_Click"
+- assertVisible: "Yearly"
+- assertVisible: "Monthly"
+
+# Yearly Plan
+- tapOn: "Yearly"
+- takeScreenshot: "Screenshots/SC_96/SC_96_Yearly_Plan"
+
+# Monthly Plan
+- tapOn: "Monthly"
+- takeScreenshot: "Screenshots/SC_96/SC_96_Monthly_Plan"
+
+# Subscribe Button
+- tapOn: "SUBSCRIBE"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_96/SC_96_Subscribe_Plan_Page"
+- back
+
+# Open an Article
+- scroll
+- tapOn:
+    point: 50%,50%
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      visible:
+        text: "CONTINUE WITH SUBSCRIPTION OPTIONS"
+    commands:
+      - tapOn: "CONTINUE WITH SUBSCRIPTION OPTIONS"
+      - takeScreenshot: "Screenshots/SC_96/SC_96_Article_Subscription_Options"
+
+# Support Journalism Section
+- repeat:
+    times: 5
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Support Journalism"
+          commands:
+            - tapOn: "SUBSCRIBE"
+            - takeScreenshot: "Screenshots/SC_96/SC_96_Support_Journalism_Subscribe"
+      - scroll
+- tapOn: "SUBSCRIBE"
+- runFlow:
+    when:
+      visible:
+        text: "VIEW PLANS"
+    commands:
+      - tapOn: "VIEW PLANS"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_96/SC_96_Article_View_Plans"
+- back
+
+# Relaunch App (Back Navigation Causes Crash)
+- launchApp
+- waitForAnimationToEnd
+
+# Navigate to Health / Science
+- tapOn:
+    point: 2%,5%
+- runFlow:
+    when:
+      visible:
+        text: "Health"
+    commands:
+      - tapOn: "Health"
+- runFlow:
+    when:
+      visible:
+        text: "Science"
+    commands:
+      - tapOn: "Science"
+- waitForAnimationToEnd
+- tapOn:
+    point: 50%,50%
+- waitForAnimationToEnd
+
+# Subscription Popups
+# 40% Offer
+- runFlow:
+    when:
+      visible:
+        text: "Save 40% when you subscribe."
+    commands:
+      - tapOn: "SUBSCRIBE AT 40% OFF"
+      - takeScreenshot: "Screenshots/SC_96/SC_96_40_Percent_Subscription_Offer"
+      - tapOn: "Close sheet"
+
+# 3-Day Trial
+- runFlow:
+    when:
+      visible:
+        text: "Three days of The Hindu, free and without limits."
+    commands:
+      - tapOn: "READ FREE FOR 3 DAYS"
+      - takeScreenshot: "Screenshots/SC_96/SC_96_Free_Trial_3_Days"
+      - tapOn: "Close sheet"
+
+# 7-Day Trial

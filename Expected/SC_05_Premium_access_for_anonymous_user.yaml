@@ -1,0 +1,146 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - premium
+---
+# Premium access for anonymous user (SC-05).
+# Launch App
+- launchApp:
+    clearState: true
+    # stopApp: true
+
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Navigate to Premium Section
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "Premium"
+    timeout: 15000
+- tapOn: "Premium"
+- takeScreenshot: "Screenshots/SC_05/SC05_premiumpage_nonsubscriber"
+
+# Verify Premium Categories
+- assertVisible: "All Stories"
+- tapOn: "All Stories"
+- assertVisible: "Briefing"
+- tapOn: "Briefing"
+
+# Verify Subscribe Option
+- assertVisible: "SUBSCRIBE"
+- tapOn: "SUBSCRIBE"
+- back
+
+# Navigate to All Stories Article
+- assertVisible: "All Stories"
+- tapOn: "All Stories"
+- tapOn:
+    point: 0%,16%
+
+# Verify Advertisement on All Stories
+- repeat:
+    times: 10
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "ADVERTISEMENT"
+          commands:
+            - takeScreenshot: "Screenshots/SC_05/SC_05_premiumpage_nonsubscriber_AllStories"
+      - scroll
+      - waitForAnimationToEnd
+
+# Verify Subscribe Option
+- repeat:
+    times: 7
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "SUBSCRIBE"
+          commands:
+            - takeScreenshot: "Screenshots/SC_05/SC_05_premiumpage_nonsubscriber_AllStories"
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+
+# Navigate Back to Previous Content
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Read Free for 3 Days Option
+- repeat:
+    times: 10
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "READ FREE FOR 3 DAYS"
+          commands:
+            - takeScreenshot: "Screenshots/SC_05/SC_05_premiumpage_nonsubscriber_AllStories"
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+
+# Verify Subscribe Option Again
+- repeat:
+    times: 10
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "SUBSCRIBE"
+          commands:
+            - takeScreenshot: "Screenshots/SC_05/SC_05_premiumpage_nonsubscriber_AllStories"
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+
+# Navigate Back
+- swipe:
+    direction: RIGHT
+
+# Verify Advertisement on Premium Page
+- repeat:
+    times: 10
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "ADVERTISEMENT"
+          commands:
+            - takeScreenshot: "Screenshots/SC_05/SC_05_premiumpage_nonsubscriber_AllStories"
+      - scroll
+      - waitForAnimationToEnd
+
+# Navigate Back
+- swipe:
+    direction: RIGHT
+
+# Verify Taboola Advertisement
+- repeat:
+    times: 20
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Image for Taboola Advertising Unit"
+          commands:
+            - takeScreenshot: "Screenshots/SC_73/SC_73_TaboolaAd_${TIMESTAMP}"
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+
+# Close Application
+- stopApp

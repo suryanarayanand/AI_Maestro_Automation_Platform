@@ -1,0 +1,79 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - editorial
+  - account
+  - article
+---
+# Editorial Page specific article Subscribed Account (SC-85).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Navigate to Editorial Section
+- extendedWaitUntil:
+    visible: "Editorial"
+    timeout: 15000
+- tapOn: "Editorial"
+
+# Editorial Page Validation
+- takeScreenshot: "Screenshots/SC_85/SC_85_Editorial_Page_Subscribed_Account_01"
+- scroll
+
+# Open Editorial Article
+- tapOn:
+    point: 50%,50%
+
+
+
+# Verify closing Summary
+- runFlow:
+    when:
+      visible:
+        text: "Summary"
+    commands:
+      - tapOn: "Close sheet"
+- takeScreenshot: "Screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_85/SC_85_Editorial_Page_Specific_Article_04"
+- scroll
+
+# Verify Article Actions
+- assertVisible:
+    text: "Text size"
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+
+# Verify Taboola Advertisement is Absent (Disabled)
+- repeat:
+    times: 8
+    commands:
+      - swipe:
+          direction: DOWN
+- repeat:
+    times: 30
+    commands:
+
+      # Verify Taboola advertisement is absent
+      - assertNotVisible:
+          text: "Image for Taboola Advertising Unit"
+
+      # Continue navigation
+      - scroll
+      - takeScreenshot: "Screenshots/SC_85/SC_85_Taboola_Advertisement_Verification"
+      - waitForAnimationToEnd

@@ -1,0 +1,84 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - editorial
+---
+# EditorialPage Subscribed acc (SC-83).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Navigate to Editorial Section
+- extendedWaitUntil:
+    visible: "Editorial"
+    timeout: 15000
+- tapOn: "Editorial"
+
+# Editorial Page Validation
+- takeScreenshot: "Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_05"
+- scroll
+- takeScreenshot: "Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_06"
+- scroll
+- takeScreenshot: "Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_07"
+- scroll
+- takeScreenshot: "Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_08"
+- runFlow:
+    when:
+      visible:
+        text: "SHOW MORE"
+    commands:
+      - tapOn: "SHOW MORE"
+- scroll
+- takeScreenshot: "Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_09"
+- scroll
+- takeScreenshot: "Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_10"
+- runFlow:
+    when:
+      visible:
+        text: "SHOW MORE"
+    commands:
+      - tapOn: "SHOW MORE"
+- scroll
+- takeScreenshot: "Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_11"
+- runFlow:
+    when:
+      visible:
+        text: "SHOW MORE"
+    commands:
+      - tapOn: "SHOW MORE"
+- scroll
+- takeScreenshot: "Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_12"
+- scroll
+- takeScreenshot: "Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_13"
+
+# Verify AI Summary
+- runFlow:
+    when:
+      visible:
+        text: "AI summary"
+    commands:
+      - takeScreenshot: "Screenshots/SC_83/SC_83_Editorial_Page_AI_Summary"
+- scroll
+- takeScreenshot: "Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_14"
+- scroll
+- takeScreenshot: "Screenshots/SC_83/SC_83_Editorial_Page_Anonymous_Account_15"
+- runFlow:
+    when:
+      visible:
+        text: "SHOW MORE"
+    commands:
+      - tapOn: "SHOW MORE"

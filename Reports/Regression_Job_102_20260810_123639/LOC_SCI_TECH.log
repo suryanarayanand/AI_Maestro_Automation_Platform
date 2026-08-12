@@ -1,0 +1,29 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow LOC_sci_tech
+Run ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml...
+  Launch app "com.mobstac.thehindu"... COMPLETED
+  Repeat 2 times...
+    Run flow when "Skip" is visible...
+    Run flow when "Skip" is visible... SKIPPED
+    Wait for animation to end... COMPLETED
+  Repeat 2 times... COMPLETED
+  Assert that id: screen_home is visible... COMPLETED
+  Assert that id: screen_home is visible... COMPLETED
+Run ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml... COMPLETED
+Tap on id: nav_menu... COMPLETED
+Assert that id: screen_hamburger is visible... COMPLETED
+Scrolling DOWN until "Science" is visible with speed 40, visibility percentage 100%, timeout 30000 ms, with centering disabled... COMPLETED
+Tap on "Science"... COMPLETED
+Assert that "Sci-Tech" is visible... COMPLETED
+Tap on "Sci-Tech"... COMPLETED
+Wait for animation to end... COMPLETED
+Assert that id: screen_section is visible... COMPLETED
+Assert that id: screen_section is visible... COMPLETED
+Assert that "Sci-Tech" is visible... COMPLETED
+Take screenshot Screenshots/LocatorSmoke/sci_tech_page... COMPLETED
+
+
+===== STDERR =====
+

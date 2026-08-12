@@ -1,0 +1,117 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - dark_theme
+  - india
+  - theme
+---
+# india page darktheme anonymous acc (SC-76).
+# Launch App
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "SUBSCRIBE"
+    timeout: 15000
+
+# Change to Dark Theme
+- runFlow: ../Common/Dark_theme_changing.yaml
+
+# Relaunch the app because navigating back
+# causes the app to crash.
+# - stopApp
+- launchApp
+
+# Navigate to India Section
+- extendedWaitUntil:
+    visible: "India"
+    timeout: 15000
+- tapOn: "India"
+- tapOn:
+    point: 50%,50%
+
+# Verify Article Elements
+- runFlow:
+    when:
+      visible:
+        text: "AI summary"
+    commands:
+      - takeScreenshot: "Screenshots/SC_76/SC_76_AI_Summary"
+- assertVisible:
+    text: "Text size"
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+
+# - extendedWaitUntil:
+#     visible: "Listen to article"
+# India Article Validation
+- takeScreenshot: "Screenshots/SC_76/SC_76_India_Page_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_76/SC_76_India_Page_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_76/SC_76_India_Page_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_76/SC_76_India_Page_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_76/SC_76_India_Page_05"
+- scroll
+- takeScreenshot: "Screenshots/SC_76/SC_76_India_Page_06"
+- scroll
+- takeScreenshot: "Screenshots/SC_76/SC_76_India_Page_07"
+- scroll
+- takeScreenshot: "Screenshots/SC_76/SC_76_India_Page_08"
+- scroll
+- takeScreenshot: "Screenshots/SC_76/SC_76_India_Page_09"
+- scroll
+- takeScreenshot: "Screenshots/SC_76/SC_76_India_Page_10"
+- swipe:
+    direction: LEFT
+- repeat:
+    times: 20
+    commands:
+      - swipe:
+          direction: DOWN
+          duration: 1000
+
+# Verify Support Journalism
+- repeat:
+    times: 20
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Support Journalism"
+          commands:
+            - takeScreenshot: "Screenshots/SC_76/SC_76_Support_Journalism"
+      - scroll
+- swipe:
+    direction: LEFT
+- repeat:
+    times: 20
+    commands:
+      - swipe:
+          direction: DOWN
+          duration: 1000
+- repeat:
+    times: 20
+    commands:
+      - assertNotVisible:
+          text: "Webpage not available"
+      - scroll
+      - takeScreenshot: "Screenshots/SC_76/SC_76_Web_Page_Not_Available"
+      - waitForAnimationToEnd

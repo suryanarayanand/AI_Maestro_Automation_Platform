@@ -1,0 +1,267 @@
+appId: com.mobstac.thehindu
+tags:
+  - auth
+  - opinion
+  - article
+  - navigation
+---
+# Validated-locator smoke copy; source scenario is unchanged.
+# Opinion Article Navigation Interaction Login Validation (SC-88).
+# Launch App
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Navigate to Opinion Section
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 15000
+- assertVisible:
+    id: "screen_home"
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- assertVisible:
+    text: "Opinion"
+- tapOn:
+    text: "Opinion"
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account"
+- scrollUntilVisible:
+    element: "COMMENT"
+- tapOn: "COMMENT"
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Anonymous_Account_Article_Via_Comment_Section"
+
+# Verify Article Actions
+- assertVisible:
+    text: "Text size"
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+
+# Article Validation
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Article_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Article_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Article_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Article_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Article_05"
+
+# AI Summary
+- extendedWaitUntil:
+    visible: "AI summary"
+    timeout: 15000
+- tapOn: "AI summary"
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_After_Clicking_AI_Summary_Anonymous"
+- assertVisible: "SUBSCRIBE"
+- extendedWaitUntil:
+    visible: "SUBSCRIBE"
+    timeout: 15000
+- tapOn: "SUBSCRIBE"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_01"
+- assertVisible: "Choose your plan"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_AI_Summary_Anonymous_Subscription_02"
+
+# - assertVisible: "LOGIN/SIGN-UP→"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_AI_Summary_Login_Sign_Up_Button"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: "SUBSCRIBE»"
+    timeout: 15000
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_05"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_06"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_07"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_08"
+- scroll
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page_09"
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+- scroll
+- runFlow:
+    when:
+      visible:
+        text: ".*SUBSCRIBE.*"
+    commands:
+      - tapOn: ".*SUBSCRIBE.*"
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page"
+- scroll
+- back
+- runFlow: ../Common/Login_via_pages_or_Article.yaml
+
+# Navigate Back to Opinion Section
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- assertVisible:
+    text: "Opinion"
+- tapOn:
+    text: "Opinion"
+# Verify Taboola Advertisement
+- repeat:
+    times: 15
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Image for Taboola Advertising Unit"
+          commands:
+            - takeScreenshot: "Screenshots/SC_88/SC_88_Taboola_Ad_${TIMESTAMP}"
+      - scroll
+- repeat:
+    times: 20
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Text Size
+- extendedWaitUntil:
+    visible: "Text size"
+    timeout: 15000
+- tapOn: "Text size"
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Article_Text_Size"
+- extendedWaitUntil:
+    visible: "CLOSE"
+    timeout: 15000
+- tapOn: "CLOSE"
+
+# Verify Bookmark
+- extendedWaitUntil:
+    visible: "Bookmark"
+    timeout: 15000
+- tapOn: "Bookmark"
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Article_After_Click_Bookmark"
+- back
+
+# Verify Share
+- extendedWaitUntil:
+    visible: "Share"
+    timeout: 15000
+- tapOn: "Share"
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Article_After_Click_Share_Button"
+- tapOn:
+    point: 63%,39%
+
+# Verify Comment
+- extendedWaitUntil:
+    visible: "Comment"
+    timeout: 15000
+- tapOn: "Comment"
+- takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Article_After_Click_Comment_Button"
+- waitForAnimationToEnd
+- tapOn: "\n"
+- inputRandomCityName
+- assertVisible: "SIGN IN AND JOIN THE CONVERSATION→"
+- tapOn: "SIGN IN AND JOIN THE CONVERSATION→"
+- waitForAnimationToEnd
+- runFlow: ../Common/Login_via_pages_or_Article.yaml
+- back
+
+# Relaunch the app because navigating back causes the app to crash.
+# - stopApp
+- launchApp
+
+# Skip Intro Screen
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Verify Account Page
+- extendedWaitUntil:
+    visible: "Account"
+    timeout: 15000
+- tapOn: "Account"
+- extendedWaitUntil:
+    visible: "Account"
+    timeout: 15000
+- assertVisible: "Bookmarks"
+- scroll
+- assertVisible: "LOGOUT"
+- tapOn: "LOGOUT"
+- back
+
+# Relaunch the app because navigating back causes the app to crash.
+# - stopApp
+- launchApp
+
+# Advertisement Validation (Disabled)
+# - repeat:
+#     times: 20
+#     commands:
+#       - runFlow:
+#           when:
+#             visible:
+#               text: "ADVERTISEMENT"
+#           commands:
+#             - takeScreenshot: "Screenshots/SC_88/SC_88_Advertisement_${TIMESTAMP}"
+#
+#       - scroll
+#
+# - repeat:
+#     times: 20
+#     commands:
+#       - swipe:
+#           direction: DOWN
+#
+# - repeat:
+#     times: 20
+#     commands:
+#       - runFlow:
+#           when:
+#             visible:
+#               text: "Support Journalism"
+#           commands:
+#             - takeScreenshot: "Screenshots/SC_88/SC_88_Support_Journalism_${TIMESTAMP}"
+#
+#       - scroll
+#
+# - waitForAnimationToEnd

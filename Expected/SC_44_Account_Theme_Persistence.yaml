@@ -1,0 +1,133 @@
+appId: com.mobstac.thehindu
+tags:
+  - account
+  - theme
+  - persistence
+---
+# Account Theme Persistence (SC-44).
+# Launch App
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd:
+    timeout: 8000
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+- extendedWaitUntil:
+    visible:
+      text: "Home"
+    timeout: 15000
+
+# Close Promotional Popup
+- runFlow:
+    when:
+      visible:
+        text: "Dear Reader, this event is free for you to attend."
+    commands:
+      - back
+
+# Capture Screenshots Before Applying Dark Theme
+- takeScreenshot: "Screenshots/SC_44/SC_44_Before_Dark_Theme_01"
+- swipe:
+    direction: LEFT
+- takeScreenshot: "Screenshots/SC_44/SC_44_Before_Dark_Theme_02"
+- swipe:
+    direction: LEFT
+- takeScreenshot: "Screenshots/SC_44/SC_44_Before_Dark_Theme_03"
+
+# Close Promotional Popup
+- runFlow:
+    when:
+      visible:
+        text: "Dear Reader, this event is free for you to attend."
+    commands:
+      - back
+- swipe:
+    direction: LEFT
+- takeScreenshot: "Screenshots/SC_44/SC_44_Before_Dark_Theme_04"
+
+# Close Promotional Popup
+- runFlow:
+    when:
+      visible:
+        text: "Dear Reader, this event is free for you to attend."
+    commands:
+      - back
+
+# Enable Dark Theme
+- tapOn: "Account"
+- extendedWaitUntil:
+    visible:
+      text: "APPLICATION SETTINGS"
+    timeout: 15000
+- assertVisible: "Appearance"
+- tapOn:
+    text: "Appearance"
+- extendedWaitUntil:
+    visible:
+      text: "Dark\nMode"
+    timeout: 15000
+- tapOn: "Dark\nMode"
+- takeScreenshot: "Screenshots/SC_44/SC_44_Dark_Theme_Selected"
+
+# Relaunch the App
+- killApp
+- launchApp
+- extendedWaitUntil:
+    visible:
+      text: "Home"
+    timeout: 15000
+
+# Close Promotional Popup
+- runFlow:
+    when:
+      visible:
+        text: "Dear Reader, this event is free for you to attend."
+    commands:
+      - back
+
+# Capture Screenshots After Applying Dark Theme
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_44/SC_44_After_Dark_Theme_01"
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_44/SC_44_After_Dark_Theme_02"
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_44/SC_44_After_Dark_Theme_03"
+- waitForAnimationToEnd
+- swipe:
+    direction: LEFT
+
+# Close Promotional Popup
+- runFlow:
+    when:
+      visible:
+        text: "Dear Reader, this event is free for you to attend."
+    commands:
+      - back
+- takeScreenshot: "Screenshots/SC_44/SC_44_After_Dark_Theme_04"
+
+# Close Promotional Popup
+- runFlow:
+    when:
+      visible:
+        text: "Dear Reader, this event is free for you to attend."
+    commands:
+      - back
+
+# Close Application
+- killApp

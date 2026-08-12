@@ -1,0 +1,44 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_22_Appearance_theme_validation
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Wait for animation to end... COMPLETED
+Assert that "Account" is visible... COMPLETED
+Tap on "Account"... COMPLETED
+Take screenshot Screenshots/SC_22/SC_22_Account_Settings_Page... COMPLETED
+Scrolling DOWN until "APPLICATION SETTINGS" is visible with speed 40, visibility percentage 100%, timeout 20000 ms, with centering disabled... COMPLETED
+Assert that "Appearance" is visible... COMPLETED
+Tap on "Appearance"... COMPLETED
+Take screenshot Screenshots/SC_22/SC_22_Appearance... COMPLETED
+Assert that "Light
+Mode" is visible... COMPLETED
+Assert that "System
+Default" is visible... COMPLETED
+Assert that "Dark
+Mode" is visible... COMPLETED
+Tap on "System
+Default"... COMPLETED
+Tap on "Dark
+Mode"... COMPLETED
+Take screenshot Screenshots/SC_22/SC_22_Appearance_Dark_Theme... COMPLETED
+Wait for animation to end... COMPLETED
+Tap on "Light
+Mode"... COMPLETED
+Take screenshot Screenshots/SC_22/SC_22_Appearance_Light_Theme... COMPLETED
+Tap on "Dark
+Mode"... COMPLETED
+Press back... COMPLETED
+Launch app "com.mobstac.thehindu"... COMPLETED
+Repeat 3 times...
+  Scroll vertically... COMPLETED
+Repeat 3 times... COMPLETED
+Take screenshot Screenshots/SC_22/SC_22_Appearance_Dark_Theme_Home_Page... COMPLETED
+
+
+===== STDERR =====
+

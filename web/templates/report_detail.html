@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h2>{{ report.name }}</h2>
+
+    <hr>
+
+    <h4>Generated Reports</h4>
+
+    <table class="table table-hover">
+
+        <thead>
+            <tr>
+                <th>File</th>
+                <th width="120">Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        {% for file in report.files %}
+
+        <tr>
+
+            <td>{{ file }}</td>
+
+            <td>
+
+                <a href="/reports/{{ report.name }}/file/{{ file }}"
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+
+                    Open
+
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+    <hr>
+
+    <h4>Scenario Logs</h4>
+
+    <ul>
+
+    {% for log in report.logs %}
+
+        <li>{{ log }}</li>
+
+    {% endfor %}
+
+    </ul>
+
+    <hr>
+
+    <h4>Screenshot Folders</h4>
+
+    <ul>
+
+    {% for folder in report.screenshots %}
+
+        <li>{{ folder }}</li>
+
+    {% endfor %}
+
+    </ul>
+
+</div>
+
+{% endblock %}

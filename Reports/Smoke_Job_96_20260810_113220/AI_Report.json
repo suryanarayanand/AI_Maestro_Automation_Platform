@@ -1,0 +1,118 @@
+{
+    "suite": {
+        "total": 6,
+        "passed": 4,
+        "failed": 2,
+        "not_found": 0,
+        "pass_rate": 66.67
+    },
+    "results": [
+        {
+            "id": "PILOT_SC_02",
+            "module": "Unassigned",
+            "name": "PILOT SC 02",
+            "status": "PASS",
+            "duration": 27.59,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_96_20260810_113220\\PILOT_SC_02.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "PILOT_SC_03",
+            "module": "Unassigned",
+            "name": "PILOT SC 03",
+            "status": "PASS",
+            "duration": 26.58,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_96_20260810_113220\\PILOT_SC_03.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "PILOT_SC_05",
+            "module": "AI Generated",
+            "name": "Anonymous Premium navigation",
+            "status": "PASS",
+            "duration": 23.55,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_96_20260810_113220\\PILOT_SC_05.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "TH_5818",
+            "module": "AI Generated",
+            "name": "Easy down game listing",
+            "status": "FAIL",
+            "duration": 100.85,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_96_20260810_113220\\TH_5818.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "TH_5716",
+            "module": "AI Generated",
+            "name": "Games Landing Page Navigation",
+            "status": "FAIL",
+            "duration": 30.55,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_96_20260810_113220\\TH_5716.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "TH_5634",
+            "module": "AI Generated",
+            "name": "Landing/Home Screen",
+            "status": "PASS",
+            "duration": 81.63,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_96_20260810_113220\\TH_5634.log",
+            "screenshots": [
+                "screenshots/TH_5634/TH_5634_games_screen_back_navigation.png",
+                "screenshots/TH_5634/TH_5634_sudoku_landing_page.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are visible and rendered correctly. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "TH_5634_games_screen_back_navigation.png",
+                    "image_path": "screenshots/TH_5634/TH_5634_games_screen_back_navigation.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "Text contains a typo: 'Sudoko' instead of 'Sudoku' and 'row,coumns' instead of 'row,columns'.",
+                    "issues": [
+                        "Misspelled title: 'Sudoko' should be 'Sudoku'",
+                        "Typo in body text: 'coumns' should be 'columns'"
+                    ],
+                    "jira_title": "Text spelling errors in Sudoku selection screen",
+                    "jira_description": "There are spelling errors visible: The title says 'Sudoko' (should be 'Sudoku'). The description says 'row,coumns' instead of 'row,columns'. Please correct the spelling.",
+                    "image": "TH_5634_sudoku_landing_page.png",
+                    "image_path": "screenshots/TH_5634/TH_5634_sudoku_landing_page.png"
+                }
+            ]
+        }
+    ]
+}

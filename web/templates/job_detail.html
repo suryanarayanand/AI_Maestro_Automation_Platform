@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center">
+    <h2>Job {{ job.id }} — {{ job.suite|title }}</h2>
+    {% if job.status in ('queued', 'running') %}
+    <form action="{{ url_for('jobs.cancel_job', job_id=job.id) }}" method="post" onsubmit="return confirm('Cancel this execution?')">
+        <button class="btn btn-danger">Cancel Execution</button>
+    </form>
+    {% elif job.status == 'cancel_requested' %}
+    <button class="btn btn-danger" disabled>Cancelling...</button>
+    {% endif %}
+</div>
+{% if job.report_folder %}<p><a class="btn btn-success" href="{{ url_for('report.report_details', report_name=job.report_folder) }}">Open Generated Reports</a></p>{% endif %}
+<div class="row my-3">
+    <div class="col"><div class="card"><div class="card-body"><b>Status</b><div>{{ job.status }}</div></div></div></div>
+    <div class="col"><div class="card"><div class="card-body"><b>Current case</b><div>{{ job.current_case or '-' }}</div></div></div></div>
+    <div class="col"><div class="card"><div class="card-body"><b>Progress</b><div>{{ job.completed }}/{{ job.total }}</div></div></div></div>
+</div>
+<div class="card mb-4"><div class="card-body"><h3>Case Results</h3><table class="table"><thead><tr><th>Case</th><th>Name</th><th>Status</th><th>Duration</th></tr></thead><tbody>{% for row in results %}<tr><td>{{ row.case_id }}</td><td>{{ row.name }}</td><td>{{ row.status }}</td><td>{{ row.duration }}s</td></tr>{% else %}<tr><td colspan="4">Waiting for agent results.</td></tr>{% endfor %}</tbody></table></div></div>
+<div class="card"><div class="card-body"><h3>Consolidated Bug Summary</h3>{% for row in failures %}<div class="alert alert-danger"><b>{{ row.case_id }} — {{ row.name }}</b><pre class="mt-2 mb-0">{{ row.stderr or row.stdout or 'No failure details supplied' }}</pre></div>{% else %}<p>No failures reported.</p>{% endfor %}</div></div>
+<script>if(['queued','running','cancel_requested'].includes('{{ job.status }}'))setTimeout(()=>location.reload(),3000);</script>
+{% endblock %}

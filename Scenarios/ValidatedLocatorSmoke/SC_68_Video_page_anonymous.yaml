@@ -1,0 +1,145 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - video
+---
+# Validated-locator smoke copy; source scenario is unchanged.
+# Video page anonymous (SC-68).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- runFlow:
+    when:
+      visible:
+        text: ".*Request timeout has expired.*"
+    commands:
+      - takeScreenshot: "Screenshots/SC_68/SC_68_Request_Timeout"
+
+# Verify Anonymous Home Page
+- assertVisible: "SUBSCRIBE"
+- runFlow:
+    when:
+      visible:
+        text: ".*Request timeout has expired.*"
+    commands:
+      - takeScreenshot: "Screenshots/SC_68/SC_68_Request_Timeout"
+      - assertNotVisible:
+          text: "Request timeout has expired [url=https://www.thehindu.com/appfeeder/deskinglist, request_timeout=30000 ms]"
+
+# Navigate to Videos Section
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 15000
+- assertVisible:
+    id: "screen_home"
+- assertVisible:
+    text: "Videos"
+- tapOn:
+    text: "Videos"
+- swipe:
+    direction: DOWN
+- swipe:
+    direction: DOWN
+
+# Video Page Validation
+- takeScreenshot: "Screenshots/SC_68/SC_68_Videos_Page"
+- runFlow:
+    when:
+      visible:
+        text: "Request timeout has expired [url=https://www.thehindu.com/appfeeder/deskinglist, request_timeout=30000 ms]"
+    commands:
+      - takeScreenshot: "Screenshots/SC_68/SC_68_Request_Timeout"
+      - assertNotVisible:
+          text: "Request timeout has expired [url=https://www.thehindu.com/appfeeder/deskinglist, request_timeout=30000 ms]"
+- scroll
+- takeScreenshot: "Screenshots/SC_68/SC_68_Videos_Page_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_68/SC_68_Videos_Page_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_68/SC_68_Videos_Page_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_68/SC_68_Videos_Page_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_68/SC_68_Videos_Page_05"
+- scroll
+- takeScreenshot: "Screenshots/SC_68/SC_68_Videos_Page_06"
+- scroll
+- takeScreenshot: "Screenshots/SC_68/SC_68_Videos_Page_07"
+- scroll
+- takeScreenshot: "Screenshots/SC_68/SC_68_Videos_Page_08"
+- scroll
+- takeScreenshot: "Screenshots/SC_68/SC_68_Videos_Page_09"
+- scroll
+- takeScreenshot: "Screenshots/SC_68/SC_68_Videos_Page_10"
+- scroll
+- takeScreenshot: "Screenshots/SC_68/SC_68_Videos_Page_11"
+- scroll
+- takeScreenshot: "Screenshots/SC_68/SC_68_Videos_Page_12"
+- scroll
+- takeScreenshot: "Screenshots/SC_68/SC_68_Videos_Page_13"
+- scroll
+- takeScreenshot: "Screenshots/SC_68/SC_68_Videos_Page_14"
+- scroll
+- takeScreenshot: "Screenshots/SC_68/SC_68_Videos_Page_15"
+- scroll
+- takeScreenshot: "Screenshots/SC_68/SC_68_Videos_Page_16"
+- scroll
+- takeScreenshot: "Screenshots/SC_68/SC_68_Videos_Page_17"
+- assertVisible: "SUBSCRIBE"
+
+# Verify Support Journalism
+- repeat:
+    times: 25
+    commands:
+      - swipe:
+          direction: DOWN
+- repeat:
+    times: 25
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Support Journalism"
+          commands:
+            - takeScreenshot: "Screenshots/SC_68/SC_68_Support_Journalism"
+      - scroll
+      - waitForAnimationToEnd
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Navigate to Videos Section
+- assertVisible:
+    text: "Videos"
+- tapOn:
+    text: "Videos"
+# Verify Advertisement
+- repeat:
+    times: 25
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "ADVERTISEMENT"
+          commands:
+            - takeScreenshot: "Screenshots/SC_68/SC_68_Advertisement"
+      - scroll
+      - waitForAnimationToEnd
+
+# Close Application
+- stopApp

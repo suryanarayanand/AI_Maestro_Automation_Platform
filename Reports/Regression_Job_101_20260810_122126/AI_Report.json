@@ -1,0 +1,439 @@
+{
+    "suite": {
+        "total": 12,
+        "passed": 12,
+        "failed": 0,
+        "not_found": 0,
+        "pass_rate": 100.0
+    },
+    "results": [
+        {
+            "id": "COMPLEX_001",
+            "module": "Unassigned",
+            "name": "COMPLEX 001",
+            "status": "PASS",
+            "duration": 62.69,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_101_20260810_122126\\COMPLEX_001.log",
+            "screenshots": [
+                "screenshots/COMPLEX_001/COMPLEX_001_hamburger_navigation_menu.png",
+                "screenshots/COMPLEX_001/COMPLEX_001_home_closing_menu.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components for the navigation drawer are present, with no visible layout, rendering, or text defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_001_hamburger_navigation_menu.png",
+                    "image_path": "screenshots/COMPLEX_001/COMPLEX_001_hamburger_navigation_menu.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and rendered correctly. No visible layout, text, or rendering defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_001_home_closing_menu.png",
+                    "image_path": "screenshots/COMPLEX_001/COMPLEX_001_home_closing_menu.png"
+                }
+            ]
+        },
+        {
+            "id": "COMPLEX_002",
+            "module": "Unassigned",
+            "name": "COMPLEX 002",
+            "status": "PASS",
+            "duration": 85.81,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_101_20260810_122126\\COMPLEX_002.log",
+            "screenshots": [
+                "screenshots/COMPLEX_002/COMPLEX_002_games_page_sudoku.png",
+                "screenshots/COMPLEX_002/COMPLEX_002_sudoku_landing_page.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components, images, buttons, text, and navigation are fully rendered and aligned. No visible UI defects present.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_002_games_page_sudoku.png",
+                    "image_path": "screenshots/COMPLEX_002/COMPLEX_002_games_page_sudoku.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "The word 'Sudoku' is misspelled as 'Sudoko' in the header. There is also a typo in the description: 'row,coumns' should be 'rows, columns'.",
+                    "issues": [
+                        "Misspelled 'Sudoku' in the header",
+                        "Typo in description: 'row,coumns' should be 'rows, columns'"
+                    ],
+                    "jira_title": "Text issues in Sudoku puzzle selection screen",
+                    "jira_description": "The word 'Sudoku' is spelled incorrectly as 'Sudoko' in the header. Additionally, 'row,coumns' in the description should be 'rows, columns'.",
+                    "image": "COMPLEX_002_sudoku_landing_page.png",
+                    "image_path": "screenshots/COMPLEX_002/COMPLEX_002_sudoku_landing_page.png"
+                }
+            ]
+        },
+        {
+            "id": "COMPLEX_003",
+            "module": "AI Generated",
+            "name": "Dark Mode Appearance Validation",
+            "status": "PASS",
+            "duration": 42.47,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_101_20260810_122126\\COMPLEX_003.log",
+            "screenshots": [
+                "screenshots/COMPLEX_003/COMPLEX_003_dark_mode_enabled.png",
+                "screenshots/COMPLEX_003/COMPLEX_003_home_page_in_dark_mode.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and layout appears correct with no visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_003_dark_mode_enabled.png",
+                    "image_path": "screenshots/COMPLEX_003/COMPLEX_003_dark_mode_enabled.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visible layout, rendering, or text defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_003_home_page_in_dark_mode.png",
+                    "image_path": "screenshots/COMPLEX_003/COMPLEX_003_home_page_in_dark_mode.png"
+                }
+            ]
+        },
+        {
+            "id": "COMPLEX_004",
+            "module": "Unassigned",
+            "name": "COMPLEX 004",
+            "status": "PASS",
+            "duration": 72.96,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_101_20260810_122126\\COMPLEX_004.log",
+            "screenshots": [
+                "screenshots/COMPLEX_004/COMPLEX_004_easy_down_destination.png",
+                "screenshots/COMPLEX_004/COMPLEX_004_scroll_down_and_games_catalogue.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Large blank white region indicates missing or incomplete content rendering.",
+                    "issues": [
+                        "Blank white area inside application",
+                        "Missing application content",
+                        "No visible UI components rendered"
+                    ],
+                    "jira_title": "Application UI is blank with missing content",
+                    "jira_description": "The screen displays a large blank white area with no visible UI content or components, indicating incomplete rendering or a major layout defect.",
+                    "image": "COMPLEX_004_easy_down_destination.png",
+                    "image_path": "screenshots/COMPLEX_004/COMPLEX_004_easy_down_destination.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered correctly. No visual defects are present.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_004_scroll_down_and_games_catalogue.png",
+                    "image_path": "screenshots/COMPLEX_004/COMPLEX_004_scroll_down_and_games_catalogue.png"
+                }
+            ]
+        },
+        {
+            "id": "COMPLEX_005",
+            "module": "Unassigned",
+            "name": "COMPLEX 005",
+            "status": "PASS",
+            "duration": 40.68,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_101_20260810_122126\\COMPLEX_005.log",
+            "screenshots": [
+                "screenshots/COMPLEX_005/COMPLEX_005_games_page_from_bottom_navigation.png",
+                "screenshots/COMPLEX_005/COMPLEX_005_home_page_back_navigation.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI elements are present and properly rendered. No visible layout, rendering, or text defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_005_games_page_from_bottom_navigation.png",
+                    "image_path": "screenshots/COMPLEX_005/COMPLEX_005_games_page_from_bottom_navigation.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and visibly rendered with no obvious UI or layout defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_005_home_page_back_navigation.png",
+                    "image_path": "screenshots/COMPLEX_005/COMPLEX_005_home_page_back_navigation.png"
+                }
+            ]
+        },
+        {
+            "id": "TH_1181",
+            "module": "Unassigned",
+            "name": "TH 1181",
+            "status": "PASS",
+            "duration": 58.68,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_101_20260810_122126\\TH_1181.log",
+            "screenshots": [
+                "screenshots/TH_1181/TH_1181_reset_top.png",
+                "screenshots/TH_1181/TH_1181_scrolled.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present with no visible defects or rendering issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "TH_1181_reset_top.png",
+                    "image_path": "screenshots/TH_1181/TH_1181_reset_top.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present with no visible rendering or layout defects. Layout and navigation are intact.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "TH_1181_scrolled.png",
+                    "image_path": "screenshots/TH_1181/TH_1181_scrolled.png"
+                }
+            ]
+        },
+        {
+            "id": "TH_5634",
+            "module": "Unassigned",
+            "name": "TH 5634",
+            "status": "PASS",
+            "duration": 77.23,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_101_20260810_122126\\TH_5634.log",
+            "screenshots": [
+                "screenshots/TH_5634/TH_5634_games_screen_back_navigation.png",
+                "screenshots/TH_5634/TH_5634_sudoku_landing_page.png"
+            ],
+            "ai_pass": 1,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and the layout is correctly rendered without any obvious defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "TH_5634_games_screen_back_navigation.png",
+                    "image_path": "screenshots/TH_5634/TH_5634_games_screen_back_navigation.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "Typographical error visible in the word 'Sudoko' instead of 'Sudoku' and 'coumns' instead of 'columns'. This is a UI text issue.",
+                    "issues": [
+                        "Typographical error 'Sudoko' instead of 'Sudoku'",
+                        "Typographical error 'coumns' instead of 'columns'"
+                    ],
+                    "jira_title": "Typographical errors on Sudoku selection screen",
+                    "jira_description": "There are typographical errors visible on the Sudoku puzzle selection screen. The header reads 'Sudoko' instead of 'Sudoku', and the description uses 'coumns' instead of 'columns'.",
+                    "image": "TH_5634_sudoku_landing_page.png",
+                    "image_path": "screenshots/TH_5634/TH_5634_sudoku_landing_page.png"
+                }
+            ]
+        },
+        {
+            "id": "TH_5716",
+            "module": "Unassigned",
+            "name": "TH 5716",
+            "status": "PASS",
+            "duration": 41.71,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_101_20260810_122126\\TH_5716.log",
+            "screenshots": [
+                "screenshots/TH_5716/TH_5716_games_page_navigation_state.png",
+                "screenshots/TH_5716/TH_5716_games_tab_visible_on_home.png",
+                "screenshots/TH_5716/TH_5716_home_restored_back_navigation.png"
+            ],
+            "ai_pass": 3,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered, no visible UI defects or interruptions in the layout.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "TH_5716_games_page_navigation_state.png",
+                    "image_path": "screenshots/TH_5716/TH_5716_games_page_navigation_state.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are rendered correctly; no visual defects are present.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "TH_5716_games_tab_visible_on_home.png",
+                    "image_path": "screenshots/TH_5716/TH_5716_games_tab_visible_on_home.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All required UI components are present and rendering is complete. No visual defects or layout issues are evident.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "TH_5716_home_restored_back_navigation.png",
+                    "image_path": "screenshots/TH_5716/TH_5716_home_restored_back_navigation.png"
+                }
+            ]
+        },
+        {
+            "id": "TH_5818",
+            "module": "Unassigned",
+            "name": "TH 5818",
+            "status": "PASS",
+            "duration": 74.82,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_101_20260810_122126\\TH_5818.log",
+            "screenshots": [
+                "screenshots/TH_5818/TH_5818_easy_down_game_listing.png",
+                "screenshots/TH_5818/TH_5818_easy_down_post_tap_state.png",
+                "screenshots/TH_5818/TH_5818_games_page_back_navigation.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "TH_5818_easy_down_game_listing.png",
+                    "image_path": "screenshots/TH_5818/TH_5818_easy_down_game_listing.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Screen is almost entirely blank with only a status icon and points visible. Application content is missing, indicating incomplete rendering.",
+                    "issues": [
+                        "Application content missing",
+                        "Large blank region replaces expected UI elements",
+                        "Incomplete screen rendering"
+                    ],
+                    "jira_title": "Application screen is blank and content is missing",
+                    "jira_description": "The application screen is nearly entirely blank, with only a status icon/points in the top right. All other expected UI content is missing, indicating a major rendering or loading defect.",
+                    "image": "TH_5818_easy_down_post_tap_state.png",
+                    "image_path": "screenshots/TH_5818/TH_5818_easy_down_post_tap_state.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are visible, complete, and correctly aligned without any rendering or layout defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "TH_5818_games_page_back_navigation.png",
+                    "image_path": "screenshots/TH_5818/TH_5818_games_page_back_navigation.png"
+                }
+            ]
+        },
+        {
+            "id": "PILOT_SC_02",
+            "module": "Unassigned",
+            "name": "PILOT SC 02",
+            "status": "PASS",
+            "duration": 21.61,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_101_20260810_122126\\PILOT_SC_02.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "PILOT_SC_03",
+            "module": "Unassigned",
+            "name": "PILOT SC 03",
+            "status": "PASS",
+            "duration": 26.39,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_101_20260810_122126\\PILOT_SC_03.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        },
+        {
+            "id": "PILOT_SC_05",
+            "module": "Unassigned",
+            "name": "PILOT SC 05",
+            "status": "PASS",
+            "duration": 25.2,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_101_20260810_122126\\PILOT_SC_05.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        }
+    ]
+}

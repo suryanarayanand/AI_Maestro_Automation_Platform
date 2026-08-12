@@ -1,0 +1,85 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_13_Article_Share_Functionality
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Run ../Common/LOGIN.yaml...
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+  Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "Email" is visible... COMPLETED
+  Tap on "Email"... COMPLETED
+  Input text product.testing@thehindu.co.in... COMPLETED
+  Hide Keyboard... COMPLETED
+  Wait for animation to end... COMPLETED
+  Assert that "NEXT.*|Next.*|HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible...
+    Tap on "HAVE AN ACCOUNT.*LOGIN"... COMPLETED
+    Assert that "Email" is visible... COMPLETED
+    Tap on "Email"... COMPLETED
+    Input text product.testing@thehindu.co.in... COMPLETED
+    Hide Keyboard... COMPLETED
+    Wait for animation to end... COMPLETED
+  Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+  Assert that "NEXT.*|Next.*" is visible... COMPLETED
+  Tap on "NEXT.*|Next.*"... COMPLETED
+  Assert that "password" is visible... COMPLETED
+  Tap on "password"... COMPLETED
+  Input text Test@123... COMPLETED
+  Hide Keyboard... COMPLETED
+  Assert that "LOGIN.*" is visible... COMPLETED
+  Tap on "LOGIN.*"... COMPLETED
+  Assert that "Home" is visible... COMPLETED
+Run ../Common/LOGIN.yaml... COMPLETED
+Assert that "Welcome to a new
+The Hindu experience" is visible... COMPLETED
+Run flow when "Skip" is visible...
+  Tap on "Skip"... COMPLETED
+Run flow when "Skip" is visible... COMPLETED
+Assert that "Home" is visible... COMPLETED
+Wait for animation to end... COMPLETED
+Tap on point (50%,50%)... COMPLETED
+Wait for animation to end... COMPLETED
+Run flow when "Summary" is visible...
+Run flow when "Summary" is visible... SKIPPED
+Wait for animation to end... COMPLETED
+Tap on "Share", Index: 1... COMPLETED
+Take screenshot Screenshots/SC_13/SC_13_share_article... COMPLETED
+Run flow when "WhatsApp" is visible...
+  Tap on ""... COMPLETED
+Run flow when "WhatsApp" is visible... COMPLETED
+Run flow when "Messages" is visible...
+  Tap on ""... COMPLETED
+Run flow when "Messages" is visible... COMPLETED
+Run flow when "Instagram" is visible...
+  Tap on ""... COMPLETED
+Run flow when "Instagram" is visible... COMPLETED
+Run flow when "Gmail" is visible...
+Run flow when "Gmail" is visible... SKIPPED
+Run flow when "Quick Share" is visible...
+  Tap on ""... COMPLETED
+Run flow when "Quick Share" is visible... COMPLETED
+Swipe from (92%,89%) to (8%,89%) in 1000 ms... COMPLETED
+Run flow when "WhatsApp" is visible...
+Run flow when "WhatsApp" is visible... SKIPPED
+Run flow when "Messages" is visible...
+Run flow when "Messages" is visible... SKIPPED
+Run flow when "Instagram" is visible...
+Run flow when "Instagram" is visible... SKIPPED
+Run flow when "Gmail" is visible...
+  Tap on ""... COMPLETED
+Run flow when "Gmail" is visible... COMPLETED
+Run flow when "Quick Share" is visible...
+Run flow when "Quick Share" is visible... SKIPPED
+Swipe from (8%,89%) to (92%,89%) in 1000 ms... COMPLETED
+Assert that "Copy text" is visible... COMPLETED
+Tap on "Copy text"... COMPLETED
+Take screenshot Screenshots/SC_13/SC_13_copied_successfully... COMPLETED
+
+
+===== STDERR =====
+

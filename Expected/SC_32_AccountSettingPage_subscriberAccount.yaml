@@ -1,0 +1,276 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - account
+  - settings
+---
+# AccountSettingPage subscriberAccount (SC-32).
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 5000
+- tapOn: "Skip"
+- tapOn: "Account"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_32/SC_32_AccountSettingpage"
+- takeScreenshot: "Screenshots/SC_32/SC_32_AccountSettingpage_01"
+- assertVisible: "ACCOUNT SETTINGS"
+- extendedWaitUntil:
+    visible:  "Account"
+    timeout: 5000
+- tapOn: "Account"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_32/SC_32_AccountPage"
+- extendedWaitUntil:
+    visible:  "My Account"
+    timeout: 2500000
+- takeScreenshot: "Screenshots/SC_32/SC_32_MY_AccountPage_details"
+- extendedWaitUntil:
+    visible:  "PROFILE"
+    timeout: 2500000
+- extendedWaitUntil:
+    visible:  "General"
+    timeout: 2500000
+- extendedWaitUntil:
+    visible:  "First name"
+    timeout: 2500000
+- extendedWaitUntil:
+    visible:  "Last name"
+    timeout: 2500000
+- extendedWaitUntil:
+    visible:   "Email"
+    timeout: 2500000
+- scroll
+- extendedWaitUntil:
+    visible:   "Password"
+    timeout: 2500000
+- scroll
+- extendedWaitUntil:
+    visible:   "Change password"
+    timeout: 2500000
+- scroll
+- extendedWaitUntil:
+    visible:  "Profile information"
+    timeout: 2500000
+- scroll
+- extendedWaitUntil:
+    visible:   " Apple"
+    timeout: 2500000
+- extendedWaitUntil:
+    visible:    " Google"
+    timeout: 2500000
+- scroll
+- extendedWaitUntil:
+    visible:     "Log Out"
+    timeout: 2500000
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: UP
+- extendedWaitUntil:
+    visible:  "SUBSCRIPTIONS"
+    timeout: 25000
+- tapOn: "SUBSCRIPTIONS"
+- takeScreenshot: "Screenshots/SC_32/SC_32_Subscriptions_details"
+- extendedWaitUntil:
+    visible:  "VOUCHERS"
+    timeout: 25000
+- tapOn: "VOUCHERS"
+- takeScreenshot: "Screenshots/SC_32/SC_32_Vouchers_details"
+
+# relaunch the app because back causing app crash
+# - stopApp
+- launchApp
+
+# - extendedWaitUntil:
+#     visible: "Create account"
+#     timeout: 15000
+# - tapOn: "Create account"
+# - waitForAnimationToEnd
+# - takeScreenshot: "Screenshots/SC_33/SC_33_CreateAccountPage"
+# - back
+# - assertVisible: "Subscribe"
+# - tapOn: "Subscribe"
+# - assertVisible: "Yearly"
+# - waitForAnimationToEnd
+# - takeScreenshot: "Screenshots/SC_33/SC_33_Subscribion_Page_00"
+# - assertVisible: "Monthly"
+# - tapOn: "Monthly"
+# - waitForAnimationToEnd
+# - takeScreenshot: "Screenshots/SC_33/SC_33_Subscribion_Page_00"
+- tapOn: "Account"
+- extendedWaitUntil:
+    visible: "Notification Inbox"
+    timeout: 5000
+- tapOn: "Notification Inbox"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_32/SC_32_Notification_page"
+- back
+
+# relaunch the app because back causing app crash
+# - stopApp
+- launchApp
+- tapOn: "Account"
+- assertVisible: "History"
+- tapOn: "History"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_32/SC_32_History_page"
+- back
+
+# relaunch the app because back causing app crash
+# - stopApp
+- launchApp
+- tapOn: "Account"
+- assertVisible: "Bookmarks"
+- tapOn: "Bookmarks"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_32/SC_32_Bookmark_page"
+
+# relaunch the app because back causing app crash
+# - stopApp
+- launchApp
+- tapOn: "Account"
+- assertVisible: "Text Size"
+- tapOn: "Text Size"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_32/SC_32_Text_Size_page"
+- back
+
+# relaunch the app because back causing app crash
+# - stopApp
+- launchApp
+- tapOn: "Account"
+- assertVisible: "Appearance"
+- tapOn: "Appearance"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_32/SC_32_Appearnce_page"
+
+# - back
+- tapOn:  "Light\nMode"
+- assertVisible: "Dark\nMode"
+- tapOn:  "Dark\nMode"
+- back
+
+# relaunch the app because back causing app crash
+# - stopApp
+- launchApp
+- tapOn: "Account"
+- takeScreenshot: "Screenshots/SC_32/SC_32_Accountpage_darkTheme"
+- assertVisible: "ACCOUNT SETTINGS"
+- extendedWaitUntil:
+    visible:  "Account"
+    timeout: 5000
+- tapOn: "Account"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_32/SC_32_AccountPage"
+- extendedWaitUntil:
+    visible:  "My Account"
+    timeout: 2500000
+- takeScreenshot: "Screenshots/SC_32/SC_32_MY_AccountPage_details"
+- extendedWaitUntil:
+    visible:  "PROFILE"
+    timeout: 2500000
+- extendedWaitUntil:
+    visible:  "General"
+    timeout: 2500000
+- extendedWaitUntil:
+    visible:  "First name"
+    timeout: 2500000
+- extendedWaitUntil:
+    visible:  "Last name"
+    timeout: 2500000
+- extendedWaitUntil:
+    visible:   "Email"
+    timeout: 2500000
+- scroll
+- extendedWaitUntil:
+    visible:   "Password"
+    timeout: 2500000
+- scroll
+- extendedWaitUntil:
+    visible:   "Change password"
+    timeout: 2500000
+- scroll
+- extendedWaitUntil:
+    visible:  "Profile information"
+    timeout: 2500000
+- scroll
+- extendedWaitUntil:
+    visible:   " Apple"
+    timeout: 2500000
+- extendedWaitUntil:
+    visible:    " Google"
+    timeout: 2500000
+- scroll
+- extendedWaitUntil:
+    visible:     "Log Out"
+    timeout: 2500000
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_32/SC_32_My_AccountPage_darkTheme"
+- back
+
+# relaunch the app because back causing app crash
+# - stopApp
+- launchApp
+- tapOn: "Account"
+
+# - assertVisible: "Create account"
+# - tapOn: "Create account"
+# - waitForAnimationToEnd
+# - takeScreenshot: "Screenshots/SC_33/SC_33_CreateAccountPage_darkTheme"
+# - back
+# - assertVisible: "Subscribe"
+# - tapOn: "Subscribe"
+# - assertVisible: "Yearly"
+# - waitForAnimationToEnd
+# - takeScreenshot: "Screenshots/SC_33/SC_33_Subscribion_Page_00_darkTheme"
+# - assertVisible: "Monthly"
+# - tapOn: "Monthly"
+# - waitForAnimationToEnd
+# - takeScreenshot: "Screenshots/SC_33/SC_33_Subscribion_Page_00_darkTheme"
+# relaunch the app because back causing app crash
+# - stopApp
+- launchApp
+- tapOn: "Account"
+- assertVisible: "Notification Inbox"
+- tapOn: "Notification Inbox"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_32/SC_32_Notification_page_darkTheme"
+- back
+
+# relaunch the app because back causing app crash
+# - stopApp
+- launchApp
+- tapOn: "Account"
+- assertVisible: "History"
+- tapOn: "History"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_32/SC_32_History_page_darkTheme"
+- back
+
+# relaunch the app because back causing app crash
+# - stopApp
+- launchApp
+- tapOn: "Account"
+- extendedWaitUntil:
+    visible:  "Bookmarks"
+    timeout: 25000
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_32/SC_32_Bookmark_page_darkTheme"
+- back
+
+# relaunch the app because back causing app crash
+# - stopApp
+- launchApp
+- tapOn: "Account"
+- assertVisible: "Text Size"
+- tapOn: "Text Size"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_32/SC_32_TextSize_darkTheme"
+- back
+- killApp

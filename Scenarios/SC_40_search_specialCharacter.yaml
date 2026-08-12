@@ -1,0 +1,77 @@
+appId: com.mobstac.thehindu
+tags:
+  - search
+---
+# search specialCharacter (SC-40).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 5000
+- tapOn: "Skip"
+
+# - tapOn:
+#     point: 0%,3%
+# Navigate to Search
+- tapOn:
+    point: 2%,5%
+- assertVisible: "Search"
+- tapOn: "Search"
+
+# Verify Search with Special Characters
+- eraseText
+- inputText: "%%%%$$$$###@@@(())"
+- takeScreenshot: "Screenshots/SC_40/SC_40_Search_Special_Characters_Input"
+- pressKey: enter
+- takeScreenshot: "Screenshots/SC_40/SC_40_Search_Special_Characters_Result"
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+- back
+
+# - stopApp
+- launchApp
+- waitForAnimationToEnd
+
+# Navigate to Search
+- tapOn:
+    point: 2%,5%
+- assertVisible: "Search"
+- tapOn: "Search"
+
+# Verify Search with 500+ Characters
+- eraseText
+- inputText: "Artificial Intelligence is transforming industries across the world by enabling automation, improving decision-making, and enhancing customer experiences. From healthcare and education to finance and transportation, AI-powered systems are helping organizations process large amounts of data efficiently."
+- inputText: " Machine learning, natural language processing, and computer vision are some of the key technologies driving innovation. As AI adoption continues to grow, businesses are investing heavily in research and development to gain competitive advantages while ensuring ethical and responsible use of technology in real-world applications."
+- takeScreenshot: "Screenshots/SC_40/SC_40_Search_500_Plus_Characters_Input"
+- pressKey: enter
+- takeScreenshot: "Screenshots/SC_40/SC_40_Search_500_Plus_Characters_Result"
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+- back
+
+# - stopApp
+- launchApp
+- waitForAnimationToEnd
+
+# Navigate to Search
+- tapOn:
+    point: 2%,5%
+- assertVisible: "Search"
+- tapOn: "Search"
+
+# Verify Search with Empty Input
+- eraseText
+- inputText: " "
+- takeScreenshot: "Screenshots/SC_40/SC_40_Search_Empty_Input"
+- pressKey: enter
+- takeScreenshot: "Screenshots/SC_40/SC_40_Search_Empty_Result"
+
+# Close Application
+- killApp

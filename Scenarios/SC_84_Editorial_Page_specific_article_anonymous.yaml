@@ -1,0 +1,85 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - editorial
+  - article
+---
+# Editorial Page specific article anonymous (SC-84).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- assertVisible: "SUBSCRIBE"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Navigate to Editorial Section
+- extendedWaitUntil:
+    visible: "Editorial"
+    timeout: 15000
+- tapOn: "Editorial"
+
+# Editorial Page Validation
+- takeScreenshot: "Screenshots/SC_84/SC_84_Editorial_Page_Anonymous_Account_01"
+- scroll
+
+# Open Editorial Article
+- tapOn:
+    point: 50%,50%
+
+# Verify closing Summary
+- runFlow:
+    when:
+      visible:
+        text: "Summary"
+    commands:
+      - tapOn: "Close sheet"
+
+
+- takeScreenshot: "Screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_84/SC_84_Editorial_Page_Specific_Article_04"
+- scroll
+
+# Verify Article Actions
+- assertVisible:
+    text: "Text size"
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+
+# Navigate to Taboola Advertisement Section
+- repeat:
+    times: 8
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Taboola Advertisement
+- repeat:
+    times: 20
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Image for Taboola Advertising Unit"
+          commands:
+            - takeScreenshot: "Screenshots/SC_84/SC_84_Taboola_Ad_${TIMESTAMP}"
+      - scroll
+
+
+

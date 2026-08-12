@@ -1,0 +1,75 @@
+{
+    "suite": "Locatorsmoke",
+    "execution_time": 81.74,
+    "summary": {
+        "total": 1,
+        "passed": 0,
+        "failed": 1,
+        "critical": 1,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.813",
+            "version_code": "579"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Scenario TH_0062 failed during Maestro execution. There were no supporting findings from screenshot analysis or cross-device visual checks, indicating a functional failure rather than a visual/UI defect. No dynamic content or visual noise was detected.",
+        "release_recommendation": "Do not release",
+        "top_risks": [
+            "Critical functional failure in scenario TH_0062",
+            "Lack of diagnostic visual evidence may hinder root cause analysis",
+            "Potential undiscovered functional regressions in related areas"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "TH_0062",
+            "scenario_name": "Subscribe button Appearance",
+            "module": "AI Generated",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 74.29,
+            "log_file": "TH_0062.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Locatorsmoke_Job_125_20260812_125100\\TH_0062.log",
+            "screenshots": [
+                "screenshots/TH_0062/TH_0062/TH_0062_non_subscriber_article_floating_bar_evidence.png",
+                "screenshots/TH_0062/TH_0062/TH_0062_non_subscriber_home_header_evidence.png"
+            ],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

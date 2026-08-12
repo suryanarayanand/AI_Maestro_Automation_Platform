@@ -1,0 +1,24 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow capture_home_section
+Launch app "com.mobstac.thehindu"... COMPLETED
+Assert that id: screen_home is visible... COMPLETED
+Tap on "${TARGET_SECTION}"... FAILED
+
+Element not found: Text matching regex: undefined
+
+Element with Text matching regex: undefined not found. Check the UI hierarchy in debug artifacts to verify if the element exists.
+
+Possible causes:
+- Element selector may be incorrect - check if there are similar elements with slightly different names/properties.
+- Element may be temporarily unavailable due to loading state.
+- This could be a real regression that needs to be addressed.
+
+==== Debug output (logs & screenshots) ====
+
+C:\Users\12503\.maestro\tests\2026-08-10_125600
+
+
+===== STDERR =====
+

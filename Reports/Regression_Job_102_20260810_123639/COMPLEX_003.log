@@ -1,0 +1,30 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow COMPLEX_003
+Run ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml...
+  Launch app "com.mobstac.thehindu"... COMPLETED
+  Repeat 2 times...
+    Run flow when "Skip" is visible...
+      Tap on "Skip"... COMPLETED
+    Run flow when "Skip" is visible... COMPLETED
+    Wait for animation to end... COMPLETED
+  Repeat 2 times... COMPLETED
+  Assert that id: screen_home is visible... COMPLETED
+  Assert that id: screen_home is visible... COMPLETED
+Run ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml... COMPLETED
+Tap on id: nav_account... COMPLETED
+Tap on "Appearance"... COMPLETED
+Assert that "Dark
+Mode" is visible... COMPLETED
+Tap on "Dark
+Mode"... COMPLETED
+Take screenshot Screenshots/Generated/COMPLEX_003_dark_mode_enabled... COMPLETED
+Press back... COMPLETED
+Press back... COMPLETED
+Assert that id: screen_home is visible... COMPLETED
+Take screenshot Screenshots/Generated/COMPLEX_003_home_page_in_dark_mode... COMPLETED
+
+
+===== STDERR =====
+

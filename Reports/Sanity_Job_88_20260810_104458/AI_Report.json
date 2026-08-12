@@ -1,0 +1,24 @@
+{
+    "suite": {
+        "total": 1,
+        "passed": 0,
+        "failed": 0,
+        "not_found": 0,
+        "pass_rate": 0.0
+    },
+    "results": [
+        {
+            "id": "SC_03",
+            "module": "Advertisement",
+            "name": "Verify Ads Taboola for anonymous user",
+            "status": "CANCELLED",
+            "duration": 2.59,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Sanity_Job_88_20260810_104458\\SC_03.log",
+            "screenshots": [],
+            "ai_pass": 0,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": []
+        }
+    ]
+}

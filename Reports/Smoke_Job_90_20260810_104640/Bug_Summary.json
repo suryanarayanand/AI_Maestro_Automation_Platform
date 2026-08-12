@@ -1,0 +1,118 @@
+{
+    "suite": "Smoke",
+    "execution_time": 31.22,
+    "summary": {
+        "total": 3,
+        "passed": 0,
+        "failed": 3,
+        "critical": 3,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "multiple-or-unavailable",
+            "manufacturer": "",
+            "model": "",
+            "android": "",
+            "resolution": "",
+            "density": "",
+            "package": "com.mobstac.thehindu",
+            "version_name": "",
+            "version_code": ""
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Three critical test scenarios (PILOT_SC_02, PILOT_SC_03, and PILOT_SC_05) failed during Maestro execution. No supporting evidence of visual defects or dynamic-content related noise was detected across devices, confirming these as functional failures. The absence of screenshot AI or visual anomaly findings strengthens the likelihood of core functionality issues.",
+        "release_recommendation": "Release is not recommended until functional failures in key scenarios are resolved and revalidated.",
+        "top_risks": [
+            "Unresolved functional failures in critical scenarios",
+            "Potential business-critical workflows are broken",
+            "Lack of automated visual/screenshot evidence may delay debugging"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "PILOT_SC_02",
+            "scenario_name": "PILOT SC 02",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 10.23,
+            "log_file": "PILOT_SC_02.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_90_20260810_104640\\PILOT_SC_02.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-002",
+            "scenario_id": "PILOT_SC_03",
+            "scenario_name": "PILOT SC 03",
+            "module": "Unassigned",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 10.26,
+            "log_file": "PILOT_SC_03.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_90_20260810_104640\\PILOT_SC_03.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        },
+        {
+            "bug_id": "BUG-003",
+            "scenario_id": "PILOT_SC_05",
+            "scenario_name": "Anonymous Premium navigation",
+            "module": "AI Generated",
+            "status": "ISSUE",
+            "execution_status": "FAIL",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 10.27,
+            "log_file": "PILOT_SC_05.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_90_20260810_104640\\PILOT_SC_05.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

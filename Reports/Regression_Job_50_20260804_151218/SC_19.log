@@ -1,0 +1,27 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_19_ad_navigation
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Wait for animation to end... COMPLETED
+Tap on point (50%,50%)... COMPLETED
+Run flow when "Summary" is visible...
+Run flow when "Summary" is visible... SKIPPED
+Wait for animation to end... COMPLETED
+Wait for animation to end... COMPLETED
+Repeat 15 times...
+  Run flow when "Image for Taboola Advertising Unit" is visible...
+  Run flow when "Image for Taboola Advertising Unit" is visible... SKIPPED
+  Scroll vertically... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 15 times... COMPLETED
+Take screenshot Screenshots/SC_19/SC_19_Ad_Page_04... COMPLETED
+Press back... COMPLETED
+
+
+===== STDERR =====
+

@@ -1,0 +1,411 @@
+{
+    "suite": {
+        "total": 4,
+        "passed": 3,
+        "failed": 0,
+        "not_found": 0,
+        "pass_rate": 75.0
+    },
+    "results": [
+        {
+            "id": "SC_21",
+            "module": "Unassigned",
+            "name": "SC 21 Whats new option subscribed user",
+            "status": "PASS",
+            "duration": 107.56,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_121_20260812_123518\\SC_21.log",
+            "screenshots": [
+                "screenshots/SC_21/SC_21_01_Revamped_Home_Page.png",
+                "screenshots/SC_21/SC_21_02_Quick_Access.png",
+                "screenshots/SC_21/SC_21_03_Trending.png",
+                "screenshots/SC_21/SC_21_04_Premium.png",
+                "screenshots/SC_21/SC_21_05_Ebooks.png",
+                "screenshots/SC_21/SC_21_06_TH_Games.png",
+                "screenshots/SC_21/SC_21_07_More.png",
+                "screenshots/SC_21/SC_21_08_Home_Page.png"
+            ],
+            "ai_pass": 8,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present, with no visible layout, rendering, or text defects. A popup onboarding message overlays complete content, but nothing is cropped or missing.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_21_01_Revamped_Home_Page.png",
+                    "image_path": "screenshots/SC_21/SC_21_01_Revamped_Home_Page.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All essential UI components are present and correctly rendered. No visible UI defects observed. The overlay tutorial does not indicate any missing or broken UI.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_21_02_Quick_Access.png",
+                    "image_path": "screenshots/SC_21/SC_21_02_Quick_Access.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No blank regions, overlaps, or missing elements.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_21_03_Trending.png",
+                    "image_path": "screenshots/SC_21/SC_21_03_Trending.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_21_04_Premium.png",
+                    "image_path": "screenshots/SC_21/SC_21_04_Premium.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are rendered correctly. No visible layout, text, or rendering defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_21_05_Ebooks.png",
+                    "image_path": "screenshots/SC_21/SC_21_05_Ebooks.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are visible and correctly rendered. No visual defects present.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_21_06_TH_Games.png",
+                    "image_path": "screenshots/SC_21/SC_21_06_TH_Games.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are visible and there are no clear layout or rendering defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_21_07_More.png",
+                    "image_path": "screenshots/SC_21/SC_21_07_More.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI elements are present and rendered as expected; no blank regions, misalignment, or visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_21_08_Home_Page.png",
+                    "image_path": "screenshots/SC_21/SC_21_08_Home_Page.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_22",
+            "module": "Settings",
+            "name": "Appearance theme validation",
+            "status": "PASS",
+            "duration": 76.33,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_121_20260812_123518\\SC_22.log",
+            "screenshots": [
+                "screenshots/SC_22/SC_22_Account_Settings_Page.png",
+                "screenshots/SC_22/SC_22_Appearance.png",
+                "screenshots/SC_22/SC_22_Appearance_Dark_Theme.png",
+                "screenshots/SC_22/SC_22_Appearance_Dark_Theme_Home_Page.png",
+                "screenshots/SC_22/SC_22_Appearance_Light_Theme.png"
+            ],
+            "ai_pass": 4,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and there are no visible defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_22_Account_Settings_Page.png",
+                    "image_path": "screenshots/SC_22/SC_22_Account_Settings_Page.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly aligned. No UI defects are visible.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_22_Appearance.png",
+                    "image_path": "screenshots/SC_22/SC_22_Appearance.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components for the appearance/theme selection are present. No visual defects or layout issues are visible.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_22_Appearance_Dark_Theme.png",
+                    "image_path": "screenshots/SC_22/SC_22_Appearance_Dark_Theme.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Placeholders are still visible instead of fully rendered content, indicating incomplete rendering or loading defect.",
+                    "issues": [
+                        "Placeholder still visible",
+                        "Incomplete screen rendering"
+                    ],
+                    "jira_title": "Placeholders visible instead of content on Home screen",
+                    "jira_description": "The Home screen displays loading placeholders rather than fully rendered article cards, indicating that the actual content has not properly loaded or rendered.",
+                    "image": "SC_22_Appearance_Dark_Theme_Home_Page.png",
+                    "image_path": "screenshots/SC_22/SC_22_Appearance_Dark_Theme_Home_Page.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly, and the empty space below is valid as content has ended.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_22_Appearance_Light_Theme.png",
+                    "image_path": "screenshots/SC_22/SC_22_Appearance_Light_Theme.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_23",
+            "module": "Unassigned",
+            "name": "SC 23 gen",
+            "status": "PASS",
+            "duration": 71.21,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_121_20260812_123518\\SC_23.log",
+            "screenshots": [
+                "screenshots/SC_23/SC_23_gen_enabling_dark_mode.png",
+                "screenshots/SC_23/SC_23_gen_home_page.png",
+                "screenshots/SC_23/SC_23_gen_scroll_through_editorial_page_and_at_different_sections.png",
+                "screenshots/SC_23/SC_23_gen_scroll_through_home_page_and_at_different_sections_to_v.png"
+            ],
+            "ai_pass": 3,
+            "ai_fail": 1,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "UI layout is correct and fully rendered. No missing or broken components.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_23_gen_enabling_dark_mode.png",
+                    "image_path": "screenshots/SC_23/SC_23_gen_enabling_dark_mode.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visible layout, rendering, or content issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_23_gen_home_page.png",
+                    "image_path": "screenshots/SC_23/SC_23_gen_home_page.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and correctly rendered. No visible UI defects, missing components, or rendering issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_23_gen_scroll_through_editorial_page_and_at_different_sections.png",
+                    "image_path": "screenshots/SC_23/SC_23_gen_scroll_through_editorial_page_and_at_different_sections.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Multiple placeholder skeletons and loading bars visible instead of actual content, indicating incomplete rendering of the main UI.",
+                    "issues": [
+                        "Main content not rendered; placeholders visible",
+                        "Incomplete rendering of article/content cards"
+                    ],
+                    "jira_title": "Main content area displays placeholders instead of articles",
+                    "jira_description": "The home screen shows multiple placeholder skeletons and loading bars instead of fully rendered content, indicating a rendering or loading defect.",
+                    "image": "SC_23_gen_scroll_through_home_page_and_at_different_sections_to_v.png",
+                    "image_path": "screenshots/SC_23/SC_23_gen_scroll_through_home_page_and_at_different_sections_to_v.png"
+                }
+            ]
+        },
+        {
+            "id": "SC_23",
+            "module": "Unassigned",
+            "name": "SC 23 Homepage FromHomepage to Editorialpage in darkTheme anonyous ",
+            "status": "CANCELLED",
+            "duration": 88.49,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Regression_Job_121_20260812_123518\\SC_23.log",
+            "screenshots": [
+                "screenshots/SC_23/SC_23_Dark_Theme.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_1.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_2.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_3.png",
+                "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_4.png",
+                "screenshots/SC_23/SC_23_Home_Page.png"
+            ],
+            "ai_pass": 6,
+            "ai_fail": 4,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements for the Appearance screen are present and correctly rendered. No layout, text, or rendering issues are visible.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_23_Dark_Theme.png",
+                    "image_path": "screenshots/SC_23/SC_23_Dark_Theme.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Screen displays placeholder skeletons instead of loaded article content, indicating incomplete rendering.",
+                    "issues": [
+                        "Article placeholders visible",
+                        "Content failed to load",
+                        "Incomplete screen rendering"
+                    ],
+                    "jira_title": "Home screen displays loading placeholders instead of content",
+                    "jira_description": "The Home screen shows skeleton placeholders where articles and images should appear, indicating that the actual content failed to render.",
+                    "image": "SC_23_Dark_Theme_Home_Page_1.png",
+                    "image_path": "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_1.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Multiple UI placeholders are visible, indicating that the actual content failed to render. The screen is stuck on loading skeletons.",
+                    "issues": [
+                        "Screen is stuck on loading skeleton placeholders",
+                        "Actual article content failed to render"
+                    ],
+                    "jira_title": "Home screen stuck on loading skeletons",
+                    "jira_description": "The Home screen displays only loading skeleton placeholders and no actual content appears, indicating the content failed to render.",
+                    "image": "SC_23_Dark_Theme_Home_Page_2.png",
+                    "image_path": "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_2.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Article placeholders are visible and actual content did not render. Screen is stuck in loading state.",
+                    "issues": [
+                        "Placeholders still visible",
+                        "Content failed to render",
+                        "Screen not fully loaded"
+                    ],
+                    "jira_title": "Home page displays loading placeholders instead of content",
+                    "jira_description": "The Home page is stuck in a loading state with skeleton placeholders visible and actual article content missing. Users cannot view the intended content.",
+                    "image": "SC_23_Dark_Theme_Home_Page_3.png",
+                    "image_path": "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_3.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and correctly rendered. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_23_Dark_Theme_Home_Page_4.png",
+                    "image_path": "screenshots/SC_23/SC_23_Dark_Theme_Home_Page_4.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements for the Appearance settings screen are present and properly rendered. No evidence of missing, cropped, or overlapping components.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_23_gen_enabling_dark_mode.png",
+                    "image_path": "screenshots/SC_23/SC_23_gen_enabling_dark_mode.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present and rendered correctly. No visual defects detected.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_23_gen_home_page.png",
+                    "image_path": "screenshots/SC_23/SC_23_gen_home_page.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All UI components are present, text and layout are correct, and no visible defects exist.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_23_gen_scroll_through_editorial_page_and_at_different_sections.png",
+                    "image_path": "screenshots/SC_23/SC_23_gen_scroll_through_editorial_page_and_at_different_sections.png"
+                },
+                {
+                    "status": "FAIL",
+                    "confidence": "High",
+                    "severity": "HIGH",
+                    "reason": "Multiple content placeholders are visible, indicating that the actual content failed to load/render. These placeholders suggest incomplete rendering.",
+                    "issues": [
+                        "Content placeholders visible instead of real content",
+                        "Incomplete screen rendering"
+                    ],
+                    "jira_title": "Content placeholders visible - incomplete screen rendering",
+                    "jira_description": "The main screen displays multiple grey/white placeholder blocks instead of the expected content, indicating that the UI failed to load or render the actual stories/articles. This results in an incomplete and non-functional screen.",
+                    "image": "SC_23_gen_scroll_through_home_page_and_at_different_sections_to_v.png",
+                    "image_path": "screenshots/SC_23/SC_23_gen_scroll_through_home_page_and_at_different_sections_to_v.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI elements are present and rendered properly. No visible UI defects.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "SC_23_Home_Page.png",
+                    "image_path": "screenshots/SC_23/SC_23_Home_Page.png"
+                }
+            ]
+        }
+    ]
+}

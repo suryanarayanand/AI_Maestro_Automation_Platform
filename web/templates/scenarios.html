@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Test Suites{% endblock %}
+{% block page_title %}Test suites{% endblock %}
+{% block content %}
+<p class="page-intro">Run a suite next or add it to the normal execution queue. An active execution is never interrupted.</p>
+<div class="suite-grid">
+{% for suite in suites %}
+    <section class="surface suite-card"><div><small>Suite</small><h2>{{ suite.name }}</h2><p>{{ suite.count }} test cases</p>
+        {% if suite.last_result %}
+        <p>Last result: <a href="{{ url_for('jobs.job_detail', job_id=suite.last_result.id) }}"><span class="status-pill status-{{ suite.last_result.status }}">{{ suite.last_result.status }}</span> Job #{{ suite.last_result.id }}</a></p>
+        {% else %}
+        <p>Last result: <span class="status-pill">Not run yet</span></p>
+        {% endif %}
+    </div>
+        <div class="suite-actions">
+            <a class="btn btn-outline-secondary w-100" href="{{ url_for('suite.edit_suite', suite_name=suite.key) }}">Manage Cases</a>
+            <form action="{{ url_for('suite.run_selected_suite', suite_name=suite.key, mode='run-now') }}" method="post"><button class="btn btn-primary w-100" {% if suite.count == 0 %}disabled{% endif %}>Run Now</button></form>
+            <form action="{{ url_for('suite.run_selected_suite', suite_name=suite.key, mode='queue') }}" method="post"><button class="btn btn-outline-primary w-100" {% if suite.count == 0 %}disabled{% endif %}>Add to Queue</button></form>
+            <form action="{{ url_for('suite.remove_suite', suite_name=suite.key) }}" method="post" onsubmit="return confirm('Delete the {{ suite.name }} suite? Its scenario YAML files will be preserved.');"><button class="btn btn-outline-danger w-100">Delete Suite</button></form>
+        </div>
+    </section>
+{% endfor %}
+</div>
+{% endblock %}

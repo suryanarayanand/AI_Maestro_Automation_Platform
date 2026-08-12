@@ -1,0 +1,64 @@
+appId: com.mobstac.thehindu
+tags:
+  - ads
+  - navigation
+---
+# ad navigation (SC-19).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Open Home Article
+- waitForAnimationToEnd
+- tapOn:
+    point: 50%,50%
+
+# The frequency-capped AI Summary sheet can cover the article action bar.
+- runFlow:
+    when:
+      visible:
+        text: "Summary"
+    commands:
+      - tapOn: "Close sheet"
+
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# Verify Taboola Advertisement Navigation
+- repeat:
+    times: 15
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Image for Taboola Advertising Unit"
+          commands:
+            - tapOn:
+                point: "30%,30%"
+            - takeScreenshot: "Screenshots/SC_19/SC_19_Ad_Page_03"
+            - back
+      - scroll
+      - waitForAnimationToEnd
+
+
+
+
+# # Open Taboola Advertisement
+# - tapOn:
+#     text: "Image for Taboola Advertising Unit"
+
+# Advertisement Page Validation
+- takeScreenshot: "Screenshots/SC_19/SC_19_Ad_Page_04"
+
+# Navigate Back
+- back

@@ -1,0 +1,28 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow capture_shifted_home_section
+Launch app "com.mobstac.thehindu"... COMPLETED
+Assert that id: screen_home is visible... COMPLETED
+Repeat 5 times...
+  Swiping in LEFT direction in 400 ms... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 5 times... COMPLETED
+Assert that "${TARGET_SECTION}" is visible... FAILED
+
+Assertion is false: "undefined" is visible
+
+Assertion '"undefined" is visible' failed. Check the UI hierarchy in debug artifacts to verify the element state and properties.
+
+Possible causes:
+- Element selector may be incorrect - check if there are similar elements with slightly different names/properties.
+- Element may be temporarily unavailable due to loading state
+- This could be a real regression that needs to be addressed
+
+==== Debug output (logs & screenshots) ====
+
+C:\Users\12503\.maestro\tests\2026-08-10_125642
+
+
+===== STDERR =====
+

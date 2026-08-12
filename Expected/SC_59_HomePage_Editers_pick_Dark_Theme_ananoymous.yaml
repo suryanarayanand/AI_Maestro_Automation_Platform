@@ -1,0 +1,71 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - dark_theme
+  - home
+  - theme
+---
+# HomePage Editers pick Dark Theme ananoymous (SC-59).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Verify Anonymous Home Page
+- assertVisible: "SUBSCRIBE"
+- takeScreenshot: "Screenshots/SC_59/SC_59_Anonymous_Account_Home_Page"
+
+# Navigate to Appearance Settings
+- tapOn:
+    point: 88%,5%
+- extendedWaitUntil:
+    visible: "Appearance"
+    timeout: 15000
+- tapOn: "Appearance"
+
+# Verify Change Theme Option
+- assertVisible: "Dark\nMode"
+- tapOn: "Dark\nMode"
+- back
+
+# Relaunch the App Because Navigating Back Causes the App to Crash
+# - stopApp
+- launchApp
+
+# Navigate to Editor's Pick Section
+- repeat:
+    times: 10
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Editor's Pick"
+          commands:
+            - scrollUntilVisible:
+                element: "Editor's Pick"
+      - scroll
+      - waitForAnimationToEnd
+
+# Capture Screenshots After Applying Dark Theme
+- takeScreenshot: "Screenshots/SC_59/SC_59_Editors_Pick_Dark_Theme_01"
+- swipe:
+    direction: LEFT
+- takeScreenshot: "Screenshots/SC_59/SC_59_Editors_Pick_Dark_Theme_02"
+- swipe:
+    direction: LEFT
+- takeScreenshot: "Screenshots/SC_59/SC_59_Editors_Pick_Dark_Theme_03"
+
+# Close Application
+- stopApp

@@ -1,0 +1,1235 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Bug Investigation Dashboard</title>
+
+<style>
+.bug-card{
+
+    background:white;
+
+    margin-top:25px;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+.bug-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.bug-body{
+
+    display:flex;
+
+    gap:30px;
+
+    margin-top:20px;
+
+    margin-bottom:20px;
+
+}
+
+.info{
+
+    min-width:140px;
+
+}
+
+.severity{
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+.major{
+
+    background:#f59e0b;
+
+}
+
+.critical{
+
+    background:#dc2626;
+
+}
+
+.minor{
+
+    background:#16a34a;
+
+}
+.screenshot-section{
+
+    margin-top:25px;
+
+}
+
+.bug-image{
+
+    width:350px;
+
+    max-width:100%;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.bug-image:hover{
+
+    transform:scale(1.02);
+
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+
+}
+
+.gallery{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:15px;
+
+}
+
+.gallery-image{
+
+    width:180px;
+
+    border-radius:8px;
+
+    border:1px solid #ddd;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.gallery-image:hover{
+
+    transform:scale(1.05);
+
+}
+body{
+    margin:0;
+    padding:0;
+    background:#f5f7fb;
+    font-family:Segoe UI,Arial,sans-serif;
+}
+
+.container{
+    width:95%;
+    margin:auto;
+    padding:20px;
+}
+
+.header{
+    background:#1f2937;
+    color:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.card{
+    background:white;
+    width:180px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.card h2{
+    margin:0;
+    font-size:36px;
+}
+
+.card p{
+    color:#666;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    
+<div class="header">
+
+<h1>🐞 Bug Investigation Dashboard</h1>
+
+<p>
+
+<b>Suite:</b> Regression
+
+&nbsp;&nbsp;&nbsp;
+
+<b>Execution:</b> 2845.57 sec
+
+</p>
+
+</div>
+
+
+    
+<div class="cards">
+
+<div class="card">
+<h2>14</h2>
+<p>Total</p>
+</div>
+
+<div class="card">
+<h2>10</h2>
+<p>Failed</p>
+</div>
+
+<div class="card">
+<h2>10</h2>
+<p>Critical</p>
+</div>
+
+<div class="card">
+<h2>0</h2>
+<p>Major</p>
+</div>
+
+<div class="card">
+<h2>0</h2>
+<p>Minor</p>
+</div>
+
+</div>
+
+
+    
+<div class="bug-card">
+<h2>Combined AI Assessment</h2>
+<p><b>Executive summary</b><br>The latest test execution reveals several critical functional failures alongside prominent UI and visual issues across multiple key user flows. Fundamental problems include loading indicators stuck or content not rendering (SC_05, SC_15), missing or blank advertisement containers, unrendered core article images breaking layout and user experience (SC_04), and visible debug/SDK information leaking into the UI (SC_11). Scenarios SC_07, SC_08, SC_12, SC_13, SC_14, and SC_15 have hard failures, some with no further evidence provided, indicating broken app flows. Numerous severe visual-only issues persist, notably in layout, alignment, and spacing, compounding UX degradation. Dynamic content differences and data-variation noise were successfully filtered and do not contribute to blocking findings.</p>
+<p><b>Release recommendation</b><br>Do NOT release. Multiple high-severity functional failures and user-limiting defects require immediate resolution before release to production.</p>
+<ul><li>Core screens stuck on loading or failing to render content (SC_05, SC_15)</li><li>Blank or missing advertisement containers leading to lost revenue and broken UX (SC_03, SC_05)</li><li>Primary news article images not displayed, creating major layout gaps (SC_04)</li><li>Visible SDK debug or unit ID information leaking into the user interface (SC_11)</li><li>Broken or incomplete subscriber/premium flows; scenarios failing without details (SC_07, SC_08, SC_12, SC_14, SC_15)</li><li>Critical layout and alignment regressions in headers and navigation (SC_11)</li></ul><hr>
+<p><b>Reference:</b> Google Pixel 9 Pro — App 2501.20.802</p>
+<p><b>Actual:</b> samsung SM-E066B — App 2501.20.807</p>
+</div>
+
+
+    <h2>Combined Findings</h2>
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-001</h2>
+
+            <h3>SC_03</h3>
+
+            <p>Verify_Ads_Taboola_for_anonymous_user</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: PASS</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            95%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            479.24 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Screenshot AI, Visual
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Screenshot AI, Visual</p>
+
+    <p><b>Screenshot AI findings</b><br>There is a large blank area where the advertisement should be, with only the 'ADVERTISEMENT' label and ad unit info shown. No actual advertisement is rendered in that container.<br>Advertisement container is blank, showing only placeholder and debug info, with no actual ad content rendered.</p>
+
+    <p><b>Visual findings</b><br>No genuine UI defects detected. All highlighted differences are related to dynamic content, news headlines, author names, timestamps, and advertisements, which are to be ignored per instructions.</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_03/SC_03_TaboolaAd_IndiaPage_undefined.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_03/SC_03_TaboolaAd_IndiaPage_undefined.png','_blank')">
+
+<img
+    src="screenshots/SC_03/SC_03_TaboolaAd_TrendingPage_undefined.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_03/SC_03_TaboolaAd_TrendingPage_undefined.png','_blank')">
+
+</div>
+</div>
+<div class="screenshot-section"><h3>Reference / Actual / Difference</h3><div class="gallery"><img src="comparison/SC_03/./reference_SC_03_TaboolaAd_IndiaPage_undefined.png" class="gallery-image" onclick="window.open('comparison/SC_03/./reference_SC_03_TaboolaAd_IndiaPage_undefined.png','_blank')"><img src="comparison/SC_03/./actual_SC_03_TaboolaAd_IndiaPage_undefined.png" class="gallery-image" onclick="window.open('comparison/SC_03/./actual_SC_03_TaboolaAd_IndiaPage_undefined.png','_blank')"><img src="comparison/SC_03/./diff_SC_03_TaboolaAd_IndiaPage_undefined.png" class="gallery-image" onclick="window.open('comparison/SC_03/./diff_SC_03_TaboolaAd_IndiaPage_undefined.png','_blank')"></div></div>
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-002</h2>
+
+            <h3>SC_04</h3>
+
+            <p>Verify_Ads_Taboola_for_subscriber</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: PASS</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            95%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            396.08 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Screenshot AI, Visual
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Screenshot AI, Visual</p>
+
+    <p><b>Screenshot AI findings</b><br>A large blank area exists where an article image should be rendered, indicating a missing or broken image.</p>
+
+    <p><b>Visual findings</b><br>Two major UI defects detected: primary news article image missing and significant empty space in main content area.<br>No genuine UI issues detected. All detected differences are related to dynamic content or non-UI impacting areas.<br>No genuine UI issues detected in header, navigation, toolbar, icons, buttons, themes, colors, alignment, padding, margins, or layout. All highlighted differences are caused by dynamic content, news, timestamps, notifications, or data-related changes, which are excluded from the scope of issues.<br>No genuine UI issues detected. All detected differences are related to dynamic content or ignored elements.</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_04/Subscriber_No_Ads_Article_1.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_04/Subscriber_No_Ads_Article_1.png','_blank')">
+
+<img
+    src="screenshots/SC_04/Subscriber_No_Ads_Article_2.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_04/Subscriber_No_Ads_Article_2.png','_blank')">
+
+<img
+    src="screenshots/SC_04/Subscriber_No_Ads_Article_3.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_04/Subscriber_No_Ads_Article_3.png','_blank')">
+
+<img
+    src="screenshots/SC_04/Subscriber_No_Ads_Article_4.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_04/Subscriber_No_Ads_Article_4.png','_blank')">
+
+</div>
+</div>
+<div class="screenshot-section"><h3>Reference / Actual / Difference</h3><div class="gallery"><img src="comparison/SC_04/./reference_Subscriber_No_Ads_Article_1.png" class="gallery-image" onclick="window.open('comparison/SC_04/./reference_Subscriber_No_Ads_Article_1.png','_blank')"><img src="comparison/SC_04/./actual_Subscriber_No_Ads_Article_1.png" class="gallery-image" onclick="window.open('comparison/SC_04/./actual_Subscriber_No_Ads_Article_1.png','_blank')"><img src="comparison/SC_04/./diff_Subscriber_No_Ads_Article_1.png" class="gallery-image" onclick="window.open('comparison/SC_04/./diff_Subscriber_No_Ads_Article_1.png','_blank')"><img src="comparison/SC_04/./reference_Subscriber_No_Ads_Article_2.png" class="gallery-image" onclick="window.open('comparison/SC_04/./reference_Subscriber_No_Ads_Article_2.png','_blank')"><img src="comparison/SC_04/./actual_Subscriber_No_Ads_Article_2.png" class="gallery-image" onclick="window.open('comparison/SC_04/./actual_Subscriber_No_Ads_Article_2.png','_blank')"><img src="comparison/SC_04/./diff_Subscriber_No_Ads_Article_2.png" class="gallery-image" onclick="window.open('comparison/SC_04/./diff_Subscriber_No_Ads_Article_2.png','_blank')"><img src="comparison/SC_04/./reference_Subscriber_No_Ads_Article_3.png" class="gallery-image" onclick="window.open('comparison/SC_04/./reference_Subscriber_No_Ads_Article_3.png','_blank')"><img src="comparison/SC_04/./actual_Subscriber_No_Ads_Article_3.png" class="gallery-image" onclick="window.open('comparison/SC_04/./actual_Subscriber_No_Ads_Article_3.png','_blank')"><img src="comparison/SC_04/./diff_Subscriber_No_Ads_Article_3.png" class="gallery-image" onclick="window.open('comparison/SC_04/./diff_Subscriber_No_Ads_Article_3.png','_blank')"><img src="comparison/SC_04/./reference_Subscriber_No_Ads_Article_4.png" class="gallery-image" onclick="window.open('comparison/SC_04/./reference_Subscriber_No_Ads_Article_4.png','_blank')"><img src="comparison/SC_04/./actual_Subscriber_No_Ads_Article_4.png" class="gallery-image" onclick="window.open('comparison/SC_04/./actual_Subscriber_No_Ads_Article_4.png','_blank')"><img src="comparison/SC_04/./diff_Subscriber_No_Ads_Article_4.png" class="gallery-image" onclick="window.open('comparison/SC_04/./diff_Subscriber_No_Ads_Article_4.png','_blank')"></div></div>
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-003</h2>
+
+            <h3>SC_05</h3>
+
+            <p>Premium_access_for_anonymous_user</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: PASS</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            669.62 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Screenshot AI
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Screenshot AI</p>
+
+    <p><b>Screenshot AI findings</b><br>Loading indicator is stuck and content underneath is blocked by the persistent black overlay.<br>Prominent advertisement is displayed on the premium or subscriber section, which should not show ads.</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_05/SC05_premiumpage_nonsubscriber.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_05/SC05_premiumpage_nonsubscriber.png','_blank')">
+
+<img
+    src="screenshots/SC_05/SC_05_premiumpage_nonsubscriber_AllStories.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_05/SC_05_premiumpage_nonsubscriber_AllStories.png','_blank')">
+
+</div>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-004</h2>
+
+            <h3>SC_07</h3>
+
+            <p>Logout_function</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: FAIL</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            81.65 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run</p>
+
+    <p><b>Screenshot AI findings</b><br>None</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+<h3>Screenshot evidence</h3>
+<p>No screenshot was captured before this failure.</p>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-005</h2>
+
+            <h3>SC_08</h3>
+
+            <p>Verify_Account_Subscription_details</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: FAIL</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            80.06 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run</p>
+
+    <p><b>Screenshot AI findings</b><br>None</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+<h3>Screenshot evidence</h3>
+<p>No screenshot was captured before this failure.</p>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-006</h2>
+
+            <h3>SC_11</h3>
+
+            <p>Anonymous_article_navigation</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: PASS</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            95%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            70.56 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Screenshot AI, Visual
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Screenshot AI, Visual</p>
+
+    <p><b>Screenshot AI findings</b><br>Advertisement SDK debug information and unit ID are visible above the actual advertisement.<br>Advertisement unit identifier and SDK impression/debug information visibly displayed in the UI.</p>
+
+    <p><b>Visual findings</b><br>Two genuine UI regression issues detected in core UI components.<br>No genuine UI issues detected. All highlighted differences are due to dynamic/article content, ads, or ignored regions.</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_11/Sc_011_article00.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_11/Sc_011_article00.png','_blank')">
+
+<img
+    src="screenshots/SC_11/Sc_011_article01.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_11/Sc_011_article01.png','_blank')">
+
+</div>
+</div>
+<div class="screenshot-section"><h3>Reference / Actual / Difference</h3><div class="gallery"><img src="comparison/SC_11/./reference_Sc_011_article00.png" class="gallery-image" onclick="window.open('comparison/SC_11/./reference_Sc_011_article00.png','_blank')"><img src="comparison/SC_11/./actual_Sc_011_article00.png" class="gallery-image" onclick="window.open('comparison/SC_11/./actual_Sc_011_article00.png','_blank')"><img src="comparison/SC_11/./diff_Sc_011_article00.png" class="gallery-image" onclick="window.open('comparison/SC_11/./diff_Sc_011_article00.png','_blank')"><img src="comparison/SC_11/./reference_Sc_011_article01.png" class="gallery-image" onclick="window.open('comparison/SC_11/./reference_Sc_011_article01.png','_blank')"><img src="comparison/SC_11/./actual_Sc_011_article01.png" class="gallery-image" onclick="window.open('comparison/SC_11/./actual_Sc_011_article01.png','_blank')"><img src="comparison/SC_11/./diff_Sc_011_article01.png" class="gallery-image" onclick="window.open('comparison/SC_11/./diff_Sc_011_article01.png','_blank')"></div></div>
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-007</h2>
+
+            <h3>SC_12</h3>
+
+            <p>Subscriber_Article_Full_Read_Access</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: FAIL</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            95%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            139.18 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run, Visual
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run, Visual</p>
+
+    <p><b>Screenshot AI findings</b><br>None</p>
+
+    <p><b>Visual findings</b><br><br></p>
+
+
+
+<div class="screenshot-section">
+<h3>Screenshot evidence</h3>
+<p>No screenshot was captured before this failure.</p>
+</div>
+<div class="screenshot-section"><h3>Reference / Actual / Difference</h3><div class="gallery"><img src="D:\AI_Maestro_Automation_Platform\.maestro\screenshots\Baselines\Screenshots\SC_12\SC_12_Subscriber_Article_page.png" class="gallery-image" onclick="window.open('D:\AI_Maestro_Automation_Platform\.maestro\screenshots\Baselines\Screenshots\SC_12\SC_12_Subscriber_Article_page.png','_blank')"><img src="D:\AI_Maestro_Automation_Platform\.maestro\screenshots\Baselines\Screenshots\SC_12\SC_12_Subscriber_Article_page_1.png" class="gallery-image" onclick="window.open('D:\AI_Maestro_Automation_Platform\.maestro\screenshots\Baselines\Screenshots\SC_12\SC_12_Subscriber_Article_page_1.png','_blank')"></div></div>
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-008</h2>
+
+            <h3>SC_13</h3>
+
+            <p>Article_Share_Functionality</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: FAIL</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            95%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            165.02 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run, Visual
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run, Visual</p>
+
+    <p><b>Screenshot AI findings</b><br>None</p>
+
+    <p><b>Visual findings</b><br><br>No genuine UI defects detected. All detected differences are limited to dynamic and content changes, not structural UI issues.</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_13/SC_13_share_article.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_13/SC_13_share_article.png','_blank')">
+
+</div>
+</div>
+<div class="screenshot-section"><h3>Reference / Actual / Difference</h3><div class="gallery"><img src="D:\AI_Maestro_Automation_Platform\.maestro\screenshots\Baselines\Screenshots\SC_13\SC_13_copied_successfully.png" class="gallery-image" onclick="window.open('D:\AI_Maestro_Automation_Platform\.maestro\screenshots\Baselines\Screenshots\SC_13\SC_13_copied_successfully.png','_blank')"><img src="comparison/SC_13/./reference_SC_13_share_article.png" class="gallery-image" onclick="window.open('comparison/SC_13/./reference_SC_13_share_article.png','_blank')"><img src="comparison/SC_13/./actual_SC_13_share_article.png" class="gallery-image" onclick="window.open('comparison/SC_13/./actual_SC_13_share_article.png','_blank')"><img src="comparison/SC_13/./diff_SC_13_share_article.png" class="gallery-image" onclick="window.open('comparison/SC_13/./diff_SC_13_share_article.png','_blank')"></div></div>
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-009</h2>
+
+            <h3>SC_14</h3>
+
+            <p>Article_Font_Size_Validation</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: FAIL</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            80%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            120.07 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run</p>
+
+    <p><b>Screenshot AI findings</b><br>None</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+<h3>Screenshot evidence</h3>
+<p>No screenshot was captured before this failure.</p>
+</div>
+
+</div>
+
+
+<div class="bug-card">
+
+    <div class="bug-header">
+
+        <div>
+
+            <h2>BUG-010</h2>
+
+            <h3>SC_15</h3>
+
+            <p>Podcast_Section_Subscriber_account</p>
+
+        </div>
+
+        <div class="severity critical">
+            Critical
+        </div>
+
+    </div>
+
+    <div class="bug-body">
+
+        <div class="info">
+
+            <b>Status</b><br>
+            ISSUE
+            <br><small>Run: FAIL</small>
+
+        </div>
+
+        <div class="info">
+
+            <b>Type</b><br>
+            Combined evidence
+
+        </div>
+
+        <div class="info">
+
+            <b>Confidence</b><br>
+            95%
+
+        </div>
+
+        <div class="info">
+
+            <b>Execution</b><br>
+            147.58 sec
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p>
+
+    <b>Reason</b><br>
+
+    Evidence detected by Run, Screenshot AI
+
+    </p>
+
+    <p>
+
+    <b>Recommendation</b><br>
+
+    Review the combined execution, screenshot-AI, and visual evidence.
+
+    </p>
+
+    <p><b>Evidence sources</b><br>Run, Screenshot AI</p>
+
+    <p><b>Screenshot AI findings</b><br>Podcast screen shows loading spinner with placeholder cards but content failed to render, indicating incomplete rendering.</p>
+
+    <p><b>Visual findings</b><br>None</p>
+
+
+
+<div class="screenshot-section">
+
+<h3>📷 Screenshots</h3>
+
+<div class="gallery">
+
+<img
+    src="screenshots/SC_15/SC_15_first_Podcast_playing_the_latest.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_15/SC_15_first_Podcast_playing_the_latest.png','_blank')">
+
+<img
+    src="screenshots/SC_15/SC_15_Podcast_Page_00.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_15/SC_15_Podcast_Page_00.png','_blank')">
+
+<img
+    src="screenshots/SC_15/SC_15_Podcast_Page_bottom.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_15/SC_15_Podcast_Page_bottom.png','_blank')">
+
+<img
+    src="screenshots/SC_15/SC_15_Podcast_Page_middle_01.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_15/SC_15_Podcast_Page_middle_01.png','_blank')">
+
+<img
+    src="screenshots/SC_15/SC_15_Podcast_Page_top_01.png"
+    class="gallery-image"
+    onclick="window.open('screenshots/SC_15/SC_15_Podcast_Page_top_01.png','_blank')">
+
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+</body>
+</html>

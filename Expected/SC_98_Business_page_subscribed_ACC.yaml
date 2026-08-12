@@ -1,0 +1,103 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - business
+---
+# Business page subscribed ACC (SC-98).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- waitForAnimationToEnd
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Verify Logged-In Account
+- assertNotVisible: "SUBSCRIBE"
+
+# Navigate to Business Section
+- repeat:
+    times: 5
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible:
+        text: "Business"
+    commands:
+      - tapOn: "Business"
+
+# Verify Business Section
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_01"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_02"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_03"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_04"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_05"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_06"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_07"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_08"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_09"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_10"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_11"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_12"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_13"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_14"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_15"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_16"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_17"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_18"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_19"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_98/SC_98_Business_Page_Subscribed_Account_20"
+- scroll
+- waitForAnimationToEnd

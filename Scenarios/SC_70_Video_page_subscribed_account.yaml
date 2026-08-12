@@ -1,0 +1,66 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - video
+  - account
+---
+# Video page subscribed account (SC-70).
+# Launch App
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Verify Home Page
+- assertVisible: "Videos"
+
+# Open Videos Section
+- tapOn: "Videos"
+- waitForAnimationToEnd
+
+# Validate Videos Page
+- repeat:
+    times: 20
+    commands:
+      # Verify Request Timeout Error
+      - runFlow:
+          when:
+            visible:
+              text: ".*Request timeout has expired.*"
+          commands:
+            - takeScreenshot: "Screenshots/SC_70/SC_70_Request_Timeout"
+            - assertNotVisible:
+                text: ".*Request timeout has expired.*"
+      # Verify Support Journalism Banner
+      - runFlow:
+          when:
+            visible:
+              text: "Support Journalism"
+          commands:
+            - takeScreenshot: "Screenshots/SC_70/SC_70_Support_Journalism"
+            - assertNotVisible:
+                text: "Support Journalism"
+      # Verify Subscribe Popup
+      - runFlow:
+          when:
+            visible:
+              text: "SUBSCRIBE"
+          commands:
+            - takeScreenshot: "Screenshots/SC_70/SC_70_Subscribe_Popup"
+            - assertNotVisible:
+                text: "SUBSCRIBE"
+      # Capture Current Screen
+      - takeScreenshot: "Screenshots/SC_70/SC_70_Video_Page"
+      # Scroll Through the Page
+      - scroll
+      # Wait for UI to Stabilize
+      - waitForAnimationToEnd

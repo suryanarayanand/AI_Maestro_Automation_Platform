@@ -1,0 +1,55 @@
+appId: com.mobstac.thehindu
+tags:
+  - article
+  - accessibility
+---
+# Article Font Size Validation (SC-14).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- assertVisible:
+    text: "Welcome to a new\nThe Hindu experience"
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Open Home Article
+- extendedWaitUntil:
+    visible: "Home"
+    timeout: 15000
+- waitForAnimationToEnd
+- tapOn:
+    point: 64%,27%
+- waitForAnimationToEnd
+
+# Open Reading Options
+- assertVisible: "Text size"
+- tapOn: "Text size"
+- extendedWaitUntil:
+    visible: "Reading Options"
+    timeout: 15000
+- extendedWaitUntil:
+    visible: "CLOSE"
+    timeout: 15000
+- extendedWaitUntil:
+    visible: "Text Size"
+    timeout: 15000
+
+# Verify Text Size Controls
+- assertVisible: "A-"
+- assertVisible: "A+"
+- waitForAnimationToEnd
+
+# Reading Options Validation
+- takeScreenshot: "Screenshots/SC_14/SC_14_Article_front_changer_panel"
+
+# Close Reading Options
+- assertVisible: "CLOSE"
+- tapOn: "CLOSE"

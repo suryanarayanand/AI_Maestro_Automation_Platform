@@ -1,0 +1,649 @@
+appId: com.mobstac.thehindu
+
+tags:
+
+  - subscriber
+
+  - games
+
+---
+
+# Subscriber Games validation (SC-27).
+
+# Launch App
+
+- launchApp:
+
+    clearState: true
+
+- waitForAnimationToEnd
+
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+
+
+# Login
+
+- runFlow: ../Common/LOGIN.yaml
+
+- waitForAnimationToEnd
+
+
+
+# Skip Onboarding
+
+- runFlow:
+
+    when:
+
+      visible:
+
+        text: "Skip"
+
+    commands:
+
+      - tapOn: "Skip"
+
+- waitForAnimationToEnd
+
+
+
+# Navigate to Games Section
+
+- extendedWaitUntil:
+
+    visible: "Games"
+
+    timeout: 15000
+
+- tapOn: "Games"
+
+- takeScreenshot: "Screenshots/SC_27/SC_27_Games_Page_Subscribed_Account"
+
+
+
+# # # # Verify Cryptic Crossword
+
+# # # - retry:
+
+# # #     maxRetries: 3
+
+# # #     commands:
+
+# # #       - assertVisible:
+
+# # #           text: ".*(Cryptic Crossword|Cryptic).*"
+
+# # # - tapOn:
+
+# # #     text: ".*(Cryptic Crossword|Cryptic).*"
+
+
+
+# # # - waitForAnimationToEnd
+
+# # # - waitForAnimationToEnd
+
+# # - assertVisible:
+
+# #     text: ".*(Cryptic Crossword|Cryptic).*"
+
+# # - waitForAnimationToEnd
+
+# # - waitForAnimationToEnd
+
+
+
+# - tapOn:
+
+#     point: 18%,47%
+
+
+
+# - waitForAnimationToEnd
+
+# - waitForAnimationToEnd
+
+# - waitForAnimationToEnd
+
+# # - waitForAnimationToEnd
+
+
+
+# # - scrollUntilVisible:
+
+# #     element: ".*August.*"
+
+
+
+
+
+# # - tapOn: ".*August.*"
+
+
+
+
+
+
+# # - takeScreenshot: "Screenshots/SC_27/SC_27_Cryptic_Crossword"
+
+
+
+# # - runFlow:
+
+# #     when:
+
+# #       visible:
+
+# #         text: "Dismiss"
+
+# #     commands:
+
+# #       - tapOn: "Dismiss"
+
+
+
+# # - assertVisible: "Settings"
+
+# # - assertVisible: "Assist"
+
+# # - assertVisible: "All clues"
+
+# # - assertVisible: "Play with friends"
+
+# # - takeScreenshot: "Screenshots/SC_27/SC_27_Cryptic_Crossword_02"
+
+# # - back
+
+# # - back
+
+
+
+# # # Verify Sudoku
+
+# # - scrollUntilVisible:
+
+# #     element:
+
+# #       text: "Sudoku"
+
+# #       index: 1
+
+# # - tapOn:
+
+# #     text: "Sudoku"
+
+
+
+# # - takeScreenshot: "Screenshots/SC_27/SC_27_Sudoku"
+
+# # - assertVisible: "Choose Your Puzzle to Play"
+
+# # - assertVisible: "Mini"
+
+# # - assertVisible: "Easy"
+
+# # - assertVisible: "Medium"
+
+# # - assertVisible: "Hard"
+
+# # - assertVisible: "Killer"
+
+# # - tapOn: "Mini"
+
+# # - waitForAnimationToEnd
+
+
+
+# # - takeScreenshot: "Screenshots/SC_27/SC_27_Sudoku_Mini"
+
+
+
+# # - scrollUntilVisible:
+
+# #     element: ".*August.*"
+
+
+
+
+
+# # - tapOn: ".*August.*"
+
+
+
+
+
+# # - runFlow:
+
+# #     when:
+
+# #       visible:
+
+# #         text: "Dismiss"
+
+# #     commands:
+
+# #       - tapOn: "Dismiss"
+
+
+
+# - takeScreenshot: "Screenshots/SC_27/SC_27_Sudoku_Mini_02"
+
+
+
+# - repeat:
+
+#     times: 2
+
+#     commands:
+
+#       - assertNotVisible:
+
+#           text: ".*access was not found.*"
+
+#       - scroll
+
+#       - waitForAnimationToEnd
+
+# - takeScreenshot: "Screenshots/SC_27/SC_27_Sudoku_Mini_Validation"
+
+# - assertVisible: "Settings"
+
+# - assertVisible: "Assist"
+
+
+
+# - back
+
+# - back
+
+
+# - scrollUntilVisible:
+
+#     element: "The Hindu Mini"
+
+# - tapOn:
+
+#     text: "The Hindu Mini"
+
+# # Verify The Hindu Mini
+
+# - scrollUntilVisible:
+
+#     element: ".*August.*| .*July.*"
+
+
+
+
+
+# - tapOn: ".*August.*| .*July.*"
+
+
+
+
+# - takeScreenshot: "Screenshots/SC_27/SC_27_The_Hindu_Mini"
+
+# - waitForAnimationToEnd
+
+
+
+
+
+# - runFlow:
+
+#     when:
+
+#       visible:
+
+#         text: "Dismiss"
+
+#     commands:
+
+#       - tapOn: "Dismiss"
+
+
+
+
+
+# - repeat:
+
+#     times: 2
+
+#     commands:
+
+#       - assertNotVisible:
+
+#           text: ".*access was not found.*"
+
+#       - scroll
+
+#       - waitForAnimationToEnd
+
+
+
+# - assertVisible: "Settings"
+
+# - assertVisible: "Assist"
+
+
+
+# # #  Back from the current tap
+
+# - back
+
+
+
+
+
+
+
+# Navigate to Games Section
+
+- extendedWaitUntil:
+
+    visible: "Games"
+
+    timeout: 15000
+
+- tapOn: "Games"
+
+
+
+# Verify Easy Down
+
+- scrollUntilVisible:
+
+    element: "Easy Down"
+
+ 
+
+- tapOn: "Easy Down"
+
+- scrollUntilVisible:
+
+    element: ".*August.*| .*July.*"
+
+
+
+
+
+- tapOn: ".*August.*| .*July.*"
+
+
+- runFlow:
+
+    when:
+
+      visible:
+
+        text: "Dismiss"
+
+    commands:
+
+      - tapOn: "Dismiss"
+
+- takeScreenshot: "Screenshots/SC_27/SC_27_Easy_Down"
+
+- waitForAnimationToEnd
+
+- repeat:
+
+    times: 2
+
+    commands:
+
+      - assertNotVisible:
+
+          text: ".*access was not found.*"
+
+      - scroll
+
+      - waitForAnimationToEnd
+
+- assertVisible: "Settings"
+
+- assertVisible: "Assist"
+
+
+
+- back
+
+
+
+
+
+
+# Navigate to Games Section
+
+- extendedWaitUntil:
+
+    visible: "Games"
+
+    timeout: 15000
+
+- tapOn: "Games"
+
+
+
+# Verify Word Row
+
+
+
+- scrollUntilVisible:
+
+    element: "Word Row"
+
+- tapOn: "Word Row"
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+
+    visible: ".*(August|July)*"
+
+    timeout: 15000
+
+- tapOn: ".*(August|July)*"
+
+
+- runFlow:
+
+    when:
+
+      visible:
+
+        text: "Dismiss"
+
+    commands:
+
+      - tapOn: "Dismiss"
+
+- repeat:
+
+    times: 2
+
+    commands:
+
+      - assertNotVisible:
+
+          text: ".*access was not found.*"
+
+      - scroll
+
+      - waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/SC_27/SC_27_Word_Row"
+
+
+
+- back
+
+- back
+
+
+
+
+
+
+
+# # Navigate to Games Section
+
+# - extendedWaitUntil:
+
+#     visible: "Games"
+
+#     timeout: 15000
+
+# - tapOn: "Games"
+
+# - scroll
+
+# - scrollUntilVisible:
+
+#     element: "Word Flower"
+
+
+
+# # Verify Word Flower
+
+# - tapOn:
+
+#     text: "PLAY NOW"
+
+#     index: 3
+
+# - takeScreenshot: "Screenshots/SC_27/SC_27_Word_Flower"
+
+# - repeat:
+
+#     times: 2
+
+#     commands:
+
+#       - assertNotVisible:
+
+#           text: ".*access was not found.*"
+
+#       - scroll
+
+#       - waitForAnimationToEnd
+
+# - assertVisible: "Settings"
+
+# - assertVisible: "Assist"
+
+# - assertVisible: "Puzzle Menu"
+
+
+
+# # Relaunch the App Because Navigating Back Causes the App to Crash
+
+# - back
+
+
+
+# # Navigate to Games Section
+
+# - extendedWaitUntil:
+
+#     visible: "Games"
+
+#     timeout: 15000
+
+# - tapOn: "Games"
+
+# - scroll
+
+
+
+# # Verify Word Search
+
+# - extendedWaitUntil:
+
+#     visible: "Word Search"
+
+#     timeout: 15000
+
+# - tapOn: "Word Search"
+
+# - takeScreenshot: "Screenshots/SC_27/SC_27_Word_Search"
+
+# - repeat:
+
+#     times: 2
+
+#     commands:
+
+#       - assertNotVisible:
+
+#           text: ".*access was not found.*"
+
+#       - scroll
+
+#       - waitForAnimationToEnd
+
+# - assertVisible: "Settings"
+
+# - assertVisible: "Assist"
+
+# - assertVisible: "Puzzle Menu"
+
+
+
+# - back
+
+
+
+# # Navigate to Games Section
+
+# - extendedWaitUntil:
+
+#     visible: "Games"
+
+#     timeout: 15000
+
+# - tapOn: "Games"
+
+# - scroll
+
+
+
+# # Verify News Quiz
+
+# - extendedWaitUntil:
+
+#     visible: "News Quiz"
+
+#     timeout: 15000
+
+# - tapOn: "News Quiz"
+
+# - takeScreenshot: "Screenshots/SC_27/SC_27_News_Quiz"
+
+# - repeat:
+
+#     times: 2
+
+#     commands:
+
+#       - assertNotVisible:
+
+#           text: ".*access was not found.*"
+
+#       - scroll
+
+#       - waitForAnimationToEnd
+
+# - assertVisible: "News Quiz"
+
+
+
+# ---------------------------------------------------------------------------------------------------------------
+
+# Reference Flow (Commented)
+
+# ---------------------------------------------------------------------------------------------------------------
+
+# (All commented code preserved exactly as provided.)
+
+  

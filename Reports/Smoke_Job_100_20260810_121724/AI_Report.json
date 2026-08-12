@@ -1,0 +1,50 @@
+{
+    "suite": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "not_found": 0,
+        "pass_rate": 100.0
+    },
+    "results": [
+        {
+            "id": "COMPLEX_003",
+            "module": "AI Generated",
+            "name": "Dark Mode Appearance Validation",
+            "status": "PASS",
+            "duration": 52.79,
+            "log_file": "D:\\AI_Maestro_Automation_Platform\\Reports\\Smoke_Job_100_20260810_121724\\COMPLEX_003.log",
+            "screenshots": [
+                "screenshots/COMPLEX_003/COMPLEX_003_dark_mode_enabled.png",
+                "screenshots/COMPLEX_003/COMPLEX_003_home_page_in_dark_mode.png"
+            ],
+            "ai_pass": 2,
+            "ai_fail": 0,
+            "ai_errors": 0,
+            "ai_details": [
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components for the theme selection screen are present and correctly rendered. No layout, rendering, or text issues are visible.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_003_dark_mode_enabled.png",
+                    "image_path": "screenshots/COMPLEX_003/COMPLEX_003_dark_mode_enabled.png"
+                },
+                {
+                    "status": "PASS",
+                    "confidence": "High",
+                    "severity": "LOW",
+                    "reason": "All expected UI components are present, no visible layout or rendering issues.",
+                    "issues": [],
+                    "jira_title": "N/A",
+                    "jira_description": "N/A",
+                    "image": "COMPLEX_003_home_page_in_dark_mode.png",
+                    "image_path": "screenshots/COMPLEX_003/COMPLEX_003_home_page_in_dark_mode.png"
+                }
+            ]
+        }
+    ]
+}

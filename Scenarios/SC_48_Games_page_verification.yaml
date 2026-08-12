@@ -1,0 +1,50 @@
+appId: com.mobstac.thehindu
+tags:
+  - games
+---
+# Games page verification (SC-48).
+# Launch App
+- launchApp:
+    clearState: true
+
+# Accept Terms and Conditions
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Navigate to Games Section
+- extendedWaitUntil:
+    visible: "Games"
+    timeout: 15000
+- tapOn: "Games"
+
+# - assertVisible: "PREMIUM PLAY, NOW YOURS"
+# Navigate to Cryptic Crossword
+- assertVisible: "Cryptic Crossword"
+- tapOn: "Cryptic Crossword"
+
+# Open The Hindu Cryptic on Sunday
+- extendedWaitUntil:
+    visible: "THE HINDU CRYPTIC ON SUNDAY"
+    timeout: 5000
+- tapOn: "THE HINDU CRYPTIC ON SUNDAY"
+
+# Article Validation
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_48/SC_48_The_Hindu_Cryptic_On_Sunday"
+
+# Navigate Back
+- tapOn:
+    point: 1%,5%
+
+# Close Application
+- killApp

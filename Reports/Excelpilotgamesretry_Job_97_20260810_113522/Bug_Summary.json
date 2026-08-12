@@ -1,0 +1,71 @@
+{
+    "suite": "Excelpilotgamesretry",
+    "execution_time": 27.2,
+    "summary": {
+        "total": 1,
+        "passed": 0,
+        "failed": 1,
+        "critical": 1,
+        "major": 0,
+        "minor": 0
+    },
+    "device_comparison": {
+        "reference": {
+            "role": "Production reference",
+            "serial": "46201FDAP0048X",
+            "manufacturer": "Google",
+            "model": "Pixel 9 Pro",
+            "android": "16",
+            "resolution": "Physical size: 960x2142",
+            "density": "Physical density: 360",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.802",
+            "version_code": "568"
+        },
+        "actual": {
+            "role": "Internal test actual",
+            "serial": "R9ZY40T6PHN",
+            "manufacturer": "samsung",
+            "model": "SM-E066B",
+            "android": "16",
+            "resolution": "Physical size: 720x1600",
+            "density": "Physical density: 300",
+            "package": "com.mobstac.thehindu",
+            "version_name": "2501.20.811",
+            "version_code": "577"
+        }
+    },
+    "ai_synthesis": {
+        "executive_summary": "Test scenario TH_5716 was cancelled and did not execute. No functional failures, visual-only findings, or dynamic-content noise were observed, as there is no evidence from Maestro execution, screenshot AI, or cross-device visual analysis.",
+        "release_recommendation": "Proceed with caution: While no issues have been detected in this scenario, its cancellation means it was not validated. Ensure critical paths are covered before release.",
+        "top_risks": [
+            "Test scenario TH_5716 unvalidated due to cancellation",
+            "Potential gaps in test coverage"
+        ]
+    },
+    "bugs": [
+        {
+            "bug_id": "BUG-001",
+            "scenario_id": "TH_5716",
+            "scenario_name": "Games Landing Page Navigation",
+            "module": "AI Generated",
+            "status": "ISSUE",
+            "execution_status": "CANCELLED",
+            "bug_type": "Combined evidence",
+            "severity": "Critical",
+            "confidence": 80,
+            "reason": "Evidence detected by Run",
+            "execution_time": 27.07,
+            "log_file": "TH_5716.log",
+            "log_path": "D:\\AI_Maestro_Automation_Platform\\Reports\\Excelpilotgamesretry_Job_97_20260810_113522\\TH_5716.log",
+            "screenshots": [],
+            "comparison_images": [],
+            "sources": [
+                "Run"
+            ],
+            "ai_findings": [],
+            "visual_findings": [],
+            "recommendation": "Review the combined execution, screenshot-AI, and visual evidence."
+        }
+    ]
+}

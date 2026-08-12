@@ -1,0 +1,132 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - india
+  - account
+---
+# India page anonymous account (SC-73).
+# Launch App
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+
+# Skip Onboarding
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+- extendedWaitUntil:
+    visible: "Skip"
+    timeout: 15000
+- tapOn: "Skip"
+
+# Navigate to India Section
+- extendedWaitUntil:
+    visible: "India"
+    timeout: 15000
+- tapOn: "India"
+
+# India Page Validation
+- takeScreenshot: "Screenshots/SC_73/SC_73_India_Page_Anonymous_01"
+- scroll
+- takeScreenshot: "Screenshots/SC_73/SC_73_India_Page_Anonymous_02"
+- scroll
+- takeScreenshot: "Screenshots/SC_73/SC_73_India_Page_Anonymous_03"
+- scroll
+- takeScreenshot: "Screenshots/SC_73/SC_73_India_Page_Anonymous_04"
+- scroll
+- takeScreenshot: "Screenshots/SC_73/SC_73_India_Page_Anonymous_05"
+- scroll
+- takeScreenshot: "Screenshots/SC_73/SC_73_India_Page_Anonymous_06"
+- scroll
+- takeScreenshot: "Screenshots/SC_73/SC_73_India_Page_Anonymous_07"
+- scroll
+- takeScreenshot: "Screenshots/SC_73/SC_73_India_Page_Anonymous_08"
+- scroll
+- takeScreenshot: "Screenshots/SC_73/SC_73_India_Page_Anonymous_09"
+- scroll
+- takeScreenshot: "Screenshots/SC_73/SC_73_India_Page_Anonymous_10"
+- takeScreenshot: "Screenshots/SC_73/SC_73_India_Page_Anonymous_11"
+- scroll
+- takeScreenshot: "Screenshots/SC_73/SC_73_India_Page_Anonymous_12"
+- scroll
+- takeScreenshot: "Screenshots/SC_73/SC_73_India_Page_Anonymous_13"
+- scroll
+- takeScreenshot: "Screenshots/SC_73/SC_73_India_Page_Anonymous_14"
+
+# Verify Show More Option
+- repeat:
+    times: 3
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "SHOW MORE"
+          commands:
+            - tapOn: "SHOW MORE"
+            - takeScreenshot: "Screenshots/SC_73/SC_73_Show_More_Option_India_Page"
+      - scroll
+      - waitForAnimationToEnd
+- scroll
+- takeScreenshot: "Screenshots/SC_73/SC_73_India_Page_Anonymous_15"
+
+# Navigate to Taboola Advertisement Section
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Navigate to Support Journalism Section
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Support Journalism
+- repeat:
+    times: 10
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Support Journalism"
+          commands:
+            - takeScreenshot: "Screenshots/SC_73/SC_73_Support_Journalism"
+      - scroll
+      - waitForAnimationToEnd
+
+# Navigate to Advertisement Section
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+
+# Verify Advertisement
+- repeat:
+    times: 10
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "ADVERTISEMENT"
+          commands:
+            - takeScreenshot: "Screenshots/SC_73/SC_73_Advertisement"
+      - scroll
+      - waitForAnimationToEnd
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: DOWN
+- repeat:
+    times: 15
+    commands:
+      - assertNotVisible:
+          text: "Webpage not available"
+      - scroll
+      - takeScreenshot: "Screenshots/SC_74/SC_74_Web_Page_Not_Available"
+      - waitForAnimationToEnd

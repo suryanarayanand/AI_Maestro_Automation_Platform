@@ -1,0 +1,55 @@
+--- existing/SC_11_Anonymous_article_navigation.yaml
++++ generated/SC_11_generated.yaml
+@@ -1,42 +1,17 @@
+ appId: com.mobstac.thehindu
+ tags:
+-  - anonymous
+-  - article
+-  - navigation
++  - generated
++  - pilot
+ ---
+-# Anonymous article navigation (SC-11).
+-# Launch App
+-- launchApp:
+-    clearState: true
+ 
+-# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+-# Skip Onboarding
+-- extendedWaitUntil:
+-    visible: "Skip"
+-    timeout: 15000
+-- tapOn: "Skip"
+-- extendedWaitUntil:
+-    visible: "Skip"
+-    timeout: 15000
+-- tapOn: "Skip"
++- tapOn:
++    text: "Home"
+ 
+-# Open Home Article
+-- waitForAnimationToEnd
++- assertVisible:
++    text: "Home"
++
+ - tapOn:
+-    point: 64%,27%
+-- waitForAnimationToEnd
++    text: "World"
+ 
+-# Home Article Validation
+-- takeScreenshot: "Screenshots/SC_11/Sc_011_article00"
+-- retry:
+-    maxRetries: 5
+-    commands:
+-      - scroll
+-- takeScreenshot: "Screenshots/SC_11/Sc_011_article01"
+-
+-# Navigate Back
+-- swipe:
+-    direction: LEFT
+-
+-# Close Application
+-- killApp
++- assertVisible:
++    text: "World"

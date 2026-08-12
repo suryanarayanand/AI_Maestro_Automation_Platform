@@ -1,0 +1,71 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_05_Premium_access_for_anonymous_user
+Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Assert that "Skip" is visible... COMPLETED
+Tap on "Skip"... COMPLETED
+Wait for animation to end... COMPLETED
+Assert that "Premium" is visible... COMPLETED
+Tap on "Premium"... COMPLETED
+Take screenshot Screenshots/SC_05/SC05_premiumpage_nonsubscriber... COMPLETED
+Assert that "All Stories" is visible... COMPLETED
+Tap on "All Stories"... COMPLETED
+Assert that "Briefing" is visible... COMPLETED
+Tap on "Briefing"... COMPLETED
+Assert that "SUBSCRIBE" is visible... COMPLETED
+Tap on "SUBSCRIBE"... COMPLETED
+Press back... COMPLETED
+Assert that "All Stories" is visible... COMPLETED
+Tap on "All Stories"... COMPLETED
+Tap on point (0%,16%)... COMPLETED
+Repeat 10 times...
+  Run flow when "ADVERTISEMENT" is visible...
+  Run flow when "ADVERTISEMENT" is visible... SKIPPED
+  Scroll vertically... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 10 times... COMPLETED
+Repeat 7 times...
+  Run flow when "SUBSCRIBE" is visible...
+    Take screenshot Screenshots/SC_05/SC_05_premiumpage_nonsubscriber_AllStories... COMPLETED
+  Run flow when "SUBSCRIBE" is visible... COMPLETED
+  Swiping in UP direction in 400 ms... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 7 times... COMPLETED
+Repeat 10 times...
+  Swiping in DOWN direction in 400 ms... COMPLETED
+Repeat 10 times... COMPLETED
+Repeat 10 times...
+  Run flow when "READ FREE FOR 3 DAYS" is visible...
+  Run flow when "READ FREE FOR 3 DAYS" is visible... SKIPPED
+  Swiping in UP direction in 400 ms... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 10 times... COMPLETED
+Repeat 10 times...
+  Run flow when "SUBSCRIBE" is visible...
+    Take screenshot Screenshots/SC_05/SC_05_premiumpage_nonsubscriber_AllStories... COMPLETED
+  Run flow when "SUBSCRIBE" is visible... COMPLETED
+  Swiping in UP direction in 400 ms... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 10 times... COMPLETED
+Swiping in RIGHT direction in 400 ms... COMPLETED
+Repeat 10 times...
+  Run flow when "ADVERTISEMENT" is visible...
+  Run flow when "ADVERTISEMENT" is visible... SKIPPED
+  Scroll vertically... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 10 times... COMPLETED
+Swiping in RIGHT direction in 400 ms... COMPLETED
+Repeat 20 times...
+  Run flow when "Image for Taboola Advertising Unit" is visible...
+  Run flow when "Image for Taboola Advertising Unit" is visible... SKIPPED
+  Swiping in UP direction in 400 ms... COMPLETED
+  Wait for animation to end... COMPLETED
+Repeat 20 times... COMPLETED
+Stop com.mobstac.thehindu... COMPLETED
+
+
+===== STDERR =====
+

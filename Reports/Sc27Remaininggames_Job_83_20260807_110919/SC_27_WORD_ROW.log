@@ -1,0 +1,65 @@
+===== STDOUT =====
+
+Running on R9ZY40T6PHN
+ > Flow SC_27_WORD_ROW
+Run ../Common/OPEN_SUBSCRIBER_GAMES.yaml...
+  Launch app "com.mobstac.thehindu" with clear state... COMPLETED
+  Run LOGIN.yaml...
+    Wait for animation to end... COMPLETED
+    Wait for animation to end... COMPLETED
+    Wait for animation to end... COMPLETED
+    Run flow when "HAVE AN ACCOUNT? LOGIN" is visible...
+      Tap on "HAVE AN ACCOUNT? LOGIN"... COMPLETED
+    Run flow when "HAVE AN ACCOUNT? LOGIN" is visible... COMPLETED
+    Wait for animation to end... COMPLETED
+    Assert that "Email" is visible... COMPLETED
+    Tap on "Email"... COMPLETED
+    Input text product.testing@thehindu.co.in... COMPLETED
+    Hide Keyboard... COMPLETED
+    Wait for animation to end... COMPLETED
+    Assert that "NEXT.*|Next.*|HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+    Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible...
+      Tap on "HAVE AN ACCOUNT.*LOGIN"... COMPLETED
+      Assert that "Email" is visible... COMPLETED
+      Tap on "Email"... COMPLETED
+      Input text product.testing@thehindu.co.in... COMPLETED
+      Hide Keyboard... COMPLETED
+      Wait for animation to end... COMPLETED
+    Run flow when "HAVE AN ACCOUNT.*LOGIN" is visible... COMPLETED
+    Assert that "NEXT.*|Next.*" is visible... COMPLETED
+    Tap on "NEXT.*|Next.*"... COMPLETED
+    Assert that "password" is visible... COMPLETED
+    Tap on "password"... COMPLETED
+    Input text Test@123... COMPLETED
+    Hide Keyboard... COMPLETED
+    Assert that "LOGIN.*" is visible... COMPLETED
+    Tap on "LOGIN.*"... COMPLETED
+    Assert that "Home" is visible... COMPLETED
+  Run LOGIN.yaml... COMPLETED
+  Assert that id: screen_home is visible... COMPLETED
+  Tap on id: nav_games... COMPLETED
+  Assert that id: screen_games is visible... COMPLETED
+  Assert that id: screen_games is visible... COMPLETED
+Run ../Common/OPEN_SUBSCRIBER_GAMES.yaml... COMPLETED
+Scrolling DOWN until "Word Row" is visible with speed 40, visibility percentage 100%, timeout 20000 ms, with centering disabled... COMPLETED
+Tap on "Word Row"... COMPLETED
+Scrolling DOWN until ".*(January|February|March|April|May|June|July|August|September|October|November|December).*" is visible with speed 40, visibility percentage 100%, timeout 20000 ms, with centering disabled... FAILED
+
+No visible element found: ".*(January|February|March|April|May|June|July|August|September|October|November|December).*"
+
+Could not find a visible element matching selector: ".*(January|February|March|April|May|June|July|August|September|October|November|December).*"
+Tip: Try adjusting the following settings to improve detection:
+- `timeout`: current = 20000ms ? Increase if you need more time to find the element
+- `speed`: current = 40 (0-100 scale) ? Increase for faster scrolling if element is far away
+- `waitToSettleTimeoutMs`: current = Not defined ? Set this value (e.g., 500ms) if your UI updates frequently between scrolls
+- `visibilityPercentage`: current = 100% ? Lower this value if you want to detect partially visible elements
+- `centerElement`: current = false ? Enable if you want the element to be centered after finding it
+
+
+==== Debug output (logs & screenshots) ====
+
+C:\Users\12503\.maestro\tests\2026-08-07_111246
+
+
+===== STDERR =====
+

@@ -1,0 +1,91 @@
+appId: com.mobstac.thehindu
+tags:
+  - light_theme
+  - business
+  - theme
+---
+# Business page lightTheme (SC-103).
+- launchApp:
+    clearState: true
+- waitForAnimationToEnd
+
+# Login
+- runFlow: ../Common/LOGIN.yaml
+
+
+# Skip Onboarding
+- assertVisible: "Skip"
+- tapOn: "Skip"
+
+
+- extendedWaitUntil:
+    visible: "Account"
+    timeout: 15000
+- tapOn: "Account"
+
+- assertVisible: "ACCOUNT SETTINGS"
+
+- assertVisible: "Appearance"
+- tapOn: "Appearance"
+
+- tapOn: "Dark\nMode"
+
+- back
+- back
+
+# Navigate to Business Section
+- repeat:
+    times: 5
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible:
+        text: "Business"
+    commands:
+      - tapOn: "Business"
+- takeScreenshot: "Screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_dark_theme"
+- tapOn:
+    point: 50%, 50%
+
+
+
+# The frequency-capped AI Summary sheet can cover the article action bar.
+
+- runFlow:
+    when:
+      visible:
+        text: "Summary"
+    commands:
+      - tapOn: "Close sheet"
+
+- takeScreenshot: "Screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_dark_theme_01"
+
+- assertVisible: "AI summary"
+- assertVisible:
+    text: "Text size"
+- assertVisible:
+    text: "Bookmark"
+- assertVisible:
+    text: "Share"
+- assertVisible:
+    text: "Comment"
+
+
+- takeScreenshot: "Screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_01"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_02"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_03"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_04"
+- scroll
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/SC_102/SC_102_Business_Page_Subscribed_Account_specific_Article_05"
+- scroll
+- waitForAnimationToEnd

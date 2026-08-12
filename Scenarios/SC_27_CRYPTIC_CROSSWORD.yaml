@@ -1,0 +1,28 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, games, sc27]
+---
+- runFlow: ../Common/OPEN_SUBSCRIBER_GAMES.yaml
+- extendedWaitUntil:
+    visible: {text: ".*(Cryptic Crossword|Cryptic).*"}
+    timeout: 20000
+- tapOn: {text: ".*(Cryptic Crossword|Cryptic).*"}
+- extendedWaitUntil:
+    visible: {text: ".*(Cryptic Crossword|Cryptic).*"}
+    timeout: 20000
+- tapOn: {point: "18%,47%"}
+- scrollUntilVisible:
+    element: {text: ".*(January|February|March|April|May|June|July|August|September|October|November|December).*"}
+    timeout: 20000
+- tapOn:
+    text: ".*(January|February|March|April|May|June|July|August|September|October|November|December).*"
+    index: 0
+- runFlow:
+    when: {visible: {text: "Dismiss"}}
+    commands:
+      - tapOn: {text: "Dismiss"}
+- extendedWaitUntil:
+    visible: {text: "Settings"}
+    timeout: 20000
+- assertVisible: "Assist"
+- assertVisible: {id: "main-nav"}
+- takeScreenshot: "Screenshots/SC_27/SC_27_Cryptic_Crossword"

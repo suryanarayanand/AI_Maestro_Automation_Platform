@@ -1,0 +1,1674 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Visual Regression Report</title>
+
+<style>
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+body{
+    font-family:Segoe UI,Arial,sans-serif;
+    background:#eef3f8;
+    margin:30px;
+    color:#222;
+}
+
+h1{
+    color:#154c79;
+    margin-bottom:8px;
+}
+
+h2{
+    color:#1f4e79;
+}
+
+h3{
+    color:#285f8f;
+}
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.summary{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:25px;
+    margin-bottom:40px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.card h2{
+    margin-top:15px;
+    font-size:42px;
+    color:#154c79;
+    font-weight:700;
+}
+
+.card h3{
+    color:#777;
+    font-size:18px;
+    margin:0;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-pass{
+    background:#28a745;
+    color:white;
+    padding:7px 16px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.status-fail{
+    background:#dc3545;
+    color:white;
+    padding:7px 16px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.status-review{
+    background:#ff9800;
+    color:white;
+    padding:7px 16px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.status-notfound{
+    background:#6c757d;
+    color:white;
+    padding:7px 16px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+/* =====================================================
+   RESULT CARD
+===================================================== */
+
+.result-card{
+    background:white;
+    margin-top:35px;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+/* =====================================================
+   INFO GRID
+===================================================== */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+    margin-top:20px;
+}
+
+.info{
+    background:#f7f9fc;
+    border-radius:10px;
+    padding:15px;
+}
+
+/* =====================================================
+   AI
+===================================================== */
+
+.ai-card{
+    margin-top:25px;
+    padding:20px;
+    background:#f4f9ff;
+    border-left:6px solid #0078d4;
+    border-radius:10px;
+}
+
+.ai-summary{
+    margin-top:15px;
+    line-height:1.7;
+}
+
+/* =====================================================
+   ISSUE CARD
+===================================================== */
+
+.issue{
+    margin-top:15px;
+    padding:18px;
+    background:white;
+    border-left:6px solid #dc3545;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.issue:hover{
+    transform:translateY(-2px);
+    transition:.2s;
+}
+
+/* =====================================================
+   IMAGES
+===================================================== */
+
+.images{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:25px;
+}
+
+.image-box{
+    text-align:center;
+}
+
+.image-box img{
+    width:100%;
+    height:auto;
+    border-radius:10px;
+    border:2px solid #ddd;
+    cursor:pointer;
+    transition:.25s;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.image-box img:hover{
+    transform:scale(1.02);
+}
+
+hr{
+    border:none;
+    height:1px;
+    background:#d9d9d9;
+    margin:25px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th{
+    background:#154c79;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f5f5f5;
+}
+
+/* =====================================================
+   LIGHTBOX
+===================================================== */
+
+#lightbox{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.9);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+#lightbox img{
+    max-width:92%;
+    max-height:92%;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+    margin-top:50px;
+    text-align:center;
+    color:#777;
+}
+
+</style>
+
+
+</head>
+
+<body>
+
+<h1>Visual Regression Report</h1>
+
+<p style="color:#666;font-size:18px;">
+AI Powered Visual Regression Dashboard
+</p>
+
+<div class="info-grid">
+<div class="info"><strong>Reference</strong><br>Production reference | Google | Pixel 9 Pro | Android 16 | App 2501.20.802 | Physical size: 960x2142 | Physical density: 360</div>
+<div class="info"><strong>Actual</strong><br>Internal test actual | samsung | SM-E066B | Android 16 | App 2501.20.813 | Physical size: 720x1600 | Physical density: 300</div>
+</div>
+
+<div class="summary">
+
+<div class="card">
+<h3>Total</h3>
+<h2>15</h2>
+</div>
+
+<div class="card">
+<h3>Passed</h3>
+<h2 style="color:green">1</h2>
+</div>
+
+<div class="card">
+<h3>Failed</h3>
+<h2 style="color:red">10</h2>
+</div>
+
+<div class="card">
+<h3>Pass Rate</h3>
+<h2>6.67%</h2>
+</div>
+
+</div>
+
+<h2>Comparison Details</h2>
+
+<h2>SC_80</h2>
+
+<h2>SC_81</h2>
+
+<h2>SC_82</h2>
+
+<h2>SC_83</h2>
+
+<h2>SC_84</h2>
+
+<h2>SC_85</h2>
+
+<h2>SC_86</h2>
+
+<h2>SC_87</h2>
+
+<h2>SC_88</h2>
+
+<h2>SC_89</h2>
+
+<h2>SC_90</h2>
+
+<h2>SC_02</h2>
+
+<h2>SC_03</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> SC_03_TaboolaAd_IndiaPage_undefined.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-notfound">
+NOT FOUND
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 0%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 0</p>
+
+<p><strong>Image Size :</strong> Reference N/A | Actual N/A</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>N/A</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No AI analysis available.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="D:\AI_Maestro_Automation_Platform\.maestro\screenshots\Baselines\Screenshots\SC_03\SC_03_TaboolaAd_IndiaPage_undefined.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> SC_03_TaboolaAd_TrendingPage_undefined.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-notfound">
+NOT FOUND
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 0%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 0</p>
+
+<p><strong>Image Size :</strong> Reference N/A | Actual N/A</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>N/A</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No AI analysis available.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="D:\AI_Maestro_Automation_Platform\.maestro\screenshots\Baselines\Screenshots\SC_03\SC_03_TaboolaAd_TrendingPage_undefined.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>SC_04</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> Subscriber_No_Ads_Article_1.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 59.25%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 83</p>
+
+<p><strong>Image Size :</strong> Reference 720x1600 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>FAIL</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+1
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+One visual defect detected in the 'Live updates' section.
+</p>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Missing or Broken Live Update UI</h4>
+
+<p>
+<b>Severity :</b>
+High
+</p>
+
+<p>
+<b>Component :</b>
+Live Updates Section
+</p>
+
+<p>
+<b>Description :</b><br>
+The 'Live updates' section appears to be either missing content or displaying a large empty space with broken/misaligned layout. This is not expected based on the reference and suggests a missing or malfunctioning UI component.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Ensure the 'Live updates' section displays content correctly and investigate missing or unloaded controls/components.
+</p>
+
+</div>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/SC_04/./reference_Subscriber_No_Ads_Article_1.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/SC_04/./actual_Subscriber_No_Ads_Article_1.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/SC_04/./diff_Subscriber_No_Ads_Article_1.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> Subscriber_No_Ads_Article_2.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 63.16%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 85</p>
+
+<p><strong>Image Size :</strong> Reference 720x1600 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>PASS</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No genuine UI defects detected. All highlighted visual differences are related to dynamic content and are not actual UI issues. Core UI components, alignment, buttons, headers, navigation, color theme, and layout remain consistent.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/SC_04/./reference_Subscriber_No_Ads_Article_2.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/SC_04/./actual_Subscriber_No_Ads_Article_2.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/SC_04/./diff_Subscriber_No_Ads_Article_2.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> Subscriber_No_Ads_Article_3.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 62.09%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 85</p>
+
+<p><strong>Image Size :</strong> Reference 720x1600 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>PASS</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No genuine UI defects detected. All highlighted differences are due to dynamic/news content changes and not UI regression.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/SC_04/./reference_Subscriber_No_Ads_Article_3.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/SC_04/./actual_Subscriber_No_Ads_Article_3.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/SC_04/./diff_Subscriber_No_Ads_Article_3.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> Subscriber_No_Ads_Article_4.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 62.15%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 84</p>
+
+<p><strong>Image Size :</strong> Reference 720x1600 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>PASS</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No genuine UI issues detected in the core components. All highlighted changes are related to dynamic content or ignored elements.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/SC_04/./reference_Subscriber_No_Ads_Article_4.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/SC_04/./actual_Subscriber_No_Ads_Article_4.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/SC_04/./diff_Subscriber_No_Ads_Article_4.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>SC_05</h2>
+
+<h2>SC_06</h2>
+
+<h2>SC_07</h2>
+
+<h2>Sc_08</h2>
+
+<h2>SC_09</h2>
+
+<h2>SC_10</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> SC_10_empty_credS_error.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-pass">
+PASS
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 99.58%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 5</p>
+
+<p><strong>Image Size :</strong> Reference 720x1600 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>PASS</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No genuine UI defects detected. All differences are related to dynamic or ignored elements.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/SC_10/./reference_SC_10_empty_credS_error.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/SC_10/./actual_SC_10_empty_credS_error.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/SC_10/./diff_SC_10_empty_credS_error.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>SC_11</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> Sc_011_article00.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 51.86%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 138</p>
+
+<p><strong>Image Size :</strong> Reference 720x1600 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>FAIL</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+2
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+Two genuine UI issues detected affecting text rendering/alignment and button alignment.
+</p>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Text clipping and alignment regression</h4>
+
+<p>
+<b>Severity :</b>
+High
+</p>
+
+<p>
+<b>Component :</b>
+Text Rendering
+</p>
+
+<p>
+<b>Description :</b><br>
+Diff image highlights show several places in headline, summary, and article body where text alignment, kerning, or clipping has changed, resulting in minor overlaps and uneven spacing compared to reference. This impacts readability and professionalism.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Review text rendering and layout constraints, verify font rendering pipeline, and restore original spacing/margins.
+</p>
+
+</div>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Misaligned action buttons and icons</h4>
+
+<p>
+<b>Severity :</b>
+Medium
+</p>
+
+<p>
+<b>Component :</b>
+Toolbar and Bottom Action Bar
+</p>
+
+<p>
+<b>Description :</b><br>
+'AI', 'A+', and 'Subscribe' buttons in the bottom bar and the header-bar are shown as slightly misaligned or overlapping, as per diff highlights. This could affect usability and provide a visually inconsistent UI.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Check alignment and view padding/margin in action bars, adjust layout to match reference screenshot.
+</p>
+
+</div>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/SC_11/./reference_Sc_011_article00.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/SC_11/./actual_Sc_011_article00.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/SC_11/./diff_Sc_011_article00.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> Sc_011_article01.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 60.89%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 68</p>
+
+<p><strong>Image Size :</strong> Reference 720x1600 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>FAIL</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+1
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+One genuine UI issue detected in the Bottom Navigation bar.
+</p>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Bottom Navigation bar alignment and spacing regression</h4>
+
+<p>
+<b>Severity :</b>
+Medium
+</p>
+
+<p>
+<b>Component :</b>
+Bottom Navigation
+</p>
+
+<p>
+<b>Description :</b><br>
+The bottom navigation bar has spacing and alignment differences compared to the reference, including possible shifting or resizing of navigation icons and the 'SUBSCRIBE' button, which affects visual consistency.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Review the bottom navigation bar layout and correct the alignment and spacing to match the reference design.
+</p>
+
+</div>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/SC_11/./reference_Sc_011_article01.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/SC_11/./actual_Sc_011_article01.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/SC_11/./diff_Sc_011_article01.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>SC_12</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> SC_12_Subscriber_Article_page.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-notfound">
+NOT FOUND
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 0%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 0</p>
+
+<p><strong>Image Size :</strong> Reference N/A | Actual N/A</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>N/A</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No AI analysis available.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="D:\AI_Maestro_Automation_Platform\.maestro\screenshots\Baselines\Screenshots\SC_12\SC_12_Subscriber_Article_page.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> SC_12_Subscriber_Article_page_1.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 47.28%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 134</p>
+
+<p><strong>Image Size :</strong> Reference 720x1600 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>PASS</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No genuine UI issues detected in header, navigation, toolbar, icons, buttons, theme, colors, alignment, padding, margins, font, layout, or other static UI elements. All differences are related to dynamic or content-based elements that can be ignored as per the instructions.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/SC_12/./reference_SC_12_Subscriber_Article_page_1.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/SC_12/./actual_SC_12_Subscriber_Article_page_1.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/SC_12/./diff_SC_12_Subscriber_Article_page_1.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>SC_13</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> SC_13_copied_successfully.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-notfound">
+NOT FOUND
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 0%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 0</p>
+
+<p><strong>Image Size :</strong> Reference N/A | Actual N/A</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>N/A</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No AI analysis available.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="D:\AI_Maestro_Automation_Platform\.maestro\screenshots\Baselines\Screenshots\SC_13\SC_13_copied_successfully.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> SC_13_share_article.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 76.11%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 209</p>
+
+<p><strong>Image Size :</strong> Reference 720x1600 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>PASS</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+0
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+No genuine UI defects detected. All highlighted differences are due to dynamic content, headlines, images, or expected personalization. Header, toolbar, navigation bar, icons, buttons, theme, alignment, spacing, and layout appear consistent.
+</p>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/SC_13/./reference_SC_13_share_article.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/SC_13/./actual_SC_13_share_article.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/SC_13/./diff_SC_13_share_article.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>SC_14</h2>
+
+<h2>SC_15</h2>
+
+<h2>SC_16</h2>
+
+<h2>SC_17</h2>
+
+<h2>SC_18</h2>
+
+<h2>SC_19</h2>
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> SC_19_Ad_Page_03.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 52.47%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 39</p>
+
+<p><strong>Image Size :</strong> Reference 720x1600 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>FAIL</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+2
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+Two critical UI defects detected in the actual screenshot: the main content is missing and the layout is broken.
+</p>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Missing UI Content</h4>
+
+<p>
+<b>Severity :</b>
+Critical
+</p>
+
+<p>
+<b>Component :</b>
+Main Content Area
+</p>
+
+<p>
+<b>Description :</b><br>
+The actual screenshot is missing all principal UI content including article headers, images, navigation bar, and buttons. Only the app bar and domain name are visible, with the rest of the view being blank.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Investigate rendering failures or loading logic for the main content area.
+</p>
+
+</div>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Broken Layout</h4>
+
+<p>
+<b>Severity :</b>
+High
+</p>
+
+<p>
+<b>Component :</b>
+Layout
+</p>
+
+<p>
+<b>Description :</b><br>
+The layout does not render any of the expected UI elements (toolbar buttons, bottom navigation, icons, or article lists). This indicates either a loading failure or a severe layout/visibility regression.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Check view initialization and ensure all UI components are being loaded correctly.
+</p>
+
+</div>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/SC_19/./reference_SC_19_Ad_Page_03.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/SC_19/./actual_SC_19_Ad_Page_03.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/SC_19/./diff_SC_19_Ad_Page_03.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="result-card">
+
+<p><strong>Image :</strong> SC_19_Ad_Page_04.png</p>
+
+<p>
+<strong>Status :</strong>
+<span class="status-fail">
+FAIL
+</span>
+</p>
+
+<p><strong>Similarity :</strong> 35.78%</p>
+
+<p><strong>Threshold :</strong> 95.0%</p>
+
+
+<p><strong>Difference Count :</strong> 45</p>
+
+<p><strong>Image Size :</strong> Reference 720x1600 | Actual 720x1600</p>
+
+<p><strong>Cross-device Normalization :</strong> Not required</p>
+
+<hr>
+
+<h3>🤖 AI Visual Analysis</h3>
+
+<p>
+<strong>Overall Status :</strong>
+<b>FAIL</b>
+</p>
+
+<p>
+<strong>Issues Found :</strong>
+3
+</p>
+
+<p>
+<strong>Summary :</strong><br>
+Three genuine UI issues detected related to header, progress indicator alignment, and toolbar controls.
+</p>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Missing or Incorrect Main Toolbar/Header</h4>
+
+<p>
+<b>Severity :</b>
+High
+</p>
+
+<p>
+<b>Component :</b>
+Header
+</p>
+
+<p>
+<b>Description :</b><br>
+The main header section with logo, menu, and primary navigation is missing or replaced by a different UI (carousel ad and progress indicator) compared to the reference screenshot.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Restore the primary header and navigation bar as per the reference design.
+</p>
+
+</div>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Progress indicator overlaps with header area</h4>
+
+<p>
+<b>Severity :</b>
+Medium
+</p>
+
+<p>
+<b>Component :</b>
+Progress Indicator (Toolbar area)
+</p>
+
+<p>
+<b>Description :</b><br>
+The progress indicator dots are present and misaligned, overlapping into the header area instead of being correctly positioned under a hero image/banner.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Verify the stacking and placement of the progress indicator to prevent overlap with the header.
+</p>
+
+</div>
+
+
+
+<div style="background:#f8f9fa;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #dc3545;
+border-radius:6px;">
+
+<h4>Toolbar control and subscribe button misplacement</h4>
+
+<p>
+<b>Severity :</b>
+Medium
+</p>
+
+<p>
+<b>Component :</b>
+Bottom Toolbar
+</p>
+
+<p>
+<b>Description :</b><br>
+Bottom toolbar controls like the back button, AI, font, bookmark, comment, and subscribe button are present in the actual screenshot but not in the reference. They overlap with the advertisement bar section.
+</p>
+
+<p>
+<b>Recommendation :</b><br>
+Ensure bottom controls and advertisement bar do not overlap and match reference layout.
+</p>
+
+</div>
+
+
+
+<div class="images">
+
+<div class="image-box">
+<h3>Production Reference</h3>
+<img src="comparison/SC_19/./reference_SC_19_Ad_Page_04.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Internal Test Actual</h3>
+<img src="comparison/SC_19/./actual_SC_19_Ad_Page_04.png" onclick="openImage(this.src)">
+</div>
+
+<div class="image-box">
+<h3>Visual Difference</h3>
+<img src="comparison/SC_19/./diff_SC_19_Ad_Page_04.png" onclick="openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<h2>SC_20</h2>
+
+<div id="lightbox" onclick="closeImage()">
+    <img id="lightbox-image">
+</div>
+
+<div class="footer">
+Generated by Automation Framework - Visual Regression
+</div>
+
+<script>
+
+function openImage(src){
+
+    document.getElementById("lightbox-image").src = src;
+    document.getElementById("lightbox").style.display = "flex";
+
+}
+
+function closeImage(){
+
+    document.getElementById("lightbox").style.display = "none";
+
+}
+
+</script>
+
+</body>
+
+</html>

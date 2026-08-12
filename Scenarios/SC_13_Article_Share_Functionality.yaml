@@ -1,0 +1,129 @@
+appId: com.mobstac.thehindu
+tags:
+  - article
+  - share
+---
+# Article Share Functionality (SC-13).
+# Launch App
+- launchApp:
+    clearState: true
+# - runFlow: ../Common/OOBE_terms_and_condition.yaml
+- runFlow: ../Common/LOGIN.yaml
+
+# Skip Onboarding
+- assertVisible:
+    text: "Welcome to a new\nThe Hindu experience"
+- runFlow:
+    when:
+      visible:
+        text: "Skip"
+    commands:
+      - tapOn: "Skip"
+
+# Open Home Article
+- extendedWaitUntil:
+    visible: "Home"
+    timeout: 15000
+- waitForAnimationToEnd
+- tapOn:
+    point: 50%,50%
+- waitForAnimationToEnd
+
+# The frequency-capped AI Summary sheet can cover the article action bar.
+- runFlow:
+    when:
+      visible:
+        text: "Summary"
+    commands:
+      - tapOn: "Close sheet"
+- waitForAnimationToEnd
+
+# Verify Share Options
+- tapOn:
+    text: "Share"
+    index: 1
+- takeScreenshot: "Screenshots/SC_13/SC_13_share_article"
+
+- runFlow:
+    when:
+      visible:
+        text:  "WhatsApp"
+    commands:
+        - tapOn: ""
+- runFlow:
+    when:
+      visible:
+        text:  "Messages"
+    commands:
+        - tapOn: ""
+
+- runFlow:
+    when:
+      visible:
+        text:  "Instagram"
+    commands:
+        - tapOn: ""
+
+- runFlow:
+    when:
+      visible:
+        text:  "Gmail"
+    commands:
+        - tapOn: ""
+- runFlow:
+    when:
+      visible:
+        text:  "Quick Share"
+    commands:
+        - tapOn: ""
+
+- swipe:
+    start: 92%,89%
+    end: 8%,89%
+    duration: 1000
+
+- runFlow:
+    when:
+      visible:
+        text:  "WhatsApp"
+    commands:
+        - tapOn: ""
+- runFlow:
+    when:
+      visible:
+        text:  "Messages"
+    commands:
+        - tapOn: ""
+
+- runFlow:
+    when:
+      visible:
+        text:  "Instagram"
+    commands:
+        - tapOn: ""
+- runFlow:
+    when:
+      visible:
+        text:  "Gmail"
+    commands:
+        - tapOn: ""
+- runFlow:
+    when:
+      visible:
+        text:  "Quick Share"
+    commands:
+        - tapOn: ""
+
+- swipe:
+    start:  8%,89%
+    end: 92%,89%
+    duration: 1000
+
+# Verify Copy Text Option
+- extendedWaitUntil:
+    visible: "Copy text"
+    timeout: 15000
+- tapOn: "Copy text"
+
+# Copy Text Validation
+- takeScreenshot: "Screenshots/SC_13/SC_13_copied_successfully"
