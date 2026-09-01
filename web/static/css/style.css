@@ -42,3 +42,7 @@ body{background-color:#f4f2ea;background-image:url("../images/calm-japanese-back
 .device-dot.is-offline{background:var(--red);box-shadow:0 0 0 4px #d94b5b1c}
 .device-battery-icon{color:var(--green);font-size:12px}
 @media(max-width:900px){.content-grid{grid-template-columns:1fr}}
+.hindu-brand-lockup{display:flex;align-items:center;gap:18px;margin:28px 0 16px}
+.hindu-brand-symbol{display:grid;place-items:center;width:92px;height:92px;border:3px solid #fff;border-radius:50%;background:#fff;color:#0b1d35;font-family:Georgia,"Times New Roman",serif;font-size:30px;font-weight:800;letter-spacing:-.08em;box-shadow:0 12px 28px #0003}
+.hindu-brand-name{color:#fff;font-family:Georgia,"Times New Roman",serif;font-size:clamp(38px,5vw,70px);font-weight:800;line-height:.95;letter-spacing:-.055em}
+@media(max-width:620px){.hindu-brand-lockup{gap:12px}.hindu-brand-symbol{width:68px;height:68px;font-size:23px}.hindu-brand-name{font-size:36px}}

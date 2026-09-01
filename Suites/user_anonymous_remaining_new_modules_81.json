@@ -1,0 +1,827 @@
+{
+    "suite": "Anonymous Remaining New Modules - 81 Cases",
+    "source_suite": "user_anonymous",
+    "module": "Remaining New Anonymous Modules",
+    "module_counts": {
+        "food_quick_access": 10,
+        "india_quick_access": 10,
+        "latest_news_quick_access": 10,
+        "sci_tech_quick_access": 10,
+        "sports_quick_access": 10,
+        "world_quick_access": 10,
+        "podcast_quick_access": 9,
+        "search": 12
+    },
+    "tests": [
+        {
+            "id": "ANON_FOOD_001",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P1",
+            "name": "Food launch and selected Quick Access identity",
+            "yaml": "ANON_FOOD_001.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "ANON_FOOD_002",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P2",
+            "name": "Food refresh and content recovery",
+            "yaml": "ANON_FOOD_002.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "ANON_FOOD_003",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P2",
+            "name": "Food listing structure and article cards",
+            "yaml": "ANON_FOOD_003.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "ANON_FOOD_004",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P2",
+            "name": "Food deep scroll and advertisement evidence",
+            "yaml": "ANON_FOOD_004.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "ANON_FOOD_005",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P1",
+            "name": "Food article destination integrity",
+            "yaml": "ANON_FOOD_005.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "ANON_FOOD_006",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P1",
+            "name": "Food anonymous article restriction behavior",
+            "yaml": "ANON_FOOD_006.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "ANON_FOOD_007",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P2",
+            "name": "Food conditional AI Summary and Listen controls",
+            "yaml": "ANON_FOOD_007.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "ANON_FOOD_008",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P1",
+            "name": "Food bookmark redirects anonymous user to login",
+            "yaml": "ANON_FOOD_008.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "ANON_FOOD_009",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P2",
+            "name": "Food share surface behavior",
+            "yaml": "ANON_FOOD_009.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "ANON_FOOD_010",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P2",
+            "name": "Food comment and post-article behavior",
+            "yaml": "ANON_FOOD_010.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "ANON_INDIA_001",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P1",
+            "name": "India launch and selected Quick Access identity",
+            "yaml": "ANON_INDIA_001.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "ANON_INDIA_002",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P2",
+            "name": "India refresh and content recovery",
+            "yaml": "ANON_INDIA_002.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "ANON_INDIA_003",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P2",
+            "name": "India listing structure and article cards",
+            "yaml": "ANON_INDIA_003.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "ANON_INDIA_004",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P2",
+            "name": "India deep scroll and advertisement evidence",
+            "yaml": "ANON_INDIA_004.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "ANON_INDIA_005",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P1",
+            "name": "India article destination integrity",
+            "yaml": "ANON_INDIA_005.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "ANON_INDIA_006",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P1",
+            "name": "India anonymous article restriction behavior",
+            "yaml": "ANON_INDIA_006.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "ANON_INDIA_007",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P2",
+            "name": "India conditional AI Summary and Listen controls",
+            "yaml": "ANON_INDIA_007.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "ANON_INDIA_008",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P1",
+            "name": "India bookmark redirects anonymous user to login",
+            "yaml": "ANON_INDIA_008.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "ANON_INDIA_009",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P2",
+            "name": "India share surface behavior",
+            "yaml": "ANON_INDIA_009.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "ANON_INDIA_010",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P2",
+            "name": "India comment and post-article behavior",
+            "yaml": "ANON_INDIA_010.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "ANON_LATEST_001",
+            "module": "Latest News Quick Access",
+            "section": "Latest News Quick Access",
+            "priority": "P1",
+            "name": "Latest News launch and selected Quick Access identity",
+            "yaml": "ANON_LATEST_001.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Latest News Quick Access"
+        },
+        {
+            "id": "ANON_LATEST_002",
+            "module": "Latest News Quick Access",
+            "section": "Latest News Quick Access",
+            "priority": "P2",
+            "name": "Latest News refresh and content recovery",
+            "yaml": "ANON_LATEST_002.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Latest News Quick Access"
+        },
+        {
+            "id": "ANON_LATEST_003",
+            "module": "Latest News Quick Access",
+            "section": "Latest News Quick Access",
+            "priority": "P2",
+            "name": "Latest News listing structure and article cards",
+            "yaml": "ANON_LATEST_003.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Latest News Quick Access"
+        },
+        {
+            "id": "ANON_LATEST_004",
+            "module": "Latest News Quick Access",
+            "section": "Latest News Quick Access",
+            "priority": "P2",
+            "name": "Latest News deep scroll and advertisement evidence",
+            "yaml": "ANON_LATEST_004.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Latest News Quick Access"
+        },
+        {
+            "id": "ANON_LATEST_005",
+            "module": "Latest News Quick Access",
+            "section": "Latest News Quick Access",
+            "priority": "P1",
+            "name": "Latest News article destination integrity",
+            "yaml": "ANON_LATEST_005.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Latest News Quick Access"
+        },
+        {
+            "id": "ANON_LATEST_006",
+            "module": "Latest News Quick Access",
+            "section": "Latest News Quick Access",
+            "priority": "P1",
+            "name": "Latest News anonymous article restriction behavior",
+            "yaml": "ANON_LATEST_006.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Latest News Quick Access"
+        },
+        {
+            "id": "ANON_LATEST_007",
+            "module": "Latest News Quick Access",
+            "section": "Latest News Quick Access",
+            "priority": "P2",
+            "name": "Latest News conditional AI Summary and Listen controls",
+            "yaml": "ANON_LATEST_007.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Latest News Quick Access"
+        },
+        {
+            "id": "ANON_LATEST_008",
+            "module": "Latest News Quick Access",
+            "section": "Latest News Quick Access",
+            "priority": "P1",
+            "name": "Latest News bookmark redirects anonymous user to login",
+            "yaml": "ANON_LATEST_008.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Latest News Quick Access"
+        },
+        {
+            "id": "ANON_LATEST_009",
+            "module": "Latest News Quick Access",
+            "section": "Latest News Quick Access",
+            "priority": "P2",
+            "name": "Latest News share surface behavior",
+            "yaml": "ANON_LATEST_009.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Latest News Quick Access"
+        },
+        {
+            "id": "ANON_LATEST_010",
+            "module": "Latest News Quick Access",
+            "section": "Latest News Quick Access",
+            "priority": "P2",
+            "name": "Latest News comment and post-article behavior",
+            "yaml": "ANON_LATEST_010.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Latest News Quick Access"
+        },
+        {
+            "id": "ANON_SCITECH_001",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P1",
+            "name": "Sci-Tech launch and selected Quick Access identity",
+            "yaml": "ANON_SCITECH_001.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "ANON_SCITECH_002",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P2",
+            "name": "Sci-Tech refresh and content recovery",
+            "yaml": "ANON_SCITECH_002.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "ANON_SCITECH_003",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P2",
+            "name": "Sci-Tech listing structure and article cards",
+            "yaml": "ANON_SCITECH_003.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "ANON_SCITECH_004",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P2",
+            "name": "Sci-Tech deep scroll and advertisement evidence",
+            "yaml": "ANON_SCITECH_004.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "ANON_SCITECH_005",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P1",
+            "name": "Sci-Tech article destination integrity",
+            "yaml": "ANON_SCITECH_005.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "ANON_SCITECH_006",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P1",
+            "name": "Sci-Tech anonymous article restriction behavior",
+            "yaml": "ANON_SCITECH_006.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "ANON_SCITECH_007",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P2",
+            "name": "Sci-Tech conditional AI Summary and Listen controls",
+            "yaml": "ANON_SCITECH_007.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "ANON_SCITECH_008",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P1",
+            "name": "Sci-Tech bookmark redirects anonymous user to login",
+            "yaml": "ANON_SCITECH_008.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "ANON_SCITECH_009",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P2",
+            "name": "Sci-Tech share surface behavior",
+            "yaml": "ANON_SCITECH_009.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "ANON_SCITECH_010",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P2",
+            "name": "Sci-Tech comment and post-article behavior",
+            "yaml": "ANON_SCITECH_010.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "ANON_SPORTS_001",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P1",
+            "name": "Sport launch and selected Quick Access identity",
+            "yaml": "ANON_SPORTS_001.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        },
+        {
+            "id": "ANON_SPORTS_002",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P2",
+            "name": "Sport refresh and content recovery",
+            "yaml": "ANON_SPORTS_002.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        },
+        {
+            "id": "ANON_SPORTS_003",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P2",
+            "name": "Sport listing structure and article cards",
+            "yaml": "ANON_SPORTS_003.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        },
+        {
+            "id": "ANON_SPORTS_004",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P2",
+            "name": "Sport deep scroll and advertisement evidence",
+            "yaml": "ANON_SPORTS_004.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        },
+        {
+            "id": "ANON_SPORTS_005",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P1",
+            "name": "Sport article destination integrity",
+            "yaml": "ANON_SPORTS_005.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        },
+        {
+            "id": "ANON_SPORTS_006",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P1",
+            "name": "Sport anonymous article restriction behavior",
+            "yaml": "ANON_SPORTS_006.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        },
+        {
+            "id": "ANON_SPORTS_007",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P2",
+            "name": "Sport conditional AI Summary and Listen controls",
+            "yaml": "ANON_SPORTS_007.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        },
+        {
+            "id": "ANON_SPORTS_008",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P1",
+            "name": "Sport bookmark redirects anonymous user to login",
+            "yaml": "ANON_SPORTS_008.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        },
+        {
+            "id": "ANON_SPORTS_009",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P2",
+            "name": "Sport share surface behavior",
+            "yaml": "ANON_SPORTS_009.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        },
+        {
+            "id": "ANON_SPORTS_010",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P2",
+            "name": "Sport comment and post-article behavior",
+            "yaml": "ANON_SPORTS_010.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        },
+        {
+            "id": "ANON_WORLD_001",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P1",
+            "name": "World launch and selected Quick Access identity",
+            "yaml": "ANON_WORLD_001.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "ANON_WORLD_002",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P2",
+            "name": "World refresh and content recovery",
+            "yaml": "ANON_WORLD_002.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "ANON_WORLD_003",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P2",
+            "name": "World listing structure and article cards",
+            "yaml": "ANON_WORLD_003.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "ANON_WORLD_004",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P2",
+            "name": "World deep scroll and advertisement evidence",
+            "yaml": "ANON_WORLD_004.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "ANON_WORLD_005",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P1",
+            "name": "World article destination integrity",
+            "yaml": "ANON_WORLD_005.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "ANON_WORLD_006",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P1",
+            "name": "World anonymous article restriction behavior",
+            "yaml": "ANON_WORLD_006.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "ANON_WORLD_007",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P2",
+            "name": "World conditional AI Summary and Listen controls",
+            "yaml": "ANON_WORLD_007.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "ANON_WORLD_008",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P1",
+            "name": "World bookmark redirects anonymous user to login",
+            "yaml": "ANON_WORLD_008.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "ANON_WORLD_009",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P2",
+            "name": "World share surface behavior",
+            "yaml": "ANON_WORLD_009.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "ANON_WORLD_010",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P2",
+            "name": "World comment and post-article behavior",
+            "yaml": "ANON_WORLD_010.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "ANON_PODCAST_001",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "priority": "P1",
+            "name": "Podcast anonymous behavior 01",
+            "yaml": "ANON_PODCAST_001.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "ANON_PODCAST_002",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "priority": "P2",
+            "name": "Podcast anonymous behavior 02",
+            "yaml": "ANON_PODCAST_002.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "ANON_PODCAST_003",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "priority": "P2",
+            "name": "Podcast anonymous behavior 03",
+            "yaml": "ANON_PODCAST_003.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "ANON_PODCAST_004",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "priority": "P2",
+            "name": "Podcast anonymous behavior 04",
+            "yaml": "ANON_PODCAST_004.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "ANON_PODCAST_005",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "priority": "P1",
+            "name": "Podcast anonymous behavior 05",
+            "yaml": "ANON_PODCAST_005.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "ANON_PODCAST_006",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "priority": "P1",
+            "name": "Podcast anonymous behavior 06",
+            "yaml": "ANON_PODCAST_006.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "ANON_PODCAST_007",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "priority": "P1",
+            "name": "Podcast anonymous behavior 07",
+            "yaml": "ANON_PODCAST_007.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "ANON_PODCAST_008",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "priority": "P2",
+            "name": "Podcast anonymous behavior 08",
+            "yaml": "ANON_PODCAST_008.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "ANON_PODCAST_009",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "priority": "P2",
+            "name": "Podcast anonymous behavior 09",
+            "yaml": "ANON_PODCAST_009.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "ANON_SEARCH_001",
+            "module": "Search",
+            "section": "Search",
+            "priority": "P1",
+            "name": "Search entry",
+            "yaml": "ANON_SEARCH_001.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Search"
+        },
+        {
+            "id": "ANON_SEARCH_002",
+            "module": "Search",
+            "section": "Search",
+            "priority": "P1",
+            "name": "Search close and Home recovery",
+            "yaml": "ANON_SEARCH_002.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Search"
+        },
+        {
+            "id": "ANON_SEARCH_003",
+            "module": "Search",
+            "section": "Search",
+            "priority": "P2",
+            "name": "City query",
+            "yaml": "ANON_SEARCH_003.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Search"
+        },
+        {
+            "id": "ANON_SEARCH_004",
+            "module": "Search",
+            "section": "Search",
+            "priority": "P1",
+            "name": "Common news keyword",
+            "yaml": "ANON_SEARCH_004.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Search"
+        },
+        {
+            "id": "ANON_SEARCH_005",
+            "module": "Search",
+            "section": "Search",
+            "priority": "P2",
+            "name": "Multi-word phrase",
+            "yaml": "ANON_SEARCH_005.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Search"
+        },
+        {
+            "id": "ANON_SEARCH_006",
+            "module": "Search",
+            "section": "Search",
+            "priority": "P2",
+            "name": "Numeric year query",
+            "yaml": "ANON_SEARCH_006.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Search"
+        },
+        {
+            "id": "ANON_SEARCH_007",
+            "module": "Search",
+            "section": "Search",
+            "priority": "P2",
+            "name": "No-result query",
+            "yaml": "ANON_SEARCH_007.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Search"
+        },
+        {
+            "id": "ANON_SEARCH_008",
+            "module": "Search",
+            "section": "Search",
+            "priority": "P2",
+            "name": "Second news keyword",
+            "yaml": "ANON_SEARCH_008.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Search"
+        },
+        {
+            "id": "ANON_SEARCH_009",
+            "module": "Search",
+            "section": "Search",
+            "priority": "P2",
+            "name": "Technology query",
+            "yaml": "ANON_SEARCH_009.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Search"
+        },
+        {
+            "id": "ANON_SEARCH_010",
+            "module": "Search",
+            "section": "Search",
+            "priority": "P2",
+            "name": "Clear and replace query",
+            "yaml": "ANON_SEARCH_010.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Search"
+        },
+        {
+            "id": "ANON_SEARCH_011",
+            "module": "Search",
+            "section": "Search",
+            "priority": "P2",
+            "name": "Repeated query stability",
+            "yaml": "ANON_SEARCH_011.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Search"
+        },
+        {
+            "id": "ANON_SEARCH_012",
+            "module": "Search",
+            "section": "Search",
+            "priority": "P1",
+            "name": "Open a Search result",
+            "yaml": "ANON_SEARCH_012.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Search"
+        }
+    ]
+}
