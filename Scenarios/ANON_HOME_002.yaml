@@ -1,0 +1,24 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_HOME.yaml"
+
+- swipe:
+    start: "50%, 25%"
+    end: "50%, 80%"
+    duration: 800
+
+- waitForAnimationToEnd:
+    timeout: 8000
+
+- assertVisible:
+    id: "screen_home"
+
+- assertVisible:
+    id: "screen_home"
+
+- assertVisible:
+    id: "screen_home"

@@ -1,0 +1,79 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - podcast
+  - playback
+  - scrubber-seeking
+  - blocked-locator-grounding
+  - evidence-limited
+
+---
+
+# SUB_PODCAST_012 — Podcast scrubber timeline seeking
+#
+# Precondition: the ordered subscriber suite has established an authenticated
+# session and opened the Podcast listing. "Podcast" is the only validated page
+# anchor supplied for this screen.
+#
+# This flow safely starts and qualifies playback, preserves diagnostic evidence,
+# and then fails explicitly. It cannot execute a scrubber drag without validated
+# scrubber bounds or verify elapsed-time movement without an automation-readable
+# elapsed-time selector. Inventing coordinates or controls would make seeking
+# device-, layout-, and episode-dependent and could produce a false pass.
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+# Position 1, supported portion: start a current episode using the action
+# grounded by the approved SUB_PODCAST_010 flow. No dynamic title is fixed.
+- scrollUntilVisible:
+    element:
+      text: '(?i)^Play Latest Episode$'
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+
+- assertVisible:
+    text: '(?i)^Play Latest Episode$'
+
+- tapOn:
+    text: '(?i)^Play Latest Episode$'
+    index: 0
+
+# Use the approved measured playback interval before qualifying the player so
+# the baseline is not captured in an initial loading or zero-position state.
+- evalScript: '${(() => { const end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify that a single settled, non-blank podcast player is visible and that playback is active. Verify that the player visibly presents a timeline scrubber or progress bar, an elapsed-time presentation, a total duration, and playback controls. Fail if playback is absent, the player is blank or loading-only, or the scrubber, elapsed time, duration, or playback controls are not visibly presented. This is qualification evidence only and must not be interpreted as proof that any seek occurred."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_012_scrubber_grounding_blocked"
+
+# Obligation critique:
+# 1. Playback can be started, but the required later-position drag cannot be
+#    executed without validated scrubber bounds or a scrubber locator.
+# 2. A backward drag has the same unresolved grounding dependency.
+# 3. Approved Play/Pause text exists for a qualified article-audio player, but
+#    no validated Podcast-listing player control is supplied here; more
+#    importantly, the intervening seek cannot be executed.
+# 4. Thumb displacement and elapsed-time movement cannot be asserted without
+#    automation-readable scrubber and elapsed-time state.
+# 5. Backward elapsed-time movement and continued playback cannot be compared.
+# 6. Seeking after pause/resume and protection against reset-to-zero cannot be
+#    proven without executing and observing the preceding seek states.
+#
+# Fail explicitly so this playback qualification cannot be reported as a
+# successful scrubber-seeking test.
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_012_manual_review"

@@ -1,0 +1,10 @@
+appId: com.mobstac.thehindu
+tags: [generated, subscriber, account, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_ACCOUNT.yaml"
+- scrollUntilVisible: {element: {text: "Logout|Log Out|LOGOUT"}, direction: DOWN, timeout: 30000, speed: 45, visibilityPercentage: 20}
+- assertVisible: {text: "Logout|Log Out|LOGOUT"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ACCOUNT_012_logout_control"
+- assertVisible: {id: "screen_user_menu"}
+

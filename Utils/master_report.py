@@ -44,7 +44,7 @@ def generate_master_report(report_root):
 
         if not visual_json.exists():
             continue
-        print("✓ Valid Execution Folder")
+            print("Valid Execution Folder")
 
         total_runs += 1
 

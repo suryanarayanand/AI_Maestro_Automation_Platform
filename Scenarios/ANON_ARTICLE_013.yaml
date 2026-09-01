@@ -1,0 +1,12 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, article-page, bookmark]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- tapOn: {text: "Bookmark", index: 0}
+- extendedWaitUntil: {visible: {text: "Login to your account"}, timeout: 30000}
+- assertVisible: {text: "Login to your account"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_013_bookmark_login"
+- back
+- assertVisible: {id: "screen_article_detail"}

@@ -1,0 +1,48 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - search
+  - boundary-input
+  - non-destructive
+  - evidence
+---
+
+# Establish the configured authenticated subscriber Home state.
+- runFlow: "../Common/OPEN_SUBSCRIBER_SEARCH.yaml"
+
+# Position 1: Open Search, clear retained input, enter a deterministic bounded
+# 120-character ASCII query, and submit it through the keyboard.
+- tapOn: {point: "45%,8%"}
+
+- eraseText: 256
+
+- inputText: "boundarysearch0123456789boundarysearch0123456789boundarysearch0123456789boundarysearch0123456789boundarysearch0123456789"
+
+- pressKey: ENTER
+
+# Position 2: Wait for post-submission rendering to settle, require the
+# validated Search control as an attached and responsive application oracle,
+# and capture the handled result.
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "cta_search"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_013_handled_result_120_chars"
+
+# Position 3: Reassert that the Search surface remains rendered after the long
+# input and submission. Failure to enter, submit, settle, or render this
+# assertion fails the automated execution.
+- assertVisible:
+    id: "cta_search"
+
+# Position 4: Save final assertion-backed evidence documenting the observed
+# boundary behavior for execution review.
+- assertVisible:
+    id: "cta_search"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_013_boundary_behavior_documented"

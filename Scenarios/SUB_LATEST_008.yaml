@@ -1,0 +1,73 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - latest-news
+  - article
+  - reading-options
+  - text-size
+  - themes
+  - blocked-grounding
+  - evidence-limited
+
+---
+
+# SUB_LATEST_008 — Latest News reading options, text size and themes
+#
+# Establish the repository-managed authenticated subscriber state and open the
+# same Latest News article fixture for all intended presentation variants.
+- runFlow: "../Common/OPEN_SUBSCRIBER_LATEST_NEWS.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_home"
+
+- openLink: "https://www.thehindu.com/news/national/kerala/kerala-assembly-unanimously-passes-resolution-to-change-official-name-of-state-to-keralam/article67175490.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_008_controlled_article_baseline"
+
+# Obligation critique, position 1:
+# The article is runtime-qualified above, but no validated clickable Reading
+# Options control, text-size control, or distinct size-value selector was
+# supplied. The hierarchy-only "Text size" label is explicitly unvalidated and
+# non-clickable, so it cannot safely be promoted to an interaction selector.
+#
+# Obligation critique, position 2:
+# No validated Light-theme, Dark-theme, selected-theme, options-sheet Close, or
+# default-restoration selector was supplied. Coordinates and visually inferred
+# controls are prohibited, so neither theme application nor sheet closure can
+# be executed safely.
+#
+# Obligation critique, position 3:
+# The validated article-detail anchor proves only that the baseline article is
+# open. Without an executable text-size change, there is no grounded post-change
+# state in which to assert visible resizing, non-overlap, and retained content.
+# A screenshot alone would not satisfy this expected result.
+#
+# Obligation critique, position 4:
+# Without executable theme changes, there are no grounded Light and Dark states
+# in which to assert article application or retention of a usable reading
+# position. The approved presentation rule also requires restoring defaults,
+# for which no validated control or selected-state locator was supplied.
+#
+# Fail explicitly rather than reporting the successfully opened baseline article
+# as passing reading-options coverage.
+- assertVisible: {id: "screen_article_detail"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_008_reading_options_review"

@@ -1,0 +1,79 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - podcast
+  - playback
+  - mini-player-close
+  - blocked-locator-grounding
+  - evidence-limited
+---
+
+# SUB_PODCAST_015 — Mini-player close stops playback
+#
+# Ordered precondition: subscriber authentication has completed and the Podcast
+# listing is open. "Podcast" is a validated page anchor, while the current
+# episode is selected through the action grounded by approved SUB_PODCAST_007.
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+# Position 1, supported portion — Select a currently rendered podcast card and
+# start playback without fixing a dynamic series or episode title.
+- scrollUntilVisible:
+    element:
+      text: '(?i)^Play Latest Episode$'
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+
+- extendedWaitUntil:
+    visible:
+      text: '(?i)^Play Latest Episode$'
+    timeout: 30000
+
+- assertVisible:
+    text: '(?i)^Play Latest Episode$'
+
+- assertWithAI: "Verify that the first visible Play Latest Episode action belongs to a fully rendered current Podcast series card with readable episode or series identity. Fail if the action is detached from a card, the identity is blank or unreadable, or the card is still loading."
+
+- tapOn:
+    text: '(?i)^Play Latest Episode$'
+    index: 0
+
+# Retain playback for the measured checkpoint established by the approved
+# podcast playback flows, then require visible progress and a settled mini-player.
+- evalScript: '${(() => { const end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "At the 30-second checkpoint, verify that the Podcast listing remains open, playback is active, and one settled non-blank mini-player is visible with readable episode identity and visibly advanced elapsed time or progress. Also verify that the mini-player visibly presents a Close or X control. Fail if playback did not start, progress remains at its initial position, the mini-player is absent, blank, loading-only, errored, or has no visible Close control. This visual qualification does not establish an executable locator for that control."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_015_before_close_blocked"
+
+# Obligation critique:
+# Position 1 cannot complete the required Close tap because no validated
+# mini-player Close/X locator, accessibility label, resource ID, or safe target
+# was supplied. A visually inferred control must not be promoted to a selector.
+# Position 2 cannot perform the post-close 10-second wait and reopen the same
+# selected episode because Position 1 cannot close the player and no stable
+# selected-episode identity/action locator was supplied for exact reselection.
+# Position 3 cannot assert that the mini-player disappeared, audio stopped, and
+# the app remained open without executing the Close action and observing both
+# player visibility and playback state afterward.
+# Position 4 cannot prove absence of hidden playback or a normal restart because
+# no automation-readable elapsed/progress state or audio-session signal is
+# supplied for comparison when the selected episode is reopened.
+#
+# Fail explicitly so successful playback qualification cannot be reported as a
+# passing mini-player-close test.
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_015_manual_review"

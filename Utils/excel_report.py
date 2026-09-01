@@ -13,12 +13,14 @@ def generate_excel_report(results, suite_name, execution_time, report_folder):
 
     green = PatternFill(fill_type="solid", fgColor="92D050")
     red = PatternFill(fill_type="solid", fgColor="FF6666")
+    review = PatternFill(fill_type="solid", fgColor="D9CCFF")
     blue = PatternFill(fill_type="solid", fgColor="4F81BD")
 
     bold = Font(bold=True, color="FFFFFF")
 
     passed = len([r for r in results if r["status"] == "PASS"])
     failed = len([r for r in results if r["status"] == "FAIL"])
+    needs_review = len([r for r in results if r["status"] == "NEEDS_REVIEW"])
     missing = len([r for r in results if r["status"] == "NOT FOUND"])
 
     ws["A1"] = "Automation Dashboard"
@@ -38,11 +40,14 @@ def generate_excel_report(results, suite_name, execution_time, report_folder):
     ws["A7"] = "Failed"
     ws["B7"] = failed
 
-    ws["A8"] = "Not Found"
-    ws["B8"] = missing
+    ws["A8"] = "Needs Review"
+    ws["B8"] = needs_review
 
-    ws["A9"] = "Execution Time (sec)"
-    ws["B9"] = execution_time
+    ws["A9"] = "Not Found"
+    ws["B9"] = missing
+
+    ws["A10"] = "Execution Time (sec)"
+    ws["B10"] = execution_time
 
     # ======================================
     # Results Sheet
@@ -81,6 +86,9 @@ def generate_excel_report(results, suite_name, execution_time, report_folder):
 
         elif r["status"] == "FAIL":
             result_sheet.cell(row=row, column=4).fill = red
+
+        elif r["status"] == "NEEDS_REVIEW":
+            result_sheet.cell(row=row, column=4).fill = review
 
         row += 1
 

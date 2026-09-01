@@ -1,0 +1,60 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, trending, article-pager,interstitial]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+
+- repeat:
+
+    times: 5
+
+    commands:
+
+      - swipe: {direction: LEFT}
+
+      - waitForAnimationToEnd: {timeout: 1500}
+
+      - runFlow:
+
+          when: {notVisible: {id: "screen_article_detail"}}
+
+          file: "../Common/HANDLE_DELAYED_ARTICLE_INTERSTITIAL.yaml"
+
+      - runFlow:
+
+          when: {visible: {text: "Premium|PREMIUM|Keep reading.*|Already a subscriber.*"}}
+
+          commands:
+
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_TREND_020_premium_left"
+
+- repeat:
+
+    times: 5
+
+    commands:
+
+      - swipe: {direction: RIGHT}
+
+      - waitForAnimationToEnd: {timeout: 1500}
+
+      - runFlow:
+
+          when: {notVisible: {id: "screen_article_detail"}}
+
+          file: "../Common/HANDLE_DELAYED_ARTICLE_INTERSTITIAL.yaml"
+
+      - runFlow:
+
+          when: {visible: {text: "Premium|PREMIUM|Keep reading.*|Already a subscriber.*"}}
+
+          commands:
+
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_TREND_020_premium_right"
+
+- assertVisible: {id: "screen_article_detail"}
+

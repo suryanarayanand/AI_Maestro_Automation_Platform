@@ -1,0 +1,579 @@
+appId: com.mobstac.thehindu
+
+
+
+tags:
+
+  - generated
+
+  - ordered
+
+  - subscriber
+
+  - world
+
+  - article
+
+  - paging
+
+  - navigation-recovery
+
+  - no-monetisation
+
+
+
+---
+
+
+
+# SUB_WORLD_011 â€” World article paging and navigation recovery
+
+# Establish an authenticated Subscriber Home session before module navigation.
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_WORLD.yaml"
+
+
+# Open the validated World section.
+
+- extendedWaitUntil:
+
+    visible:
+
+      text: "World"
+
+    timeout: 30000
+
+
+
+- tapOn:
+
+    text: "World"
+
+
+
+- waitForAnimationToEnd
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+
+    visible:
+
+      id: "article_card"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    text: "World"
+
+
+
+- assertVisible:
+
+    id: "article_card"
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+# Skip a legitimately live lead card before selecting an ordinary article for
+# pager validation.
+- runFlow:
+    when:
+      visible:
+        text: "(?i).*\\bLIVE\\b.*"
+    commands:
+      - repeat:
+          times: 2
+          commands:
+            - swipe:
+                direction: UP
+            - waitForAnimationToEnd
+      - scrollUntilVisible:
+          element:
+            id: "article_card"
+          direction: DOWN
+          timeout: 30000
+          speed: 40
+          visibilityPercentage: 70
+          centerElement: true
+
+- assertVisible:
+    id: "article_card"
+
+# Runtime-qualify the dynamic first card instead of fixing a live headline.
+- assertWithAI: "Verify the first visible World article card is a fully rendered standard text-news article card with a readable headline. It must not be a photo gallery, video, live blog, sponsored card, or visibly premium-only card."
+
+
+
+- tapOn:
+
+    id: "article_card"
+
+    index: 0
+
+
+
+- waitForAnimationToEnd
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+
+    visible:
+
+      id: "screen_article_detail"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- assertNotVisible:
+
+    id: "ad_iframe"
+
+
+
+- assertNotVisible:
+
+    text: "ADVERTISEMENT"
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+- assertWithAI: "Verify this is a settled standard text-news article detail opened from World. The article must have readable headline and body content and must not be a gallery, video, live blog, sponsored landing page, paywall, login gate, or subscription prompt."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_011_article_initial"
+
+
+
+# Position 1 â€” Page left three times. Each gesture has an immediate settle wait
+
+# and preserves article detail, subscriber entitlement, and an ad-free surface.
+
+- swipe:
+
+    direction: LEFT
+
+    duration: 500
+
+
+
+- waitForAnimationToEnd
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+
+    visible:
+
+      id: "screen_article_detail"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- assertNotVisible:
+
+    id: "ad_iframe"
+
+
+
+- assertNotVisible:
+
+    text: "ADVERTISEMENT"
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+- assertWithAI: "Verify the first left pager gesture has settled on a valid readable article-detail surface without leaving article detail, showing monetization, or remaining on a transition or loading surface."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_011_left_1"
+
+
+
+- swipe:
+
+    direction: LEFT
+
+    duration: 500
+
+
+
+- waitForAnimationToEnd
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+
+    visible:
+
+      id: "screen_article_detail"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- assertNotVisible:
+
+    id: "ad_iframe"
+
+
+
+- assertNotVisible:
+
+    text: "ADVERTISEMENT"
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+- assertWithAI: "Verify the second left pager gesture has settled on a valid readable article-detail surface without leaving article detail, showing monetization, or remaining on a transition or loading surface."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_011_left_2"
+
+
+
+- swipe:
+
+    direction: LEFT
+
+    duration: 500
+
+
+
+- waitForAnimationToEnd
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+
+    visible:
+
+      id: "screen_article_detail"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- assertNotVisible:
+
+    id: "ad_iframe"
+
+
+
+- assertNotVisible:
+
+    text: "ADVERTISEMENT"
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+- assertWithAI: "Verify the third left pager gesture has settled on a valid readable article-detail surface without leaving article detail, showing monetization, or remaining on a transition or loading surface."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_011_left_3"
+
+
+
+# Position 1 continued â€” Page right three times with the same mandatory checks.
+
+- swipe:
+
+    direction: RIGHT
+
+    duration: 500
+
+
+
+- waitForAnimationToEnd
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+
+    visible:
+
+      id: "screen_article_detail"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- assertNotVisible:
+
+    id: "ad_iframe"
+
+
+
+- assertNotVisible:
+
+    text: "ADVERTISEMENT"
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+- assertWithAI: "Verify the first right pager gesture has settled on a valid readable article-detail surface without leaving article detail, showing monetization, or remaining on a transition or loading surface."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_011_right_1"
+
+
+
+- swipe:
+
+    direction: RIGHT
+
+    duration: 500
+
+
+
+- waitForAnimationToEnd
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+
+    visible:
+
+      id: "screen_article_detail"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- assertNotVisible:
+
+    id: "ad_iframe"
+
+
+
+- assertNotVisible:
+
+    text: "ADVERTISEMENT"
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+- assertWithAI: "Verify the second right pager gesture has settled on a valid readable article-detail surface without leaving article detail, showing monetization, or remaining on a transition or loading surface."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_011_right_2"
+
+
+
+- swipe:
+
+    direction: RIGHT
+
+    duration: 500
+
+
+
+- waitForAnimationToEnd
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+
+    visible:
+
+      id: "screen_article_detail"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- assertNotVisible:
+
+    id: "ad_iframe"
+
+
+
+- assertNotVisible:
+
+    text: "ADVERTISEMENT"
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+- assertWithAI: "Verify the third right pager gesture has settled on a valid readable article-detail surface without leaving article detail, showing monetization, or remaining on a transition or loading surface."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_011_right_3"
+
+
+
+# Position 2 â€” Use native Back from the settled article detail.
+
+- back
+
+
+
+- waitForAnimationToEnd
+
+
+
+# Position 4 â€” World must be restored as a selected, usable article listing.
+
+- extendedWaitUntil:
+
+    visible:
+
+      id: "article_card"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    text: "World"
+
+
+
+- assertVisible:
+
+    id: "article_card"
+
+
+
+- assertNotVisible:
+
+    id: "screen_article_detail"
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+- assertWithAI: "Verify native Back restored a usable World article listing and World remains visibly selected. At least one readable article card must be available for interaction. This must not be article detail, Home, an exited application, a crash surface, a blank page, or a stale overlay."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_011_world_listing_restored"
+

@@ -1,0 +1,29 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, trending, video-interstitial,delayed-close]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+
+- repeat:
+
+    times: 10
+
+    commands:
+
+      - swipe: {direction: LEFT}
+
+      - waitForAnimationToEnd: {timeout: 1500}
+
+      - runFlow:
+
+          when: {notVisible: {id: "screen_article_detail"}}
+
+          file: "../Common/HANDLE_DELAYED_ARTICLE_INTERSTITIAL.yaml"
+
+- assertVisible: {id: "screen_article_detail"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_024_interstitial_search_complete"
+

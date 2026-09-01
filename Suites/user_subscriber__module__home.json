@@ -1,0 +1,147 @@
+{
+    "suite": "Subscriber User Cases - Home",
+    "source_suite": "user_subscriber",
+    "module": "Home",
+    "tests": [
+        {
+            "id": "SUB_HOME_001",
+            "module": "Home",
+            "priority": "P2",
+            "name": "Fresh subscriber launch and Home entitlement",
+            "yaml": "SUB_HOME_001.yaml",
+            "section": "Home",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Home"
+        },
+        {
+            "id": "SUB_HOME_002",
+            "module": "Home",
+            "priority": "P2",
+            "name": "Subscriber Home pull to refresh",
+            "yaml": "SUB_HOME_002.yaml",
+            "section": "Home",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Home"
+        },
+        {
+            "id": "SUB_HOME_003",
+            "module": "Home",
+            "priority": "P2",
+            "name": "No subscriber monetisation while scrolling Home",
+            "yaml": "SUB_HOME_003.yaml",
+            "section": "Home",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Home"
+        },
+        {
+            "id": "SUB_HOME_004",
+            "module": "Home",
+            "priority": "P2",
+            "name": "Subscriber Home content and navigation",
+            "yaml": "SUB_HOME_004.yaml",
+            "section": "Home",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Home"
+        },
+        {
+            "id": "SUB_HOME_005",
+            "module": "Home",
+            "priority": "P2",
+            "name": "Subscriber full article access",
+            "yaml": "SUB_HOME_005.yaml",
+            "section": "Home",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Home"
+        },
+        {
+            "id": "SUB_HOME_006",
+            "module": "Home",
+            "priority": "P2",
+            "name": "Subscriber premium article access",
+            "yaml": "SUB_HOME_006.yaml",
+            "section": "Home",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Home"
+        },
+        {
+            "id": "SUB_HOME_007",
+            "module": "Home",
+            "priority": "P2",
+            "name": "Subscriber entitled AI Summary",
+            "yaml": "SUB_HOME_007.yaml",
+            "section": "Home",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Home"
+        },
+        {
+            "id": "SUB_HOME_008",
+            "module": "Home",
+            "priority": "P2",
+            "name": "Subscriber article Bookmark",
+            "yaml": "SUB_HOME_008.yaml",
+            "section": "Home",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Home"
+        },
+        {
+            "id": "SUB_HOME_009",
+            "module": "Home",
+            "priority": "P2",
+            "name": "Subscriber article Share",
+            "yaml": "SUB_HOME_009.yaml",
+            "section": "Home",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Home"
+        },
+        {
+            "id": "SUB_HOME_010",
+            "module": "Home",
+            "priority": "P2",
+            "name": "Subscriber article Comment access",
+            "yaml": "SUB_HOME_010.yaml",
+            "section": "Home",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Home"
+        },
+        {
+            "id": "SUB_HOME_011",
+            "module": "Home",
+            "priority": "P2",
+            "name": "Subscriber post-article sections",
+            "yaml": "SUB_HOME_011.yaml",
+            "section": "Home",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Home"
+        },
+        {
+            "id": "SUB_HOME_012",
+            "module": "Home",
+            "priority": "P2",
+            "name": "Subscriber article pager session",
+            "yaml": "SUB_HOME_012.yaml",
+            "section": "Home",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Home"
+        },
+        {
+            "id": "SUB_HOME_013",
+            "module": "Home",
+            "priority": "P2",
+            "name": "Subscriber plan entitlements",
+            "yaml": "SUB_HOME_013.yaml",
+            "section": "Home",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Home"
+        },
+        {
+            "id": "SUB_HOME_014",
+            "module": "Home",
+            "priority": "P2",
+            "name": "Subscriber logout state boundary",
+            "yaml": "SUB_HOME_014.yaml",
+            "section": "Home",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Home"
+        }
+    ]
+}

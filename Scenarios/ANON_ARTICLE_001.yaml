@@ -1,0 +1,8 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, article-page, identity]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- assertVisible: {id: "screen_article_detail"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_001_identity_metadata"

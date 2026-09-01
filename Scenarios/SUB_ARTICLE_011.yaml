@@ -1,0 +1,82 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - article
+  - archive
+  - full-access
+  - no-monetisation
+---
+
+# Establish the authenticated subscriber state before testing archive entitlement.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Position 1: Open the repository Archive Article reference. Successful routing
+# is runtime-gated by the validated article-detail screen identifier.
+- openLink: "https://www.thehindu.com/news/cities/Coimbatore/meendum-manjappai-campaign-inaugurated-in-hogenakkal/article38089647.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 2: Verify the opened archive article starts without the validated
+# Subscribe prompt, full-article gate, login CTA, or advertisement marker.
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+
+- assertNotVisible:
+    id: "cta_login"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_011_archive_article_top"
+
+# Position 1 continued: Traverse the archive article body in bounded steps.
+# Position 2 continued: Recheck entitlement restrictions after every step so a
+# lower-body archive gate cannot be missed.
+- repeat:
+    times: 8
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "READ FULL ARTICLE"
+      - assertNotVisible:
+          id: "cta_login"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+
+# Position 3: Article detail must remain accessible after body traversal.
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 4: Final lower-body proof that archive entitlement remains honored.
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+
+- assertNotVisible:
+    id: "cta_login"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_011_archive_article_lower_entitled"

@@ -1,0 +1,37 @@
+{
+    "suite": "Anonymous User Cases - Videos Quick Access - Failed retry #295 - Failed retry #296 - Failed retry #297",
+    "source_suite": "user_anonymous_module_videos_quick_access_failed_295_failed_296",
+    "module": "Videos",
+    "tests": [
+        {
+            "id": "ANON_VIDEO_010",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Video Reading Options functionality",
+            "yaml": "ANON_VIDEO_010.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_013",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Video Comment anonymous login gate",
+            "yaml": "ANON_VIDEO_013.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_016",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Video article back navigation and retained position",
+            "yaml": "ANON_VIDEO_016.yaml",
+            "display_module": "Videos"
+        }
+    ]
+}

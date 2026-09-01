@@ -1,0 +1,136 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - world
+  - article
+  - destination-integrity
+  - header-metadata
+
+---
+
+# SUB_WORLD_005 — World article selection and destination integrity
+
+# Position 1 — Establish the authenticated subscriber state and open World.
+- runFlow: "../Common/OPEN_SUBSCRIBER_WORLD.yaml"
+
+- extendedWaitUntil:
+    visible:
+      text: "World"
+    timeout: 30000
+
+- assertVisible:
+    text: "World"
+
+- tapOn:
+    text: "World"
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+
+- assertVisible:
+    id: "article_card"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+# Editorial inventory may legitimately lead with a live blog. Move beyond the
+# live lead before qualifying and selecting the first visible ordinary card.
+- runFlow:
+    when:
+      visible:
+        text: "(?i).*\\bLIVE\\b.*"
+    commands:
+      - repeat:
+          times: 2
+          commands:
+            - swipe:
+                direction: UP
+            - waitForAnimationToEnd
+      - scrollUntilVisible:
+          element:
+            id: "article_card"
+          direction: DOWN
+          timeout: 30000
+          speed: 40
+          visibilityPercentage: 70
+          centerElement: true
+
+- assertVisible:
+    id: "article_card"
+
+# Qualify the exact card that index 0 will select. This intentionally fails when
+# the current first card is live, loading-only, or does not expose a headline.
+- assertWithAI: >-
+    Verify that the topmost visible World article card is a fully rendered,
+    current non-live news article. It must have a readable headline and must not
+    be identified as LIVE, a live blog, live updates, or an active live event.
+    Fail if the card is blank, stale-looking, loading-only, clipped, or detached
+    from the World listing.
+
+# Preserve visual evidence of the selected dynamic headline before navigation.
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_005_selected_card_headline"
+
+- tapOn:
+    id: "article_card"
+    index: 0
+
+# Position 2 — Verify the supplied article-header elements.
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertVisible:
+    text: "World"
+
+- assertWithAI: >-
+    Verify that the open article has a readable headline, a readable World
+    section label, and readable byline and publication or update time metadata.
+    These elements must form one coherent article header. If hero media is
+    supplied for this article, verify that it is rendered, non-blank, not visibly
+    broken, and associated with this same header. Do not fail solely because the
+    current article legitimately supplies no hero media.
+
+# Position 3 — Prove that the tapped card opened the matching article rather
+# than an unrelated article or another destination.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertWithAI: >-
+    Compare the open article with the card captured in the immediately preceding
+    SUB_WORLD_005_selected_card_headline screenshot. Require the same readable
+    headline, allowing only visual line wrapping, and require the World section
+    identity. Fail if a different article, unrelated content, another section,
+    a listing, a blank or loading-only surface, an error, login, subscription
+    gate, or paywall is displayed.
+
+# Position 4 — Validate the complete header grouping and visual integrity.
+- assertWithAI: >-
+    Inspect the complete visible article header as one unit. The headline,
+    World section label, byline, and publication or update time must be readable,
+    correctly grouped, and attached to this article. Any supplied hero media
+    must remain associated with the same header. Fail for clipping, truncation
+    that hides meaningful text, overlap, detached metadata, broken media,
+    misplaced labels, obscured content, or an incoherent visual hierarchy.
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_005_matching_article_header"
+
+# Reapply the subscriber entitlement contract on the settled destination.
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_005_final_subscriber_article"

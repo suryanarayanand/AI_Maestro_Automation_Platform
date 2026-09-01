@@ -1,0 +1,64 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "India"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "India"}
+- tapOn: {text: "India", index: 1}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_003_india"
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "World"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "World"}
+- tapOn: {text: "World", index: 1}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_003_world"
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "Sport"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Sport"}
+- tapOn: {text: "Sport", index: 1}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_003_sport"
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "News"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "News"}
+- tapOn: {text: "News", index: 1}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_003_news"
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "Business"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Business"}
+- tapOn: {text: "Business", index: 1}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_003_business"

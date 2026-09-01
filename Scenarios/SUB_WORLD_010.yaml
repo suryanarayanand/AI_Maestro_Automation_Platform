@@ -1,0 +1,138 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - world
+  - article
+  - post-article
+  - related-content
+  - state-restoration
+---
+
+# Establish the required authenticated subscriber state.
+- runFlow: "../Common/OPEN_SUBSCRIBER_WORLD.yaml"
+
+# Use the supplied active Article Page reference as runtime-gated test data.
+# The target build must successfully resolve it to an article detail screen.
+- openLink: "https://www.thehindu.com/elections/chhattisgarh-assembly/lokniti-csds-study-congress-trumps-cm-the-bjp-lynchpin-is-the-pm-in-chhattisgarh/article67502121.ece"
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- waitForAnimationToEnd
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_010_world_article_start"
+
+# Continue toward the end of this article. The bounded scroll fails rather than
+# silently passing if the required Recommended inventory is not supplied.
+- scrollUntilVisible:
+    element:
+      text: "Recommended"
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 50
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertVisible:
+    text: "Recommended"
+
+# Content-dependent companion sections are asserted only when supplied by this
+# article type; Recommended remains mandatory because navigation requires it.
+- runFlow:
+    when:
+      visible:
+        text: "Related Topics"
+    commands:
+      - assertVisible:
+          text: "Related Topics"
+
+- runFlow:
+    when:
+      visible:
+        text: "Headlines"
+    commands:
+      - assertVisible:
+          text: "Headlines"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_010_post_article_recommended"
+
+# Select the first current text item below Recommended without depending on a
+# fixed or stale headline. Section labels are excluded from candidate matching.
+- tapOn:
+    text: "^(?!Recommended$|Headlines$|Related Topics$).+"
+    below:
+      text: "Recommended"
+    index: 0
+
+- waitForAnimationToEnd
+- tapOn:
+    text: "Close sheet"
+    optional: true
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# The opened recommendation is expected at its article start, not at the
+# previous article's Recommended position.
+- assertNotVisible:
+    text: "Recommended"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_010_recommended_article_opened"
+
+# Return and prove restoration of the prior article's post-content context.
+- back
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- extendedWaitUntil:
+    visible:
+      text: "Recommended"
+    timeout: 30000
+
+- assertVisible:
+    text: "Recommended"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_010_world_article_context_restored"

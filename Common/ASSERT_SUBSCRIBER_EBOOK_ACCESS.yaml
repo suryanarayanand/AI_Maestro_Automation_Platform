@@ -1,0 +1,6 @@
+appId: com.mobstac.thehindu
+tags: [common, subscriber, ebooks, entitlement]
+---
+- assertNotVisible: {text: ".*(Subscribe to continue reading|Support award-winning Journalism|Choose a plan|Already a subscriber).*"}
+- assertNotVisible: {text: "Login to your account"}
+- runFlow: "ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"

@@ -1,0 +1,11 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- assertVisible: {text: "India"}
+- assertVisible: {text: "World"}
+- repeat: {times: 4, commands: [{swipe: {direction: UP}}, {waitForAnimationToEnd: {timeout: 1000}}]}
+- assertVisible: {id: "screen_hamburger"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_002_result"

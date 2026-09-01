@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+tags: [common, subscriber, premium, article]
+---
+- runFlow: "OPEN_SUBSCRIBER_PREMIUM.yaml"
+- scrollUntilVisible:
+    element: {text: "READ FULL ARTICLE"}
+    direction: DOWN
+    timeout: 45000
+    speed: 40
+- tapOn: {text: "READ FULL ARTICLE", index: 0}
+- tapOn: {text: "Close sheet", optional: true}
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- assertVisible: {id: "screen_article_detail"}
+- runFlow: "ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"

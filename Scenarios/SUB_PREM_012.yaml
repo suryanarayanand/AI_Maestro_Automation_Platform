@@ -1,0 +1,94 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - premium
+  - all-stories
+  - article
+  - full-access
+  - no-monetisation
+---
+
+# Position 1: Establish the subscriber session and open a current All Stories card.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- tapOn:
+    text: "Premium"
+
+- extendedWaitUntil:
+    visible:
+      text: "All Stories"
+    timeout: 30000
+
+- tapOn:
+    text: "All Stories"
+
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+
+- assertVisible:
+    id: "article_card"
+
+- tapOn:
+    id: "article_card"
+    index: 0
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+# Position 2: Traverse to the validated post-article marker using a bounded scroll.
+- scrollUntilVisible:
+    element:
+      text: "Post a comment"
+    direction: DOWN
+    timeout: 45000
+    speed: 40
+
+- waitForAnimationToEnd
+
+# Position 3: Verify the settled lower area is reachable without subscriber
+# monetisation blockers and capture asserted evidence.
+- assertVisible:
+    text: "Post a comment"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_012_lower_no_paywall_no_ads"
+
+# Position 4: Confirm that the selected card opened an article-detail surface.
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 5: Demonstrate continuous readability by retaining article detail
+# through the bounded traversal and reaching its post-content marker.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertVisible:
+    text: "Post a comment"
+
+# Position 6: Final entitled-access proof at the lower article boundary.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertVisible:
+    text: "Post a comment"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_012_full_entitled_access"

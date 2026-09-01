@@ -1,0 +1,39 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - functional
+  - generated
+  - review-required
+---
+# Generated from: Verify selecting the Photos tab loads the photo gallery page successfully.
+# Grounding: validated locator repository; 7 matching App Memory records.
+- runFlow: "../../Common/OPEN_ANONYMOUS_HOME.yaml"
+- assertVisible:
+    text: "SUBSCRIBE"
+- repeat:
+    while:
+      notVisible:
+        text: "ADVERTISEMENT"
+    times: 8
+    commands:
+      - swipe:
+          direction: "UP"
+      - waitForAnimationToEnd
+- assertVisible:
+    text: "ADVERTISEMENT"
+- tapOn:
+    id: "nav_home"
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 15000
+- tapOn:
+    text: "Photos"
+- extendedWaitUntil:
+    visible:
+      text: "[0-9]+"
+    timeout: 15000
+- assertVisible:
+    text: "[0-9]+"
+- assertVisible:
+    id: "screen_home"

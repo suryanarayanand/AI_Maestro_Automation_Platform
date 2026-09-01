@@ -1,0 +1,26 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_GAMES.yaml"
+- scrollUntilVisible:
+    element: {text: "Cryptic Crossword"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Cryptic Crossword"}
+- extendedWaitUntil: {visible: {text: "Yearly"}, timeout: 30000}
+- assertVisible: {text: "Yearly"}
+- assertVisible: {text: "Monthly"}
+- scrollUntilVisible:
+    element: {text: ".*Already a subscriber.*|Login"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- assertVisible: {text: ".*Already a subscriber.*|Login"}
+- tapOn: {text: ".*Already a subscriber.*|Login"}
+- extendedWaitUntil: {visible: {text: "Login to your account"}, timeout: 30000}
+- assertVisible: {text: "Login to your account"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_GAMES_012_login"
+- back

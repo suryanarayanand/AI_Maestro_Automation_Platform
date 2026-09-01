@@ -1,0 +1,12 @@
+appId: com.mobstac.thehindu
+---
+- runFlow:
+    # ADVERTISEMENT on screen_article_detail is an allowed sticky/in-article ad.
+    when:
+      visible: {text: "Advertisement|ADVERTISEMENT|Sponsored"}
+      notVisible: {id: "screen_article_detail"}
+    commands:
+      - takeScreenshot: "Screenshots/Generated/premium_interstitial_before_close"
+      - waitForAnimationToEnd: {timeout: 5000}
+      - extendedWaitUntil: {visible: {text: "Close|CLOSE|Skip Ad|Interstitial close button"}, timeout: 60000}
+      - tapOn: {text: "Close|CLOSE|Skip Ad|Interstitial close button"}

@@ -1,0 +1,74 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - search
+  - query-replacement
+  - evidence
+
+---
+
+# Establish the authenticated subscriber Home state.
+- runFlow: "../Common/OPEN_SUBSCRIBER_SEARCH.yaml"
+
+# Position 1: Search for Chennai, return to the query input, clear it,
+# and enter Bangalore as the replacement query.
+- tapOn: {point: "45%,8%"}
+
+# Remove any query retained from an earlier test before starting this case.
+- eraseText: 100
+
+- inputText: "Chennai"
+
+- pressKey: ENTER
+
+- extendedWaitUntil:
+    visible:
+      text: "(?i)(.*Chennai.*|No results found.*)"
+    timeout: 30000
+
+- assertVisible:
+    text: "(?i)(.*Chennai.*|No results found.*)"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_014_chennai_before_replacement"
+
+# Refocus the rendered query using the approved replacement-query pattern.
+- tapOn:
+    text: "(?i)^Chennai$"
+
+- eraseText: 100
+
+- inputText: "Bangalore"
+
+# Position 2: Submit the replacement query and wait for the updated response.
+- pressKey: ENTER
+
+- extendedWaitUntil:
+    visible:
+      text: "(?i)(.*Bangalore.*|No results found.*)"
+    timeout: 30000
+
+- assertVisible:
+    id: "cta_search"
+
+# Position 3: Prove that the old query value was removed and the replacement
+# value was accepted by the Search surface.
+- assertNotVisible:
+    text: "(?i)^Chennai$"
+
+- assertVisible:
+    text: "(?i)^Bangalore$"
+
+# Position 4: Verify the settled response remains anchored to Bangalore (or its
+# legitimate empty state) and does not restore the old exact query value.
+- assertVisible:
+    text: "(?i)(.*Bangalore.*|No results found.*)"
+
+- assertNotVisible:
+    text: "(?i)^Chennai$"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_014_bangalore_replacement_results"

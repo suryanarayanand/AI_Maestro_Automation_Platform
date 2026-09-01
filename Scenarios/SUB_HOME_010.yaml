@@ -1,0 +1,44 @@
+appId: com.mobstac.thehindu
+
+tags: [generated, ordered, subscriber, home, comment]
+
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- tapOn: {id: "article_card", index: 0}
+
+- tapOn: {text: "Close sheet", optional: true}
+
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+
+- scrollUntilVisible:
+
+    element: {text: "Post a comment"}
+
+    direction: DOWN
+
+    timeout: 120000
+
+    speed: 40
+
+    visibilityPercentage: 40
+
+    centerElement: true
+
+- assertVisible: {text: "Post a comment"}
+
+- tapOn: {text: "Post a comment"}
+
+- assertNotVisible: {text: "Login to your account|SIGN IN AND JOIN THE CONVERSATION.*"}
+
+- inputText: "Automation validation draft - do not submit"
+
+- hideKeyboard
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HOME_010_comment_draft_not_submitted"
+- back
+- extendedWaitUntil: {visible: {id: "screen_home"}, timeout: 20000}
+- assertVisible: {id: "screen_home"}
+- assertNotVisible: {text: "Automation validation draft - do not submit"}

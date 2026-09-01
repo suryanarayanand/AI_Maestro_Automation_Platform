@@ -1,0 +1,19 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_ACCOUNT.yaml"
+- scrollUntilVisible:
+    element: {text: "Create account"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Create account"}
+- extendedWaitUntil: {visible: {text: "Create.*account|Sign up|REGISTER"}, timeout: 30000}
+- assertVisible: {text: "Create.*account|Sign up|REGISTER"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ACCOUNT_003_destination"
+- back
+- extendedWaitUntil: {visible: {id: "screen_user_menu"}, timeout: 30000}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ACCOUNT_003_result"

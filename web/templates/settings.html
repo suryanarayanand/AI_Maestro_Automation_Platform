@@ -3,7 +3,18 @@
 {% block title %}Settings{% endblock %}
 {% block page_title %}Portal settings{% endblock %}
 {% block content %}
-<p class="page-intro">Control execution safeguards used by the local Maestro agent.</p>
+<div class="d-flex justify-content-between align-items-start gap-3 mb-3"><p class="page-intro mb-0">Control portal appearance, execution safeguards, and repository access.</p><a class="btn btn-outline-primary" href="{{ url_for('settings.help_guide') }}">Help &amp; Process Guide</a></div>
+<section class="surface mb-4" style="max-width:720px">
+    <div class="section-head"><div><small>Appearance</small><h2>Portal theme</h2></div></div>
+    <form method="post">
+      <input type="hidden" name="action" value="theme">
+      <div class="row g-3">
+        <div class="col-md-6"><label class="theme-option"><input class="form-check-input" type="radio" name="portal_theme" value="light" {% if portal_theme == 'light' %}checked{% endif %}><span><strong>Light theme</strong><small>Bright background for daytime use.</small></span></label></div>
+        <div class="col-md-6"><label class="theme-option"><input class="form-check-input" type="radio" name="portal_theme" value="dark" {% if portal_theme == 'dark' %}checked{% endif %}><span><strong>Dark theme</strong><small>Low-glare background for reduced brightness.</small></span></label></div>
+      </div>
+      <button class="btn btn-primary mt-3" type="submit">Apply theme</button>
+    </form>
+</section>
 <section class="surface" style="max-width:720px">
     <div class="section-head"><div><small>Execution</small><h2>Timeout safeguards</h2></div></div>
     <form method="post">
@@ -12,7 +23,46 @@
             <input class="form-control" id="case-timeout" name="case_timeout_seconds" type="number" min="30" max="3600" required value="{{ case_timeout_seconds }}">
             <div class="form-text">If a Maestro case exceeds this time, it is stopped and recorded as failed so the suite can continue. Applies to newly claimed jobs.</div>
         </div>
+        <div class="mb-3">
+            <label class="form-label" for="batch-size">Cases per execution batch</label>
+            <input class="form-control" id="batch-size" name="execution_batch_size" type="number" min="1" max="100" required value="{{ execution_batch_size }}">
+            <div class="form-text">Suites are split into ordered jobs of this size. The default is 10 cases per run.</div>
+        </div>
         <button class="btn btn-primary" type="submit">Save settings</button>
+    </form>
+</section>
+<section class="surface mt-4" style="max-width:720px">
+    <div class="section-head"><div><small>Application source control</small><h2>Git Repository</h2></div></div>
+    <p class="text-muted">Configure the organization application repository. Settings are stored in the local ignored <code>.env</code>, separately from the AI Maestro portal repository.</p>
+    <form method="post">
+      <input type="hidden" name="action" value="repository">
+      <div class="mb-3">
+          <label class="form-label" for="repository-link">Repository URL</label>
+          <input class="form-control" id="repository-link" name="repository_url" type="url" required placeholder="https://github.com/organization/repository" value="{{ repository.repository_url }}">
+          <div class="form-text">Do not include credentials in the repository URL.</div>
+      </div>
+      <div class="mb-3">
+          <label class="form-label" for="repository-path">Local destination</label>
+          <input class="form-control" id="repository-path" name="repository_path" required placeholder="D:\The_Kotlin_repo\application" value="{{ repository.destination }}">
+          <div class="form-text">The portal clones here when absent and pulls here when the Git repository already exists.</div>
+      </div>
+      <div class="mb-3">
+          <label class="form-label" for="repository-token">Access token</label>
+          <input class="form-control" id="repository-token" name="repository_token" type="password" autocomplete="new-password" placeholder="{% if repository_token_saved %}Token saved — leave blank to keep it{% else %}Personal access token{% endif %}">
+          <div class="form-text">{% if repository_token_saved %}<span class="status-pill status-approved">Token saved</span> Enter a value only to replace it.{% else %}Stored in a local ignored credential file and never displayed back.{% endif %}</div>
+      </div>
+      <button class="btn btn-primary" type="submit">Save Git settings</button>
+    </form>
+    <hr class="my-4">
+    <div class="row g-3">
+        <div class="col-md-5"><label class="form-label">Branch</label><input class="form-control" readonly value="{{ repository.branch or '-' }}"></div>
+        <div class="col-md-5"><label class="form-label">Current commit</label><input class="form-control" readonly value="{{ repository.commit or '-' }}"></div>
+        <div class="col-md-2 d-flex align-items-end"><a class="btn btn-outline-primary w-100" href="{{ repository.repository_url }}" target="_blank" rel="noopener">Open</a></div>
+    </div>
+    <form method="post" class="mt-3">
+      <input type="hidden" name="action" value="pull">
+      <button class="btn btn-success" type="submit">Clone / Pull latest code</button>
+      <div class="form-text">Clones when missing; otherwise uses fast-forward-only pull so local work is not overwritten by a merge.</div>
     </form>
 </section>
 {% endblock %}

@@ -1,0 +1,11 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, ebooks]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_EBOOK_RESTRICTION.yaml"
+- runFlow: "../Common/ASSERT_ANONYMOUS_EBOOK_RESTRICTION.yaml"
+- tapOn: {text: ".*Already a subscriber.*|Login|LOGIN"}
+- extendedWaitUntil: {visible: {text: "Login to your account"}, timeout: 25000}
+- assertVisible: {text: "Login to your account"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_EBOOK_011_result"

@@ -1,0 +1,126 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - latest-news
+  - article
+  - live-content
+  - bounded-scroll
+  - resilience
+  - evidence-limited
+
+---
+
+# SUB_LATEST_012 — Latest News loading, live-content and failure resilience
+
+# Establish the repository-managed authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_LATEST_NEWS.yaml"
+
+# Position 1 — Establish one valid article destination before opening another
+# repository article of a different subtype. The references are validated at
+# runtime through the approved article-detail screen identity; no headline is
+# fixed in the flow.
+- openLink: "https://www.thehindu.com/news/national/kerala/kerala-assembly-unanimously-passes-resolution-to-change-official-name-of-state-to-keralam/article67175490.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertWithAI: "Verify that the first repository article reference has opened as one coherent article-detail destination with a readable headline and rendered content. Fail if it is a listing, unrelated destination, blank page, permanent loader, browser error, or blocking login or paywall surface."
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_012_first_article_reference"
+
+- back
+
+# Open another supplied item, deliberately changing from the Latest News
+# reference subtype to the live election-map/charts subtype.
+- openLink: "https://www.thehindu.com/elections/lok-sabha/bihar-election-results-2024-live/article68207645.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_012_second_live_subtype_opened"
+
+# Position 2 — Exercise only a finite number of gestures on the active article
+# surface. No absolute page-end assertion is made.
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_012_live_bounded_swipes"
+
+# Position 3 — Allow a measured 30-second recovery window, then capture the
+# settled state before any product-quality verdict can stop the flow.
+- evalScript: '${(() => { const end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_012_after_30_second_recovery_window"
+
+- assertWithAI: "PASS when the recovered destination visibly contains readable Bihar election results, a map or chart, live-blog content, or an explicit archived/closed-live message with its related results. FAIL only when the primary article body remains wholly blank, loading-only, broken, unrelated, or shows a request or network error after the recovery window."
+
+# Position 4 — Prove that the destination remains identifiable and is either
+# usable or presents a clear, reproducible failure surface.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertWithAI: "Verify the article identity and its main election-result or archived-live content remain coherent and readable. An explicit 'This LIVE is now closed' state is a valid archived result, not a failure. Fail for a wholly blank main body, endless skeleton or spinner, broken embedded result, unrelated destination, or visible request error."
+
+# Position 5 — A responsive live frame must tolerate the bounded gestures. A
+# clearly retained product-failure surface is deferred to Position 6 rather than
+# being mislabeled here as an automation scrolling failure.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertWithAI: "Verify that bounded scrolling leaves the election result or archived-live article in a stable, readable state without duplicated, detached, clipped, or broken primary content. Accept an archived 'This LIVE is now closed' message when related election results remain visible. Fail if scrolling produces a wholly blank body, permanent loader, broken result frame, or request error."
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_012_live_responsiveness_and_entitlement"
+
+# Position 6 — Final verdict. Visible content defects are reported with the
+# affected headline/type as PRODUCT_FAIL. Selector, device, transport, deep-link
+# or screen-identity failures naturally stop at their deterministic Maestro
+# commands and therefore remain automation/test-environment failures.
+- assertWithAI: "PASS when the final viewport shows coherent readable Bihar election results or a valid archived closed-live state after the bounded swipes. FAIL with PRODUCT_FAIL and the visible article identity only when primary content is still wholly blank, endlessly loading, broken, or showing a request error. Do not fail merely because a historical live event is closed or because normal spacing appears between completed result sections."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_012_final_verdict"

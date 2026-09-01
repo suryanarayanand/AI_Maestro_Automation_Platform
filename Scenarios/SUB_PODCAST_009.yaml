@@ -1,0 +1,45 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - podcast
+  - timed-progress
+  - blocked-grounding
+
+---
+
+# SUB_PODCAST_009 — Timed playback progress movement
+#
+# The ordered suite must already have opened the Podcast page. The only
+# validated Podcast-page selector supplied for this case is the non-clickable
+# text "Podcast". No validated Play, Pause, elapsed-time, progress-bar, or
+# episode selector is available.
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_009_blocked_baseline"
+
+# Obligation critique:
+# Position 1 cannot record the initial elapsed/progress state or tap Play
+# because neither the playback controls nor progress indicators are grounded.
+# Position 2 cannot record a new elapsed/progress state without those locators.
+# Position 3 cannot tap Pause or observe a stable ten-second paused interval.
+# Position 4 cannot prove playback remained active for thirty seconds.
+# Position 5 cannot calculate or assert an approximately thirty-second change.
+# Position 6 cannot compare paused elapsed time and progress against the state
+# captured before the ten-second paused interval.
+#
+# Fail explicitly so a Podcast-page precondition check cannot be reported as a
+# successful timed-playback test.
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_009_manual_review"

@@ -1,0 +1,51 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, scitech, article-actions, bookmark, share, comment]
+---
+- runFlow: ../Common/OPEN_SUBSCRIBER_SCITECH.yaml
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+- tapOn: {text: "Close sheet", optional: true}
+- extendedWaitUntil:
+    visible: {id: "screen_article_detail"}
+    timeout: 30000
+- assertVisible: {id: "screen_article_detail"}
+
+- runFlow:
+    when: {visible: {text: "Remove bookmark"}}
+    commands:
+      - tapOn: {text: "Remove bookmark"}
+      - extendedWaitUntil:
+          visible: {text: "Bookmark"}
+          timeout: 15000
+- extendedWaitUntil:
+    visible: {text: "Bookmark"}
+    timeout: 15000
+- tapOn: {text: "Bookmark"}
+- extendedWaitUntil:
+    visible: {text: "Remove bookmark|success|saved"}
+    timeout: 15000
+- assertNotVisible: "Login to your account"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_009_bookmark_success"
+
+- assertVisible: {id: "cta_share"}
+- tapOn: {id: "cta_share"}
+- waitForAnimationToEnd
+- assertNotVisible: {id: "screen_article_detail"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_009_share_sheet"
+- back
+- extendedWaitUntil:
+    visible: {id: "screen_article_detail"}
+    timeout: 30000
+
+- scrollUntilVisible:
+    element: "Post a comment"
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 40
+- tapOn: "Post a comment"
+- assertNotVisible: "Login to your account"
+- assertNotVisible: {id: "cta_login"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_009_subscriber_comment_access"

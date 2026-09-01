@@ -1,0 +1,6 @@
+appId: com.mobstac.thehindu
+---
+- runFlow: "OPEN_ANONYMOUS_HOME.yaml"
+- tapOn: {id: "nav_ebooks"}
+- extendedWaitUntil: {visible: {id: "screen_ebooks"}, timeout: 25000}
+- assertVisible: {id: "screen_ebooks"}

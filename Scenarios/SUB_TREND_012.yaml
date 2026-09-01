@@ -1,0 +1,11 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_TRENDING_ARTICLE.yaml"
+- assertVisible: {text: "Share"}
+- tapOn: {text: "Share"}
+- extendedWaitUntil: {visible: {text: "Quick Share"}, timeout: 15000}
+- assertVisible: {text: "Quick Share"}
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_012_result"

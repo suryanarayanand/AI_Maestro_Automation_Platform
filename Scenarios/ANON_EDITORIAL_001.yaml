@@ -1,0 +1,8 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, editorial]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_EDITORIAL.yaml"
+- assertVisible: {text: "Editorial"}
+- assertVisible: {id: "screen_home"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_EDITORIAL_001_elephant_branding"

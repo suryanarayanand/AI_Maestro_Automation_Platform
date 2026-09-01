@@ -1,0 +1,150 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - trending
+  - long-article
+  - full-access
+  - no-monetisation
+---
+
+# Establish the authenticated subscriber state before opening the controlled
+# long-form article candidate.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Reference 138 is classified as a 15-paragraph article. Its deep-link status
+# remains runtime-gated by the validated article-detail screen assertion.
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Prove that the loaded article top is not replaced by the validated full-article
+# gate, a Subscribe prompt, or the validated advertisement marker.
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_017_article_header"
+
+# Settled article-body position 1.
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_article_detail"
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_017_body_position_1"
+
+# Settled article-body position 2.
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_article_detail"
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_017_body_position_2"
+
+# Settled article-body position 3.
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_article_detail"
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_017_body_position_3"
+
+# Continue toward the lower article in bounded steps. Post-article content is
+# article-dependent, so evidence is collected only when its validated selector
+# is supplied by the article.
+- repeat:
+    times: 9
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Post a comment"
+          commands:
+            - assertVisible:
+                text: "Post a comment"
+            - assertVisible:
+                id: "screen_article_detail"
+            - assertNotVisible:
+                text: "READ FULL ARTICLE"
+            - assertNotVisible:
+                text: "SUBSCRIBE"
+            - assertNotVisible:
+                text: "ADVERTISEMENT"
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/SUB_TREND_017_post_article_content"
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "READ FULL ARTICLE"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+
+# Check once more after the final bounded swipe, without treating optional
+# post-article content as guaranteed inventory.
+- runFlow:
+    when:
+      visible:
+        text: "Post a comment"
+    commands:
+      - assertVisible:
+          text: "Post a comment"
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "READ FULL ARTICLE"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_TREND_017_post_article_content_final"
+
+# Final complete-reading and entitlement checkpoint.
+- assertVisible:
+    id: "screen_article_detail"
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_017_complete_reading"

@@ -3,7 +3,7 @@ tags:
   - baseline
   - videos
 ---
-- runFlow: ../Common/OPEN_HOME_FOR_BASELINE.yaml
+- runFlow: ../../Common/OPEN_HOME_FOR_BASELINE.yaml
 - tapOn:
     text: "Videos\nTab 1 of 15"
 - waitForAnimationToEnd

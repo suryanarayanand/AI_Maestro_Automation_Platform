@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, search, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_SEARCH.yaml"
+- hideKeyboard
+- back
+- runFlow:
+    when: {visible: {id: "screen_hamburger"}}
+    commands:
+      - tapOn: {id: "cta_drawer_close"}
+- extendedWaitUntil: {visible: {id: "screen_home"}, timeout: 30000}
+- assertVisible: {id: "screen_home"}
+- tapOn: {id: "nav_menu"}
+- assertVisible: {id: "cta_search"}

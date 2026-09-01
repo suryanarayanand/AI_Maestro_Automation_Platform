@@ -1,0 +1,12 @@
+appId: com.mobstac.thehindu
+tags: [common, anonymous, editorial]
+---
+- runFlow: "OPEN_ANONYMOUS_HOME.yaml"
+- tapOn: {text: "Editorial"}
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {text: "Editorial"}, timeout: 30000}
+- assertVisible: {id: "screen_home"}
+- assertVisible: {text: "Editorial"}
+- extendedWaitUntil: {visible: {text: "Recent Editorials"}, timeout: 30000}
+- assertVisible: {text: "Recent Editorials"}
+- assertNotVisible: {id: "article_card"}

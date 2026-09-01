@@ -1,0 +1,30 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, scitech, article, reading-options, text-size]
+---
+- runFlow: ../Common/OPEN_SUBSCRIBER_SCITECH.yaml
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+- tapOn: {text: "Close sheet", optional: true}
+- extendedWaitUntil:
+    visible: {id: "screen_article_detail"}
+    timeout: 30000
+- assertVisible: {id: "screen_article_detail"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_008_article_before_text_size"
+- runFlow:
+    when: {visible: {text: "(?i)^Text size$"}}
+    commands:
+      - tapOn: {text: "(?i)^Text size$"}
+      - extendedWaitUntil:
+          visible: {text: "(?i)Text size|Reading options"}
+          timeout: 15000
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_SCITECH_008_text_size_open"
+      - tapOn: {text: "(?i)Large|Larger|A\\+", optional: true}
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_SCITECH_008_text_size_applied"
+      - tapOn: {text: "Close sheet|CLOSE|Close", optional: true}
+- assertVisible: {id: "screen_article_detail"}
+- assertWithAI: "Verify the Sci-tech article remains readable after the Text size interaction. When a larger size was available and selected, text must be visibly larger without clipping or overlap."
+- runFlow: ../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_008_article_after_text_size"

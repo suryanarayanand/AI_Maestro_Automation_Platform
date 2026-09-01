@@ -1,0 +1,339 @@
+appId: com.mobstac.thehindu
+
+tags:
+
+  - generated
+
+  - ordered
+
+  - subscriber
+
+  - scitech
+
+  - pagination
+
+  - no-monetisation
+
+  - visual-layout
+
+---
+
+
+
+# SUB_SCITECH_004 — Sci-tech deep scroll, pagination and subscriber ad-free entitlement
+
+# Establish the repository-managed authenticated subscriber session.
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_SCITECH.yaml"
+
+
+# Open Sci-Tech using the validated visible text. Runtime assertions below
+
+# prevent a non-responsive tap from being mistaken for successful navigation.
+
+- extendedWaitUntil:
+
+    visible:
+
+      text: "Sci-Tech"
+
+    timeout: 30000
+
+
+
+- tapOn:
+
+    text: "Sci-Tech"
+
+
+
+- waitForAnimationToEnd
+
+
+
+- extendedWaitUntil:
+
+    visible:
+
+      text: "Sci-Tech"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+- assertWithAI: "Verify the current screen is a Sci-Tech section listing containing multiple readable, distinct story cards or headlines. It must not be the Home screen, a blank page, a loading-only state, or an error screen."
+
+
+
+# Viewport 1: inspect visual advertising classes and enforce all grounded
+
+# subscriber monetisation exclusions.
+
+- assertWithAI: "Inspect the entire visible Sci-Tech viewport. Verify there is no inline advertisement, bottom-pinned or floating sticky advertisement, empty or blank advertisement placeholder, video advertisement or autoplay ad overlay, full-screen interstitial advertisement, or recommendation-advertising unit such as Taboola. Legitimate editorial whitespace and editorial video content must not be classified as advertising."
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+- assertNotVisible:
+
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+
+    id: "ad_iframe"
+
+- assertNotVisible:
+
+    text: "Interstitial close button"
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_004_viewport_01_ad_free"
+
+
+
+# Activate pagination only when the live Sci-Tech inventory exposes it.
+
+- runFlow:
+
+    when:
+
+      visible:
+
+        text: "SHOW MORE"
+
+    commands:
+
+      - assertVisible:
+
+          text: "SHOW MORE"
+
+      - waitForAnimationToEnd
+
+      - takeScreenshot: "Screenshots/Generated/SUB_SCITECH_004_show_more_before"
+
+      - tapOn:
+
+          text: "SHOW MORE"
+
+      - waitForAnimationToEnd
+
+      - extendedWaitUntil:
+
+          visible:
+
+            text: "Sci-Tech"
+
+          timeout: 30000
+
+      - assertVisible:
+
+          text: "Sci-Tech"
+
+      - assertWithAI: "Verify SHOW MORE loaded multiple additional, distinct Sci-Tech story cards or headlines. The listing must remain in Sci-Tech, must continue below the previous pagination boundary, and must not reset to its initial top, become blank, remain loading-only, or show an error."
+
+      - assertWithAI: "Inspect this post-pagination Sci-Tech viewport. Verify there is no inline advertisement, sticky advertisement, blank advertisement placeholder, video advertisement or autoplay ad overlay, interstitial advertisement, or recommendation-advertising unit such as Taboola."
+
+      - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+      - assertNotVisible:
+
+          text: "SUBSCRIBE"
+
+      - assertNotVisible:
+
+          text: "ADVERTISEMENT"
+
+      - assertNotVisible:
+
+          id: "ad_iframe"
+
+      - assertNotVisible:
+
+          text: "Interstitial close button"
+
+      - waitForAnimationToEnd
+
+      - takeScreenshot: "Screenshots/Generated/SUB_SCITECH_004_show_more_after"
+
+
+
+# Viewports 2–6: five bounded upward transitions produce six minimum settled
+
+# listing viewports when combined with the initial state. Every viewport checks
+
+# section continuity, distinct rendered content, all requested visual ad forms,
+
+# and the grounded subscriber entitlement selectors. SHOW MORE is activated at
+
+# any inspected viewport where current inventory exposes it.
+
+- repeat:
+
+    times: 5
+
+    commands:
+
+      - swipe:
+
+          direction: UP
+
+      - waitForAnimationToEnd
+
+
+
+      - assertVisible:
+
+          text: "Sci-Tech"
+
+
+
+      - assertWithAI: "Verify this is a lower continuation viewport of the Sci-Tech listing with multiple readable, rendered story cards or headlines. Visible content must differ from the immediately preceding viewport, the section must not have reset to its initial top or navigated elsewhere, and the page must not be blank, loading-only, broken, or showing an error."
+
+
+
+      - assertWithAI: "Inspect the entire visible Sci-Tech viewport. Verify there is no inline advertisement, bottom-pinned or floating sticky advertisement, empty or blank advertisement placeholder, video advertisement or autoplay ad overlay, full-screen interstitial advertisement, or recommendation-advertising unit such as Taboola. Legitimate editorial whitespace and editorial video content must not be classified as advertising."
+
+
+
+      - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+      - assertNotVisible:
+
+          text: "SUBSCRIBE"
+
+      - assertNotVisible:
+
+          text: "ADVERTISEMENT"
+
+      - assertNotVisible:
+
+          id: "ad_iframe"
+
+      - assertNotVisible:
+
+          text: "Interstitial close button"
+
+
+
+      - waitForAnimationToEnd
+
+      - takeScreenshot: "Screenshots/Generated/SUB_SCITECH_004_scrolled_viewport_ad_free"
+
+
+
+      - runFlow:
+
+          when:
+
+            visible:
+
+              text: "SHOW MORE"
+
+          commands:
+
+            - assertVisible:
+
+                text: "SHOW MORE"
+
+            - waitForAnimationToEnd
+
+            - takeScreenshot: "Screenshots/Generated/SUB_SCITECH_004_scrolled_show_more_before"
+
+            - tapOn:
+
+                text: "SHOW MORE"
+
+            - waitForAnimationToEnd
+
+            - extendedWaitUntil:
+
+                visible:
+
+                  text: "Sci-Tech"
+
+                timeout: 30000
+
+            - assertVisible:
+
+                text: "Sci-Tech"
+
+            - assertWithAI: "Verify SHOW MORE loaded multiple additional, distinct Sci-Tech story cards or headlines. The listing must remain in Sci-Tech, continue below the previous pagination boundary, and must not reset to its initial top, become blank, remain loading-only, or show an error."
+
+            - assertWithAI: "Inspect this post-pagination Sci-Tech viewport. Verify there is no inline advertisement, sticky advertisement, blank advertisement placeholder, video advertisement or autoplay ad overlay, interstitial advertisement, or recommendation-advertising unit such as Taboola."
+
+            - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+            - assertNotVisible:
+
+                text: "SUBSCRIBE"
+
+            - assertNotVisible:
+
+                text: "ADVERTISEMENT"
+
+            - assertNotVisible:
+
+                id: "ad_iframe"
+
+            - assertNotVisible:
+
+                text: "Interstitial close button"
+
+            - waitForAnimationToEnd
+
+            - takeScreenshot: "Screenshots/Generated/SUB_SCITECH_004_scrolled_show_more_after"
+
+
+
+# Final settled entitlement and section-continuity gate.
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+- assertNotVisible:
+
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+
+    id: "ad_iframe"
+
+- assertNotVisible:
+
+    text: "Interstitial close button"
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_004_final_entitled_result"
+

@@ -1,0 +1,86 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - world
+  - article
+  - full-access
+  - no-monetisation
+---
+
+# Establish the authenticated subscriber state required by this case.
+- runFlow: "../Common/OPEN_SUBSCRIBER_WORLD.yaml"
+
+# Open the repository World/international non-live article fixture. Because the
+# URL is reference-only, article-detail validation is a mandatory runtime gate.
+- openLink: "https://www.thehindu.com/news/international/us-immigration-officials-arrest-harvard-professor-after-firing-pellet-gun-near-synagogue/article70360647.ece"
+
+# Deep-linked entitled articles may automatically open the AI Summary sheet.
+# Dismiss it when present before asserting the underlying article hierarchy.
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- waitForAnimationToEnd
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Verify the initial article state is entitled and free of subscriber-forbidden
+# monetisation before body traversal begins.
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_006_article_top"
+
+# Positions 1-3: Traverse ten bounded, settled article-body viewports. At each
+# viewport, check monetisation restrictions before proving article continuity.
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+      - assertVisible:
+          id: "screen_article_detail"
+
+# Position 3: The entitled article-detail surface remains available after the
+# bounded traversal toward the lower article state.
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 4: Final explicit entitlement checkpoint for all separately grounded
+# article gates and monetisation markers, supplemented by the shared subscriber
+# no-monetisation assertion flow.
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: '^Already a [Ss]ubscriber\? Login$'
+
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_006_article_lower_full_access"

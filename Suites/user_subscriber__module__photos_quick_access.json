@@ -1,0 +1,187 @@
+{
+    "suite": "Subscriber User Cases - Photos Quick Access",
+    "source_suite": "user_subscriber",
+    "module": "Photos Quick Access",
+    "tests": [
+        {
+            "id": "SUB_PHOTO_001",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Photos launch, selection and subscriber entitlement",
+            "yaml": "SUB_PHOTO_001.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "SUB_PHOTO_002",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Photos refresh and content recovery",
+            "yaml": "SUB_PHOTO_002.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "SUB_PHOTO_003",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Photos grid layout, badges and pagination",
+            "yaml": "SUB_PHOTO_003.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "SUB_PHOTO_004",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Photos contains no monetization",
+            "yaml": "SUB_PHOTO_004.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "SUB_PHOTO_010",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber gallery header controls",
+            "yaml": "SUB_PHOTO_010.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "SUB_PHOTO_013",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber gallery comment access",
+            "yaml": "SUB_PHOTO_013.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "SUB_PHOTO_015",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Read Less collapse and state restoration",
+            "yaml": "SUB_PHOTO_015.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "SUB_PHOTO_016",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Gallery close, Back and listing-position recovery",
+            "yaml": "SUB_PHOTO_016.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "SUB_PHOTO_005",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Single-photo gallery presentation",
+            "yaml": "SUB_PHOTO_005.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "SUB_PHOTO_006",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Multi-photo gallery forward paging and counter",
+            "yaml": "SUB_PHOTO_006.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "SUB_PHOTO_007",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Multi-photo gallery reverse paging and boundaries",
+            "yaml": "SUB_PHOTO_007.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "SUB_PHOTO_008",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Gallery image metadata synchronization",
+            "yaml": "SUB_PHOTO_008.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "SUB_PHOTO_009",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Rapid paging and image-load resilience",
+            "yaml": "SUB_PHOTO_009.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "SUB_PHOTO_011",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber gallery bookmark persistence",
+            "yaml": "SUB_PHOTO_011.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "SUB_PHOTO_012",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Gallery share sheet and safe return",
+            "yaml": "SUB_PHOTO_012.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "SUB_PHOTO_014",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Read Full Article expansion for subscriber",
+            "yaml": "SUB_PHOTO_014.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "SUB_PHOTO_017",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Photos light-theme visual integrity",
+            "yaml": "SUB_PHOTO_017.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "SUB_PHOTO_018",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Photos dark-theme visual integrity",
+            "yaml": "SUB_PHOTO_018.yaml",
+            "display_module": "Photos Quick Access"
+        }
+    ]
+}

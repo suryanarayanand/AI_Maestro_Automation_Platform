@@ -1,0 +1,84 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - article
+  - comment
+  - non-destructive
+
+---
+
+# Establish an authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Open a current article through the validated article-card locator.
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+
+- tapOn:
+    id: "article_card"
+    index: 0
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 1: require a readable article that exposes the validated comment entry.
+- scrollUntilVisible:
+    element:
+      text: "Post a comment"
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 40
+
+- assertVisible:
+    text: "Post a comment"
+
+- tapOn:
+    text: "Post a comment"
+
+- waitForAnimationToEnd
+
+# Position 3: subscriber comment access must not redirect to anonymous Login.
+- assertNotVisible:
+    text: "Login to your account"
+
+- assertNotVisible:
+    id: "cta_login"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_014_comment_access_no_login"
+
+# Position 2: return without entering text or invoking any submission action.
+- back
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 25000
+
+# Position 4: prove that the non-destructive return preserved article access.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "Login to your account"
+
+- assertNotVisible:
+    id: "cta_login"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_014_article_restored_without_posting"

@@ -1,0 +1,107 @@
+{
+    "suite": "Anonymous User Cases - World Quick Access",
+    "source_suite": "user_anonymous",
+    "module": "World Quick Access",
+    "tests": [
+        {
+            "id": "ANON_WORLD_001",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P1",
+            "name": "World launch and selected Quick Access identity",
+            "yaml": "ANON_WORLD_001.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "ANON_WORLD_002",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P2",
+            "name": "World refresh and content recovery",
+            "yaml": "ANON_WORLD_002.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "ANON_WORLD_003",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P2",
+            "name": "World listing structure and article cards",
+            "yaml": "ANON_WORLD_003.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "ANON_WORLD_004",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P2",
+            "name": "World deep scroll and advertisement evidence",
+            "yaml": "ANON_WORLD_004.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "ANON_WORLD_005",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P1",
+            "name": "World article destination integrity",
+            "yaml": "ANON_WORLD_005.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "ANON_WORLD_006",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P1",
+            "name": "World anonymous article restriction behavior",
+            "yaml": "ANON_WORLD_006.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "ANON_WORLD_007",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P2",
+            "name": "World conditional AI Summary and Listen controls",
+            "yaml": "ANON_WORLD_007.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "ANON_WORLD_008",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P1",
+            "name": "World bookmark redirects anonymous user to login",
+            "yaml": "ANON_WORLD_008.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "ANON_WORLD_009",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P2",
+            "name": "World share surface behavior",
+            "yaml": "ANON_WORLD_009.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "ANON_WORLD_010",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "priority": "P2",
+            "name": "World comment and post-article behavior",
+            "yaml": "ANON_WORLD_010.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "World Quick Access"
+        }
+    ]
+}

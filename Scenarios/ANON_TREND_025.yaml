@@ -1,0 +1,38 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, trending, advertisement,classification]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING.yaml"
+
+- repeat:
+
+    times: 18
+
+    commands:
+
+      - runFlow:
+
+          when: {visible: {text: "ADVERTISEMENT"}}
+
+          commands:
+
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_TREND_025_blank_or_inline_ad"
+
+      - runFlow:
+
+          when: {visible: {id: "aw0"}}
+
+          commands:
+
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_TREND_025_sticky_ad"
+
+      - swipe: {direction: UP}
+
+      - waitForAnimationToEnd: {timeout: 1000}
+
+- assertVisible: {id: "screen_trending"}
+

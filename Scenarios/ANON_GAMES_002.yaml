@@ -1,0 +1,9 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_GAMES.yaml"
+- assertVisible: {text: "TO UNLOCK AND PLAY ALL FREE GAMES, LOGIN"}
+- assertVisible: {text: "LOGIN TO PLAY"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_GAMES_002_result"

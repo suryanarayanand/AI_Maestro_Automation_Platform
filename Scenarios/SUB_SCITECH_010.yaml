@@ -1,0 +1,312 @@
+appId: com.mobstac.thehindu
+
+tags:
+
+  - generated
+
+  - ordered
+
+  - subscriber
+
+  - scitech
+
+  - post-article
+
+  - related-content
+
+  - recommendation-navigation
+
+---
+
+
+
+# Establish the repository-managed subscriber session.
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_SCITECH.yaml"
+
+
+# Reference 138 is an active Sci-tech standard-article candidate. Runtime
+
+# validation prevents an unavailable or misrouted deep link from continuing.
+
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+
+
+
+- extendedWaitUntil:
+
+    visible:
+
+      id: "screen_article_detail"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- evalScript: ${output.recommendationOpened = false}
+
+
+
+# Continue through a bounded number of settled article viewports. Footer
+
+# sections remain conditional because their inventory depends on article type.
+
+- repeat:
+
+    times: 16
+
+    commands:
+
+      - runFlow:
+
+          when:
+
+            visible:
+
+              text: "Related Topics"
+
+          commands:
+
+            - assertVisible:
+
+                text: "Related Topics"
+
+            - assertVisible:
+
+                id: "screen_article_detail"
+
+            - waitForAnimationToEnd
+
+            - takeScreenshot: "Screenshots/Generated/SUB_SCITECH_010_related_topics"
+
+
+
+      - runFlow:
+
+          when:
+
+            visible:
+
+              text: "Recommended"
+
+          commands:
+
+            - runFlow:
+
+                when:
+
+                  true: ${output.recommendationOpened == false}
+
+                commands:
+
+                  - scrollUntilVisible:
+
+                      element:
+
+                        text: "Recommended"
+
+                      direction: "DOWN"
+
+                      timeout: 15000
+
+                      speed: 40
+
+                      visibilityPercentage: 40
+
+
+
+                  - assertVisible:
+
+                      text: "Recommended"
+
+
+
+                  - assertVisible:
+
+                      id: "screen_article_detail"
+
+
+
+                  - waitForAnimationToEnd
+
+                  - takeScreenshot: "Screenshots/Generated/SUB_SCITECH_010_recommended_before_open"
+
+
+
+                  # This controlled article URL currently exposes this rendered
+                  # Related Stories recommendation, captured in live evidence.
+
+                  - tapOn:
+
+                      text: "HMD Crest.*"
+
+
+
+                  - extendedWaitUntil:
+
+                      notVisible:
+
+                        text: "Recommended"
+
+                      timeout: 20000
+
+
+
+                  - extendedWaitUntil:
+
+                      visible:
+
+                        id: "screen_article_detail"
+
+                      timeout: 30000
+
+
+
+                  - assertVisible:
+
+                      id: "screen_article_detail"
+
+
+
+                  - waitForAnimationToEnd
+
+                  - takeScreenshot: "Screenshots/Generated/SUB_SCITECH_010_recommendation_opened"
+
+
+
+                  - back
+
+
+
+                  - extendedWaitUntil:
+
+                      visible:
+
+                        id: "screen_article_detail"
+
+                      timeout: 30000
+
+
+
+                  - extendedWaitUntil:
+
+                      visible:
+
+                        text: "Recommended"
+
+                      timeout: 30000
+
+
+
+                  - assertVisible:
+
+                      id: "screen_article_detail"
+
+
+
+                  - assertVisible:
+
+                      text: "Recommended"
+
+
+
+                  - runFlow:
+
+                      when:
+
+                        visible:
+
+                          text: "Related Topics"
+
+                      commands:
+
+                        - assertVisible:
+
+                            text: "Related Topics"
+
+
+
+                  - runFlow:
+
+                      when:
+
+                        visible:
+
+                          text: "Headlines"
+
+                      commands:
+
+                        - assertVisible:
+
+                            text: "Headlines"
+
+
+
+                  - waitForAnimationToEnd
+
+                  - takeScreenshot: "Screenshots/Generated/SUB_SCITECH_010_original_scitech_context_restored"
+
+
+
+                  - evalScript: ${output.recommendationOpened = true}
+
+
+
+      - runFlow:
+
+          when:
+
+            visible:
+
+              text: "Headlines"
+
+          commands:
+
+            - assertVisible:
+
+                text: "Headlines"
+
+            - assertVisible:
+
+                id: "screen_article_detail"
+
+            - waitForAnimationToEnd
+
+            - takeScreenshot: "Screenshots/Generated/SUB_SCITECH_010_headlines"
+
+
+
+      - swipe:
+
+          direction: UP
+
+
+
+      - waitForAnimationToEnd
+
+
+
+      - assertVisible:
+
+          id: "screen_article_detail"
+
+
+
+# Final bounded-scroll continuity checkpoint.
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_010_post_article_continuity_complete"
+

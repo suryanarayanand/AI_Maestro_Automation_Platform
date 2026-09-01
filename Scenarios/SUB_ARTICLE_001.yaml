@@ -1,0 +1,64 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - article
+  - header
+  - metadata
+---
+
+# Position 1: establish subscriber state and open a dynamically selected current article.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+
+- assertVisible:
+    id: "article_card"
+
+- tapOn:
+    id: "article_card"
+    index: 0
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 2: wait for the article header surface to settle and capture it.
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_001_header"
+
+# Position 3: assert the grounded article-detail surface and subscriber access state.
+# Dedicated headline, section, publication-date and read-time selectors were not
+# supplied, so those individual fields must be reviewed in the captured header.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+# Position 4: reconfirm that the article surface remains rendered without the
+# validated subscriber subscription obstruction and save settled final evidence.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_001_header_readability_evidence"

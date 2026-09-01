@@ -1,0 +1,163 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - photos
+  - gallery
+  - light-theme
+  - visual-integrity
+
+---
+
+# SUB_PHOTO_017 — Photos light-theme visual integrity
+# Required runner precondition: the application/device must already be in Light
+# mode. No validated in-app theme control or Maestro system-theme command was
+# supplied for changing that setting safely in this authenticated session.
+
+# Position 1: Open the subscriber Photos listing and capture its settled Light
+# mode presentation before opening the controlled gallery reference.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+
+- tapOn:
+    text: "Photos"
+
+- extendedWaitUntil:
+    visible:
+      text: "Photos"
+    timeout: 30000
+
+- assertVisible:
+    text: "Photos"
+
+- assertNotVisible:
+    text: "Subscribe|SUBSCRIBE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_017_light_photos_listing_top"
+
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    text: "Photos"
+
+- assertNotVisible:
+    text: "Subscribe|SUBSCRIBE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_017_light_photos_listing_scrolled"
+
+# Open the repository photo-gallery reference. The article-detail assertion is
+# the runtime validation that the reference still resolves in the target build.
+- openLink: "https://www.thehindu.com/sport/cricket/ipl2013/match-photos/rajasthan-royals-thrash-mumbai-indians/article4627667.ece"
+
+- repeat:
+    times: 3
+    commands:
+      - tapOn:
+          text: "Close sheet"
+          optional: true
+      - waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "Subscribe|SUBSCRIBE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_017_light_gallery_detail_top"
+
+# Position 2: Locate the validated READ FULL ARTICLE text, capture the collapsed
+# presentation, expand it, and then invoke the same required toggle to collapse.
+- scrollUntilVisible:
+    element:
+      text: "READ FULL ARTICLE"
+    direction: DOWN
+    timeout: 45000
+    speed: 40
+
+- assertVisible:
+    text: "READ FULL ARTICLE"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_017_light_gallery_collapsed"
+
+- tapOn:
+    text: "READ FULL ARTICLE"
+    index: 0
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "Subscribe|SUBSCRIBE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_017_light_gallery_expanded"
+
+- scrollUntilVisible:
+    element:
+      text: "READ FULL ARTICLE"
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+
+- assertVisible:
+    text: "READ FULL ARTICLE"
+
+- tapOn:
+    text: "READ FULL ARTICLE"
+    index: 0
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertVisible:
+    text: "READ FULL ARTICLE"
+
+- assertNotVisible:
+    text: "Subscribe|SUBSCRIBE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_017_light_gallery_recollapsed"
+
+# Positions 3 and 4: The listing/detail surface assertions prove that the
+# relevant UI remains rendered. Settled screenshots provide the visual-diff or
+# reviewer evidence for contrast and theme-related layout integrity.
+- back
+
+- extendedWaitUntil:
+    visible:
+      text: "Photos"
+    timeout: 30000
+
+- assertVisible:
+    text: "Photos"
+
+- assertNotVisible:
+    text: "Subscribe|SUBSCRIBE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_017_light_photos_returned"

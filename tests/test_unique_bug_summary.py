@@ -38,7 +38,7 @@ class UniqueBugSummaryTests(unittest.TestCase):
             self.assertIn("generated_at", result)
             self.assertIn("generated_at_display", result)
 
-    def test_generic_run_failures_from_different_scenarios_stay_distinct(self):
+    def test_generic_run_failures_are_excluded_from_product_bug_summary(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             for index in (1, 2):
@@ -50,7 +50,8 @@ class UniqueBugSummaryTests(unittest.TestCase):
 
             result = generate_unique_bug_summary(root)
 
-            self.assertEqual(result["summary"]["unique_bugs"], 2)
+            self.assertEqual(result["summary"]["source_bugs"], 0)
+            self.assertEqual(result["summary"]["unique_bugs"], 0)
 
     def test_declared_non_bug_visual_finding_is_excluded(self):
         with tempfile.TemporaryDirectory() as temp:

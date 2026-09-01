@@ -1,0 +1,41 @@
+appId: com.mobstac.thehindu
+
+tags: [generated, ordered, subscriber, home, bookmark]
+
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- tapOn: {id: "article_card", index: 0}
+
+- tapOn: {text: "Close sheet", optional: true}
+
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+
+- runFlow:
+
+    when: {visible: {text: "Remove bookmark"}}
+
+    commands:
+
+      - tapOn: {text: "Remove bookmark"}
+
+- extendedWaitUntil: {visible: {text: "Bookmark"}, timeout: 15000}
+
+- tapOn: {text: "Bookmark"}
+
+- extendedWaitUntil: {visible: {text: "Remove bookmark|success"}, timeout: 15000}
+
+- assertNotVisible: {text: "Login to your account"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HOME_008_bookmark_selected"
+
+- runFlow:
+
+    when: {visible: {text: "Remove bookmark"}}
+
+    commands:
+
+      - tapOn: {text: "Remove bookmark"}
+

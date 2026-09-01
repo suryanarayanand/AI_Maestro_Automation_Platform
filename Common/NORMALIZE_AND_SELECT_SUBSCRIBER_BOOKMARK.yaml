@@ -1,0 +1,29 @@
+appId: com.mobstac.thehindu
+tags: [common, subscriber, article, bookmark]
+---
+# Normalize mutable bookmark state before validating the add action.
+- extendedWaitUntil:
+    visible:
+      text: "Bookmark|Remove bookmark"
+    timeout: 20000
+- runFlow:
+    when:
+      visible:
+        text: "Remove bookmark"
+    commands:
+      - tapOn:
+          text: "Remove bookmark"
+      - extendedWaitUntil:
+          visible:
+            text: "Bookmark"
+          timeout: 15000
+- assertVisible:
+    text: "Bookmark"
+- tapOn:
+    text: "Bookmark"
+- extendedWaitUntil:
+    visible:
+      text: "Remove bookmark|success|saved"
+    timeout: 15000
+- assertNotVisible:
+    text: "Login to your account"

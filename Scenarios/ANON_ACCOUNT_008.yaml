@@ -1,0 +1,20 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_ACCOUNT.yaml"
+- scrollUntilVisible:
+    element: {text: "Text Size"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Text Size"}
+- assertVisible: {text: "Text Size|TEXT SIZE"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ACCOUNT_008_controls"
+- tapOn: {text: "Decrease|A-", optional: true}
+- tapOn: {text: "Increase|A[+]", optional: true}
+- back
+- assertVisible: {id: "screen_user_menu"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ACCOUNT_008_result"

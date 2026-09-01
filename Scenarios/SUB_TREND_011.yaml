@@ -1,0 +1,11 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_TRENDING_ARTICLE.yaml"
+- assertVisible: {text: "Bookmark"}
+- tapOn: {text: "Bookmark"}
+- assertVisible: {id: "screen_article_detail"}
+- assertNotVisible: {text: "Login to your account"}
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_011_result"

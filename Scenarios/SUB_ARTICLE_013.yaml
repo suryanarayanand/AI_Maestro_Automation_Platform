@@ -1,0 +1,46 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, article, share, non-destructive, state-restoration]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_PREMIUM_ARTICLE.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 1: Invoke Share from the open subscriber article.
+- assertVisible:
+    id: "cta_share"
+
+- tapOn:
+    id: "cta_share"
+
+# Position 3: Verify that the native Share surface opens and settles.
+- extendedWaitUntil:
+    visible:
+      text: "Share"
+    timeout: 15000
+
+- assertVisible:
+    text: "Share"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_013_share_sheet"
+
+# Position 2: Dismiss the native surface without selecting a share target.
+- back
+
+# Position 4: Verify safe restoration of the originating Article Page.
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_013_article_restored"

@@ -1,0 +1,25 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, videos]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_VIDEO_ARTICLE.yaml"
+- runFlow:
+    when: {visible: {text: "Keep reading.*|.*[0-9]+%.*off.*|Go beyond the headline.*|Already a subscriber.*"}}
+    commands:
+      - assertVisible: {text: "Keep reading.*|.*[0-9]+%.*off.*|Go beyond the headline.*|Already a subscriber.*"}
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_VIDEO_009_paywall_playback_blocked"
+- runFlow:
+    when: {notVisible: {text: "Keep reading.*|.*[0-9]+%.*off.*|Go beyond the headline.*|Already a subscriber.*"}}
+    commands:
+      - extendedWaitUntil: {visible: {text: "Play"}, timeout: 30000}
+      - tapOn: {text: "Play"}
+      - extendedWaitUntil: {visible: {text: "Pause|Rewind 15 seconds|fast forward 15 seconds"}, timeout: 15000}
+      - assertVisible: {text: "Pause|Rewind 15 seconds|fast forward 15 seconds"}
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_VIDEO_009_playing"
+      - tapOn: {text: "Pause"}
+      - extendedWaitUntil: {visible: {text: "Play"}, timeout: 15000}
+      - assertVisible: {text: "Play"}
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_VIDEO_009_paused"
+- assertVisible: {id: "screen_article_detail"}

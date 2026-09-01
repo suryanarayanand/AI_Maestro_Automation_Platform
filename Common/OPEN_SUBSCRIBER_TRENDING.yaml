@@ -1,0 +1,8 @@
+appId: com.mobstac.thehindu
+tags: [common, subscriber, trending]
+---
+- runFlow: "OPEN_SUBSCRIBER_HOME.yaml"
+- tapOn: {id: "nav_trending"}
+- extendedWaitUntil: {visible: {id: "screen_trending"}, timeout: 30000}
+- assertVisible: {id: "screen_trending"}
+- runFlow: "ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"

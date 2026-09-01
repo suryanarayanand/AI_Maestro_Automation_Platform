@@ -1,0 +1,31 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, premium]
+
+---
+
+
+
+- runFlow: "../Common/OPEN_ANONYMOUS_PREMIUM.yaml"
+
+- tapOn: {text: "Briefing"}
+
+- assertVisible: {id: "screen_premium"}
+
+- assertVisible: {text: "Unlock Briefing.*subscription benefits|SUBSCRIBE|Subscribe"}
+
+- assertVisible: {text: "Already a subscriber.*Login|Already a subscriber.*"}
+
+- tapOn: {text: "Subscribe|SUBSCRIBE"}
+
+- runFlow: "../Common/ASSERT_PREMIUM_PLANS.yaml"
+
+- tapOn: {text: "Already a subscriber.*Login|Login|LOGIN"}
+
+- extendedWaitUntil: {visible: {text: "Login to your account"}, timeout: 25000}
+
+- assertVisible: {text: "Login to your account"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PREM_005_result"
+

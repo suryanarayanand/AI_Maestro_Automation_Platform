@@ -1,0 +1,283 @@
+appId: com.mobstac.thehindu
+
+
+
+tags:
+
+  - generated
+
+  - ordered
+
+  - subscriber
+
+  - scitech
+
+  - article
+
+  - live-content
+
+  - bounded-scroll
+
+  - failure-resilience
+
+  - product-failure-classification
+
+  - evidence-limited
+
+
+
+---
+
+
+
+# SUB_SCITECH_012 — Sci-tech loading, live-content and failure resilience
+
+
+
+# Establish the repository-managed authenticated subscriber session.
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_SCITECH.yaml"
+
+
+# Confirm and open the validated Sci-Tech destination.
+
+- extendedWaitUntil:
+
+    visible:
+
+      text: "Sci-Tech"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+- tapOn:
+
+    text: "Sci-Tech"
+
+
+
+- waitForAnimationToEnd
+
+
+
+- extendedWaitUntil:
+
+    visible:
+
+      text: "Sci-Tech"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+# Establish the first article identity using the active Sci-Tech 15-paragraph
+
+# article reference. Its headline is captured at runtime rather than fixed in
+
+# the flow.
+
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+
+
+
+- extendedWaitUntil:
+
+    visible:
+
+      id: "screen_article_detail"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_012_first_scitech_article_identity"
+
+
+
+# Position 1 — Open another active article fixture. This reference is a Live
+
+# Article with filters, providing a different subtype from the initial ordinary
+
+# Sci-Tech article without relying on a stale or fixed listing headline.
+
+- openLink: "https://www.thehindu.com/elections/haryana-assembly/haryana-assembly-election-results-saini-hooda-selja-live-updates-october-8-2024/article68728591.ece"
+
+
+
+- extendedWaitUntil:
+
+    visible:
+
+      id: "screen_article_detail"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+
+
+
+# Position 2 — Exercise only a bounded number of gestures in the active article
+
+# detail viewport. No absolute page-end condition is required.
+
+- swipe:
+
+    direction: UP
+
+
+
+- waitForAnimationToEnd
+
+
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- swipe:
+
+    direction: UP
+
+
+
+- waitForAnimationToEnd
+
+
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- swipe:
+
+    direction: UP
+
+
+
+- waitForAnimationToEnd
+
+
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+# Position 3 — Allow a measured 30-second persistence window after navigation
+
+# and bounded interaction, then capture the complete settled or failed state
+
+# before any strict product-health verdict can stop execution.
+
+- evalScript: '${(() => { const end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_012_live_destination_after_30_seconds"
+
+
+
+# Position 4 — The destination must now be diagnostically conclusive: either
+
+# usable content or a clear reproducible product-failure surface.
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- assertWithAI: "Inspect the complete current article-detail viewport after the measured 30-second persistence window. Verify that it is diagnostically conclusive: either readable, usable live/article content is rendered, or a clear reproducible product-failure condition is visible, such as blank content, an endless loader or skeleton, visibly broken media, or a request/network/retry error. Fail this diagnostic assertion only if the destination cannot be identified or the state is too obscured or ambiguous to reproduce and classify."
+
+
+
+# Position 5 — Confirm the bounded gestures did not manufacture an automation
+
+# failure by requiring an unreachable absolute page end.
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_012_bounded_live_frame_responsiveness"
+
+
+
+# Recheck subscriber entitlement after representative scrolling. If the article
+
+# has instead exposed a product loading/media failure, the preceding screenshots
+
+# preserve that state before this shared entitlement assertion executes.
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+# Position 6 — Produce the strict final product verdict. Visual content failures
+
+# persisting after the measured window are product FAILs tied to the runtime
+
+# headline and the Live Article with filters fixture. Maestro selector, device,
+
+# transport, or setup errors remain ordinary automation/infrastructure failures.
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- assertWithAI: "PASS when the current live/article viewport contains usable rendered content such as the visible election map and constituency results. FAIL as PRODUCT_FAIL only when the viewport remains blank, loading-only, broken, or shows a request/network error after 30 seconds. Do not invert this condition and do not treat valid map/filter content as failure."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_012_final_classified_state"
+

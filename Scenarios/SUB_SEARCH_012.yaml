@@ -1,0 +1,18 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, search, validation, non-navigation]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_SEARCH.yaml"
+- tapOn: {point: "45%,8%"}
+- eraseText: 100
+- pressKey: ENTER
+- waitForAnimationToEnd
+- assertNotVisible: {id: "screen_article_detail"}
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_012_empty_submission_prevented"
+- tapOn: {point: "45%,8%"}
+- eraseText: 100
+- inputText: "   "
+- pressKey: ENTER
+- waitForAnimationToEnd
+- assertNotVisible: {id: "screen_article_detail"}
+- assertVisible: {id: "cta_search"}
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_012_whitespace_submission_prevented"

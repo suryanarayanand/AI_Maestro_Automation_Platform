@@ -1,0 +1,10 @@
+appId: com.mobstac.thehindu
+---
+- extendedWaitUntil: {visible: {text: "Yearly"}, timeout: 25000}
+- assertVisible: {text: "Yearly"}
+- assertVisible: {text: "Monthly"}
+- scrollUntilVisible:
+    element: {text: "Already a subscriber.*Login|Already a subscriber.*"}
+    direction: DOWN
+    timeout: 30000
+- assertVisible: {text: "Already a subscriber.*Login|Already a subscriber.*"}

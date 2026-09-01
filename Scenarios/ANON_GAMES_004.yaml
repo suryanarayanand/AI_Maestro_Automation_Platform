@@ -1,0 +1,21 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_GAMES.yaml"
+- scrollUntilVisible:
+    element: {text: ".*Sudoku.*"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- assertVisible: {text: ".*Sudoku.*"}
+- tapOn: {text: ".*Sudoku.*"}
+- extendedWaitUntil: {visible: {text: "Login to your account|LOGIN TO PLAY"}, timeout: 30000}
+- assertVisible: {text: "Login to your account|LOGIN TO PLAY"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_GAMES_004_login_gate"
+- back
+- extendedWaitUntil: {visible: {id: "screen_games"}, timeout: 30000}
+- assertVisible: {id: "screen_games"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_GAMES_004_result"

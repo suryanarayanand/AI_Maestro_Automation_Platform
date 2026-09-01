@@ -1,0 +1,10 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, editorial]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_EDITORIAL_ARTICLE.yaml"
+- tapOn: {text: "Comment|Post a comment", index: 0}
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {text: ".*SIGN IN.*CONVERSATION.*|.*Sign in.*|.*Login.*"}, timeout: 30000}
+- assertVisible: {text: ".*SIGN IN.*CONVERSATION.*|.*Sign in.*|.*Login.*"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_EDITORIAL_012_comment_login"

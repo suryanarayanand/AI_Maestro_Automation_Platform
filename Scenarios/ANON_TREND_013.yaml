@@ -1,0 +1,48 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, trending, comment,login-gate]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+
+- repeat:
+
+    times: 18
+
+    commands:
+
+      - runFlow:
+
+          when: {visible: {text: "Already a subscriber.*|Keep reading.*free for 3 days|.*[0-9]+%.*off.*"}}
+
+          commands:
+
+            - assertVisible: {text: "Login|LOGIN|Sign in|SIGN IN"}
+
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_TREND_013_paywall_comment_not_applicable"
+
+      - runFlow:
+
+          when: {visible: {text: "Post a comment"}}
+
+          commands:
+
+            - tapOn: {text: "Post a comment"}
+
+            - extendedWaitUntil: {visible: {text: "SIGN IN AND JOIN THE CONVERSATION.*|Login to your account"}, timeout: 25000}
+
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_TREND_013_comment_sign_in"
+
+            - back
+
+            - extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+
+      - swipe: {direction: UP}
+
+      - waitForAnimationToEnd: {timeout: 1000}
+
+- assertVisible: {id: "screen_article_detail"}
+

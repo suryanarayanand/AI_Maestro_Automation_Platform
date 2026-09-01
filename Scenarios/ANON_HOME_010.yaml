@@ -1,0 +1,73 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, home, ai-summary, conditional, article-paywall]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_HOME.yaml"
+- tapOn: {id: "article_card", index: 0}
+- tapOn: {text: "Close sheet", optional: true}
+- runFlow:
+    when: {visible: {text: "^CLOSE$|Interstitial close button"}}
+    file: "../Common/HANDLE_ARTICLE_INTERSTITIAL.yaml"
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HOME_010_article_open"
+
+# STATE 1: AI Summary is available. If it is absent for a short article,
+# Maestro reports this conditional block as SKIPPED and continues to paywall checks.
+- runFlow:
+    when: {visible: {text: "AI Summary|AI summary|AI SUMMARY"}}
+    commands:
+      - tapOn: {text: "AI Summary|AI summary|AI SUMMARY"}
+      - waitForAnimationToEnd: {timeout: 10000}
+
+      # STATE 2: Anonymous AI Summary is subscription-gated.
+      - runFlow:
+          when: {visible: {text: "Subscribe|SUBSCRIBE"}}
+          commands:
+            - assertVisible: {text: "Subscribe|SUBSCRIBE"}
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_HOME_010_ai_summary_subscription_gate"
+
+      # STATE 3: No subscription gate; the complete AI Summary is displayed.
+      - runFlow:
+          when: {notVisible: {text: "Subscribe|SUBSCRIBE"}}
+          commands:
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_HOME_010_ai_summary_full_content"
+
+      - back
+      - extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+
+# Reader paywall validation is independent from the AI Summary subscription gate.
+# Scroll the article and validate the paywall only when its subscriber-login text appears.
+- repeat:
+    times: 10
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd
+      - runFlow:
+          when: {visible: {text: "^CLOSE$|Interstitial close button"}}
+          file: "../Common/HANDLE_ARTICLE_INTERSTITIAL.yaml"
+      - runFlow:
+          when: {visible: {text: "Already a subscriber.*|Keep reading.*free for 3 days|.*[0-9]+%.*off.*"}}
+          commands:
+            - assertVisible: {text: "Already a subscriber.*|Keep reading.*free for 3 days|.*[0-9]+%.*off.*"}
+            - assertVisible: {text: "Login|LOGIN|Sign in|SIGN IN"}
+            - assertVisible: {text: "Yearly|Monthly|Choose a plan|View offers|Subscribe|SUBSCRIBE|Keep reading.*free for 3 days|.*[0-9]+%.*off.*"}
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_HOME_010_article_paywall_offers_login"
+
+# An unrestricted article may reach its full content without showing a reader paywall.
+# In that state all paywall conditionals above are valid SKIPPED checks.
+- runFlow:
+    when: {visible: {text: "Login|LOGIN|Sign in|SIGN IN"}}
+    commands:
+      - tapOn: {text: "Login|LOGIN|Sign in|SIGN IN"}
+      - extendedWaitUntil: {visible: {text: "Login to your account"}, timeout: 25000}
+      - assertVisible: {text: "Login to your account"}
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_HOME_010_paywall_login_link_destination"
+      - back
+      - extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+- assertVisible: {id: "screen_article_detail"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HOME_010_article_state_complete"

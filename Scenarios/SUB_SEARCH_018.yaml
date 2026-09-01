@@ -1,0 +1,13 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, search, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_SEARCH.yaml"
+- tapOn: {point: "45%,8%"}
+- inputText: "flood"
+- pressKey: enter
+- extendedWaitUntil: {visible: {text: "newest|Newest"}, timeout: 60000}
+- tapOn: {text: "newest|Newest"}
+- waitForAnimationToEnd
+- assertVisible: {text: "newest|Newest"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_018_newest"

@@ -1,0 +1,14 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, premium]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_PREMIUM_ARTICLE.yaml"
+- runFlow: "../Common/ASSERT_ANONYMOUS_PREMIUM_PAYWALL.yaml"
+- runFlow:
+    when: {visible: {text: "Listen to article|AI Summary|AI summary"}}
+    commands:
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_PREM_025_listen_ai_summary"
+- assertVisible: {id: "screen_article_detail"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PREM_025_result"

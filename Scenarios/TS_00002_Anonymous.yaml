@@ -1,0 +1,52 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+- launchApp:
+    clearState: true
+- runFlow: "../Common/Anonymous_account_onboarding.yaml"
+- tapOn:
+    id: "nav_home"
+- assertVisible:
+    text: "ADVERTISEMENT"
+- assertVisible:
+    id: "aw0"
+- repeat:
+    times: 5
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+# Reset Home to the top so article_card is present in the hierarchy.
+- tapOn:
+    id: "nav_home"
+- waitForAnimationToEnd
+- tapOn:
+    id: "article_card"
+    index: 0
+- runFlow:
+    when:
+      visible: "Go beyond the headline.*"
+    commands:
+      - takeScreenshot: "Screenshots/Generated/TS_00002_Anonymous_subscription_popup"
+      - tapOn: "Close"
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible:
+        id: "ad_iframe"
+    commands:
+      - assertVisible:
+          id: "ad_iframe"
+      - takeScreenshot: "Screenshots/Generated/TS_00002_Anonymous_interstitial_ad"
+      - tapOn:
+          text: "Interstitial close button"
+      - waitForAnimationToEnd
+      - extendedWaitUntil:
+          notVisible:
+            id: "ad_iframe"
+          timeout: 10000

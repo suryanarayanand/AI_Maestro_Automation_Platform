@@ -1,0 +1,12 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, opinion]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_OPINION_ARTICLE.yaml"
+- repeat: {times: 6, commands: [{swipe: {direction: UP}}, {waitForAnimationToEnd}]}
+- runFlow:
+    when: {visible: {text: "SUBSCRIBE|Subscribe|Keep reading|Already a subscriber.*|Login"}}
+    commands:
+      - assertVisible: {text: "SUBSCRIBE|Subscribe|Keep reading"}
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_OPINION_006_paywall"
+- assertVisible: {id: "screen_article_detail"}

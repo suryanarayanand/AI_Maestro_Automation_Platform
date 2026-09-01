@@ -1,0 +1,58 @@
+appId: com.mobstac.thehindu
+
+tags: [generated, ordered, subscriber, home, content-navigation]
+
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- repeat:
+
+    times: 4
+
+    commands:
+
+      - assertVisible: {id: "screen_home"}
+
+      - assertVisible: {id: "article_card", index: 0}
+
+      - swipe: {direction: UP}
+
+      - waitForAnimationToEnd: {timeout: 1200}
+
+- tapOn: {id: "nav_menu"}
+
+- extendedWaitUntil: {visible: {id: "screen_hamburger"}, timeout: 15000}
+
+- assertVisible: {id: "screen_hamburger"}
+
+- tapOn: {text: "India", index: 0}
+- scrollUntilVisible: {element: {text: "India", index: 1}, direction: DOWN, timeout: 30000}
+- tapOn: {text: "India", index: 1}
+- waitForAnimationToEnd: {timeout: 5000}
+- assertVisible: {text: "India"}
+
+- back
+
+- waitForAnimationToEnd: {timeout: 3000}
+
+- assertVisible: {id: "screen_hamburger"}
+
+- tapOn: {point: "9%,7%"}
+
+- waitForAnimationToEnd: {timeout: 2000}
+
+- assertNotVisible: {id: "screen_hamburger"}
+
+- tapOn: {id: "nav_home"}
+- extendedWaitUntil: {visible: {id: "screen_home"}, timeout: 20000}
+
+- assertNotVisible: {text: "SUBSCRIBE"}
+
+- assertNotVisible: {text: "ADVERTISEMENT"}
+
+- assertNotVisible: {id: "aw0"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HOME_004_home_section_return"
+

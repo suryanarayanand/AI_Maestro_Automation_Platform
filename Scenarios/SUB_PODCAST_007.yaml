@@ -1,0 +1,12 @@
+appId: com.mobstac.thehindu
+tags: [generated, subscriber, podcast, playback, product-bug-on-identity-or-loading]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_PODCAST_LATEST.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_007_mini_player_started"
+- assertWithAI: "Verify the visible mini-player is a podcast player from the immediately selected Podcast card, not Listen to Article narration. Its title must match the selected podcast identity, playback must be active, and no endless spinner or stale unrelated title may remain. Fail a visible mismatch or loading-only player as a product bug."
+- assertVisible:
+    text: "(?i)^Pause$"
+- assertVisible: "Podcast"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_007_podcast_identity_verified"

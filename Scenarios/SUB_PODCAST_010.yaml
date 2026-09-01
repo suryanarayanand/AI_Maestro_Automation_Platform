@@ -1,0 +1,59 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - podcast
+  - playback
+  - forward-control
+  - blocked-locator-grounding
+  - evidence-limited
+---
+
+# SUB_PODCAST_010 — Forward control changes playback position
+# Safe qualification harness only. This case cannot perform or validate the
+# Forward interactions until the Forward control and elapsed-time presentation
+# have validated, automation-readable locators.
+#
+# Precondition: the ordered subscriber setup has completed and the Podcast
+# listing is open. This is the same validated precondition used by the approved
+# SUB_PODCAST_007 flow.
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+# Start a current episode through the action grounded by approved
+# SUB_PODCAST_007, without fixing a dynamic podcast or episode title.
+- scrollUntilVisible:
+    element:
+      text: '(?i)^Play Latest Episode$'
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+
+- assertVisible:
+    text: '(?i)^Play Latest Episode$'
+
+- tapOn:
+    text: '(?i)^Play Latest Episode$'
+    index: 0
+
+# Retain playback for the approved measured interval before qualifying the
+# player. This avoids recording an unstable zero-position loading state.
+- evalScript: '${(() => { const end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+
+- assertVisible:
+    text: "Podcast"
+
+# Record the only safely obtainable baseline evidence. This assertion does not
+# promote a visually inferred Forward control or timer into an executable
+# locator and therefore does not claim coverage of the imported tap/delta steps.
+- assertWithAI: "Verify that active podcast playback and a settled, non-blank player are visible. Verify that the player visibly presents an elapsed playback position, total duration, and a Forward control. Fail if playback is absent, the player is blank or loading-only, the elapsed position or duration is unreadable, or no Forward control is visible."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_010_baseline_before_forward_blocked"

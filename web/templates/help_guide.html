@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Help & Process Guide{% endblock %}
+{% block page_title %}Help & Process Guide{% endblock %}
+{% block content %}
+<p class="page-intro">A simple view of how this automation portal works from test idea to confirmed result.</p>
+
+<section class="surface mb-4">
+  <div class="section-head"><div><small>Mind map</small><h2>Complete testing process</h2></div><a href="{{ url_for('settings.settings') }}">Back to Settings</a></div>
+  <div class="process-map" role="img" aria-label="Automation workflow from Excel scenarios through bot learning">
+    <div class="process-root">AI Maestro<br><small>Automation process</small></div>
+    <div class="process-line"></div>
+    <div class="process-grid">
+      <article><span>1</span><strong>Prepare cases</strong><small>Add clear scenarios, user state, steps, and expected results in Excel.</small></article>
+      <article><span>2</span><strong>Generate YAML</strong><small>The portal converts each case into a complete Maestro automation flow.</small></article>
+      <article><span>3</span><strong>Review flow</strong><small>Check locators, scrolling, login state, actions, and final assertions.</small></article>
+      <article><span>4</span><strong>Select user</strong><small>Choose Anonymous, Subscriber, Registered, or Expired user flows.</small></article>
+      <article><span>5</span><strong>Create suite</strong><small>Select the required flows and save them as an ordered test suite.</small></article>
+      <article><span>6</span><strong>Run tests</strong><small>Run from Flows or Test Suites. Large selections are divided into safe batches.</small></article>
+      <article><span>7</span><strong>Separate results</strong><small>Passed cases go to the pass group. Failed cases go to the failure group.</small></article>
+      <article><span>8</span><strong>Confirm failures</strong><small>Rerun only failed cases. Analyze logs and failure video before calling it a bug.</small></article>
+      <article><span>9</span><strong>Bot learns</strong><small>The Testing Bot keeps verified locators, passed flows, and approved failure lessons.</small></article>
+    </div>
+  </div>
+</section>
+
+<section class="surface mb-4">
+  <div class="section-head"><div><small>Daily use</small><h2>Recommended working procedure</h2></div></div>
+  <ol class="simple-steps">
+    <li><strong>Start small.</strong> Upload 10 cases first.</li>
+    <li><strong>Check the generated YAML.</strong> Confirm that every Excel condition has an action or assertion.</li>
+    <li><strong>Check the user state.</strong> Anonymous users may see ads and Subscribe. Subscribers should not.</li>
+    <li><strong>Run the selected flows.</strong> Use <em>Run Selected Now</em> in Flows or run a saved suite.</li>
+    <li><strong>Trust a pass only when conditions are asserted.</strong> Opening the app alone is not enough.</li>
+    <li><strong>Rerun a failure alone.</strong> Correct automation problems before reporting an application bug.</li>
+    <li><strong>Use the Testing Bot.</strong> Ask about cases, locators, user states, failures, and suggested fixes.</li>
+  </ol>
+</section>
+
+<div class="row g-4">
+  <div class="col-lg-6"><section class="surface h-100"><div class="section-head"><div><small>User states</small><h2>Expected differences</h2></div></div><ul class="simple-list"><li><strong>Anonymous:</strong> not signed in; ads and Subscribe can appear.</li><li><strong>Registered:</strong> signed in but without an active subscription.</li><li><strong>Subscriber:</strong> active subscription; no ads or Subscribe upsell.</li><li><strong>Expired:</strong> signed in, but subscription renewal may be required.</li></ul></section></div>
+  <div class="col-lg-6"><section class="surface h-100"><div class="section-head"><div><small>Failure decision</small><h2>Automation issue or app bug?</h2></div></div><ul class="simple-list"><li>Wrong or missing locator → automation issue.</li><li>Element is off-screen and no scroll exists → automation issue.</li><li>Wrong account state or test data → setup issue.</li><li>Timeout or disconnected device → environment issue.</li><li>Correct flow fails repeatedly with verified evidence → possible application bug.</li></ul></section></div>
+</div>
+{% endblock %}

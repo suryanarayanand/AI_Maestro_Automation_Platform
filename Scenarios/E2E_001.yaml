@@ -1,0 +1,55 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- assertVisible:
+    id: "screen_home"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- tapOn:
+    id: "nav_menu"
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- assertVisible:
+    text: "Cities"
+
+- tapOn:
+    text: "Cities"
+
+- tapOn:
+    text: "Bengaluru"
+
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+- tapOn:
+    id: "article_card"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- takeScreenshot: "Screenshots/Generated/E2E_001_e2e_001_article_top"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/E2E_001_e2e_001_article_middle_one"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/E2E_001_e2e_001_article_middle_two"
+
+

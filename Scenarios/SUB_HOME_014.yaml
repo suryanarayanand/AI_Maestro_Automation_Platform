@@ -1,0 +1,41 @@
+appId: com.mobstac.thehindu
+
+tags: [generated, ordered, subscriber, home, logout-boundary]
+
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- tapOn: {id: "nav_account"}
+
+- extendedWaitUntil: {visible: {id: "screen_user_menu"}, timeout: 15000}
+
+- assertVisible: {id: "screen_user_menu"}
+
+- scrollUntilVisible:
+
+    element: {text: "Logout|Log out|LOGOUT|Log Out"}
+
+    direction: DOWN
+
+    timeout: 120000
+
+- tapOn: {text: "Logout|Log out|LOGOUT|Log Out"}
+
+- tapOn: {text: "Logout|Log out|Yes|OK|Confirm", optional: true}
+
+- waitForAnimationToEnd: {timeout: 5000}
+
+- extendedWaitUntil: {visible: {id: "screen_home"}, timeout: 20000}
+
+- tapOn: {id: "nav_account"}
+
+- extendedWaitUntil: {visible: {id: "screen_user_menu"}, timeout: 15000}
+
+- assertVisible: {id: "cta_login"}
+
+- assertVisible: {text: "Create account"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HOME_014_anonymous_after_logout"
+

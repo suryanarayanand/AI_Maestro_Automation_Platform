@@ -2,8 +2,17 @@
 {% block title %}Manage {{ suite.name }}{% endblock %}
 {% block page_title %}Manage {{ suite.name }}{% endblock %}
 {% block content %}
-<p class="page-intro">Add, remove, and reorder test scenarios. Saving updates <code>Suites/{{ suite.key }}.json</code>.</p>
+<p class="page-intro">Choose a module to view or run only its cases. Saving preserves the full-suite execution order.</p>
+<div class="suite-module-grid" id="suite-module-filter">
+    {% for module in suite.modules %}
+    <button class="surface suite-module-card" type="button" data-module="{{ module }}"><span>{{ module[0] }}</span><strong>{{ module }}</strong><small>{{ suite.module_counts.get(module, 0) }} cases</small></button>
+    {% endfor %}
+    {% if suite.module_counts.get('Other', 0) %}<button class="surface suite-module-card" type="button" data-module="Other"><span>O</span><strong>Other</strong><small>{{ suite.module_counts.get('Other', 0) }} cases</small></button>{% endif %}
+    <button class="surface suite-module-card suite-module-add" id="add-module" type="button"><span>+</span><strong>Add module</strong><small>Create a section</small></button>
+</div>
+<div class="module-filter-note" id="module-filter-note">Showing all modules</div>
 <form id="suite-editor" method="post" class="surface">
+    <div id="module-fields">{% for module in suite.modules[6:] %}<input type="hidden" name="modules" value="{{ module }}">{% endfor %}</div>
     <div class="suite-manager">
         <section>
             <label class="form-label fw-semibold" for="available-search">Available scenarios</label>
@@ -28,8 +37,11 @@
         </section>
     </div>
     <div id="ordered-fields"></div>
+    <input id="run-module-name" type="hidden" name="module" value="">
     <div class="d-flex gap-2 mt-4">
         <button class="btn btn-primary" type="submit">Save Suite</button>
+        <button id="run-module" class="btn btn-success" type="submit" formmethod="post" formaction="{{ url_for('suite.run_selected_suite', suite_name=suite.key, mode='run-now') }}" disabled>Choose a Module to Run</button>
+        <button id="run-full-suite" class="btn btn-outline-success" type="submit" formmethod="post" formaction="{{ url_for('suite.run_selected_suite', suite_name=suite.key, mode='run-now') }}" {% if not suite.tests %}disabled{% endif %}>Run Full Suite</button>
         <a class="btn btn-outline-secondary" href="{{ url_for('suite.suites') }}">Cancel</a>
     </div>
 </form>
@@ -37,6 +49,42 @@
 (() => {
     const available = document.getElementById('available-tests');
     const selected = document.getElementById('selected-tests');
+    const moduleNote = document.getElementById('module-filter-note');
+    const moduleInput = document.getElementById('run-module-name');
+    const runModule = document.getElementById('run-module');
+    const moduleCounts = {{ suite.module_counts|tojson }};
+    const moduleByYaml = {
+        {% for test in suite.tests %}{{ test.yaml|replace('\\', '/')|tojson }}: {{ test.display_module|tojson }},{% endfor %}
+    };
+    const bindModuleCard = button => button.onclick = () => {
+        const module = button.dataset.module;
+        const active = button.classList.toggle('active');
+        document.querySelectorAll('.suite-module-card').forEach(item => { if (item !== button) item.classList.remove('active'); });
+        [...selected.options].forEach(option => option.hidden = active && moduleByYaml[option.value] !== module);
+        moduleNote.textContent = active ? `Showing ${module} cases` : 'Showing all modules';
+        moduleInput.value = active ? module : '';
+        runModule.disabled = !active || !moduleCounts[module];
+        runModule.textContent = active ? `Run ${module} (${moduleCounts[module] || 0} cases)` : 'Choose a Module to Run';
+    };
+    document.querySelectorAll('.suite-module-card[data-module]').forEach(bindModuleCard);
+    document.getElementById('add-module').onclick = () => {
+        const rawName = window.prompt('Module name');
+        const name = rawName ? rawName.trim().replace(/\s+/g, ' ') : '';
+        if (!name) return;
+        const existing = [...document.querySelectorAll('.suite-module-card[data-module]')]
+            .some(card => card.dataset.module.toLowerCase() === name.toLowerCase());
+        if (existing) { moduleNote.textContent = `${name} already exists`; return; }
+        const card = document.createElement('button');
+        card.type = 'button'; card.className = 'surface suite-module-card'; card.dataset.module = name;
+        card.innerHTML = `<span>${name[0].toUpperCase()}</span><strong></strong><small>0 cases</small>`;
+        card.querySelector('strong').textContent = name;
+        document.getElementById('suite-module-filter').insertBefore(card, document.getElementById('add-module'));
+        bindModuleCard(card);
+        const input = document.createElement('input');
+        input.type = 'hidden'; input.name = 'modules'; input.value = name;
+        document.getElementById('module-fields').appendChild(input);
+        moduleNote.textContent = `${name} added. Save Suite to keep it.`;
+    };
     const moveOptions = (from, to) => [...from.selectedOptions].forEach(option => to.add(option));
     document.getElementById('add-tests').onclick = () => moveOptions(available, selected);
     document.getElementById('remove-tests').onclick = () => moveOptions(selected, available);
@@ -56,6 +104,7 @@
         const query = event.target.value.toLowerCase();
         [...available.options].forEach(option => option.hidden = !option.text.toLowerCase().includes(query));
     };
+    document.getElementById('run-full-suite').onclick = () => { moduleInput.value = ''; };
     document.getElementById('suite-editor').onsubmit = () => {
         const fields = document.getElementById('ordered-fields');
         fields.replaceChildren(...[...selected.options].map(option => {

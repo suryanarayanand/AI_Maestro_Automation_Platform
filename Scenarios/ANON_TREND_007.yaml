@@ -1,0 +1,11 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, trending, read-full-article,interstitial]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_007_article_header"
+

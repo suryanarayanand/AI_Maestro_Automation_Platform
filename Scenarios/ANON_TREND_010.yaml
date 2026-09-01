@@ -1,0 +1,32 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, trending, reading-options, text-size]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+- assertVisible: {text: "Text size"}
+- tapOn: {text: "Text size"}
+- extendedWaitUntil: {visible: {text: "Reading Options.*|Text Size"}, timeout: 15000}
+- assertVisible: {text: "A-"}
+- assertVisible: {text: "A+"}
+- tapOn: {text: "A+"}
+- tapOn: {text: "A-"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_010_reading_options"
+
+# A dynamic advertisement can move the run into Chrome. Preserve evidence and
+# restore the article before closing the in-app Reading Options sheet.
+- runFlow:
+    when:
+      visible: {text: "Search or type web address|Site information|Switch or close tabs"}
+    commands:
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_TREND_010_external_ad_landing"
+      - back
+      - extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+      - assertVisible: {id: "screen_article_detail"}
+      - tapOn: {text: "Text size"}
+      - extendedWaitUntil: {visible: {text: "Reading Options.*|Text Size"}, timeout: 15000}
+
+- tapOn: {text: "CLOSE|Close"}
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 15000}
+- assertVisible: {id: "screen_article_detail"}

@@ -1,0 +1,125 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - ebooks
+  - previous-books
+  - no-monetisation
+---
+
+# Establish the authenticated subscriber session and open eBooks through the
+# validated Home navigation control.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "nav_ebooks"
+    timeout: 30000
+
+- assertVisible:
+    id: "nav_ebooks"
+
+- tapOn:
+    id: "nav_ebooks"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_ebooks"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_ebooks"
+
+# Position 1: Move from the current eBook area into the previous-books listing.
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_ebooks"
+
+# Positions 2 and 3: Record the settled top listing state. The screenshot is the
+# review artifact for cover/title/issue alignment because no validated card-field
+# selectors or automated overlap oracle are available.
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_EBOOK_005_previous_books_top"
+
+# Continue through a bounded middle portion. Remaining on screen_ebooks after
+# every settled swipe is the available executable loading/stability assertion.
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_ebooks"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "ad_iframe"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_EBOOK_005_previous_books_middle"
+
+# Continue through a bounded lower portion with the same page and ad checks.
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_ebooks"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "ad_iframe"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_EBOOK_005_previous_books_lower"
+
+# Position 4: Assert that the eBooks surface remains loaded after progressive,
+# bounded traversal of the previous-books inventory.
+- extendedWaitUntil:
+    visible:
+      id: "screen_ebooks"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_ebooks"
+
+# Position 5: Preserve a final settled readability artifact. Cover/title/issue
+# overlap must be reviewed from the captured states until field locators exist.
+- assertVisible:
+    id: "screen_ebooks"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_EBOOK_005_previous_books_readability_review"
+
+# Position 6: Final executable proof that the listing remains available and that
+# the validated advertisement indicators are absent for the subscriber.
+- assertVisible:
+    id: "screen_ebooks"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_EBOOK_005_previous_books_documented_ad_free"

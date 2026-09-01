@@ -53,7 +53,7 @@ function initializeYamlGenerationProgress() {
         [58, "Reading normalized test cases..."],
         [74, "Generating Maestro YAML drafts..."],
         [88, "Applying AI fallback where needed..."],
-        [94, "Saving drafts for review..."],
+        [90, "Friday is reviewing complete cases against evidence. This is not a completion percentage..."],
     ];
 
     form.addEventListener("submit", () => {
@@ -66,7 +66,7 @@ function initializeYamlGenerationProgress() {
             const [value, label] = stages[index];
             bar.style.width = `${value}%`;
             bar.setAttribute("aria-valuenow", value);
-            percent.textContent = `${value}%`;
+            percent.textContent = value === 90 ? "Working…" : `${value}%`;
             stage.textContent = label;
             if (index < stages.length - 1) index += 1;
         };

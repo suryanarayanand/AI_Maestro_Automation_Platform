@@ -1,0 +1,8 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, games, friday-grounded]
+---
+- runFlow: "SC_27_EASY_DOWN.yaml"
+- assertNotVisible: {text: "Login to play|Login to your account|SUBSCRIBE|.*access was not found.*"}
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_GAMES_008_result"

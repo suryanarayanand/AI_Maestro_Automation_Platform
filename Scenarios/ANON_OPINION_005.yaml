@@ -1,0 +1,11 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, opinion]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_OPINION_ARTICLE.yaml"
+- runFlow:
+    when: {visible: {text: "Read Full Article|READ FULL ARTICLE"}}
+    commands:
+      - tapOn: {text: "Read Full Article|READ FULL ARTICLE"}
+- assertVisible: {id: "screen_article_detail"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_OPINION_005_article_header"

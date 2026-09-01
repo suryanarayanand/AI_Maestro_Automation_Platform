@@ -8,7 +8,11 @@ tags: [subscriber, games, sc27]
 - tapOn: {text: "Word Row"}
 - scrollUntilVisible:
     element: {text: ".*(January|February|March|April|May|June|July|August|September|October|November|December).*"}
-    timeout: 20000
+    direction: DOWN
+    timeout: 60000
+    speed: 55
+    visibilityPercentage: 20
+    centerElement: true
 - tapOn:
     text: ".*(January|February|March|April|May|June|July|August|September|October|November|December).*"
     index: 0
@@ -16,5 +20,10 @@ tags: [subscriber, games, sc27]
     when: {visible: {text: "Dismiss"}}
     commands:
       - tapOn: {text: "Dismiss"}
+- runFlow:
+    when: {visible: {text: "Play solo"}}
+    commands:
+      - takeScreenshot: "Screenshots/SC_27/SC_27_Word_Row_Play_Mode"
+      - tapOn: {text: "Play solo"}
 - assertNotVisible: {text: ".*access was not found.*"}
 - takeScreenshot: "Screenshots/SC_27/SC_27_Word_Row"

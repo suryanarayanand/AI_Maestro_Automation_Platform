@@ -1,0 +1,25 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, article-page, paging]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- repeat:
+    times: 3
+    commands:
+      - swipe: {direction: LEFT}
+      - waitForAnimationToEnd
+      - runFlow:
+          when: {visible: {text: "^CLOSE$|Interstitial close button"}}
+          file: "../Common/HANDLE_ARTICLE_INTERSTITIAL.yaml"
+      - assertVisible: {id: "screen_article_detail"}
+- repeat:
+    times: 3
+    commands:
+      - swipe: {direction: RIGHT}
+      - waitForAnimationToEnd
+      - runFlow:
+          when: {visible: {text: "^CLOSE$|Interstitial close button"}}
+          file: "../Common/HANDLE_ARTICLE_INTERSTITIAL.yaml"
+      - assertVisible: {id: "screen_article_detail"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_018_swipe_collection"

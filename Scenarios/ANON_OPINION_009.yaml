@@ -1,0 +1,13 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, opinion]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_OPINION_ARTICLE.yaml"
+- runFlow:
+    when: {visible: {text: "Listen to Article|Listen"}}
+    commands:
+      - tapOn: {text: "Listen to Article|Listen"}
+      - waitForAnimationToEnd
+      - assertVisible: {text: "Play|Pause"}
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_OPINION_009_audio"
+- assertVisible: {id: "screen_article_detail"}

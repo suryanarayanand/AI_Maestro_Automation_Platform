@@ -1,0 +1,64 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+---
+
+- launchApp:
+    clearState: true
+
+- runFlow: "../Common/Anonymous_account_onboarding.yaml"
+
+- tapOn:
+    id: "nav_account"
+
+- runFlow:
+    when:
+      visible:
+        id: "cta_login"
+    commands:
+      - tapOn:
+          id: "cta_login"
+      - runFlow: "../Common/LOGIN.yaml"
+
+- tapOn:
+    id: "nav_home"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "aw0"
+
+- repeat:
+    times: 5
+    commands:
+      - swipe:
+          direction: "UP"
+      - waitForAnimationToEnd
+
+- tapOn:
+    id: "article_card"
+    index: 0
+
+- runFlow:
+    when:
+      visible: "This summary and the FAQs.*"
+    commands:
+      - tapOn: "Close sheet"
+
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: "LEFT"
+      - waitForAnimationToEnd
+
+- runFlow:
+    when:
+      visible: "This summary and the FAQs.*"
+    commands:
+      - tapOn: "Close sheet"
+
+- assertNotVisible:
+    id: "ad_iframe"

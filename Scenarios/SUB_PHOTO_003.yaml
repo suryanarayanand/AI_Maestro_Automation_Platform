@@ -1,0 +1,238 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - photos
+  - pagination
+  - visual-layout
+
+---
+
+# SUB_PHOTO_003 — Photos grid layout, badges and pagination
+# Establish the authenticated subscriber state before feature navigation.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      text: "Photos"
+    timeout: 30000
+
+- tapOn:
+    text: "Photos"
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Photos"
+    timeout: 30000
+
+- assertVisible:
+    text: "Photos"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+# Listing viewport 1: record all currently available photo-count badges and
+# verify the visible cards, images, headlines and badges remain contained.
+- assertVisible:
+    text: "Photos"
+
+- assertWithAI: "Verify this is a Photos gallery-card listing. Visible cards, headlines and images must be readable, fully contained and free from overlap or clipping. Images must not be blank or broken. If photo-count badges are visible, each badge must show a positive count and be fully contained without covering or clipping an image or headline. Do not require a badge when the current live inventory has none."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_003_viewport_1_badges_and_layout"
+
+# If pagination is already available, capture its boundary, activate it and
+# verify that lower, additional cards are rendered without leaving Photos or
+# resetting to the initial listing position.
+- runFlow:
+    when:
+      visible:
+        text: "SHOW MORE"
+    commands:
+      - assertVisible:
+          text: "SHOW MORE"
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_PHOTO_003_viewport_1_show_more_before"
+      - tapOn:
+          text: "SHOW MORE"
+      - waitForAnimationToEnd
+      - extendedWaitUntil:
+          visible:
+            text: "Photos"
+          timeout: 30000
+      - assertVisible:
+          text: "Photos"
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertWithAI: "Verify the Photos listing remains active after SHOW MORE and this is a lower continuation of the listing rather than a reset to its initial top. Multiple additional gallery cards with distinct visible images or headlines must be rendered; they must not be blank, broken, overlapping or clipped."
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_PHOTO_003_viewport_1_show_more_after"
+
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# Listing viewport 2.
+- assertVisible:
+    text: "Photos"
+
+- assertWithAI: "Verify this remains a Photos gallery-card listing. Visible cards, headlines and images must be readable, fully contained and free from overlap or clipping. Images must not be blank or broken. If photo-count badges are visible, each badge must show a positive count and be fully contained without covering or clipping an image or headline. Do not require a badge when the current live inventory has none."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_003_viewport_2_badges_and_layout"
+
+- runFlow:
+    when:
+      visible:
+        text: "SHOW MORE"
+    commands:
+      - assertVisible:
+          text: "SHOW MORE"
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_PHOTO_003_viewport_2_show_more_before"
+      - tapOn:
+          text: "SHOW MORE"
+      - waitForAnimationToEnd
+      - extendedWaitUntil:
+          visible:
+            text: "Photos"
+          timeout: 30000
+      - assertVisible:
+          text: "Photos"
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertWithAI: "Verify the Photos listing remains active after SHOW MORE and this is a lower continuation of the listing rather than a reset to its initial top. Multiple additional gallery cards with distinct visible images or headlines must be rendered; they must not be blank, broken, overlapping or clipped."
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_PHOTO_003_viewport_2_show_more_after"
+
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# Listing viewport 3 completes the required minimum of three inspected states.
+- assertVisible:
+    text: "Photos"
+
+- assertWithAI: "Verify this remains a Photos gallery-card listing. Visible cards, headlines and images must be readable, fully contained and free from overlap or clipping. Images must not be blank or broken. If photo-count badges are visible, each badge must show a positive count and be fully contained without covering or clipping an image or headline. Do not require a badge when the current live inventory has none."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_003_viewport_3_badges_and_layout"
+
+- runFlow:
+    when:
+      visible:
+        text: "SHOW MORE"
+    commands:
+      - assertVisible:
+          text: "SHOW MORE"
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_PHOTO_003_viewport_3_show_more_before"
+      - tapOn:
+          text: "SHOW MORE"
+      - waitForAnimationToEnd
+      - extendedWaitUntil:
+          visible:
+            text: "Photos"
+          timeout: 30000
+      - assertVisible:
+          text: "Photos"
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertWithAI: "Verify the Photos listing remains active after SHOW MORE and this is a lower continuation of the listing rather than a reset to its initial top. Multiple additional gallery cards with distinct visible images or headlines must be rendered; they must not be blank, broken, overlapping or clipped."
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_PHOTO_003_viewport_3_show_more_after"
+
+# Recheck subscriber monetization exclusions after representative scrolling.
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+# Continue the bounded search through two more viewports because SHOW MORE is
+# live-inventory dependent and may occur below the first three viewports.
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# Listing viewport 4.
+- assertVisible:
+    text: "Photos"
+
+- assertWithAI: "Verify this remains a Photos gallery-card listing. Visible cards, headlines and images must be readable, fully contained and free from overlap or clipping. Images must not be blank or broken. If photo-count badges are visible, each badge must show a positive count and be fully contained without covering or clipping an image or headline. Do not require a badge when the current live inventory has none."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_003_viewport_4_badges_and_layout"
+
+- runFlow:
+    when:
+      visible:
+        text: "SHOW MORE"
+    commands:
+      - assertVisible:
+          text: "SHOW MORE"
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_PHOTO_003_viewport_4_show_more_before"
+      - tapOn:
+          text: "SHOW MORE"
+      - waitForAnimationToEnd
+      - extendedWaitUntil:
+          visible:
+            text: "Photos"
+          timeout: 30000
+      - assertVisible:
+          text: "Photos"
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertWithAI: "Verify the Photos listing remains active after SHOW MORE and this is a lower continuation of the listing rather than a reset to its initial top. Multiple additional gallery cards with distinct visible images or headlines must be rendered; they must not be blank, broken, overlapping or clipped."
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_PHOTO_003_viewport_4_show_more_after"
+
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# Listing viewport 5 and final bounded pagination check.
+- assertVisible:
+    text: "Photos"
+
+- assertWithAI: "Verify this remains a Photos gallery-card listing. Visible cards, headlines and images must be readable, fully contained and free from overlap or clipping. Images must not be blank or broken. If photo-count badges are visible, each badge must show a positive count and be fully contained without covering or clipping an image or headline. Do not require a badge when the current live inventory has none."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_003_viewport_5_badges_and_layout"
+
+- runFlow:
+    when:
+      visible:
+        text: "SHOW MORE"
+    commands:
+      - assertVisible:
+          text: "SHOW MORE"
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_PHOTO_003_viewport_5_show_more_before"
+      - tapOn:
+          text: "SHOW MORE"
+      - waitForAnimationToEnd
+      - extendedWaitUntil:
+          visible:
+            text: "Photos"
+          timeout: 30000
+      - assertVisible:
+          text: "Photos"
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertWithAI: "Verify the Photos listing remains active after SHOW MORE and this is a lower continuation of the listing rather than a reset to its initial top. Multiple additional gallery cards with distinct visible images or headlines must be rendered; they must not be blank, broken, overlapping or clipped."
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_PHOTO_003_viewport_5_show_more_after"
+
+- assertVisible:
+    text: "Photos"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_003_bounded_pagination_result"

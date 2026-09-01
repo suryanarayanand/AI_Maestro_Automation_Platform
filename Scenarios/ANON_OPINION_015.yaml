@@ -1,0 +1,12 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, opinion]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_OPINION.yaml"
+- scrollUntilVisible: {element: {text: "Cartoon"}, direction: DOWN, timeout: 45000}
+- tapOn: {text: "Cartoon"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_OPINION_015_cartoon"
+- swipe: {direction: UP}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_OPINION_015_cartoon_scrolled"
+- back

@@ -1,0 +1,459 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - trending
+  - cross-section
+  - article-entitlement
+  - no-monetisation
+---
+
+# Establish the authenticated subscriber state and open Trending.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+
+- tapOn:
+    id: "nav_trending"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_trending"
+
+# News: select the section and open its first currently rendered article.
+- tapOn:
+    text: "News"
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_trending"
+
+- assertVisible:
+    text: "News"
+
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+
+- tapOn:
+    id: "article_card"
+    index: 0
+
+- repeat:
+    times: 3
+    commands:
+      - tapOn:
+          text: "Close sheet"
+          optional: true
+      - waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "Already a subscriber.*Login|Keep reading.*"
+- assertNotVisible:
+    text: "HAVE AN ACCOUNT.*LOGIN|Login to your account"
+
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "ad_iframe"
+      - assertNotVisible:
+          text: "Already a subscriber.*Login|Keep reading.*"
+      - assertNotVisible:
+          text: "HAVE AN ACCOUNT.*LOGIN|Login to your account"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_014_News_article_entitled"
+
+- back
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_trending"
+
+- assertVisible:
+    text: "News"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_014_News_context_restored"
+
+# Business: select the section and open its first currently rendered article.
+- tapOn:
+    text: "Business"
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_trending"
+
+- assertVisible:
+    text: "Business"
+
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+
+- tapOn:
+    id: "article_card"
+    index: 0
+
+- repeat:
+    times: 3
+    commands:
+      - tapOn:
+          text: "Close sheet"
+          optional: true
+      - waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "Already a subscriber.*Login|Keep reading.*"
+- assertNotVisible:
+    text: "HAVE AN ACCOUNT.*LOGIN|Login to your account"
+
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "ad_iframe"
+      - assertNotVisible:
+          text: "Already a subscriber.*Login|Keep reading.*"
+      - assertNotVisible:
+          text: "HAVE AN ACCOUNT.*LOGIN|Login to your account"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_014_Business_article_entitled"
+
+- back
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_trending"
+
+- assertVisible:
+    text: "Business"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_014_Business_context_restored"
+
+# Technology: select the section and open its first currently rendered article.
+- tapOn:
+    text: "Technology"
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_trending"
+
+- assertVisible:
+    text: "Technology"
+
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+
+- tapOn:
+    id: "article_card"
+    index: 0
+
+- repeat:
+    times: 3
+    commands:
+      - tapOn:
+          text: "Close sheet"
+          optional: true
+      - waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "Already a subscriber.*Login|Keep reading.*"
+- assertNotVisible:
+    text: "HAVE AN ACCOUNT.*LOGIN|Login to your account"
+
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "ad_iframe"
+      - assertNotVisible:
+          text: "Already a subscriber.*Login|Keep reading.*"
+      - assertNotVisible:
+          text: "HAVE AN ACCOUNT.*LOGIN|Login to your account"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_014_Technology_article_entitled"
+
+- back
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_trending"
+
+- assertVisible:
+    text: "Technology"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_014_Technology_context_restored"
+
+# Entertainment: select the section and open its first currently rendered article.
+- tapOn:
+    text: "Entertainment"
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_trending"
+
+- assertVisible:
+    text: "Entertainment"
+
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+
+- tapOn:
+    id: "article_card"
+    index: 0
+
+- repeat:
+    times: 3
+    commands:
+      - tapOn:
+          text: "Close sheet"
+          optional: true
+      - waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "Already a subscriber.*Login|Keep reading.*"
+- assertNotVisible:
+    text: "HAVE AN ACCOUNT.*LOGIN|Login to your account"
+
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "ad_iframe"
+      - assertNotVisible:
+          text: "Already a subscriber.*Login|Keep reading.*"
+      - assertNotVisible:
+          text: "HAVE AN ACCOUNT.*LOGIN|Login to your account"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_014_Entertainment_article_entitled"
+
+- back
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_trending"
+
+- assertVisible:
+    text: "Entertainment"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_014_Entertainment_context_restored"
+
+# Sports: select the section and open its first currently rendered article.
+- tapOn:
+    text: "Sports"
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_trending"
+
+- assertVisible:
+    text: "Sports"
+
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+
+- tapOn:
+    id: "article_card"
+    index: 0
+
+- repeat:
+    times: 3
+    commands:
+      - tapOn:
+          text: "Close sheet"
+          optional: true
+      - waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "Already a subscriber.*Login|Keep reading.*"
+- assertNotVisible:
+    text: "HAVE AN ACCOUNT.*LOGIN|Login to your account"
+
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "ad_iframe"
+      - assertNotVisible:
+          text: "Already a subscriber.*Login|Keep reading.*"
+      - assertNotVisible:
+          text: "HAVE AN ACCOUNT.*LOGIN|Login to your account"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_014_Sports_article_entitled"
+
+- back
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_trending"
+
+- assertVisible:
+    text: "Sports"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_014_Sports_context_restored"

@@ -1,0 +1,107 @@
+{
+    "suite": "Anonymous User Cases - Sports Quick Access",
+    "source_suite": "user_anonymous",
+    "module": "Sports Quick Access",
+    "tests": [
+        {
+            "id": "ANON_SPORTS_001",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P1",
+            "name": "Sport launch and selected Quick Access identity",
+            "yaml": "ANON_SPORTS_001.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        },
+        {
+            "id": "ANON_SPORTS_002",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P2",
+            "name": "Sport refresh and content recovery",
+            "yaml": "ANON_SPORTS_002.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        },
+        {
+            "id": "ANON_SPORTS_003",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P2",
+            "name": "Sport listing structure and article cards",
+            "yaml": "ANON_SPORTS_003.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        },
+        {
+            "id": "ANON_SPORTS_004",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P2",
+            "name": "Sport deep scroll and advertisement evidence",
+            "yaml": "ANON_SPORTS_004.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        },
+        {
+            "id": "ANON_SPORTS_005",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P1",
+            "name": "Sport article destination integrity",
+            "yaml": "ANON_SPORTS_005.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        },
+        {
+            "id": "ANON_SPORTS_006",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P1",
+            "name": "Sport anonymous article restriction behavior",
+            "yaml": "ANON_SPORTS_006.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        },
+        {
+            "id": "ANON_SPORTS_007",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P2",
+            "name": "Sport conditional AI Summary and Listen controls",
+            "yaml": "ANON_SPORTS_007.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        },
+        {
+            "id": "ANON_SPORTS_008",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P1",
+            "name": "Sport bookmark redirects anonymous user to login",
+            "yaml": "ANON_SPORTS_008.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        },
+        {
+            "id": "ANON_SPORTS_009",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P2",
+            "name": "Sport share surface behavior",
+            "yaml": "ANON_SPORTS_009.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        },
+        {
+            "id": "ANON_SPORTS_010",
+            "module": "Sports Quick Access",
+            "section": "Sports Quick Access",
+            "priority": "P2",
+            "name": "Sport comment and post-article behavior",
+            "yaml": "ANON_SPORTS_010.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sports Quick Access"
+        }
+    ]
+}

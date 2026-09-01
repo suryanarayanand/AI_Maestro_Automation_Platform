@@ -130,7 +130,7 @@ tags:
 - takeScreenshot: "Screenshots/SC_88/SC_88_Opinion_Page_Subscription_Page"
 - scroll
 - back
-- runFlow: ../Common/Login_via_pages_or_Article.yaml
+- runFlow: ../../Common/Login_via_pages_or_Article.yaml
 
 # Navigate Back to Opinion Section
 - repeat:
@@ -200,7 +200,7 @@ tags:
 - assertVisible: "SIGN IN AND JOIN THE CONVERSATION→"
 - tapOn: "SIGN IN AND JOIN THE CONVERSATION→"
 - waitForAnimationToEnd
-- runFlow: ../Common/Login_via_pages_or_Article.yaml
+- runFlow: ../../Common/Login_via_pages_or_Article.yaml
 - back
 
 # Relaunch the app because navigating back causes the app to crash.

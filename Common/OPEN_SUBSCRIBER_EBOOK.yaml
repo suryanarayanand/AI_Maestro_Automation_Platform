@@ -1,0 +1,8 @@
+appId: com.mobstac.thehindu
+tags: [common, subscriber, ebooks, reader]
+---
+- runFlow: "OPEN_SUBSCRIBER_EBOOKS.yaml"
+# Grounded by the manually authored and previously used SC_24 subscriber flow.
+- tapOn: {point: "77%,34%"}
+- waitForAnimationToEnd
+- runFlow: "ASSERT_SUBSCRIBER_EBOOK_ACCESS.yaml"

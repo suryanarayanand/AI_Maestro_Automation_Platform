@@ -1,0 +1,68 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - article
+  - recommended
+---
+
+# Precondition: an authenticated subscriber is viewing the controlled article
+# configured with Recommended content.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+- assertVisible:
+    id: "screen_article_detail"
+
+- scrollUntilVisible:
+    element:
+      text: "Recommended"
+    direction: DOWN
+    timeout: 30000
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    text: "Recommended"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_015_recommended_section"
+
+# Select a current card rather than depending on a mutable headline.
+- tapOn:
+    id: "article_card"
+    below:
+      text: "Recommended"
+    index: 0
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_015_recommended_article_open"
+
+- back
+
+# The source article's Recommended viewport is the stable restoration marker.
+- extendedWaitUntil:
+    visible:
+      text: "Recommended"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertVisible:
+    text: "Recommended"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_015_source_article_restored"

@@ -1,0 +1,15 @@
+appId: com.mobstac.thehindu
+tags: [common, anonymous, photos, gallery]
+---
+- runFlow: "OPEN_ANONYMOUS_PHOTOS.yaml"
+# Live Photos layout: the leading large card carries a multi-image count badge.
+- tapOn: {point: "25%,35%"}
+- waitForAnimationToEnd
+- runFlow:
+    when: {visible: {text: ".*Go beyond the headline.*|.*subscribe to access.*"}}
+    commands:
+      - takeScreenshot: "Screenshots/Generated/photo_gallery_subscription_prompt"
+      - tapOn: {point: "91%,36%"}
+      - waitForAnimationToEnd
+- extendedWaitUntil: {visible: {text: ".*1/[2-9][0-9]*.*"}, timeout: 30000}
+- assertVisible: {text: ".*1/[2-9][0-9]*.*"}

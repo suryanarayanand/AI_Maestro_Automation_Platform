@@ -1,0 +1,50 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - video
+  - fullscreen
+  - blocked-grounding
+
+---
+
+# SUB_VIDEO_005 — Fullscreen entry, playback and exit
+#
+# This replacement establishes the subscriber and article preconditions, then
+# fails explicitly. The repository has no validated Play, Pause, Fullscreen,
+# Exit Fullscreen, inline-player, or orientation-state selector. The similarly
+# named controls in SC_71 are reference-only and therefore are not executable
+# truth for this case.
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Active Article Library reference 51 is typed as Inline Video. Runtime article
+# qualification is mandatory because the reference itself is not validated.
+- openLink: "https://www.thehindu.com/entertainment/music/how-the-concept-of-mahishasurmardini-unites-the-country-during-navaratri/article67433268.ece"
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_005_article_baseline"
+
+# Obligation critique:
+# Position 1 cannot enter fullscreen without a validated playback and fullscreen
+# control. Position 2 cannot assert playback controls or invoke a grounded exit.
+# Position 3 cannot prove fullscreen landscape without a validated fullscreen
+# surface/orientation assertion. Position 4 cannot prove portrait restoration
+# and inline playback availability without validated exit and player locators.
+# Fail explicitly so this prerequisite-only execution cannot be reported PASS.
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_005_manual_review"

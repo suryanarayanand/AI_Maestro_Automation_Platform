@@ -1,0 +1,64 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - article
+  - no-monetisation
+  - evidence-limited
+---
+
+# Establish the configured authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Open active Article Page reference 138. The article-detail assertion is the
+# runtime gate confirming that this reference opens successfully on this build.
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Positions 1 and 2: Traverse from the article header toward its lower content
+# in bounded steps. Check every settled viewport for all currently grounded
+# advertisement and Subscribe surfaces.
+- repeat:
+    times: 12
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "ad_iframe"
+      - assertNotVisible:
+          id: "aw0"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+
+# Position 3: The article-detail surface must remain available after traversal,
+# demonstrating that monetisation surfaces did not replace or block reading.
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 4: Reassert the subscriber no-advertisement and no-purchase-prompt
+# contract at the final settled article state.
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    id: "aw0"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_003_scrolled_no_monetisation"

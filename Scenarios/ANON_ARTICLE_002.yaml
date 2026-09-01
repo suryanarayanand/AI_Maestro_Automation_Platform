@@ -1,0 +1,21 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, article-page, scroll]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_002_top"
+- repeat:
+    times: 2
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_002_middle"
+- repeat:
+    times: 2
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd
+- assertVisible: {id: "screen_article_detail"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_002_lower"

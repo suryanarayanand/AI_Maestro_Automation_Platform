@@ -1,0 +1,97 @@
+{
+    "suite": "Subscriber User Cases - Videos",
+    "source_suite": "user_subscriber",
+    "module": "Videos",
+    "tests": [
+        {
+            "id": "SUB_VIDEO_002",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Video article identity and metadata",
+            "yaml": "SUB_VIDEO_002.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "SUB_VIDEO_004",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Video 15-second seek controls",
+            "yaml": "SUB_VIDEO_004.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "SUB_VIDEO_005",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Fullscreen entry, playback and exit",
+            "yaml": "SUB_VIDEO_005.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "SUB_VIDEO_008",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Inline playback during article scrolling",
+            "yaml": "SUB_VIDEO_008.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "SUB_VIDEO_009",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Video article actions",
+            "yaml": "SUB_VIDEO_009.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "SUB_VIDEO_010",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Post-comment and related-content sections",
+            "yaml": "SUB_VIDEO_010.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "SUB_VIDEO_011",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Recommended video navigation",
+            "yaml": "SUB_VIDEO_011.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "SUB_VIDEO_012",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Video entitlement and no monetisation",
+            "yaml": "SUB_VIDEO_012.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "SUB_VIDEO_013",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Player close and article recovery",
+            "yaml": "SUB_VIDEO_013.yaml",
+            "display_module": "Videos"
+        }
+    ]
+}

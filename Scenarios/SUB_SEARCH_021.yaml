@@ -1,0 +1,13 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, search, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_SEARCH.yaml"
+- tapOn: {point: "45%,8%"}
+- inputText: "climate change"
+- hideKeyboard
+- tapOn: {point: "90%,8%"}
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {text: "Sort by.*|newest|relevance|Newest|Relevance"}, timeout: 60000}
+- assertVisible: {text: "Sort by.*|newest|relevance|Newest|Relevance"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_021_phrase"

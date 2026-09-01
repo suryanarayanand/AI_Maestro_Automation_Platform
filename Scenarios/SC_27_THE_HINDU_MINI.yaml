@@ -8,14 +8,22 @@ tags:
 - scrollUntilVisible:
     element:
       text: "The Hindu Mini"
-    timeout: 20000
+    direction: DOWN
+    timeout: 60000
+    speed: 55
+    visibilityPercentage: 20
+    centerElement: true
 - tapOn:
     text: "The Hindu Mini"
 - waitForAnimationToEnd
 - scrollUntilVisible:
     element:
       text: ".*(January|February|March|April|May|June|July|August|September|October|November|December).*"
-    timeout: 20000
+    direction: DOWN
+    timeout: 60000
+    speed: 55
+    visibilityPercentage: 20
+    centerElement: true
 - tapOn:
     text: ".*(January|February|March|April|May|June|July|August|September|October|November|December).*"
     index: 0
@@ -26,10 +34,18 @@ tags:
     commands:
       - tapOn:
           text: "Dismiss"
+- runFlow:
+    when:
+      visible:
+        text: "Play solo"
+    commands:
+      - takeScreenshot: "Screenshots/SC_27/SC_27_The_Hindu_Mini_Play_Mode"
+      - tapOn:
+          text: "Play solo"
 - extendedWaitUntil:
     visible:
       text: "Settings"
-    timeout: 20000
+    timeout: 30000
 - assertNotVisible:
     text: ".*access was not found.*"
 - assertVisible: "Settings"

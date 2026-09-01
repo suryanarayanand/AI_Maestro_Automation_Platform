@@ -1,0 +1,104 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - world
+  - refresh
+  - content-recovery
+  - visual-layout
+
+---
+
+# SUB_WORLD_002 — World refresh and content recovery
+# Establish the repository-managed authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_WORLD.yaml"
+
+# Open World through the validated clickable World text locator.
+- extendedWaitUntil:
+    visible:
+      text: "World"
+    timeout: 30000
+
+- tapOn:
+    text: "World"
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "World"
+    timeout: 30000
+
+- assertVisible:
+    text: "World"
+
+# Position 1 — First pull-to-refresh with a bounded settled-state checkpoint.
+- swipe:
+    direction: DOWN
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "World"
+    timeout: 30000
+
+- assertVisible:
+    text: "World"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_002_after_refresh_1"
+
+# Position 1 — Second pull-to-refresh with the same bounded settlement checks.
+- swipe:
+    direction: DOWN
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "World"
+    timeout: 30000
+
+- assertVisible:
+    text: "World"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_002_after_refresh_2"
+
+# Position 2 — Inspect the settled first viewport without scrolling away from it.
+- assertVisible:
+    text: "World"
+
+- assertWithAI: "Inspect the current settled first viewport of the World section after the two refreshes. Verify that the World section identity and its initial visible news-content area are present and readable. Fail if the viewport is blank, obscured by a blocking overlay, or still represented only by loading placeholders or a persistent loading indicator."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_002_refreshed_first_viewport"
+
+# Position 3 — Prove that refresh retained the selected World section and that
+# usable content recovered instead of a blank, loading-only, or error surface.
+- extendedWaitUntil:
+    visible:
+      text: "World"
+    timeout: 30000
+
+- assertVisible:
+    text: "World"
+
+- assertWithAI: "Verify that World remains the visibly active section after both refreshes and that the page contains settled, usable news content. Fail if another section is selected, the World content area is blank, a request or network error is shown, a blocking error overlay is present, or a full-screen or persistent loader prevents use of the page."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_002_world_recovered"
+
+# Position 4 — Evaluate dynamic card integrity visually because the supplied
+# repository has no validated World card identity, collection-count, or loader
+# selector suitable for deterministic collection assertions.
+- assertVisible:
+    text: "World"
+
+- assertWithAI: "Inspect every headline and news card visible in the refreshed World viewport. At least one usable headline or card must be rendered. Headlines and cards must be readable, fully contained, and free from overlap or clipping. Fail if the visible listing contains repeated card or headline instances that indicate refresh duplication, blank or broken cards, cut-off content caused by layout failure, a timeout or request error, loading-only placeholders, or an endless or blocking loading indicator."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_002_final_content_integrity"

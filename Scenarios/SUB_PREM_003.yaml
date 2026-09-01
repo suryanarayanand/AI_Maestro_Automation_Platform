@@ -1,0 +1,92 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - premium
+  - briefing
+  - entitlement
+  - no-monetisation
+---
+
+# Establish the repository subscriber session before testing entitlement.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- assertVisible:
+    id: "screen_home"
+
+# Obligation 1: Open Premium and explicitly select Briefing.
+- tapOn:
+    text: "Premium"
+- extendedWaitUntil:
+    visible:
+      text: "Briefing"
+    timeout: 30000
+- tapOn:
+    text: "Briefing"
+- waitForAnimationToEnd
+- assertVisible:
+    text: "Briefing"
+
+# Obligation 2: The subscriber must not receive the Briefing lock or its actions.
+- assertNotVisible:
+    text: "Unlock Briefing|UNLOCK BRIEFING"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "Already a subscriber.*Login|Already a Subscriber.*Login"
+
+# Obligation 3: Capture at least two asserted, settled reading states.
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+- assertVisible:
+    id: "article_card"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_003_briefing_reading_state_01"
+
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible:
+    id: "article_card"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_003_briefing_reading_state_02"
+
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible:
+    id: "article_card"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_003_briefing_reading_state_03"
+
+# Obligation 4: A live Briefing content card is present instead of an anonymous lock card.
+- assertVisible:
+    id: "article_card"
+
+# Obligation 5: Recheck the lock surfaces after scrolling.
+- assertNotVisible:
+    text: "Unlock Briefing|UNLOCK BRIEFING"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "Already a subscriber.*Login|Already a Subscriber.*Login"
+
+# Obligation 6: Document the final readable, entitled and ad-free state.
+- assertVisible:
+    id: "article_card"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "aw0"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "Image for Taboola Advertising Unit"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_003_briefing_entitled_final"

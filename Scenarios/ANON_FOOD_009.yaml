@@ -1,0 +1,19 @@
+appId: com.mobstac.thehindu
+tags: [anonymous, quick-access, food]
+---
+- runFlow:
+    file: "../Common/OPEN_ANONYMOUS_QUICK_ACCESS.yaml"
+    env:
+      SECTION_NAME: "Food"
+
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 120000}
+- tapOn: {id: "article_card", index: 0}
+- runFlow: "../Common/HANDLE_AI_SUMMARY_SHEET.yaml"
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+
+- tapOn: {text: "(?i)Share", optional: true}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_FOOD_009_share"
+
+- back

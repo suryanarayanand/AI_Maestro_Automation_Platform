@@ -1,0 +1,14 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, opinion]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_OPINION_ARTICLE.yaml"
+- tapOn: {text: "SUBSCRIBE|Subscribe"}
+- extendedWaitUntil: {visible: {text: "Yearly"}, timeout: 30000}
+- assertVisible: {text: "Monthly"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_OPINION_014_plans"
+- scrollUntilVisible: {element: {text: "Already a subscriber.*|.*Login.*"}, direction: DOWN, timeout: 30000}
+- tapOn: {text: "Already a subscriber.*|.*Login.*"}
+- extendedWaitUntil: {visible: {text: "Login to your account|.*Sign in.*"}, timeout: 30000}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_OPINION_014_login"

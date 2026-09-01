@@ -1,0 +1,39 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - podcast
+  - episode-list
+---
+- runFlow: ../Common/OPEN_SUBSCRIBER_HOME.yaml
+
+- extendedWaitUntil:
+    visible: "Podcast"
+    timeout: 30000
+- tapOn: "Podcast"
+- extendedWaitUntil:
+    visible: "SEE ALL EPISODES"
+    timeout: 30000
+- scrollUntilVisible:
+    element: "SEE ALL EPISODES"
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_005_selected_series_before_open"
+- tapOn:
+    text: "SEE ALL EPISODES"
+    index: 0
+
+# Series pages use their series title, not the word Podcast. Episode duration
+# is stable deterministic evidence that an episode list has rendered.
+- extendedWaitUntil:
+    visible:
+      text: "(?i)^[0-9]+\\s*mins?$"
+    timeout: 30000
+- assertVisible:
+    text: "(?i)^[0-9]+\\s*mins?$"
+- assertWithAI: "Verify that a podcast series detail page is open with a readable series title, rendered artwork, and at least one complete episode row containing a title, Play control, and duration. Fail if the page is blank, loading-only, or unrelated content."
+- assertNotVisible: "SUBSCRIBE"
+- assertNotVisible: "ADVERTISEMENT"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_005_episode_rows_loaded"

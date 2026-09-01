@@ -1,0 +1,76 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "Data"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Data"}
+- tapOn: {text: "Data", index: 1}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_004_data"
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "Health"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Health"}
+- tapOn: {text: "Health", index: 1}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_004_health"
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "Opinion"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Opinion"}
+- tapOn: {text: "Opinion", index: 1}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_004_opinion"
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "Science"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Science"}
+- tapOn: {text: "Science", index: 1}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_004_science"
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "Technology"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Technology"}
+- tapOn: {text: "Technology", index: 1}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_004_technology"
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "Society"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Society"}
+- tapOn: {text: "Society", index: 1}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_004_society"

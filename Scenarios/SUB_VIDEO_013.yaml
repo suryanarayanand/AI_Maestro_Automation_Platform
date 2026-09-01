@@ -1,0 +1,28 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - video
+  - evidence-limited
+  - locator-blocked
+---
+
+# Precondition: an authenticated subscriber session is retained by the app.
+# Open the repository Inline Video reference and qualify that it reaches the
+# validated article-detail screen. Player interactions are intentionally not
+# fabricated because no validated Play, Fullscreen, player Close, or replay
+# selector is present in the supplied evidence.
+- openLink: "https://www.thehindu.com/entertainment/music/how-the-concept-of-mahishasurmardini-unites-the-country-during-navaratri/article67433268.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_013_video_article_qualification"

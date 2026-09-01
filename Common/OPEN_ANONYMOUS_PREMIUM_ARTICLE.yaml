@@ -1,0 +1,11 @@
+appId: com.mobstac.thehindu
+---
+- runFlow: "OPEN_ANONYMOUS_PREMIUM.yaml"
+- tapOn: {text: "All Stories"}
+- extendedWaitUntil: {visible: {id: "screen_premium"}, timeout: 20000}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- tapOn: {id: "article_card", index: 0}
+- tapOn: {text: "Close sheet", optional: true}
+- runFlow: "HANDLE_PREMIUM_INTERSTITIAL.yaml"
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+- assertVisible: {id: "screen_article_detail"}

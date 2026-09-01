@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Review Atomic Flow{% endblock %}
+{% block page_title %}Review atomic flow{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-start mb-3"><div><h2 class="h4 mb-1">{{ step.scenario }} &mdash; Step {{ step.step_number }}</h2><span class="status-pill">{{ step.user_state }}</span> <span class="status-pill status-{{ 'approved' if step.status == 'published' else 'pending' }}">{{ step.status }}</span></div><a class="btn btn-outline-secondary" href="{{ url_for('generator.generator') }}#atomic-flows">Back to workspace</a></div>
+<section class="surface mb-4"><div class="section-head"><div><small>Imported source</small><h2>Source text</h2></div></div><p class="mb-0">{{ step.source_text }}</p></section>
+<section class="surface mb-4">
+  <div class="section-head"><div><small>Generation context</small><h2>User state and tags</h2></div></div>
+  <form method="post" class="row g-3 align-items-end">
+    <input type="hidden" name="action" value="context">
+    <div class="col-md-4"><label class="form-label">User state</label><select class="form-select" name="user_state">{% for state in ['ANONYMOUS','SUBSCRIBER','MIXED'] %}<option value="{{ state }}" {% if step.user_state == state %}selected{% endif %}>{{ state }}</option>{% endfor %}</select></div>
+    <div class="col-md-6"><label class="form-label">Tags</label><input class="form-control" name="tags" value="{{ step.tags_list|join(', ') }}" placeholder="functional, article, subscriber"></div>
+    <div class="col-md-2"><button class="btn btn-outline-primary w-100">Update context</button></div>
+  </form>
+</section>
+<section class="surface">
+  <div class="section-head"><div><small>Reviewable output</small><h2>Editable Maestro proposal</h2></div></div>
+  {% if step.error %}<div class="alert alert-warning">{{ step.error }}</div>{% endif %}
+  {% if not step.proposal_yaml %}
+  <form method="post"><input type="hidden" name="action" value="generate"><button class="btn btn-primary">Generate proposal</button></form>
+  {% else %}
+  <form method="post"><textarea class="form-control font-monospace yaml-editor-area" name="yaml" rows="30" required>{{ step.proposal_yaml }}</textarea><div class="d-flex justify-content-end gap-2 mt-3"><button class="btn btn-outline-secondary" name="action" value="save">Save edits</button><button class="btn btn-success" name="action" value="publish">Approve and publish</button></div></form>
+  {% endif %}
+</section>
+{% if readiness %}
+<section class="surface mt-4">
+  <div class="section-head"><div><small>Approval gate</small><h2>Publish readiness</h2></div><span class="status-pill status-{{ 'approved' if readiness.ready else 'failed' }}">{{ 'READY' if readiness.ready else 'ACTION REQUIRED' }}</span></div>
+  <div class="table-responsive"><table class="table align-middle mb-0"><thead><tr><th>Check</th><th>Status</th><th>Evidence</th></tr></thead><tbody>
+  {% for check in readiness.checks %}<tr><td>{{ check.name }}</td><td><span class="status-pill status-{{ 'approved' if check.passed else 'failed' }}">{{ 'PASS' if check.passed else 'FAIL' }}</span></td><td>{{ check.detail }}</td></tr>{% endfor %}
+  </tbody></table></div>
+</section>
+{% endif %}
+<section class="surface mt-4">
+  <div class="section-head"><div><small>Testing bot analysis</small><h2>Evidence and suggestions</h2></div><span class="status-pill status-{{ 'approved' if guidance.confidence >= 75 else 'pending' }}">{{ guidance.confidence }}% confidence</span></div>
+  <p class="text-muted">{{ guidance.evidence_count }} relevant memory records found; {{ guidance.validated_count }} are validated or backed by passing execution.</p>
+  <ul class="mb-3">{% for suggestion in guidance.suggestions %}<li class="mb-2">{{ suggestion }}</li>{% endfor %}</ul>
+  {% if guidance.passed_flows %}<h3 class="h6">Matching passed flows</h3><div class="table-responsive"><table class="table table-sm"><thead><tr><th>Flow</th><th>Passes</th><th>Known failures</th><th>Command pattern</th></tr></thead><tbody>{% for flow in guidance.passed_flows %}<tr><td>{{ flow.path }}</td><td>{{ flow.pass_count }}</td><td>{{ flow.fail_count }}</td><td><code>{{ flow.command_sequence|join(' → ') }}</code></td></tr>{% endfor %}</tbody></table></div>{% endif %}
+  {% if guidance.failures %}<h3 class="h6 mt-3">Related failure lessons</h3><ul>{% for failure in guidance.failures %}<li><strong>{{ failure.case_id }}</strong>: {{ failure.payload.root_cause or failure.payload.error or failure.payload.failed_step or 'Review the failed execution before reuse.' }}</li>{% endfor %}</ul>{% endif %}
+</section>
+{% endblock %}

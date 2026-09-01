@@ -1,0 +1,199 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - article
+  - photo-gallery
+  - rapid-paging
+  - resilience
+  - no-monetisation
+  - evidence-limited
+
+---
+
+# SUB_PHOTO_009 — Rapid paging and image-load resilience
+# Establish the repository-standard authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Open the supplied photo-gallery reference. Because the reference is not yet
+# validated against the target build, article-detail visibility is a runtime gate.
+- openLink: "https://www.thehindu.com/sport/cricket/ipl2013/match-photos/rajasthan-royals-thrash-mumbai-indians/article4627667.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+# Preserve the initial settled state for comparison with the state reached
+# after three forward and three reverse gestures.
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_009_gallery_initial"
+
+# Position 1: Three deliberate forward gallery gestures. After every gesture,
+# assert that the subscriber remains on article detail without an ad interstitial.
+- swipe:
+    direction: LEFT
+    duration: 500
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_009_forward_1"
+
+- swipe:
+    direction: LEFT
+    duration: 500
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_009_forward_2"
+
+- swipe:
+    direction: LEFT
+    duration: 500
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_009_forward_3"
+
+# Position 1 continued: Three deliberate reverse gallery gestures.
+- swipe:
+    direction: RIGHT
+    duration: 500
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_009_reverse_1"
+
+- swipe:
+    direction: RIGHT
+    duration: 500
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_009_reverse_2"
+
+- swipe:
+    direction: RIGHT
+    duration: 500
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_009_reverse_3"
+
+# Position 2: Preserve settled visual evidence for review of blank, stretched,
+# duplicated, broken, or permanently loading image states. The repository does
+# not supply validated image-state locators or an executable visual-defect oracle.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_009_image_resilience_review"
+
+# Position 3: Executable responsiveness proof after returning through the same
+# number of reverse gestures. Counter equivalence remains screenshot-reviewed
+# until a validated gallery-counter locator is supplied.
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_009_returned_responsive_state"
+
+# Position 4: Final settled-page continuity and valid subscriber-surface proof.
+# Rendered-image and counter validity are retained in the screenshot artifact,
+# but cannot be asserted semantically without validated gallery child locators.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_009_final_settled_page"

@@ -1,0 +1,91 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - photos
+  - gallery
+  - paging
+  - counter
+---
+
+# Establish the authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Position 1: Open the Photos section and its leading current gallery card.
+# The validated gallery flow identifies this leading card as the live card
+# carrying a multi-image count badge.
+- tapOn:
+    text: "Photos"
+
+- waitForAnimationToEnd
+
+- tapOn:
+    point: "25%,35%"
+
+- waitForAnimationToEnd
+
+# Positions 1 and 3: Require enough images for three forward swipes and prove
+# that the gallery starts at image 1 with a syntactically valid counter.
+- extendedWaitUntil:
+    visible:
+      text: ".*1/([4-9]|[1-9][0-9]+).*"
+    timeout: 30000
+
+- assertVisible:
+    text: ".*1/([4-9]|[1-9][0-9]+).*"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_006_gallery_image_1"
+
+# Positions 2 and 4: First forward page. Waiting is mandatory after the swipe;
+# an exact current value of 2 detects duplication or a skipped first page.
+- swipe:
+    direction: LEFT
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: ".*2/([4-9]|[1-9][0-9]+).*"
+    timeout: 15000
+
+- assertVisible:
+    text: ".*2/([4-9]|[1-9][0-9]+).*"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_006_gallery_image_2"
+
+# Positions 2 and 4: Second forward page.
+- swipe:
+    direction: LEFT
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: ".*3/([4-9]|[1-9][0-9]+).*"
+    timeout: 15000
+
+- assertVisible:
+    text: ".*3/([4-9]|[1-9][0-9]+).*"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_006_gallery_image_3"
+
+# Positions 2 and 4: Third forward page.
+- swipe:
+    direction: LEFT
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: ".*4/([4-9]|[1-9][0-9]+).*"
+    timeout: 15000
+
+- assertVisible:
+    text: ".*4/([4-9]|[1-9][0-9]+).*"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_006_gallery_image_4"

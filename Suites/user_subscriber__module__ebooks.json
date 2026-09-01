@@ -1,0 +1,147 @@
+{
+    "suite": "Subscriber User Cases - eBooks",
+    "source_suite": "user_subscriber",
+    "module": "eBooks",
+    "tests": [
+        {
+            "id": "SUB_EBOOK_001",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber eBooks launch and selected navigation",
+            "yaml": "SUB_EBOOK_001.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "SUB_EBOOK_002",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber eBooks single refresh",
+            "yaml": "SUB_EBOOK_002.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "SUB_EBOOK_003",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber eBooks repeated-refresh stability",
+            "yaml": "SUB_EBOOK_003.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "SUB_EBOOK_004",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Current eBook card presentation",
+            "yaml": "SUB_EBOOK_004.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "SUB_EBOOK_005",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Previous eBooks listing and scrolling",
+            "yaml": "SUB_EBOOK_005.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "SUB_EBOOK_006",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Open eBook from cover",
+            "yaml": "SUB_EBOOK_006.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "SUB_EBOOK_007",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Open eBook from title",
+            "yaml": "SUB_EBOOK_007.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "SUB_EBOOK_008",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Open eBook from previous listing",
+            "yaml": "SUB_EBOOK_008.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "SUB_EBOOK_009",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Open eBook and navigate through all pages",
+            "yaml": "SUB_EBOOK_009.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "SUB_EBOOK_010",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Multiple eBooks entitlement consistency",
+            "yaml": "SUB_EBOOK_010.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "SUB_EBOOK_011",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "eBooks masthead Home round trip",
+            "yaml": "SUB_EBOOK_011.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "SUB_EBOOK_012",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "eBooks scroll-state restoration",
+            "yaml": "SUB_EBOOK_012.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "SUB_EBOOK_013",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "eBooks long-title and metadata layout",
+            "yaml": "SUB_EBOOK_013.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "SUB_EBOOK_014",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber eBooks session and access persistence",
+            "yaml": "SUB_EBOOK_014.yaml",
+            "display_module": "eBooks"
+        }
+    ]
+}

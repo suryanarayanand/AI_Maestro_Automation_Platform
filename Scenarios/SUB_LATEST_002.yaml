@@ -1,0 +1,20 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, latest-news, quick-access, refresh]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_LATEST_NEWS.yaml"
+- assertVisible: {text: "(?i)^Latest News$"}
+- swipe: {start: "50%,25%", end: "50%,75%", duration: 700}
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {id: "screen_home"}, timeout: 30000}
+- assertVisible: {text: "(?i)^Latest News$"}
+- waitForAnimationToEnd
+- assertWithAI: "Verify the refreshed Latest News first viewport contains usable rendered and readable content without a blank, error, crash, or blocking loader"
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_002_refresh_one"
+- swipe: {start: "50%,25%", end: "50%,75%", duration: 700}
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {id: "screen_home"}, timeout: 30000}
+- assertVisible: {text: "(?i)^Latest News$"}
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- assertWithAI: "Verify Latest News remains selected and visible headlines or cards render without duplication, clipping, timeout, placeholders, blank content, errors, or persistent loading"
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_002_refresh_two"

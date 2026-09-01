@@ -1,0 +1,13 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, ebooks]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_EBOOK_RESTRICTION.yaml"
+- repeat:
+    times: 2
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd: {timeout: 2500}
+- assertVisible: {text: ".*Already a subscriber.*|Login|LOGIN|.*subscriber-only webinars.*"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_EBOOK_014_result"

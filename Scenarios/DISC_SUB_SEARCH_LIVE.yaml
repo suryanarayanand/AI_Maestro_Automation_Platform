@@ -1,0 +1,22 @@
+appId: com.mobstac.thehindu
+tags: [discovery, subscriber, search]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- tapOn: {id: "nav_menu"}
+- extendedWaitUntil: {visible: {id: "screen_hamburger"}, timeout: 30000}
+- assertVisible: {id: "cta_search"}
+- takeScreenshot: "Screenshots/Generated/DISC_SUB_SEARCH_hamburger"
+- tapOn: {id: "cta_search"}
+- waitForAnimationToEnd
+- inputText: "Chennai"
+- pressKey: enter
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {text: "Sort by.*|newest|relevance|Newest|Relevance"}, timeout: 30000}
+- takeScreenshot: "Screenshots/Generated/DISC_SUB_SEARCH_city_results"
+- assertVisible: {text: "Sort by.*|newest|relevance|Newest|Relevance"}
+- tapOn: {text: "newest|Newest"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/DISC_SUB_SEARCH_newest"
+- tapOn: {text: "relevance|Relevance"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/DISC_SUB_SEARCH_relevance"

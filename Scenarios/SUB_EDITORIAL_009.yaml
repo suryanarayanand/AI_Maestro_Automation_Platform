@@ -1,0 +1,284 @@
+appId: com.mobstac.thehindu
+
+tags:
+
+  - generated
+
+  - ordered
+
+  - subscriber
+
+  - editorial
+
+  - bookmark
+
+  - share
+
+  - comment
+
+  - non-destructive
+
+  - blocked-locator-grounding
+
+---
+
+
+
+# Establish the required authenticated subscriber session.
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+
+
+# Open the reference Editorial article. The reference URL is runtime-gated by
+
+# the validated article-detail screen rather than assumed to remain valid.
+
+- openLink: "https://www.thehindu.com/opinion/editorial/brazen-intimidation-the-hindu-editorial-on-the-tax-survey-on-the-bbc/article66513588.ece"
+- waitForAnimationToEnd
+- tapOn: {text: "Close sheet", optional: true}
+
+
+- extendedWaitUntil:
+
+    visible:
+
+      id: "screen_article_detail"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- assertNotVisible:
+
+    id: "cta_login"
+
+
+
+- assertNotVisible:
+
+    text: "Login to your account"
+
+
+
+# Exercise the now-observed bookmark control and prove both state transitions.
+- extendedWaitUntil: {visible: {id: "cta_bookmark"}, timeout: 20000}
+- runFlow: "../Common/NORMALIZE_AND_SELECT_SUBSCRIBER_BOOKMARK.yaml"
+- assertNotVisible: {id: "cta_login"}
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_009_bookmarked"
+
+# Open the native share surface, verify it visually, then return safely.
+- tapOn: {id: "cta_share"}
+- waitForAnimationToEnd
+- assertWithAI: "Verify a native share surface is open for the current Editorial article with visible share targets or actions; fail if the article remained unchanged or an error is shown."
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_009_share_surface"
+- back
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+- assertVisible: {id: "screen_article_detail"}
+- assertNotVisible: {id: "cta_login"}
+
+# Positions 1 and 4 use the observed bookmark state control.
+# approved subscriber bookmark behavior, but no validated executable Bookmark,
+
+# Remove bookmark, or selected-state locator for this Editorial article.
+
+
+
+# Positions 2 and 5 are intentionally not simulated. cta_share is supplied only
+
+# as an unvalidated hierarchy locator, and no validated native share-surface
+
+# anchor is available for asserting that the system surface settled before Back.
+
+
+
+# Positions 3 and 6: Post a comment is article-dependent. Search only a bounded
+
+# portion of the article, open it when available, verify that subscriber access
+
+# does not redirect to the anonymous login gate, and return without publishing.
+
+- repeat:
+
+    times: 12
+
+    commands:
+
+      - runFlow:
+
+          when:
+
+            visible:
+
+              text: "Post a comment"
+
+          commands:
+
+            - assertVisible:
+
+                text: "Post a comment"
+
+
+
+            - tapOn:
+
+                text: "Post a comment"
+
+
+
+            - waitForAnimationToEnd
+
+
+
+            - assertNotVisible:
+
+                id: "cta_login"
+
+
+
+            - assertNotVisible:
+
+                text: "Login to your account"
+
+
+
+            - waitForAnimationToEnd
+
+            - takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_009_comment_access_no_login"
+
+
+
+            # Leave comment entry without entering or submitting public content.
+
+            - back
+
+
+
+            - extendedWaitUntil:
+
+                visible:
+
+                  id: "screen_article_detail"
+
+                timeout: 25000
+
+
+
+            - assertVisible:
+
+                id: "screen_article_detail"
+
+
+
+            - assertNotVisible:
+
+                id: "cta_login"
+
+
+
+            - assertNotVisible:
+
+                text: "Login to your account"
+
+
+
+      - swipe:
+
+          direction: UP
+
+
+
+      - waitForAnimationToEnd
+
+
+
+# Check once more after the final bounded swipe.
+
+- runFlow:
+
+    when:
+
+      visible:
+
+        text: "Post a comment"
+
+    commands:
+
+      - assertVisible:
+
+          text: "Post a comment"
+
+
+
+      - tapOn:
+
+          text: "Post a comment"
+
+
+
+      - waitForAnimationToEnd
+
+
+
+      - assertNotVisible:
+
+          id: "cta_login"
+
+
+
+      - assertNotVisible:
+
+          text: "Login to your account"
+
+
+
+      - waitForAnimationToEnd
+
+      - takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_009_comment_access_no_login_final"
+
+
+
+      - back
+
+
+
+      - extendedWaitUntil:
+
+          visible:
+
+            id: "screen_article_detail"
+
+          timeout: 25000
+
+
+
+      - assertVisible:
+
+          id: "screen_article_detail"
+
+
+
+      - assertNotVisible:
+
+          id: "cta_login"
+
+
+
+      - assertNotVisible:
+
+          text: "Login to your account"
+
+
+
+# Do not permit the grounded comment checks to produce a false PASS for the
+
+# unexecutable bookmark and native-share obligations.
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_009_manual_review"

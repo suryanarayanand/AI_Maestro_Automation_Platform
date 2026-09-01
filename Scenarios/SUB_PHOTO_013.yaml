@@ -1,0 +1,80 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - photos
+  - gallery
+  - comment
+  - non-destructive
+  - evidence-limited
+---
+
+# SUB_PHOTO_013 — Subscriber gallery comment access
+# Establish the required authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Open repository photo-gallery reference 68. Runtime screen validation ensures
+# that an unavailable or externally routed reference cannot produce a false pass.
+- openLink: "https://www.thehindu.com/sport/cricket/ipl2013/match-photos/rajasthan-royals-thrash-mumbai-indians/article4627667.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 1: use the validated comment-entry locator available on article detail.
+- scrollUntilVisible:
+    element:
+      text: "Post a comment"
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 40
+    centerElement: true
+
+- assertVisible:
+    text: "Post a comment"
+
+- tapOn:
+    text: "Post a comment"
+
+- waitForAnimationToEnd
+
+# Position 3: subscriber comment access must not open an authentication gate.
+- assertNotVisible:
+    text: "Login to your account"
+
+- assertNotVisible:
+    id: "cta_login"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_013_comment_access_no_login"
+
+# Position 2: leave immediately without entering text or invoking submission.
+- back
+
+# Position 4: verify that the gallery article is restored. Because this flow
+# contains neither inputText nor a submission action, no public comment is created.
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 25000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertVisible:
+    text: "Post a comment"
+
+- assertNotVisible:
+    text: "Login to your account"
+
+- assertNotVisible:
+    id: "cta_login"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_013_gallery_restored_without_posting"

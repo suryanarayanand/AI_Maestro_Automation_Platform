@@ -1,0 +1,95 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - podcast
+  - episode-list
+  - metadata
+  - evidence-limited
+---
+
+# SUB_PODCAST_006 — Episode-list identity, ordering and metadata
+
+# Position 1 — Establish the validated subscriber session and open Podcast.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+- tapOn:
+    text: "Podcast"
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+# Locate the supplied episode-list action using a bounded search. The exact text
+# comes from the imported requirement and reference scenarios; the runtime
+# assertions prevent a missing action from being treated as successful coverage.
+- scrollUntilVisible:
+    element:
+      text: "^SEE ALL EPISODES$"
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 40
+    centerElement: true
+
+- assertVisible:
+    text: "^SEE ALL EPISODES$"
+
+- assertWithAI: "Verify that the visible SEE ALL EPISODES action belongs to a fully rendered podcast-series card with a readable series identity and visible series branding or cover artwork. Fail if the card is blank, broken, loading-only, or displaying a request or network error."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_006_selected_series_before_open"
+
+- tapOn:
+    text: "^SEE ALL EPISODES$"
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+# Position 2 — Inspect several rows on the settled episode-listing destination.
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify that the selected podcast's episode-listing page is open and settled. Inspect at least three distinct episode rows in the current viewport. Fail if fewer than three rows are visible, the page is blank or loading-only, or rows are obscured, clipped, duplicated, or replaced by an error surface."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_006_episode_rows_inspected"
+
+# Position 3 — Validate destination identity and series branding visually because
+# no deterministic series-title or branding-child selector was supplied.
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify that the episode-listing page has a readable series title and visible branding or cover artwork matching the podcast series selected through SEE ALL EPISODES. The page must represent one coherent series identity; fail for missing, conflicting, generic, or visibly mismatched title and branding."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_006_series_identity_and_branding"
+
+# Position 4 — Validate row metadata and the observable episode ordering.
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Inspect at least three visible episode rows. Every inspected row must contain a readable episode title, a rendered thumbnail, a readable duration, and a visible play control. The rows must form one consistent top-to-bottom episode sequence; any visible dates or episode numbers must not show an obvious reversal, duplication, or inconsistent ordering. Fail if required metadata or controls are missing, blank, broken, clipped, overlapped, or attached to the wrong row."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_006_episode_metadata_and_order"

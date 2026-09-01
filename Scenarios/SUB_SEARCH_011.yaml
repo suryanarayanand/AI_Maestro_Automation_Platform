@@ -1,0 +1,13 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, search, input-safety, special-characters]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_SEARCH.yaml"
+- tapOn: {point: "45%,8%"}
+- eraseText: 100
+- inputText: "special-test-123!@#"
+- pressKey: ENTER
+- waitForAnimationToEnd
+- assertVisible: {id: "cta_search"}
+- assertNotVisible: {text: "Webpage not available|has stopped|keeps stopping"}
+- assertNotVisible: {id: "screen_article_detail"}
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_011_safe_settled_state"

@@ -1,0 +1,167 @@
+{
+    "suite": "Anonymous User Cases - Opinion Quick Access",
+    "source_suite": "user_anonymous",
+    "module": "Opinion Quick Access",
+    "tests": [
+        {
+            "id": "ANON_OPINION_001",
+            "module": "Opinion",
+            "section": "Opinion",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Opinion landing and selected Quick Access tab",
+            "yaml": "ANON_OPINION_001.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "ANON_OPINION_002",
+            "module": "Opinion",
+            "section": "Opinion",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Opinion refresh retains section context",
+            "yaml": "ANON_OPINION_002.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "ANON_OPINION_003",
+            "module": "Opinion",
+            "section": "Opinion",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Opinion feed scrolling and visual integrity",
+            "yaml": "ANON_OPINION_003.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "ANON_OPINION_004",
+            "module": "Opinion",
+            "section": "Opinion",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Opinion advertisement handling",
+            "yaml": "ANON_OPINION_004.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "ANON_OPINION_005",
+            "module": "Opinion",
+            "section": "Opinion",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Open Opinion article and Read Full Article",
+            "yaml": "ANON_OPINION_005.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "ANON_OPINION_006",
+            "module": "Opinion",
+            "section": "Opinion",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Premium Opinion article paywall restriction",
+            "yaml": "ANON_OPINION_006.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "ANON_OPINION_007",
+            "module": "Opinion",
+            "section": "Opinion",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Free Opinion article completion",
+            "yaml": "ANON_OPINION_007.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "ANON_OPINION_008",
+            "module": "Opinion",
+            "section": "Opinion",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Opinion AI Summary entitlement",
+            "yaml": "ANON_OPINION_008.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "ANON_OPINION_009",
+            "module": "Opinion",
+            "section": "Opinion",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Opinion Listen to Article control",
+            "yaml": "ANON_OPINION_009.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "ANON_OPINION_010",
+            "module": "Opinion",
+            "section": "Opinion",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Opinion reading options and text size",
+            "yaml": "ANON_OPINION_010.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "ANON_OPINION_011",
+            "module": "Opinion",
+            "section": "Opinion",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Opinion bookmark anonymous sign-in restriction",
+            "yaml": "ANON_OPINION_011.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "ANON_OPINION_012",
+            "module": "Opinion",
+            "section": "Opinion",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Opinion share sheet",
+            "yaml": "ANON_OPINION_012.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "ANON_OPINION_013",
+            "module": "Opinion",
+            "section": "Opinion",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Opinion comment anonymous sign-in restriction",
+            "yaml": "ANON_OPINION_013.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "ANON_OPINION_014",
+            "module": "Opinion",
+            "section": "Opinion",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Opinion Subscribe plans and subscriber login",
+            "yaml": "ANON_OPINION_014.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "ANON_OPINION_015",
+            "module": "Opinion",
+            "section": "Opinion",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Opinion Cartoon section navigation",
+            "yaml": "ANON_OPINION_015.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "ANON_OPINION_016",
+            "module": "Opinion",
+            "section": "Opinion",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Quick Access swipe away and return to Opinion",
+            "yaml": "ANON_OPINION_016.yaml",
+            "display_module": "Opinion Quick Access"
+        }
+    ]
+}

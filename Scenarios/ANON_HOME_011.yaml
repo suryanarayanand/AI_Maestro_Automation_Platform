@@ -1,0 +1,25 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, bookmark, login-gate]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_HOME.yaml"
+
+- tapOn: {id: "article_card", index: 0}
+
+- tapOn: {text: "Close sheet", optional: true}
+
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+
+- assertVisible: {text: "Bookmark"}
+
+- tapOn: {text: "Bookmark"}
+
+- extendedWaitUntil: {visible: {text: "Login to your account"}, timeout: 15000}
+
+- assertVisible: {text: "Login to your account"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HOME_011_bookmark_login"
+

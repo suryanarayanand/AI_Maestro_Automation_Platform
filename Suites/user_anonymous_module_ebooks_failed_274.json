@@ -1,0 +1,137 @@
+{
+    "suite": "Anonymous User Cases - eBooks - Failed retry #274",
+    "source_suite": "user_anonymous__module__ebooks",
+    "module": "eBooks",
+    "tests": [
+        {
+            "id": "ANON_EBOOK_006",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Open eBook from cover",
+            "yaml": "ANON_EBOOK_006.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "ANON_EBOOK_007",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Open eBook from title",
+            "yaml": "ANON_EBOOK_007.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "ANON_EBOOK_008",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Open eBook from description",
+            "yaml": "ANON_EBOOK_008.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "ANON_EBOOK_009",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Anonymous eBook subscription-plan restriction",
+            "yaml": "ANON_EBOOK_009.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "ANON_EBOOK_010",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "eBook Subscribe purchase route",
+            "yaml": "ANON_EBOOK_010.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "ANON_EBOOK_011",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "eBook existing-subscriber Login route",
+            "yaml": "ANON_EBOOK_011.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "ANON_EBOOK_012",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "eBook restriction back-navigation",
+            "yaml": "ANON_EBOOK_012.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "ANON_EBOOK_013",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Multiple eBooks entitlement consistency",
+            "yaml": "ANON_EBOOK_013.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "ANON_EBOOK_014",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "eBook restriction after repeated refresh",
+            "yaml": "ANON_EBOOK_014.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "ANON_EBOOK_016",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "eBooks listing scroll-state restoration",
+            "yaml": "ANON_EBOOK_016.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "ANON_EBOOK_018",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "eBooks rapid card interaction protection",
+            "yaml": "ANON_EBOOK_018.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "ANON_EBOOK_019",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "eBooks controlled resilience and recovery",
+            "yaml": "ANON_EBOOK_019.yaml",
+            "display_module": "eBooks"
+        },
+        {
+            "id": "ANON_EBOOK_020",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Anonymous eBooks access-boundary summary",
+            "yaml": "ANON_EBOOK_020.yaml",
+            "display_module": "eBooks"
+        }
+    ]
+}

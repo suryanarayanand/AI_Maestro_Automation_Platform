@@ -1,0 +1,130 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - premium
+  - webinar
+  - full-access
+  - no-monetisation
+---
+
+# Establish the required authenticated subscriber state.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- assertVisible:
+    id: "screen_home"
+
+# Position 1: Open Premium > Webinar and inspect current entries in bounded steps.
+- tapOn:
+    text: "Premium"
+- extendedWaitUntil:
+    visible:
+      text: "Webinar"
+    timeout: 30000
+- tapOn:
+    text: "Webinar"
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+- assertVisible:
+    id: "article_card"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_010_webinar_entries_top"
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "article_card"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_010_webinar_entries_lower"
+
+# Position 2: Open a currently rendered Webinar entry without using a stale title.
+- scrollUntilVisible:
+    element:
+      id: "article_card"
+    direction: DOWN
+    timeout: 15000
+    speed: 40
+- assertVisible:
+    id: "article_card"
+- tapOn:
+    id: "article_card"
+    index: 0
+
+# Position 3: Verify the first opened entry is entitled and capture evidence.
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+- assertVisible:
+    id: "screen_article_detail"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "Login"
+- assertNotVisible:
+    id: "cta_login"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_010_webinar_entry_entitled"
+
+# Position 4: Return to Webinar and strictly recheck that its card inventory loaded.
+- back
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+- assertVisible:
+    id: "article_card"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_010_webinar_cards_and_metadata"
+
+# Position 5: Reopen a rendered Webinar card and verify its detail destination.
+- tapOn:
+    id: "article_card"
+    index: 0
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 6: Demonstrate continued subscriber access through bounded reading states.
+- repeat:
+    times: 6
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "Login"
+      - assertNotVisible:
+          id: "cta_login"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+- assertVisible:
+    id: "screen_article_detail"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "Login"
+- assertNotVisible:
+    id: "cta_login"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_010_webinar_full_access_lower"

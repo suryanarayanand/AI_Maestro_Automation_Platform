@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+tags: [common, anonymous, trending]
+---
+- runFlow: "OPEN_ANONYMOUS_HOME.yaml"
+- tapOn: {id: "nav_trending"}
+- extendedWaitUntil: {visible: {id: "screen_trending"}, timeout: 30000}
+- assertVisible: {id: "screen_trending"}
+- assertVisible: {id: "nav_trending"}
+- assertVisible: {text: "All"}
+- assertVisible: {text: "News"}
+- assertVisible: {text: "Business"}
+- assertVisible: {text: "Technology"}
+- assertVisible: {text: "Entertainment"}
+- assertVisible: {text: "Sports"}

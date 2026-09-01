@@ -1,0 +1,23 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, videos]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_VIDEOS.yaml"
+
+- assertVisible: {text: "Videos|VIDEOS"}
+
+- assertVisible: {id: "article_card"}
+
+- runFlow:
+
+    when: {visible: {text: "Play"}}
+
+    commands:
+
+      - assertVisible: {text: "Play"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_VIDEO_003_hero_and_cards"
+

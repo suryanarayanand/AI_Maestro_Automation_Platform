@@ -3,7 +3,7 @@ tags:
   - locator-smoke
   - business
 ---
-- runFlow: ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml
+- runFlow: ../../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml
 - repeat:
     times: 5
     commands:

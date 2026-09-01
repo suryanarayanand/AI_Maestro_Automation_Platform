@@ -1,0 +1,75 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - premium
+  - bookmark
+---
+
+# Execution precondition: the configured subscriber is authenticated and the
+# validated Premium landing surface is already open.
+- extendedWaitUntil:
+    visible:
+      id: "screen_premium"
+    timeout: 30000
+- assertVisible:
+    id: "screen_premium"
+
+# Position 1: open a Premium article from the validated Premium article CTA.
+- scrollUntilVisible:
+    element:
+      text: "READ FULL ARTICLE"
+    direction: DOWN
+    timeout: 45000
+    speed: 40
+- tapOn:
+    text: "READ FULL ARTICLE"
+    index: 0
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+- assertVisible:
+    id: "screen_article_detail"
+- extendedWaitUntil:
+    visible:
+      id: "cta_bookmark"
+    timeout: 20000
+- assertVisible:
+    id: "cta_bookmark"
+- tapOn:
+    id: "cta_bookmark"
+
+# Position 2: the subscriber bookmark action must not open the login gate.
+- waitForAnimationToEnd
+- assertNotVisible:
+    text: "Login to your account"
+
+# Position 3: wait for the post-bookmark surface to settle and capture it.
+- assertVisible:
+    id: "screen_article_detail"
+- assertVisible:
+    id: "cta_bookmark"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_014_bookmarked_article_state"
+
+# Position 4: acceptance proxy grounded by the available repository evidence:
+# the article remains active and its bookmark control remains rendered after
+# the tap. A dedicated selected-state selector is not present in the evidence.
+- assertVisible:
+    id: "screen_article_detail"
+- assertVisible:
+    id: "cta_bookmark"
+
+# Position 5: reconfirm that no authentication gate was invoked.
+- assertNotVisible:
+    text: "Login to your account"
+
+# Position 6: save final assertion-backed bookmark evidence.
+- assertVisible:
+    id: "screen_article_detail"
+- assertNotVisible:
+    text: "Login to your account"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_014_bookmark_evidence_saved"

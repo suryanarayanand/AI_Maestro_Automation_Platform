@@ -1,0 +1,135 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - premium
+  - navigation
+  - no-monetisation
+---
+
+# Establish the subscriber session and reach the validated Home surface.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- assertVisible:
+    id: "screen_home"
+
+# Open Premium through its validated navigation control.
+- tapOn:
+    id: "nav_premium"
+- extendedWaitUntil:
+    visible:
+      id: "screen_premium"
+    timeout: 30000
+
+# Tab 1 of 5: Briefing is the initial Premium section.
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_premium"
+- assertNotVisible:
+    id: "cta_login"
+- assertNotVisible:
+    text: "Already a [Ss]ubscriber.*Login|HAVE AN ACCOUNT.*LOGIN"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "ad_iframe"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_005_01_briefing_settled"
+
+# Tab 2 of 5: Specials.
+- swipe:
+    direction: LEFT
+- extendedWaitUntil:
+    visible:
+      id: "screen_premium"
+    timeout: 30000
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_premium"
+- assertNotVisible:
+    id: "cta_login"
+- assertNotVisible:
+    text: "Already a [Ss]ubscriber.*Login|HAVE AN ACCOUNT.*LOGIN"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "ad_iframe"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_005_02_specials_settled"
+
+# Tab 3 of 5: Packages.
+- swipe:
+    direction: LEFT
+- extendedWaitUntil:
+    visible:
+      id: "screen_premium"
+    timeout: 30000
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_premium"
+- assertNotVisible:
+    id: "cta_login"
+- assertNotVisible:
+    text: "Already a [Ss]ubscriber.*Login|HAVE AN ACCOUNT.*LOGIN"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "ad_iframe"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_005_03_packages_settled"
+
+# Tab 4 of 5: Webinar.
+- swipe:
+    direction: LEFT
+- extendedWaitUntil:
+    visible:
+      id: "screen_premium"
+    timeout: 30000
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_premium"
+- assertNotVisible:
+    id: "cta_login"
+- assertNotVisible:
+    text: "Already a [Ss]ubscriber.*Login|HAVE AN ACCOUNT.*LOGIN"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "ad_iframe"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_005_04_webinar_settled"
+
+# Tab 5 of 5: All Stories.
+- swipe:
+    direction: LEFT
+- extendedWaitUntil:
+    visible:
+      id: "screen_premium"
+    timeout: 30000
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_premium"
+- assertNotVisible:
+    id: "cta_login"
+- assertNotVisible:
+    text: "Already a [Ss]ubscriber.*Login|HAVE AN ACCOUNT.*LOGIN"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "ad_iframe"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_005_05_all_stories_settled"

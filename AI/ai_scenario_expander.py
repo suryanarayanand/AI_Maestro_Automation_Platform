@@ -137,14 +137,15 @@ class AIScenarioExpander:
     def __init__(self, client=None, model=None, catalog=None):
         self.client = client or OpenAI(
             api_key=os.getenv("OPENAI_API_KEY"),
-            timeout=float(os.getenv("OPENAI_SCENARIO_TIMEOUT", "90")),
-            max_retries=int(os.getenv("OPENAI_SCENARIO_RETRIES", "1")),
+            timeout=float(os.getenv("OPENAI_SCENARIO_TIMEOUT", "20")),
+            max_retries=int(os.getenv("OPENAI_SCENARIO_RETRIES", "0")),
         )
         self.model = model or os.getenv("OPENAI_SCENARIO_MODEL", "gpt-5.6-sol")
         self.catalog = catalog or AutomationRepositoryCatalog()
 
     def _prompt(self, case):
         points = "\n".join(f"- {point}" for point in case["validation_points"])
+        memory_evidence = case.get("app_memory_evidence", [])
         return f"""You are a Senior Mobile QA Automation Engineer designing reviewable Maestro automation scenarios.
 
 Convert the business requirement into a structured automation design. Do not generate Maestro YAML and do not invent locators, screens, flows, credentials, test data, or backend capabilities.
@@ -153,8 +154,17 @@ Business requirement:
 ID: {case['test_case_id']}
 Title: {case['name']}
 Current module: {case['module']}
+User type: {case.get('user_type') or 'Not supplied'}
+Precondition: {case.get('precondition') or 'Not supplied'}
+Test data supplied: {'Yes' if case.get('test_data') else 'No'}
 Validation points:
 {points or '- No validation point supplied'}
+
+Expected results:
+{json.dumps(case.get('expected_results', []), ensure_ascii=False)}
+
+Explicit automation intents (authoritative and appended after AI adaptation):
+{json.dumps(case.get('automation_intents', []), ensure_ascii=False)}
 
 Available common flows (return exact filenames only):
 {json.dumps(self.catalog.common_flows)}
@@ -168,6 +178,9 @@ Available validated locator names (use exact names only in Open, Tap, and Verify
 Known modules/pages:
 {json.dumps(self.catalog.modules)}
 
+Relevant App Memory evidence:
+{json.dumps(memory_evidence, ensure_ascii=False)}
+
 Rules:
 - Produce reusable, observable mobile test steps in execution order.
 - Include preconditions as steps only when automation can perform them.
@@ -178,6 +191,22 @@ Rules:
 - Navigation and tap steps must not be followed by an invented screen-loaded assertion.
 - Preserve the supplied test case ID exactly.
 - Use only listed common flows and locator repository screens.
+- App Memory entries with validated=true may be used as executable evidence.
+- Accepted execution and approved-YAML lessons may be reused only when their
+  user_state and requested behavior match the current case. Preserve useful
+  command ordering such as conditional popup dismissal, screenshot-before-close,
+  and post-close waits.
+- Never copy a failure as a working pattern. A failure lesson may only be used to
+  avoid its diagnosed failed ordering or selector.
+- App Memory entries with validated=false are observations only. Never turn them into
+  executable locators; record the missing validation in unresolved_assumptions.
+- If App Memory has no evidence for a requested target, do not infer a similar target.
+- Never use generic article_card for a request that identifies a specific article type
+  such as Briefing unless validated evidence links that card to the requested type.
+- Do not report an explicit automation intent as missing or unsupported; it is
+  author-supplied and will be appended unchanged after this adaptation.
+- Treat supplied user type, precondition, and presence of test data as facts. Do not
+  create assumptions claiming those fields were unspecified.
 - If required information or infrastructure is missing, record it in unresolved_assumptions.
 - Confidence must reflect how executable the design is with the supplied information.
 - Every test_steps item must use one of these executable sentence forms:

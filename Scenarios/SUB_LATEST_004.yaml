@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, latest-news, quick-access, deep-scroll]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_LATEST_NEWS.yaml"
+- repeat:
+    times: 5
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd
+      - assertVisible: {id: "screen_home"}
+      - assertVisible: {text: "(?i)^Latest News$"}
+      - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_004_deep_scroll"

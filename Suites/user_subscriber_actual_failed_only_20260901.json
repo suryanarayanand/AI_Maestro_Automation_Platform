@@ -1,0 +1,1421 @@
+{
+    "suite": "Subscriber actual failed-only rerun (Jobs 420-424)",
+    "source_suite": "user_subscriber",
+    "source_jobs": [
+        420,
+        421,
+        422,
+        423,
+        424
+    ],
+    "selection_rule": "job_results.status == FAIL; review-only PASS executions excluded",
+    "tests": [
+        {
+            "id": "SUB_HOME_011",
+            "module": "Home",
+            "priority": "P2",
+            "name": "Subscriber post-article sections",
+            "yaml": "SUB_HOME_011.yaml",
+            "section": "Home",
+            "user_state": "SUBSCRIBER"
+        },
+        {
+            "id": "SUB_HOME_012",
+            "module": "Home",
+            "priority": "P2",
+            "name": "Subscriber article pager session",
+            "yaml": "SUB_HOME_012.yaml",
+            "section": "Home",
+            "user_state": "SUBSCRIBER"
+        },
+        {
+            "id": "SUB_EBOOK_012",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "eBooks scroll-state restoration",
+            "yaml": "SUB_EBOOK_012.yaml"
+        },
+        {
+            "id": "SUB_TREND_016",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Trending section and scroll-state restoration",
+            "yaml": "SUB_TREND_016.yaml"
+        },
+        {
+            "id": "SUB_PREM_016",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Premium Listen and AI Summary entitlement",
+            "yaml": "SUB_PREM_016.yaml"
+        },
+        {
+            "id": "SUB_PREM_017",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Premium article paging and entitlement persistence",
+            "yaml": "SUB_PREM_017.yaml"
+        },
+        {
+            "id": "SUB_GAMES_008",
+            "module": "Games",
+            "section": "Games",
+            "user_state": "SUBSCRIBER",
+            "priority": "P1",
+            "name": "Easy Down subscriber play access",
+            "yaml": "SUB_GAMES_008.yaml"
+        },
+        {
+            "id": "SUB_ACCOUNT_012",
+            "module": "Account Settings",
+            "section": "Account Settings",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Logout control presence without session mutation",
+            "yaml": "SUB_ACCOUNT_012.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_020",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P1",
+            "name": "Sort Search results by Relevance",
+            "yaml": "SUB_SEARCH_020.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_021",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P1",
+            "name": "Multi-word news phrase search",
+            "yaml": "SUB_SEARCH_021.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_024",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Numeric and year query",
+            "yaml": "SUB_SEARCH_024.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_028",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Repeated identical query stability",
+            "yaml": "SUB_SEARCH_028.yaml"
+        },
+        {
+            "id": "SUB_ARTICLE_001",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Article identity, header and metadata",
+            "yaml": "SUB_ARTICLE_001.yaml"
+        },
+        {
+            "id": "SUB_ARTICLE_003",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber no-advertisement contract",
+            "yaml": "SUB_ARTICLE_003.yaml"
+        },
+        {
+            "id": "SUB_ARTICLE_005",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Reading options and text sizes",
+            "yaml": "SUB_ARTICLE_005.yaml"
+        },
+        {
+            "id": "SUB_ARTICLE_007",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Listen to Article playback",
+            "yaml": "SUB_ARTICLE_007.yaml"
+        },
+        {
+            "id": "SUB_ARTICLE_008",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "AI Summary eligible article",
+            "yaml": "SUB_ARTICLE_008.yaml"
+        },
+        {
+            "id": "SUB_ARTICLE_009",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Short article without AI Summary",
+            "yaml": "SUB_ARTICLE_009.yaml"
+        },
+        {
+            "id": "SUB_ARTICLE_010",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Premium article full entitlement",
+            "yaml": "SUB_ARTICLE_010.yaml"
+        },
+        {
+            "id": "SUB_ARTICLE_011",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Archive article subscriber access",
+            "yaml": "SUB_ARTICLE_011.yaml"
+        },
+        {
+            "id": "SUB_ARTICLE_012",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Bookmark add and remove",
+            "yaml": "SUB_ARTICLE_012.yaml"
+        },
+        {
+            "id": "SUB_ARTICLE_013",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Share sheet and safe return",
+            "yaml": "SUB_ARTICLE_013.yaml"
+        },
+        {
+            "id": "SUB_ARTICLE_014",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Post a Comment subscriber access",
+            "yaml": "SUB_ARTICLE_014.yaml"
+        },
+        {
+            "id": "SUB_ARTICLE_015",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Related Topics and recommended article",
+            "yaml": "SUB_ARTICLE_015.yaml"
+        },
+        {
+            "id": "SUB_ARTICLE_017",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Article Back navigation",
+            "yaml": "SUB_ARTICLE_017.yaml"
+        },
+        {
+            "id": "SUB_ARTICLE_018",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Live article embedded-frame scrolling",
+            "yaml": "SUB_ARTICLE_018.yaml"
+        },
+        {
+            "id": "SUB_ARTICLE_019",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Article media and image rendering",
+            "yaml": "SUB_ARTICLE_019.yaml"
+        },
+        {
+            "id": "SUB_TREND_001",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Trending launch and selected navigation",
+            "yaml": "SUB_TREND_001.yaml"
+        },
+        {
+            "id": "SUB_TREND_002",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Trending pull to refresh",
+            "yaml": "SUB_TREND_002.yaml"
+        },
+        {
+            "id": "SUB_TREND_003",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Trending All feed and no-ad entitlement",
+            "yaml": "SUB_TREND_003.yaml"
+        },
+        {
+            "id": "SUB_TREND_004",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Trending masthead round trip for subscriber",
+            "yaml": "SUB_TREND_004.yaml"
+        },
+        {
+            "id": "SUB_TREND_005",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Trending section-tab navigation",
+            "yaml": "SUB_TREND_005.yaml"
+        },
+        {
+            "id": "SUB_TREND_006",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber opens Trending full article",
+            "yaml": "SUB_TREND_006.yaml"
+        },
+        {
+            "id": "SUB_TREND_007",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Premium Trending article entitlement",
+            "yaml": "SUB_TREND_007.yaml"
+        },
+        {
+            "id": "SUB_TREND_008",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Trending Listen to Article",
+            "yaml": "SUB_TREND_008.yaml"
+        },
+        {
+            "id": "SUB_TREND_009",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Trending AI Summary subscriber access",
+            "yaml": "SUB_TREND_009.yaml"
+        },
+        {
+            "id": "SUB_TREND_010",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Trending reading options and text sizes",
+            "yaml": "SUB_TREND_010.yaml"
+        },
+        {
+            "id": "SUB_TREND_013",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Trending comment access",
+            "yaml": "SUB_TREND_013.yaml"
+        },
+        {
+            "id": "SUB_TREND_014",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Trending cross-section article entitlement",
+            "yaml": "SUB_TREND_014.yaml"
+        },
+        {
+            "id": "SUB_TREND_017",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Trending long-article complete reading",
+            "yaml": "SUB_TREND_017.yaml"
+        },
+        {
+            "id": "SUB_PREM_002",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Premium pull to refresh",
+            "yaml": "SUB_PREM_002.yaml"
+        },
+        {
+            "id": "SUB_PREM_003",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Briefing unlocked entitlement",
+            "yaml": "SUB_PREM_003.yaml"
+        },
+        {
+            "id": "SUB_PREM_004",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Briefing complete reading",
+            "yaml": "SUB_PREM_004.yaml"
+        },
+        {
+            "id": "SUB_PREM_005",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Premium five-tab navigation",
+            "yaml": "SUB_PREM_005.yaml"
+        },
+        {
+            "id": "SUB_PREM_006",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Specials full-page subscriber coverage",
+            "yaml": "SUB_PREM_006.yaml"
+        },
+        {
+            "id": "SUB_PREM_007",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Specials article full access",
+            "yaml": "SUB_PREM_007.yaml"
+        },
+        {
+            "id": "SUB_PREM_008",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Packages full-page subscriber coverage",
+            "yaml": "SUB_PREM_008.yaml"
+        },
+        {
+            "id": "SUB_PREM_009",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Packages article full access",
+            "yaml": "SUB_PREM_009.yaml"
+        },
+        {
+            "id": "SUB_PREM_010",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Webinar full-page subscriber coverage",
+            "yaml": "SUB_PREM_010.yaml"
+        },
+        {
+            "id": "SUB_PREM_012",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "All Stories article full access",
+            "yaml": "SUB_PREM_012.yaml"
+        },
+        {
+            "id": "SUB_PREM_014",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Premium article Bookmark",
+            "yaml": "SUB_PREM_014.yaml"
+        },
+        {
+            "id": "SUB_PREM_015",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Premium article Share and Comment",
+            "yaml": "SUB_PREM_015.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_001",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Hamburger Search entry and selected screen",
+            "yaml": "SUB_SEARCH_001.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_002",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Search close and Home recovery",
+            "yaml": "SUB_SEARCH_002.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_003",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Valid city keyword result list",
+            "yaml": "SUB_SEARCH_003.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_004",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Valid topic keyword result list",
+            "yaml": "SUB_SEARCH_004.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_006",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber full article entitlement from Search",
+            "yaml": "SUB_SEARCH_006.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_007",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Search article toolbar controls",
+            "yaml": "SUB_SEARCH_007.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_010",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "No-result keyword handling",
+            "yaml": "SUB_SEARCH_010.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_011",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Special-character input safety",
+            "yaml": "SUB_SEARCH_011.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_012",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Empty and whitespace search validation",
+            "yaml": "SUB_SEARCH_012.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_013",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Long search input boundary",
+            "yaml": "SUB_SEARCH_013.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_014",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Clear and replace search query",
+            "yaml": "SUB_SEARCH_014.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_015",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Search result back-navigation state",
+            "yaml": "SUB_SEARCH_015.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_022",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Uppercase and lowercase query consistency",
+            "yaml": "SUB_SEARCH_022.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_025",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Tamil Unicode query safety",
+            "yaml": "SUB_SEARCH_025.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_026",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Leading and trailing whitespace normalization",
+            "yaml": "SUB_SEARCH_026.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_027",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Recent search history and reuse",
+            "yaml": "SUB_SEARCH_027.yaml"
+        },
+        {
+            "id": "SUB_SEARCH_030",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sort persistence after article navigation",
+            "yaml": "SUB_SEARCH_030.yaml"
+        },
+        {
+            "id": "SUB_HAM_001",
+            "module": "Hamburger Menu",
+            "priority": "P2",
+            "name": "SUB HAM 001",
+            "yaml": "SUB_HAM_001.yaml",
+            "section": "Hamburger Menu",
+            "user_state": "SUBSCRIBER"
+        },
+        {
+            "id": "SUB_HAM_002",
+            "module": "Hamburger Menu",
+            "priority": "P2",
+            "name": "SUB HAM 002",
+            "yaml": "SUB_HAM_002.yaml",
+            "section": "Hamburger Menu",
+            "user_state": "SUBSCRIBER"
+        },
+        {
+            "id": "SUB_HAM_004",
+            "module": "Hamburger Menu",
+            "section": "Hamburger Menu",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Specialist section navigation",
+            "yaml": "SUB_HAM_004.yaml"
+        },
+        {
+            "id": "SUB_HAM_005",
+            "module": "Hamburger Menu",
+            "section": "Hamburger Menu",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Culture and lifestyle section navigation",
+            "yaml": "SUB_HAM_005.yaml"
+        },
+        {
+            "id": "SUB_HAM_006",
+            "module": "Hamburger Menu",
+            "priority": "P2",
+            "name": "SUB HAM 006",
+            "yaml": "SUB_HAM_006.yaml",
+            "section": "Hamburger Menu",
+            "user_state": "SUBSCRIBER"
+        },
+        {
+            "id": "SUB_HAM_007",
+            "module": "Hamburger Menu",
+            "section": "Hamburger Menu",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Videos section media presentation",
+            "yaml": "SUB_HAM_007.yaml"
+        },
+        {
+            "id": "SUB_HAM_008",
+            "module": "Hamburger Menu",
+            "section": "Hamburger Menu",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Representative section article and anonymous paywall",
+            "yaml": "SUB_HAM_008.yaml"
+        },
+        {
+            "id": "SUB_HAM_009",
+            "module": "Hamburger Menu",
+            "section": "Hamburger Menu",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Hamburger advertisement and interstitial handling",
+            "yaml": "SUB_HAM_009.yaml"
+        },
+        {
+            "id": "SUB_HAM_010",
+            "module": "Hamburger Menu",
+            "section": "Hamburger Menu",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Hamburger navigation recovery",
+            "yaml": "SUB_HAM_010.yaml"
+        },
+        {
+            "id": "SUB_VIDEO_002",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Video article identity and metadata",
+            "yaml": "SUB_VIDEO_002.yaml"
+        },
+        {
+            "id": "SUB_VIDEO_004",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Video 15-second seek controls",
+            "yaml": "SUB_VIDEO_004.yaml"
+        },
+        {
+            "id": "SUB_VIDEO_005",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Fullscreen entry, playback and exit",
+            "yaml": "SUB_VIDEO_005.yaml"
+        },
+        {
+            "id": "SUB_VIDEO_008",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Inline playback during article scrolling",
+            "yaml": "SUB_VIDEO_008.yaml"
+        },
+        {
+            "id": "SUB_VIDEO_009",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Video article actions",
+            "yaml": "SUB_VIDEO_009.yaml"
+        },
+        {
+            "id": "SUB_VIDEO_010",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Post-comment and related-content sections",
+            "yaml": "SUB_VIDEO_010.yaml"
+        },
+        {
+            "id": "SUB_VIDEO_012",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Video entitlement and no monetisation",
+            "yaml": "SUB_VIDEO_012.yaml"
+        },
+        {
+            "id": "SUB_PHOTO_001",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Photos launch, selection and subscriber entitlement",
+            "yaml": "SUB_PHOTO_001.yaml"
+        },
+        {
+            "id": "SUB_PHOTO_002",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Photos refresh and content recovery",
+            "yaml": "SUB_PHOTO_002.yaml"
+        },
+        {
+            "id": "SUB_PHOTO_003",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Photos grid layout, badges and pagination",
+            "yaml": "SUB_PHOTO_003.yaml"
+        },
+        {
+            "id": "SUB_PHOTO_004",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Photos contains no monetization",
+            "yaml": "SUB_PHOTO_004.yaml"
+        },
+        {
+            "id": "SUB_PHOTO_010",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber gallery header controls",
+            "yaml": "SUB_PHOTO_010.yaml"
+        },
+        {
+            "id": "SUB_PHOTO_013",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber gallery comment access",
+            "yaml": "SUB_PHOTO_013.yaml"
+        },
+        {
+            "id": "SUB_PHOTO_015",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Read Less collapse and state restoration",
+            "yaml": "SUB_PHOTO_015.yaml"
+        },
+        {
+            "id": "SUB_PHOTO_016",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Gallery close, Back and listing-position recovery",
+            "yaml": "SUB_PHOTO_016.yaml"
+        },
+        {
+            "id": "SUB_PHOTO_005",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Single-photo gallery presentation",
+            "yaml": "SUB_PHOTO_005.yaml"
+        },
+        {
+            "id": "SUB_PHOTO_006",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Multi-photo gallery forward paging and counter",
+            "yaml": "SUB_PHOTO_006.yaml"
+        },
+        {
+            "id": "SUB_PHOTO_007",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Multi-photo gallery reverse paging and boundaries",
+            "yaml": "SUB_PHOTO_007.yaml"
+        },
+        {
+            "id": "SUB_PHOTO_008",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Gallery image metadata synchronization",
+            "yaml": "SUB_PHOTO_008.yaml"
+        },
+        {
+            "id": "SUB_PHOTO_009",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Rapid paging and image-load resilience",
+            "yaml": "SUB_PHOTO_009.yaml"
+        },
+        {
+            "id": "SUB_PHOTO_011",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber gallery bookmark persistence",
+            "yaml": "SUB_PHOTO_011.yaml"
+        },
+        {
+            "id": "SUB_PHOTO_012",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Gallery share sheet and safe return",
+            "yaml": "SUB_PHOTO_012.yaml"
+        },
+        {
+            "id": "SUB_PHOTO_014",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Read Full Article expansion for subscriber",
+            "yaml": "SUB_PHOTO_014.yaml"
+        },
+        {
+            "id": "SUB_PHOTO_017",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Photos light-theme visual integrity",
+            "yaml": "SUB_PHOTO_017.yaml"
+        },
+        {
+            "id": "SUB_PHOTO_018",
+            "module": "Photos Quick Access",
+            "section": "Photos Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Photos dark-theme visual integrity",
+            "yaml": "SUB_PHOTO_018.yaml"
+        },
+        {
+            "id": "SUB_PODCAST_001",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Podcast launch and selected tab",
+            "yaml": "SUB_PODCAST_001.yaml"
+        },
+        {
+            "id": "SUB_PODCAST_002",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Podcast listing content and visual layout",
+            "yaml": "SUB_PODCAST_002.yaml"
+        },
+        {
+            "id": "SUB_PODCAST_003",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Podcast refresh and content recovery",
+            "yaml": "SUB_PODCAST_003.yaml"
+        },
+        {
+            "id": "SUB_PODCAST_004",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Podcast has no monetization block",
+            "yaml": "SUB_PODCAST_004.yaml"
+        },
+        {
+            "id": "SUB_PODCAST_005",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Selected podcast episode-list loading",
+            "yaml": "SUB_PODCAST_005.yaml"
+        },
+        {
+            "id": "SUB_PODCAST_006",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Episode-list identity, ordering and metadata",
+            "yaml": "SUB_PODCAST_006.yaml"
+        },
+        {
+            "id": "SUB_PODCAST_007",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Play Latest Episode and mini-player identity",
+            "yaml": "SUB_PODCAST_007.yaml"
+        },
+        {
+            "id": "SUB_PODCAST_008",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Repeated play and pause stability",
+            "yaml": "SUB_PODCAST_008.yaml"
+        },
+        {
+            "id": "SUB_PODCAST_009",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Timed playback progress movement",
+            "yaml": "SUB_PODCAST_009.yaml"
+        },
+        {
+            "id": "SUB_PODCAST_010",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Forward control changes playback position",
+            "yaml": "SUB_PODCAST_010.yaml"
+        },
+        {
+            "id": "SUB_PODCAST_011",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Rewind control changes playback position",
+            "yaml": "SUB_PODCAST_011.yaml"
+        },
+        {
+            "id": "SUB_PODCAST_012",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Podcast scrubber timeline seeking",
+            "yaml": "SUB_PODCAST_012.yaml"
+        },
+        {
+            "id": "SUB_PODCAST_013",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Only one podcast plays at a time",
+            "yaml": "SUB_PODCAST_013.yaml"
+        },
+        {
+            "id": "SUB_PODCAST_014",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Playback continuity while scrolling",
+            "yaml": "SUB_PODCAST_014.yaml"
+        },
+        {
+            "id": "SUB_PODCAST_015",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Mini-player close stops playback",
+            "yaml": "SUB_PODCAST_015.yaml"
+        },
+        {
+            "id": "SUB_PODCAST_016",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Podcast Back navigation and state recovery",
+            "yaml": "SUB_PODCAST_016.yaml"
+        },
+        {
+            "id": "SUB_PODCAST_017",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Podcast audio-load failure handling",
+            "yaml": "SUB_PODCAST_017.yaml"
+        },
+        {
+            "id": "SUB_PODCAST_018",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Podcast rapid interaction resilience",
+            "yaml": "SUB_PODCAST_018.yaml"
+        },
+        {
+            "id": "SUB_SCITECH_002",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech refresh and content recovery",
+            "yaml": "SUB_SCITECH_002.yaml",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "SUB_SCITECH_003",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech listing identity and visual structure",
+            "yaml": "SUB_SCITECH_003.yaml",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "SUB_SCITECH_004",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech deep scroll, pagination and subscriber ad-free entitlement",
+            "yaml": "SUB_SCITECH_004.yaml",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "SUB_SCITECH_005",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech article selection and destination integrity",
+            "yaml": "SUB_SCITECH_005.yaml",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "SUB_SCITECH_006",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech subscriber full-article entitlement",
+            "yaml": "SUB_SCITECH_006.yaml",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "SUB_SCITECH_007",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech conditional AI Summary and Listen controls",
+            "yaml": "SUB_SCITECH_007.yaml",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "SUB_SCITECH_008",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech reading options, text size and themes",
+            "yaml": "SUB_SCITECH_008.yaml",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "SUB_SCITECH_009",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech bookmark, share and comment engagement",
+            "yaml": "SUB_SCITECH_009.yaml",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "SUB_SCITECH_010",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech post-article content continuity",
+            "yaml": "SUB_SCITECH_010.yaml",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "SUB_SCITECH_011",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech article paging and navigation recovery",
+            "yaml": "SUB_SCITECH_011.yaml",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "SUB_SCITECH_012",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech loading, live-content and failure resilience",
+            "yaml": "SUB_SCITECH_012.yaml",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_001",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World launch, selection and subscriber identity",
+            "yaml": "SUB_WORLD_001.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_002",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World refresh and content recovery",
+            "yaml": "SUB_WORLD_002.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_005",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World article selection and destination integrity",
+            "yaml": "SUB_WORLD_005.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_006",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World subscriber full-article entitlement",
+            "yaml": "SUB_WORLD_006.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_007",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World conditional AI Summary and Listen controls",
+            "yaml": "SUB_WORLD_007.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_008",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World reading options, text size and themes",
+            "yaml": "SUB_WORLD_008.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_009",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World bookmark, share and comment engagement",
+            "yaml": "SUB_WORLD_009.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_010",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World post-article content continuity",
+            "yaml": "SUB_WORLD_010.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_011",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World article paging and navigation recovery",
+            "yaml": "SUB_WORLD_011.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_012",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World loading, live-content and failure resilience",
+            "yaml": "SUB_WORLD_012.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_LATEST_002",
+            "module": "Latest News Quick Access",
+            "section": "Latest News Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Latest News refresh and content recovery",
+            "yaml": "SUB_LATEST_002.yaml"
+        },
+        {
+            "id": "SUB_LATEST_009",
+            "module": "Latest News Quick Access",
+            "section": "Latest News Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Latest News bookmark, share and comment engagement",
+            "yaml": "SUB_LATEST_009.yaml"
+        },
+        {
+            "id": "SUB_LATEST_012",
+            "module": "Latest News Quick Access",
+            "section": "Latest News Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Latest News loading, live-content and failure resilience",
+            "yaml": "SUB_LATEST_012.yaml"
+        },
+        {
+            "id": "SUB_EDITORIAL_003",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial listing identity and visual structure",
+            "yaml": "SUB_EDITORIAL_003.yaml"
+        },
+        {
+            "id": "SUB_EDITORIAL_005",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial article selection and destination integrity",
+            "yaml": "SUB_EDITORIAL_005.yaml"
+        },
+        {
+            "id": "SUB_EDITORIAL_007",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial conditional AI Summary and Listen controls",
+            "yaml": "SUB_EDITORIAL_007.yaml"
+        },
+        {
+            "id": "SUB_EDITORIAL_008",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial reading options, text size and themes",
+            "yaml": "SUB_EDITORIAL_008.yaml"
+        },
+        {
+            "id": "SUB_EDITORIAL_009",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial bookmark, share and comment engagement",
+            "yaml": "SUB_EDITORIAL_009.yaml"
+        },
+        {
+            "id": "SUB_EDITORIAL_010",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial post-article content continuity",
+            "yaml": "SUB_EDITORIAL_010.yaml"
+        },
+        {
+            "id": "SUB_EDITORIAL_011",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial article paging and navigation recovery",
+            "yaml": "SUB_EDITORIAL_011.yaml"
+        },
+        {
+            "id": "SUB_EDITORIAL_012",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial loading, live-content and failure resilience",
+            "yaml": "SUB_EDITORIAL_012.yaml"
+        },
+        {
+            "id": "SUB_OPINION_009",
+            "module": "Opinion Quick Access",
+            "section": "Opinion Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Opinion bookmark, share and comment engagement",
+            "yaml": "SUB_OPINION_009.yaml"
+        }
+    ]
+}

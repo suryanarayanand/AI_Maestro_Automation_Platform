@@ -1,0 +1,26 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_GAMES.yaml"
+- scrollUntilVisible:
+    element: {text: ".*Quiz.*"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- assertVisible: {text: ".*Quiz.*"}
+- tapOn: {text: ".*Quiz.*"}
+- extendedWaitUntil: {visible: {text: "Login to your account|LOGIN TO PLAY"}, timeout: 30000}
+- assertVisible: {text: "Login to your account|LOGIN TO PLAY"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_GAMES_009_login_gate"
+- back
+- runFlow:
+    when:
+      notVisible: {id: "screen_games"}
+    commands:
+      - tapOn: {id: "nav_games"}
+- extendedWaitUntil: {visible: {id: "screen_games"}, timeout: 30000}
+- assertVisible: {id: "screen_games"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_GAMES_009_result"

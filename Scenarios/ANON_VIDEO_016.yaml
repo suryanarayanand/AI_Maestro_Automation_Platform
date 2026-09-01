@@ -1,0 +1,23 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, videos]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_VIDEOS.yaml"
+- swipe: {direction: UP, duration: 600}
+- waitForAnimationToEnd
+- tapOn: {id: "article_card", index: 1}
+- waitForAnimationToEnd
+- runFlow:
+    when: {visible: {text: "Go beyond the headline.*|subscribe to access.*"}}
+    commands:
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_VIDEO_016_subscription_popup"
+      - tapOn: {point: "91%,36%"}
+      - waitForAnimationToEnd
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- assertVisible: {id: "screen_article_detail"}
+- back
+- extendedWaitUntil: {visible: {text: "Videos"}, timeout: 30000}
+- assertVisible: {id: "screen_home"}
+- assertVisible: {text: "Videos"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_VIDEO_016_returned_position"

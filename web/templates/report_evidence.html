@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="report-gallery-head">
+    <div><small>Execution artifacts</small><h2>{{ report.name }} — Case Evidence</h2></div>
+    <span>{{ report.case_folders|length }} cases</span>
+  </div>
+  <p><a href="{{ url_for('report.report_details', report_name=report.name) }}">← Back to report</a></p>
+  <div class="row g-3">
+    {% for folder in report.case_folders %}
+    <div class="col-md-4">
+      <div class="card card-body h-100">
+        <b>📁 {{ folder.case_id }}</b>
+        <span>{{ folder.artifact_count }} files</span>
+        <code>{{ folder.relative_path }}</code>
+        <small title="{{ folder.folder_path }}">{{ folder.folder_path }}</small>
+      </div>
+    </div>
+    {% else %}
+    <p class="empty">No case evidence folders were generated.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

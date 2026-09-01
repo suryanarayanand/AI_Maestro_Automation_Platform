@@ -1,0 +1,70 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - premium
+  - refresh
+  - no-monetisation
+---
+
+# Position 1: Enter Premium in the authenticated subscriber session and pull to refresh.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- tapOn:
+    id: "nav_premium"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_premium"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_premium"
+
+- swipe:
+    start: "50%,30%"
+    end: "50%,75%"
+    duration: 700
+
+# Position 2: Wait for the refresh gesture to settle, verify Premium, and capture it.
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_premium"
+    timeout: 20000
+
+- assertVisible:
+    id: "screen_premium"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_002_premium_after_refresh"
+
+# Position 3: Recheck the approved subscriber entitlement indicators after refresh.
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+# Position 4: Prove that refresh did not navigate away from Premium.
+- assertVisible:
+    id: "screen_premium"
+
+# Position 5: Exercise the refreshed surface and verify that Premium remains usable.
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_premium"
+
+# Position 6: Recheck the approved no-upsell and no-ad indicators on refreshed content.
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"

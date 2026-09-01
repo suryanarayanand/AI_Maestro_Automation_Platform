@@ -73,15 +73,32 @@ class RepositorySearchTests(unittest.TestCase):
         repository = self.make_search(allow_candidate_fallback=True)
         self.assertIsNone(repository.search("  "))
 
+    def test_explicit_selector_requires_exact_type_and_value(self):
+        repository = self.make_search(allow_candidate_fallback=True)
+        self.assertIsNotNone(repository.validated_selector("id", "nav_home"))
+        self.assertIsNone(repository.validated_selector("id", "HOME"))
+        self.assertIsNone(repository.validated_selector("text", "nav_home"))
+
 
 class YAMLGeneratorSelectionTests(unittest.TestCase):
 
     def test_explicit_assert_not_visible_intent_uses_validated_locator(self):
         yaml = YAMLGenerator().generate_yaml(
-            ["ASSERT_NOT_VISIBLE(cta_subscribe)"], case_id="TC_1"
+            ["ASSERT_NOT_VISIBLE(nav_home)"], case_id="TC_1"
         )
         self.assertIn("- assertNotVisible:", yaml)
-        self.assertIn('id: "cta_subscribe"', yaml)
+        self.assertIn('id: "nav_home"', yaml)
+
+    def test_explicit_text_assertion_uses_visible_label(self):
+        yaml = YAMLGenerator().generate_yaml(
+            ["ASSERT_NOT_VISIBLE_TEXT(Subscribe)"], case_id="TC_1"
+        )
+        self.assertIn("- assertNotVisible:", yaml)
+        self.assertIn('text: "Subscribe"', yaml)
+
+    def test_unknown_explicit_id_is_rejected(self):
+        with self.assertRaisesRegex(ValueError, "not validated"):
+            YAMLGenerator().generate_yaml(["ASSERT_VISIBLE(invented_selector)"])
     def setUp(self):
         self.generator = YAMLGenerator()
 

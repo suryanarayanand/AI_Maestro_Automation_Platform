@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}App Memory{% endblock %}
+{% block page_title %}App Memory{% endblock %}
+{% block content %}
+<section class="surface mb-4">
+  <div class="section-head"><div><small>Application source</small><h2>Import locator candidates</h2></div></div>
+  <form method="post" action="{{ url_for('app_memory.import_source') }}" class="row g-3 align-items-end">
+    <div class="col"><label class="form-label">Kotlin/Android repository root</label><input class="form-control" name="source_root" required value="D:\The_Kotlin_repo\thehindu-app-kotlin"></div>
+    <div class="col-auto"><button class="btn btn-primary">Scan source</button></div>
+  </form>
+  <div class="form-text mt-2">Source entries remain candidates until confirmed by hierarchy capture or a passing Maestro execution.</div>
+</section>
+<p class="page-intro">Persistent, validated knowledge of app screens and controls. Discovery is currently read-only; automatic navigation will use a safety policy before interacting with the device.</p>
+<div class="metric-grid">
+  <div class="metric"><small>Screens</small><strong>{{ totals.screens }}</strong></div>
+  <div class="metric"><small>Remembered elements</small><strong>{{ totals.elements }}</strong></div>
+  <div class="metric"><small>Validated locators</small><strong>{{ totals.validated }}</strong></div>
+  <div class="metric"><small>Learned YAML flows</small><strong>{{ totals.flows }}</strong></div>
+</div>
+{% if totals.pending_learning %}<div class="alert alert-warning"><strong>{{ totals.pending_learning }} learning proposal(s) need review.</strong> The agent will not promote them into executable locators automatically.</div>{% endif %}
+<section class="surface mb-4">
+  <div class="section-head"><div><small>Safe discovery</small><h2>Learn the current device screen</h2></div></div>
+  <form method="post" action="{{ url_for('app_memory.capture') }}" class="row g-3 align-items-end">
+    <div class="col-md-8"><label class="form-label">Logical screen name</label><input class="form-control" name="screen_name" placeholder="Example: premium_article" required><div class="form-text">Captures hierarchy data only. It does not tap, type, scroll, or change account state.</div></div>
+    <div class="col-md-4"><button class="btn btn-primary w-100">Capture Current Screen</button></div>
+  </form>
+</section>
+<section class="surface">
+  <div class="section-head"><div><small>Knowledge repository</small><h2>Known screens</h2></div><form method="post" action="{{ url_for('app_memory.rebuild') }}"><button class="btn btn-primary">Rebuild from existing evidence</button></form></div>
+  <div class="table-responsive"><table class="table align-middle"><thead><tr><th>Screen</th><th>Elements</th><th>Validated</th><th>State</th><th>Last observed</th></tr></thead><tbody>
+  {% for screen in screens %}<tr><td><strong>{{ screen.name }}</strong></td><td>{{ screen.remembered_elements or 0 }}</td><td>{{ screen.validated_elements or 0 }}</td><td>{{ screen.app_state|title }}</td><td>{{ screen.last_seen_at|portal_time }} IST</td></tr>
+  {% else %}<tr><td colspan="5" class="text-muted">No app memory yet. Rebuild it from the existing hierarchy and locator evidence.</td></tr>{% endfor %}
+  </tbody></table></div>
+</section>
+<section class="surface mt-4">
+  <div class="section-head"><div><small>Human-in-the-loop</small><h2>Pending learning</h2></div></div>
+  {% for item in learning %}<div class="card mb-3"><div class="card-body"><div class="d-flex justify-content-between"><strong>{{ item.observation_type|replace('_',' ')|title }}{% if item.case_id %} · {{ item.case_id }}{% endif %}</strong><span>{{ '%.0f%%'|format(item.confidence * 100) }} confidence</span></div><pre class="mt-3 mb-3">{{ item.payload }}</pre><div class="d-flex gap-2"><form method="post" action="{{ url_for('app_memory.review_learning', learning_id=item.id, decision='accepted') }}"><button class="btn btn-sm btn-success">Acknowledge</button></form><form method="post" action="{{ url_for('app_memory.review_learning', learning_id=item.id, decision='rejected') }}"><button class="btn btn-sm btn-outline-danger">Reject</button></form></div></div></div>
+  {% else %}<p class="text-muted mb-0">No pending learning proposals.</p>{% endfor %}
+</section>
+{% endblock %}

@@ -1,9 +1,12 @@
 import json
+import os
 import shutil
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from Utils.screenshot_utils import get_screenshots
 from Utils.openai_analyzer import analyze_image
+from Utils.friday_visual_context import build_friday_visual_context
 
 
 def analyze_scenario(screenshot_folder, execution_folder, test_id):
@@ -36,16 +39,12 @@ def analyze_scenario(screenshot_folder, execution_folder, test_id):
     screenshots = get_screenshots(screenshot_folder)
 
     details = []
-    passed = 0
-    failed = 0
-    errors = 0
+    friday_context = build_friday_visual_context(test_id)
+    prepared = []
 
     for image in screenshots:
 
         print(f"Analyzing {image.name}...")
-
-        result = analyze_image(image)
-        result["image"] = image.name
 
         # Copy the screenshot next to the report so the HTML <img> tag
         # can resolve it with a relative path (report stays portable).
@@ -54,18 +53,35 @@ def analyze_scenario(screenshot_folder, execution_folder, test_id):
         dest_image.parent.mkdir(parents=True, exist_ok=True)
         if image.resolve() != dest_image.resolve():
             shutil.copy2(image, dest_image)
-        result["image_path"] = (
-            Path("screenshots") / test_id / relative_image
-        ).as_posix()
+        image_context = dict(friday_context)
+        image_context["screenshot_checkpoint"] = image.name
+        prepared.append((
+            image,
+            image_context,
+            (Path("screenshots") / test_id / relative_image).as_posix(),
+        ))
 
+    # Visual checkpoints are independent. A small bounded pool reduces report
+    # latency without changing Maestro execution, test state, or result order.
+    try:
+        requested_workers = int(os.getenv("AI_SCREENSHOT_WORKERS", "3"))
+    except ValueError:
+        requested_workers = 3
+    worker_count = max(1, min(requested_workers, 4, len(prepared) or 1))
+    with ThreadPoolExecutor(max_workers=worker_count) as executor:
+        analyses = list(executor.map(
+            lambda item: analyze_image(item[0], item[1]),
+            prepared,
+        ))
+
+    for (image, _, image_path), result in zip(prepared, analyses):
+        result["image"] = image.name
+        result["image_path"] = image_path
         details.append(result)
 
-        if result["status"] == "PASS":
-            passed += 1
-        elif result["status"] == "FAIL":
-            failed += 1
-        else:
-            errors += 1
+    passed = sum(result.get("status") == "PASS" for result in details)
+    failed = sum(result.get("status") == "FAIL" for result in details)
+    errors = len(details) - passed - failed
 
     return {
         "total": len(details),

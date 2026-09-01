@@ -1,0 +1,127 @@
+{
+    "suite": "Subscriber User Cases - India Quick Access",
+    "source_suite": "user_subscriber",
+    "module": "India Quick Access",
+    "tests": [
+        {
+            "id": "SUB_INDIA_001",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "India launch, selection and subscriber identity",
+            "yaml": "SUB_INDIA_001.yaml",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "SUB_INDIA_002",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "India refresh and content recovery",
+            "yaml": "SUB_INDIA_002.yaml",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "SUB_INDIA_003",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "India listing identity and visual structure",
+            "yaml": "SUB_INDIA_003.yaml",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "SUB_INDIA_004",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "India deep scroll, pagination and subscriber ad-free entitlement",
+            "yaml": "SUB_INDIA_004.yaml",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "SUB_INDIA_005",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "India article selection and destination integrity",
+            "yaml": "SUB_INDIA_005.yaml",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "SUB_INDIA_006",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "India subscriber full-article entitlement",
+            "yaml": "SUB_INDIA_006.yaml",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "SUB_INDIA_007",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "India conditional AI Summary and Listen controls",
+            "yaml": "SUB_INDIA_007.yaml",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "SUB_INDIA_008",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "India reading options, text size and themes",
+            "yaml": "SUB_INDIA_008.yaml",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "SUB_INDIA_009",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "India bookmark, share and comment engagement",
+            "yaml": "SUB_INDIA_009.yaml",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "SUB_INDIA_010",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "India post-article content continuity",
+            "yaml": "SUB_INDIA_010.yaml",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "SUB_INDIA_011",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "India article paging and navigation recovery",
+            "yaml": "SUB_INDIA_011.yaml",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "SUB_INDIA_012",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "India loading, live-content and failure resilience",
+            "yaml": "SUB_INDIA_012.yaml",
+            "display_module": "India Quick Access"
+        }
+    ]
+}

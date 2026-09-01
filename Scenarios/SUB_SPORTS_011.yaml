@@ -1,0 +1,32 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, quick-access]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_SPORTS.yaml"
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- tapOn: {id: "article_card", index: 0}
+- waitForAnimationToEnd
+- runFlow: "../Common/HANDLE_AI_SUMMARY_SHEET.yaml"
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- assertVisible: {id: "screen_article_detail"}
+- repeat:
+    times: 3
+    commands:
+      - swipe: {direction: LEFT}
+      - waitForAnimationToEnd
+      - runFlow: "../Common/HANDLE_AI_SUMMARY_SHEET.yaml"
+      - waitForAnimationToEnd
+      - assertVisible: {id: "screen_article_detail"}
+- repeat:
+    times: 3
+    commands:
+      - swipe: {direction: RIGHT}
+      - waitForAnimationToEnd
+      - runFlow: "../Common/HANDLE_AI_SUMMARY_SHEET.yaml"
+      - waitForAnimationToEnd
+      - assertVisible: {id: "screen_article_detail"}
+- back
+- extendedWaitUntil: {visible: {id: "screen_home"}, timeout: 30000}
+- assertVisible: {text: "(?i)^Sports$"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SPORTS_011_recovered"

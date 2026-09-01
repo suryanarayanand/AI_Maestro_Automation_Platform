@@ -1,0 +1,167 @@
+{
+    "suite": "Anonymous User Cases - Editorial Quick Access",
+    "source_suite": "user_anonymous",
+    "module": "Editorial Quick Access",
+    "tests": [
+        {
+            "id": "ANON_EDITORIAL_001",
+            "module": "Editorial",
+            "section": "Editorial",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Editorial landing and exclusive elephant branding",
+            "yaml": "ANON_EDITORIAL_001.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "ANON_EDITORIAL_002",
+            "module": "Editorial",
+            "section": "Editorial",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Editorial listing excludes thumbnail images",
+            "yaml": "ANON_EDITORIAL_002.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "ANON_EDITORIAL_003",
+            "module": "Editorial",
+            "section": "Editorial",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Editorial refresh and branding retention",
+            "yaml": "ANON_EDITORIAL_003.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "ANON_EDITORIAL_004",
+            "module": "Editorial",
+            "section": "Editorial",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Editorial page sections and pagination",
+            "yaml": "ANON_EDITORIAL_004.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "ANON_EDITORIAL_005",
+            "module": "Editorial",
+            "section": "Editorial",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Editorial long-title and text layout",
+            "yaml": "ANON_EDITORIAL_005.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "ANON_EDITORIAL_006",
+            "module": "Editorial",
+            "section": "Editorial",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Editorial article opening and metadata",
+            "yaml": "ANON_EDITORIAL_006.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "ANON_EDITORIAL_007",
+            "module": "Editorial",
+            "section": "Editorial",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Free Editorial full-content behaviour",
+            "yaml": "ANON_EDITORIAL_007.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "ANON_EDITORIAL_008",
+            "module": "Editorial",
+            "section": "Editorial",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Premium Editorial paywall restriction",
+            "yaml": "ANON_EDITORIAL_008.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "ANON_EDITORIAL_009",
+            "module": "Editorial",
+            "section": "Editorial",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Editorial Reading Options functionality",
+            "yaml": "ANON_EDITORIAL_009.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "ANON_EDITORIAL_010",
+            "module": "Editorial",
+            "section": "Editorial",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Editorial Bookmark anonymous login gate",
+            "yaml": "ANON_EDITORIAL_010.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "ANON_EDITORIAL_011",
+            "module": "Editorial",
+            "section": "Editorial",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Editorial Share functionality",
+            "yaml": "ANON_EDITORIAL_011.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "ANON_EDITORIAL_012",
+            "module": "Editorial",
+            "section": "Editorial",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Editorial Comment anonymous login gate",
+            "yaml": "ANON_EDITORIAL_012.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "ANON_EDITORIAL_013",
+            "module": "Editorial",
+            "section": "Editorial",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Editorial Subscribe and subscriber-login navigation",
+            "yaml": "ANON_EDITORIAL_013.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "ANON_EDITORIAL_014",
+            "module": "Editorial",
+            "section": "Editorial",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Editorial back navigation and retained position",
+            "yaml": "ANON_EDITORIAL_014.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "ANON_EDITORIAL_015",
+            "module": "Editorial",
+            "section": "Editorial",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Editorial interstitial and article advertisement handling",
+            "yaml": "ANON_EDITORIAL_015.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "ANON_EDITORIAL_016",
+            "module": "Editorial",
+            "section": "Editorial",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Editorial loading error and retry recovery",
+            "yaml": "ANON_EDITORIAL_016.yaml",
+            "display_module": "Editorial Quick Access"
+        }
+    ]
+}

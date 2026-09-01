@@ -1,0 +1,14 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, ebooks]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_EBOOKS.yaml"
+- assertVisible: {id: "screen_ebooks"}
+- repeat:
+    times: 3
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd: {timeout: 1000}
+- assertVisible: {id: "screen_ebooks"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_EBOOK_005_result"

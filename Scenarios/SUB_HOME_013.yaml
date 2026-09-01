@@ -1,0 +1,36 @@
+appId: com.mobstac.thehindu
+
+tags: [generated, ordered, subscriber, home, plan-entitlements]
+
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- assertNotVisible: {text: "SUBSCRIBE"}
+
+- assertNotVisible: {text: "ADVERTISEMENT"}
+
+- assertNotVisible: {id: "aw0"}
+
+- tapOn: {id: "nav_games"}
+
+- extendedWaitUntil: {visible: {id: "screen_games"}, timeout: 20000}
+
+- assertNotVisible: {text: "SUBSCRIBE"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HOME_013_games_entitled"
+
+- tapOn: {id: "nav_ebooks"}
+
+- extendedWaitUntil: {visible: {id: "screen_ebooks"}, timeout: 20000}
+
+- assertNotVisible: {text: "SUBSCRIBE"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HOME_013_ebooks_entitled"
+
+- tapOn: {id: "nav_home"}
+
+- assertVisible: {id: "screen_home"}
+

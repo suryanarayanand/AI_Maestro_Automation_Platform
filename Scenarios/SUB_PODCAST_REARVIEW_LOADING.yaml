@@ -1,0 +1,35 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - podcast
+  - product-bug-on-blank-loading
+---
+- runFlow: ../Common/OPEN_SUBSCRIBER_HOME.yaml
+- extendedWaitUntil:
+    visible: "Podcast"
+    timeout: 30000
+- tapOn: "Podcast"
+# Series names may be painted inside artwork and therefore absent from Android's
+# accessibility tree. Move beyond the first card and target its visible action.
+- swipe:
+    direction: UP
+    duration: 700
+- scrollUntilVisible:
+    element: "^SEE ALL EPISODES$"
+    direction: DOWN
+    timeout: 60000
+    speed: 40
+    visibilityPercentage: 40
+    centerElement: true
+- assertVisible: "^SEE ALL EPISODES$"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_REARVIEW_series_card"
+- tapOn:
+    text: "^SEE ALL EPISODES$"
+    index: 0
+- evalScript: '${(() => { const end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_REARVIEW_after_30_seconds"
+- assertWithAI: "Verify the selected second podcast series page has fully rendered after 30 seconds with a readable series title and one or more complete episode rows. Fail this as the blank-loading product defect if the page is blank, loading-only, or still shows a persistent spinner. Record the visible series title in the evidence."
+- assertNotVisible: "SUBSCRIBE"
+- assertNotVisible: "ADVERTISEMENT"

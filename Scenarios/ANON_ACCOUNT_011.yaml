@@ -1,0 +1,45 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_ACCOUNT.yaml"
+- scrollUntilVisible:
+    element: {text: "Login"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Login"}
+- extendedWaitUntil: {visible: {text: "Login to your account"}, timeout: 30000}
+- assertVisible: {text: "Login to your account"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ACCOUNT_011_destination"
+- back
+- extendedWaitUntil: {visible: {id: "screen_user_menu"}, timeout: 30000}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ACCOUNT_011_result"
+- runFlow: "../Common/OPEN_ANONYMOUS_ACCOUNT.yaml"
+- scrollUntilVisible:
+    element: {text: "Notification Inbox"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Notification Inbox"}
+- extendedWaitUntil: {visible: {text: "Notifications|No Notification Received Yet|Login to your account"}, timeout: 30000}
+- assertVisible: {text: "Notifications|No Notification Received Yet|Login to your account"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ACCOUNT_011_destination"
+- back
+- extendedWaitUntil: {visible: {id: "screen_user_menu"}, timeout: 30000}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ACCOUNT_011_result"
+- runFlow: "../Common/OPEN_ANONYMOUS_ACCOUNT.yaml"
+- scrollUntilVisible:
+    element: {text: "Text Size"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Text Size"}
+- back
+- assertVisible: {id: "screen_user_menu"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ACCOUNT_011_result"

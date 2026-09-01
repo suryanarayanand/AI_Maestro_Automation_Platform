@@ -1,0 +1,97 @@
+{
+    "suite": "Subscriber User Cases - Hamburger Menu",
+    "source_suite": "user_subscriber",
+    "module": "Hamburger Menu",
+    "tests": [
+        {
+            "id": "SUB_HAM_001",
+            "module": "Hamburger Menu",
+            "priority": "P2",
+            "name": "SUB HAM 001",
+            "yaml": "SUB_HAM_001.yaml",
+            "section": "Hamburger Menu",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Hamburger Menu"
+        },
+        {
+            "id": "SUB_HAM_002",
+            "module": "Hamburger Menu",
+            "priority": "P2",
+            "name": "SUB HAM 002",
+            "yaml": "SUB_HAM_002.yaml",
+            "section": "Hamburger Menu",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Hamburger Menu"
+        },
+        {
+            "id": "SUB_HAM_004",
+            "module": "Hamburger Menu",
+            "section": "Hamburger Menu",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Specialist section navigation",
+            "yaml": "SUB_HAM_004.yaml",
+            "display_module": "Hamburger Menu"
+        },
+        {
+            "id": "SUB_HAM_005",
+            "module": "Hamburger Menu",
+            "section": "Hamburger Menu",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Culture and lifestyle section navigation",
+            "yaml": "SUB_HAM_005.yaml",
+            "display_module": "Hamburger Menu"
+        },
+        {
+            "id": "SUB_HAM_006",
+            "module": "Hamburger Menu",
+            "priority": "P2",
+            "name": "SUB HAM 006",
+            "yaml": "SUB_HAM_006.yaml",
+            "section": "Hamburger Menu",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Hamburger Menu"
+        },
+        {
+            "id": "SUB_HAM_007",
+            "module": "Hamburger Menu",
+            "section": "Hamburger Menu",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Videos section media presentation",
+            "yaml": "SUB_HAM_007.yaml",
+            "display_module": "Hamburger Menu"
+        },
+        {
+            "id": "SUB_HAM_008",
+            "module": "Hamburger Menu",
+            "section": "Hamburger Menu",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Representative section article and anonymous paywall",
+            "yaml": "SUB_HAM_008.yaml",
+            "display_module": "Hamburger Menu"
+        },
+        {
+            "id": "SUB_HAM_009",
+            "module": "Hamburger Menu",
+            "section": "Hamburger Menu",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Hamburger advertisement and interstitial handling",
+            "yaml": "SUB_HAM_009.yaml",
+            "display_module": "Hamburger Menu"
+        },
+        {
+            "id": "SUB_HAM_010",
+            "module": "Hamburger Menu",
+            "section": "Hamburger Menu",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Hamburger navigation recovery",
+            "yaml": "SUB_HAM_010.yaml",
+            "display_module": "Hamburger Menu"
+        }
+    ]
+}

@@ -1,0 +1,132 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - podcast
+  - playback
+  - scrolling
+  - continuity
+  - mini-player
+  - visual-progress-comparison
+---
+
+# SUB_PODCAST_014 — Playback continuity while scrolling
+# Ordered precondition: the authenticated subscriber setup has completed and
+# the Podcast listing is open. Podcast is a validated page anchor, not a
+# validated navigation control.
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+# Position 1 — Select a runtime-qualified current episode.
+- scrollUntilVisible:
+    element:
+      text: '(?i)^Play Latest Episode$'
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+
+- extendedWaitUntil:
+    visible:
+      text: '(?i)^Play Latest Episode$'
+    timeout: 30000
+
+- assertVisible:
+    text: '(?i)^Play Latest Episode$'
+
+- assertWithAI: "Verify that the first visible Play Latest Episode action belongs to a fully rendered current Podcast series card. The associated series or episode identity must be readable and suitable for comparison with the mini-player after playback starts. Fail if the action is detached from a card, the identity is blank or unreadable, or the card remains loading."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_014_selected_episode_before_playback"
+
+- tapOn:
+    text: '(?i)^Play Latest Episode$'
+    index: 0
+
+# Establish a settled, non-zero playback baseline using the approved bounded
+# playback interval before moving the listing.
+- evalScript: '${(() => { const end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify that the Podcast listing remains open and exactly one settled, non-blank mini-player is visible. Playback must be active, the player identity must match the series or episode selected through the immediately preceding Play Latest Episode action, and a readable non-zero elapsed-time or progress presentation must be visible. Fail for absent playback, stale or unrelated identity, zero-only progress, a blank player, a persistent loader, or a playback error. Treat the visible position as the baseline for the later scrolling checkpoint."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_014_progress_before_scrolling"
+
+# Positions 1 and 3 — Move through three bounded Podcast listing viewports.
+# Playback is allowed to advance between gestures, and each checkpoint must
+# retain an active mini-player rather than merely proving that scrolling works.
+- swipe:
+    direction: UP
+
+- evalScript: '${(() => { const end = Date.now() + 5000; while (Date.now() < end) {} return true; })()}'
+
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify that the Podcast listing has moved to a different lower content viewport and remains usable. The same mini-player must remain visible in an active playing state with readable episode identity and elapsed-time or progress information. Fail if the content did not move, playback is paused or stopped, the player disappeared, its identity changed, or a loader or error replaced it."
+
+- swipe:
+    direction: UP
+
+- evalScript: '${(() => { const end = Date.now() + 5000; while (Date.now() < end) {} return true; })()}'
+
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify that this is another lower Podcast listing viewport and that the same episode remains active in one settled mini-player. Its visible elapsed-time or progress state must be later than the pre-scrolling baseline rather than reset to zero, frozen, or replaced by another episode. Fail if scrolling interrupted playback or changed the player identity."
+
+- swipe:
+    direction: UP
+
+- evalScript: '${(() => { const end = Date.now() + 5000; while (Date.now() < end) {} return true; })()}'
+
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify that Podcast content has continued scrolling through a third distinct viewport while the same mini-player remains visible and actively playing. The readable elapsed-time or progress presentation must have advanced beyond the baseline captured before scrolling. Fail for frozen or reset progress, changed episode identity, stopped playback, an absent player, persistent loading, or a playback error."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_014_playback_during_scrolling"
+
+# Position 2 — Return toward the original listing area with bounded reverse
+# gestures, then inspect the mini-player again.
+- swipe:
+    direction: DOWN
+
+- swipe:
+    direction: DOWN
+
+- swipe:
+    direction: DOWN
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    text: "Podcast"
+
+# Positions 2 and 4 — Final mandatory continuity and identity verdict.
+- assertWithAI: "After returning toward the earlier Podcast listing area, verify that exactly one settled mini-player remains visible and active. Its title or other readable identity must match the episode selected before scrolling. Its elapsed-time or progress presentation must be valid, non-zero, later than the pre-scrolling baseline, and must not have reset, frozen, or changed to another episode. Fail if the player is absent, paused or stopped, blank, loading-only, erroneous, duplicated, associated with different content, or showing an invalid playback position."
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_014_continuity_final"

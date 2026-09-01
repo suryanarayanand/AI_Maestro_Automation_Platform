@@ -1,0 +1,29 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, world, bookmark, share, comment]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_WORLD.yaml"
+- openLink: "https://www.thehindu.com/news/international/us-immigration-officials-arrest-harvard-professor-after-firing-pellet-gun-near-synagogue/article70360647.ece"
+- tapOn: {text: "Close sheet", optional: true}
+- waitForAnimationToEnd
+- tapOn: {text: "Close sheet", optional: true}
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- extendedWaitUntil: {visible: {id: "cta_bookmark"}, timeout: 20000}
+- runFlow: "../Common/NORMALIZE_AND_SELECT_SUBSCRIBER_BOOKMARK.yaml"
+- assertNotVisible: {text: "Login to your account"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_009_bookmarked_assertion"
+- tapOn: {id: "cta_share"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_009_share_surface"
+- back
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 15000}
+- scrollUntilVisible:
+    element: {text: "Post a comment"}
+    direction: DOWN
+    timeout: 90000
+    speed: 45
+- tapOn: {text: "Post a comment"}
+- assertNotVisible: {text: "Login to your account"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_009_comment_access"

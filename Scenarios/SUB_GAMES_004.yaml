@@ -1,0 +1,15 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, games, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_GAMES.yaml"
+- tapOn: {text: "Sudoku"}
+- extendedWaitUntil: {visible: {text: "Choose Your Puzzle to Play"}, timeout: 30000}
+- assertVisible: {text: "Mini"}
+- assertVisible: {text: "Easy"}
+- assertVisible: {text: "Medium"}
+- assertVisible: {text: "Hard"}
+- assertVisible: {text: "Killer"}
+- assertNotVisible: {text: "Login to play|Login to your account|SUBSCRIBE|.*access was not found.*"}
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_GAMES_004_sudoku_difficulties"

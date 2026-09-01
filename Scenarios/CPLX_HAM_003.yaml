@@ -1,0 +1,207 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- runFlow:
+    when:
+      visible: "(?i)skip"
+    commands:
+      - tapOn: "(?i)skip"
+
+- assertVisible:
+    id: "screen_home"
+
+- takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_generated_cplx_ham_003_assert_03"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_generated_cplx_ham_003_assert_04"
+
+- tapOn:
+    id: "nav_menu"
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_generated_cplx_ham_003_assert_06"
+
+- tapOn:
+    text: "India"
+
+- tapOn:
+    text: "India"
+    index: 1
+
+- assertVisible:
+    text: "India"
+
+- takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_generated_cplx_ham_003_assert_09"
+
+- assertVisible:
+    id: "article_card"
+
+- takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_generated_cplx_ham_003_assert_10"
+
+- tapOn:
+    id: "article_card"
+
+- runFlow:
+    when:
+      visible: "This summary and the FAQs.*"
+    commands:
+      - tapOn: "Close sheet"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_generated_cplx_ham_003_assert_13"
+
+- scrollUntilVisible:
+    element:
+      text: "Post a comment"
+    direction: "DOWN"
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 50
+
+- assertVisible:
+    text: "Post a comment"
+
+- takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_generated_cplx_ham_003_assert_15"
+
+- runFlow:
+    when:
+      visible: "Related Topics"
+    commands:
+      - assertVisible: "Related Topics"
+      - takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_related_topics_assertion"
+
+- runFlow:
+    when:
+      visible: "Recommended"
+    commands:
+      - assertVisible: "Recommended"
+      - takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_recommended_assertion"
+
+- runFlow:
+    when:
+      visible: "Headlines"
+    commands:
+      - assertVisible: "Headlines"
+      - takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_headlines_assertion"
+
+- back
+
+- back
+
+- tapOn:
+    id: "cta_drawer_close"
+
+- assertVisible:
+    id: "screen_home"
+
+- takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_generated_cplx_ham_003_assert_22"
+
+- tapOn:
+    id: "nav_account"
+
+- assertVisible:
+    id: "screen_user_menu"
+
+- takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_generated_cplx_ham_003_assert_24"
+
+- scrollUntilVisible:
+    element:
+      text: "logout"
+    direction: "DOWN"
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 50
+
+- tapOn:
+    text: "LOGOUT"
+
+- assertVisible:
+    id: "screen_home"
+
+- takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_generated_cplx_ham_003_assert_27"
+
+- assertVisible:
+    text: "SUBSCRIBE"
+
+- takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_generated_cplx_ham_003_assert_28"
+
+- tapOn:
+    id: "nav_menu"
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_generated_cplx_ham_003_assert_30"
+
+- tapOn:
+    text: "India"
+
+- tapOn:
+    text: "India"
+    index: 1
+
+- assertVisible:
+    text: "India"
+
+- takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_generated_cplx_ham_003_assert_33"
+
+- assertVisible:
+    id: "article_card"
+
+- takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_generated_cplx_ham_003_assert_34"
+
+- tapOn:
+    id: "article_card"
+
+- runFlow:
+    when:
+      visible: "This summary and the FAQs.*"
+    commands:
+      - tapOn: "Close sheet"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_generated_cplx_ham_003_assert_37"
+
+- scrollUntilVisible:
+    element:
+      text: "support journalism"
+    direction: "DOWN"
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 50
+
+- assertVisible:
+    text: "Support Journalism"
+
+- takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_generated_cplx_ham_003_assert_39"
+
+- assertVisible:
+    text: "SUBSCRIBE"
+
+- takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_generated_cplx_ham_003_assert_40"
+
+- scrollUntilVisible:
+    element:
+      text: "ADVERTISEMENT"
+    direction: "DOWN"
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 50
+
+- assertVisible:
+    text: "ADVERTISEMENT"
+
+- takeScreenshot: "Screenshots/Generated/CPLX_HAM_003_generated_cplx_ham_003_assert_42"

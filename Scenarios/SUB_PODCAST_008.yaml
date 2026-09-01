@@ -1,0 +1,38 @@
+appId: com.mobstac.thehindu
+tags: [generated, subscriber, podcast, playback, repeated-play-pause]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_PODCAST_LATEST.yaml"
+- evalScript: '${(function () { var end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+- assertVisible:
+    text: "(?i)^Pause$"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_008_podcast_progress_after_30_seconds"
+- assertWithAI: "Verify the podcast mini-player progress has advanced beyond its initial position and that this is the selected podcast episode, not an article narration player."
+- repeat:
+    times: 3
+    commands:
+      - tapOn:
+          text: "(?i)^Pause$"
+      - extendedWaitUntil:
+          visible:
+            text: "(?i)^Play$"
+          timeout: 10000
+      - evalScript: '${(function () { var end = Date.now() + 1000; while (Date.now() < end) {} return true; })()}'
+      - assertVisible:
+          text: "(?i)^Play$"
+      - tapOn:
+          text: "(?i)^Play$"
+      - extendedWaitUntil:
+          visible:
+            text: "(?i)^Pause$"
+          timeout: 10000
+      - assertVisible:
+          text: "(?i)^Pause$"
+- tapOn:
+    text: "(?i)^Pause$"
+- extendedWaitUntil:
+    visible:
+      text: "(?i)^Play$"
+    timeout: 10000
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_008_podcast_paused_after_three_cycles"

@@ -1,0 +1,22 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, login]
+---
+- launchApp:
+    clearState: true
+- extendedWaitUntil: {visible: "HAVE AN ACCOUNT.*LOGIN", timeout: 30000}
+- assertVisible: "Create a free account|CREATE A FREE ACCOUNT"
+- assertVisible: "HAVE AN ACCOUNT.*LOGIN"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LOGIN_001_get_started"
+- tapOn: "HAVE AN ACCOUNT.*LOGIN"
+- extendedWaitUntil: {visible: "Email", timeout: 30000}
+- assertVisible: "Email"
+- runFlow: "../Common/SUBSCRIBER_LOGIN_ONCE.yaml"
+- assertVisible: "^Account$"
+- back
+- extendedWaitUntil: {visible: {id: "screen_home"}, timeout: 30000}
+- assertVisible: {id: "screen_home"}
+- assertNotVisible: {text: "Subscribe|SUBSCRIBE"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LOGIN_001_authenticated_home"
+- stopApp

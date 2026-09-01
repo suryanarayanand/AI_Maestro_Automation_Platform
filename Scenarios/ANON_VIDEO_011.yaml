@@ -1,0 +1,21 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, videos]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_VIDEO_ARTICLE.yaml"
+
+- tapOn: {text: "Bookmark", index: 0}
+
+- extendedWaitUntil: {visible: {text: "Login to your account|Sign in|LOGIN"}, timeout: 30000}
+
+- assertVisible: {text: "Login to your account|Sign in|LOGIN"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_VIDEO_011_login_gate"
+
+- back
+
+- assertVisible: {id: "screen_article_detail"}
+

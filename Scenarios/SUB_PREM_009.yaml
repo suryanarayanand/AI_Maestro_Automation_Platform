@@ -1,0 +1,80 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - premium
+  - packages
+  - article
+  - full-access
+  - no-monetisation
+---
+
+# Required precondition: an authenticated subscriber has opened a current
+# Packages article. Repository evidence does not contain a validated Packages
+# navigation, card, or deep-link locator, so that interaction is not invented.
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Establish that the article starts without a subscription prompt or ad label.
+- assertNotVisible:
+    text: "Subscribe|SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+# Traverse the article body to a validated post-article marker.
+- scrollUntilVisible:
+    element:
+      text: "Post a comment"
+    direction: DOWN
+    timeout: 60000
+    speed: 40
+
+- assertVisible:
+    text: "Post a comment"
+
+# Verify the settled lower article state remains entitled and ad-free.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "Subscribe|SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_009_packages_article_lower_full_access"
+
+# Expected-result proof: article detail remains open after body traversal.
+- assertVisible:
+    id: "screen_article_detail"
+
+# Reaching validated post-article content without a subscription prompt proves
+# reading continued beyond an anonymous restriction point.
+- assertVisible:
+    text: "Post a comment"
+
+- assertNotVisible:
+    text: "Subscribe|SUBSCRIBE"
+
+# Final settled entitlement evidence.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "Subscribe|SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_009_packages_article_entitlement_proven"

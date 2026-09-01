@@ -1,0 +1,61 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, trending, section-technology]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING.yaml"
+
+- tapOn: {text: "Technology"}
+
+- waitForAnimationToEnd: {timeout: 3000}
+
+- assertVisible: {id: "screen_trending"}
+
+- assertVisible: {text: "Technology"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_017_Technology_top"
+
+- repeat:
+
+    times: 8
+
+    commands:
+
+      - swipe: {direction: UP}
+
+      - waitForAnimationToEnd: {timeout: 1200}
+
+      - runFlow: "../Common/CAPTURE_TRENDING_AD_STATE.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_017_Technology_lower"
+
+- runFlow:
+
+    when: {visible: {text: "READ FULL ARTICLE"}}
+
+    commands:
+
+      - tapOn: {text: "READ FULL ARTICLE"}
+
+      - tapOn: {text: "Close sheet", optional: true}
+
+      - runFlow:
+
+          when: {notVisible: {id: "screen_article_detail"}}
+
+          file: "../Common/HANDLE_DELAYED_ARTICLE_INTERSTITIAL.yaml"
+
+      - extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_TREND_017_Technology_article"
+
+      - back
+
+      - extendedWaitUntil: {visible: {id: "screen_trending"}, timeout: 30000}
+
+      - assertVisible: {text: "Technology"}
+

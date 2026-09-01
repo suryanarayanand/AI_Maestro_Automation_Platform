@@ -2,8 +2,20 @@
 cta_login,account_anonymous,id,cta_login,1,validated,2026-07-31T14:47:11,"account_anonymous_20260731_143551.json, premium_top_20260731_143903.json",Maestro assertVisible passed on R9ZY40T6PHN; close action also tap-verified
 cta_menu_close,account_anonymous,id,cta_menu_close,1,validated,2026-07-31T14:47:12,account_anonymous_20260731_143551.json,Maestro assertVisible passed on R9ZY40T6PHN; close action also tap-verified
 screen_user_menu,account_anonymous,id,screen_user_menu,1,validated,2026-07-31T14:47:11,account_anonymous_20260731_143551.json,Maestro assertVisible passed on R9ZY40T6PHN; close action also tap-verified
-screen_section,section_common,id,screen_section,1,validated,2026-08-03T15:18:00,"scitech_page_20260803_150944.json, entertainment_page_20260803_151313.json, books_page_20260803_151746.json, food_page_20260803_151053.json, latest_news_page_20260803_151535.json",Canonical shared destination ID; assert the page title text as page identity
+ADVERTISEMENT,anonymous_home_ads,text,ADVERTISEMENT,3,validated,2026-08-14T11:13:04,"home_top_20260731_143115.json, business_page_20260731_150633.json",Observed across two six-viewport Maestro hierarchy scans on R9ZY40T6PHN; stable Google ad label text
+aw0,anonymous_home_ads,id,aw0,1,validated,2026-08-14T11:13:04,"home_top_20260731_143115.json, business_page_20260731_150633.json",Observed across two six-viewport Maestro hierarchy scans on R9ZY40T6PHN; Google ad clickable container
+google_image_div,anonymous_home_ads,id,google_image_div,1,validated,2026-08-14T11:13:04,"home_top_20260731_143115.json, business_page_20260731_150633.json",Observed across two six-viewport Maestro hierarchy scans on R9ZY40T6PHN; Google ad image container
+Headlines,article_post_content,text,Headlines,1,validated,2026-08-13T12:14:00,Maestro selector probe,assertVisible verified on R9ZY40T6PHN
+Post a comment,article_post_content,text,Post a comment,1,validated,2026-08-13T12:14:00,Maestro hierarchy and selector probe,scrollUntilVisible target and assertVisible verified on R9ZY40T6PHN
+Recommended,article_post_content,text,Recommended,1,validated,2026-08-13T12:14:00,Maestro selector probe,assertVisible verified on R9ZY40T6PHN
+Related Topics,article_post_content,text,Related Topics,1,validated,2026-08-13T12:14:00,Maestro selector probe,assertVisible verified on R9ZY40T6PHN; section remains article-dependent
+Books,books_page,text,Books,3,validated,2026-08-03T15:17:46,"books_expanded_20260803_151625.json, books_page_20260803_151746.json",Destination is the second Books label after category expansion
 screen_ebooks,ebooks_top,id,screen_ebooks,1,validated,2026-07-31T14:47:14,ebooks_top_20260731_143956.json,Maestro navigation and assertVisible passed on R9ZY40T6PHN
+Entertainment,entertainment_page,text,Entertainment,3,validated,2026-08-03T15:13:13,"entertainment_expanded_20260803_151154.json, entertainment_page_20260803_151313.json",Destination is the second Entertainment label after category expansion
+Food,food_page,text,Food,3,validated,2026-08-03T15:10:53,food_page_20260803_151053.json,Life & Style child navigation and destination identity verified
+Easy Down,games_top,accessibilityText,Easy Down,2,validated,2026-08-04T18:13:00,live hierarchy R9ZY40T6PHN,Observed on Games page
+Sudoku,games_top,accessibilityText,Sudoku,2,validated,2026-08-04T18:13:00,live hierarchy R9ZY40T6PHN,Observed on Games page; screen_games navigation assertion passed
+The Hindu Mini,games_top,accessibilityText,The Hindu Mini,2,validated,2026-08-04T18:13:00,live hierarchy R9ZY40T6PHN,Observed on Games page
 screen_games,games_top,id,screen_games,1,validated,2026-07-31T14:47:12,games_top_20260731_144054.json,Maestro navigation and assertVisible passed on R9ZY40T6PHN
 Sport,hamburger_menu,text,Sport,3,validated,2026-07-31T15:11:42,"hamburger_menu_20260731_144148.json, sport_page_20260731_150454.json",Maestro visibility and tap validation passed on R9ZY40T6PHN
 cta_drawer_close,hamburger_menu,id,cta_drawer_close,1,validated,2026-07-31T14:47:13,hamburger_menu_20260731_144148.json,Maestro navigation and assertVisible passed on R9ZY40T6PHN
@@ -25,12 +37,15 @@ nav_menu,home_top,id,nav_menu,1,validated,2026-07-31T14:32:46,"existing_reposito
 nav_premium,home_top,id,nav_premium,1,validated,2026-07-31T14:32:46,"existing_repository, Home.json, home_top_20260731_143115.json",Maestro assertVisible passed on R9ZY40T6PHN using home_top capture
 nav_trending,home_top,id,nav_trending,1,validated,2026-07-31T14:32:46,"existing_repository, Home.json, home_top_20260731_143115.json",Maestro assertVisible passed on R9ZY40T6PHN using home_top capture
 screen_home,home_top,id,screen_home,1,validated,2026-07-31T14:32:46,"existing_repository, Home.json, home_top_20260731_143115.json",Maestro assertVisible passed on R9ZY40T6PHN using home_top capture
-screen_premium,premium_top,id,screen_premium,1,validated,2026-07-31T14:47:13,premium_top_20260731_143903.json,Maestro navigation and assertVisible passed on R9ZY40T6PHN
-article_card,section_common,id,article_card,1,validated,2026-08-03T15:18:00,14 requested section page hierarchies,Reusable article entry; present on content-list section pages
-Podcast,podcast_page,text,Podcast,3,validated,2026-08-03T14:38:43,podcast_page_20260803_143843.json,Navigation and page identity verified on R9ZY40T6PHN
-Sci-Tech,scitech_page,text,Sci-Tech,3,validated,2026-08-03T15:09:44,"science_expanded_20260803_150821.json, scitech_page_20260803_150944.json",Science child navigation and destination identity verified
-Entertainment,entertainment_page,text,Entertainment,3,validated,2026-08-03T15:13:13,"entertainment_expanded_20260803_151154.json, entertainment_page_20260803_151313.json",Destination is the second Entertainment label after category expansion
-Books,books_page,text,Books,3,validated,2026-08-03T15:17:46,"books_expanded_20260803_151625.json, books_page_20260803_151746.json",Destination is the second Books label after category expansion
-Food,food_page,text,Food,3,validated,2026-08-03T15:10:53,food_page_20260803_151053.json,Life & Style child navigation and destination identity verified
 Latest News,latest_news_page,text,News,3,validated,2026-08-03T15:15:35,"news_expanded_20260803_151408.json, latest_news_page_20260803_151535.json",Logical Latest News route is News category to second News child
+Podcast,podcast_page,text,Podcast,3,validated,2026-08-03T14:38:43,podcast_page_20260803_143843.json,Navigation and page identity verified on R9ZY40T6PHN
+READ FULL ARTICLE,premium_briefing,text,READ FULL ARTICLE,3,validated,2026-08-13T11:55:58,trending_top_20260731_143756.json,Tap-verified on R9ZY40T6PHN in passing job 140
+OKAY,premium_briefing_intro,text,OKAY,3,validated,2026-08-13T11:55:58,premium_top_20260731_143903.json,Tap-verified on R9ZY40T6PHN in passing job 140
+screen_premium,premium_top,id,screen_premium,1,validated,2026-07-31T14:47:13,premium_top_20260731_143903.json,Maestro navigation and assertVisible passed on R9ZY40T6PHN
+Sci-Tech,scitech_page,text,Sci-Tech,3,validated,2026-08-03T15:09:44,"science_expanded_20260803_150821.json, scitech_page_20260803_150944.json",Science child navigation and destination identity verified
+article_card,section_common,id,article_card,1,validated,2026-08-03T15:18:00,14 requested section page hierarchies,Reusable article entry; present on content-list section pages
+screen_section,section_common,id,screen_section,1,validated,2026-08-03T15:18:00,"scitech_page_20260803_150944.json, entertainment_page_20260803_151313.json, books_page_20260803_151746.json, food_page_20260803_151053.json, latest_news_page_20260803_151535.json",Canonical shared destination ID; assert the page title text as page identity
+ad_iframe,anonymous_article_interstitial,id,ad_iframe,1,validated,2026-08-14T11:30:00,live Maestro hierarchy capture on R9ZY40T6PHN,Observed consistently after consecutive article swipes when the interstitial was displayed
+interstitial_close_button,anonymous_article_interstitial,accessibilityText,Interstitial close button,2,validated,2026-08-14T11:30:00,live Maestro hierarchy capture on R9ZY40T6PHN,Accessibility selector observed on the displayed article interstitial
+screen_article_detail,article_detail,id,screen_article_detail,1,validated,2026-08-14T11:30:00,live Maestro hierarchy capture on R9ZY40T6PHN,Observed after opening article_card from anonymous Home
 screen_trending,trending_top,id,screen_trending,1,validated,2026-07-31T14:47:13,trending_top_20260731_143756.json,Maestro navigation and assertVisible passed on R9ZY40T6PHN

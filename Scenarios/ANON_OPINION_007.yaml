@@ -1,0 +1,15 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, opinion]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_OPINION_ARTICLE.yaml"
+- repeat: {times: 8, commands: [{swipe: {direction: UP}}, {waitForAnimationToEnd}]}
+- runFlow:
+    when: {notVisible: {text: "SUBSCRIBE|Subscribe|Keep reading"}}
+    commands:
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_OPINION_007_free_article_end"
+      - runFlow:
+          when: {visible: {text: "Post.*Comment|Related|Headlines"}}
+          commands:
+            - assertVisible: {text: "Post.*Comment|Related|Headlines"}
+- assertVisible: {id: "screen_article_detail"}

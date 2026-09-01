@@ -1,0 +1,25 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+---
+
+- runFlow: "../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml"
+
+- tapOn:
+    id: "nav_trending"
+
+- assertVisible:
+    id: "screen_trending"
+
+- tapOn:
+    id: "nav_premium"
+
+- assertVisible:
+    id: "screen_premium"
+
+- tapOn:
+    id: "nav_home"
+
+- assertVisible:
+    id: "screen_home"

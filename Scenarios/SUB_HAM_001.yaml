@@ -1,0 +1,9 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, hamburger, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_HAMBURGER.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HAM_001_open"
+- tapOn: {id: "cta_drawer_close"}
+- assertVisible: {id: "screen_home"}
+

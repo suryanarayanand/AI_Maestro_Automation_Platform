@@ -1,0 +1,17 @@
+appId: com.mobstac.thehindu
+tags: [common, anonymous, videos, article]
+---
+- runFlow: "OPEN_ANONYMOUS_VIDEOS.yaml"
+- tapOn: {id: "article_card", index: 0}
+- waitForAnimationToEnd
+- runFlow:
+    when: {notVisible: {id: "screen_article_detail"}}
+    commands:
+      - takeScreenshot: "Screenshots/Generated/video_article_possible_interstitial"
+      - waitForAnimationToEnd
+      - runFlow:
+          when: {visible: {text: "^CLOSE$|Interstitial close button|SKIP|Skip Ad"}}
+          commands:
+            - tapOn: {text: "^CLOSE$|Interstitial close button|SKIP|Skip Ad"}
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- assertVisible: {id: "screen_article_detail"}

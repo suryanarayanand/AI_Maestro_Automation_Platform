@@ -1,0 +1,127 @@
+appId: com.mobstac.thehindu
+
+tags: [generated, ordered, subscriber, premium, specials, full-page, entitlement, no-ads]
+
+---
+
+# Establish the verified subscriber state and open Premium > Specials.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_home"
+
+- tapOn:
+    text: "Premium"
+
+- extendedWaitUntil:
+    visible:
+      text: "Specials"
+    timeout: 30000
+
+- tapOn:
+    text: "Specials"
+
+# Top: wait for a Specials card and prove the subscriber surface is entitled.
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+
+- assertVisible:
+    text: "Specials"
+
+- assertVisible:
+    id: "article_card"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "aw0"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_006_specials_top"
+
+# Middle: bounded scrolling, with a rendered card required after every move.
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - extendedWaitUntil:
+          visible:
+            id: "article_card"
+          timeout: 20000
+      - assertVisible:
+          text: "Specials"
+      - assertVisible:
+          id: "article_card"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "aw0"
+      - assertNotVisible:
+          id: "ad_iframe"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_006_specials_middle"
+
+# Lower: continue through a second bounded segment and recheck loading and entitlement.
+- repeat:
+    times: 4
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - extendedWaitUntil:
+          visible:
+            id: "article_card"
+          timeout: 20000
+      - assertVisible:
+          text: "Specials"
+      - assertVisible:
+          id: "article_card"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "aw0"
+      - assertNotVisible:
+          id: "ad_iframe"
+
+# Final lower-state proof that Specials remains populated and subscriber-entitled.
+- assertVisible:
+    text: "Specials"
+
+- assertVisible:
+    id: "article_card"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "aw0"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_006_specials_lower"

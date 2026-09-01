@@ -1,0 +1,17 @@
+appId: com.mobstac.thehindu
+---
+- runFlow: OPEN_SUBSCRIBER_HOME.yaml
+- repeat:
+    times: 8
+    commands:
+      - runFlow:
+          when: {notVisible: {text: "(?i)^Latest News$"}}
+          commands:
+            - swipe: {start: "88%,14%", end: "12%,14%", duration: 500}
+            - waitForAnimationToEnd
+- extendedWaitUntil: {visible: {text: "(?i)^Latest News$"}, timeout: 30000}
+- tapOn: {text: "(?i)^Latest News$"}
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {id: "screen_home"}, timeout: 30000}
+- assertVisible: {text: "(?i)^Latest News$"}
+- runFlow: ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml

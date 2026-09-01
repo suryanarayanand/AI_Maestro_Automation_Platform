@@ -22,7 +22,9 @@ def generate_bug_summary(results, ai_summary, visual_summary, suite_name, execut
 
     for scenario in results:
         scenario_id = scenario["id"]
-        execution_failed = scenario["status"] != "PASS"
+        # NEEDS_REVIEW means execution passed but evidence still needs manual or
+        # Excel confirmation. It must not be promoted into the bug list.
+        execution_failed = scenario["status"] in {"FAIL", "CANCELLED", "NOT FOUND"}
         ai_details = [d for d in scenario.get("ai_details", []) if d.get("status") != "PASS"]
         visual_case = visual_by_id.get(scenario_id, {})
         visual_details = [d for d in visual_case.get("details", []) if d.get("status") != "PASS"]
@@ -83,6 +85,7 @@ def generate_bug_summary(results, ai_summary, visual_summary, suite_name, execut
         "execution_time": execution_time,
         "summary": {
             "total": len(results), "passed": len(results) - len(bugs), "failed": len(bugs),
+            "needs_review": sum(item.get("status") == "NEEDS_REVIEW" for item in results),
             **counts,
         },
         "device_comparison": {

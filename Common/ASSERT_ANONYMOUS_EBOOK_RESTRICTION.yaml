@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+---
+- extendedWaitUntil:
+    visible: {text: ".*(Subscribe to continue reading|Support award-winning Journalism|SUBSCRIBE).*"}
+    timeout: 25000
+- assertVisible: {text: "Yearly"}
+- assertVisible: {text: "Monthly"}
+- assertNotVisible: {text: "Contents|Table of Contents|Next Page|Previous Page"}
+- scrollUntilVisible:
+    element: {text: ".*Already a subscriber.*|Login|LOGIN"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- assertVisible: {text: ".*Already a subscriber.*|Login|LOGIN"}

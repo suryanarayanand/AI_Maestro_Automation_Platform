@@ -1,0 +1,13 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, article-page, recommended]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- scrollUntilVisible:
+    element: {text: "Recommended|Headlines|Related Stories"}
+    direction: DOWN
+    timeout: 90000
+    speed: 40
+- assertVisible: {text: "Recommended|Headlines|Related Stories"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_016_recommendations"

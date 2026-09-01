@@ -1,0 +1,17 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, article-page, plans]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_PREMIUM_ARTICLE.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- runFlow: "../Common/ASSERT_ANONYMOUS_PREMIUM_PAYWALL.yaml"
+- tapOn: {text: "Subscribe|SUBSCRIBE", index: 0}
+- runFlow: "../Common/ASSERT_PREMIUM_PLANS.yaml"
+- scrollUntilVisible:
+    element: {text: "Already a subscriber.*|Login|LOGIN"}
+    direction: DOWN
+    timeout: 60000
+    speed: 40
+- assertVisible: {text: "Already a subscriber.*|Login|LOGIN"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_022_plans"
+- tapOn: {text: "Close|CLOSE", optional: true}

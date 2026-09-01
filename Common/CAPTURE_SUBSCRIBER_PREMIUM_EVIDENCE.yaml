@@ -1,0 +1,20 @@
+appId: com.mobstac.thehindu
+tags: [common, subscriber, home, premium-evidence]
+---
+- assertVisible: {text: "PREMIUM|Premium"}
+- assertNotVisible: {text: "SUBSCRIBE|Already a subscriber.*|Keep reading.*"}
+- assertNotVisible: {text: "ADVERTISEMENT"}
+- assertNotVisible: {id: "ad_iframe"}
+- takeScreenshot: "Screenshots/Generated/subscriber_home_premium_article_header"
+- swipe: {direction: UP}
+- waitForAnimationToEnd: {timeout: 1200}
+- assertNotVisible: {text: "SUBSCRIBE|Already a subscriber.*|Keep reading.*"}
+- takeScreenshot: "Screenshots/Generated/subscriber_home_premium_article_body_1"
+- swipe: {direction: UP}
+- waitForAnimationToEnd: {timeout: 1200}
+- assertNotVisible: {text: "SUBSCRIBE|Already a subscriber.*|Keep reading.*"}
+- takeScreenshot: "Screenshots/Generated/subscriber_home_premium_article_body_2"
+- swipe: {direction: UP}
+- waitForAnimationToEnd: {timeout: 1200}
+- assertNotVisible: {text: "SUBSCRIBE|Already a subscriber.*|Keep reading.*"}
+- takeScreenshot: "Screenshots/Generated/subscriber_home_premium_article_body_3"

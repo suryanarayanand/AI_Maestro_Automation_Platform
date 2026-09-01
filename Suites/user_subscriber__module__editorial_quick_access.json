@@ -1,0 +1,127 @@
+{
+    "suite": "Subscriber User Cases - Editorial Quick Access",
+    "source_suite": "user_subscriber",
+    "module": "Editorial Quick Access",
+    "tests": [
+        {
+            "id": "SUB_EDITORIAL_001",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial launch, selection and subscriber identity",
+            "yaml": "SUB_EDITORIAL_001.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "SUB_EDITORIAL_002",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial refresh and content recovery",
+            "yaml": "SUB_EDITORIAL_002.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "SUB_EDITORIAL_003",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial listing identity and visual structure",
+            "yaml": "SUB_EDITORIAL_003.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "SUB_EDITORIAL_004",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial deep scroll, pagination and subscriber ad-free entitlement",
+            "yaml": "SUB_EDITORIAL_004.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "SUB_EDITORIAL_005",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial article selection and destination integrity",
+            "yaml": "SUB_EDITORIAL_005.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "SUB_EDITORIAL_006",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial subscriber full-article entitlement",
+            "yaml": "SUB_EDITORIAL_006.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "SUB_EDITORIAL_007",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial conditional AI Summary and Listen controls",
+            "yaml": "SUB_EDITORIAL_007.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "SUB_EDITORIAL_008",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial reading options, text size and themes",
+            "yaml": "SUB_EDITORIAL_008.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "SUB_EDITORIAL_009",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial bookmark, share and comment engagement",
+            "yaml": "SUB_EDITORIAL_009.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "SUB_EDITORIAL_010",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial post-article content continuity",
+            "yaml": "SUB_EDITORIAL_010.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "SUB_EDITORIAL_011",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial article paging and navigation recovery",
+            "yaml": "SUB_EDITORIAL_011.yaml",
+            "display_module": "Editorial Quick Access"
+        },
+        {
+            "id": "SUB_EDITORIAL_012",
+            "module": "Editorial Quick Access",
+            "section": "Editorial Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Editorial loading, live-content and failure resilience",
+            "yaml": "SUB_EDITORIAL_012.yaml",
+            "display_module": "Editorial Quick Access"
+        }
+    ]
+}

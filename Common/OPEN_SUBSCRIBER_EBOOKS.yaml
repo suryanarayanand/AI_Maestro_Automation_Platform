@@ -1,0 +1,8 @@
+appId: com.mobstac.thehindu
+tags: [common, subscriber, ebooks]
+---
+- runFlow: "OPEN_SUBSCRIBER_HOME.yaml"
+- tapOn: {id: "nav_ebooks"}
+- extendedWaitUntil: {visible: {id: "screen_ebooks"}, timeout: 30000}
+- assertVisible: {id: "screen_ebooks"}
+- runFlow: "ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"

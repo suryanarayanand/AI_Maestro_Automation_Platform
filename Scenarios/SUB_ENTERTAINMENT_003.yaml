@@ -1,0 +1,9 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, quick-access]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_ENTERTAINMENT.yaml"
+- assertVisible: {text: "(?i)^Entertainment$"}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card", index: 0}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ENTERTAINMENT_003_listing"

@@ -4,7 +4,9 @@ from flask import Blueprint, abort, flash, redirect, render_template, request, s
 from werkzeug.utils import secure_filename
 from web.portal_db import connect
 from web.routes.auth import login_required
-from web.services.generation_service import approve_draft, create_drafts, reject_draft
+from web.services.generation_service import (approve_draft, create_drafts, reject_draft,
+                                             draft_guidance, traceability_coverage)
+from web.services.atomic_flow_service import list_steps
 
 ROOT = Path(__file__).resolve().parents[2]
 generator_bp = Blueprint("generator", __name__)
@@ -28,7 +30,8 @@ def generator():
                     f"Excel format: {normalization.case_count} cases and "
                     f"{normalization.step_count} steps. "
                     f"Created {len(ids)} YAML draft(s) for review"
-                    f"{' with automatic AI fallback' if use_ai else ''}.",
+                    f"{' and Friday is reviewing incomplete drafts in the background' if use_ai else ''}. "
+                    "Refresh this page to see Friday reviewing, complete, or needs review states.",
                     "success",
                 )
             except Exception as exc:
@@ -36,7 +39,15 @@ def generator():
         return redirect(url_for("generator.generator"))
     with connect() as db:
         drafts = db.execute("SELECT * FROM drafts ORDER BY id DESC").fetchall()
-    return render_template("generator.html", drafts=drafts)
+    return render_template(
+        "test_design_workspace.html", drafts=drafts,
+        steps=list_steps(
+            request.args.get("q", ""), request.args.get("state", ""),
+            request.args.get("status", ""),
+        ),
+        query=request.args.get("q", ""), selected_state=request.args.get("state", ""),
+        selected_status=request.args.get("status", ""),
+    )
 
 
 @generator_bp.route("/generator/<int:draft_id>")
@@ -47,14 +58,21 @@ def review(draft_id):
     if not draft:
         abort(404)
     assumptions = json.loads(draft["ai_assumptions"] or "[]")
-    return render_template("review_yaml.html", draft=draft, assumptions=assumptions)
+    traceability = json.loads(draft["traceability"] or "[]")
+    return render_template("review_yaml.html", draft=draft, assumptions=assumptions,
+                           traceability=traceability,
+                           guidance=draft_guidance(draft),
+                           coverage_ratio=traceability_coverage(traceability))
 
 
 @generator_bp.route("/generator/<int:draft_id>/approve", methods=["POST"])
 @login_required
 def approve(draft_id):
     try:
-        approve_draft(draft_id, request.form["yaml"], request.form["suite"], session["username"])
+        approve_draft(
+            draft_id, request.form["yaml"], request.form["suite"], session["username"],
+            allow_incomplete=request.form.get("allow_incomplete") == "1",
+        )
         flash("YAML approved and added to the suite", "success")
     except Exception as exc:
         flash(str(exc), "danger")

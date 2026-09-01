@@ -1,0 +1,107 @@
+{
+    "suite": "Anonymous User Cases - Entertainment Quick Access",
+    "source_suite": "user_anonymous",
+    "module": "Entertainment Quick Access",
+    "tests": [
+        {
+            "id": "ANON_ENTERTAINMENT_001",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "priority": "P1",
+            "name": "Entertainment launch and selected Quick Access identity",
+            "yaml": "ANON_ENTERTAINMENT_001.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "ANON_ENTERTAINMENT_002",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "priority": "P2",
+            "name": "Entertainment refresh and content recovery",
+            "yaml": "ANON_ENTERTAINMENT_002.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "ANON_ENTERTAINMENT_003",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "priority": "P2",
+            "name": "Entertainment listing structure and article cards",
+            "yaml": "ANON_ENTERTAINMENT_003.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "ANON_ENTERTAINMENT_004",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "priority": "P2",
+            "name": "Entertainment deep scroll and advertisement evidence",
+            "yaml": "ANON_ENTERTAINMENT_004.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "ANON_ENTERTAINMENT_005",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "priority": "P1",
+            "name": "Entertainment article destination integrity",
+            "yaml": "ANON_ENTERTAINMENT_005.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "ANON_ENTERTAINMENT_006",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "priority": "P1",
+            "name": "Entertainment anonymous article restriction behavior",
+            "yaml": "ANON_ENTERTAINMENT_006.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "ANON_ENTERTAINMENT_007",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "priority": "P2",
+            "name": "Entertainment conditional AI Summary and Listen controls",
+            "yaml": "ANON_ENTERTAINMENT_007.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "ANON_ENTERTAINMENT_008",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "priority": "P1",
+            "name": "Entertainment bookmark redirects anonymous user to login",
+            "yaml": "ANON_ENTERTAINMENT_008.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "ANON_ENTERTAINMENT_009",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "priority": "P2",
+            "name": "Entertainment share surface behavior",
+            "yaml": "ANON_ENTERTAINMENT_009.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "ANON_ENTERTAINMENT_010",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "priority": "P2",
+            "name": "Entertainment comment and post-article behavior",
+            "yaml": "ANON_ENTERTAINMENT_010.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Entertainment Quick Access"
+        }
+    ]
+}

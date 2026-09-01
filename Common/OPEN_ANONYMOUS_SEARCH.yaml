@@ -1,0 +1,7 @@
+appId: com.mobstac.thehindu
+tags: [common, anonymous, search]
+---
+- runFlow: OPEN_ANONYMOUS_HAMBURGER.yaml
+- assertVisible: {id: "cta_search"}
+- tapOn: {id: "cta_search"}
+- waitForAnimationToEnd

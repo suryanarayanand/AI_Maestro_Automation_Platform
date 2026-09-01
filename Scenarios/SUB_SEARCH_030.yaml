@@ -1,0 +1,46 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - search
+  - navigation
+  - state-restoration
+  - evidence-limited
+---
+
+# SUB_SEARCH_030
+# Required invocation state: an authenticated subscriber has already searched
+# for "flood", selected Newest, and opened a visible result article.
+# Search entry, sort selection, and result-card interaction cannot be automated
+# safely until their selectors are validated.
+
+# Confirm that the selected content reached the validated article-detail screen.
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_030_article_open"
+
+# Navigate back and prove that article detail is no longer active.
+- back
+
+- extendedWaitUntil:
+    notVisible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertNotVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_030_post_back_surface"

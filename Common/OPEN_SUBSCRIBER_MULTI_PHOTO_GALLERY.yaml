@@ -1,0 +1,62 @@
+appId: com.mobstac.thehindu
+tags: [common, subscriber, photos, gallery]
+---
+- runFlow: "OPEN_SUBSCRIBER_HOME.yaml"
+- tapOn: "Photos"
+- waitForAnimationToEnd:
+    timeout: 5000
+- assertVisible:
+    id: "screen_home"
+# The leading Photos card carries the current multi-image gallery badge.
+- tapOn:
+    point: "25%,35%"
+- waitForAnimationToEnd:
+    timeout: 8000
+# Photos content changes daily. If the first card is single-photo, return to the
+# grid and try alternate visible cards before requiring a multi-photo counter.
+- runFlow:
+    when:
+      visible:
+        text: ".*1/1.*"
+    commands:
+      - tapOn: "Close"
+      - waitForAnimationToEnd
+      - tapOn:
+          point: "75%,35%"
+      - waitForAnimationToEnd:
+          timeout: 8000
+- runFlow:
+    when:
+      visible:
+        text: ".*1/1.*"
+    commands:
+      - tapOn: "Close"
+      - waitForAnimationToEnd
+      - swipe:
+          direction: UP
+          duration: 500
+      - waitForAnimationToEnd
+      - tapOn:
+          point: "25%,35%"
+      - waitForAnimationToEnd:
+          timeout: 8000
+- runFlow:
+    when:
+      visible:
+        text: ".*1/1.*"
+    commands:
+      - tapOn: "Close"
+      - waitForAnimationToEnd
+      - tapOn:
+          point: "75%,35%"
+      - waitForAnimationToEnd:
+          timeout: 8000
+- extendedWaitUntil:
+    visible:
+      text: ".*1/[2-9][0-9]*.*"
+    timeout: 30000
+- assertVisible:
+    text: ".*1/[2-9][0-9]*.*"
+- assertNotVisible: "SUBSCRIBE"
+- assertNotVisible:
+    id: "ad_iframe"

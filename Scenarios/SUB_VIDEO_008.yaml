@@ -1,0 +1,100 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - article
+  - inline-video
+  - evidence-limited
+
+---
+
+# SUB_VIDEO_008 — Inline playback during article scrolling
+# This replacement executes only the article-scroll behavior supported by the
+# supplied evidence. It does not claim that playback, fullscreen exit, playback
+# position, or video controls were verified because no validated player
+# selectors or fullscreen controls were supplied.
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Position 1: Open the Inline Video reference and move through bounded article
+# states. Runtime qualification prevents treating the reference-only URL as
+# successfully opened unless the validated article-detail surface appears.
+- openLink: "https://www.thehindu.com/entertainment/music/how-the-concept-of-mahishasurmardini-unites-the-country-during-navaratri/article67433268.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- repeat:
+    times: 4
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_008_bounded_lower_article_state"
+
+# Position 2: Reverse the bounded scrolling and verify that article context is
+# retained. No assertion here represents the player itself as rediscovered.
+- repeat:
+    times: 4
+    commands:
+      - swipe:
+          direction: DOWN
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_008_bounded_return_state"
+
+# Position 3: Exercise one additional article-body scroll transition and assert
+# the validated article surface remains available and ad-free for a subscriber.
+# This proves scroll stability only; it does not prove concurrent playback.
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_008_article_scroll_stable"
+
+# Position 4: Restore the prior bounded reading state and capture the settled
+# article context. Valid playback position and controls remain unasserted until
+# grounded player locators are supplied.
+- swipe:
+    direction: DOWN
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_008_settled_article_context"

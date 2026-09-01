@@ -1,0 +1,13 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, quick-access]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_BOOKS.yaml"
+- repeat:
+    times: 5
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd
+      - assertVisible: {id: "screen_home"}
+      - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_BOOKS_004_deep_scroll"

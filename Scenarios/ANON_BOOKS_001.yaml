@@ -1,0 +1,13 @@
+appId: com.mobstac.thehindu
+tags: [anonymous, quick-access, books]
+---
+- runFlow:
+    file: "../Common/OPEN_ANONYMOUS_QUICK_ACCESS.yaml"
+    env:
+      SECTION_NAME: "Books"
+
+- assertVisible: {text: "(?i)^Books$"}
+- assertVisible: {id: "screen_home"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_BOOKS_001_selected"

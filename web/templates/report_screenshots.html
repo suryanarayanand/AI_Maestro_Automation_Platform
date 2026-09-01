@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="report-gallery-head">
+    <div><small>Visual evidence</small><h2>{{ report.name }} — Screenshots</h2></div>
+    <span>{{ report.screenshot_artifacts|length }} screenshots</span>
+  </div>
+  <p><a href="{{ url_for('report.report_details', report_name=report.name) }}">← Back to report</a></p>
+  {% if report.screenshot_artifacts %}
+  <div class="report-screenshot-grid">
+    {% for screenshot in report.screenshot_artifacts %}
+    <article class="report-screenshot-card">
+      <a class="report-screenshot-preview" href="{{ url_for('report.open_report_file', report_name=report.name, filename=screenshot.relative_path) }}" target="_blank">
+        <img src="{{ url_for('report.open_report_file', report_name=report.name, filename=screenshot.relative_path) }}" alt="{{ screenshot.name }}" loading="lazy">
+      </a>
+      <div class="report-screenshot-info">
+        <strong title="{{ screenshot.name }}">{{ screenshot.name }}</strong>
+        <small>Folder</small><code>{{ screenshot.relative_folder }}</code>
+        <small>Full folder path</small><code title="{{ screenshot.folder_path }}">{{ screenshot.folder_path }}</code>
+        <a href="{{ url_for('report.open_report_file', report_name=report.name, filename=screenshot.relative_path) }}" target="_blank">Open screenshot →</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}<p class="empty">No screenshot evidence was generated for this report.</p>{% endif %}
+</div>
+{% endblock %}

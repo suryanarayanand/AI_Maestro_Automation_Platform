@@ -1,0 +1,37 @@
+{
+    "suite": "Subscriber User Cases - Login",
+    "source_suite": "user_subscriber",
+    "module": "Login",
+    "tests": [
+        {
+            "id": "SUB_LOGIN_001",
+            "module": "Login",
+            "section": "Login",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber login from Let's Get Started",
+            "yaml": "SUB_LOGIN_001.yaml",
+            "display_module": "Login"
+        },
+        {
+            "id": "SUB_LOGIN_002",
+            "module": "Login",
+            "section": "Login",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber login from Account Settings after onboarding skip",
+            "yaml": "SUB_LOGIN_002.yaml",
+            "display_module": "Login"
+        },
+        {
+            "id": "SUB_LOGIN_003",
+            "module": "Login",
+            "section": "Login",
+            "user_state": "SUBSCRIBER",
+            "priority": "P1",
+            "name": "Subscriber login from article floating Subscribe",
+            "yaml": "SUB_LOGIN_003.yaml",
+            "display_module": "Login"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, trending, refresh]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING.yaml"
+
+- swipe: {start: "50%,30%", end: "50%,75%", duration: 700}
+
+- waitForAnimationToEnd: {timeout: 5000}
+
+- extendedWaitUntil: {visible: {id: "screen_trending"}, timeout: 20000}
+
+- assertVisible: {id: "nav_trending"}
+
+- assertVisible: {text: "All"}
+
+- extendedWaitUntil: {visible: {text: "READ FULL ARTICLE"}, timeout: 120000}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_002_after_refresh"
+

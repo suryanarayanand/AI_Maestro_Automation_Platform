@@ -1,0 +1,153 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - podcast
+  - navigation
+  - state-recovery
+  - mini-player
+---
+
+# SUB_PODCAST_016 — Podcast Back navigation and state recovery
+# Ordered precondition: subscriber authentication is complete, the Podcast
+# listing is open, and no playback was intentionally started for the first path.
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+# Position 1 — Open a current series episode list without a mini-player and use
+# Android Back. Dynamic series titles are deliberately not fixed.
+- assertWithAI: "Verify this is the settled multi-series Podcast listing, Podcast is visibly selected, and no mini-player is currently visible. Fail if this is already a series episode-list page, playback is active, or a stale player is present."
+
+- scrollUntilVisible:
+    element:
+      text: "SEE ALL EPISODES"
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+
+- assertVisible:
+    text: "SEE ALL EPISODES"
+
+- assertWithAI: "Verify the first visible SEE ALL EPISODES action belongs to a fully rendered current podcast-series card with readable series identity and artwork."
+
+- tapOn:
+    text: "SEE ALL EPISODES"
+    index: 0
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify a podcast series detail or episode-list page opened from the preceding SEE ALL EPISODES action. It must show readable selected-series identity and one or more rendered episode rows, and it must not still be the multi-series Podcast listing."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_016_episode_list_before_first_back"
+
+- back
+- waitForAnimationToEnd
+
+# This bounded page-anchor wait confirms that the first Back completed and also
+# provides the listing state required to begin the repeated playback path.
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+# Position 2 — Start supported playback, require one settled mini-player, then
+# repeat episode-list navigation and Android Back while that player is visible.
+- scrollUntilVisible:
+    element:
+      text: '(?i)^Play Latest Episode$'
+    direction: UP
+    timeout: 30000
+    speed: 40
+
+- assertVisible:
+    text: '(?i)^Play Latest Episode$'
+
+- assertWithAI: "Verify the visible Play Latest Episode action belongs to a fully rendered current Podcast series card with readable episode or series identity."
+
+- tapOn:
+    text: '(?i)^Play Latest Episode$'
+    index: 0
+
+- evalScript: '${(() => { const end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify playback has started while the multi-series Podcast listing remains open. Exactly one settled, non-blank mini-player must be visible with readable episode identity and active, non-zero playback progress. Fail for an absent, duplicated, blank, stale, stopped, loading-only, or erroneous player."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_016_mini_player_before_repeat"
+
+- scrollUntilVisible:
+    element:
+      text: "SEE ALL EPISODES"
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+
+- assertVisible:
+    text: "SEE ALL EPISODES"
+
+- tapOn:
+    text: "SEE ALL EPISODES"
+    index: 0
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify a podcast series detail or episode-list page is open and exactly one settled mini-player remains visible with active playback. The destination must contain readable series identity and rendered episode rows. Fail if playback stopped, the player disappeared or duplicated, or the app remained on the multi-series listing."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_016_episode_list_with_mini_player_before_back"
+
+- back
+- waitForAnimationToEnd
+
+# Position 3 — The listing returns and Podcast remains selected.
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify Android Back returned to the multi-series Podcast listing and Podcast remains visibly selected. This must not be the series episode-list page, the main Home feed, an exited application, or a crash surface."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_016_podcast_listing_restored"
+
+# Position 4 — Hold the recovered state briefly, then verify navigation did not
+# crash, duplicate the player, or unexpectedly stop supported playback.
+- evalScript: '${(() => { const end = Date.now() + 5000; while (Date.now() < end) {} return true; })()}'
+
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify the recovered Podcast listing remains usable and exactly one settled mini-player is present. The same supported playback must remain active with readable identity and valid progress that has not reset to zero. Fail for a crash or error surface, app exit, stopped playback, missing player, overlapping or duplicated players, stale identity, or persistent loading."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_016_back_navigation_playback_stable"

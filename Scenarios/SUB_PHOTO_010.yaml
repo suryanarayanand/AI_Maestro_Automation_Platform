@@ -1,0 +1,125 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - photos
+  - gallery
+  - header
+  - comment
+  - non-destructive
+  - evidence-limited
+---
+
+# SUB_PHOTO_010 — Subscriber gallery header controls
+# Precondition: OPEN_SUBSCRIBER_HOME retains a configured active subscriber session.
+
+# Position 1 — Open the supplied photo-gallery fixture and inspect its initial state.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- openLink: "https://www.thehindu.com/sport/cricket/ipl2013/match-photos/rajasthan-royals-thrash-mumbai-indians/article4627667.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_010_gallery_initial_header"
+
+# Position 2 — A subscriber must not receive the Subscribe header action.
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_010_subscribe_absent"
+
+# Position 3 — Exercise the only supplied, validated action locator: comment entry.
+# The draft is deliberately abandoned without submission.
+- scrollUntilVisible:
+    element:
+      text: "Post a comment"
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 40
+    centerElement: true
+
+- assertVisible:
+    text: "Post a comment"
+
+- tapOn:
+    text: "Post a comment"
+
+- assertNotVisible:
+    text: "Login to your account|SIGN IN AND JOIN THE CONVERSATION.*"
+
+- inputText: "Automation validation draft - do not submit"
+- hideKeyboard
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_010_comment_entry_no_login"
+
+# Leave without publishing the draft.
+- back
+
+# Position 4 — Reopen the controlled fixture and validate subscriber entitlement
+# both at the initial state and after bounded representative scrolling.
+- openLink: "https://www.thehindu.com/sport/cricket/ipl2013/match-photos/rajasthan-royals-thrash-mumbai-indians/article4627667.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    text: "^Already a [Ss]ubscriber\\? Login$"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_010_initial_entitlement"
+
+- repeat:
+    times: 2
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    text: "^Already a [Ss]ubscriber\\? Login$"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_010_scrolled_entitlement"

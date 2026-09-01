@@ -1,0 +1,13 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_GAMES.yaml"
+- scrollUntilVisible:
+    element: {text: "Exclusive Play.*Premium Way|Cryptic Crossword"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- assertVisible: {text: "Exclusive Play.*Premium Way|Cryptic Crossword"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_GAMES_010_result"

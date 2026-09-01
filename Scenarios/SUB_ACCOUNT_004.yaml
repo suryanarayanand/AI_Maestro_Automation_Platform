@@ -1,0 +1,15 @@
+appId: com.mobstac.thehindu
+tags: [generated, subscriber, account, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_ACCOUNT.yaml"
+- scrollUntilVisible: {element: {text: "^Account$"}, direction: DOWN, timeout: 30000, speed: 45, visibilityPercentage: 20}
+- tapOn: {text: "^Account$"}
+- extendedWaitUntil: {visible: {text: "My Account"}, timeout: 30000}
+- extendedWaitUntil: {visible: {text: "SUBSCRIPTIONS|Subscriptions"}, timeout: 30000}
+- tapOn: {text: "SUBSCRIPTIONS|Subscriptions"}
+- extendedWaitUntil: {visible: {text: "SUBSCRIPTIONS|Subscriptions"}, timeout: 30000}
+- assertVisible: {text: "My Account"}
+- assertVisible: {text: "SUBSCRIPTIONS|Subscriptions"}
+- assertNotVisible: {text: "Login to your account|Already a subscriber"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ACCOUNT_004_subscription"

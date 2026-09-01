@@ -1,0 +1,16 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, games, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_GAMES.yaml"
+- assertVisible: {text: "Cryptic Crossword"}
+- assertVisible: {text: "Sudoku"}
+- scrollUntilVisible: {element: {text: "The Hindu Mini"}, direction: DOWN, timeout: 30000, speed: 55, visibilityPercentage: 20}
+- scrollUntilVisible: {element: {text: "Easy Down"}, direction: DOWN, timeout: 30000, speed: 55, visibilityPercentage: 20}
+- scrollUntilVisible: {element: {text: "Word Row"}, direction: DOWN, timeout: 30000, speed: 55, visibilityPercentage: 20}
+- assertVisible: {text: "Word Flower"}
+- scrollUntilVisible: {element: {text: "Word Search"}, direction: DOWN, timeout: 30000, speed: 55, visibilityPercentage: 20}
+- scrollUntilVisible: {element: {text: "Quiz"}, direction: DOWN, timeout: 30000, speed: 55, visibilityPercentage: 20}
+- assertNotVisible: {text: "Login to play|Login to your account|SUBSCRIBE|.*access was not found.*"}
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_GAMES_002_catalogue"

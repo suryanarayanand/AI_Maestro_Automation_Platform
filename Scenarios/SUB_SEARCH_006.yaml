@@ -1,0 +1,15 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, search, article, full-access]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_SEARCH_ARTICLE.yaml"
+- repeat:
+    times: 5
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd
+      - runFlow: "../Common/HANDLE_AI_SUMMARY_SHEET.yaml"
+      - assertVisible: {id: "screen_article_detail"}
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- assertNotVisible: {text: "^Already a Subscriber\\? Login$"}
+- assertNotVisible: {text: "READ FULL ARTICLE"}
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_006_article_lower_full_access"

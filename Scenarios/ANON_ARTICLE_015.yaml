@@ -1,0 +1,32 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, article-page, comment]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_HOME.yaml"
+- openLink: "https://www.thehindu.com/news/national/supreme-court-hearing-on-madhya-pradesh-bhojshala-saraswati-temple-kamal-maula-mosque-complex/article71220469.ece"
+- tapOn: {text: "Close sheet", optional: true}
+- runFlow:
+    when: {notVisible: {id: "screen_article_detail"}}
+    file: "../Common/HANDLE_DELAYED_ARTICLE_INTERSTITIAL.yaml"
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 45000}
+- assertVisible: {id: "screen_article_detail"}
+- scrollUntilVisible:
+    element: {text: "Post a comment|Keep reading.*|Already a subscriber.*|.*[0-9]+%.*off.*"}
+    direction: DOWN
+    timeout: 90000
+    speed: 40
+- runFlow:
+    when: {visible: {text: "Post a comment"}}
+    commands:
+      - tapOn: {text: "Post a comment"}
+      - extendedWaitUntil: {visible: {text: "SIGN IN AND JOIN THE CONVERSATION.*|Sign in.*|Login|LOGIN"}, timeout: 30000}
+      - assertVisible: {text: "SIGN IN AND JOIN THE CONVERSATION.*|Sign in.*|Login|LOGIN"}
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_015_comment_login"
+      - tapOn: {text: "Close comments", optional: true}
+- runFlow:
+    when: {visible: {text: "Keep reading.*|Already a subscriber.*|.*[0-9]+%.*off.*"}}
+    commands:
+      - assertVisible: {text: "Keep reading.*|Already a subscriber.*|.*[0-9]+%.*off.*"}
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_015_paywall_blocks_comment"
+- assertVisible: {id: "screen_article_detail"}

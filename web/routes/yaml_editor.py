@@ -1,7 +1,13 @@
 from flask import Blueprint, abort, flash, redirect, render_template, request, url_for
 
 from web.routes.auth import login_required
-from web.services.yaml_editor_service import delete_scenario, list_scenarios, read_scenario, save_scenario
+from web.services.yaml_editor_service import (
+    delete_scenario,
+    list_available_tags,
+    list_scenarios,
+    read_scenario,
+    save_scenario,
+)
 
 yaml_editor_bp = Blueprint("yaml_editor", __name__)
 
@@ -10,7 +16,14 @@ yaml_editor_bp = Blueprint("yaml_editor", __name__)
 @login_required
 def index():
     query = request.args.get("q", "")
-    return render_template("yaml_editor.html", scenarios=list_scenarios(query), query=query)
+    tag = request.args.get("tag", "")
+    return render_template(
+        "yaml_editor.html",
+        scenarios=list_scenarios(query, tag),
+        tags=list_available_tags(),
+        query=query,
+        selected_tag=tag,
+    )
 
 
 def render_editor(scenario_path):

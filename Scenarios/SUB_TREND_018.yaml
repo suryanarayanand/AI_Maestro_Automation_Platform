@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_TRENDING_ARTICLE.yaml"
+- assertNotVisible: {text: "Login to your account|SUBSCRIBE|Already a subscriber.*"}
+- back
+- extendedWaitUntil: {visible: {id: "screen_trending"}, timeout: 30000}
+- tapOn: {id: "nav_home"}
+- assertVisible: {id: "screen_home"}
+- tapOn: {id: "nav_trending"}
+- assertVisible: {id: "screen_trending"}
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_018_result"

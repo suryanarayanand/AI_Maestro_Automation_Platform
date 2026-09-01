@@ -14,9 +14,14 @@ tags: [subscriber, games, sc27]
     when: {visible: {text: "Dismiss"}}
     commands:
       - tapOn: {text: "Dismiss"}
+- runFlow:
+    when: {visible: {text: "Play solo"}}
+    commands:
+      - takeScreenshot: "Screenshots/SC_27/SC_27_Word_Flower_Play_Mode"
+      - tapOn: {text: "Play solo"}
 - extendedWaitUntil:
     visible: {text: "Settings"}
-    timeout: 20000
+    timeout: 30000
 - assertNotVisible: {text: ".*access was not found.*"}
 - assertVisible: "Hint"
 - assertVisible: "Reveal"

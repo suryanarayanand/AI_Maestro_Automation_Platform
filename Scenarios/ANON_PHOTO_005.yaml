@@ -1,0 +1,11 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, photos]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_SINGLE_PHOTO_ARTICLE.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PHOTO_005_single_photo"
+- swipe: {direction: LEFT, duration: 500}
+- waitForAnimationToEnd
+- assertNotVisible: {text: ".*2/[0-9]+.*"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PHOTO_005_no_second_image"

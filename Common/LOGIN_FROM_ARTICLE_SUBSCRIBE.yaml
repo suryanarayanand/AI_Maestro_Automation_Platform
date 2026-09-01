@@ -1,0 +1,55 @@
+appId: com.mobstac.thehindu
+tags:
+  - common
+  - article
+  - authentication
+---
+# Precondition: an anonymous user is on screen_article_detail.
+- assertVisible:
+    id: "screen_article_detail"
+
+- scrollUntilVisible:
+    element:
+      text: ".*SUBSCRIBE.*"
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 50
+
+- assertVisible:
+    text: ".*SUBSCRIBE.*"
+
+- tapOn:
+    text: ".*SUBSCRIBE.*"
+
+- scrollUntilVisible:
+    element:
+      text: "HAVE AN ACCOUNT.*LOGIN|Already.*(?:Login|Sign in)|LOGIN"
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 50
+
+- assertVisible:
+    text: "HAVE AN ACCOUNT.*LOGIN|Already.*(?:Login|Sign in)|LOGIN"
+
+- tapOn:
+    text: "HAVE AN ACCOUNT.*LOGIN|Already.*(?:Login|Sign in)|LOGIN"
+
+- extendedWaitUntil:
+    visible: "Email"
+    timeout: 30000
+
+- runFlow: Login_via_pages_or_Article.yaml
+
+# Authentication must return to the article that initiated Login.
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "HAVE AN ACCOUNT.*LOGIN"

@@ -1,0 +1,17 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, ebooks]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_EBOOKS.yaml"
+
+- repeat:
+    times: 3
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd
+
+- assertVisible: {id: "screen_ebooks"}
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_EBOOK_ACCESS.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EBOOK_013_long_metadata"

@@ -1,0 +1,29 @@
+appId: com.mobstac.thehindu
+
+tags: [generated, ordered, subscriber, home, refresh, header]
+
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- swipe: {start: "50%, 25%", end: "50%, 80%", duration: 800}
+
+- waitForAnimationToEnd: {timeout: 8000}
+
+- assertVisible: {id: "screen_home"}
+
+- assertVisible: {id: "nav_menu"}
+
+- assertVisible: {text: "The Hindu"}
+
+- assertVisible: {id: "article_card", index: 0}
+
+- assertNotVisible: {text: "SUBSCRIBE"}
+
+- assertNotVisible: {text: "ADVERTISEMENT"}
+
+- assertNotVisible: {id: "aw0"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HOME_002_home_after_refresh"
+

@@ -1,0 +1,12 @@
+appId: com.mobstac.thehindu
+tags: [common, anonymous, trending, advertisement, evidence]
+---
+- runFlow:
+    when: {visible: {text: "ADVERTISEMENT"}}
+    commands:
+      - assertVisible: {text: "ADVERTISEMENT"}
+      - takeScreenshot: "Screenshots/Generated/trending_advertisement_state"
+- runFlow:
+    when: {visible: {id: "aw0"}}
+    commands:
+      - takeScreenshot: "Screenshots/Generated/trending_sticky_ad_state"

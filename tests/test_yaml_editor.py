@@ -53,6 +53,22 @@ class YAMLDeleteTests(unittest.TestCase):
 
         self.assertTrue(scenario.is_file())
 
+    def test_list_scenarios_extracts_and_filters_account_tags(self):
+        (self.scenarios / "anonymous.yaml").write_text(
+            "appId: example\ntags:\n  - smoke\n  - anonymous\n---\n- launchApp\n",
+            encoding="utf-8",
+        )
+        (self.scenarios / "subscriber.yaml").write_text(
+            "appId: example\ntags: [regression, subscriber]\n---\n- launchApp\n",
+            encoding="utf-8",
+        )
+
+        anonymous = yaml_editor_service.list_scenarios(tag="anonymous")
+
+        self.assertEqual([item["name"] for item in anonymous], ["anonymous.yaml"])
+        self.assertIn("smoke", anonymous[0]["tags"])
+        self.assertIn("anonymous", yaml_editor_service.list_available_tags())
+
 
 if __name__ == "__main__":
     unittest.main()

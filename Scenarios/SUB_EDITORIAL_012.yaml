@@ -1,0 +1,132 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - editorial
+  - live-article
+  - embedded-content
+  - bounded-scroll
+  - failure-resilience
+  - evidence-limited
+
+---
+
+# SUB_EDITORIAL_012 — Editorial loading, live-content and failure resilience
+
+# Establish the repository-managed authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Establish an Editorial article as the initial article-detail context.
+# This reference remains runtime-qualified: successful opening and the
+# article-detail identity assertion are required before it is used.
+- openLink: "https://www.thehindu.com/opinion/editorial/brazen-intimidation-the-hindu-editorial-on-the-tax-survey-on-the-bbc/article66513588.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertWithAI: "Verify that the initial destination is a settled Editorial article-detail page with a readable headline and visible article content. Fail if it is a listing, unrelated destination, login gate, paywall, blank page, loading-only page, or request-error surface."
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_012_initial_editorial_context"
+
+# Obligation 1 — Open another active repository item using a different content
+# subtype. Reference 60 is explicitly typed as an Election Map and charts in
+# Live Article, rather than another Editorial article.
+- openLink: "https://www.thehindu.com/elections/lok-sabha/bihar-election-results-2024-live/article68207645.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertWithAI: "Verify the newly opened destination is the Bihar election-results article rather than the preceding Editorial article. Accept a readable election headline, textual result content, map/chart content, or an archived closed-live identity because embedded results may appear lower on the page. Fail for blocked navigation, an unrelated destination, login/paywall, a wholly blank body, persistent loader, or request error."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_012_live_item_opened_ref_60"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+# Obligations 2 and 5 — Exercise the live/embedded destination with exactly
+# three bounded foreground swipes. No absolute page-end assertion is used.
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertWithAI: "Verify the Bihar election-results or archived-live article remains coherent and readable after the first bounded swipe. An explicit 'This live is now closed' message is valid for this historical event when related article/results content remains present. Fail for a wholly blank body, endless loader, crash, broken result frame, or unrelated destination."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_012_live_bounded_swipe_01"
+
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertWithAI: "Verify the second bounded swipe leaves the same Bihar election-results or archived-live article readable and usable. Accept a closed-live message for this historical event. Fail if primary content is wholly blank, visibly broken or detached, endlessly loading, replaced by an error, or navigated elsewhere."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_012_live_bounded_swipe_02"
+
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertWithAI: "Verify the third bounded swipe remains within the coherent Bihar election-results or archived-live article. Accept a valid closed-live state and do not require an absolute page end. Fail for a wholly blank or broken primary body, permanent loader, crash, blocking overlay, request error, or navigation away."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_012_live_bounded_swipe_03"
+
+# Recheck subscriber entitlement after representative live-content scrolling.
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+# Obligation 3 — Retain the destination for a measured additional 30 seconds.
+# The following screenshot is unconditional, so any persistent blank content,
+# endless loader, broken visible media, or request-error state is captured
+# before a strict assertion can terminate the flow.
+- evalScript: '${(() => { const end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_012_after_30_seconds_failure_evidence"
+
+# Obligation 4 — The controlled destination must still identify as article
+# detail; the visual assertion then requires usable rendered content. A clear
+# application error, persistent blank/loading state, or broken supplied media
+# therefore produces a reproducible product assertion failure with evidence.
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Obligation 6 — The assertion names the affected repository item and subtype.
+# Failures before this point involving setup, device transport, or unresolved
+# locators remain automation/environment failures rather than product results.
+- assertWithAI: "Final product verdict for repository article reference 60, type 'Election Map and charts in Live Article'. Verify that the destination contains settled, usable article or embedded live content with a readable headline or live-content identity. Any supplied map, chart, image, video, or embedded media visible in the viewport must not be blank or visibly broken. Fail as a PRODUCT FAIL for this reference/type if blank content, a permanent spinner or skeleton, endless loading, broken supplied media, a retry/request/network error, a crash surface, or a blocking application overlay persists. The screenshot immediately preceding this assertion is the required failure evidence. Do not classify a Maestro locator error, unavailable device, transport failure, or test-setup failure as a product defect."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_012_final_usable_live_content"

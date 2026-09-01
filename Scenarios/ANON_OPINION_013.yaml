@@ -1,0 +1,11 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, opinion]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_OPINION_ARTICLE.yaml"
+- runFlow:
+    when: {visible: {text: "Comment|Post.*Comment"}}
+    commands:
+      - tapOn: {text: "Comment|Post.*Comment"}
+      - extendedWaitUntil: {visible: {text: ".*Login.*|.*Sign in.*"}, timeout: 30000}
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_OPINION_013_comment_login"

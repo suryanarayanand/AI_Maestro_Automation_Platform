@@ -1,0 +1,10 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, editorial]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_EDITORIAL_ARTICLE.yaml"
+- tapOn: {text: "Bookmark", index: 0}
+- extendedWaitUntil: {visible: {text: "Login to your account|Sign in|LOGIN"}, timeout: 30000}
+- assertVisible: {text: "Login to your account|Sign in|LOGIN"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_EDITORIAL_010_login"
+- back

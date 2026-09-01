@@ -3,7 +3,7 @@ tags:
   - baseline
   - podcast
 ---
-- runFlow: ../Common/OPEN_HOME_FOR_BASELINE.yaml
+- runFlow: ../../Common/OPEN_HOME_FOR_BASELINE.yaml
 - tapOn:
     text: "Podcast\nTab 3 of 15"
 - waitForAnimationToEnd

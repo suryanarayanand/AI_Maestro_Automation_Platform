@@ -64,15 +64,21 @@ tags:
 - takeScreenshot: "Screenshots/SC_23/SC_23_Dark_Theme_Home_Page_4"
 - scroll
 
-# Navigate to Editorial Section
-# Editorial is dynamic, so "SEE MORE" is used when available.
-- runFlow:
-    when:
-      visible:
-        text: "SEE MORE"
-    commands:
-      - tapOn: "SEE MORE"
-- assertVisible: "Editorial"
+# Navigate deterministically to Editorial instead of relying on a visible
+# SEE MORE button after a fixed number of scrolls.
+- scrollUntilVisible:
+    element:
+      text: "Editorial"
+    direction: DOWN
+    timeout: 60000
+    speed: 50
+    visibilityPercentage: 30
+    centerElement: true
+- tapOn:
+    text: "Editorial"
+- extendedWaitUntil:
+    visible: "Editorial"
+    timeout: 20000
 
 # Editorial Page Validation
 - takeScreenshot: "Screenshots/SC_23/SC_23_Dark_Theme_Editorial_Page_1"

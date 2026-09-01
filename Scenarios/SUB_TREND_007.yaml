@@ -1,0 +1,85 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, trending, premium-article, conditional-discovery, no-monetisation]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- extendedWaitUntil:
+    visible: {id: "screen_home"}
+    timeout: 30000
+- assertVisible: {id: "screen_home"}
+
+# Enter Trending in the authenticated subscriber session.
+- tapOn: {id: "nav_trending"}
+- extendedWaitUntil:
+    visible: {id: "screen_trending"}
+    timeout: 30000
+- assertVisible: {id: "screen_trending"}
+- extendedWaitUntil:
+    visible: {id: "article_card"}
+    timeout: 30000
+
+# Open the first current Trending article. Adjacent articles are searched below.
+- tapOn: {id: "article_card", index: 0}
+- tapOn: {text: "Close sheet", optional: true}
+- extendedWaitUntil:
+    visible: {id: "screen_article_detail"}
+    timeout: 30000
+- assertVisible: {id: "screen_article_detail"}
+
+# Premium inventory is dynamic. Search at most eight articles from the Trending
+# article pager. When no Premium badge is encountered, the conditional evidence
+# blocks are skipped and the final bounded-search screenshot records that outcome.
+- repeat:
+    times: 8
+    commands:
+      - runFlow:
+          when: {visible: {text: "Premium|PREMIUM"}}
+          commands:
+            - assertVisible: {id: "screen_article_detail"}
+            - assertVisible: {text: "Premium|PREMIUM"}
+            - assertNotVisible: {text: "Already a subscriber.*|Keep reading.*"}
+            - assertNotVisible: {text: "^Login$|^LOGIN$|^Sign in$|^SIGN IN$"}
+            - assertNotVisible: {text: "Subscribe|SUBSCRIBE"}
+            - assertNotVisible: {text: "ADVERTISEMENT"}
+            - assertNotVisible: {id: "aw0"}
+            - assertNotVisible: {id: "ad_iframe"}
+            - assertNotVisible: {text: "Image for Taboola Advertising Unit"}
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/SUB_TREND_007_premium_top_entitled"
+
+            # Settled middle reading state.
+            - swipe: {direction: UP}
+            - waitForAnimationToEnd
+            - assertVisible: {id: "screen_article_detail"}
+            - assertNotVisible: {text: "Already a subscriber.*|Keep reading.*"}
+            - assertNotVisible: {text: "^Login$|^LOGIN$|^Sign in$|^SIGN IN$"}
+            - assertNotVisible: {text: "Subscribe|SUBSCRIBE"}
+            - assertNotVisible: {text: "ADVERTISEMENT"}
+            - assertNotVisible: {id: "aw0"}
+            - assertNotVisible: {id: "ad_iframe"}
+            - assertNotVisible: {text: "Image for Taboola Advertising Unit"}
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/SUB_TREND_007_premium_middle_entitled"
+
+            # Settled lower reading state.
+            - swipe: {direction: UP}
+            - waitForAnimationToEnd
+            - assertVisible: {id: "screen_article_detail"}
+            - assertNotVisible: {text: "Already a subscriber.*|Keep reading.*"}
+            - assertNotVisible: {text: "^Login$|^LOGIN$|^Sign in$|^SIGN IN$"}
+            - assertNotVisible: {text: "Subscribe|SUBSCRIBE"}
+            - assertNotVisible: {text: "ADVERTISEMENT"}
+            - assertNotVisible: {id: "aw0"}
+            - assertNotVisible: {id: "ad_iframe"}
+            - assertNotVisible: {text: "Image for Taboola Advertising Unit"}
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/SUB_TREND_007_premium_lower_entitled"
+
+      # Move to the next bounded candidate without relying on a current headline.
+      - swipe: {direction: LEFT}
+      - waitForAnimationToEnd
+      - tapOn: {text: "Close sheet", optional: true}
+      - assertVisible: {id: "screen_article_detail"}
+
+- assertVisible: {id: "screen_article_detail"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_007_bounded_premium_search_complete"

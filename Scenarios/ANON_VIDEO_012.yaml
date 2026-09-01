@@ -1,0 +1,21 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, videos]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_VIDEO_ARTICLE.yaml"
+
+- tapOn: {text: "Share", index: 0}
+
+- waitForAnimationToEnd
+
+- assertVisible: {text: "Share with|Nearby Share|Quick Share|Messages|Copy"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_VIDEO_012_share_sheet"
+
+- back
+
+- assertVisible: {id: "screen_article_detail"}
+

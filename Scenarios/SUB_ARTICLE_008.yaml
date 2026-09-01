@@ -1,0 +1,109 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - article
+  - ai-summary
+  - entitlement
+  - conditional-discovery
+---
+
+# Establish an authenticated subscriber session without embedding credentials.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Position 1: Open a long-form article candidate and validate the article surface.
+# Article reference 138 is runtime-validated here because repository metadata marks
+# the URL reference-only rather than a proven controlled AI Summary fixture.
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "Subscribe|SUBSCRIBE"
+
+# Positions 1-4: Inspect no more than six settled article states. The branch is
+# conditional because this reference has not yet been validated as an eligible
+# fixture. When AI Summary appears, strict subscriber entitlement assertions run.
+- repeat:
+    times: 6
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "AI Summary|AI summary|AI SUMMARY"
+          commands:
+            - assertVisible:
+                text: "AI Summary|AI summary|AI SUMMARY"
+
+            - tapOn:
+                text: "AI Summary|AI summary|AI SUMMARY"
+
+            - waitForAnimationToEnd
+
+            # Position 2: The entitled Summary surface opens without an upsell.
+            - extendedWaitUntil:
+                visible:
+                  text: "Summary"
+                timeout: 20000
+
+            - assertVisible:
+                text: "Summary"
+
+            - assertNotVisible:
+                text: "Subscribe|SUBSCRIBE"
+
+            # Position 4: The approved subscriber behavior requires Article FAQs.
+            - extendedWaitUntil:
+                visible:
+                  text: "Article FAQs"
+                timeout: 20000
+
+            - assertVisible:
+                text: "Article FAQs"
+
+            - assertNotVisible:
+                text: "Subscribe|SUBSCRIBE"
+
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_008_entitled_ai_summary"
+
+            - back
+
+            - extendedWaitUntil:
+                visible:
+                  id: "screen_article_detail"
+                timeout: 30000
+
+            - assertVisible:
+                id: "screen_article_detail"
+
+      # Continue the bounded article search without relying on a changing title.
+      - swipe:
+          direction: UP
+
+      - waitForAnimationToEnd
+
+      - assertVisible:
+          id: "screen_article_detail"
+
+      - assertNotVisible:
+          text: "Subscribe|SUBSCRIBE"
+
+# Position 3: Preserve the final bounded-search state. If no AI Summary action was
+# rendered, the conditional branch was skipped and this artifact must be reviewed
+# rather than reported as a false subscriber entitlement failure.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "Subscribe|SUBSCRIBE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_008_bounded_discovery_complete"

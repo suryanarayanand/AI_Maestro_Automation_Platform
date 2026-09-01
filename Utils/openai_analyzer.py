@@ -4,7 +4,9 @@ import base64
 from openai import OpenAI
 
 client = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY")
+    api_key=os.getenv("OPENAI_API_KEY"),
+    timeout=30.0,
+    max_retries=1,
 )
 PROMPT = """
 You are a Senior Android Mobile QA Engineer with more than 10 years of experience in mobile application testing.
@@ -41,6 +43,15 @@ Only report defects supported by clear visual evidence.
 
 Ignore dynamic application content and focus ONLY on UI quality.
 
+A single screenshot proves only what is visible at that instant. It does NOT
+prove that a temporary state is stuck, persistent, or blocking the user.
+Never use words such as "stuck", "never loads", "permanent", or "cannot
+interact" unless the image itself provides explicit persistent-failure text.
+
+This visual review is evidence classification, not a replacement for Maestro
+execution diagnosis. Timing, wait strategy, selector state, and capture timing
+are automation concerns and must not be converted into Jira defects.
+
 =========================================================
 IGNORE THE FOLLOWING
 =========================================================
@@ -61,8 +72,17 @@ Ignore these completely because they change frequently.
 - Dynamic content
 - Live updates
 - Different ordering of articles
+- Normal success, saved, login, bookmark, or confirmation toast/snackbar
+- A loading spinner captured during navigation, login, refresh, or submission
+- Temporary dimming while a modal, sheet, login, or navigation transition opens
+- Automation screenshots captured before waitForAnimationToEnd or a final-state assertion
+- CAPTCHA or third-party authentication controls
 
 Do NOT fail because of changing content.
+
+Normal transient UI is PASS. A toast overlapping content for a few seconds is
+expected Android behavior, even if it visually covers a menu label in that one
+frame. A spinner in one frame is an in-progress state, not proof of a defect.
 
 =========================================================
 EXPECTED EMPTY SPACE (DO NOT FAIL)
@@ -88,6 +108,12 @@ PASS these situations:
 - Letterboxing around images.
 
 Only report a failure if the blank region interrupts the application content or replaces UI that should have been rendered.
+
+For a blank page, modal, or bottom sheet, return FAIL only when the screenshot
+clearly shows that the container has opened and its expected content region is
+empty/broken (for example, a visible sheet boundary and close control with a
+large empty body). Do not infer missing content merely from ordinary page
+padding or a transition frame.
 
 
 =========================================================
@@ -115,7 +141,7 @@ Rendering Issues
 - Placeholder still visible
 - Partial rendering
 - Rendering artifacts
-- Loading indicator stuck
+- Loading indicator accompanied by explicit timeout/error evidence in the UI
 - Incomplete screen rendering
 - Missing article body
 - Empty content area
@@ -149,7 +175,8 @@ Functional UI
 Advertisement Validation
 
 - Advertisement visible when it should not
-- Missing advertisement when it should exist
+- Missing advertisement only when the screenshot itself contains a clearly
+  expected but broken/empty advertisement slot; do not infer eligibility
 - Blank advertisement container
 - Empty advertisement placeholder
 - Taboola visible when it should not
@@ -183,7 +210,7 @@ Examples
 - Missing important UI
 - Missing article body
 - Rendering stopped midway
-- Placeholder still visible
+- Placeholder accompanied by explicit error or clearly broken final content
 - Broken image
 - Empty advertisement placeholder
 - Advertisement visible for subscriber screen
@@ -220,11 +247,18 @@ or is the empty space simply because the page ended?
 
 10. Would a manual QA engineer raise a bug for this screen?
 
+11. Am I incorrectly inferring persistence from a single transitional frame?
+
+12. Is this only a normal toast/snackbar or success confirmation?
+
 If YES to any defect above,
 Return FAIL.
 
 Otherwise,
 Return PASS.
+
+If question 11 or 12 is YES, return PASS unless a separate, persistent visual
+defect is independently visible.
 
 =========================================================
 CONFIDENCE
@@ -372,6 +406,61 @@ Result
 
 ---------------------------------------------------------
 
+Example 6
+
+A login screen is fully visible with a loading spinner captured during login.
+
+Result
+
+{
+    "status":"PASS",
+    "confidence":"High",
+    "severity":"LOW",
+    "reason":"A single frame shows a normal transitional loading state and does not prove the spinner is stuck.",
+    "issues":[],
+    "jira_title":"N/A",
+    "jira_description":"N/A"
+}
+
+---------------------------------------------------------
+
+Example 7
+
+A short-lived Login Success or bookmark success toast overlaps a menu label.
+
+Result
+
+{
+    "status":"PASS",
+    "confidence":"High",
+    "severity":"LOW",
+    "reason":"The visible success toast is normal transient application feedback.",
+    "issues":[],
+    "jira_title":"N/A",
+    "jira_description":"N/A"
+}
+
+---------------------------------------------------------
+
+Example 8
+
+A bottom sheet has a visible boundary and close control, but its large content
+body is blank after the final settled-state capture.
+
+Result
+
+{
+    "status":"FAIL",
+    "confidence":"High",
+    "severity":"HIGH",
+    "reason":"The opened bottom sheet has a clearly empty content body.",
+    "issues":["Blank bottom-sheet content", "Incomplete rendering"],
+    "jira_title":"Bottom sheet opens with blank content",
+    "jira_description":"The bottom sheet container opens, but its expected content region remains blank in the settled-state evidence."
+}
+
+---------------------------------------------------------
+
 Be strict.
 
 Think exactly like an experienced manual QA engineer reviewing screenshots before approving a release.
@@ -385,7 +474,7 @@ Focus on UI quality rather than page content.
 """
 
 
-def analyze_image(image_path):
+def analyze_image(image_path, friday_context=None):
     """
     Analyze a single screenshot using OpenAI Vision.
 
@@ -401,6 +490,29 @@ def analyze_image(image_path):
                 img.read()
             ).decode("utf-8")
 
+        context = friday_context or {
+            "evidence_status": "No Friday case context supplied; use visual evidence only."
+        }
+        contextual_prompt = PROMPT + """
+
+=========================================================
+FRIDAY APPROVED CASE CONTEXT
+=========================================================
+
+Use the JSON context below as the source of truth for the user state, Excel
+requirements, screenshot checkpoint, and approved application behavior.
+
+- Do not report a missing feature unless the context says it is expected at
+  this exact checkpoint and its absence is visually proven.
+- Do not mark a normal behavior described by Friday as a defect.
+- Do not turn a Maestro wait, selector, or capture-timing problem into an app bug.
+- If the screenshot and context are insufficient to prove a product defect,
+  return PASS. The execution classifier will report automation failures separately.
+- A Jira title/description is allowed only for a clear product-visible defect.
+
+Friday context JSON:
+""" + json.dumps(context, ensure_ascii=False, default=str)
+
         response = client.responses.create(
             model="gpt-4.1",
             input=[
@@ -409,7 +521,7 @@ def analyze_image(image_path):
                     "content": [
                         {
                             "type": "input_text",
-                            "text": PROMPT
+                            "text": contextual_prompt
                         },
                         {
                             "type": "input_image",

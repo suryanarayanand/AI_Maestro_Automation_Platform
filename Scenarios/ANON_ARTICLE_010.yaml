@@ -1,0 +1,24 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, article-page, ai-summary]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- runFlow:
+    when: {visible: {text: "AI Summary|AI summary|AI SUMMARY"}}
+    commands:
+      - tapOn: {text: "AI Summary|AI summary|AI SUMMARY"}
+      - waitForAnimationToEnd
+      - runFlow:
+          when: {visible: {text: "Subscribe|SUBSCRIBE"}}
+          commands:
+            - assertVisible: {text: "Subscribe|SUBSCRIBE"}
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_010_summary_gate"
+      - runFlow:
+          when: {visible: {text: "Summary|Article FAQs"}}
+          commands:
+            - assertVisible: {text: "Summary|Article FAQs"}
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_010_summary_content"
+      - back
+- assertVisible: {id: "screen_article_detail"}

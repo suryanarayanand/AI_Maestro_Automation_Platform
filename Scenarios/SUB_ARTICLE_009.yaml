@@ -1,0 +1,76 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - article
+  - short-article
+  - ai-summary-ineligible
+  - full-access
+---
+
+# Establish an authenticated subscriber session before opening the fixture.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- assertVisible:
+    id: "screen_home"
+
+# Position 1: Open the externally controlled short-article fixture. The supplied
+# URL must identify an article below the AI Summary character threshold.
+- openLink: "${SUB_ARTICLE_009_SHORT_ARTICLE_URL}"
+- repeat:
+    times: 3
+    commands:
+      - tapOn:
+          text: "Close sheet"
+          optional: true
+      - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 2: For this controlled ineligible fixture, missing AI Summary is the
+# required eligibility outcome rather than a feature failure.
+- assertNotVisible:
+    text: "AI Summary|AI summary|AI SUMMARY"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_009_short_article_no_ai_summary_top"
+
+# Position 3: Traverse bounded reading states and prove that article detail
+# remains available without a subscriber paywall or full-article gate.
+- repeat:
+    times: 4
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "READ FULL ARTICLE"
+      - assertNotVisible:
+          text: "Subscribe|SUBSCRIBE"
+      - assertNotVisible:
+          text: "AI Summary|AI summary|AI SUMMARY"
+
+- assertVisible:
+    id: "screen_article_detail"
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+- assertNotVisible:
+    text: "Subscribe|SUBSCRIBE"
+
+# Position 4: Finish on the readable article without tapping or conditionally
+# opening the unavailable feature. Its continued absence is the passing result.
+- assertNotVisible:
+    text: "AI Summary|AI summary|AI SUMMARY"
+- assertVisible:
+    id: "screen_article_detail"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_009_short_article_readable_expected_absence"

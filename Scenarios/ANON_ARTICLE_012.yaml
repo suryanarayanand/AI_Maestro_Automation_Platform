@@ -1,0 +1,18 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, article-page, metered-paywall]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- repeat:
+    times: 10
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd
+      - runFlow:
+          when: {visible: {text: "Keep reading.*|Already a subscriber.*|.*[0-9]+%.*off.*"}}
+          commands:
+            - assertVisible: {text: "Keep reading.*|Already a subscriber.*|.*[0-9]+%.*off.*"}
+            - assertVisible: {text: "Subscribe|SUBSCRIBE|Login|LOGIN"}
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_012_metered_paywall"
+- assertVisible: {id: "screen_article_detail"}

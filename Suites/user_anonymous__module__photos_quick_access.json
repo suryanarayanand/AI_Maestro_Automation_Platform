@@ -1,0 +1,147 @@
+{
+    "suite": "Anonymous User Cases - Photos Quick Access",
+    "source_suite": "user_anonymous",
+    "module": "Photos Quick Access",
+    "tests": [
+        {
+            "id": "ANON_PHOTO_001",
+            "module": "Photos",
+            "section": "Photos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Photos quick section launch and selected tab",
+            "yaml": "ANON_PHOTO_001.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "ANON_PHOTO_002",
+            "module": "Photos",
+            "section": "Photos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Photos refresh and gallery reload",
+            "yaml": "ANON_PHOTO_002.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "ANON_PHOTO_003",
+            "module": "Photos",
+            "section": "Photos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Photos grid layout and count badges",
+            "yaml": "ANON_PHOTO_003.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "ANON_PHOTO_004",
+            "module": "Photos",
+            "section": "Photos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Photos listing has no inline advertisements",
+            "yaml": "ANON_PHOTO_004.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "ANON_PHOTO_005",
+            "module": "Photos",
+            "section": "Photos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Single-photo article presentation",
+            "yaml": "ANON_PHOTO_005.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "ANON_PHOTO_006",
+            "module": "Photos",
+            "section": "Photos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Multi-photo bidirectional swipe and counter",
+            "yaml": "ANON_PHOTO_006.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "ANON_PHOTO_007",
+            "module": "Photos",
+            "section": "Photos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Gallery image description and photo credit",
+            "yaml": "ANON_PHOTO_007.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "ANON_PHOTO_008",
+            "module": "Photos",
+            "section": "Photos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Gallery subscription popup handling",
+            "yaml": "ANON_PHOTO_008.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "ANON_PHOTO_009",
+            "module": "Photos",
+            "section": "Photos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Read Full Article expansion",
+            "yaml": "ANON_PHOTO_009.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "ANON_PHOTO_010",
+            "module": "Photos",
+            "section": "Photos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Read Less article collapse",
+            "yaml": "ANON_PHOTO_010.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "ANON_PHOTO_011",
+            "module": "Photos",
+            "section": "Photos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Gallery Bookmark anonymous login gate",
+            "yaml": "ANON_PHOTO_011.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "ANON_PHOTO_012",
+            "module": "Photos",
+            "section": "Photos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Gallery Share functionality",
+            "yaml": "ANON_PHOTO_012.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "ANON_PHOTO_013",
+            "module": "Photos",
+            "section": "Photos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Gallery Comment anonymous login gate",
+            "yaml": "ANON_PHOTO_013.yaml",
+            "display_module": "Photos Quick Access"
+        },
+        {
+            "id": "ANON_PHOTO_014",
+            "module": "Photos",
+            "section": "Photos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Gallery Subscribe and Close actions",
+            "yaml": "ANON_PHOTO_014.yaml",
+            "display_module": "Photos Quick Access"
+        }
+    ]
+}

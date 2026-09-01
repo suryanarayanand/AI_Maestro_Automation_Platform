@@ -1,0 +1,12 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+---
+
+- runFlow: "SC_27_NEWS_QUIZ.yaml"
+
+- assertNotVisible:
+    text: ".*access was not found.*"
+
+- takeScreenshot: "Screenshots/Generated/ADV_005_advanced_news_quiz_result"

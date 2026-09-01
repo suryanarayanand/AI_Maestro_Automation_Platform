@@ -1,0 +1,52 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, videos]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_VIDEOS.yaml"
+
+- tapOn: {id: "article_card", index: 0}
+
+- waitForAnimationToEnd
+
+- runFlow:
+
+    when: {notVisible: {id: "screen_article_detail"}}
+
+    commands:
+
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_VIDEO_015_interstitial"
+
+      - repeat:
+
+          times: 12
+
+          commands:
+
+            - waitForAnimationToEnd
+
+            - runFlow:
+
+                when: {visible: {text: "^CLOSE$|Interstitial close button|SKIP|Skip Ad"}}
+
+                commands:
+
+                  - tapOn: {text: "^CLOSE$|Interstitial close button|SKIP|Skip Ad"}
+
+- runFlow:
+
+    when: {notVisible: {id: "screen_article_detail"}}
+
+    commands:
+
+      - back
+
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+
+- assertVisible: {id: "screen_article_detail"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_VIDEO_015_result"
+

@@ -1,0 +1,9 @@
+appId: com.mobstac.thehindu
+tags: [common, subscriber, account]
+---
+- runFlow: "OPEN_SUBSCRIBER_HOME.yaml"
+- tapOn: {id: "nav_account"}
+- extendedWaitUntil: {visible: {id: "screen_user_menu"}, timeout: 30000}
+- assertVisible: {id: "screen_user_menu"}
+- assertNotVisible: {text: "Login to your account|Create account|SUBSCRIBE"}
+

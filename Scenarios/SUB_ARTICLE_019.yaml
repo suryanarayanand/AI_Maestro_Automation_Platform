@@ -1,0 +1,73 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - article
+  - media
+  - visual-evidence
+
+---
+
+# SUB_ARTICLE_019 — Article media and image rendering
+# Controlled candidate: Article Library reference 49 (Inline Image).
+
+# Position 1: Establish subscriber state, open the controlled article candidate,
+# validate the article-detail surface, and begin bounded scrolling.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- openLink: "https://www.thehindu.com/news/national/from-mud-to-mat-haryana-training-its-youth-for-kabaddis-big-league/article67459419.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_019_article_media_top"
+
+- repeat:
+    times: 2
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+
+# Position 2: Wait at and capture representative bounded body positions.
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_019_article_media_body_position_1"
+
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_019_article_media_body_position_2"
+
+# Position 3: Continue to a lower rendering state and assert that the article
+# detail container remains present rather than being replaced or disrupted.
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 4: Record the final settled loaded-media review artifact.
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_019_loaded_media_evidence"

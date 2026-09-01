@@ -1,0 +1,230 @@
+appId: com.mobstac.thehindu
+tags:
+  - hamburger-section
+  - subscriber-to-anonymous
+  - videos
+---
+# HAM_OPT_014: Videos section, subscribed article validation, logout, then anonymous validation.
+- runFlow: ../../Common/OPEN_SUBSCRIBER_HOME.yaml
+
+- runFlow:
+    when:
+      visible: "(?i)skip"
+    commands:
+      - tapOn: "(?i)skip"
+
+- assertVisible:
+    id: "screen_home"
+- takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_subscriber_home"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_subscriber_no_subscribe"
+
+- tapOn:
+    id: "nav_menu"
+- assertVisible:
+    id: "screen_hamburger"
+- takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_subscriber_menu"
+
+- scrollUntilVisible:
+    element:
+      text: "Videos"
+    direction: DOWN
+    timeout: 30000
+
+- tapOn:
+    text: "Videos"
+    index: 0
+- scrollUntilVisible:
+    element:
+      text: "Videos"
+      index: 1
+    direction: DOWN
+    timeout: 30000
+- tapOn:
+    text: "Videos"
+    index: 1
+- waitForAnimationToEnd:
+    timeout: 5000
+
+- assertVisible:
+    text: "Videos"
+- takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_subscriber_section"
+
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+- takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_subscriber_articles"
+
+- tapOn:
+    id: "article_card"
+    index: 0
+
+- runFlow:
+    when:
+      visible: "This summary and the FAQs.*"
+    commands:
+      - tapOn: "Close sheet"
+
+- assertVisible:
+    id: "screen_article_detail"
+- takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_subscriber_article"
+
+- scrollUntilVisible:
+    element:
+      text: "Post a comment"
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 50
+
+- assertVisible:
+    text: "Post a comment"
+- takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_post_comment"
+
+- runFlow:
+    when:
+      visible: "Related Topics"
+    commands:
+      - assertVisible: "Related Topics"
+      - takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_related_topics"
+
+- runFlow:
+    when:
+      visible: "Recommended"
+    commands:
+      - assertVisible: "Recommended"
+      - takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_recommended"
+
+- runFlow:
+    when:
+      visible: "Headlines"
+    commands:
+      - assertVisible: "Headlines"
+      - takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_headlines"
+
+- back
+- back
+
+- tapOn:
+    id: "cta_drawer_close"
+    optional: true
+
+- assertVisible:
+    id: "screen_home"
+- takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_returned_home"
+
+- tapOn:
+    id: "nav_account"
+- assertVisible:
+    id: "screen_user_menu"
+- takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_account"
+
+- scrollUntilVisible:
+    element:
+      text: "logout"
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 50
+
+- tapOn:
+    text: "LOGOUT"
+
+- assertVisible:
+    id: "screen_home"
+- assertVisible:
+    text: "SUBSCRIBE"
+- takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_anonymous_home"
+
+- tapOn:
+    id: "nav_menu"
+- assertVisible:
+    id: "screen_hamburger"
+- takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_anonymous_menu"
+
+- waitForAnimationToEnd:
+    timeout: 5000
+
+- scrollUntilVisible:
+    element:
+      text: "Videos"
+    direction: DOWN
+    timeout: 30000
+
+- tapOn:
+    text: "Videos"
+    retryTapIfNoChange: true
+- scrollUntilVisible:
+    element:
+      text: "Videos"
+      index: 1
+    direction: DOWN
+    timeout: 30000
+- tapOn:
+    text: "Videos"
+    index: 1
+- waitForAnimationToEnd:
+    timeout: 5000
+
+- assertVisible:
+    text: "Videos"
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+- takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_anonymous_section"
+
+- tapOn:
+    id: "article_card"
+    index: 0
+
+- runFlow:
+    when:
+      visible: "This summary and the FAQs.*"
+    commands:
+      - tapOn: "Close sheet"
+
+- assertVisible:
+    id: "screen_article_detail"
+- takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_anonymous_article"
+
+- scrollUntilVisible:
+    element:
+      text: "SUBSCRIBE"
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 50
+
+- runFlow:
+    when:
+      visible: "(?i)support journalism"
+    commands:
+      - assertVisible: "(?i)support journalism"
+      - takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_support_journalism"
+
+- runFlow:
+    when:
+      visible: "(?i)taboola"
+    commands:
+      - assertVisible: "(?i)taboola"
+      - takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_taboola"
+
+- assertVisible:
+    text: "SUBSCRIBE"
+- takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_anonymous_subscribe"
+
+- scrollUntilVisible:
+    element:
+      text: "ADVERTISEMENT"
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 50
+
+- assertVisible:
+    text: "ADVERTISEMENT"
+- takeScreenshot: "Screenshots/HamburgerSections/HAM_OPT_014_videos_advertisement"

@@ -1,0 +1,66 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, home, premium, optional-discovery]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_HOME.yaml"
+- tapOn: {id: "article_card", index: 0}
+- tapOn: {text: "Close sheet", optional: true}
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+# Search Home articles only. A missing Premium badge is a valid conditional skip.
+- repeat:
+    times: 5
+    commands:
+      - runFlow:
+          when: {visible: {text: "PREMIUM|Premium"}}
+          file: "../Common/CAPTURE_PREMIUM_ARTICLE_EVIDENCE.yaml"
+      - swipe: {direction: LEFT}
+      - waitForAnimationToEnd
+      - runFlow:
+          when: {visible: {text: "^CLOSE$|Interstitial close button"}}
+          file: "../Common/HANDLE_ARTICLE_INTERSTITIAL.yaml"
+      - runFlow:
+          when: {visible: {text: "(?i)^open$"}}
+          file: "../Common/HANDLE_DELAYED_ARTICLE_INTERSTITIAL.yaml"
+      - waitForAnimationToEnd: {timeout: 5000}
+      - runFlow:
+          when: {visible: {text: "^CLOSE$|Interstitial close button"}}
+          file: "../Common/HANDLE_ARTICLE_INTERSTITIAL.yaml"
+      - runFlow:
+          when: {visible: {text: "(?i)^open$"}}
+          file: "../Common/HANDLE_DELAYED_ARTICLE_INTERSTITIAL.yaml"
+      - runFlow:
+          when: {notVisible: {id: "screen_article_detail"}}
+          file: "../Common/HANDLE_DELAYED_ARTICLE_INTERSTITIAL.yaml"
+      - tapOn: {text: "Close sheet", optional: true}
+      - extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+      - runFlow:
+          when: {visible: {text: "ADVERTISEMENT"}}
+          file: "../Common/CAPTURE_ARTICLE_AD_REVIEW.yaml"
+- repeat:
+    times: 5
+    commands:
+      - runFlow:
+          when: {visible: {text: "PREMIUM|Premium"}}
+          file: "../Common/CAPTURE_PREMIUM_ARTICLE_EVIDENCE.yaml"
+      - swipe: {direction: RIGHT}
+      - waitForAnimationToEnd
+      - runFlow:
+          when: {visible: {text: "^CLOSE$|Interstitial close button"}}
+          file: "../Common/HANDLE_ARTICLE_INTERSTITIAL.yaml"
+      - waitForAnimationToEnd: {timeout: 5000}
+      - runFlow:
+          when: {visible: {text: "^CLOSE$|Interstitial close button"}}
+          file: "../Common/HANDLE_ARTICLE_INTERSTITIAL.yaml"
+      - runFlow:
+          when: {visible: {text: "(?i)^open$"}}
+          file: "../Common/HANDLE_DELAYED_ARTICLE_INTERSTITIAL.yaml"
+      - runFlow:
+          when: {notVisible: {id: "screen_article_detail"}}
+          file: "../Common/HANDLE_DELAYED_ARTICLE_INTERSTITIAL.yaml"
+      - tapOn: {text: "Close sheet", optional: true}
+      - extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+      - runFlow:
+          when: {visible: {text: "ADVERTISEMENT"}}
+          file: "../Common/CAPTURE_ARTICLE_AD_REVIEW.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HOME_009_home_premium_search_complete"

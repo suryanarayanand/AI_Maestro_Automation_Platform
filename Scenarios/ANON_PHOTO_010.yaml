@@ -1,0 +1,28 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, photos]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_MULTI_PHOTO_GALLERY.yaml"
+- swipe: {direction: LEFT, duration: 500}
+- waitForAnimationToEnd
+- scrollUntilVisible:
+    element: {text: "READ FULL ARTICLE"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "READ FULL ARTICLE"}
+- waitForAnimationToEnd
+- scrollUntilVisible:
+    element: {text: "READ LESS"}
+    direction: DOWN
+    timeout: 45000
+    speed: 40
+- assertVisible: {text: "READ LESS"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PHOTO_010_read_less_reachable"
+- tapOn: {text: "READ LESS"}
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {text: "READ FULL ARTICLE"}, timeout: 15000}
+- assertVisible: {text: "READ FULL ARTICLE"}
+- assertNotVisible: {text: "READ LESS"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PHOTO_010_collapsed"

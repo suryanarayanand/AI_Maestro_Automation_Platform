@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Dark gothic city night background">
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#070b14"/>
+      <stop offset=".58" stop-color="#101827"/>
+      <stop offset="1" stop-color="#17202c"/>
+    </linearGradient>
+    <radialGradient id="moon">
+      <stop stop-color="#d8e2ed" stop-opacity=".82"/>
+      <stop offset=".45" stop-color="#9eb0c4" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#71839a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#night)"/>
+  <circle cx="1325" cy="170" r="165" fill="url(#moon)"/>
+  <circle cx="1325" cy="170" r="72" fill="#c8d3df" opacity=".36"/>
+  <g fill="#080c13" opacity=".9">
+    <path d="M0 1000V650h105v-95h48v95h90v-230h118v580z"/>
+    <path d="M325 1000V555h58v-78h30v78h95v445z"/>
+    <path d="M470 1000V690h145V510h45v-82h28v82h52v490z"/>
+    <path d="M690 1000V615h94v-70h35v70h122v385z"/>
+    <path d="M900 1000V510h138v-96h42v96h75v490z"/>
+    <path d="M1110 1000V650h120V470h52v-84h25v84h64v530z"/>
+    <path d="M1340 1000V590h92v-130h44v130h124v410z"/>
+  </g>
+  <g fill="#d2ad54" opacity=".16">
+    <rect x="75" y="720" width="14" height="25"/><rect x="185" y="690" width="14" height="25"/>
+    <rect x="360" y="650" width="14" height="25"/><rect x="525" y="755" width="14" height="25"/>
+    <rect x="720" y="690" width="14" height="25"/><rect x="965" y="610" width="14" height="25"/>
+    <rect x="1180" y="735" width="14" height="25"/><rect x="1410" y="670" width="14" height="25"/>
+  </g>
+  <g fill="#02050a" opacity=".58">
+    <path d="M1160 205l22 8 18-12-7 17 19 10-23-2-11 14-3-16-23-5z"/>
+    <path d="M1030 135l16 6 14-9-6 13 15 8-18-2-9 11-3-12-17-5z"/>
+    <path d="M1435 275l19 7 15-10-6 15 17 8-20-2-10 13-3-15-20-5z"/>
+  </g>
+  <path d="M0 835c260-55 455-35 680 20 270 65 515 10 920-30v175H0z" fill="#263342" opacity=".35"/>
+  <g stroke="#91a4b9" stroke-width="2" opacity=".075">
+    <path d="M100 0L0 280M300 0L0 820M600 0L250 1000M900 0L550 1000M1200 0L850 1000M1500 0L1150 1000"/>
+  </g>
+</svg>

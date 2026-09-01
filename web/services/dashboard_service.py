@@ -50,7 +50,7 @@ def get_dashboard_stats():
             "SELECT * FROM jobs ORDER BY id DESC LIMIT 5"
         ).fetchall()
         latest_completed = db.execute(
-            "SELECT * FROM jobs WHERE status IN ('passed','failed','cancelled') "
+            "SELECT * FROM jobs WHERE status IN ('passed','failed','needs_review','cancelled') "
             "ORDER BY id DESC LIMIT 1"
         ).fetchone()
 

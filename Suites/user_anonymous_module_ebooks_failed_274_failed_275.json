@@ -1,0 +1,17 @@
+{
+    "suite": "Anonymous User Cases - eBooks - Failed retry #274 - Failed retry #275",
+    "source_suite": "user_anonymous_module_ebooks_failed_274",
+    "module": "eBooks",
+    "tests": [
+        {
+            "id": "ANON_EBOOK_014",
+            "module": "eBooks",
+            "section": "eBooks",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "eBook restriction after repeated refresh",
+            "yaml": "ANON_EBOOK_014.yaml",
+            "display_module": "eBooks"
+        }
+    ]
+}

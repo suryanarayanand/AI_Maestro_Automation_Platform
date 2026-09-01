@@ -1,0 +1,12 @@
+appId: com.mobstac.thehindu
+tags: [generated, subscriber, account, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_ACCOUNT.yaml"
+- scrollUntilVisible: {element: {text: "Bookmarks"}, direction: DOWN, timeout: 30000, speed: 45, visibilityPercentage: 20}
+- tapOn: {text: "Bookmarks"}
+- extendedWaitUntil: {visible: {text: "Bookmarks|No bookmarks"}, timeout: 30000}
+- assertVisible: {text: "Bookmarks|No bookmarks"}
+- assertNotVisible: {text: "Login to your account"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ACCOUNT_008_bookmarks"
+

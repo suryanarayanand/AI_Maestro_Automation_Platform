@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Flows{% endblock %}
+{% block page_title %}User-specific flows{% endblock %}
+{% block content %}
+<p class="page-intro">Choose verified YAML flows for one account state, then create an executable suite from only those selections.</p>
+
+<div class="d-flex flex-wrap gap-2 mb-4">
+  {% for key, label in states %}
+  <a class="btn {{ 'btn-primary' if selected_state == key else 'btn-outline-secondary' }}" href="{{ url_for('flows.index', user_state=key) }}">{{ label }} <span class="badge text-bg-light ms-1">{{ counts[key] }}</span></a>
+  {% endfor %}
+</div>
+
+<form method="get" class="surface mb-3">
+  <input type="hidden" name="user_state" value="{{ selected_state }}">
+  <div class="input-group"><input class="form-control" type="search" name="q" value="{{ query }}" placeholder="Search flows by path"><button class="btn btn-outline-primary">Search</button></div>
+</form>
+
+<form method="post" action="{{ url_for('flows.create_suite') }}" class="surface">
+  <input type="hidden" name="user_state" value="{{ selected_state }}">
+  <div class="section-head"><div><small>{{ dict(states)[selected_state] }}</small><h2>Select flows</h2></div><span>{{ flows|length }} available</span></div>
+  <div class="table-responsive">
+    <table class="table align-middle">
+      <thead><tr><th style="width:45px"><input id="select-all" class="form-check-input" type="checkbox" aria-label="Select all"></th><th>Flow</th><th>Folder</th><th>Tags</th><th>Modified</th></tr></thead>
+      <tbody>{% for flow in flows %}<tr>
+        <td><input class="form-check-input flow-check" type="checkbox" name="flows" value="{{ flow.path }}"></td>
+        <td><strong>{{ flow.name }}</strong><small class="d-block text-muted">{{ flow.path }}</small></td>
+        <td>{{ flow.folder }}</td>
+        <td>{% for tag in flow.tags %}<span class="status-pill me-1">{{ tag }}</span>{% endfor %}</td>
+        <td>{{ flow.modified_display }}</td>
+      </tr>{% else %}<tr><td colspan="5" class="text-muted">No flows are currently classified for this user state.</td></tr>{% endfor %}</tbody>
+    </table>
+  </div>
+  <div class="row g-3 align-items-end mt-2">
+    <div class="col-md-6"><label class="form-label" for="suite-name">New suite name</label><input id="suite-name" class="form-control" name="suite_name" required placeholder="Example: anonymous_article_flows"></div>
+    <div class="col-md-6 d-flex gap-2">
+      <button class="btn btn-outline-primary flex-fill" type="submit" name="submit_action" value="create">Create Suite</button>
+      <button class="btn btn-success flex-fill" type="submit" name="submit_action" value="run-now">Run Selected Now</button>
+    </div>
+  </div>
+</form>
+<script>
+document.getElementById('select-all').addEventListener('change', event => {
+  document.querySelectorAll('.flow-check').forEach(item => item.checked = event.target.checked);
+});
+</script>
+{% endblock %}

@@ -1,0 +1,82 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, photos, gallery, share, non-destructive, state-restoration, evidence-limited]
+---
+# Establish an authenticated subscriber session before opening controlled gallery data.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_home"
+
+# Open active photo-gallery reference 68. This reference must be validated on the target build.
+- openLink: "https://www.thehindu.com/sport/cricket/ipl2013/match-photos/rajasthan-royals-thrash-mumbai-indians/article4627667.ece"
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 1: invoke Share from the opened photo-gallery article.
+- extendedWaitUntil:
+    visible:
+      text: "Share"
+    timeout: 15000
+
+- assertVisible:
+    text: "Share"
+
+# Capture the settled originating state for visual comparison after native Back.
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_012_gallery_before_share"
+
+- tapOn:
+    text: "Share"
+
+# Position 3: prove that the settled native sharing surface opened over the app.
+- extendedWaitUntil:
+    visible:
+      text: "Quick Share"
+    timeout: 15000
+
+- assertVisible:
+    text: "Quick Share"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_012_share_sheet"
+
+# Position 2: dismiss the native surface without selecting a share target.
+- back
+
+- extendedWaitUntil:
+    notVisible:
+      text: "Quick Share"
+    timeout: 15000
+
+- assertNotVisible:
+    text: "Quick Share"
+
+# Position 4: assert restoration of the originating article context.
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertVisible:
+    text: "Share"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_012_gallery_after_return"

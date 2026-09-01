@@ -1,0 +1,125 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - article
+  - article-audio
+  - thirty-seconds
+---
+
+# Establish the authenticated subscriber state before opening the reference article.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Runtime qualification is mandatory: do not silently skip an article that does
+# not expose Listen to Article in the target build.
+- scrollUntilVisible:
+    element:
+      text: "Listen to Article|LISTEN TO ARTICLE"
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 40
+
+- assertVisible:
+    text: "Listen to Article|LISTEN TO ARTICLE"
+
+- tapOn:
+    text: "Listen to Article|LISTEN TO ARTICLE"
+
+- extendedWaitUntil:
+    visible:
+      text: "Play|PLAY|Pause|PAUSE"
+    timeout: 30000
+
+# Normalize player variants that initially open in a paused state.
+- runFlow:
+    when:
+      visible:
+        text: "Play|PLAY"
+    commands:
+      - tapOn:
+          text: "Play|PLAY"
+
+- extendedWaitUntil:
+    visible:
+      text: "Pause|PAUSE"
+    timeout: 15000
+
+- assertVisible:
+    text: "Pause|PAUSE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_007_playback_started"
+
+# Keep the player in its asserted active state for a measured 30 seconds.
+- evalScript: '${(function () { var end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+
+- assertVisible:
+    text: "Pause|PAUSE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_007_playback_after_30_seconds"
+
+# Pause and verify the control changes to Play.
+- tapOn:
+    text: "Pause|PAUSE"
+
+- extendedWaitUntil:
+    visible:
+      text: "Play|PLAY"
+    timeout: 15000
+
+- assertVisible:
+    text: "Play|PLAY"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_007_paused"
+
+# Resume, retain active playback briefly, and verify the control changes back.
+- tapOn:
+    text: "Play|PLAY"
+
+- extendedWaitUntil:
+    visible:
+      text: "Pause|PAUSE"
+    timeout: 15000
+
+- assertVisible:
+    text: "Pause|PAUSE"
+
+- evalScript: '${(function () { var end = Date.now() + 3000; while (Date.now() < end) {} return true; })()}'
+
+- assertVisible:
+    text: "Pause|PAUSE"
+
+# Close the active player using native Back and prove article context is restored.
+- back
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "Pause|PAUSE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_007_player_closed"

@@ -1,0 +1,65 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - podcast
+  - quick-access
+---
+
+# SUB_PODCAST_001 — Podcast launch and selected tab
+
+# Position 1 — Establish the repository-managed subscriber session and open
+# Podcast through the validated Quick Access text selector.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+- tapOn:
+    text: "Podcast"
+
+# Position 2 — Wait for the destination to settle without scrolling, preserving
+# the initial Podcast listing viewport, and capture that top state.
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_001_top_viewport"
+
+# Position 3 — The validated Podcast anchor proves the destination is present.
+# Visual validation is required for selected styling because no deterministic
+# selected-state property or locator was supplied.
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify that the Podcast listing page is open and that Podcast is visibly shown as the selected Quick Access section. The selected styling must be visually distinguishable from the other available Quick Access sections."
+
+# Position 4 — Verify that the initial listing contains rendered podcast-series
+# content rather than an empty, blank, loading-only, or request-error surface.
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify that this Podcast listing displays rendered podcast-series content in the current viewport. At least one identifiable podcast series card or series section must be visible with readable content, and the page must not be blank, loading-only, broken, or displaying a request or network error."
+
+# Apply the validated subscriber entitlement contract on the settled listing.
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_001_selected_listing_content"

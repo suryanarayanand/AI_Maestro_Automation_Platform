@@ -1,0 +1,108 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - editorial
+  - article
+  - reading-options
+  - text-size
+  - themes
+  - blocked-grounding
+
+---
+
+# SUB_EDITORIAL_008 — Editorial reading options, text size and themes
+#
+# Establish the required authenticated Subscriber state before opening the
+# controlled Editorial reference.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Open one Editorial Article Library reference. Because the URL is currently
+# reference-only, successful rendering is qualified at runtime using the
+# validated article-detail screen selector.
+- openLink: "https://www.thehindu.com/opinion/editorial/brazen-intimidation-the-hindu-editorial-on-the-tax-survey-on-the-bbc/article66513588.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_008_editorial_baseline_blocked"
+
+# Obligation critique:
+#
+# Position 1 cannot open Reading Options or select a different text-size value.
+# The only supplied "Text size" hierarchy node is unvalidated and explicitly
+# non-clickable. No validated Reading Options trigger, slider, increment,
+# decrement, or discrete-size selector is available.
+#
+# Position 2 cannot apply both Light and Dark themes or close the options sheet.
+# No validated theme choices, selected-theme state, or sheet-close selector was
+# supplied. The reference scenario THCAT_0894 is unvalidated and cannot establish
+# executable selectors.
+#
+# Position 3 cannot prove that article text changed without clipping or overlap.
+# screen_article_detail proves only that the article container remains open; no
+# validated article-body, before/after text-size state, clipping, or overlap
+# assertion is available.
+#
+# Position 4 cannot prove that both themes applied while preserving reading
+# position. The theme actions are blocked and there is no validated article-body
+# anchor or scroll-position signal for before/after comparison.
+#
+# ARTICLE_PRESENTATION_VARIANTS also requires restoring defaults. That cleanup
+# cannot be performed safely without grounded controls and a validated default
+# text-size/theme state. Fail explicitly so the baseline article validation
+# cannot be reported as a passing reading-options case.
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_008_article_baseline"
+
+# Exercise the observed article reading-option controls and assert the result.
+- assertVisible: {text: "Text size"}
+- tapOn: {text: "Text size"}
+- extendedWaitUntil: {visible: {text: "Reading Options.*|Text Size"}, timeout: 15000}
+- assertVisible: {text: "A-"}
+- assertVisible: {text: "A+"}
+- tapOn: {text: "A+"}
+- tapOn: {text: "CLOSE|Close"}
+- assertVisible: {id: "screen_article_detail"}
+- assertWithAI: "Verify the same Editorial article remains open after increasing text size, with visibly enlarged readable article text and no clipped, hidden, overlapping, or detached content."
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_008_larger_text"
+
+# Restore text size before changing themes.
+- tapOn: {text: "Text size"}
+- extendedWaitUntil: {visible: {text: "A-"}, timeout: 15000}
+- tapOn: {text: "A-"}
+- tapOn: {text: "CLOSE|Close"}
+- assertVisible: {id: "screen_article_detail"}
+
+# Apply Dark mode and reopen the identical controlled article.
+- back
+- waitForAnimationToEnd
+- runFlow: "../Common/Dark_theme_changing.yaml"
+- openLink: "https://www.thehindu.com/opinion/editorial/brazen-intimidation-the-hindu-editorial-on-the-tax-survey-on-the-bbc/article66513588.ece"
+- waitForAnimationToEnd
+- tapOn: {text: "Close sheet", optional: true}
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- assertVisible: {id: "screen_article_detail"}
+- assertWithAI: "Verify the same Editorial article is rendered in Dark mode with readable headline, body, media, and controls; fail for poor contrast, clipping, overlap, missing content, or changed article identity."
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_008_dark_theme"
+
+# Restore Light mode and prove the same article remains usable.
+- back
+- waitForAnimationToEnd
+- runFlow: "../Common/Light_theme_changing.yaml"
+- openLink: "https://www.thehindu.com/opinion/editorial/brazen-intimidation-the-hindu-editorial-on-the-tax-survey-on-the-bbc/article66513588.ece"
+- waitForAnimationToEnd
+- tapOn: {text: "Close sheet", optional: true}
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- assertVisible: {id: "screen_article_detail"}
+- assertWithAI: "Verify the same Editorial article is restored to Light mode, remains readable and usable, and has no clipping, overlap, missing content, or changed article identity."
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_008_light_theme_restored"

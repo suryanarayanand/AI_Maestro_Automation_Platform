@@ -1,0 +1,10 @@
+appId: com.mobstac.thehindu
+tags: [common, anonymous, opinion]
+---
+- runFlow: "OPEN_ANONYMOUS_HOME.yaml"
+- tapOn: {text: "Opinion"}
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {text: "Opinion"}, timeout: 30000}
+- assertVisible: {id: "screen_home"}
+- assertVisible: {text: "Opinion"}
+

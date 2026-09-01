@@ -1,0 +1,9 @@
+appId: com.mobstac.thehindu
+tags: [common, article, interstitial, evidence]
+---
+- takeScreenshot: "Screenshots/Generated/article_interstitial_before_close"
+- waitForAnimationToEnd: {timeout: 5000}
+- assertVisible: {text: "^CLOSE$|Interstitial close button"}
+- tapOn: {text: "^CLOSE$|Interstitial close button"}
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+- assertVisible: {id: "screen_article_detail"}

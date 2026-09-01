@@ -1,0 +1,117 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - podcast
+  - playback
+  - single-audio-source
+  - mini-player
+  - thirty-seconds
+  - evidence-limited
+---
+
+# SUB_PODCAST_013 — Only one podcast plays at a time
+# Establish the repository-managed authenticated subscriber state.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Start the first controlled podcast reference. The reference is qualified at
+# runtime because repository URLs are reference-only until opened successfully.
+- openLink: "https://www.thehindu.com/podcast/what-india-needs-to-improve-its-education-system-post-pandemic-in-focus-podcast/article66427530.ece"
+
+- scrollUntilVisible:
+    element:
+      text: '(?i)^(Play|Pause)$'
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 40
+
+- extendedWaitUntil:
+    visible:
+      text: '(?i)^(Play|Pause)$'
+    timeout: 30000
+
+- assertWithAI: "Verify that the first controlled podcast article has opened successfully and that a rendered audio player belonging to its visible podcast content is present. The player and its associated episode metadata must be readable and must not be blank, loading-only, detached from the content, or replaced by an error surface."
+
+- runFlow:
+    when:
+      visible:
+        text: '(?i)^Play$'
+    commands:
+      - tapOn:
+          text: '(?i)^Play$'
+          index: 0
+
+- extendedWaitUntil:
+    visible:
+      text: '(?i)^Pause$'
+    timeout: 15000
+
+- assertVisible:
+    text: '(?i)^Pause$'
+
+# Retain active playback for the approved measured checkpoint before verifying
+# that progress has advanced.
+- evalScript: '${(() => { const end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+
+- assertVisible:
+    text: '(?i)^Pause$'
+
+- assertWithAI: "At the 30-second checkpoint, verify that the first podcast remains actively playing, its elapsed-time or progress presentation has visibly advanced beyond the initial position, and exactly one active audio-player state is shown. Fail if progress remains at its initial position, playback stopped, the player is loading or errored, or multiple simultaneously active player states are visible."
+
+- assertWithAI: "Verify that the first selected episode is the sole visibly active audio source before the second selection: one active Pause state and one coherent set of first-episode metadata may be present, but no second active player, duplicate playback surface, or conflicting active metadata may be visible."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_013_first_episode_progress"
+
+# Open a different controlled podcast reference while the first source is active.
+- openLink: "https://www.thehindu.com/podcast/decoding-indias-population-conundrum-in-focus-podcast/article66477216.ece"
+
+- scrollUntilVisible:
+    element:
+      text: '(?i)^(Play|Pause)$'
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 40
+
+- extendedWaitUntil:
+    visible:
+      text: '(?i)^(Play|Pause)$'
+    timeout: 30000
+
+- assertWithAI: "Verify that the second controlled podcast article has opened successfully and exposes a rendered audio player associated with its own visible, readable episode metadata. Its content identity must be visibly different from the first controlled podcast selected earlier. Fail for an unchanged page, blank identity, loading-only player, detached controls, or an error surface."
+
+- runFlow:
+    when:
+      visible:
+        text: '(?i)^Play$'
+    commands:
+      - tapOn:
+          text: '(?i)^Play$'
+          index: 0
+
+- extendedWaitUntil:
+    visible:
+      text: '(?i)^Pause$'
+    timeout: 15000
+
+- assertVisible:
+    text: '(?i)^Pause$'
+
+# Give the second source the same measured playback interval so its active state
+# and progress are settled before the replacement verdict is recorded.
+- evalScript: '${(() => { const end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+
+- assertVisible:
+    text: '(?i)^Pause$'
+
+- assertWithAI: "Verify that selecting the second podcast stopped or replaced the first active playback state and that the visible mini-player or persistent player now presents the second episode's metadata. Exactly one active Pause state may be shown. Fail if the first episode remains visibly active, the player retains stale first-episode metadata, the mini-player is blank or loading, or both sources appear active."
+
+- assertWithAI: "Verify there is no visible evidence of overlapping playback after the switch: no duplicate active player surfaces, no two simultaneous Pause states belonging to different episodes, and no stale first-episode title or artwork in the active mini-player. The active player must present one coherent second-episode identity."
+
+- assertWithAI: "Verify that only the second selected podcast is visibly playing, that its elapsed-time or progress presentation has advanced beyond its initial position, and that its readable title or equivalent episode metadata is displayed in the active player. Fail for first-episode metadata, conflicting identities, missing metadata, zero progress, duplicate active players, loader, or playback error."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_013_second_episode_single_source"

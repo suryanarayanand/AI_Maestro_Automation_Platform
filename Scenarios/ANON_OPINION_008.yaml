@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, opinion]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_OPINION_ARTICLE.yaml"
+- runFlow:
+    when: {visible: {text: "AI summary|AI Summary"}}
+    commands:
+      - tapOn: {text: "AI summary|AI Summary"}
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_OPINION_008_ai_summary"
+      - runFlow:
+          when: {visible: {text: "SUBSCRIBE|Subscribe"}}
+          commands:
+            - assertVisible: {text: "SUBSCRIBE|Subscribe"}

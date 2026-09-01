@@ -1,0 +1,38 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - video
+  - seek-controls
+  - blocked-grounding
+---
+# SUB_VIDEO_004 — Video 15-second seek controls
+#
+# This executable probe establishes the authenticated subscriber session and
+# validates that the repository inline-video reference opens as an article.
+# Seek interactions are intentionally omitted because the supplied repository
+# contains no validated seek-control or elapsed-time selector.
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_home"
+
+- openLink: "https://www.thehindu.com/entertainment/music/how-the-concept-of-mahishasurmardini-unites-the-country-during-navaratri/article67433268.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_004_inline_video_grounding_required"

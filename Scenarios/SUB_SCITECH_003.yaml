@@ -1,0 +1,187 @@
+appId: com.mobstac.thehindu
+
+
+
+tags:
+
+  - generated
+
+  - ordered
+
+  - subscriber
+
+  - scitech
+
+  - listing
+
+  - metadata
+
+  - visual-layout
+
+
+
+---
+
+
+
+# SUB_SCITECH_003 — Sci-tech listing identity and visual structure
+
+
+
+# Establish the repository-managed authenticated subscriber session before
+
+# navigating to the feature.
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_SCITECH.yaml"
+
+
+- extendedWaitUntil:
+
+    visible:
+
+      text: "Sci-Tech"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+# The validated Sci-Tech text identifies the destination. Maestro resolves a
+
+# tappable ancestor when the text node itself is not directly clickable.
+
+- tapOn:
+
+    text: "Sci-Tech"
+
+
+
+- waitForAnimationToEnd
+
+
+
+- extendedWaitUntil:
+
+    visible:
+
+      text: "Sci-Tech"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+# Strictly verify destination identity and subscriber entitlement before
+
+# inspecting dynamic listing content.
+
+- assertWithAI: "Verify that the full Sci-Tech section listing is open, not merely a Sci-Tech shortcut or teaser on another page. A readable Sci-Tech section identity and rendered article-card listing must be visible. Fail if navigation is blocked, the page is blank or loading-only, or a login, paywall, error, or unrelated section is displayed."
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+# Obligation positions 1–4, viewport 1: inspect every meaningfully visible card.
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+- assertWithAI: "Inspect every Sci-Tech article card that is fully or meaningfully visible in this first listing viewport. Every inspected card must have a readable, non-truncated headline. If a card presents an image, byline, publication time, timestamp, or other time metadata, each presented item must be rendered, readable, and visibly attached to that same card rather than an adjacent card. Images that are present must not be blank or visibly broken. Verify that the Sci-Tech identity and any visible Science or Technology category labels are readable and correctly associated with their content. Cards, labels, headlines, images, bylines, and time metadata must preserve a clear section-to-card-to-metadata hierarchy without unintended overlap, clipping, detached content, or broken placeholders."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_003_viewport_01_identity_cards_metadata"
+
+
+
+# Viewport 2: perform a bounded transition to a lower listing state.
+
+- swipe:
+
+    direction: UP
+
+
+
+- waitForAnimationToEnd
+
+
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+- assertWithAI: "Verify this is a different lower viewport of the same Sci-Tech listing. Inspect every article card that is fully or meaningfully visible. Every inspected card must have a readable, non-truncated headline. For each card, any presented image, byline, publication time, timestamp, or other time metadata must be rendered, readable, and visibly attached to that card rather than a neighboring card; any presented image must not be blank or visibly broken. The Sci-Tech identity and any visible Science or Technology labels must remain readable and correctly associated with their content. Fail for an unchanged viewport, an unrelated section, blank or broken content, unintended overlap, clipping, detached metadata, or a collapsed content hierarchy."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_003_viewport_02_identity_cards_metadata"
+
+
+
+# Viewport 3: a second bounded transition completes the minimum of three
+
+# inspected Sci-Tech listing viewports.
+
+- swipe:
+
+    direction: UP
+
+
+
+- waitForAnimationToEnd
+
+
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+- assertWithAI: "Verify this is another distinct lower viewport of the same Sci-Tech listing, different from the immediately preceding viewport. Inspect every article card that is fully or meaningfully visible. Every inspected card must have a readable, non-truncated headline. For each card, any presented image, byline, publication time, timestamp, or other time metadata must be rendered, readable, and visibly attached to that card rather than an adjacent card; any presented image must not be blank or visibly broken. The Sci-Tech identity and any visible Science or Technology labels must remain readable and correctly associated with their content. Verify the complete visible hierarchy is contained and readable, with no unintended overlap, clipping, detached metadata, broken placeholders, or unrelated content."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_003_viewport_03_identity_cards_metadata"
+
+
+
+# Revalidate subscriber entitlement after representative listing scrolling.
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_003_final_scitech_listing_state"
+

@@ -1,0 +1,31 @@
+appId: com.mobstac.thehindu
+
+tags: [generated, ordered, subscriber, home, share]
+
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- tapOn: {id: "article_card", index: 0}
+
+- tapOn: {text: "Close sheet", optional: true}
+
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+
+- assertVisible: {text: "Share"}
+
+- tapOn: {text: "Share"}
+
+- extendedWaitUntil: {visible: {text: "Quick Share"}, timeout: 15000}
+
+- assertVisible: {text: "Quick Share"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HOME_009_share_sheet"
+
+- back
+
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 15000}
+
+- assertVisible: {id: "screen_article_detail"}
+

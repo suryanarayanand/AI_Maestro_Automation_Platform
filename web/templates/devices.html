@@ -1,45 +1,49 @@
 {% extends "base.html" %}
-
 {% block content %}
-
-<h2 class="mb-4">
-
-    Connected Devices
-
-</h2>
-
-<div class="card">
-
-    <div class="card-body">
-
-        <h4>Status</h4>
-
-        <h2>
-
-            {{ device.status }}
-
-        </h2>
-
-        {% if device.connected %}
-
-        <p>
-
-            Device ID :
-            {{ device.device_id }}
-
-        </p>
-
-        <p>
-
-            Connected Devices :
-            {{ device.count }}
-
-        </p>
-
-        {% endif %}
-
-    </div>
-
+<div class="section-head">
+  <div><small>Long-run readiness</small><h2>Device Health Monitor</h2></div>
+  <span class="status-pill {{ 'status-running' if device.connected else 'status-failed' }}">{{ device.status }}</span>
 </div>
-
+<div class="metric-grid">
+  <div class="metric"><small>Device</small><strong class="metric-text">{{ device.device_id or 'Not detected' }}</strong><small>{{ device.count }} connected</small></div>
+  <div class="metric"><small>Battery</small><strong>{{ health.battery_level if health.battery_level is not none else '—' }}{% if health.battery_level is not none %}%{% endif %}</strong><small>{{ 'USB powered' if health.usb_powered else 'Not USB powered' }}</small></div>
+  <div class="metric"><small>Temperature</small><strong>{{ health.temperature_c if health.temperature_c is not none else '—' }}{% if health.temperature_c is not none %}°C{% endif %}</strong><small>{{ 'Healthy' if health.temperature_c is not none and health.temperature_c < 45 else 'Check device' }}</small></div>
+  <div class="metric"><small>Maestro Agent</small><strong class="metric-text">{{ 'Running' if health.maestro_agent_pid else 'Not detected' }}</strong><small>{% if health.maestro_agent_pid %}PID {{ health.maestro_agent_pid }}{% else %}No active PID{% endif %}</small></div>
+</div>
+<div class="content-grid">
+  <section class="surface">
+    <div class="section-head"><div><small>Current execution</small><h2>Run health</h2></div></div>
+    {% set job = health.job or {} %}
+    <dl class="execution-summary">
+      <div><dt>Job</dt><dd>{% if job.id %}#{{ job.id }} · {{ job.suite }}{% else %}Idle{% endif %}</dd></div>
+      <div><dt>Progress</dt><dd>{% if job.id %}{{ job.completed }}/{{ job.total }}{% else %}—{% endif %}</dd></div>
+      <div><dt>Current case</dt><dd>{{ job.current_case or '—' }}</dd></div>
+      <div><dt>Last sample</dt><dd>{{ health.timestamp or 'No samples yet' }}</dd></div>
+    </dl>
+    <div class="mt-3">
+      {% if health.alerts %}{% for alert in health.alerts %}<span class="status-pill status-failed me-1">{{ alert }}</span>{% endfor %}
+      {% else %}<span class="status-pill status-passed">No health alerts</span>{% endif %}
+    </div>
+  </section>
+  <section class="surface">
+    <div class="section-head"><div><small>Connectivity</small><h2>Power & network</h2></div></div>
+    <dl class="execution-summary">
+      <div><dt>ADB state</dt><dd>{{ health.device_state or device.status }}</dd></div>
+      <div><dt>USB power</dt><dd>{{ 'Yes' if health.usb_powered else 'No' }}</dd></div>
+      <div><dt>Internet</dt><dd>{{ 'Online' if health.internet_reachable else ('Offline' if health.internet_reachable is not none else 'Not sampled') }}</dd></div>
+      <div><dt>Stale checks</dt><dd>{{ health.unchanged_checks or 0 }}</dd></div>
+    </dl>
+  </section>
+</div>
+<section class="surface mt-4">
+  <div class="section-head"><div><small>30-minute samples</small><h2>Recent health history</h2></div><span>{{ health_history|length }} samples</span></div>
+  <div class="table-responsive"><table class="table">
+    <thead><tr><th>Timestamp</th><th>Device</th><th>Battery</th><th>Temp.</th><th>Internet</th><th>Job / Case</th><th>Alerts</th></tr></thead>
+    <tbody>{% for item in health_history %}<tr>
+      <td>{{ item.timestamp }}</td><td>{{ item.device_state }}</td><td>{{ item.battery_level if item.battery_level is not none else '—' }}%</td><td>{{ item.temperature_c if item.temperature_c is not none else '—' }}°C</td>
+      <td>{{ 'Online' if item.internet_reachable else ('Offline' if item.internet_reachable is not none else '—') }}</td>
+      <td>{% if item.job and item.job.id %}#{{ item.job.id }} · {{ item.job.current_case or item.job.status }}{% else %}Idle{% endif %}</td><td>{{ item.alerts|join(', ') if item.alerts else 'None' }}</td>
+    </tr>{% else %}<tr><td colspan="7" class="empty">No health samples available.</td></tr>{% endfor %}</tbody>
+  </table></div>
+</section>
 {% endblock %}

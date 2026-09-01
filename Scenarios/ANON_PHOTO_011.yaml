@@ -1,0 +1,11 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, photos]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_MULTI_PHOTO_GALLERY.yaml"
+- tapOn: {text: "Bookmark"}
+- extendedWaitUntil: {visible: {text: "Login to your account|Sign in|LOGIN"}, timeout: 30000}
+- assertVisible: {text: "Login to your account|Sign in|LOGIN"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PHOTO_011_bookmark_login"
+- back
+- assertVisible: {text: ".*[0-9]+/[0-9]+.*"}

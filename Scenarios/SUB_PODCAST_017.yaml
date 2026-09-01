@@ -1,0 +1,55 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - podcast
+  - playback-failure
+  - blocked-fault-injection
+  - blocked-locator-grounding
+  - evidence-limited
+---
+
+# SUB_PODCAST_017 — Podcast audio-load failure handling
+#
+# Ordered precondition: repository-managed subscriber authentication has
+# completed and the Podcast listing is open. "Podcast" is the only validated
+# selector supplied for this screen.
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_017_fault_injection_blocked"
+
+# Obligation critique, in imported order:
+#
+# Position 1 cannot safely attempt playback under a temporarily unavailable or
+# slow audio response. The evidence supports normal playback initiation, but it
+# supplies no proxy fixture, throttled audio endpoint, network-shaping command,
+# or other deterministic fault-injection mechanism. Starting a healthy episode
+# would not exercise the required condition.
+#
+# Position 2 cannot wait for the configured failure timeout because neither the
+# timeout value nor an automation-readable timeout transition is supplied. The
+# approved 30-second normal-playback checkpoint is not evidence of the audio
+# loader's configured failure timeout and must not be substituted for it.
+#
+# Position 3 cannot verify a bounded loading state because no validated podcast
+# loading indicator selector, loading-start signal, or loading-end signal is
+# supplied, and Position 1 cannot establish the required degraded response.
+#
+# Position 4 cannot verify a useful error/Retry state or post-error
+# responsiveness because no validated podcast error text, Retry selector, or
+# deterministic post-timeout state is supplied. Reference-only scenarios from
+# other modules and user states cannot establish these podcast selectors.
+#
+# Fail explicitly so a healthy playback path or visible Podcast page cannot be
+# reported as a passing audio-load failure-handling result.
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_017_manual_review"

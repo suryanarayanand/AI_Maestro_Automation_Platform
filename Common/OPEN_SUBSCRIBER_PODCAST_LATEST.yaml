@@ -1,0 +1,29 @@
+appId: com.mobstac.thehindu
+tags: [common, subscriber, podcast, playback]
+---
+- runFlow: "OPEN_SUBSCRIBER_HOME.yaml"
+- tapOn: "Podcast"
+- waitForAnimationToEnd:
+    timeout: 5000
+- assertVisible: "Podcast"
+- scrollUntilVisible:
+    element:
+      text: "(?i)^Play Latest Episode$"
+    direction: DOWN
+    timeout: 60000
+    speed: 40
+    visibilityPercentage: 40
+- assertVisible:
+    text: "(?i)^Play Latest Episode$"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/sub_podcast_latest_selected"
+- tapOn:
+    text: "(?i)^Play Latest Episode$"
+    index: 0
+- extendedWaitUntil:
+    visible:
+      text: "(?i)^Pause$"
+    timeout: 30000
+- assertVisible:
+    text: "(?i)^Pause$"
+- assertVisible: "Podcast"

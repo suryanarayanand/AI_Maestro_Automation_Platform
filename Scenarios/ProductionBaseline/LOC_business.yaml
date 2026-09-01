@@ -3,7 +3,7 @@ tags:
   - baseline
   - business
 ---
-- runFlow: ../Common/OPEN_HOME_FOR_BASELINE.yaml
+- runFlow: ../../Common/OPEN_HOME_FOR_BASELINE.yaml
 - repeat:
     times: 5
     commands:

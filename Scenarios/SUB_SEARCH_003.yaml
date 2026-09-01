@@ -1,0 +1,12 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, search, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_SEARCH.yaml"
+- tapOn: {point: "45%,8%"}
+- inputText: "Chennai"
+- pressKey: enter
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {text: "Sort by.*|newest|relevance|Newest|Relevance"}, timeout: 60000}
+- assertVisible: {text: "Sort by.*|newest|relevance|Newest|Relevance"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_003_chennai"

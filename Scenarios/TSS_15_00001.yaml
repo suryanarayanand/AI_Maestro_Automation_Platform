@@ -1,0 +1,69 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered]
+---
+- launchApp:
+    clearState: false
+- tapOn:
+    id: "nav_account"
+- runFlow:
+    when:
+      visible:
+        id: "cta_login"
+    commands:
+      - tapOn:
+          id: "cta_login"
+      - runFlow: "../Common/LOGIN.yaml"
+- runFlow:
+    when:
+      visible:
+        id: "cta_menu_close"
+    commands:
+      - tapOn:
+          id: "cta_menu_close"
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- tapOn:
+    id: "nav_home"
+- assertNotVisible:
+    text: "Subscribe"
+- tapOn:
+    id: "nav_premium"
+- runFlow:
+    when:
+      visible: "OKAY"
+    commands:
+      - tapOn: "OKAY"
+- tapOn:
+    text: "READ FULL ARTICLE"
+- swipe:
+    direction: "UP"
+- waitForAnimationToEnd
+- scrollUntilVisible:
+    element:
+      text: "Post a comment"
+    direction: "DOWN"
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 50
+- assertVisible:
+    text: "Post a comment"
+- assertVisible:
+    text: "Related Topics"
+# These sections vary by article, so validate them only when present.
+- runFlow:
+    when:
+      visible: "Recommended"
+    commands:
+      - assertVisible: "Recommended"
+- runFlow:
+    when:
+      visible: "Headlines"
+    commands:
+      - assertVisible: "Headlines"
+- swipe:
+    direction: "UP"
+- waitForAnimationToEnd
+- assertNotVisible:
+    text: "SUBSCRIBE"

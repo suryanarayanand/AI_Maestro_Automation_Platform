@@ -1,0 +1,91 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - article
+  - entitlement
+  - evidence-limited
+---
+
+# SUB_ARTICLE_020
+# Precondition: the app retains an authenticated subscriber session.
+
+# Position 1 — Open a repository article reference. No validated action-panel
+# control, close control, or recommended-item locator was supplied, so those
+# interactions are intentionally not fabricated.
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 2 — Verify the grounded Subscribe, subscriber-login, and advertising
+# controls are absent on the initially opened article.
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "^Already a Subscriber\\? Login$"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_020_initial_article_entitled"
+
+# Position 3 — Exercise bounded article interactions and recheck the subscriber
+# session after each settled reading state.
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "^Already a Subscriber\\? Login$"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_020_session_after_interactions"
+
+# Position 4 — Capture the final grounded entitlement state. This is not
+# represented as proof of the unsupported action-panel/recommended journey.
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "^Already a Subscriber\\? Login$"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "^Already a Subscriber\\? Login$"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_020_final_entitlement_state"

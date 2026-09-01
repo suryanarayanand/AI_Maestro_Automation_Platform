@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+tags: [anonymous, search]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_SEARCH.yaml"
+
+- back
+- runFlow:
+    when: {visible: {id: "screen_hamburger"}}
+    commands:
+      - tapOn: {id: "cta_drawer_close"}
+- extendedWaitUntil: {visible: {id: "screen_home"}, timeout: 30000}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_SEARCH_002_evidence"

@@ -1,0 +1,53 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - article
+  - authentication
+  - functional
+  - login
+  - subscribe-login
+  - generated
+  - review-required
+---
+# Generated from: Verify anonymous user signs in from the article Subscribe button and returns to the same article
+# Grounding: validated locator repository; 6 matching App Memory records.
+- runFlow: "../../Common/OPEN_ANONYMOUS_HOME.yaml"
+- assertVisible:
+    text: "SUBSCRIBE"
+- repeat:
+    while:
+      notVisible:
+        text: "ADVERTISEMENT"
+    times: 8
+    commands:
+      - swipe:
+          direction: "UP"
+      - waitForAnimationToEnd
+- assertVisible:
+    text: "ADVERTISEMENT"
+- tapOn:
+    id: "nav_home"
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 15000
+- tapOn:
+    id: "article_card"
+    index: 0
+- waitForAnimationToEnd:
+    timeout: 8000
+- tapOn:
+    text: "Close sheet"
+    optional: true
+- tapOn:
+    text: "Interstitial close button"
+    optional: true
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 25000
+- assertVisible:
+    id: "screen_article_detail"
+- runFlow: "../../Common/LOGIN_FROM_ARTICLE_SUBSCRIBE.yaml"
+- assertVisible:
+    id: "screen_article_detail"

@@ -1,0 +1,36 @@
+appId: com.mobstac.thehindu
+tags: [discovery, subscriber, games, live-ui]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_GAMES.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Discovery/SUB_GAMES_live_top"
+- assertVisible: {id: "screen_games"}
+- assertNotVisible: {text: "Login to play|Login to your account|SUBSCRIBE"}
+- repeat:
+    times: 3
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd: {timeout: 1600}
+- takeScreenshot: "Screenshots/Discovery/SUB_GAMES_live_middle"
+- repeat:
+    times: 4
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd: {timeout: 1600}
+- takeScreenshot: "Screenshots/Discovery/SUB_GAMES_live_lower"
+- assertVisible: {id: "screen_games"}
+- repeat:
+    times: 7
+    commands:
+      - swipe: {direction: DOWN}
+      - waitForAnimationToEnd: {timeout: 900}
+- extendedWaitUntil: {visible: {text: "Sudoku"}, timeout: 30000}
+- tapOn: {text: "Sudoku"}
+- extendedWaitUntil: {visible: {text: "Choose Your Puzzle to Play"}, timeout: 30000}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Discovery/SUB_GAMES_sudoku_latest_ui"
+- assertVisible: {text: "Mini"}
+- assertVisible: {text: "Easy"}
+- assertVisible: {text: "Medium"}
+- assertVisible: {text: "Hard"}
+- assertVisible: {text: "Killer"}

@@ -1,0 +1,23 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, trending, share]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+
+- assertVisible: {text: "Share"}
+
+- tapOn: {text: "Share"}
+
+- extendedWaitUntil: {visible: {text: "Quick Share"}, timeout: 15000}
+
+- assertVisible: {text: "Quick Share"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_012_share_sheet"
+
+- back
+
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 15000}
+

@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+tags: [generated, subscriber, account, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_ACCOUNT.yaml"
+- scrollUntilVisible: {element: {text: "Text Size"}, direction: DOWN, timeout: 30000, speed: 45, visibilityPercentage: 20}
+- tapOn: {text: "Text Size"}
+- assertVisible: {text: "Text Size|TEXT SIZE"}
+- tapOn: {text: "Decrease|A-", optional: true}
+- tapOn: {text: "Increase|A[+]", optional: true}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ACCOUNT_009_text_size"
+- back
+- assertVisible: {id: "screen_user_menu"}
+

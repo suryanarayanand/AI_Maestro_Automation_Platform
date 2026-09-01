@@ -1,0 +1,82 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - ebooks
+  - refresh
+  - entitlement
+  - no-monetisation
+---
+
+# Establish the validated subscriber session and enter eBooks.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+
+- tapOn:
+    id: "nav_ebooks"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_ebooks"
+    timeout: 30000
+
+# Position 1: Perform two refresh gestures, waiting for each refresh to settle.
+- swipe:
+    direction: DOWN
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_ebooks"
+    timeout: 30000
+
+- swipe:
+    direction: DOWN
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_ebooks"
+    timeout: 30000
+
+# Position 2: Verify the validated eBooks page surface remains present.
+- assertVisible:
+    id: "screen_ebooks"
+
+# Position 3: Recheck authenticated subscriber and entitlement indicators.
+- assertNotVisible:
+    id: "cta_login"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+# Position 4: Verify the controlled eBooks surface is still loaded after both refreshes.
+- assertVisible:
+    id: "screen_ebooks"
+
+# Position 5: Verify the page remains on the stable eBooks surface.
+- assertVisible:
+    id: "screen_ebooks"
+
+# Position 6: Verify the grounded Login, Subscribe, and advertisement surfaces are absent.
+- assertNotVisible:
+    id: "cta_login"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EBOOK_003_repeated_refresh_stable"

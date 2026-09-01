@@ -1,0 +1,41 @@
+appId: com.mobstac.thehindu
+tags:
+  - anonymous
+  - functional
+  - generated
+  - review-required
+---
+# Generated from: Verify pull to refresh reloads the page and refresh the content
+# Grounding: validated locator repository; 4 matching App Memory records.
+- runFlow: "../../Common/OPEN_ANONYMOUS_HOME.yaml"
+- assertVisible:
+    text: "SUBSCRIBE"
+- repeat:
+    while:
+      notVisible:
+        text: "ADVERTISEMENT"
+    times: 8
+    commands:
+      - swipe:
+          direction: "UP"
+      - waitForAnimationToEnd
+- assertVisible:
+    text: "ADVERTISEMENT"
+- tapOn:
+    id: "nav_home"
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 15000
+- swipe:
+    start: "50%, 25%"
+    end: "50%, 80%"
+    duration: 800
+- waitForAnimationToEnd:
+    timeout: 8000
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 20000
+- assertVisible:
+    id: "screen_home"

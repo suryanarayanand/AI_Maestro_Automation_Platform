@@ -1,0 +1,9 @@
+appId: com.mobstac.thehindu
+tags: [generated, subscriber, account, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_ACCOUNT.yaml"
+- assertVisible: {id: "screen_user_menu"}
+- assertNotVisible: {text: "Login|Create account|Subscribe"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ACCOUNT_001_authenticated_account"
+

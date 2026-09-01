@@ -1,0 +1,153 @@
+appId: com.mobstac.thehindu
+
+tags:
+
+  - generated
+
+  - ordered
+
+  - subscriber
+
+  - scitech
+
+  - quick-access
+
+  - entitlement
+
+  - no-monetisation
+
+  - evidence-limited
+
+---
+
+
+
+# Position 1: Establish the repository-managed subscriber Home state and open
+
+# Sci-Tech directly from Quick Access using the validated destination label.
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_SCITECH.yaml"
+
+
+- extendedWaitUntil:
+
+    visible:
+
+      id: "screen_home"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    id: "screen_home"
+
+
+
+- extendedWaitUntil:
+
+    visible:
+
+      text: "Sci-Tech"
+
+    timeout: 30000
+
+
+
+- tapOn:
+
+    text: "Sci-Tech"
+
+
+
+- waitForAnimationToEnd
+
+
+
+# Position 2: Confirm that the Home-derived content surface remains active and
+
+# that the validated subscriber no-ad entitlement signal has not regressed.
+
+- extendedWaitUntil:
+
+    visible:
+
+      id: "screen_home"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    id: "screen_home"
+
+
+
+- assertNotVisible:
+
+    text: "ADVERTISEMENT"
+
+
+
+# Position 3: Verify the Sci-Tech destination is rendered. Because no validated
+
+# selected-state property was supplied, selected styling is checked visually.
+
+- extendedWaitUntil:
+
+    visible:
+
+      text: "Sci-Tech"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+- assertWithAI: "Verify that the Sci-Tech page is open and that Sci-Tech is visibly selected in Quick Access. Its selected styling must be visually distinguishable from the other available Quick Access sections."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_001_scitech_selected"
+
+
+
+# Position 4: Verify that anonymous login and subscription surfaces are absent,
+
+# then apply the repository subscriber no-monetisation and no-paywall contract.
+
+- assertNotVisible:
+
+    id: "cta_login"
+
+
+
+- assertNotVisible:
+
+    text: "SUBSCRIBE"
+
+
+
+- assertNotVisible:
+
+    text: '^Already a [Ss]ubscriber\? Login$'
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_001_subscriber_entitlement"
+

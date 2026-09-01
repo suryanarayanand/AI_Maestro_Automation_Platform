@@ -1,0 +1,116 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "Entertainment"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Entertainment"}
+- tapOn: {text: "Entertainment", index: 1}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_005_entertainment"
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "Life & Style"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Life & Style"}
+- tapOn: {text: "Life & Style", index: 1}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_005_life_and_style"
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "Movies"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Movies"}
+- scrollUntilVisible:
+    element: {text: "Entertainment", index: 1}
+    direction: DOWN
+    timeout: 30000
+- tapOn: {text: "Entertainment", index: 1}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_005_movies"
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "Food"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Food"}
+- scrollUntilVisible:
+    element: {text: "ALL"}
+    direction: DOWN
+    timeout: 30000
+- tapOn: {text: "ALL"}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_005_food"
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "Children"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Children"}
+- scrollUntilVisible:
+    element: {text: "Children", index: 1}
+    direction: DOWN
+    timeout: 30000
+- tapOn: {text: "Children", index: 1}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_005_children"
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "Books"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Books"}
+- scrollUntilVisible:
+    element: {text: "Books", index: 1}
+    direction: DOWN
+    timeout: 30000
+- tapOn: {text: "Books", index: 1}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_005_books"
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "Education"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Education"}
+- swipe: {direction: UP, duration: 700}
+- waitForAnimationToEnd: {timeout: 2000}
+- scrollUntilVisible:
+    element: {text: "Education", index: 1}
+    direction: DOWN
+    timeout: 30000
+    visibilityPercentage: 50
+    centerElement: true
+- tapOn:
+    text: "Education"
+    index: 1
+    retryTapIfNoChange: true
+- waitForAnimationToEnd: {timeout: 5000}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_005_education"

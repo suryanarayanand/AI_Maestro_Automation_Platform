@@ -1,0 +1,124 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - premium-article
+  - share
+  - comment
+  - non-destructive
+  - needs-grounding
+---
+
+# Establish the validated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+
+# Open a current article using the validated Home article-card structure.
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+
+- tapOn:
+    id: "article_card"
+    index: 0
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Search a bounded set of current Home article candidates. Premium availability
+# is dynamic, so actions are entered only for a candidate visibly marked Premium.
+- repeat:
+    times: 5
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "PREMIUM|Premium"
+          commands:
+            - assertVisible:
+                id: "screen_article_detail"
+            - assertVisible:
+                text: "PREMIUM|Premium"
+            - assertNotVisible:
+                text: "SUBSCRIBE|Already a subscriber.*|Keep reading.*"
+            - assertNotVisible:
+                id: "ad_iframe"
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/SUB_PREM_015_premium_article_candidate"
+
+            # Share is intentionally not automated here: the supplied cta_share
+            # locator and system Quick Share surface are not validated evidence.
+
+            # Post a comment is article-dependent. Search for it in bounded steps
+            # and never enter or submit public comment content.
+            - repeat:
+                times: 12
+                commands:
+                  - runFlow:
+                      when:
+                        visible:
+                          text: "Post a comment"
+                      commands:
+                        - assertVisible:
+                            text: "Post a comment"
+                        - tapOn:
+                            text: "Post a comment"
+                        - waitForAnimationToEnd
+                        - assertNotVisible:
+                            text: "Login to your account"
+                        - waitForAnimationToEnd
+                        - takeScreenshot: "Screenshots/Generated/SUB_PREM_015_comment_access_no_login"
+
+                        # Restore the article without submitting a comment.
+                        - back
+                        - extendedWaitUntil:
+                            visible:
+                              id: "screen_article_detail"
+                            timeout: 25000
+                        - assertVisible:
+                            id: "screen_article_detail"
+                        - assertNotVisible:
+                            text: "Login to your account"
+                        - assertNotVisible:
+                            text: "SUBSCRIBE|Already a subscriber.*|Keep reading.*"
+                        - assertNotVisible:
+                            id: "ad_iframe"
+                        - waitForAnimationToEnd
+                        - takeScreenshot: "Screenshots/Generated/SUB_PREM_015_article_context_restored"
+                  - swipe:
+                      direction: UP
+                  - waitForAnimationToEnd
+
+      # Continue the bounded candidate search without relying on a fixed title.
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+      - tapOn:
+          text: "Close sheet"
+          optional: true
+      - extendedWaitUntil:
+          visible:
+            id: "screen_article_detail"
+          timeout: 30000
+      - assertVisible:
+          id: "screen_article_detail"
+
+- assertVisible:
+    id: "screen_article_detail"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_015_bounded_search_complete"

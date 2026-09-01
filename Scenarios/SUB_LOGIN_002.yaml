@@ -1,0 +1,34 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, login, account-settings]
+---
+- stopApp
+- launchApp:
+    clearState: true
+- extendedWaitUntil: {visible: "Skip", timeout: 30000}
+- assertVisible: "Skip"
+- tapOn: "Skip"
+- extendedWaitUntil: {visible: {id: "screen_home"}, timeout: 30000}
+- assertVisible: {id: "screen_home"}
+- tapOn: {id: "nav_account"}
+- extendedWaitUntil: {visible: {id: "cta_login"}, timeout: 20000}
+- assertVisible: {id: "cta_login"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LOGIN_002_anonymous_account"
+- tapOn: {id: "cta_login"}
+- extendedWaitUntil: {visible: "Email", timeout: 30000}
+- assertVisible: "Email"
+- runFlow: "../Common/SUBSCRIBER_LOGIN_ONCE.yaml"
+- assertVisible: "^Account$"
+- scrollUntilVisible:
+    element: {text: "Log Out|LOGOUT|Logout|Log out"}
+    direction: DOWN
+    timeout: 30000
+- assertVisible: {text: "Log Out|LOGOUT|Logout|Log out"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LOGIN_002_authenticated_account"
+- back
+- extendedWaitUntil: {visible: {id: "screen_home"}, timeout: 30000}
+- assertVisible: {id: "screen_home"}
+- assertNotVisible: {text: "Subscribe|SUBSCRIBE"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LOGIN_002_authenticated_home"

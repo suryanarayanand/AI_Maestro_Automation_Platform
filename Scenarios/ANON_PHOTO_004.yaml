@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, photos]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_PHOTOS.yaml"
+- assertNotVisible: {text: "ADVERTISEMENT|Advertisement|Support Journalism"}
+- repeat:
+    times: 5
+    commands:
+      - swipe: {direction: UP, duration: 450}
+      - waitForAnimationToEnd
+      - assertNotVisible: {text: "ADVERTISEMENT|Advertisement|Support Journalism"}
+- assertVisible: {text: "Photos"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PHOTO_004_no_inline_ads"

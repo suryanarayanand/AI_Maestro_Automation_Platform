@@ -1,0 +1,16 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, editorial]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_EDITORIAL.yaml"
+- swipe: {direction: UP, duration: 600}
+- tapOn: {id: "article_card", index: 1}
+- waitForAnimationToEnd
+- runFlow:
+    when: {visible: {text: "Go beyond the headline.*|subscribe to access.*"}}
+    commands:
+      - tapOn: {point: "91%,36%"}
+- assertVisible: {id: "screen_article_detail"}
+- back
+- assertVisible: {text: "Editorial"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_EDITORIAL_014_returned"

@@ -1,0 +1,137 @@
+{
+    "suite": "Subscriber User Cases - Games",
+    "source_suite": "user_subscriber",
+    "module": "Games",
+    "tests": [
+        {
+            "id": "SUB_GAMES_001",
+            "module": "Games",
+            "section": "Games",
+            "user_state": "SUBSCRIBER",
+            "priority": "P1",
+            "name": "Subscriber Games landing and entitlement",
+            "yaml": "SUB_GAMES_001.yaml",
+            "display_module": "Games"
+        },
+        {
+            "id": "SUB_GAMES_002",
+            "module": "Games",
+            "section": "Games",
+            "user_state": "SUBSCRIBER",
+            "priority": "P1",
+            "name": "Subscriber Games catalogue coverage",
+            "yaml": "SUB_GAMES_002.yaml",
+            "display_module": "Games"
+        },
+        {
+            "id": "SUB_GAMES_004",
+            "module": "Games",
+            "section": "Games",
+            "user_state": "SUBSCRIBER",
+            "priority": "P1",
+            "name": "Sudoku difficulty catalogue",
+            "yaml": "SUB_GAMES_004.yaml",
+            "display_module": "Games"
+        },
+        {
+            "id": "SUB_GAMES_006",
+            "module": "Games",
+            "section": "Games",
+            "user_state": "SUBSCRIBER",
+            "priority": "P1",
+            "name": "Sudoku Easy subscriber gameplay entry",
+            "yaml": "SUB_GAMES_006.yaml",
+            "display_module": "Games"
+        },
+        {
+            "id": "SUB_GAMES_008",
+            "module": "Games",
+            "section": "Games",
+            "user_state": "SUBSCRIBER",
+            "priority": "P1",
+            "name": "Easy Down subscriber play access",
+            "yaml": "SUB_GAMES_008.yaml",
+            "display_module": "Games"
+        },
+        {
+            "id": "SUB_GAMES_011",
+            "module": "Games",
+            "section": "Games",
+            "user_state": "SUBSCRIBER",
+            "priority": "P1",
+            "name": "Word Search subscriber play access",
+            "yaml": "SUB_GAMES_011.yaml",
+            "display_module": "Games"
+        },
+        {
+            "id": "SUB_GAMES_012",
+            "module": "Games",
+            "section": "Games",
+            "user_state": "SUBSCRIBER",
+            "priority": "P1",
+            "name": "Quiz subscriber access",
+            "yaml": "SUB_GAMES_012.yaml",
+            "display_module": "Games"
+        },
+        {
+            "id": "SUB_GAMES_013",
+            "module": "Games",
+            "section": "Games",
+            "user_state": "SUBSCRIBER",
+            "priority": "P1",
+            "name": "Games navigation and entitlement persistence",
+            "yaml": "SUB_GAMES_013.yaml",
+            "display_module": "Games"
+        },
+        {
+            "id": "SUB_GAMES_003",
+            "module": "Games",
+            "priority": "P2",
+            "name": "SUB GAMES 003",
+            "yaml": "SUB_GAMES_003.yaml",
+            "section": "Games",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Games"
+        },
+        {
+            "id": "SUB_GAMES_005",
+            "module": "Games",
+            "priority": "P2",
+            "name": "SUB GAMES 005",
+            "yaml": "SUB_GAMES_005.yaml",
+            "section": "Games",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Games"
+        },
+        {
+            "id": "SUB_GAMES_007",
+            "module": "Games",
+            "priority": "P2",
+            "name": "SUB GAMES 007",
+            "yaml": "SUB_GAMES_007.yaml",
+            "section": "Games",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Games"
+        },
+        {
+            "id": "SUB_GAMES_009",
+            "module": "Games",
+            "priority": "P2",
+            "name": "SUB GAMES 009",
+            "yaml": "SUB_GAMES_009.yaml",
+            "section": "Games",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Games"
+        },
+        {
+            "id": "SUB_GAMES_010",
+            "module": "Games",
+            "priority": "P2",
+            "name": "SUB GAMES 010",
+            "yaml": "SUB_GAMES_010.yaml",
+            "section": "Games",
+            "user_state": "SUBSCRIBER",
+            "display_module": "Games"
+        }
+    ]
+}

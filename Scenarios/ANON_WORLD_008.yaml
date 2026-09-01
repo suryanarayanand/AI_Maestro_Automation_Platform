@@ -1,0 +1,20 @@
+appId: com.mobstac.thehindu
+tags: [anonymous, quick-access, world]
+---
+- runFlow:
+    file: "../Common/OPEN_ANONYMOUS_QUICK_ACCESS.yaml"
+    env:
+      SECTION_NAME: "World"
+
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 120000}
+- tapOn: {id: "article_card", index: 0}
+- runFlow: "../Common/HANDLE_AI_SUMMARY_SHEET.yaml"
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+
+- tapOn: {text: "(?i)Bookmark", optional: true}
+- runFlow:
+    when: {visible: {text: "(?i)Login to your account|Email"}}
+    commands:
+      - assertVisible: "(?i)Login to your account|Email"
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_WORLD_008_bookmark_login"

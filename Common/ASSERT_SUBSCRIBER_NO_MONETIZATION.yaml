@@ -1,0 +1,8 @@
+appId: com.mobstac.thehindu
+tags: [common, subscriber, entitlement, no-ads]
+---
+- assertNotVisible: {text: "ADVERTISEMENT|Advertisement"}
+- assertNotVisible: {id: "aw0"}
+- assertNotVisible: {id: "ad_iframe"}
+- assertNotVisible: {text: "Image for Taboola Advertising Unit"}
+- assertNotVisible: {text: "Subscribe|SUBSCRIBE"}

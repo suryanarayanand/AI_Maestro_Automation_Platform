@@ -1,0 +1,23 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, videos]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_VIDEO_ARTICLE.yaml"
+
+- tapOn: {text: "Comment|Post a comment", index: 0}
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil: {visible: {text: ".*SIGN IN.*CONVERSATION.*|.*Sign in.*|.*Login.*|.*LOGIN.*"}, timeout: 30000}
+- assertVisible: {text: ".*SIGN IN.*CONVERSATION.*|.*Sign in.*|.*Login.*|.*LOGIN.*"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_VIDEO_013_comment_login"
+
+- tapOn: {text: "Close sheet|CLOSE|Close", optional: true}
+
+- back
+
+- assertVisible: {id: "screen_article_detail"}
+

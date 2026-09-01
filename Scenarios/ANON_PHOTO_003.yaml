@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, photos]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_PHOTOS.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PHOTO_003_top"
+- repeat:
+    times: 3
+    commands:
+      - swipe: {direction: UP, duration: 500}
+      - waitForAnimationToEnd
+- assertVisible: {text: "Photos"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PHOTO_003_mixed_grid_and_badges"

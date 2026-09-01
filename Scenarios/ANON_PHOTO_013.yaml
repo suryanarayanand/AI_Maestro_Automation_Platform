@@ -1,0 +1,12 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, photos]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_MULTI_PHOTO_GALLERY.yaml"
+- tapOn: {text: "Comment|Post a comment"}
+- extendedWaitUntil: {visible: {text: "Sign in|Login|LOGIN"}, timeout: 30000}
+- assertVisible: {text: "Sign in|Login|LOGIN"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PHOTO_013_comment_login"
+- tapOn: {text: "Close sheet|CLOSE|Close", optional: true}
+- back
+- assertVisible: {text: ".*[0-9]+/[0-9]+.*"}

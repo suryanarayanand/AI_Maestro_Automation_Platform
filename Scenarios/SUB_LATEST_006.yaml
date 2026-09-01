@@ -1,0 +1,78 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - latest-news
+  - article
+  - full-access
+  - no-monetisation
+---
+
+# Establish the authenticated Subscriber state.
+- runFlow: "../Common/OPEN_SUBSCRIBER_LATEST_NEWS.yaml"
+
+# Open the supplied non-live Latest News article reference. The validated
+# article-detail screen assertion runtime-gates this reference-only URL.
+- openLink: "https://www.thehindu.com/news/national/kerala/kerala-assembly-unanimously-passes-resolution-to-change-official-name-of-state-to-keralam/article67175490.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Required entitlement check after article navigation.
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+# Positions 1 and 2: Traverse bounded, settled article-body states toward the
+# lower article. After every movement, verify that article detail remains open
+# and rerun the Subscriber monetisation/paywall contract.
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+      - assertNotVisible:
+          text: "READ FULL ARTICLE"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+
+# Position 3: The entitled article-detail surface must remain available at the
+# final bounded reading state rather than being replaced by a restriction.
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 4: Final settled proof that no full-article gate, Subscribe CTA, or
+# validated advertisement marker is present. The shared Subscriber contract
+# covers the broader paywall, offer, login, Keep reading, and Taboola surfaces.
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_006_article_lower_full_access"

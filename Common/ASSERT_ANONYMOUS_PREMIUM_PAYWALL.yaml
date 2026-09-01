@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+---
+- scrollUntilVisible:
+    element: {text: "Keep reading.*free for 3 days|.*[0-9]+%.*off.*|Already a subscriber.*"}
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+- assertVisible: {text: "Keep reading.*free for 3 days|.*[0-9]+%.*off.*|Already a subscriber.*"}
+- scrollUntilVisible:
+    element: {text: "Already a subscriber.*|Login|LOGIN|Sign in|SIGN IN"}
+    direction: DOWN
+    timeout: 60000
+    speed: 40
+- assertVisible: {text: "Already a subscriber.*|Login|LOGIN|Sign in|SIGN IN"}

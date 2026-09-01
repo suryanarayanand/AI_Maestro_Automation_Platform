@@ -1,0 +1,227 @@
+{
+    "suite": "Anonymous User Cases - Article Page",
+    "source_suite": "user_anonymous",
+    "module": "Article Page",
+    "tests": [
+        {
+            "id": "ANON_ARTICLE_001",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Article identity, header and metadata",
+            "yaml": "ANON_ARTICLE_001.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_002",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Readable article content and vertical scrolling",
+            "yaml": "ANON_ARTICLE_002.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_003",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Inline, sticky and blank advertisement handling",
+            "yaml": "ANON_ARTICLE_003.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_004",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Interstitial advertisement safe close",
+            "yaml": "ANON_ARTICLE_004.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_005",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Floating article action bar",
+            "yaml": "ANON_ARTICLE_005.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_006",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Reading options and text-size changes",
+            "yaml": "ANON_ARTICLE_006.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_007",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Same article across light and dark themes",
+            "yaml": "ANON_ARTICLE_007.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_008",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Listen to Article playback for accessible content",
+            "yaml": "ANON_ARTICLE_008.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_009",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Audio entitlement follows paywall state",
+            "yaml": "ANON_ARTICLE_009.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_010",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "AI Summary conditional entitlement",
+            "yaml": "ANON_ARTICLE_010.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_011",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Premium article reader paywall",
+            "yaml": "ANON_ARTICLE_011.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_012",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Metered non-premium article paywall",
+            "yaml": "ANON_ARTICLE_012.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_013",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Anonymous Bookmark redirects to sign-in",
+            "yaml": "ANON_ARTICLE_013.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_014",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Article sharing without forced authentication",
+            "yaml": "ANON_ARTICLE_014.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_015",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Comment authentication and paywall dependency",
+            "yaml": "ANON_ARTICLE_015.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_016",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Related headlines and recommended navigation",
+            "yaml": "ANON_ARTICLE_016.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_017",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Taboola recommendation and external return",
+            "yaml": "ANON_ARTICLE_017.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_018",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Swipe-to-read collection and read meter",
+            "yaml": "ANON_ARTICLE_018.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_019",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Article Back navigation",
+            "yaml": "ANON_ARTICLE_019.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_020",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Related Topics navigation",
+            "yaml": "ANON_ARTICLE_020.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_021",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Archive article paywall",
+            "yaml": "ANON_ARTICLE_021.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "ANON_ARTICLE_022",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Paywall plans and safe dismissal",
+            "yaml": "ANON_ARTICLE_022.yaml",
+            "display_module": "Article Page"
+        }
+    ]
+}

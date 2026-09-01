@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}User Profiles{% endblock %}
+{% block page_title %}User profiles{% endblock %}
+{% block content %}
+<p class="page-intro">User Profiles defines the account state and credentials carried into automation. Modules and cases remain in Test Suites.</p>
+<div class="credential-profile-grid">
+{% for profile in profiles %}
+  <a class="surface user-state-card profile-{{ profile.tone }}" href="{{ url_for('user_profiles.detail', state=profile.key) }}">
+    <header><span class="profile-icon">{{ profile.icon }}</span><div><small>User state</small><h2>{{ profile.name }}</h2><p>{{ profile.description }}</p></div></header>
+    <div class="credential-status"><strong>{{ 'Automation credentials' if profile.credentials else 'No credentials required' }}</strong>{% if profile.credentials %}<span class="status-pill status-{{ 'passed' if profile.credentials.configured else 'review' }}">{{ 'Configured' if profile.credentials.configured else 'Not configured' }}</span>{% endif %}</div>
+  </a>
+{% endfor %}
+</div>
+{% endblock %}

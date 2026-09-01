@@ -1,0 +1,57 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - hamburger
+  - article
+  - full-access
+  - evidence-limited
+---
+
+# Establish the required authenticated subscriber state.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Position 1: Open a representative Technology-section article fixture.
+# A validated hamburger-section and first-card locator was not supplied, so the
+# active Article Library reference is used without claiming first-card coverage.
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+# Position 2: Traverse the 15-paragraph article in bounded reading steps.
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: "UP"
+      - waitForAnimationToEnd
+
+# Position 3: Verify that navigation resolved to the validated article-detail screen.
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 4: Verify continued subscriber access in lower reading states using
+# the validated article screen and Subscribe/paywall-prompt selector.
+- repeat:
+    times: 2
+    commands:
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - swipe:
+          direction: "UP"
+      - waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HAM_008_article_lower_subscriber_access"

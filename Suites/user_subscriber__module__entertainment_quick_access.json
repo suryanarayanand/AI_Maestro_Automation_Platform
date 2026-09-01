@@ -1,0 +1,127 @@
+{
+    "suite": "Subscriber User Cases - Entertainment Quick Access",
+    "source_suite": "user_subscriber",
+    "module": "Entertainment Quick Access",
+    "tests": [
+        {
+            "id": "SUB_ENTERTAINMENT_001",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Entertainment launch, selection and subscriber identity",
+            "yaml": "SUB_ENTERTAINMENT_001.yaml",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "SUB_ENTERTAINMENT_002",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Entertainment refresh and content recovery",
+            "yaml": "SUB_ENTERTAINMENT_002.yaml",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "SUB_ENTERTAINMENT_003",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Entertainment listing identity and visual structure",
+            "yaml": "SUB_ENTERTAINMENT_003.yaml",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "SUB_ENTERTAINMENT_004",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Entertainment deep scroll, pagination and subscriber ad-free entitlement",
+            "yaml": "SUB_ENTERTAINMENT_004.yaml",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "SUB_ENTERTAINMENT_005",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Entertainment article selection and destination integrity",
+            "yaml": "SUB_ENTERTAINMENT_005.yaml",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "SUB_ENTERTAINMENT_006",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Entertainment subscriber full-article entitlement",
+            "yaml": "SUB_ENTERTAINMENT_006.yaml",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "SUB_ENTERTAINMENT_007",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Entertainment conditional AI Summary and Listen controls",
+            "yaml": "SUB_ENTERTAINMENT_007.yaml",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "SUB_ENTERTAINMENT_008",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Entertainment reading options, text size and themes",
+            "yaml": "SUB_ENTERTAINMENT_008.yaml",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "SUB_ENTERTAINMENT_009",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Entertainment bookmark, share and comment engagement",
+            "yaml": "SUB_ENTERTAINMENT_009.yaml",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "SUB_ENTERTAINMENT_010",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Entertainment post-article content continuity",
+            "yaml": "SUB_ENTERTAINMENT_010.yaml",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "SUB_ENTERTAINMENT_011",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Entertainment article paging and navigation recovery",
+            "yaml": "SUB_ENTERTAINMENT_011.yaml",
+            "display_module": "Entertainment Quick Access"
+        },
+        {
+            "id": "SUB_ENTERTAINMENT_012",
+            "module": "Entertainment Quick Access",
+            "section": "Entertainment Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Entertainment loading, live-content and failure resilience",
+            "yaml": "SUB_ENTERTAINMENT_012.yaml",
+            "display_module": "Entertainment Quick Access"
+        }
+    ]
+}

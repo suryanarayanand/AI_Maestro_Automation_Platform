@@ -1,0 +1,19 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_ACCOUNT.yaml"
+- scrollUntilVisible:
+    element: {text: "Login"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Login"}
+- extendedWaitUntil: {visible: {text: "Login to your account"}, timeout: 30000}
+- assertVisible: {text: "Login to your account"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ACCOUNT_002_destination"
+- back
+- extendedWaitUntil: {visible: {id: "screen_user_menu"}, timeout: 30000}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ACCOUNT_002_result"

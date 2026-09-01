@@ -1,0 +1,127 @@
+{
+    "suite": "Subscriber User Cases - World Quick Access",
+    "source_suite": "user_subscriber",
+    "module": "World Quick Access",
+    "tests": [
+        {
+            "id": "SUB_WORLD_001",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World launch, selection and subscriber identity",
+            "yaml": "SUB_WORLD_001.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_002",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World refresh and content recovery",
+            "yaml": "SUB_WORLD_002.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_004",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World deep scroll, pagination and subscriber ad-free entitlement",
+            "yaml": "SUB_WORLD_004.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_005",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World article selection and destination integrity",
+            "yaml": "SUB_WORLD_005.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_006",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World subscriber full-article entitlement",
+            "yaml": "SUB_WORLD_006.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_007",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World conditional AI Summary and Listen controls",
+            "yaml": "SUB_WORLD_007.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_008",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World reading options, text size and themes",
+            "yaml": "SUB_WORLD_008.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_009",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World bookmark, share and comment engagement",
+            "yaml": "SUB_WORLD_009.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_010",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World post-article content continuity",
+            "yaml": "SUB_WORLD_010.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_011",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World article paging and navigation recovery",
+            "yaml": "SUB_WORLD_011.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_012",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World loading, live-content and failure resilience",
+            "yaml": "SUB_WORLD_012.yaml",
+            "display_module": "World Quick Access"
+        },
+        {
+            "id": "SUB_WORLD_003",
+            "module": "World Quick Access",
+            "section": "World Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "World listing identity and visual structure",
+            "yaml": "SUB_WORLD_003.yaml",
+            "display_module": "World Quick Access"
+        }
+    ]
+}

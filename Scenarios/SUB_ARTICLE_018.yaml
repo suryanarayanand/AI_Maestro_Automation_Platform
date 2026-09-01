@@ -1,0 +1,92 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - article
+  - live-article
+  - embedded-content
+  - bounded-scroll
+
+---
+
+# SUB_ARTICLE_018 — Live article embedded-frame scrolling
+# Establish the required authenticated subscriber state before opening the
+# active Live Article reference candidate.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Position 1: Open the repository Live Article reference. The article-detail
+# assertion is the runtime gate proving that this target build accepted the URL.
+- openLink: "https://www.thehindu.com/business/budget/budget-2024-live-updates-nirmala-sitharaman-presents-interim-budget-february-1/article67796321.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Positions 1–4: Use exactly three finite gestures on the currently displayed
+# live-article surface. Each gesture is followed by an article-screen assertion
+# and uniquely named settled evidence. The flow intentionally does not attempt
+# to locate or reach the absolute end of the live content.
+
+# Confirm the selected article is identified as Live before frame traversal.
+- assertVisible:
+    text: ".*Live.*|.*LIVE.*"
+
+# Settled live-article position 1.
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_018_live_frame_position_1"
+
+# Settled live-article position 2.
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_018_live_frame_position_2"
+
+# Settled live-article position 3.
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_018_live_frame_position_3"
+
+# Live updates use a long embedded frame. Continue with bounded gestures and
+# never require automation to reach the absolute article end.
+- repeat:
+    times: 5
+    commands:
+      - swipe:
+          direction: UP
+          duration: 700
+      - waitForAnimationToEnd:
+          timeout: 2000
+      - assertVisible:
+          id: "screen_article_detail"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_018_live_frame_position_8"

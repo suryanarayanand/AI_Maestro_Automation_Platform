@@ -1,0 +1,15 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, trending, launch,navigation]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING.yaml"
+
+- assertVisible: {id: "nav_trending"}
+
+- assertVisible: {id: "screen_trending"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_001_selected_navigation"
+

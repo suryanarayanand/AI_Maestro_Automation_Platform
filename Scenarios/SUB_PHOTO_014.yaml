@@ -1,0 +1,85 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - photos
+  - gallery
+  - full-access
+  - no-paywall
+---
+
+# Establish the required authenticated subscriber state.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Open the repository photo-gallery fixture. Runtime screen validation prevents
+# an unsupported browser route or unavailable fixture from producing a false pass.
+- openLink: "https://www.thehindu.com/sport/cricket/ipl2013/match-photos/rajasthan-royals-thrash-mumbai-indians/article4627667.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 1: Scroll within the gallery until the validated expansion control
+# is visible, then activate it.
+- scrollUntilVisible:
+    element:
+      text: "READ FULL ARTICLE"
+    direction: DOWN
+    timeout: 50000
+
+- assertVisible:
+    text: "READ FULL ARTICLE"
+
+- tapOn:
+    text: "READ FULL ARTICLE"
+
+- waitForAnimationToEnd
+
+# Position 3: The expansion must remain in the same article-detail experience,
+# and the collapsed-content control must be gone immediately after activation.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_014_expanded_article_top"
+
+# Position 2: Traverse bounded, settled reading states. At every state, verify
+# that article detail remains available and no validated entitlement gate appears.
+- repeat:
+    times: 8
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "READ FULL ARTICLE"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: '^Already a [Ss]ubscriber\? Login$'
+
+# Position 4: Recheck subscriber entitlement at the final settled reading state.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: '^Already a [Ss]ubscriber\? Login$'
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_014_expanded_article_lower_state"

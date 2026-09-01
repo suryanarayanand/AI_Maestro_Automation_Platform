@@ -1,0 +1,152 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - world
+  - article
+  - ai-summary
+  - article-audio
+  - conditional
+  - thirty-seconds
+---
+
+# SUB_WORLD_007 — World conditional AI Summary and Listen controls
+
+# Establish the repository-managed authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_WORLD.yaml"
+
+# Open active Article Library reference 138. Its 15-paragraph classification
+# supplies a long-form candidate, while feature availability is qualified at
+# runtime because the reference is not a validated AI/audio fixture.
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- waitForAnimationToEnd
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- waitForAnimationToEnd
+
+# Allow initial network-backed article content to settle before inspection.
+- evalScript: '${(() => { const end = Date.now() + 5000; while (Date.now() < end) {} return true; })()}'
+
+- assertWithAI: "Verify that an article page has opened successfully and contains a readable long-form article body with multiple rendered paragraphs. Fail if the destination is blank, loading-only, an error page, or unrelated content."
+
+# Track whether each product-dependent control was encountered during the
+# bounded traversal. This prevents a floating control from being exercised more
+# than once while still allowing unsupported controls to be recorded and skipped.
+- evalScript: '${output.aiSummaryHandled = false; output.articleAudioHandled = false; true}'
+
+- repeat:
+    times: 8
+    commands:
+      # Positions 1 and 3: conditionally open and verify entitled AI Summary.
+      - runFlow:
+          when:
+            true: '${output.aiSummaryHandled == false}'
+          commands:
+            - runFlow:
+                when:
+                  visible:
+                    text: '(?i)^AI Summary$'
+                commands:
+                  - tapOn:
+                      text: '(?i)^AI Summary$'
+                  - waitForAnimationToEnd
+                  - extendedWaitUntil:
+                      visible:
+                        text: "Summary"
+                      timeout: 20000
+                  - assertVisible:
+                      text: "Summary"
+                  - extendedWaitUntil:
+                      visible:
+                        text: "Article FAQs"
+                      timeout: 20000
+                  - assertVisible:
+                      text: "Article FAQs"
+                  - assertNotVisible:
+                      text: '(?i)^Subscribe( Now)?$'
+                  - evalScript: '${output.aiSummaryHandled = true; true}'
+                  - waitForAnimationToEnd
+                  - takeScreenshot: "Screenshots/Generated/SUB_WORLD_007_entitled_ai_summary"
+                  - back
+                  - waitForAnimationToEnd
+
+      # Positions 2 and 4: conditionally start article audio, retain active
+      # playback for 30 measured seconds, verify progress, and then pause it.
+      - runFlow:
+          when:
+            true: '${output.articleAudioHandled == false}'
+          commands:
+            - runFlow:
+                when:
+                  visible:
+                    text: '(?i)^(Listen to Article|Play)$'
+                commands:
+                  - tapOn:
+                      text: '(?i)^(Listen to Article|Play)$'
+                      index: 0
+                  - waitForAnimationToEnd
+                  - runFlow:
+                      when:
+                        visible:
+                          text: '(?i)^Play$'
+                      commands:
+                        - tapOn:
+                            text: '(?i)^Play$'
+                            index: 0
+                  - extendedWaitUntil:
+                      visible:
+                        text: '(?i)^(Pause|Stop Playing)$'
+                      timeout: 15000
+                  - assertVisible:
+                      text: '(?i)^(Pause|Stop Playing)$'
+                  - evalScript: '${(() => { const end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+                  - assertVisible:
+                      text: '(?i)^(Pause|Stop Playing)$'
+                  - assertWithAI: "At the 30-second checkpoint, verify that the visible article audio player remains active and that its elapsed-time or progress presentation has advanced from its initial position. Fail if the player is blank, loading, errored, stopped, or still at its initial progress position."
+                  - tapOn:
+                      text: '(?i)^(Pause|Stop Playing)$'
+                      index: 0
+                  - extendedWaitUntil:
+                      visible:
+                        text: '(?i)^(Listen to Article|Play)$'
+                      timeout: 15000
+                  - assertVisible:
+                      text: '(?i)^(Listen to Article|Play)$'
+                  - evalScript: '${output.articleAudioHandled = true; true}'
+                  - waitForAnimationToEnd
+                  - takeScreenshot: "Screenshots/Generated/SUB_WORLD_007_article_audio_paused_after_30_seconds"
+
+      # Continue only a bounded search through the same article.
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+
+# Record a conditional skip when no AI Summary control was found in the bounded,
+# settled article states. This is not reported as an entitlement failure.
+- runFlow:
+    when:
+      true: '${output.aiSummaryHandled == false}'
+    commands:
+      - assertNotVisible:
+          text: '(?i)^AI Summary$'
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_WORLD_007_ai_summary_absent_skipped"
+
+# Record the corresponding conditional skip when article audio is unsupported.
+- runFlow:
+    when:
+      true: '${output.articleAudioHandled == false}'
+    commands:
+      - assertNotVisible:
+          text: '(?i)^(Listen to Article|Play|Pause|Stop Playing)$'
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_WORLD_007_article_audio_absent_skipped"

@@ -1,0 +1,108 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - editorial
+  - listing
+  - metadata
+  - visual-layout
+
+---
+
+# SUB_EDITORIAL_003 — Editorial listing identity and visual structure
+
+# Establish the repository-managed authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Navigate with the validated Editorial text locator.
+- extendedWaitUntil:
+    visible:
+      text: "Editorial"
+    timeout: 30000
+
+- assertVisible:
+    text: "Editorial"
+
+- tapOn:
+    text: "Editorial"
+
+- waitForAnimationToEnd
+
+# Require both the section identity and the validated common article-card
+# surface so that a home-page Editorial shortcut cannot satisfy navigation.
+- extendedWaitUntil:
+    visible:
+      text: "Recent Editorials"
+    timeout: 30000
+
+- assertVisible:
+    text: "Editorial"
+
+- assertVisible:
+    text: "Recent Editorials"
+
+- assertWithAI: "Verify that the full Editorial listing is open rather than an Editorial shortcut or teaser on another screen. A readable Editorial identity, its recognizable elephant emblem, and a rendered article-card listing must be visible. Fail if navigation is blocked, the screen is blank or loading-only, or a login gate, paywall, error, or unrelated section is displayed."
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+# Obligation positions 1–4, viewport 1. Inspect every fully or meaningfully
+# visible card and validate the required identity, structure and associations.
+- assertVisible:
+    text: "Editorial"
+
+- assertVisible:
+    id: "screen_home"
+
+- assertWithAI: "Inspect every Editorial card that is fully or meaningfully visible in this first listing viewport. Every inspected card must have a readable headline. Any byline, publication time, timestamp, or other metadata presented for a card must be readable and visibly attached to that same card rather than an adjacent card. Preserve the Editorial identity and recognizable elephant emblem. The listing must use the expected thumbnail-free Editorial card style: article cards must not contain news-photo thumbnails, blank image boxes, broken-image placeholders, or stretched image content. The emblem is permitted and must render clearly. Fail for unreadable or missing headlines, detached metadata, unintended overlap, clipping, broken content, or a collapsed card hierarchy."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_003_viewport_01_identity_cards_metadata"
+
+# Viewport 2: move to a distinct lower Editorial listing state.
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    text: "Editorial"
+
+- assertVisible:
+    id: "screen_home"
+
+- assertWithAI: "Verify this is a distinct lower viewport of the same Editorial listing, not the unchanged first viewport or an unrelated section. Inspect every Editorial card that is fully or meaningfully visible. Every inspected card must have a readable headline. Any byline, publication time, timestamp, or other metadata shown for a card must remain readable and visibly attached to that card rather than a neighboring card. The Editorial identity and recognizable elephant emblem must remain visible and intact. Preserve the thumbnail-free Editorial listing style: no article card may show a news-photo thumbnail, blank image box, broken-image placeholder, or stretched image content. Fail for overlap, clipping, detached metadata, broken content, or an unreadable card hierarchy."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_003_viewport_02_identity_cards_metadata"
+
+# Viewport 3: a second bounded transition completes the required minimum of
+# three inspected Editorial listing viewports.
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    text: "Editorial"
+
+- assertVisible:
+    id: "screen_home"
+
+- assertWithAI: "Verify this is another distinct lower viewport of the same Editorial listing, different from the immediately preceding viewport. Inspect every Editorial card that is fully or meaningfully visible. Every inspected card must have a readable headline. Any byline, publication time, timestamp, or other metadata shown for a card must be readable and visibly attached to that card rather than an adjacent card. The Editorial identity and recognizable elephant emblem must remain visible and intact. Preserve the expected thumbnail-free Editorial listing style: article cards must not show news-photo thumbnails, blank image boxes, broken-image placeholders, or stretched image content. Fail for unintended overlap, clipping, detached metadata, broken content, or a collapsed card hierarchy."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_003_viewport_03_identity_cards_metadata"
+
+# Revalidate subscriber entitlement after representative listing scrolling.
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- assertVisible:
+    text: "Editorial"
+
+- assertVisible:
+    id: "screen_home"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_003_final_editorial_listing_state"

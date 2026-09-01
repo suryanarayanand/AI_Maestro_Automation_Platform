@@ -1,0 +1,28 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, videos]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_VIDEO_ARTICLE.yaml"
+
+- assertVisible: {text: "SHOWS|VIDEO|VIDEOS"}
+- runFlow:
+
+    when: {visible: {text: ".*[0-9]+ [Mm]in(s)? [Rr]ead.*"}}
+    commands:
+
+      - assertVisible: {text: ".*[0-9]+ [Mm]in(s)? [Rr]ead.*"}
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_VIDEO_005_reading_time"
+
+- runFlow:
+
+    when: {notVisible: {text: ".*[0-9]+ [Mm]in(s)? [Rr]ead.*"}}
+    commands:
+
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_VIDEO_005_reading_time_missing_review"
+
+- assertVisible: {id: "screen_article_detail"}
+

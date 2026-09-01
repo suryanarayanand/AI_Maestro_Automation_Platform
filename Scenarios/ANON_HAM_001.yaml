@@ -1,0 +1,11 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_001_open"
+- tapOn: {id: "cta_drawer_close"}
+- assertVisible: {id: "screen_home"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_001_result"

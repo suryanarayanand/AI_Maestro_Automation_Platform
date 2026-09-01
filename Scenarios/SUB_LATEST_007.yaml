@@ -1,0 +1,165 @@
+﻿appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - latest-news
+  - ai-summary
+  - article-audio
+  - conditional
+  - thirty-seconds
+
+---
+
+# SUB_LATEST_007 â€” Latest News conditional AI Summary and Listen controls
+# Subscriber authentication is established by the repository-managed setup.
+- runFlow: "../Common/OPEN_SUBSCRIBER_LATEST_NEWS.yaml"
+
+# Latest News reference 41 is opened directly because no validated dynamic
+# Latest News card selector was supplied. Its URL remains runtime-qualified.
+- openLink: "https://www.thehindu.com/news/national/kerala/kerala-assembly-unanimously-passes-resolution-to-change-official-name-of-state-to-keralam/article67175490.ece"
+
+- waitForAnimationToEnd
+
+- assertWithAI: "Verify that a readable The Hindu article page has finished rendering from the supplied Latest News reference. Require a visible article headline and readable article content. Fail for a blank page, browser or application error, unresolved loader, unrelated destination, or subscription gate blocking the article."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_007_article_settled"
+
+# Positions 1 and 3: AI Summary is eligibility-dependent. Maestro records this
+# block as skipped when the action is not rendered for the selected article.
+- runFlow:
+    when:
+      visible:
+        text: '(?i)^AI Summary$'
+    commands:
+      - assertVisible:
+          text: '(?i)^AI Summary$'
+
+      - tapOn:
+          text: '(?i)^AI Summary$'
+
+      - waitForAnimationToEnd
+
+      - extendedWaitUntil:
+          visible:
+            text: '^Summary$'
+          timeout: 20000
+
+      - assertVisible:
+          text: '^Summary$'
+
+      - assertNotVisible:
+          text: '(?i)^Subscribe$'
+
+      - scrollUntilVisible:
+          element:
+            text: '^Article FAQs$'
+          direction: DOWN
+          timeout: 20000
+          speed: 40
+          visibilityPercentage: 40
+
+      - extendedWaitUntil:
+          visible:
+            text: '^Article FAQs$'
+          timeout: 10000
+
+      - assertVisible:
+          text: '^Article FAQs$'
+
+      - assertNotVisible:
+          text: '(?i)^Subscribe$'
+
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_LATEST_007_entitled_ai_summary"
+
+      - back
+      - waitForAnimationToEnd
+
+      - assertWithAI: "Verify that dismissing the entitled AI Summary returned to the same readable article and did not expose a subscription gate or error surface."
+
+# Record the settled outcome even when AI Summary was not supplied and the
+# conditional branch was therefore skipped.
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_007_ai_summary_conditional_outcome"
+
+# Reopen the same reference so audio discovery begins from a clean article state.
+- openLink: "https://www.thehindu.com/news/national/kerala/kerala-assembly-unanimously-passes-resolution-to-change-official-name-of-state-to-keralam/article67175490.ece"
+
+- waitForAnimationToEnd
+
+- assertWithAI: "Verify that the same readable Latest News article reference has reopened and settled without a blank page, loading-only state, application error, or subscription gate blocking its content."
+
+# Positions 2 and 4: Listen to Article is support-dependent. When present, open
+# it, start playback, retain the active active playback state for a measured 30 seconds,
+# verify visible progress, and then pause playback.
+- runFlow:
+    when:
+      visible:
+        text: '(?i)^Listen to Article$'
+    commands:
+      - assertVisible:
+          text: '(?i)^Listen to Article$'
+
+      - tapOn:
+          text: '(?i)^Listen to Article$'
+
+      - waitForAnimationToEnd
+
+      # Some supported presentations expose a separate Play action after the
+      # Listen control is opened; this nested branch is skipped if playback
+      # started directly and Pause is already displayed.
+      - runFlow:
+          when:
+            visible:
+              text: '(?i)^(Listen to Article|Play)$'
+          commands:
+            - tapOn:
+                text: '(?i)^(Listen to Article|Play)$'
+                index: 0
+
+      - extendedWaitUntil:
+          visible:
+            text: '(?i)^(Pause|Stop Playing)$'
+          timeout: 20000
+
+      - assertVisible:
+          text: '(?i)^(Pause|Stop Playing)$'
+
+      # Approved measured playback checkpoint.
+      - evalScript: '${(() => { const end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+
+      - assertVisible:
+          text: '(?i)^(Pause|Stop Playing)$'
+
+      - assertWithAI: "At the 30-second checkpoint, verify that the article audio player remains settled and active, visibly exposes the active playback state, and shows elapsed-time or progress beyond its initial position. Fail if playback stopped, progress is still at its initial position, or the player is blank, loading, unresponsive, or errored."
+
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_LATEST_007_audio_active_after_30_seconds"
+
+      - tapOn:
+          text: '(?i)^(Pause|Stop Playing)$'
+          index: 0
+
+      - extendedWaitUntil:
+          visible:
+            text: '(?i)^(Listen to Article|Play)$'
+          timeout: 10000
+
+      - assertVisible:
+          text: '(?i)^(Listen to Article|Play)$'
+
+      - assertNotVisible:
+          text: '(?i)^(Pause|Stop Playing)$'
+
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_LATEST_007_audio_paused"
+
+# Record the final settled article state when Listen to Article was absent and
+# its conditional branch was skipped, or after supported playback was paused.
+- assertWithAI: "Verify that the application remains responsive on the readable article after conditional audio handling and that no blank, loading-only, or error surface is present."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_007_listen_conditional_outcome"

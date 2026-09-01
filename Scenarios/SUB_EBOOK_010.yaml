@@ -1,0 +1,39 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - ebooks
+  - entitlement
+  - evidence-blocked
+---
+
+# Establish the repository-standard authenticated subscriber state.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Open the eBooks listing through the validated Home navigation control.
+- extendedWaitUntil:
+    visible:
+      id: "nav_ebooks"
+    timeout: 30000
+- tapOn:
+    id: "nav_ebooks"
+- extendedWaitUntil:
+    visible:
+      id: "screen_ebooks"
+    timeout: 30000
+- assertVisible:
+    id: "screen_ebooks"
+
+# Grounded subscriber checks that can safely be performed on the listing.
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    id: "cta_login"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+# Record the settled, reachable eBooks listing state. Selection is intentionally
+# not fabricated because no validated eBook-card locator was supplied.
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EBOOK_010_ebooks_listing_grounded"

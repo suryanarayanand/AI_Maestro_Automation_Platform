@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, videos, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- assertVisible: {text: "Videos"}
+- tapOn: {text: "Videos"}
+- extendedWaitUntil: {visible: {text: "Videos|VIDEOS"}, timeout: 30000}
+- assertVisible: {text: "Videos|VIDEOS"}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_001_landing"
+

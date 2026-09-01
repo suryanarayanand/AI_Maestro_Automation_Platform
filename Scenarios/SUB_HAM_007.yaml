@@ -1,0 +1,94 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - hamburger
+  - videos
+  - media
+  - navigation
+  - state-restoration
+---
+
+# Establish an authenticated Subscriber Home state.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+
+# Position 1: Open Videos from Hamburger.
+- tapOn:
+    id: "nav_menu"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_hamburger"
+    timeout: 15000
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- tapOn:
+    text: "Videos"
+
+- waitForAnimationToEnd
+
+- assertNotVisible:
+    id: "screen_hamburger"
+
+# Position 2: Open one current media card and navigate Back.
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+
+- tapOn:
+    id: "article_card"
+    index: 0
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HAM_007_media_destination_opened"
+
+- back
+
+# Position 3: Verify that the Videos destination has media cards.
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+
+- assertVisible:
+    text: "Videos"
+
+- assertVisible:
+    id: "article_card"
+
+# Position 4: Verify the media destination responded and Videos was restored.
+- assertNotVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    id: "screen_hamburger"
+
+- assertVisible:
+    text: "Videos"
+
+- assertVisible:
+    id: "article_card"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HAM_007_videos_restored"

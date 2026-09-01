@@ -1,0 +1,63 @@
+appId: com.mobstac.thehindu
+
+tags: [generated, ordered, subscriber, home, article-pager]
+
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- evalScript: ${output.homeFeedSwipes = 1 + Math.floor(Math.random() * 4)}
+
+- repeat:
+    times: ${output.homeFeedSwipes}
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd: {timeout: 1200}
+
+- tapOn: {id: "article_card", index: 0}
+
+- tapOn: {text: "Close sheet", optional: true}
+
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+
+- repeat:
+    times: 8
+    commands:
+      - swipe: {direction: DOWN}
+      - waitForAnimationToEnd: {timeout: 1000}
+
+- repeat:
+
+    times: 5
+
+    commands:
+
+      - swipe: {direction: LEFT}
+
+      - waitForAnimationToEnd: {timeout: 3000}
+
+      - assertVisible: {text: "Text size|Bookmark|Share"}
+
+      - assertNotVisible: {text: "SUBSCRIBE|Already a subscriber.*|Keep reading.*"}
+
+      - assertNotVisible: {id: "ad_iframe"}
+
+- repeat:
+
+    times: 5
+
+    commands:
+
+      - swipe: {direction: RIGHT}
+
+      - waitForAnimationToEnd: {timeout: 3000}
+
+      - assertVisible: {text: "Text size|Bookmark|Share"}
+
+      - assertNotVisible: {text: "SUBSCRIBE|Already a subscriber.*|Keep reading.*"}
+
+      - assertNotVisible: {id: "ad_iframe"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HOME_012_pager_session_retained"
+

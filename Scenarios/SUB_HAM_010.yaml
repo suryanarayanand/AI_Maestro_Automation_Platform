@@ -1,0 +1,33 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - hamburger
+  - navigation-recovery
+  - evidence-limited
+---
+
+# Precondition: an authenticated subscriber session is already on Home.
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- assertVisible:
+    id: "screen_home"
+
+# Grounded residual coverage: exercise Home after recovery and verify that the
+# application remains loaded without an article-detail surface.
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- assertVisible:
+    id: "screen_home"
+- assertNotVisible:
+    id: "screen_article_detail"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HAM_010_home_recovery_evidence_limited"

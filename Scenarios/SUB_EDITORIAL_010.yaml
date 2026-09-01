@@ -1,0 +1,129 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - editorial
+  - post-article
+  - related-content
+  - state-restoration
+---
+# Establish the authenticated subscriber state.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Open the controlled Editorial candidate and runtime-gate the reference URL.
+- openLink: "https://www.thehindu.com/opinion/editorial/brazen-intimidation-the-hindu-editorial-on-the-tax-survey-on-the-bbc/article66513588.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_010_original_editorial"
+
+# Continue to the controlled article's post-article content.
+- scrollUntilVisible:
+    element:
+      text: "Related Topics"
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 50
+
+- assertVisible:
+    text: "Related Topics"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_010_related_topics"
+
+# This controlled case requires Recommended inventory. Headlines remains
+# conditional because its availability depends on the article configuration.
+- scrollUntilVisible:
+    element:
+      text: "Recommended"
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 40
+
+- assertVisible:
+    text: "Recommended"
+
+- runFlow:
+    when:
+      visible:
+        text: "Headlines"
+    commands:
+      - assertVisible:
+          text: "Headlines"
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_010_headlines_when_supplied"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_010_recommended_content"
+
+# Select the first current recommendation headline without fixing its text.
+- tapOn:
+    text: "^(?!Related Topics$|Recommended$|Headlines$).{8,}$"
+    below:
+      text: "Recommended"
+    index: 0
+
+- waitForAnimationToEnd
+- tapOn: {text: "Close sheet", optional: true}
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# The original footer must no longer be on screen after the recommended article
+# opens at its article-detail entry position.
+- assertNotVisible:
+    text: "Related Topics"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_010_recommended_article_opened"
+
+# Return through the article stack and prove restoration at the original
+# Editorial article's post-article context without performing another scroll.
+- back
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- extendedWaitUntil:
+    visible:
+      text: "Related Topics"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertVisible:
+    text: "Related Topics"
+
+- assertVisible:
+    text: "Recommended"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_010_original_context_restored"

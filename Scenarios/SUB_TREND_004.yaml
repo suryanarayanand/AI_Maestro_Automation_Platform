@@ -1,0 +1,64 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, trending, navigation, entitlement, no-ads]
+---
+
+# Establish the configured authenticated subscriber state.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- assertVisible:
+    id: "screen_home"
+
+# Enter Trending so the masthead action starts from the required screen.
+- tapOn:
+    id: "nav_trending"
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+- assertVisible:
+    id: "screen_trending"
+
+# Tap the The Hindu masthead and verify that authenticated Home opens.
+- tapOn:
+    text: "The Hindu"
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- assertVisible:
+    id: "screen_home"
+- assertVisible:
+    id: "nav_home"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "aw0"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_004_masthead_home"
+
+# Return with the Trending bottom-navigation item.
+- tapOn:
+    id: "nav_trending"
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+- assertVisible:
+    id: "screen_trending"
+- assertVisible:
+    id: "nav_trending"
+
+# Recheck subscriber authentication and no-ad entitlement after the round trip.
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "aw0"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_004_trending_restored"

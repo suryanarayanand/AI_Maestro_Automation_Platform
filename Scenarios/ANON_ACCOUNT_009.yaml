@@ -1,0 +1,18 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_ACCOUNT.yaml"
+- scrollUntilVisible:
+    element: {text: "Appearance"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Appearance"}
+- assertVisible: {text: "LIGHT MODE|DARK MODE|Light.*Mode|Dark.*Mode"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ACCOUNT_009_before"
+- tapOn: {text: "LIGHT MODE|Light.*Mode", optional: true}
+- tapOn: {text: "DARK MODE|Dark.*Mode", optional: true}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ACCOUNT_009_result"

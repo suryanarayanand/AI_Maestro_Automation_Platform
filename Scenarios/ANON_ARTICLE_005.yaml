@@ -1,0 +1,16 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, article-page, actions]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- runFlow:
+    when: {visible: {text: "Reading Options|Text size|Text Size"}}
+    commands:
+      - assertVisible: {text: "Reading Options|Text size|Text Size"}
+      - assertVisible: {text: "Bookmark"}
+      - assertVisible: {text: "Share"}
+      - assertVisible: {text: "Comment|Post a comment"}
+      - assertVisible: {text: "SUBSCRIBE|Subscribe"}
+- assertNotVisible: {text: "Gift this article"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_005_action_bar"

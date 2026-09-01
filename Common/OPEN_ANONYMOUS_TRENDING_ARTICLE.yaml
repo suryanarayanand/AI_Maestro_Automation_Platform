@@ -1,0 +1,13 @@
+appId: com.mobstac.thehindu
+tags: [common, anonymous, trending, article]
+---
+- runFlow: "OPEN_ANONYMOUS_TRENDING.yaml"
+- tapOn: {text: "All"}
+- extendedWaitUntil: {visible: {text: "READ FULL ARTICLE"}, timeout: 120000}
+- tapOn: {text: "READ FULL ARTICLE"}
+- tapOn: {text: "Close sheet", optional: true}
+- runFlow:
+    when: {visible: {text: "^CLOSE$|Interstitial close button"}}
+    file: "HANDLE_DELAYED_ARTICLE_INTERSTITIAL.yaml"
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- assertVisible: {id: "screen_article_detail"}

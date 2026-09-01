@@ -1,0 +1,97 @@
+{
+    "suite": "Anonymous User Cases - Podcast Quick Access",
+    "source_suite": "user_anonymous",
+    "module": "Podcast Quick Access",
+    "tests": [
+        {
+            "id": "ANON_PODCAST_001",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "priority": "P1",
+            "name": "Podcast anonymous behavior 01",
+            "yaml": "ANON_PODCAST_001.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "ANON_PODCAST_002",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "priority": "P2",
+            "name": "Podcast anonymous behavior 02",
+            "yaml": "ANON_PODCAST_002.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "ANON_PODCAST_003",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "priority": "P2",
+            "name": "Podcast anonymous behavior 03",
+            "yaml": "ANON_PODCAST_003.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "ANON_PODCAST_004",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "priority": "P2",
+            "name": "Podcast anonymous behavior 04",
+            "yaml": "ANON_PODCAST_004.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "ANON_PODCAST_005",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "priority": "P1",
+            "name": "Podcast anonymous behavior 05",
+            "yaml": "ANON_PODCAST_005.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "ANON_PODCAST_006",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "priority": "P1",
+            "name": "Podcast anonymous behavior 06",
+            "yaml": "ANON_PODCAST_006.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "ANON_PODCAST_007",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "priority": "P1",
+            "name": "Podcast anonymous behavior 07",
+            "yaml": "ANON_PODCAST_007.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "ANON_PODCAST_008",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "priority": "P2",
+            "name": "Podcast anonymous behavior 08",
+            "yaml": "ANON_PODCAST_008.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "ANON_PODCAST_009",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "priority": "P2",
+            "name": "Podcast anonymous behavior 09",
+            "yaml": "ANON_PODCAST_009.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Podcast Quick Access"
+        }
+    ]
+}

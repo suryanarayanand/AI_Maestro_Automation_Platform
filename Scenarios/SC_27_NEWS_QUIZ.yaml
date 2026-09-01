@@ -3,11 +3,15 @@ tags: [subscriber, games, sc27]
 ---
 - runFlow: ../Common/OPEN_SUBSCRIBER_GAMES.yaml
 - scrollUntilVisible:
-    element: {text: "News Quiz"}
-    timeout: 20000
-- tapOn: {text: "News Quiz"}
+    element: {text: "^Quiz$"}
+    direction: DOWN
+    timeout: 60000
+    speed: 55
+    visibilityPercentage: 20
+    centerElement: true
+- tapOn: {text: "^Quiz$"}
 - extendedWaitUntil:
-    visible: {text: ".*News Quiz.*"}
-    timeout: 20000
+    visible: {text: ".*(News )?Quiz.*"}
+    timeout: 30000
 - assertNotVisible: {text: ".*access was not found.*"}
 - takeScreenshot: "Screenshots/SC_27/SC_27_News_Quiz"

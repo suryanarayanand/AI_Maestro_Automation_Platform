@@ -1,0 +1,19 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, search, article-toolbar]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_SEARCH_ARTICLE.yaml"
+- extendedWaitUntil: {visible: {text: "Text size"}, timeout: 20000}
+- assertVisible: {text: "Text size"}
+- assertVisible: {text: "Bookmark|Remove bookmark"}
+- assertVisible: {id: "cta_share"}
+- tapOn: {text: "Text size"}
+- extendedWaitUntil: {visible: {text: "Small|Medium|Large|Larger"}, timeout: 15000}
+- back
+- assertVisible: {id: "screen_article_detail"}
+- tapOn: {id: "cta_share"}
+- waitForAnimationToEnd
+- assertNotVisible: {id: "screen_article_detail"}
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_007_share_surface"
+- back
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 20000}
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_007_toolbar_restored"

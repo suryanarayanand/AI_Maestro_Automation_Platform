@@ -1,0 +1,168 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - world
+  - pagination
+  - no-monetisation
+  - visual-layout
+
+---
+
+# SUB_WORLD_004 — World deep scroll, pagination and subscriber ad-free entitlement
+# Establish the repository-managed authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_WORLD.yaml"
+
+# Open World using the validated section selector.
+- extendedWaitUntil:
+    visible:
+      text: "World"
+    timeout: 30000
+
+- tapOn:
+    text: "World"
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "World"
+    timeout: 30000
+
+- assertVisible:
+    text: "World"
+
+# Viewport 1: verify rendered World content and all grounded subscriber
+# monetisation exclusions before beginning the bounded deep scroll.
+- assertWithAI: "Verify this is a rendered World news listing containing readable article cards or headlines. The viewport must not be blank, loading-only, broken, overlapping, or contain an empty advertisement placeholder. Verify that no visible inline ad, sticky ad, video advertisement, interstitial advertisement, sponsored recommendation unit, Taboola-labelled unit, Subscribe prompt, or paywall surface is present. Do not reject legitimate editorial video stories solely because they contain video content."
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "Interstitial close button"
+
+# SHOW MORE is live-inventory dependent. Activate it only when rendered, then
+# prove that World remains active and additional content continues below it.
+- runFlow:
+    when:
+      visible:
+        text: "SHOW MORE"
+    commands:
+      - assertVisible:
+          text: "SHOW MORE"
+      - tapOn:
+          text: "SHOW MORE"
+      - waitForAnimationToEnd
+      - extendedWaitUntil:
+          visible:
+            text: "World"
+          timeout: 30000
+      - assertVisible:
+          text: "World"
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          text: "World"
+      - assertWithAI: "Verify the active section is still World after SHOW MORE and that the current lower listing contains multiple rendered article cards or headlines representing a continuation of the feed rather than a reset to its initial top. The additional content must not be blank, broken, overlapping, or clipped."
+      - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "ad_iframe"
+      - assertNotVisible:
+          text: "Interstitial close button"
+
+# Traverse six additional settled World viewports. Combined with viewport 1,
+# this supplies seven inspected states and therefore exceeds the minimum of six.
+# Every settled state repeats the section, content, layout, and entitlement gates.
+- repeat:
+    times: 6
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+
+      - assertVisible:
+          text: "World"
+
+      - assertWithAI: "Verify this remains a rendered lower viewport of the World news listing, with readable article cards or headlines showing continued feed content rather than a reset to the initial top. The viewport must not be blank, loading-only, broken, overlapping, or contain an empty advertisement placeholder. Verify that no visible inline ad, sticky ad, video advertisement, interstitial advertisement, sponsored recommendation unit, Taboola-labelled unit, Subscribe prompt, or paywall surface is present. Do not reject legitimate editorial video stories solely because they contain video content."
+
+      - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "ad_iframe"
+      - assertNotVisible:
+          text: "Interstitial close button"
+
+      # Use pagination at whichever bounded viewport exposes it.
+      - runFlow:
+          when:
+            visible:
+              text: "SHOW MORE"
+          commands:
+            - assertVisible:
+                text: "SHOW MORE"
+            - tapOn:
+                text: "SHOW MORE"
+            - waitForAnimationToEnd
+            - extendedWaitUntil:
+                visible:
+                  text: "World"
+                timeout: 30000
+            - assertVisible:
+                text: "World"
+            - swipe:
+                direction: UP
+            - waitForAnimationToEnd
+            - assertVisible:
+                text: "World"
+            - assertWithAI: "Verify the active section is still World after SHOW MORE and that the current lower listing contains multiple rendered article cards or headlines representing a continuation of the feed rather than a reset to its initial top. The additional content must not be blank, broken, overlapping, or clipped."
+            - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+            - assertNotVisible:
+                text: "SUBSCRIBE"
+            - assertNotVisible:
+                text: "ADVERTISEMENT"
+            - assertNotVisible:
+                id: "ad_iframe"
+            - assertNotVisible:
+                text: "Interstitial close button"
+
+# Final settled proof that deep scrolling did not leave World or expose a
+# grounded monetisation surface.
+- assertVisible:
+    text: "World"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "Interstitial close button"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_004_deep_scroll_pagination_ad_free"

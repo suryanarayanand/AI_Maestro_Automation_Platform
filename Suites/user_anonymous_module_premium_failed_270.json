@@ -1,0 +1,177 @@
+{
+    "suite": "Anonymous User Cases - Premium - Failed retry #270",
+    "source_suite": "user_anonymous__module__premium",
+    "module": "Premium",
+    "tests": [
+        {
+            "id": "ANON_PREM_004",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Briefing Subscribe plan destination",
+            "yaml": "ANON_PREM_004.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "ANON_PREM_005",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Briefing subscriber-login destination",
+            "yaml": "ANON_PREM_005.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "ANON_PREM_009",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Specials article anonymous paywall",
+            "yaml": "ANON_PREM_009.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "ANON_PREM_011",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Packages article anonymous paywall",
+            "yaml": "ANON_PREM_011.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "ANON_PREM_013",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Webinar entry and anonymous restriction",
+            "yaml": "ANON_PREM_013.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "ANON_PREM_017",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "All Stories article anonymous paywall",
+            "yaml": "ANON_PREM_017.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "ANON_PREM_018",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Premium article paywall offer details",
+            "yaml": "ANON_PREM_018.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "ANON_PREM_019",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Premium article paywall Login link",
+            "yaml": "ANON_PREM_019.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "ANON_PREM_020",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Premium article controls",
+            "yaml": "ANON_PREM_020.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "ANON_PREM_021",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Premium article reading options",
+            "yaml": "ANON_PREM_021.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "ANON_PREM_022",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Premium article Bookmark login gate",
+            "yaml": "ANON_PREM_022.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "ANON_PREM_023",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Premium article Share sheet",
+            "yaml": "ANON_PREM_023.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "ANON_PREM_024",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Premium article Comment restriction",
+            "yaml": "ANON_PREM_024.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "ANON_PREM_025",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Premium article Listen and AI Summary",
+            "yaml": "ANON_PREM_025.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "ANON_PREM_026",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Premium interstitial delayed-close recovery",
+            "yaml": "ANON_PREM_026.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "ANON_PREM_027",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Premium article Taboola coverage",
+            "yaml": "ANON_PREM_027.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "ANON_PREM_030",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Premium article paging and entitlement persistence",
+            "yaml": "ANON_PREM_030.yaml",
+            "display_module": "Premium"
+        }
+    ]
+}

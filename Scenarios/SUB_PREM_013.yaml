@@ -1,0 +1,16 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_PREMIUM_ARTICLE.yaml"
+- assertVisible: {text: "Text size"}
+- tapOn: {text: "Text size"}
+- extendedWaitUntil: {visible: {text: "Reading Options.*|Text Size"}, timeout: 15000}
+- assertVisible: {text: "A-"}
+- assertVisible: {text: "A+"}
+- tapOn: {text: "A+"}
+- tapOn: {text: "A-"}
+- tapOn: {text: "CLOSE|Close"}
+- assertVisible: {id: "screen_article_detail"}
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_013_result"

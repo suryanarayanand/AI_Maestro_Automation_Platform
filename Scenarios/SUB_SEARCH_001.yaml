@@ -1,0 +1,7 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, search, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_SEARCH.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_001_entry"
+

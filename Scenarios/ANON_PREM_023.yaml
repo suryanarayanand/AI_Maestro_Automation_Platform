@@ -1,0 +1,11 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, premium]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_PREMIUM_ARTICLE.yaml"
+- runFlow: "../Common/ASSERT_ANONYMOUS_PREMIUM_PAYWALL.yaml"
+- assertVisible: {text: "Share"}
+- tapOn: {text: "Share"}
+- assertVisible: {text: "Quick Share"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PREM_023_result"

@@ -1,0 +1,187 @@
+{
+    "suite": "Subscriber User Cases - Podcast Quick Access",
+    "source_suite": "user_subscriber",
+    "module": "Podcast Quick Access",
+    "tests": [
+        {
+            "id": "SUB_PODCAST_001",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Podcast launch and selected tab",
+            "yaml": "SUB_PODCAST_001.yaml",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "SUB_PODCAST_002",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Podcast listing content and visual layout",
+            "yaml": "SUB_PODCAST_002.yaml",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "SUB_PODCAST_003",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Podcast refresh and content recovery",
+            "yaml": "SUB_PODCAST_003.yaml",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "SUB_PODCAST_004",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Podcast has no monetization block",
+            "yaml": "SUB_PODCAST_004.yaml",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "SUB_PODCAST_005",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Selected podcast episode-list loading",
+            "yaml": "SUB_PODCAST_005.yaml",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "SUB_PODCAST_006",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Episode-list identity, ordering and metadata",
+            "yaml": "SUB_PODCAST_006.yaml",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "SUB_PODCAST_007",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Play Latest Episode and mini-player identity",
+            "yaml": "SUB_PODCAST_007.yaml",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "SUB_PODCAST_008",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Repeated play and pause stability",
+            "yaml": "SUB_PODCAST_008.yaml",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "SUB_PODCAST_009",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Timed playback progress movement",
+            "yaml": "SUB_PODCAST_009.yaml",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "SUB_PODCAST_010",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Forward control changes playback position",
+            "yaml": "SUB_PODCAST_010.yaml",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "SUB_PODCAST_011",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Rewind control changes playback position",
+            "yaml": "SUB_PODCAST_011.yaml",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "SUB_PODCAST_012",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Podcast scrubber timeline seeking",
+            "yaml": "SUB_PODCAST_012.yaml",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "SUB_PODCAST_013",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Only one podcast plays at a time",
+            "yaml": "SUB_PODCAST_013.yaml",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "SUB_PODCAST_014",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Playback continuity while scrolling",
+            "yaml": "SUB_PODCAST_014.yaml",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "SUB_PODCAST_015",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Mini-player close stops playback",
+            "yaml": "SUB_PODCAST_015.yaml",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "SUB_PODCAST_016",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Podcast Back navigation and state recovery",
+            "yaml": "SUB_PODCAST_016.yaml",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "SUB_PODCAST_017",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Podcast audio-load failure handling",
+            "yaml": "SUB_PODCAST_017.yaml",
+            "display_module": "Podcast Quick Access"
+        },
+        {
+            "id": "SUB_PODCAST_018",
+            "module": "Podcast Quick Access",
+            "section": "Podcast Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Podcast rapid interaction resilience",
+            "yaml": "SUB_PODCAST_018.yaml",
+            "display_module": "Podcast Quick Access"
+        }
+    ]
+}

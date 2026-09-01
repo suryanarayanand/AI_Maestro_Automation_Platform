@@ -1,0 +1,17 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, hamburger, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_HAMBURGER.yaml"
+- scrollUntilVisible: {element: {text: "Cities"}, direction: DOWN, timeout: 30000, speed: 40}
+- tapOn: {text: "Cities"}
+- assertVisible: {id: "screen_hamburger"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HAM_006_cities"
+- tapOn: {id: "cta_drawer_close"}
+- runFlow: "../Common/OPEN_SUBSCRIBER_HAMBURGER.yaml"
+- scrollUntilVisible: {element: {text: "States"}, direction: DOWN, timeout: 30000, speed: 40}
+- tapOn: {text: "States"}
+- assertVisible: {id: "screen_hamburger"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HAM_006_states"
+

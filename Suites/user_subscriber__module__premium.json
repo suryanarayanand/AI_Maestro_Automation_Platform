@@ -1,0 +1,187 @@
+{
+    "suite": "Subscriber User Cases - Premium",
+    "source_suite": "user_subscriber",
+    "module": "Premium",
+    "tests": [
+        {
+            "id": "SUB_PREM_001",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Premium launch and selected navigation",
+            "yaml": "SUB_PREM_001.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "SUB_PREM_013",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Premium article reading options",
+            "yaml": "SUB_PREM_013.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "SUB_PREM_016",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Premium Listen and AI Summary entitlement",
+            "yaml": "SUB_PREM_016.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "SUB_PREM_017",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Premium article paging and entitlement persistence",
+            "yaml": "SUB_PREM_017.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "SUB_PREM_018",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Premium session persistence",
+            "yaml": "SUB_PREM_018.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "SUB_PREM_002",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Premium pull to refresh",
+            "yaml": "SUB_PREM_002.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "SUB_PREM_003",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Briefing unlocked entitlement",
+            "yaml": "SUB_PREM_003.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "SUB_PREM_004",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Briefing complete reading",
+            "yaml": "SUB_PREM_004.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "SUB_PREM_005",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Premium five-tab navigation",
+            "yaml": "SUB_PREM_005.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "SUB_PREM_006",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Specials full-page subscriber coverage",
+            "yaml": "SUB_PREM_006.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "SUB_PREM_007",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Specials article full access",
+            "yaml": "SUB_PREM_007.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "SUB_PREM_008",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Packages full-page subscriber coverage",
+            "yaml": "SUB_PREM_008.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "SUB_PREM_009",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Packages article full access",
+            "yaml": "SUB_PREM_009.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "SUB_PREM_010",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Webinar full-page subscriber coverage",
+            "yaml": "SUB_PREM_010.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "SUB_PREM_011",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "All Stories full-page subscriber coverage",
+            "yaml": "SUB_PREM_011.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "SUB_PREM_012",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "All Stories article full access",
+            "yaml": "SUB_PREM_012.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "SUB_PREM_014",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Premium article Bookmark",
+            "yaml": "SUB_PREM_014.yaml",
+            "display_module": "Premium"
+        },
+        {
+            "id": "SUB_PREM_015",
+            "module": "Premium",
+            "section": "Premium",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Premium article Share and Comment",
+            "yaml": "SUB_PREM_015.yaml",
+            "display_module": "Premium"
+        }
+    ]
+}

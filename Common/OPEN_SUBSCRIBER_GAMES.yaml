@@ -4,13 +4,7 @@ tags:
   - subscriber
   - games
 ---
-- launchApp:
-    clearState: true
-- runFlow: LOGIN.yaml
-- extendedWaitUntil:
-    visible:
-      id: "screen_home"
-    timeout: 30000
+- runFlow: OPEN_SUBSCRIBER_HOME.yaml
 - tapOn:
     id: "nav_games"
 - extendedWaitUntil:
@@ -19,3 +13,4 @@ tags:
     timeout: 20000
 - assertVisible:
     id: "screen_games"
+- runFlow: ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml

@@ -1,0 +1,13 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, quick-access]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_INDIA.yaml"
+- swipe: {start: "50%,25%", end: "50%,75%", duration: 700}
+- waitForAnimationToEnd
+- assertVisible: {text: "(?i)^India$"}
+- swipe: {start: "50%,25%", end: "50%,75%", duration: 700}
+- waitForAnimationToEnd
+- assertVisible: {id: "screen_home"}
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_INDIA_002_refreshed"

@@ -1,0 +1,167 @@
+{
+    "suite": "Subscriber User Cases - Article Page",
+    "source_suite": "user_subscriber",
+    "module": "Article Page",
+    "tests": [
+        {
+            "id": "SUB_ARTICLE_001",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Article identity, header and metadata",
+            "yaml": "SUB_ARTICLE_001.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "SUB_ARTICLE_003",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber no-advertisement contract",
+            "yaml": "SUB_ARTICLE_003.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "SUB_ARTICLE_005",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Reading options and text sizes",
+            "yaml": "SUB_ARTICLE_005.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "SUB_ARTICLE_007",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Listen to Article playback",
+            "yaml": "SUB_ARTICLE_007.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "SUB_ARTICLE_008",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "AI Summary eligible article",
+            "yaml": "SUB_ARTICLE_008.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "SUB_ARTICLE_009",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Short article without AI Summary",
+            "yaml": "SUB_ARTICLE_009.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "SUB_ARTICLE_010",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Premium article full entitlement",
+            "yaml": "SUB_ARTICLE_010.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "SUB_ARTICLE_011",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Archive article subscriber access",
+            "yaml": "SUB_ARTICLE_011.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "SUB_ARTICLE_012",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Bookmark add and remove",
+            "yaml": "SUB_ARTICLE_012.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "SUB_ARTICLE_013",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Share sheet and safe return",
+            "yaml": "SUB_ARTICLE_013.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "SUB_ARTICLE_014",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Post a Comment subscriber access",
+            "yaml": "SUB_ARTICLE_014.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "SUB_ARTICLE_015",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Related Topics and recommended article",
+            "yaml": "SUB_ARTICLE_015.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "SUB_ARTICLE_017",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Article Back navigation",
+            "yaml": "SUB_ARTICLE_017.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "SUB_ARTICLE_018",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Live article embedded-frame scrolling",
+            "yaml": "SUB_ARTICLE_018.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "SUB_ARTICLE_019",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Article media and image rendering",
+            "yaml": "SUB_ARTICLE_019.yaml",
+            "display_module": "Article Page"
+        },
+        {
+            "id": "SUB_ARTICLE_020",
+            "module": "Article Page",
+            "section": "Article Page",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Article session and entitlement recovery",
+            "yaml": "SUB_ARTICLE_020.yaml",
+            "display_module": "Article Page"
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, opinion]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_OPINION.yaml"
+- assertVisible: {text: "Opinion"}
+- assertVisible: {id: "screen_home"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_OPINION_001_landing"

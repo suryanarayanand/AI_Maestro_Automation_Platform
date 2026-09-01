@@ -1,0 +1,64 @@
+﻿appId: com.mobstac.thehindu
+
+tags:
+
+  - generated
+
+  - ordered
+
+  - anonymous
+
+  - home
+
+  - taboola
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_HOME.yaml"
+
+
+
+# Scan the lower Home feed for the repository-proven Taboola accessibility text.
+
+- repeat:
+
+    times: 15
+
+    commands:
+
+      - runFlow:
+
+          when:
+
+            visible:
+
+              text: "Image for Taboola Advertising Unit"
+
+          commands:
+
+            - assertVisible:
+
+                text: "Image for Taboola Advertising Unit"
+
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_HOME_005_taboola_region"
+
+      - swipe:
+
+          direction: UP
+
+      - waitForAnimationToEnd
+
+
+
+- assertVisible:
+
+    id: "screen_home"
+
+
+
+# Taboola is build/config dependent, so always retain end-of-scan evidence too.
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HOME_005_lower_home_feed"
+

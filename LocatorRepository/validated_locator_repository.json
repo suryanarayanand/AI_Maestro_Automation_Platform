@@ -54,22 +54,148 @@
         "notes": "Maestro assertVisible passed on R9ZY40T6PHN; close action also tap-verified"
     },
     {
-        "name": "screen_section",
+        "name": "ADVERTISEMENT",
+        "locator": {
+            "type": "text",
+            "value": "ADVERTISEMENT",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[293,1431][428,1467]",
+        "screen": "anonymous_home_ads",
+        "status": "validated",
+        "validated_at": "2026-08-14T11:13:04",
+        "source": "home_top_20260731_143115.json, business_page_20260731_150633.json",
+        "notes": "Observed across two six-viewport Maestro hierarchy scans on R9ZY40T6PHN; stable Google ad label text"
+    },
+    {
+        "name": "aw0",
         "locator": {
             "type": "id",
-            "value": "screen_section",
+            "value": "aw0",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[60,1337][661,1431]",
+        "screen": "anonymous_home_ads",
+        "status": "validated",
+        "validated_at": "2026-08-14T11:13:04",
+        "source": "home_top_20260731_143115.json, business_page_20260731_150633.json",
+        "notes": "Observed across two six-viewport Maestro hierarchy scans on R9ZY40T6PHN; Google ad clickable container"
+    },
+    {
+        "name": "google_image_div",
+        "locator": {
+            "type": "id",
+            "value": "google_image_div",
             "priority": 1
         },
         "class": "android.view.View",
         "clickable": "false",
         "scrollable": "false",
         "enabled": "true",
-        "bounds": "[0,64][720,1600]",
-        "screen": "section_common",
+        "bounds": "[60,1337][661,1431]",
+        "screen": "anonymous_home_ads",
         "status": "validated",
-        "validated_at": "2026-08-03T15:18:00",
-        "source": "scitech_page_20260803_150944.json, entertainment_page_20260803_151313.json, books_page_20260803_151746.json, food_page_20260803_151053.json, latest_news_page_20260803_151535.json",
-        "notes": "Canonical shared destination ID; assert the page title text as page identity"
+        "validated_at": "2026-08-14T11:13:04",
+        "source": "home_top_20260731_143115.json, business_page_20260731_150633.json",
+        "notes": "Observed across two six-viewport Maestro hierarchy scans on R9ZY40T6PHN; Google ad image container"
+    },
+    {
+        "name": "Headlines",
+        "locator": {
+            "type": "text",
+            "value": "Headlines",
+            "priority": 1
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "",
+        "screen": "article_post_content",
+        "status": "validated",
+        "validated_at": "2026-08-13T12:14:00",
+        "source": "Maestro selector probe",
+        "notes": "assertVisible verified on R9ZY40T6PHN"
+    },
+    {
+        "name": "Post a comment",
+        "locator": {
+            "type": "text",
+            "value": "Post a comment",
+            "priority": 1
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "",
+        "screen": "article_post_content",
+        "status": "validated",
+        "validated_at": "2026-08-13T12:14:00",
+        "source": "Maestro hierarchy and selector probe",
+        "notes": "scrollUntilVisible target and assertVisible verified on R9ZY40T6PHN"
+    },
+    {
+        "name": "Recommended",
+        "locator": {
+            "type": "text",
+            "value": "Recommended",
+            "priority": 1
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "",
+        "screen": "article_post_content",
+        "status": "validated",
+        "validated_at": "2026-08-13T12:14:00",
+        "source": "Maestro selector probe",
+        "notes": "assertVisible verified on R9ZY40T6PHN"
+    },
+    {
+        "name": "Related Topics",
+        "locator": {
+            "type": "text",
+            "value": "Related Topics",
+            "priority": 1
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "",
+        "screen": "article_post_content",
+        "status": "validated",
+        "validated_at": "2026-08-13T12:14:00",
+        "source": "Maestro selector probe",
+        "notes": "assertVisible verified on R9ZY40T6PHN; section remains article-dependent"
+    },
+    {
+        "name": "Books",
+        "locator": {
+            "type": "text",
+            "value": "Books",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "dynamic",
+        "screen": "books_page",
+        "status": "validated",
+        "validated_at": "2026-08-03T15:17:46",
+        "source": "books_expanded_20260803_151625.json, books_page_20260803_151746.json",
+        "notes": "Destination is the second Books label after category expansion"
     },
     {
         "name": "screen_ebooks",
@@ -88,6 +214,96 @@
         "validated_at": "2026-07-31T14:47:14",
         "source": "ebooks_top_20260731_143956.json",
         "notes": "Maestro navigation and assertVisible passed on R9ZY40T6PHN"
+    },
+    {
+        "name": "Entertainment",
+        "locator": {
+            "type": "text",
+            "value": "Entertainment",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "dynamic",
+        "screen": "entertainment_page",
+        "status": "validated",
+        "validated_at": "2026-08-03T15:13:13",
+        "source": "entertainment_expanded_20260803_151154.json, entertainment_page_20260803_151313.json",
+        "notes": "Destination is the second Entertainment label after category expansion"
+    },
+    {
+        "name": "Food",
+        "locator": {
+            "type": "text",
+            "value": "Food",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "dynamic",
+        "screen": "food_page",
+        "status": "validated",
+        "validated_at": "2026-08-03T15:10:53",
+        "source": "food_page_20260803_151053.json",
+        "notes": "Life & Style child navigation and destination identity verified"
+    },
+    {
+        "name": "Easy Down",
+        "locator": {
+            "type": "accessibilityText",
+            "value": "Easy Down",
+            "priority": 2
+        },
+        "class": "android.view.View",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "dynamic",
+        "screen": "games_top",
+        "status": "validated",
+        "validated_at": "2026-08-04T18:13:00",
+        "source": "live hierarchy R9ZY40T6PHN",
+        "notes": "Observed on Games page"
+    },
+    {
+        "name": "Sudoku",
+        "locator": {
+            "type": "accessibilityText",
+            "value": "Sudoku",
+            "priority": 2
+        },
+        "class": "android.view.View",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "dynamic",
+        "screen": "games_top",
+        "status": "validated",
+        "validated_at": "2026-08-04T18:13:00",
+        "source": "live hierarchy R9ZY40T6PHN",
+        "notes": "Observed on Games page; screen_games navigation assertion passed"
+    },
+    {
+        "name": "The Hindu Mini",
+        "locator": {
+            "type": "accessibilityText",
+            "value": "The Hindu Mini",
+            "priority": 2
+        },
+        "class": "android.view.View",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "dynamic",
+        "screen": "games_top",
+        "status": "validated",
+        "validated_at": "2026-08-04T18:13:00",
+        "source": "live hierarchy R9ZY40T6PHN",
+        "notes": "Observed on Games page"
     },
     {
         "name": "screen_games",
@@ -468,6 +684,78 @@
         "notes": "Maestro assertVisible passed on R9ZY40T6PHN using home_top capture"
     },
     {
+        "name": "Latest News",
+        "locator": {
+            "type": "text",
+            "value": "News",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "dynamic",
+        "screen": "latest_news_page",
+        "status": "validated",
+        "validated_at": "2026-08-03T15:15:35",
+        "source": "news_expanded_20260803_151408.json, latest_news_page_20260803_151535.json",
+        "notes": "Logical Latest News route is News category to second News child"
+    },
+    {
+        "name": "Podcast",
+        "locator": {
+            "type": "text",
+            "value": "Podcast",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "dynamic",
+        "screen": "podcast_page",
+        "status": "validated",
+        "validated_at": "2026-08-03T14:38:43",
+        "source": "podcast_page_20260803_143843.json",
+        "notes": "Navigation and page identity verified on R9ZY40T6PHN"
+    },
+    {
+        "name": "READ FULL ARTICLE",
+        "locator": {
+            "type": "text",
+            "value": "READ FULL ARTICLE",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[60,1347][233,1437]",
+        "screen": "premium_briefing",
+        "status": "validated",
+        "validated_at": "2026-08-13T11:55:58",
+        "source": "trending_top_20260731_143756.json",
+        "notes": "Tap-verified on R9ZY40T6PHN in passing job 140"
+    },
+    {
+        "name": "OKAY",
+        "locator": {
+            "type": "text",
+            "value": "OKAY",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "false",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "[330,468][391,506]",
+        "screen": "premium_briefing_intro",
+        "status": "validated",
+        "validated_at": "2026-08-13T11:55:58",
+        "source": "premium_top_20260731_143903.json",
+        "notes": "Tap-verified on R9ZY40T6PHN in passing job 140"
+    },
+    {
         "name": "screen_premium",
         "locator": {
             "type": "id",
@@ -484,6 +772,24 @@
         "validated_at": "2026-07-31T14:47:13",
         "source": "premium_top_20260731_143903.json",
         "notes": "Maestro navigation and assertVisible passed on R9ZY40T6PHN"
+    },
+    {
+        "name": "Sci-Tech",
+        "locator": {
+            "type": "text",
+            "value": "Sci-Tech",
+            "priority": 3
+        },
+        "class": "android.widget.TextView",
+        "clickable": "true",
+        "scrollable": "false",
+        "enabled": "true",
+        "bounds": "dynamic",
+        "screen": "scitech_page",
+        "status": "validated",
+        "validated_at": "2026-08-03T15:09:44",
+        "source": "science_expanded_20260803_150821.json, scitech_page_20260803_150944.json",
+        "notes": "Science child navigation and destination identity verified"
     },
     {
         "name": "article_card",
@@ -504,88 +810,76 @@
         "notes": "Reusable article entry; present on content-list section pages"
     },
     {
-        "name": "Podcast",
-        "locator": {"type": "text", "value": "Podcast", "priority": 3},
-        "class": "android.widget.TextView",
-        "clickable": "true",
+        "name": "screen_section",
+        "locator": {
+            "type": "id",
+            "value": "screen_section",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "false",
         "scrollable": "false",
         "enabled": "true",
-        "bounds": "dynamic",
-        "screen": "podcast_page",
+        "bounds": "[0,64][720,1600]",
+        "screen": "section_common",
         "status": "validated",
-        "validated_at": "2026-08-03T14:38:43",
-        "source": "podcast_page_20260803_143843.json",
-        "notes": "Navigation and page identity verified on R9ZY40T6PHN"
+        "validated_at": "2026-08-03T15:18:00",
+        "source": "scitech_page_20260803_150944.json, entertainment_page_20260803_151313.json, books_page_20260803_151746.json, food_page_20260803_151053.json, latest_news_page_20260803_151535.json",
+        "notes": "Canonical shared destination ID; assert the page title text as page identity"
     },
     {
-        "name": "Sci-Tech",
-        "locator": {"type": "text", "value": "Sci-Tech", "priority": 3},
-        "class": "android.widget.TextView",
-        "clickable": "true",
+        "name": "ad_iframe",
+        "locator": {
+            "type": "id",
+            "value": "ad_iframe",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "false",
         "scrollable": "false",
         "enabled": "true",
-        "bounds": "dynamic",
-        "screen": "scitech_page",
+        "bounds": "[60,348][661,1250]",
+        "screen": "anonymous_article_interstitial",
         "status": "validated",
-        "validated_at": "2026-08-03T15:09:44",
-        "source": "science_expanded_20260803_150821.json, scitech_page_20260803_150944.json",
-        "notes": "Science child navigation and destination identity verified"
+        "validated_at": "2026-08-14T11:30:00",
+        "source": "live Maestro hierarchy capture on R9ZY40T6PHN",
+        "notes": "Observed consistently after consecutive article swipes when the interstitial was displayed"
     },
     {
-        "name": "Entertainment",
-        "locator": {"type": "text", "value": "Entertainment", "priority": 3},
-        "class": "android.widget.TextView",
+        "name": "interstitial_close_button",
+        "locator": {
+            "type": "accessibilityText",
+            "value": "Interstitial close button",
+            "priority": 2
+        },
+        "class": "android.view.View",
         "clickable": "true",
         "scrollable": "false",
         "enabled": "true",
-        "bounds": "dynamic",
-        "screen": "entertainment_page",
+        "bounds": "[589,0][720,131]",
+        "screen": "anonymous_article_interstitial",
         "status": "validated",
-        "validated_at": "2026-08-03T15:13:13",
-        "source": "entertainment_expanded_20260803_151154.json, entertainment_page_20260803_151313.json",
-        "notes": "Destination is the second Entertainment label after category expansion"
+        "validated_at": "2026-08-14T11:30:00",
+        "source": "live Maestro hierarchy capture on R9ZY40T6PHN",
+        "notes": "Accessibility selector observed on the displayed article interstitial"
     },
     {
-        "name": "Books",
-        "locator": {"type": "text", "value": "Books", "priority": 3},
-        "class": "android.widget.TextView",
-        "clickable": "true",
+        "name": "screen_article_detail",
+        "locator": {
+            "type": "id",
+            "value": "screen_article_detail",
+            "priority": 1
+        },
+        "class": "android.view.View",
+        "clickable": "false",
         "scrollable": "false",
         "enabled": "true",
-        "bounds": "dynamic",
-        "screen": "books_page",
+        "bounds": "[0,0][720,1600]",
+        "screen": "article_detail",
         "status": "validated",
-        "validated_at": "2026-08-03T15:17:46",
-        "source": "books_expanded_20260803_151625.json, books_page_20260803_151746.json",
-        "notes": "Destination is the second Books label after category expansion"
-    },
-    {
-        "name": "Food",
-        "locator": {"type": "text", "value": "Food", "priority": 3},
-        "class": "android.widget.TextView",
-        "clickable": "true",
-        "scrollable": "false",
-        "enabled": "true",
-        "bounds": "dynamic",
-        "screen": "food_page",
-        "status": "validated",
-        "validated_at": "2026-08-03T15:10:53",
-        "source": "food_page_20260803_151053.json",
-        "notes": "Life & Style child navigation and destination identity verified"
-    },
-    {
-        "name": "Latest News",
-        "locator": {"type": "text", "value": "News", "priority": 3},
-        "class": "android.widget.TextView",
-        "clickable": "true",
-        "scrollable": "false",
-        "enabled": "true",
-        "bounds": "dynamic",
-        "screen": "latest_news_page",
-        "status": "validated",
-        "validated_at": "2026-08-03T15:15:35",
-        "source": "news_expanded_20260803_151408.json, latest_news_page_20260803_151535.json",
-        "notes": "Logical Latest News route is News category to second News child"
+        "validated_at": "2026-08-14T11:30:00",
+        "source": "live Maestro hierarchy capture on R9ZY40T6PHN",
+        "notes": "Observed after opening article_card from anonymous Home"
     },
     {
         "name": "screen_trending",
@@ -604,47 +898,5 @@
         "validated_at": "2026-07-31T14:47:13",
         "source": "trending_top_20260731_143756.json",
         "notes": "Maestro navigation and assertVisible passed on R9ZY40T6PHN"
-    },
-    {
-        "name": "Sudoku",
-        "locator": {"type": "accessibilityText", "value": "Sudoku", "priority": 2},
-        "class": "android.view.View",
-        "clickable": "true",
-        "scrollable": "false",
-        "enabled": "true",
-        "bounds": "dynamic",
-        "screen": "games_top",
-        "status": "validated",
-        "validated_at": "2026-08-04T18:13:00",
-        "source": "live hierarchy R9ZY40T6PHN",
-        "notes": "Observed on Games page; screen_games navigation assertion passed"
-    },
-    {
-        "name": "The Hindu Mini",
-        "locator": {"type": "accessibilityText", "value": "The Hindu Mini", "priority": 2},
-        "class": "android.view.View",
-        "clickable": "true",
-        "scrollable": "false",
-        "enabled": "true",
-        "bounds": "dynamic",
-        "screen": "games_top",
-        "status": "validated",
-        "validated_at": "2026-08-04T18:13:00",
-        "source": "live hierarchy R9ZY40T6PHN",
-        "notes": "Observed on Games page"
-    },
-    {
-        "name": "Easy Down",
-        "locator": {"type": "accessibilityText", "value": "Easy Down", "priority": 2},
-        "class": "android.view.View",
-        "clickable": "true",
-        "scrollable": "false",
-        "enabled": "true",
-        "bounds": "dynamic",
-        "screen": "games_top",
-        "status": "validated",
-        "validated_at": "2026-08-04T18:13:00",
-        "source": "live hierarchy R9ZY40T6PHN",
-        "notes": "Observed on Games page"
     }
 ]

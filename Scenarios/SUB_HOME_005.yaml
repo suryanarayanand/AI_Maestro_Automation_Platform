@@ -1,0 +1,35 @@
+appId: com.mobstac.thehindu
+
+tags: [generated, ordered, subscriber, home, full-article]
+
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- tapOn: {id: "article_card", index: 0}
+
+- tapOn: {text: "Close sheet", optional: true}
+
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+
+- repeat:
+
+    times: 10
+
+    commands:
+
+      - assertVisible: {id: "screen_article_detail"}
+
+      - assertNotVisible: {text: "SUBSCRIBE|Already a subscriber.*|Keep reading.*|.*[0-9]+%.*off.*"}
+
+      - assertNotVisible: {text: "ADVERTISEMENT"}
+
+      - assertNotVisible: {id: "ad_iframe"}
+
+      - swipe: {direction: UP}
+
+      - waitForAnimationToEnd: {timeout: 1200}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HOME_005_full_article_access"
+

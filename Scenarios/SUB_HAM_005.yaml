@@ -1,0 +1,50 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - hamburger
+  - culture-lifestyle
+  - evidence-limited
+---
+
+# Establish the authenticated subscriber state through the setup used by a
+# validated passing subscriber flow.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+
+# Entertainment is the only destination whose complete drawer interaction is
+# grounded by validated evidence for SUB_HAM_005.
+- tapOn:
+    id: "nav_menu"
+
+- scrollUntilVisible:
+    element:
+      text: "Entertainment"
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+
+- tapOn:
+    text: "Entertainment"
+
+- waitForAnimationToEnd
+
+- tapOn:
+    text: "Entertainment"
+    index: 1
+
+- extendedWaitUntil:
+    visible:
+      text: "Entertainment"
+    timeout: 30000
+
+- assertVisible:
+    text: "Entertainment"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HAM_005_entertainment_destination"

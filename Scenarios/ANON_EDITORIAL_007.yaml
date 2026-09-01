@@ -1,0 +1,21 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, editorial]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_EDITORIAL_ARTICLE.yaml"
+- runFlow:
+    when: {notVisible: {text: "Keep reading.*|.*[0-9]+%.*off.*|Go beyond the headline.*|Already a subscriber.*"}}
+    commands:
+      - repeat:
+          times: 6
+          commands:
+            - swipe: {direction: UP, duration: 500}
+            - waitForAnimationToEnd
+      - assertNotVisible: {text: "Keep reading.*|.*[0-9]+%.*off.*|Go beyond the headline.*|Already a subscriber.*"}
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_EDITORIAL_007_free_full_content"
+- runFlow:
+    when: {visible: {text: "Keep reading.*|.*[0-9]+%.*off.*|Go beyond the headline.*|Already a subscriber.*"}}
+    commands:
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_EDITORIAL_007_free_unavailable_review"
+- assertVisible: {id: "screen_article_detail"}

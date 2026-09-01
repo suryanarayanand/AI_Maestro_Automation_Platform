@@ -1,0 +1,153 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - photos
+  - no-monetisation
+  - evidence-limited
+---
+
+# SUB_PHOTO_004 — Subscriber Photos contains no monetization
+# Authentication, navigation, entitlement, and content failures remain
+# distinguishable by the command at which execution stops.
+
+# Establish the repository-managed authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Open Photos through the validated Quick Access text selector.
+- extendedWaitUntil:
+    visible:
+      text: "Photos"
+    timeout: 30000
+
+- assertVisible:
+    text: "Photos"
+
+- tapOn:
+    text: "Photos"
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Photos"
+    timeout: 30000
+
+- assertVisible:
+    text: "Photos"
+
+# Initial Photos viewport: capture any grounded entitlement leakage before the
+# shared and explicit strict assertions classify the execution as failed.
+- runFlow:
+    when:
+      visible:
+        text: "^(SUBSCRIBE|ADVERTISEMENT)$"
+    commands:
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_PHOTO_004_initial_text_product_bug_review"
+
+- runFlow:
+    when:
+      visible:
+        id: "ad_iframe"
+    commands:
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_PHOTO_004_initial_iframe_product_bug_review"
+
+- runFlow:
+    when:
+      visible:
+        text: "Interstitial close button"
+    commands:
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_PHOTO_004_initial_interstitial_product_bug_review"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "Interstitial close button"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_004_viewport_01_ad_free"
+
+# Traverse five additional bounded Photos listing viewports. Each settled
+# viewport retains the validated Photos anchor, captures leakage conditionally,
+# and executes both the shared subscriber contract and grounded assertions.
+- repeat:
+    times: 5
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+
+      - assertVisible:
+          text: "Photos"
+
+      - runFlow:
+          when:
+            visible:
+              text: "^(SUBSCRIBE|ADVERTISEMENT)$"
+          commands:
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/SUB_PHOTO_004_scrolled_text_product_bug_review"
+
+      - runFlow:
+          when:
+            visible:
+              id: "ad_iframe"
+          commands:
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/SUB_PHOTO_004_scrolled_iframe_product_bug_review"
+
+      - runFlow:
+          when:
+            visible:
+              text: "Interstitial close button"
+          commands:
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/SUB_PHOTO_004_scrolled_interstitial_product_bug_review"
+
+      - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "ad_iframe"
+      - assertNotVisible:
+          text: "Interstitial close button"
+
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_PHOTO_004_scrolled_viewport_ad_free"
+
+# Terminal entitlement gate for the final settled listing viewport.
+- assertVisible:
+    text: "Photos"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "Interstitial close button"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_004_final_no_monetisation"

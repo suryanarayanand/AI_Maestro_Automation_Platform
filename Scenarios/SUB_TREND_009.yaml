@@ -1,0 +1,117 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - trending
+  - ai-summary
+  - conditional-discovery
+  - entitlement
+---
+
+# Establish an authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- assertVisible:
+    id: "screen_home"
+
+# Position 1: Open Trending and begin a bounded search for an eligible article.
+- tapOn:
+    id: "nav_trending"
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+- assertVisible:
+    id: "screen_trending"
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+- tapOn:
+    id: "article_card"
+    index: 0
+
+# Dismiss an optional article sheet before validating the article surface.
+- repeat:
+    times: 3
+    commands:
+      - tapOn:
+          text: "Close sheet"
+          optional: true
+      - waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+- assertVisible:
+    id: "screen_article_detail"
+
+# AI Summary availability is article-dependent. Inspect at most six current
+# Trending article candidates and execute entitlement assertions only when the
+# validated AI Summary action is rendered.
+- repeat:
+    times: 6
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "AI Summary|AI summary|AI SUMMARY"
+          commands:
+            # Positions 1 and 4: Open the AI Summary surface.
+            - tapOn:
+                text: "AI Summary|AI summary|AI SUMMARY"
+            - waitForAnimationToEnd
+            - extendedWaitUntil:
+                visible:
+                  text: "Summary"
+                timeout: 20000
+            - assertVisible:
+                text: "Summary"
+
+            # Positions 2 and 5: Prove entitled subscriber content and no upsell.
+            - extendedWaitUntil:
+                visible:
+                  text: "Article FAQs"
+                timeout: 20000
+            - assertVisible:
+                text: "Article FAQs"
+            - assertNotVisible:
+                text: "Subscribe|SUBSCRIBE"
+
+            # Positions 3 and 6: Capture settled summary evidence and restore
+            # the originating article context.
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/SUB_TREND_009_entitled_ai_summary"
+            - back
+            - extendedWaitUntil:
+                visible:
+                  id: "screen_article_detail"
+                timeout: 30000
+            - assertVisible:
+                id: "screen_article_detail"
+
+      # Continue the bounded article-dependent search without using a headline.
+      - swipe:
+          direction: LEFT
+      - waitForAnimationToEnd
+      - tapOn:
+          text: "Close sheet"
+          optional: true
+      - extendedWaitUntil:
+          visible:
+            id: "screen_article_detail"
+          timeout: 30000
+      - assertVisible:
+          id: "screen_article_detail"
+
+# Record the final bounded-search state. If no eligible article exposed AI
+# Summary, the conditional entitlement branch is skipped and requires review.
+- assertVisible:
+    id: "screen_article_detail"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_009_bounded_search_complete"

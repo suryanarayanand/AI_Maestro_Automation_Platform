@@ -1,0 +1,12 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, article-page, share]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- tapOn: {text: "Share", index: 0}
+- extendedWaitUntil: {visible: {text: "Share with|Nearby Share|Quick Share|Messages|Copy"}, timeout: 15000}
+- assertVisible: {text: "Share with|Nearby Share|Quick Share|Messages|Copy"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_014_share_sheet"
+- back
+- assertVisible: {id: "screen_article_detail"}

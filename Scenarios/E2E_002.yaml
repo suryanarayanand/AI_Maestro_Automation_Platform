@@ -1,0 +1,133 @@
+appId: com.mobstac.thehindu
+tags:
+  - subscriber
+  - food
+  - article
+  - dark-theme
+  - video-grounded
+---
+
+# Establish a clean, authenticated subscriber state.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+# Open Food from the hamburger hierarchy.
+- tapOn:
+    id: "nav_menu"
+- extendedWaitUntil:
+    visible:
+      id: "screen_hamburger"
+    timeout: 15000
+- tapOn:
+    text: "Life & Style"
+- extendedWaitUntil:
+    visible:
+      text: "Food"
+    timeout: 15000
+- tapOn:
+    text: "Food"
+- extendedWaitUntil:
+    visible:
+      id: "screen_section"
+    timeout: 30000
+- assertVisible:
+    text: "Food"
+
+# Open the first available Food article.
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+- tapOn:
+    id: "article_card"
+    index: 0
+
+# The sheet can be the first surface rendered after the article tap.
+- repeat:
+    times: 3
+    commands:
+      - waitForAnimationToEnd
+      - runFlow:
+          when:
+            visible: "Close sheet"
+          commands:
+            - tapOn: "Close sheet"
+      - waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+# The AI-summary/Article FAQ sheet can appear asynchronously.
+- runFlow:
+    when:
+      visible: "Close sheet"
+    commands:
+      - tapOn: "Close sheet"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/E2E_002_article_top"
+
+# Scroll through the article. The one-time sheet was handled above; avoid
+# opening a fresh hierarchy polling session after every swipe.
+- repeat:
+    times: 6
+    commands:
+      - swipe:
+          direction: "UP"
+
+- takeScreenshot: "Screenshots/Generated/E2E_002_article_scrolled"
+- waitForAnimationToEnd
+
+# Capture evidence near the article footer when it is reachable.
+- runFlow:
+    when:
+      visible: "Post a comment"
+    commands:
+      - assertVisible: "Post a comment"
+      - takeScreenshot: "Screenshots/Generated/E2E_002_article_bottom"
+
+# Return Home without clearing subscriber authentication.
+- launchApp:
+    clearState: false
+    stopApp: true
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+# Change to Dark Mode from Account > Appearance.
+- tapOn:
+    id: "nav_account"
+- extendedWaitUntil:
+    visible:
+      id: "screen_user_menu"
+    timeout: 20000
+- tapOn:
+    text: "Appearance"
+- extendedWaitUntil:
+    visible: "Dark\nMode"
+    timeout: 20000
+- tapOn: "Dark\nMode"
+- takeScreenshot: "Screenshots/Generated/E2E_002_dark_mode_selected"
+- back
+- extendedWaitUntil:
+    visible:
+      id: "screen_user_menu"
+    timeout: 20000
+- tapOn:
+    id: "cta_menu_close"
+
+# Verify Home is reachable after the theme change and capture visual evidence.
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- takeScreenshot: "Screenshots/Generated/E2E_002_home_dark_theme"

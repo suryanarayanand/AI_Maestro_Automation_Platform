@@ -12,11 +12,14 @@
 </div>
 {% if job.report_folder %}<p><a class="btn btn-success" href="{{ url_for('report.report_details', report_name=job.report_folder) }}">Open Generated Reports</a></p>{% endif %}
 <div class="row my-3">
-    <div class="col"><div class="card"><div class="card-body"><b>Status</b><div>{{ job.status }}</div></div></div></div>
+    <div class="col"><div class="card"><div class="card-body"><b>Status</b><div class="mt-2"><span class="status-pill status-{{ job.status|lower }}">{{ job.status|replace('_',' ') }}</span></div></div></div></div>
     <div class="col"><div class="card"><div class="card-body"><b>Current case</b><div>{{ job.current_case or '-' }}</div></div></div></div>
     <div class="col"><div class="card"><div class="card-body"><b>Progress</b><div>{{ job.completed }}/{{ job.total }}</div></div></div></div>
 </div>
-<div class="card mb-4"><div class="card-body"><h3>Case Results</h3><table class="table"><thead><tr><th>Case</th><th>Name</th><th>Status</th><th>Duration</th></tr></thead><tbody>{% for row in results %}<tr><td>{{ row.case_id }}</td><td>{{ row.name }}</td><td>{{ row.status }}</td><td>{{ row.duration }}s</td></tr>{% else %}<tr><td colspan="4">Waiting for agent results.</td></tr>{% endfor %}</tbody></table></div></div>
+{% if job.batch_count > 1 %}<p><b>Batch {{ job.batch_number }} of {{ job.batch_count }}</b></p>{% endif %}
+<div class="card mb-4"><div class="card-body"><h3>Case Results</h3><table class="table"><thead><tr><th>Case</th><th>Name</th><th>Maestro</th><th>Excel condition verdict</th><th>Duration</th></tr></thead><tbody>{% for row in results %}<tr><td>{{ row.case_id }}</td><td>{{ row.name }}</td><td><span class="status-pill status-{{ (row.execution_status or row.status)|lower }}">{{ row.execution_status or row.status }}</span></td><td><span class="status-pill status-{{ row.status|lower }}">{{ row.status|replace('_',' ') }}</span><br><small>{{ row.condition_details or 'Legacy result; Excel conditions were not checked.' }}</small></td><td>{{ row.duration }}s</td></tr>{% else %}<tr><td colspan="5">Waiting for agent results.</td></tr>{% endfor %}</tbody></table></div></div>
+{% if passed %}<div class="card mb-4"><div class="card-body"><h3>Verified passed against Excel conditions ({{ passed|length }})</h3><p>{{ passed|map(attribute='case_id')|join(', ') }}</p></div></div>{% endif %}
+{% if needs_review %}<div class="card mb-4 border-primary"><div class="card-body"><h3><span class="status-pill status-review">Needs Review</span> Maestro passed — manual/Excel review required ({{ needs_review|length }})</h3>{% for row in needs_review %}<div class="alert alert-info"><b>{{ row.case_id }} — {{ row.name }}</b><br>{{ row.condition_details }}</div>{% endfor %}</div></div>{% endif %}
 <div class="card"><div class="card-body"><h3>Consolidated Bug Summary</h3>{% for row in failures %}<div class="alert alert-danger"><b>{{ row.case_id }} — {{ row.name }}</b><pre class="mt-2 mb-0">{{ row.stderr or row.stdout or 'No failure details supplied' }}</pre></div>{% else %}<p>No failures reported.</p>{% endfor %}</div></div>
 <script>if(['queued','running','cancel_requested'].includes('{{ job.status }}'))setTimeout(()=>location.reload(),3000);</script>
 {% endblock %}

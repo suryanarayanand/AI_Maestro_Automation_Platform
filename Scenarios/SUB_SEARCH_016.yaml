@@ -1,0 +1,25 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, search, article, no-monetisation]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_SEARCH.yaml"
+- tapOn: {point: "45%,8%"}
+- eraseText: 100
+- inputText: "India"
+- pressKey: ENTER
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 60000}
+- swipe: {direction: UP}
+- waitForAnimationToEnd
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- tapOn: {id: "article_card", index: 0}
+- waitForAnimationToEnd
+- runFlow: "../Common/HANDLE_AI_SUMMARY_SHEET.yaml"
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- repeat:
+    times: 3
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd
+      - runFlow: "../Common/HANDLE_AI_SUMMARY_SHEET.yaml"
+      - assertVisible: {id: "screen_article_detail"}
+      - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_016_article_scrolled_no_monetisation"

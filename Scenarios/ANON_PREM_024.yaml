@@ -1,0 +1,9 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, premium]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_PREMIUM_ARTICLE.yaml"
+- runFlow: "../Common/ASSERT_ANONYMOUS_PREMIUM_PAYWALL.yaml"
+- assertVisible: {text: "Subscribe|SUBSCRIBE|Already a subscriber.*"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PREM_024_result"

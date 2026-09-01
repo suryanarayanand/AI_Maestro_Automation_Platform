@@ -1,0 +1,94 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - world
+  - article
+  - reading-options
+  - text-size
+  - themes
+  - blocked-grounding
+
+---
+
+# SUB_WORLD_008 — World reading options, text size and themes
+#
+# Establish the required authenticated subscriber state. A single Article
+# Library reference is used so presentation variants would retain one content
+# identity if the required controls become grounded.
+- runFlow: "../Common/OPEN_SUBSCRIBER_WORLD.yaml"
+
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- waitForAnimationToEnd
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_008_article_baseline"
+
+# Exercise the validated article reading-options controls.
+- assertVisible: {text: "Text size"}
+- tapOn: {text: "Text size"}
+- extendedWaitUntil:
+    visible: {text: "Reading Options.*|Text Size"}
+    timeout: 15000
+- assertVisible: {text: "A-"}
+- assertVisible: {text: "A+"}
+- tapOn: {text: "A+"}
+- tapOn: {text: "CLOSE|Close"}
+- assertVisible: {id: "screen_article_detail"}
+- assertWithAI: "Verify that the same article remains open after increasing text size, with visibly enlarged readable article text and no clipped, hidden, overlapping, or detached content."
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_008_larger_text"
+
+# Restore the smaller/default text presentation before theme checks.
+- tapOn: {text: "Text size"}
+- extendedWaitUntil: {visible: {text: "A-"}, timeout: 15000}
+- tapOn: {text: "A-"}
+- tapOn: {text: "CLOSE|Close"}
+- assertVisible: {id: "screen_article_detail"}
+
+# Return to the section, apply Dark mode through the validated Account path,
+# and reopen the identical controlled article.
+- back
+- waitForAnimationToEnd
+- runFlow: "../Common/Dark_theme_changing.yaml"
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+- tapOn: {text: "Close sheet", optional: true}
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- assertVisible: {id: "screen_article_detail"}
+- assertWithAI: "Verify that the same Redmi Pad Pro article is rendered in Dark mode with readable headline, body, media, and controls; fail for poor contrast, clipping, overlap, missing content, or a changed article identity."
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_008_dark_theme"
+
+# Restore Light mode so this case leaves no changed preference behind, then
+# prove the same article remains usable.
+- back
+- waitForAnimationToEnd
+- runFlow: "../Common/Light_theme_changing.yaml"
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+- tapOn: {text: "Close sheet", optional: true}
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- assertVisible: {id: "screen_article_detail"}
+- assertWithAI: "Verify that the same Redmi Pad Pro article is restored to Light mode, remains readable and usable, and has no clipping, overlap, missing content, or changed article identity."
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_008_light_theme_restored"

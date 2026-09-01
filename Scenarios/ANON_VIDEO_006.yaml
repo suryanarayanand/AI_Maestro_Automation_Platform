@@ -1,0 +1,35 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, videos]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_VIDEO_ARTICLE.yaml"
+
+- scrollUntilVisible:
+
+    element: {text: "Keep reading.*|.*[0-9]+%.*off.*|Go beyond the headline.*|Already a subscriber.*|SUBSCRIBE|Subscribe"}
+
+    direction: DOWN
+
+    timeout: 45000
+
+    speed: 40
+
+- assertVisible: {text: "Keep reading.*|.*[0-9]+%.*off.*|Go beyond the headline.*|Already a subscriber.*|SUBSCRIBE|Subscribe"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_VIDEO_006_paywall_overlay"
+
+- runFlow:
+
+    when: {visible: {text: "Play"}}
+
+    commands:
+
+      - tapOn: {text: "Play"}
+
+      - assertVisible: {text: "Keep reading.*|.*[0-9]+%.*off.*|Go beyond the headline.*|Already a subscriber.*|SUBSCRIBE|Subscribe"}
+
+- assertVisible: {id: "screen_article_detail"}
+

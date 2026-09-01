@@ -1,0 +1,49 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - search
+  - no-results
+  - evidence
+
+---
+
+# Establish the authenticated subscriber Home state.
+- runFlow: "../Common/OPEN_SUBSCRIBER_SEARCH.yaml"
+
+# Position 1: Open Search and submit the required unique nonsense term.
+- tapOn: {point: "45%,8%"}
+
+# Clear any retained query before entering the controlled no-result term.
+- eraseText: 100
+
+- inputText: "zxqv987654321"
+
+- pressKey: ENTER
+
+# Position 2: Wait for the no-result response to settle and capture it.
+- extendedWaitUntil:
+    visible:
+      text: "(?i)^No results found.*$"
+    timeout: 30000
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_010_no_result_state"
+
+# Position 3: Require the explicit empty-state presentation. The query was
+# cleared before submission, preventing a retained earlier query from driving
+# the displayed state.
+- assertVisible:
+    text: "(?i)^No results found.*$"
+
+# Position 4: Reassert the rendered response as the no-crash execution oracle
+# and save assertion-backed final evidence.
+- assertVisible:
+    text: "(?i)^No results found.*$"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_010_no_result_final"

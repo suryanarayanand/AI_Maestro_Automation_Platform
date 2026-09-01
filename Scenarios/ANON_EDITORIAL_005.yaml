@@ -1,0 +1,12 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, editorial]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_EDITORIAL.yaml"
+- repeat:
+    times: 4
+    commands:
+      - assertVisible: {id: "article_card"}
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_EDITORIAL_005_layout"
+      - swipe: {direction: UP, duration: 450}
+- assertVisible: {text: "Editorial"}

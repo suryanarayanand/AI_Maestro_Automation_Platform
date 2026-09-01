@@ -1,0 +1,12 @@
+appId: com.mobstac.thehindu
+tags: [anonymous, quick-access, podcast]
+---
+- runFlow:
+    file: "../Common/OPEN_ANONYMOUS_QUICK_ACCESS.yaml"
+    env:
+      SECTION_NAME: "Podcast"
+
+- tapOn: {text: "(?i)forward|rewind", optional: true}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PODCAST_008_evidence"

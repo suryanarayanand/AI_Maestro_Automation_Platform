@@ -1,0 +1,13 @@
+appId: com.mobstac.thehindu
+tags: [anonymous, quick-access, entertainment]
+---
+- runFlow:
+    file: "../Common/OPEN_ANONYMOUS_QUICK_ACCESS.yaml"
+    env:
+      SECTION_NAME: "Entertainment"
+
+- assertVisible: {text: "(?i)^Entertainment$"}
+- assertVisible: {id: "screen_home"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ENTERTAINMENT_001_selected"

@@ -1,0 +1,99 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - editorial
+  - refresh
+  - content-recovery
+  - visual-layout
+
+---
+
+# SUB_EDITORIAL_002 — Editorial refresh and content recovery
+
+# Establish the repository-managed authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Open Editorial through the validated Home content-tab label.
+- extendedWaitUntil:
+    visible:
+      text: "Editorial"
+    timeout: 30000
+
+- tapOn:
+    text: "Editorial"
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Editorial"
+    timeout: 30000
+
+- assertVisible:
+    text: "Editorial"
+
+# Position 1 — First pull-to-refresh with a bounded settled-state checkpoint.
+- swipe:
+    direction: DOWN
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Editorial"
+    timeout: 30000
+
+- assertVisible:
+    text: "Editorial"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_002_after_refresh_1"
+
+# Position 1 — Second pull-to-refresh with the same bounded settlement check.
+- swipe:
+    direction: DOWN
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Editorial"
+    timeout: 30000
+
+- assertVisible:
+    text: "Editorial"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_002_after_refresh_2"
+
+# Position 2 — Inspect the settled first viewport without scrolling away from it.
+- assertWithAI: "Inspect the currently visible first viewport after the two refreshes. Verify that this is a settled Editorial listing with readable Editorial headline or card content. Fail if the viewport is blank, loading-only, replaced by an error surface, or lacks rendered Editorial content."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_002_refreshed_first_viewport"
+
+# Position 3 — Prove that Editorial remains selected and usable after refresh.
+- extendedWaitUntil:
+    visible:
+      text: "Editorial"
+    timeout: 30000
+
+- assertVisible:
+    text: "Editorial"
+
+- assertWithAI: "Verify that Editorial is visibly the selected content tab and that its listing remains usable after both refreshes. At least one readable Editorial headline or card must be rendered. Fail if another tab is selected, the page is blank, a request or network error is shown, a blocking overlay is present, or a full-screen loader remains."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_002_editorial_recovered"
+
+# Position 4 — Final first-viewport content-integrity verdict.
+- assertVisible:
+    text: "Editorial"
+
+- assertWithAI: "Inspect all Editorial headlines and cards visible in the current first viewport. They must be rendered, readable, and fully contained without clipping or overlap. Fail if an identical headline or card is visibly duplicated in the viewport, if content is blank or broken, or if a persistent loader, timeout message, request error, or other error state remains."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_002_final_content_integrity"

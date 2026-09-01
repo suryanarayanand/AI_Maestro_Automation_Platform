@@ -1,0 +1,23 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, videos]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_VIDEO_ARTICLE.yaml"
+
+- assertVisible: {text: "Subscribe|SUBSCRIBE"}
+
+- tapOn: {text: "Subscribe|SUBSCRIBE", index: 0}
+
+- extendedWaitUntil: {visible: {text: "Yearly|Monthly|Choose a plan|View offers|Offer"}, timeout: 30000}
+
+- assertVisible: {text: "Yearly|Monthly|Choose a plan|View offers|Offer"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_VIDEO_014_plans"
+
+- back
+
+- assertVisible: {id: "screen_article_detail"}
+

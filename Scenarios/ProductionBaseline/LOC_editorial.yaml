@@ -3,7 +3,7 @@ tags:
   - baseline
   - editorial
 ---
-- runFlow: ../Common/OPEN_HOME_FOR_BASELINE.yaml
+- runFlow: ../../Common/OPEN_HOME_FOR_BASELINE.yaml
 - tapOn:
     text: "Editorial\nTab 7 of 15"
 - waitForAnimationToEnd

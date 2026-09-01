@@ -1,0 +1,102 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - editorial
+  - article
+  - destination-integrity
+  - header-metadata
+  - visual-layout
+
+---
+
+# SUB_EDITORIAL_005 — Editorial article selection and destination integrity
+
+# Establish the repository-managed authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Open the Editorial section through the validated Quick Access destination.
+- extendedWaitUntil:
+    visible:
+      text: "Editorial"
+    timeout: 30000
+
+- assertVisible:
+    text: "Editorial"
+
+- tapOn:
+    text: "Editorial"
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Editorial"
+    timeout: 30000
+
+- assertVisible:
+    text: "Editorial"
+
+- assertWithAI: "Verify that the full Editorial section listing is open and settled, with a readable Editorial identity and rendered article cards. Fail if this is only an Editorial shortcut on another page, an unrelated section, a blank or loading-only page, an error surface, or a blocked destination."
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+# Obligation 1 — Record and open a current visible non-live article card.
+# The screenshot records the dynamic headline without fixing a title that can
+# become stale as the Editorial inventory changes.
+- scrollUntilVisible:
+    element:
+      text: "^(?!Podcast$|Home$|India$|World$|Editorial$|Opinion$|Sports$|Business$).{20,}$"
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+    visibilityPercentage: 70
+    centerElement: true
+
+- assertVisible:
+    text: "^(?!Podcast$|Home$|India$|World$|Editorial$|Opinion$|Sports$|Business$).{20,}$"
+
+- assertWithAI: "Inspect the first fully visible article card that will be selected. Verify that it belongs to the current Editorial listing, is completely rendered, and has a readable headline. It must be an ordinary non-live article and must not carry a LIVE, live blog, live update, election live, or equivalent active-live indicator. Fail if the card is blank, loading-only, visibly stale or broken, clipped, detached from its headline, or not an Editorial article card."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_005_selected_card_headline_before_open"
+
+- tapOn:
+    text: "^(?!Podcast$|Home$|India$|World$|Editorial$|Opinion$|Sports$|Business$).{20,}$"
+    index: 0
+
+# Obligation 2 — Verify the supplied article-header information and hero media.
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertWithAI: "Verify that the open article header has a prominent readable headline and a readable Editorial, Opinion, or other coherent editorial section label. Verify that the byline and publication or update time are readable when those fields are supplied by the article. If the article supplies a hero image, video, illustration, chart, or other hero media, verify that it is rendered, non-blank, not visibly broken, and associated with this article; do not require hero media when none is supplied. Fail for placeholder, loading-only, broken, conflicting, or unreadable header content."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_005_article_header_fields"
+
+# Obligation 3 — Prove that the selected card opened its matching article.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertWithAI: "Verify that this article-detail destination was opened by the immediately preceding first visible Editorial article-card tap and that its prominent headline corresponds to the headline recorded in the settled pre-navigation screenshot. The screen must present one coherent article identity. Fail if it shows an unrelated article, another section, a listing page, a live blog, blank content, an error surface, a loading-only state, or header content belonging to another story."
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_005_matching_article_destination"
+
+# Obligation 4 — Verify header readability, grouping, and containment.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertWithAI: "Inspect the complete visible article-header area. The section label, headline, supplied byline, supplied publication or update time, and any supplied hero media must form one clear article-header group in the expected reading order. All supplied text must be readable and properly contained, and supplied hero media must remain associated with the article and properly laid out. Fail for clipping caused by layout failure, unintended truncation, overlap, detached metadata, broken media, obscuring overlays, conflicting article identities, or unrelated content inserted into the header group."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_005_header_grouping_and_layout"

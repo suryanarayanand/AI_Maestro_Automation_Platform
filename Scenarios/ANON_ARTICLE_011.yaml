@@ -1,0 +1,9 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, article-page, premium-paywall]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_PREMIUM_ARTICLE.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- assertVisible: {text: "PREMIUM|Premium"}
+- runFlow: "../Common/ASSERT_ANONYMOUS_PREMIUM_PAYWALL.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_011_premium_paywall"

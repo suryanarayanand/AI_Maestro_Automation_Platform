@@ -1,0 +1,49 @@
+appId: com.mobstac.thehindu
+tags: [generated, subscriber, videos, recommended]
+---
+- openLink: "https://www.thehindu.com/videos/watch-looking-back-at-2024-what-are-the-words-that-dominated-social-media/article69045733.ece"
+- tapOn:
+    text: "Close sheet"
+    optional: true
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+- assertNotVisible: "SUBSCRIBE"
+- scrollUntilVisible:
+    element: "Recommended"
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 40
+- assertVisible: "Recommended"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_011_source_recommended"
+# Recommended cards are clickable native views without article_card resource IDs.
+- tapOn:
+    point: "45%,78%"
+- tapOn:
+    text: "Close sheet"
+    optional: true
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+- assertNotVisible: "SUBSCRIBE"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_011_recommended_article_opened"
+- back
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+- scrollUntilVisible:
+    element: "Recommended"
+    direction: DOWN
+    timeout: 60000
+    speed: 40
+    visibilityPercentage: 40
+- assertVisible: "Recommended"
+- assertNotVisible: "SUBSCRIBE"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_011_source_article_restored"

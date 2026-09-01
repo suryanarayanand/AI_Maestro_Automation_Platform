@@ -1,0 +1,16 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, search, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_SEARCH.yaml"
+- tapOn: {point: "45%,8%"}
+- inputText: "flood"
+- hideKeyboard
+- tapOn: {point: "90%,8%"}
+- extendedWaitUntil: {visible: {text: "newest|Newest"}, timeout: 60000}
+- tapOn: {text: "newest|Newest"}
+- waitForAnimationToEnd
+- tapOn: {text: "relevance|Relevance"}
+- waitForAnimationToEnd
+- assertVisible: {text: "relevance|Relevance"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_020_relevance"

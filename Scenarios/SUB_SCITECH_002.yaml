@@ -1,0 +1,209 @@
+appId: com.mobstac.thehindu
+
+
+
+tags:
+
+  - generated
+
+  - ordered
+
+  - subscriber
+
+  - scitech
+
+  - refresh
+
+  - content-recovery
+
+  - visual-layout
+
+  - evidence-limited
+
+
+
+---
+
+
+
+# SUB_SCITECH_002 — Sci-tech refresh and content recovery
+
+# Establish the repository-managed authenticated subscriber session.
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_SCITECH.yaml"
+
+
+# Open Sci-Tech using the accepted SUB_SCITECH_001 navigation locator.
+
+- extendedWaitUntil:
+
+    visible:
+
+      text: "Sci-Tech"
+
+    timeout: 30000
+
+
+
+- tapOn:
+
+    text: "Sci-Tech"
+
+
+
+- waitForAnimationToEnd
+
+
+
+- extendedWaitUntil:
+
+    visible:
+
+      text: "Sci-Tech"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+# Position 1 — First pull-to-refresh and bounded settlement checkpoint.
+
+- swipe:
+
+    direction: DOWN
+
+
+
+- waitForAnimationToEnd
+
+
+
+- extendedWaitUntil:
+
+    visible:
+
+      text: "Sci-Tech"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_002_after_refresh_1"
+
+
+
+# Position 1 — Second pull-to-refresh and bounded settlement checkpoint.
+
+- swipe:
+
+    direction: DOWN
+
+
+
+- waitForAnimationToEnd
+
+
+
+- extendedWaitUntil:
+
+    visible:
+
+      text: "Sci-Tech"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_002_after_refresh_2"
+
+
+
+# Position 2 — Inspect the settled first viewport using the validated section
+
+# anchor and a visual content assertion. No scrolling occurs before inspection.
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+- assertWithAI: "Inspect the current settled first viewport. Verify that it is the Sci-Tech section and that visible editorial content is rendered, readable, and usable. At least one headline or content card must contain meaningful non-placeholder content. Fail if the viewport is blank, loading-only, obscured by a blocking overlay, or replaced by an error surface."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_002_refreshed_first_viewport"
+
+
+
+# Position 3 — Verify repeated refresh retained the selected Sci-Tech page and
+
+# recovered usable content rather than a blank, error, or permanent loader.
+
+- extendedWaitUntil:
+
+    visible:
+
+      text: "Sci-Tech"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+- assertWithAI: "Verify the Sci-Tech page remains active and visibly selected after both refreshes. The page must show settled, usable editorial content. Fail if another section is selected, the page is blank, a crash or request/network error is shown, a blocking overlay is present, or a full-screen loader or skeleton remains indefinitely."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_002_section_and_content_recovered"
+
+
+
+# Position 4 — Validate the visible refreshed headlines/cards for duplication,
+
+# clipping, timeout symptoms, and endless loading without inventing card IDs.
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+- assertWithAI: "Inspect all headlines and editorial cards visible in this refreshed Sci-Tech first viewport. They must be rendered with readable content and contained within their card and viewport boundaries. Fail if any visible headline or card is duplicated within the viewport, blank, broken, overlapped, clipped, truncated by layout failure, covered by a loader, or replaced by timeout, retry, request, or network-error content. No permanent spinner, skeleton-only card, or endless-loading state may remain."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_002_final_content_integrity"
+

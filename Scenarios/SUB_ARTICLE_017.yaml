@@ -1,0 +1,103 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - article
+  - navigation
+  - state-restoration
+  - evidence-limited
+
+---
+
+# Establish the validated Subscriber Home source.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_home"
+
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+
+# Open the first current article from the known Home source.
+- tapOn:
+    id: "article_card"
+    index: 0
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Evidence-limited surrogate: the repository supplies no validated locator for
+# the visible article Back icon. Maestro back exercises Android system Back and
+# therefore cannot certify the icon-specific interaction in obligation 1.
+- back
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_home"
+
+- assertVisible:
+    id: "article_card"
+
+- assertNotVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_017_first_back_home_restored"
+
+# Reopen the same bounded Home position and explicitly exercise Android Back.
+- tapOn:
+    id: "article_card"
+    index: 0
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- back
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_home"
+
+- assertVisible:
+    id: "article_card"
+
+- assertNotVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_017_android_back_home_restored"

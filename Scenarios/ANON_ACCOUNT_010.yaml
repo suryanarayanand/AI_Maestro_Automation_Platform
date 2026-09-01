@@ -1,0 +1,17 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_ACCOUNT.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ACCOUNT_010_top"
+- repeat: {times: 2, commands: [{swipe: {direction: UP}}, {waitForAnimationToEnd: {timeout: 1200}}]}
+- takeScreenshot: "Screenshots/Generated/ANON_ACCOUNT_010_middle"
+- scrollUntilVisible:
+    element: {text: "HELP & SUPPORT|FAQs"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- assertVisible: {text: "HELP & SUPPORT|FAQs"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ACCOUNT_010_bottom"

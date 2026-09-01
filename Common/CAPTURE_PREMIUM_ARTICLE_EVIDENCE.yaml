@@ -1,0 +1,58 @@
+appId: com.mobstac.thehindu
+tags: [common, article, premium, visual-evidence]
+---
+- assertVisible: {id: "screen_article_detail"}
+- assertVisible: {text: "PREMIUM|Premium"}
+- takeScreenshot: "Screenshots/Generated/premium_article_header"
+
+- swipe: {direction: UP}
+- waitForAnimationToEnd
+- runFlow:
+    when: {visible: {text: "^CLOSE$|Interstitial close button"}}
+    file: "HANDLE_ARTICLE_INTERSTITIAL.yaml"
+- runFlow:
+    when: {visible: {text: "(?i)^open$"}}
+    file: "HANDLE_DELAYED_ARTICLE_INTERSTITIAL.yaml"
+- runFlow:
+    when: {notVisible: {id: "screen_article_detail"}}
+    file: "HANDLE_DELAYED_ARTICLE_INTERSTITIAL.yaml"
+- takeScreenshot: "Screenshots/Generated/premium_article_body_1"
+- runFlow:
+    when: {visible: {text: "ADVERTISEMENT"}}
+    file: "CAPTURE_ARTICLE_AD_REVIEW.yaml"
+
+- swipe: {direction: UP}
+- waitForAnimationToEnd
+- runFlow:
+    when: {visible: {text: "^CLOSE$|Interstitial close button"}}
+    file: "HANDLE_ARTICLE_INTERSTITIAL.yaml"
+- runFlow:
+    when: {visible: {text: "(?i)^open$"}}
+    file: "HANDLE_DELAYED_ARTICLE_INTERSTITIAL.yaml"
+- runFlow:
+    when: {notVisible: {id: "screen_article_detail"}}
+    file: "HANDLE_DELAYED_ARTICLE_INTERSTITIAL.yaml"
+- takeScreenshot: "Screenshots/Generated/premium_article_body_2"
+- runFlow:
+    when: {visible: {text: "ADVERTISEMENT"}}
+    file: "CAPTURE_ARTICLE_AD_REVIEW.yaml"
+
+- swipe: {direction: UP}
+- waitForAnimationToEnd
+- runFlow:
+    when: {visible: {text: "^CLOSE$|Interstitial close button"}}
+    file: "HANDLE_ARTICLE_INTERSTITIAL.yaml"
+- runFlow:
+    when: {visible: {text: "(?i)^open$"}}
+    file: "HANDLE_DELAYED_ARTICLE_INTERSTITIAL.yaml"
+- runFlow:
+    when: {notVisible: {id: "screen_article_detail"}}
+    file: "HANDLE_DELAYED_ARTICLE_INTERSTITIAL.yaml"
+- takeScreenshot: "Screenshots/Generated/premium_article_body_3"
+- runFlow:
+    when: {visible: {text: "ADVERTISEMENT"}}
+    file: "CAPTURE_ARTICLE_AD_REVIEW.yaml"
+
+# Stay within the article body. Downward restoration can pull Android's
+# notification shade after the article reaches its top boundary.
+- assertVisible: {id: "screen_article_detail"}

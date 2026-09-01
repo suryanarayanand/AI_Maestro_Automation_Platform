@@ -1,0 +1,32 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, home, advertisements]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_HOME.yaml"
+
+- repeat:
+    times: 6
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd: {timeout: 5000}
+
+- extendedWaitUntil:
+    visible: {text: "ADVERTISEMENT"}
+    timeout: 120000
+- assertVisible: {text: "ADVERTISEMENT"}
+- assertVisible: {id: "screen_home"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HOME_003_advertisement_viewport_1"
+
+- repeat:
+    times: 6
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd: {timeout: 5000}
+
+- extendedWaitUntil:
+    visible: {text: "ADVERTISEMENT"}
+    timeout: 120000
+- assertVisible: {text: "ADVERTISEMENT"}
+- assertVisible: {id: "screen_home"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HOME_003_advertisement_viewport_2"

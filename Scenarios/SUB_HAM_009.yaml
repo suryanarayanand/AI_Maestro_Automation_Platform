@@ -1,0 +1,123 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - hamburger
+  - article
+  - no-monetisation
+---
+
+# Required precondition: an authenticated subscriber has opened the hamburger
+# menu. No validated selector for opening the menu or selecting a dynamic
+# section/article card was supplied.
+- extendedWaitUntil:
+    visible:
+      id: "screen_hamburger"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_hamburger"
+
+# Position 1: Exercise the scrollable hamburger section surface before opening
+# representative article content. The reference URL is runtime-gated by the
+# validated article-detail screen identifier.
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Positions 2 and 3: Check every currently validated visible advertisement and
+# interstitial surface at the settled article top. No dismissal is attempted.
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "Interstitial close button"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_HAM_009_article_top_no_ads"
+
+# Traverse representative article reading states. Reassert the contract after
+# every bounded scroll so inline, sticky, or interstitial surfaces appearing
+# farther down the article are detected.
+- repeat:
+    times: 6
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "ad_iframe"
+      - assertNotVisible:
+          text: "Interstitial close button"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "Interstitial close button"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_HAM_009_article_scrolled_no_ads"
+
+# Position 4: Navigate back without invoking an advertisement dismissal control
+# and prove the originating hamburger navigation surface remains available.
+- back
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_hamburger"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "Interstitial close button"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_HAM_009_hamburger_restored_without_ad_dismissal"

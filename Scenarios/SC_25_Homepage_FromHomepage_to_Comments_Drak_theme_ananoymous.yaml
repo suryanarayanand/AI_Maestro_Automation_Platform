@@ -42,14 +42,32 @@ tags:
 # - stopApp
 - launchApp
 
-# Navigate to Opinion Section
-- repeat:
-    times: 9
+# Open an article before searching for its comment section.
+- tapOn:
+    id: "nav_home"
+- waitForAnimationToEnd
+- tapOn:
+    id: "article_card"
+    index: 0
+- runFlow:
+    when:
+      visible: "Go beyond the headline.*"
     commands:
-      - scroll
+      - tapOn: "Close"
 - scrollUntilVisible:
-    element: "Comment"
+    element:
+      text: "Post a comment"
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 40
+    centerElement: true
+- assertVisible:
+    text: "Post a comment"
 - takeScreenshot: "Screenshots/SC_25/SC_25_Comment_Section"
+# Return Home before continuing to the Opinion section.
+- tapOn:
+    id: "nav_home"
 - repeat:
     times: 4
     commands:

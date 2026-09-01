@@ -1,0 +1,29 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, latest-news, bookmark, share, comment]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_LATEST_NEWS.yaml"
+- openLink: "https://www.thehindu.com/news/national/kerala/kerala-assembly-unanimously-passes-resolution-to-change-official-name-of-state-to-keralam/article67175490.ece"
+- waitForAnimationToEnd
+- tapOn: {text: "Close sheet", optional: true}
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 45000}
+- extendedWaitUntil: {visible: {id: "cta_bookmark"}, timeout: 20000}
+- runFlow: "../Common/NORMALIZE_AND_SELECT_SUBSCRIBER_BOOKMARK.yaml"
+- assertNotVisible: {text: "Login to your account"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_009_bookmarked"
+- tapOn: {id: "cta_share"}
+- waitForAnimationToEnd
+- assertWithAI: "Verify a native share surface is open for the current article with visible share targets or actions, and fail if the article remained unchanged or an error is shown"
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_009_share"
+- back
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 15000}
+- scrollUntilVisible:
+    element: {text: "Post a comment"}
+    direction: DOWN
+    timeout: 90000
+    speed: 45
+- tapOn: {text: "Post a comment"}
+- assertNotVisible: {text: "Login to your account"}
+- assertNotVisible: {id: "cta_login"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_009_comment_access"

@@ -1,0 +1,134 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - photos
+  - dark-theme
+  - visual-integrity
+  - evidence-limited
+---
+
+# SUB_PHOTO_018
+# Required harness precondition: the app is already configured for Dark mode.
+# No validated Dark-mode control or shared theme-setting flow was supplied.
+
+# Position 1 — Open the subscriber Photos listing and then a controlled gallery.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      text: "Photos"
+    timeout: 30000
+
+- assertVisible:
+    text: "Photos"
+
+- tapOn:
+    text: "Photos"
+
+- extendedWaitUntil:
+    visible:
+      text: "Photos"
+    timeout: 30000
+
+- assertVisible:
+    text: "Photos"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_018_dark_photos_listing"
+
+# The URL is reference-only test data. The validated article-detail identifier
+# provides the runtime routing gate before the gallery is treated as opened.
+- openLink: "https://www.thehindu.com/sport/cricket/ipl2013/match-photos/rajasthan-royals-thrash-mumbai-indians/article4627667.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_018_dark_gallery_detail"
+
+# Position 2 — Exercise bounded gallery navigation in both directions, then
+# move into the article content without inventing an unvalidated expand control.
+- swipe:
+    direction: LEFT
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_018_dark_gallery_next_image"
+
+- swipe:
+    direction: RIGHT
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_018_dark_gallery_previous_image"
+
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_018_dark_gallery_article_expanded_state"
+
+# Position 3 — Assert the grounded article surface remains rendered and capture
+# settled visual evidence for image, counter, headline, metadata, and controls.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_018_dark_contrast_review"
+
+# Position 4 — Exercise additional settled transitions and prove the validated
+# article surface does not disappear. The artifact is retained for temporal,
+# clipping, control-visibility, and stale-theme review.
+- swipe:
+    direction: LEFT
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_018_dark_transition_integrity"

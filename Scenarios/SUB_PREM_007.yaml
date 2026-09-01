@@ -1,0 +1,127 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - premium
+  - specials
+  - article
+  - full-access
+  - no-monetisation
+---
+
+# Establish the authenticated subscriber state used by validated subscriber flows.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Position 1: Enter Premium > Specials and open the first current rendered card.
+- tapOn:
+    text: "Premium"
+
+- extendedWaitUntil:
+    visible:
+      text: "Specials"
+    timeout: 30000
+
+- tapOn:
+    text: "Specials"
+
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+
+- tapOn:
+    id: "article_card"
+    index: 0
+
+# Dismiss the validated optional article sheet if it appears.
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+# Position 4: Prove that article detail opened.
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Positions 3, 5 and 6: Assert entitled, ad-free access at the settled article top.
+- assertNotVisible:
+    text: "SUBSCRIBE|Already a subscriber.*|Keep reading.*|.*[0-9]+%.*off.*"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_007_specials_article_top"
+
+# Position 2: Traverse the article body in a bounded first group of five steps.
+# Positions 5 and 6: Recheck article continuity and monetisation absence after every step.
+- repeat:
+    times: 5
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "SUBSCRIBE|Already a subscriber.*|Keep reading.*|.*[0-9]+%.*off.*"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "ad_iframe"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "SUBSCRIBE|Already a subscriber.*|Keep reading.*|.*[0-9]+%.*off.*"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_007_specials_article_middle"
+
+# Position 2: Continue through a bounded second group of five steps.
+# Positions 5 and 6: Preserve the same entitlement assertions in the lower state.
+- repeat:
+    times: 5
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "SUBSCRIBE|Already a subscriber.*|Keep reading.*|.*[0-9]+%.*off.*"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "ad_iframe"
+
+# Final settled proof of continuous subscriber access without a paywall or ads.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "SUBSCRIBE|Already a subscriber.*|Keep reading.*|.*[0-9]+%.*off.*"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_007_specials_article_lower_full_access"

@@ -1,0 +1,19 @@
+appId: com.mobstac.thehindu
+tags: [common, article, ai-summary, sheet]
+---
+# The AI Summary/FAQ sheet is frequency-capped and can render after the
+# article screen or after a pager/scroll transition. Poll briefly so it
+# cannot consume the next article interaction.
+- repeat:
+    times: 3
+    commands:
+      - waitForAnimationToEnd
+      - runFlow:
+          when:
+            visible: "Close sheet"
+          commands:
+            - tapOn: "Close sheet"
+      - tapOn:
+          text: "Interstitial close button"
+          optional: true
+      - waitForAnimationToEnd

@@ -1,0 +1,81 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - podcast
+  - visual-layout
+
+---
+
+# SUB_PODCAST_002 — Podcast listing content and visual layout
+# Establish the repository-managed authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Open Podcast using the only validated Podcast text locator.
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- tapOn:
+    text: "Podcast"
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+# Viewport 1: inspect all visible Podcast cards and their visual structure.
+- assertWithAI: "Verify this is the Podcast series listing and inspect every visible Podcast card, including meaningful partially visible cards. Multiple distinct Podcast cards or card regions must be present. For every visible series card, verify that its cover image is rendered and not blank, broken, stretched or squashed; its title and description are readable; and a supported action is visibly associated with the card. Verify cards, images, titles, descriptions and actions remain aligned and fully contained, with no unintended clipping, overlap or duplicated card content."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_002_viewport_01_content_and_layout"
+
+# Viewport 2: first lower settled listing state.
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify this remains the Podcast series listing. Inspect every visible Podcast card and verify each rendered cover is not blank, broken, stretched or squashed; each visible title and description is readable; and each card has a visibly associated supported action. Verify the cards and text remain aligned and contained without unintended clipping, overlap or duplicated card content."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_002_viewport_02_content_and_layout"
+
+# Viewport 3: second lower settled listing state.
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify this remains the Podcast series listing. Inspect every visible Podcast card and verify each rendered cover is not blank, broken, stretched or squashed; each visible title and description is readable; and each card has a visibly associated supported action. Verify the cards and text remain aligned and contained without unintended clipping, overlap or duplicated card content."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_002_viewport_03_content_and_layout"
+
+# Viewport 4: third scrolled viewport, completing three bounded transitions.
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify this remains the Podcast series listing. Inspect every visible Podcast card and verify each rendered cover is not blank, broken, stretched or squashed; each visible title and description is readable; and each card has a visibly associated supported action. Verify the cards and text remain aligned and contained without unintended clipping, overlap or duplicated card content."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_002_viewport_04_content_and_layout"

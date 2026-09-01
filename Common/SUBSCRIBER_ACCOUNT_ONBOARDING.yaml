@@ -1,0 +1,26 @@
+appId: com.mobstac.thehindu
+tags: [common, subscriber, onboarding, no-evidence]
+---
+- runFlow:
+    when:
+      visible: "Skip"
+    commands:
+      # The onboarding surface can dismiss itself between the condition check
+      # and tap. Treat that transition as success and validate the next state.
+      - tapOn:
+          text: "Skip"
+          optional: true
+- extendedWaitUntil:
+    visible: "SUBSCRIBE"
+    timeout: 15000
+- runFlow:
+    when:
+      visible: "Welcome to a new.*The Hindu experience"
+    commands:
+      - tapOn:
+          text: "Skip"
+          optional: true
+      - extendedWaitUntil:
+          notVisible: "Welcome to a new.*The Hindu experience"
+          timeout: 10000
+# Subscriber setup deliberately captures no screenshots before authentication.

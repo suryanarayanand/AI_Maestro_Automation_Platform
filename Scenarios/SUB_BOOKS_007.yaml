@@ -1,0 +1,24 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, quick-access]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_BOOKS.yaml"
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- tapOn: {id: "article_card", index: 0}
+- waitForAnimationToEnd
+- runFlow: "../Common/HANDLE_AI_SUMMARY_SHEET.yaml"
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- assertVisible: {id: "screen_article_detail"}
+- runFlow:
+    when: {visible: {text: "AI Summary|AI summary|Summary"}}
+    commands:
+      - tapOn: {text: "AI Summary|AI summary|Summary"}
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_BOOKS_007_ai_summary"
+- runFlow:
+    when: {visible: {text: "Listen to article|Listen"}}
+    commands:
+      - tapOn: {text: "Listen to article|Listen"}
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_BOOKS_007_listen"
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"

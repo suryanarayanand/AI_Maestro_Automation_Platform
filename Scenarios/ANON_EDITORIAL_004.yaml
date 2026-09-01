@@ -1,0 +1,17 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, editorial]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_EDITORIAL.yaml"
+- repeat:
+    times: 6
+    commands:
+      - swipe: {direction: UP, duration: 500}
+      - waitForAnimationToEnd
+- runFlow:
+    when: {visible: {text: "SHOW MORE|Show More"}}
+    commands:
+      - tapOn: {text: "SHOW MORE|Show More"}
+      - waitForAnimationToEnd
+- assertVisible: {id: "screen_home"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_EDITORIAL_004_pagination"

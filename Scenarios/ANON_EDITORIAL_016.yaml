@@ -1,0 +1,17 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, editorial]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_EDITORIAL.yaml"
+- swipe: {direction: DOWN, duration: 700}
+- waitForAnimationToEnd
+- runFlow:
+    when: {visible: {text: "Retry|No Internet|Something went wrong"}}
+    commands:
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_EDITORIAL_016_error"
+      - tapOn: {text: "Retry", optional: true}
+      - waitForAnimationToEnd
+- extendedWaitUntil: {visible: {text: "Editorial"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_EDITORIAL_016_recovered"

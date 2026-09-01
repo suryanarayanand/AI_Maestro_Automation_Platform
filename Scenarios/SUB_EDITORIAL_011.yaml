@@ -1,0 +1,186 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - editorial
+  - article
+  - paging
+  - navigation-recovery
+  - no-monetisation
+
+---
+
+# SUB_EDITORIAL_011 — Editorial article paging and navigation recovery
+# Establish the repository-standard authenticated subscriber session before
+# opening the active Editorial article reference.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- openLink: "https://www.thehindu.com/opinion/editorial/brazen-intimidation-the-hindu-editorial-on-the-tax-survey-on-the-bbc/article66513588.ece"
+
+# Runtime-qualify the reference against this build without relying on its
+# dynamic headline as a selector.
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- assertWithAI: "Verify a settled standard Editorial article detail is open. The article body must be readable and the screen must not be a listing, gallery, paywall, login gate, subscription offer, advertisement interstitial, blank page, or error surface."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_011_article_initial"
+
+# Position 1 — Three left pager swipes, each followed by a settle wait.
+- swipe:
+    direction: LEFT
+    duration: 500
+- waitForAnimationToEnd
+- tapOn: {text: "Close sheet", optional: true}
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_article_detail"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_011_left_1"
+
+- swipe:
+    direction: LEFT
+    duration: 500
+- waitForAnimationToEnd
+- tapOn: {text: "Close sheet", optional: true}
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_article_detail"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_011_left_2"
+
+- swipe:
+    direction: LEFT
+    duration: 500
+- waitForAnimationToEnd
+- tapOn: {text: "Close sheet", optional: true}
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_article_detail"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_011_left_3"
+
+# Position 1 continued — Three right pager swipes with equivalent settled,
+# authenticated and ad-free checks after every gesture.
+- swipe:
+    direction: RIGHT
+    duration: 500
+- waitForAnimationToEnd
+- tapOn: {text: "Close sheet", optional: true}
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_article_detail"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_011_right_1"
+
+- swipe:
+    direction: RIGHT
+    duration: 500
+- waitForAnimationToEnd
+- tapOn: {text: "Close sheet", optional: true}
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_article_detail"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_011_right_2"
+
+- swipe:
+    direction: RIGHT
+    duration: 500
+- waitForAnimationToEnd
+- tapOn: {text: "Close sheet", optional: true}
+- waitForAnimationToEnd
+- assertVisible:
+    id: "screen_article_detail"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_011_right_3"
+
+# Position 3 — Final paging verdict: all six gestures retained article detail,
+# subscriber entitlement, and an ad-free surface. Article identity may vary with
+# live pager inventory, so no fixed adjacent headline is required.
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+# Position 2 — Use native Back from the final article state.
+- back
+- waitForAnimationToEnd
+
+# Position 4 — Require recovery to an Editorial listing surface. The validated
+# Editorial anchor and absence of article detail provide structural checks;
+# visual assertion covers selected-state and reasonable live-list context.
+- extendedWaitUntil:
+    visible:
+      text: "Editorial"
+    timeout: 30000
+
+- assertVisible:
+    text: "Editorial"
+
+- assertNotVisible:
+    id: "screen_article_detail"
+
+- assertWithAI: "Verify Back returned to the Editorial article listing and Editorial remains visibly selected. The listing must be rendered at a usable article-card position near its retained context, respond as an in-app content surface, and must not be the main Home feed, article detail, an exited application, a crash page, a blank screen, or a stale overlay."
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_011_editorial_listing_restored"

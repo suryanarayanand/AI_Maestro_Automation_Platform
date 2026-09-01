@@ -1,0 +1,127 @@
+{
+    "suite": "Subscriber User Cases - Business Quick Access",
+    "source_suite": "user_subscriber",
+    "module": "Business Quick Access",
+    "tests": [
+        {
+            "id": "SUB_BUSINESS_001",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Business launch, selection and subscriber identity",
+            "yaml": "SUB_BUSINESS_001.yaml",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "SUB_BUSINESS_002",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Business refresh and content recovery",
+            "yaml": "SUB_BUSINESS_002.yaml",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "SUB_BUSINESS_003",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Business listing identity and visual structure",
+            "yaml": "SUB_BUSINESS_003.yaml",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "SUB_BUSINESS_004",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Business deep scroll, pagination and subscriber ad-free entitlement",
+            "yaml": "SUB_BUSINESS_004.yaml",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "SUB_BUSINESS_005",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Business article selection and destination integrity",
+            "yaml": "SUB_BUSINESS_005.yaml",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "SUB_BUSINESS_006",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Business subscriber full-article entitlement",
+            "yaml": "SUB_BUSINESS_006.yaml",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "SUB_BUSINESS_007",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Business conditional AI Summary and Listen controls",
+            "yaml": "SUB_BUSINESS_007.yaml",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "SUB_BUSINESS_008",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Business reading options, text size and themes",
+            "yaml": "SUB_BUSINESS_008.yaml",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "SUB_BUSINESS_009",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Business bookmark, share and comment engagement",
+            "yaml": "SUB_BUSINESS_009.yaml",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "SUB_BUSINESS_010",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Business post-article content continuity",
+            "yaml": "SUB_BUSINESS_010.yaml",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "SUB_BUSINESS_011",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Business article paging and navigation recovery",
+            "yaml": "SUB_BUSINESS_011.yaml",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "SUB_BUSINESS_012",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Business loading, live-content and failure resilience",
+            "yaml": "SUB_BUSINESS_012.yaml",
+            "display_module": "Business Quick Access"
+        }
+    ]
+}

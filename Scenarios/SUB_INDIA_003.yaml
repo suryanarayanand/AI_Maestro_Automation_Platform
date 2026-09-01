@@ -1,0 +1,9 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, quick-access]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_INDIA.yaml"
+- assertVisible: {text: "(?i)^India$"}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card", index: 0}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_INDIA_003_listing"

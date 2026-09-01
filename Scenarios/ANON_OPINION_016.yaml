@@ -1,0 +1,11 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, opinion]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_OPINION.yaml"
+- swipe: {direction: LEFT}
+- waitForAnimationToEnd
+- swipe: {direction: RIGHT}
+- waitForAnimationToEnd
+- assertVisible: {text: "Opinion"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_OPINION_016_returned"

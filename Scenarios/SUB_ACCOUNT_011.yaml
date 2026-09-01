@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+tags: [generated, subscriber, account, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_ACCOUNT.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ACCOUNT_011_top"
+- scrollUntilVisible: {element: {text: "APPLICATION SETTINGS|Text Size"}, direction: DOWN, timeout: 30000, speed: 40, visibilityPercentage: 20}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ACCOUNT_011_middle"
+- scrollUntilVisible: {element: {text: "HELP & SUPPORT|FAQs|Logout|Log Out"}, direction: DOWN, timeout: 30000, speed: 40, visibilityPercentage: 20}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ACCOUNT_011_lower"
+- assertVisible: {id: "screen_user_menu"}
+

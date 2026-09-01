@@ -1,0 +1,17 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, trending]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- tapOn:
+    id: "nav_trending"
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 20000
+- assertVisible:
+    id: "screen_trending"
+- takeScreenshot: "Screenshots/Generated/TC_005_trending_page"
+- swipe:
+    direction: "UP"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/TC_005_trending_page_scrolled"

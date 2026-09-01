@@ -43,6 +43,22 @@ def report_details(report_name):
         report=report
     )
 
+
+@report_bp.route("/reports/<report_name>/screenshots")
+def report_screenshots(report_name):
+    report = get_report_details(report_name)
+    if report is None:
+        abort(404)
+    return render_template("report_screenshots.html", report=report)
+
+
+@report_bp.route("/reports/<report_name>/evidence")
+def report_evidence(report_name):
+    report = get_report_details(report_name)
+    if report is None:
+        abort(404)
+    return render_template("report_evidence.html", report=report)
+
 ROOT = Path(__file__).resolve().parents[2]
 REPORT_FOLDER = ROOT / "Reports"
 

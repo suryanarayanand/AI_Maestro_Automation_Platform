@@ -12,3 +12,18 @@ tags:
 - extendedWaitUntil:
     visible: "SUBSCRIBE"
     timeout: 15000
+
+# The Home-page welcome card appears shortly after the first onboarding screen.
+- extendedWaitUntil:
+    visible: "Welcome to a new.*The Hindu experience"
+    timeout: 15000
+
+- takeScreenshot: "Screenshots/Generated/home_welcome_popup_before_skip"
+
+- tapOn: "Skip"
+
+- extendedWaitUntil:
+    notVisible: "Welcome to a new.*The Hindu experience"
+    timeout: 10000
+
+- takeScreenshot: "Screenshots/Generated/home_after_welcome_skip"

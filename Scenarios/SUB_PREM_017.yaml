@@ -1,0 +1,20 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_PREMIUM_ARTICLE.yaml"
+- repeat:
+    times: 5
+    commands:
+      - swipe: {direction: LEFT}
+      - waitForAnimationToEnd
+      - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- repeat:
+    times: 5
+    commands:
+      - swipe: {direction: RIGHT}
+      - waitForAnimationToEnd
+      - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_017_result"

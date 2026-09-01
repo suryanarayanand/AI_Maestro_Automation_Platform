@@ -1,0 +1,180 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - editorial
+  - pagination
+  - no-monetisation
+  - visual-layout
+
+---
+
+# SUB_EDITORIAL_004 — Editorial deep scroll, pagination and subscriber ad-free entitlement
+
+# Establish the repository-managed authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Open Editorial using the validated visible label and verify navigation settled.
+- extendedWaitUntil:
+    visible:
+      text: "Editorial"
+    timeout: 30000
+
+- assertVisible:
+    text: "Editorial"
+
+- tapOn:
+    text: "Editorial"
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Editorial"
+    timeout: 30000
+
+- assertVisible:
+    text: "Editorial"
+
+- assertWithAI: "Verify the current screen is the Editorial section listing and contains multiple readable, distinct editorial story cards or headlines. It must not be Home, another section, a blank page, a loading-only state, a broken layout, or an error screen."
+
+# Viewport 1: inspect every requested advertising class and enforce the
+# grounded subscriber entitlement contract.
+- assertWithAI: "Inspect the entire visible Editorial viewport. Verify there is no inline advertisement, bottom-pinned or floating sticky advertisement, empty or blank advertisement placeholder, video advertisement or autoplay advertising overlay, full-screen interstitial advertisement, or recommendation-advertising unit such as Taboola. Legitimate editorial whitespace and genuine editorial video content must not be classified as advertising."
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "Interstitial close button"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_004_viewport_01_ad_free"
+
+# SHOW MORE is live-inventory dependent. Activate and validate it only when it
+# is exposed at the current pagination boundary.
+- runFlow:
+    when:
+      visible:
+        text: "SHOW MORE"
+    commands:
+      - assertVisible:
+          text: "SHOW MORE"
+      - tapOn:
+          text: "SHOW MORE"
+      - waitForAnimationToEnd
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - extendedWaitUntil:
+          visible:
+            text: "Editorial"
+          timeout: 30000
+      - assertVisible:
+          text: "Editorial"
+      - assertWithAI: "Verify SHOW MORE loaded additional, distinct Editorial story cards or headlines. The listing must remain in Editorial, continue below the previous pagination boundary, and must not reset to its initial top, become blank, remain loading-only, or show an error."
+      - assertWithAI: "Inspect the entire post-pagination Editorial viewport. Verify there is no inline advertisement, sticky advertisement, blank advertisement placeholder, video advertisement or autoplay advertising overlay, interstitial advertisement, or recommendation-advertising unit such as Taboola."
+      - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "ad_iframe"
+      - assertNotVisible:
+          text: "Interstitial close button"
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_004_show_more_after"
+
+# Five bounded upward transitions, combined with viewport 1, inspect at least
+# six settled Editorial viewports. Each iteration proves content progression,
+# section continuity, visual ad absence, and grounded entitlement absence.
+- repeat:
+    times: 5
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+
+      - assertVisible:
+          text: "Editorial"
+
+      - assertWithAI: "Verify this is a lower continuation viewport of the Editorial listing with multiple readable, rendered story cards or headlines. Visible content must differ from the immediately preceding settled viewport; the section must not have reset to its initial top or navigated elsewhere, and the page must not be blank, loading-only, broken, or showing an error."
+
+      - assertWithAI: "Inspect the entire visible Editorial viewport. Verify there is no inline advertisement, bottom-pinned or floating sticky advertisement, empty or blank advertisement placeholder, video advertisement or autoplay advertising overlay, full-screen interstitial advertisement, or recommendation-advertising unit such as Taboola. Legitimate editorial whitespace and genuine editorial video content must not be classified as advertising."
+
+      - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "ad_iframe"
+      - assertNotVisible:
+          text: "Interstitial close button"
+
+      # Use pagination at any inspected viewport where current inventory exposes it.
+      - runFlow:
+          when:
+            visible:
+              text: "SHOW MORE"
+          commands:
+            - assertVisible:
+                text: "SHOW MORE"
+            - tapOn:
+                text: "SHOW MORE"
+            - waitForAnimationToEnd
+            - swipe:
+                direction: UP
+            - waitForAnimationToEnd
+            - extendedWaitUntil:
+                visible:
+                  text: "Editorial"
+                timeout: 30000
+            - assertVisible:
+                text: "Editorial"
+            - assertWithAI: "Verify SHOW MORE loaded additional, distinct Editorial story cards or headlines. The listing must remain in Editorial, continue below the previous pagination boundary, and must not reset to its initial top, become blank, remain loading-only, or show an error."
+            - assertWithAI: "Inspect the entire post-pagination Editorial viewport. Verify there is no inline advertisement, sticky advertisement, blank advertisement placeholder, video advertisement or autoplay advertising overlay, interstitial advertisement, or recommendation-advertising unit such as Taboola."
+            - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+            - assertNotVisible:
+                text: "SUBSCRIBE"
+            - assertNotVisible:
+                text: "ADVERTISEMENT"
+            - assertNotVisible:
+                id: "ad_iframe"
+            - assertNotVisible:
+                text: "Interstitial close button"
+
+# Final settled section-continuity and subscriber-entitlement gate.
+- assertVisible:
+    text: "Editorial"
+
+- assertWithAI: "Verify the final screen remains a populated lower Editorial listing viewport with readable story cards or headlines and has not reset to the initial listing top, navigated to another section, become blank, or entered an error state."
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "Interstitial close button"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_004_final_entitled_result"

@@ -1,0 +1,4 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, games, sc27]
+---
+- runFlow: SC_27_SUDOKU.yaml

@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, article-page, advertisement]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- repeat:
+    times: 8
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd
+      - runFlow:
+          when: {visible: {text: "ADVERTISEMENT"}}
+          file: "../Common/CAPTURE_ARTICLE_AD_REVIEW.yaml"
+- assertVisible: {id: "screen_article_detail"}

@@ -1,0 +1,161 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - photos
+  - gallery
+  - collapse
+  - state-restoration
+  - no-monetisation
+---
+
+# SUB_PHOTO_015 — Read Less collapse and state restoration
+# Establish the repository-standard authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Open the supplied photo-gallery fixture. The URL remains reference-only until
+# article-detail visibility confirms that it resolves in the target build.
+- openLink: "https://www.thehindu.com/sport/cricket/ipl2013/match-photos/rajasthan-royals-thrash-mumbai-indians/article4627667.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+# Establish an observable pre-expansion gallery state at page 2.
+- extendedWaitUntil:
+    visible:
+      text: ".*1/([2-9]|[1-9][0-9]+).*"
+    timeout: 30000
+
+- assertVisible:
+    text: ".*1/([2-9]|[1-9][0-9]+).*"
+
+- swipe:
+    direction: LEFT
+    duration: 500
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: ".*2/([2-9]|[1-9][0-9]+).*"
+    timeout: 15000
+
+- assertVisible:
+    text: ".*2/([2-9]|[1-9][0-9]+).*"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_015_pre_expansion_gallery_page_2"
+
+# Obligation 1: Locate the collapsed-body control and expand the article.
+- scrollUntilVisible:
+    element:
+      text: "READ FULL ARTICLE"
+    direction: DOWN
+    timeout: 50000
+
+- assertVisible:
+    text: "READ FULL ARTICLE"
+
+- tapOn:
+    text: "READ FULL ARTICLE"
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+
+# Obligations 1 and 4: Traverse the expanded body until its terminal collapse
+# control is actually visible and therefore reachable.
+- scrollUntilVisible:
+    element:
+      text: "READ LESS ARTICLE"
+    direction: DOWN
+    timeout: 50000
+
+- assertVisible:
+    text: "READ LESS ARTICLE"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_015_read_less_reachable"
+
+# Obligation 2: Collapse the expanded article body.
+- tapOn:
+    text: "READ LESS ARTICLE"
+
+- waitForAnimationToEnd
+
+# Obligation 5: The expanded-body control disappears and the original expansion
+# control becomes available again in the collapsed summary state.
+- assertNotVisible:
+    text: "READ LESS ARTICLE"
+
+- scrollUntilVisible:
+    element:
+      text: "READ FULL ARTICLE"
+    direction: UP
+    timeout: 30000
+
+- extendedWaitUntil:
+    visible:
+      text: "READ FULL ARTICLE"
+    timeout: 15000
+
+- assertVisible:
+    text: "READ FULL ARTICLE"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_015_collapsed_summary"
+
+# Obligations 3 and 6: Return to the gallery and assert that the current page is
+# still page 2 rather than being reset to page 1 by expansion or collapse.
+- scrollUntilVisible:
+    element:
+      text: ".*2/([2-9]|[1-9][0-9]+).*"
+    direction: UP
+    timeout: 50000
+
+- extendedWaitUntil:
+    visible:
+      text: ".*2/([2-9]|[1-9][0-9]+).*"
+    timeout: 15000
+
+- assertVisible:
+    text: ".*2/([2-9]|[1-9][0-9]+).*"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_015_restored_gallery_page_2"

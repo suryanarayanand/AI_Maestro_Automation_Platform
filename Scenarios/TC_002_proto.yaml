@@ -1,0 +1,10 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, games]
+---
+# Child flows establish their own isolated subscriber Games state.
+- runFlow: "SC_27_CRYPTIC_CROSSWORD.yaml"
+- runFlow: "SC_27_SUDOKU_MINI.yaml"
+- runFlow: "SC_27_SUDOKU_EASY.yaml"
+- runFlow: "SC_27_THE_HINDU_MINI.yaml"
+- runFlow: "SC_27_NEWS_QUIZ.yaml"
+- takeScreenshot: "Screenshots/Generated/TC_002_proto_throughout_flow"

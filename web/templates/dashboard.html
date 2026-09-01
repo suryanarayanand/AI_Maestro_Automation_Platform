@@ -1,28 +1,32 @@
 {% extends "base.html" %}
 {% block title %}Overview{% endblock %}
-{% block page_title %}Automation overview{% endblock %}
+{% block page_title %}Overview{% endblock %}
 {% block content %}
-<p class="page-intro">Build scenarios from Excel, approve generated YAML, execute suites on a connected agent, and review the evidence.</p>
+<div class="overview-shell">
+<section class="overview-hero">
+  <div class="overview-hero-copy"><span class="overview-kicker"><i></i> Automation control center</span><h2>Ship confident mobile experiences.</h2><p>Build, execute, and review every user journey from one focused workspace.</p><div class="overview-actions"><a class="overview-primary" href="{{ url_for('suite.suites') }}">Browse test suites &rarr;</a><a class="overview-secondary" href="{{ url_for('generator.generator') }}">Generate scenarios</a></div></div>
+  <div class="overview-live-card"><div class="overview-live-head"><span>Live execution</span><span id="execution-status" class="status-pill status-idle">Idle</span></div><strong id="execution-suite">No suite running</strong><div class="overview-progress-track"><span></span></div><div class="overview-live-meta"><div><small>Progress</small><b id="execution-progress">-</b></div><div><small>Started</small><b id="execution-time">-</b></div></div><a class="overview-job-link" href="{{ url_for('jobs.jobs') }}">Open execution jobs</a><button id="cancel-execution" class="btn btn-sm btn-danger mt-3 d-none" type="button">Cancel Execution</button></div>
+</section>
+<section class="overview-section"><div class="overview-section-head"><div><span>User journeys</span><h2>Test by audience</h2></div><a href="{{ url_for('user_profiles.index') }}">View all profiles &rarr;</a></div><div class="profile-rail">
+{% set profiles = [('Anonymous','First-time and signed-out journeys','A','anonymous','user_anonymous'),('Subscriber','Entitled premium experience','S','subscriber','user_subscriber'),('Registered','Signed-in free user journeys','R','registered','user_registered'),('Expired','Renewal and access restrictions','E','expired','user_expired')] %}
+{% for name, description, initial, tone, suite_name in profiles %}<a class="audience-card audience-{{ tone }}" href="{{ url_for('suite.edit_suite', suite_name=suite_name) }}"><span class="audience-art"><b>{{ initial }}</b></span><span class="audience-copy"><small>User profile</small><strong>{{ name }}</strong><em>{{ description }}</em></span><span class="audience-arrow">&rarr;</span></a>{% endfor %}
+</div></section>
+<section class="overview-section"><div class="overview-section-head"><div><span>Workspace</span><h2>Continue your workflow</h2></div></div>
 <div class="workflow">
     <a href="{{ url_for('generator.generator') }}"><span>1</span><strong>Generate</strong><small>Upload Excel</small></a>
     <a href="{{ url_for('generator.generator') }}"><span>2</span><strong>Review</strong><small>{{ stats.pending_drafts }} pending</small></a>
     <a href="{{ url_for('suite.suites') }}"><span>3</span><strong>Execute</strong><small>{{ stats.active_jobs }} active jobs</small></a>
     <a href="{{ url_for('report.reports') }}"><span>4</span><strong>Analyze</strong><small>{{ stats.report_count }} reports</small></a>
-</div>
-<div class="metric-grid">
+</div><div class="metric-grid">
     <div class="metric"><small>Test suites</small><strong>{{ stats.suite_count }}</strong></div>
     <div class="metric"><small>Unique active suite cases</small><strong>{{ stats.scenario_count }}</strong></div>
     <div class="metric"><small>Pending reviews</small><strong>{{ stats.pending_drafts }}</strong></div>
     <div class="metric"><small>Device</small><strong class="metric-text">{{ stats.device_status }}</strong></div>
 </div>
-<div class="content-grid">
-    <section class="surface"><div class="section-head"><div><small>Live status</small><h2>Current execution</h2></div><a href="{{ url_for('jobs.jobs') }}">View all jobs</a></div>
-        <dl class="execution-summary"><div><dt>Status</dt><dd><span id="execution-status" class="status-pill status-idle">Idle</span></dd></div><div><dt>Suite</dt><dd id="execution-suite">-</dd></div><div><dt>Progress</dt><dd id="execution-progress">-</dd></div><div><dt>Started</dt><dd id="execution-time">-</dd></div></dl>
-        <button id="cancel-execution" class="btn btn-danger mt-3 d-none" type="button">Cancel Execution</button>
-    </section>
+</section><div class="content-grid">
     <section class="surface"><div class="section-head"><div><small>Recent activity</small><h2>Latest jobs</h2></div></div>
         {% if stats.latest_completed %}<p>Last completed: <a href="{{ url_for('jobs.job_detail', job_id=stats.latest_completed.id) }}"><span class="status-pill status-{{ stats.latest_completed.status }}">{{ stats.latest_completed.status }}</span> Job #{{ stats.latest_completed.id }} · {{ stats.latest_completed.suite|title }}</a></p>{% else %}<p class="empty">No completed execution yet.</p>{% endif %}
         {% for job in stats.latest_jobs %}<a class="activity-row" href="{{ url_for('jobs.job_detail', job_id=job.id) }}"><span>#{{ job.id }} · {{ job.suite|title }}</span><span class="status-pill status-{{ job.status }}">{{ job.status }}</span></a>{% else %}<p class="empty">No execution jobs yet.</p>{% endfor %}
     </section>
-</div>
+</div></div>
 {% endblock %}

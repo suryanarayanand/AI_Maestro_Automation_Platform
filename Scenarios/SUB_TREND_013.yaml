@@ -1,0 +1,84 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, trending, comment, non-destructive]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Open Trending and select a current article.
+- tapOn:
+    id: "nav_trending"
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+- assertVisible:
+    id: "screen_trending"
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+- tapOn:
+    id: "article_card"
+    index: 0
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+- assertVisible:
+    id: "screen_article_detail"
+- assertNotVisible:
+    text: "Login to your account"
+- assertNotVisible:
+    id: "cta_login"
+
+# Comments are article-dependent without a validated controlled Trending fixture.
+# Search in bounded steps and exercise comment access only when supported.
+- repeat:
+    times: 12
+    commands:
+      - runFlow:
+          when:
+            visible:
+              text: "Post a comment"
+          commands:
+            - assertVisible:
+                text: "Post a comment"
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/SUB_TREND_013_comment_action_available"
+
+            # Open comment entry without entering or submitting public content.
+            - tapOn:
+                text: "Post a comment"
+            - waitForAnimationToEnd
+            - assertNotVisible:
+                text: "Login to your account"
+            - assertNotVisible:
+                id: "cta_login"
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/SUB_TREND_013_comment_surface_no_login"
+
+            # Return safely and prove that article context is restored.
+            - back
+            - extendedWaitUntil:
+                visible:
+                  id: "screen_article_detail"
+                timeout: 25000
+            - assertVisible:
+                id: "screen_article_detail"
+            - assertNotVisible:
+                text: "Login to your account"
+            - assertNotVisible:
+                id: "cta_login"
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/SUB_TREND_013_article_context_restored"
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+- assertNotVisible:
+    text: "Login to your account"
+- assertNotVisible:
+    id: "cta_login"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_013_bounded_comment_search_complete"

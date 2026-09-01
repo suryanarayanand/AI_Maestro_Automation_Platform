@@ -1,0 +1,8 @@
+appId: com.mobstac.thehindu
+tags: [common, subscriber, premium]
+---
+- runFlow: "OPEN_SUBSCRIBER_HOME.yaml"
+- tapOn: {id: "nav_premium"}
+- extendedWaitUntil: {visible: {id: "screen_premium"}, timeout: 30000}
+- assertVisible: {id: "screen_premium"}
+- runFlow: "ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"

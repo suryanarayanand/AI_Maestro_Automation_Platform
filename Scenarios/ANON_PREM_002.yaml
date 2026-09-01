@@ -1,0 +1,19 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, premium]
+
+---
+
+
+
+- runFlow: "../Common/OPEN_ANONYMOUS_PREMIUM.yaml"
+
+- swipe: {direction: DOWN}
+
+- waitForAnimationToEnd: {timeout: 3000}
+
+- assertVisible: {id: "screen_premium"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PREM_002_result"
+

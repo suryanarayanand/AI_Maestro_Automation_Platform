@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+tags: [common, anonymous, photos, single-photo]
+---
+- runFlow: "OPEN_ANONYMOUS_PHOTOS.yaml"
+# Live Photos layout: the second top card carries the single-image count badge.
+- tapOn: {point: "75%,35%"}
+- waitForAnimationToEnd
+- runFlow:
+    when: {visible: {text: ".*Go beyond the headline.*|.*subscribe to access.*"}}
+    commands:
+      - takeScreenshot: "Screenshots/Generated/single_photo_subscription_prompt"
+      - tapOn: {point: "91%,36%"}
+      - waitForAnimationToEnd
+- assertVisible: {text: ".*1/1.*|PHOTO:.*|.*Photo.*"}

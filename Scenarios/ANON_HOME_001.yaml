@@ -1,0 +1,19 @@
+﻿appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - anonymous
+  - home
+---
+
+# Establish a clean anonymous Home state and conditionally skip onboarding.
+- runFlow: "../Common/OPEN_ANONYMOUS_HOME.yaml"
+
+- assertVisible:
+    id: "screen_home"
+
+- assertVisible:
+    text: "SUBSCRIBE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HOME_001_home_top"

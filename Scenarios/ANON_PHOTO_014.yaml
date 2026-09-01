@@ -1,0 +1,17 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, photos]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_MULTI_PHOTO_GALLERY.yaml"
+- assertVisible: {text: "Subscribe|SUBSCRIBE"}
+- tapOn: {text: "Subscribe|SUBSCRIBE"}
+- extendedWaitUntil: {visible: {text: "Yearly|Monthly|Choose a plan|Offer"}, timeout: 30000}
+- assertVisible: {text: "Yearly|Monthly|Choose a plan|Offer"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PHOTO_014_plans"
+- back
+- assertVisible: {text: ".*[0-9]+/[0-9]+.*"}
+- tapOn: {point: "90%,9%"}
+- extendedWaitUntil: {visible: {text: "Photos"}, timeout: 30000}
+- assertVisible: {id: "screen_home"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PHOTO_014_closed_to_grid"

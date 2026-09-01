@@ -1,0 +1,27 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, article-sections, conditional-paywall]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_HOME.yaml"
+- tapOn: {id: "article_card", index: 0}
+- tapOn: {text: "Close sheet", optional: true}
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+- repeat:
+    times: 15
+    commands:
+      - runFlow:
+          when: {visible: {text: "Post a comment|Related Topics|Recommended|Headlines"}}
+          commands:
+            - assertVisible: {text: "Post a comment|Related Topics|Recommended|Headlines"}
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_HOME_007_readable_article_sections"
+      - runFlow:
+          when: {visible: {text: "Already a subscriber.*|Keep reading.*free for 3 days|.*[0-9]+%.*off.*"}}
+          commands:
+            - assertVisible: {text: "Login|LOGIN|Sign in|SIGN IN"}
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_HOME_007_paywall_blocks_article_sections"
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd
+- assertVisible: {id: "screen_article_detail"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HOME_007_article_section_result"

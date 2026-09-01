@@ -1,0 +1,57 @@
+{
+    "suite": "Anonymous User Cases - Videos Quick Access - Failed retry #295",
+    "source_suite": "user_anonymous__module__videos_quick_access",
+    "module": "Videos",
+    "tests": [
+        {
+            "id": "ANON_VIDEO_005",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Video article header and reading time",
+            "yaml": "ANON_VIDEO_005.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_008",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Video paywall subscriber-login link",
+            "yaml": "ANON_VIDEO_008.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_010",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Video Reading Options functionality",
+            "yaml": "ANON_VIDEO_010.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_013",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Video Comment anonymous login gate",
+            "yaml": "ANON_VIDEO_013.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_016",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Video article back navigation and retained position",
+            "yaml": "ANON_VIDEO_016.yaml",
+            "display_module": "Videos"
+        }
+    ]
+}

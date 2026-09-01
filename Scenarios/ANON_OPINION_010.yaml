@@ -1,0 +1,9 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, opinion]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_OPINION_ARTICLE.yaml"
+- tapOn: {text: "Text size|Reading options"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_OPINION_010_reading_options"
+- back
+- assertVisible: {id: "screen_article_detail"}

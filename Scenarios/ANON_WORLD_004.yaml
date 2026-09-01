@@ -1,0 +1,23 @@
+appId: com.mobstac.thehindu
+tags: [anonymous, quick-access, world]
+---
+- runFlow:
+    file: "../Common/OPEN_ANONYMOUS_QUICK_ACCESS.yaml"
+    env:
+      SECTION_NAME: "World"
+
+- repeat:
+    times: 5
+    commands:
+      - swipe: {direction: UP, duration: 600}
+      - waitForAnimationToEnd
+- assertVisible: {id: "screen_home"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_WORLD_004_deep_scroll"
+
+- runFlow:
+    when: {visible: {text: "(?i)ADVERTISEMENT|Advertisement"}}
+    commands:
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_WORLD_004_advertisement"

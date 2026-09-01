@@ -1,0 +1,13 @@
+appId: com.mobstac.thehindu
+tags: [anonymous, quick-access, sports]
+---
+- runFlow:
+    file: "../Common/OPEN_ANONYMOUS_QUICK_ACCESS.yaml"
+    env:
+      SECTION_NAME: "Sports"
+
+- assertVisible: {text: "(?i)^Sports$"}
+- assertVisible: {id: "screen_home"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_SPORTS_001_selected"

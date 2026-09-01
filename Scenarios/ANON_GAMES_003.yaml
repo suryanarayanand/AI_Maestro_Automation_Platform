@@ -1,0 +1,54 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_GAMES.yaml"
+- scrollUntilVisible:
+    element: {text: ".*Sudoku.*"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- assertVisible: {text: ".*Sudoku.*"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_GAMES_003_sudoku"
+- scrollUntilVisible:
+    element: {text: ".*The Hindu Mini.*"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- assertVisible: {text: ".*The Hindu Mini.*"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_GAMES_003_the_hindu_mini"
+- scrollUntilVisible:
+    element: {text: ".*Easy Down.*"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- assertVisible: {text: ".*Easy Down.*"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_GAMES_003_easy_down"
+- scrollUntilVisible:
+    element: {text: ".*Word Flower.*"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- assertVisible: {text: ".*Word Flower.*"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_GAMES_003_word_flower"
+- scrollUntilVisible:
+    element: {text: ".*Word Search.*"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- assertVisible: {text: ".*Word Search.*"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_GAMES_003_word_search"
+- scrollUntilVisible:
+    element: {text: ".*Quiz.*"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- assertVisible: {text: ".*Quiz.*"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_GAMES_003_quiz"
+- assertVisible: {text: "LOGIN TO PLAY"}

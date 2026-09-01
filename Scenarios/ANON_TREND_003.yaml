@@ -1,0 +1,30 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, trending, all,advertisement]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING.yaml"
+
+- tapOn: {text: "All"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_003_all_top"
+
+- repeat:
+
+    times: 12
+
+    commands:
+
+      - swipe: {direction: UP}
+
+      - waitForAnimationToEnd: {timeout: 1200}
+
+      - runFlow: "../Common/CAPTURE_TRENDING_AD_STATE.yaml"
+
+- assertVisible: {id: "screen_trending"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_003_all_lower"
+

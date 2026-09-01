@@ -1,0 +1,116 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - photos
+  - gallery
+  - navigation
+  - state-restoration
+  - evidence-limited
+---
+
+# SUB_PHOTO_016 — Gallery close, Back and listing-position recovery
+# Evidence-limited executable harness.
+# The repository does not supply validated locators for a gallery card or the
+# gallery header Close icon. Consequently, the header-Close path cannot be
+# certified without inventing selectors. The Android Back path is executable.
+
+# Position 1 — Establish Photos at a lower listing viewport and runtime-qualify
+# the supplied gallery fixture. Header Close remains blocked by missing evidence.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      text: "Photos"
+    timeout: 30000
+
+- tapOn:
+    text: "Photos"
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Photos"
+    timeout: 30000
+
+- assertVisible:
+    text: "Photos"
+
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          text: "Photos"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- assertWithAI: "Verify the Photos listing is selected and the screen shows a lower gallery-card listing viewport rather than the initial top of the Photos listing."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_016_lower_photos_before_gallery"
+
+- openLink: "https://www.thehindu.com/sport/cricket/ipl2013/match-photos/rajasthan-royals-thrash-mumbai-indians/article4627667.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_016_first_gallery_runtime_qualified"
+
+# Diagnostic cleanup only: Android Back is not a substitute for the required
+# header Close interaction and must not be reported as Position 1 coverage.
+- back
+
+- extendedWaitUntil:
+    visible:
+      text: "Photos"
+    timeout: 30000
+
+# Position 2 — Reopen the runtime-qualified gallery fixture and use Android Back.
+- openLink: "https://www.thehindu.com/sport/cricket/ipl2013/match-photos/rajasthan-royals-thrash-mumbai-indians/article4627667.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_016_gallery_before_android_back"
+
+- back
+
+# Position 3 — Not executable: no validated header Close locator exists, so a
+# Close-specific restoration result cannot be asserted without a false surrogate.
+
+# Position 4 — Android Back restores Photos without remaining on article detail
+# or redirecting to the main Home feed.
+- extendedWaitUntil:
+    visible:
+      text: "Photos"
+    timeout: 30000
+
+- assertVisible:
+    text: "Photos"
+
+- assertNotVisible:
+    id: "screen_article_detail"
+
+- assertWithAI: "Verify the Photos quick section remains selected and this is a lower Photos gallery-card listing viewport near the previously captured listing context, not the main Home feed, an exited app, a crash surface, or a stale gallery overlay."
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_016_android_back_photos_restored"

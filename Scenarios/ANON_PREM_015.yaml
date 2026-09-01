@@ -1,0 +1,15 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, premium]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_PREMIUM.yaml"
+- tapOn: {text: "All Stories"}
+- assertVisible: {id: "screen_premium"}
+- runFlow:
+    when: {visible: {text: "ADVERTISEMENT"}}
+    commands:
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_PREM_015_advertisement"
+- assertVisible: {id: "screen_premium"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PREM_015_result"

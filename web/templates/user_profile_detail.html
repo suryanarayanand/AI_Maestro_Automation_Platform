@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}{{ profile.name }} Profile{% endblock %}
+{% block page_title %}{{ profile.name }} profile{% endblock %}
+{% block content %}
+<a class="btn btn-sm btn-outline-secondary mb-3" href="{{ url_for('user_profiles.index') }}">← User profiles</a>
+<section class="surface user-profile-detail profile-{{ profile.tone }}">
+  <header><span class="profile-icon">{{ profile.icon }}</span><div><small>User state</small><h2>{{ profile.name }}</h2><p>{{ profile.description }}</p></div></header>
+  {% if profile.credentials %}
+  <form class="profile-credential-form" method="post" action="{{ url_for('user_profiles.credentials', state=profile.key) }}" autocomplete="off">
+    <div class="credential-status"><strong>Automation credentials used by scripts</strong><span class="status-pill status-{{ 'passed' if profile.credentials.configured else 'review' }}">{{ 'Configured' if profile.credentials.configured else 'Not configured' }}</span></div>
+    <label>Email<input class="form-control" type="email" name="email" value="{{ profile.credentials.email }}" required autocomplete="off"><small>Injected as <code>${TEST_EMAIL}</code>.</small></label>
+    <label>Password<input class="form-control" type="password" name="password" placeholder="{{ profile.credentials.password_mask or 'Enter password' }}" autocomplete="new-password"><small>Injected as <code>${TEST_PASSWORD}</code>. Leave blank to retain it.</small></label>
+    <label>Login method<select class="form-select" name="login_method"><option value="EMAIL_PASSWORD" {{ 'selected' if profile.credentials.login_method == 'EMAIL_PASSWORD' }}>Email and password</option><option value="GOOGLE" {{ 'selected' if profile.credentials.login_method == 'GOOGLE' }}>Google</option><option value="APPLE" {{ 'selected' if profile.credentials.login_method == 'APPLE' }}>Apple</option></select></label>
+    <details><summary>Google and Apple test identities</summary><label>Google account<input class="form-control" type="email" name="google_email" value="{{ profile.credentials.google_email }}" autocomplete="off"></label><label>Apple account<input class="form-control" type="email" name="apple_email" value="{{ profile.credentials.apple_email }}" autocomplete="off"></label></details>
+    <button class="btn btn-primary" type="submit">Save credentials</button>
+  </form>
+  {% else %}<div class="anonymous-state-note"><strong>No credentials required</strong><span>Anonymous automation clears application state.</span></div>{% endif %}
+</section>
+{% endblock %}

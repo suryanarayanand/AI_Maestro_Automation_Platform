@@ -1,0 +1,9 @@
+appId: com.mobstac.thehindu
+tags: [common, article, advertisement, review-evidence]
+---
+# Allow the creative to load before recording the placement. A remaining blank
+# container is evidence for a bug, not an automation failure.
+- assertVisible: {text: "ADVERTISEMENT"}
+- waitForAnimationToEnd: {timeout: 5000}
+- takeScreenshot: "Screenshots/Generated/article_advertisement_after_wait"
+- assertVisible: {id: "screen_article_detail"}

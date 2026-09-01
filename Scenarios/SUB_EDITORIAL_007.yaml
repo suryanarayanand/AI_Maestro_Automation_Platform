@@ -1,0 +1,142 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - editorial
+  - article
+  - ai-summary
+  - article-audio
+  - conditional
+  - entitlement
+  - thirty-seconds
+
+---
+
+# SUB_EDITORIAL_007 â€” Editorial conditional AI Summary and Listen controls
+
+# Establish the repository-managed authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Reference 138 is the supplied long-form, 15-paragraph article candidate.
+# Its successful rendering and feature eligibility are qualified at runtime.
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- evalScript: '${(() => { const end = Date.now() + 10000; while (Date.now() < end) {} return true; })()}'
+
+- waitForAnimationToEnd
+
+- assertWithAI: "Verify that the controlled long-form article reference has opened in the app with a readable article body. Fail if an external browser, blank page, loading-only state, unavailable-content message, or other error surface is shown."
+
+# Verify the authenticated subscriber does not encounter monetisation gates on
+# the opened article before exercising its conditional controls.
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+# Positions 1 and 3 â€” Record the legitimate unavailable state before executing
+# the available branch. This ordering prevents a completed Summary interaction
+# from subsequently being misreported as an unavailable state.
+- runFlow:
+    when:
+      notVisible:
+        text: '(?i)^AI Summary$'
+    commands:
+      - assertNotVisible:
+          text: '(?i)^AI Summary$'
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_007_ai_summary_absent_skipped"
+
+- runFlow:
+    when:
+      visible:
+        text: '(?i)^AI Summary$'
+    commands:
+      - assertVisible:
+          text: '(?i)^AI Summary$'
+      - tapOn:
+          text: '(?i)^AI Summary$'
+      - waitForAnimationToEnd
+      - extendedWaitUntil:
+          visible:
+            text: '(?i)^Summary$'
+          timeout: 20000
+      - assertVisible:
+          text: '(?i)^Summary$'
+      - extendedWaitUntil:
+          visible:
+            text: '(?i)^Article FAQs$'
+          timeout: 20000
+      - assertVisible:
+          text: '(?i)^Article FAQs$'
+      - assertNotVisible:
+          text: '(?i)^Subscribe$'
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_007_ai_summary_entitled"
+      - back
+      - waitForAnimationToEnd
+      - assertWithAI: "Verify that dismissing the entitled AI Summary returned to the same readable article rather than Home, an external browser, or an error surface."
+
+# Positions 2 and 4 â€” Listen to Article is product-dependent. Record and skip
+# when the settled article does not supply it; otherwise start playback, retain
+# the active active playback state for a measured 30 seconds, and pause playback.
+- runFlow:
+    when:
+      notVisible:
+        text: '(?i)^Listen to Article$'
+    commands:
+      - assertNotVisible:
+          text: '(?i)^Listen to Article$'
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_007_listen_absent_skipped"
+
+- runFlow:
+    when:
+      visible:
+        text: '(?i)^Listen to Article$'
+    commands:
+      - assertVisible:
+          text: '(?i)^Listen to Article$'
+      - tapOn:
+          text: '(?i)^Listen to Article$'
+      - waitForAnimationToEnd
+
+      # Some supported article players begin immediately; others first expose
+      # Play. Start it only when that intermediate state is rendered.
+      - runFlow:
+          when:
+            visible:
+              text: '(?i)^(Listen to Article|Play)$'
+          commands:
+            - tapOn:
+                text: '(?i)^(Listen to Article|Play)$'
+
+      - extendedWaitUntil:
+          visible:
+            text: '(?i)^(Pause|Stop Playing)$'
+          timeout: 15000
+      - assertVisible:
+          text: '(?i)^(Pause|Stop Playing)$'
+
+      # Approved measured playback checkpoint.
+      - evalScript: '${(() => { const end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+
+      - assertVisible:
+          text: '(?i)^(Pause|Stop Playing)$'
+      - tapOn:
+          text: '(?i)^(Pause|Stop Playing)$'
+      - extendedWaitUntil:
+          visible:
+            text: '(?i)^(Listen to Article|Play)$'
+          timeout: 15000
+      - assertVisible:
+          text: '(?i)^(Listen to Article|Play)$'
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_007_listen_paused_after_30_seconds"
+
+# Recheck subscriber entitlement after representative article traversal.
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_007_complete"

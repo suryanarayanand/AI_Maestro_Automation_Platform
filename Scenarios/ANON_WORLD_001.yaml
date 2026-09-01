@@ -1,0 +1,13 @@
+appId: com.mobstac.thehindu
+tags: [anonymous, quick-access, world]
+---
+- runFlow:
+    file: "../Common/OPEN_ANONYMOUS_QUICK_ACCESS.yaml"
+    env:
+      SECTION_NAME: "World"
+
+- assertVisible: {text: "(?i)^World$"}
+- assertVisible: {id: "screen_home"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_WORLD_001_selected"

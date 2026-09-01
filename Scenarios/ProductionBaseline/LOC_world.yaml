@@ -3,7 +3,7 @@ tags:
   - baseline
   - world
 ---
-- runFlow: ../Common/OPEN_HOME_FOR_BASELINE.yaml
+- runFlow: ../../Common/OPEN_HOME_FOR_BASELINE.yaml
 - tapOn:
     text: "World\nTab 6 of 15"
 - waitForAnimationToEnd

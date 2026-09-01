@@ -1,0 +1,19 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, search, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_SEARCH.yaml"
+- tapOn: {point: "45%,8%"}
+- inputText: "flood"
+- hideKeyboard
+- tapOn: {point: "90%,8%"}
+- extendedWaitUntil: {visible: {text: "Sort by.*|newest|relevance|Newest|Relevance"}, timeout: 60000}
+- back
+- waitForAnimationToEnd
+- tapOn: {point: "45%,8%"}
+- eraseText
+- inputText: "flood"
+- hideKeyboard
+- tapOn: {point: "90%,8%"}
+- extendedWaitUntil: {visible: {text: "Sort by.*|newest|relevance|Newest|Relevance"}, timeout: 30000}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_028_repeat"

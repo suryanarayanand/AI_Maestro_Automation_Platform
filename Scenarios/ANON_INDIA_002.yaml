@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+tags: [anonymous, quick-access, india]
+---
+- runFlow:
+    file: "../Common/OPEN_ANONYMOUS_QUICK_ACCESS.yaml"
+    env:
+      SECTION_NAME: "India"
+
+- swipe: {start: "50%,22%", end: "50%,78%", duration: 700}
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 120000}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_INDIA_002_refreshed"

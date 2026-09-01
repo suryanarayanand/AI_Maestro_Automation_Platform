@@ -1,0 +1,117 @@
+{
+    "suite": "Subscriber User Cases - Account Settings",
+    "source_suite": "user_subscriber",
+    "module": "Account Settings",
+    "tests": [
+        {
+            "id": "SUB_ACCOUNT_001",
+            "module": "Account Settings",
+            "section": "Account Settings",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Account page and identity state",
+            "yaml": "SUB_ACCOUNT_001.yaml",
+            "display_module": "Account Settings"
+        },
+        {
+            "id": "SUB_ACCOUNT_002",
+            "module": "Account Settings",
+            "section": "Account Settings",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "My Account profile field presentation",
+            "yaml": "SUB_ACCOUNT_002.yaml",
+            "display_module": "Account Settings"
+        },
+        {
+            "id": "SUB_ACCOUNT_004",
+            "module": "Account Settings",
+            "section": "Account Settings",
+            "user_state": "SUBSCRIBER",
+            "priority": "P0",
+            "name": "Subscription details for entitled subscriber",
+            "yaml": "SUB_ACCOUNT_004.yaml",
+            "display_module": "Account Settings"
+        },
+        {
+            "id": "SUB_ACCOUNT_005",
+            "module": "Account Settings",
+            "section": "Account Settings",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Vouchers page navigation",
+            "yaml": "SUB_ACCOUNT_005.yaml",
+            "display_module": "Account Settings"
+        },
+        {
+            "id": "SUB_ACCOUNT_006",
+            "module": "Account Settings",
+            "section": "Account Settings",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Notification Inbox authenticated behavior",
+            "yaml": "SUB_ACCOUNT_006.yaml",
+            "display_module": "Account Settings"
+        },
+        {
+            "id": "SUB_ACCOUNT_007",
+            "module": "Account Settings",
+            "section": "Account Settings",
+            "user_state": "SUBSCRIBER",
+            "priority": "P1",
+            "name": "Subscriber History access",
+            "yaml": "SUB_ACCOUNT_007.yaml",
+            "display_module": "Account Settings"
+        },
+        {
+            "id": "SUB_ACCOUNT_008",
+            "module": "Account Settings",
+            "section": "Account Settings",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Bookmarks access",
+            "yaml": "SUB_ACCOUNT_008.yaml",
+            "display_module": "Account Settings"
+        },
+        {
+            "id": "SUB_ACCOUNT_009",
+            "module": "Account Settings",
+            "section": "Account Settings",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Text Size controls and restoration",
+            "yaml": "SUB_ACCOUNT_009.yaml",
+            "display_module": "Account Settings"
+        },
+        {
+            "id": "SUB_ACCOUNT_010",
+            "module": "Account Settings",
+            "section": "Account Settings",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Appearance controls and restoration",
+            "yaml": "SUB_ACCOUNT_010.yaml",
+            "display_module": "Account Settings"
+        },
+        {
+            "id": "SUB_ACCOUNT_011",
+            "module": "Account Settings",
+            "section": "Account Settings",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Account scrolling and navigation recovery",
+            "yaml": "SUB_ACCOUNT_011.yaml",
+            "display_module": "Account Settings"
+        },
+        {
+            "id": "SUB_ACCOUNT_012",
+            "module": "Account Settings",
+            "section": "Account Settings",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Logout control presence without session mutation",
+            "yaml": "SUB_ACCOUNT_012.yaml",
+            "display_module": "Account Settings"
+        }
+    ]
+}

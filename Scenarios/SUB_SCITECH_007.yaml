@@ -1,0 +1,333 @@
+appId: com.mobstac.thehindu
+
+
+
+tags:
+
+  - generated
+
+  - ordered
+
+  - subscriber
+
+  - sci-tech
+
+  - article
+
+  - ai-summary
+
+  - article-audio
+
+  - conditional
+
+  - thirty-seconds
+
+
+
+---
+
+
+
+# SUB_SCITECH_007 â€” Sci-tech conditional AI Summary and Listen controls
+
+
+
+# Establish the repository-managed authenticated subscriber session.
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_SCITECH.yaml"
+
+
+# Reference 138 is the supplied Sci-tech 15-paragraph article candidate.
+
+# Its feature eligibility is qualified at runtime because the repository marks
+
+# the URL reference-only and does not provide a validated post-live fixture.
+
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+
+
+
+- waitForAnimationToEnd
+
+
+
+# Confirm that the subscriber has not been replaced by a monetisation gate.
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+# Positions 1 and 3: AI Summary is feature- and article-dependent. Maestro
+
+# records this branch as skipped when the floating action is not supplied.
+
+- runFlow:
+
+    when:
+
+      visible:
+
+        text: '(?i)^AI Summary$'
+
+    commands:
+
+      - extendedWaitUntil:
+
+          visible:
+
+            text: '(?i)^AI Summary$'
+
+          timeout: 20000
+
+
+
+      - tapOn:
+
+          text: '(?i)^AI Summary$'
+
+
+
+      - extendedWaitUntil:
+
+          visible:
+
+            text: '(?i)^Summary$'
+
+          timeout: 20000
+
+
+
+      - assertVisible:
+
+          text: '(?i)^Summary$'
+
+
+
+      - extendedWaitUntil:
+
+          visible:
+
+            text: '(?i)^Article FAQs$'
+
+          timeout: 20000
+
+
+
+      - assertVisible:
+
+          text: '(?i)^Article FAQs$'
+
+
+
+      - assertNotVisible:
+
+          text: '(?i)^Subscribe$'
+
+
+
+      - waitForAnimationToEnd
+
+      - takeScreenshot: "Screenshots/Generated/SUB_SCITECH_007_entitled_ai_summary"
+
+
+
+      - back
+
+      - waitForAnimationToEnd
+
+
+
+# Record the conditional absence at the settled floating-bar checkpoint without
+
+# turning article-dependent availability into a universal assertion.
+
+- runFlow:
+
+    when:
+
+      notVisible:
+
+        text: '(?i)^AI Summary$'
+
+    commands:
+
+      - assertNotVisible:
+
+          text: '(?i)^AI Summary$'
+
+
+
+      - waitForAnimationToEnd
+
+      - takeScreenshot: "Screenshots/Generated/SUB_SCITECH_007_ai_summary_not_supplied"
+
+
+
+# Reopen the same article so audio discovery starts from a deterministic article
+
+# position regardless of whether the AI Summary branch opened a separate surface.
+
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+
+
+
+- waitForAnimationToEnd
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+# Positions 2 and 4: inspect a bounded number of article positions. If Listen to
+
+# Article is supplied, start playback, retain it for 30 measured seconds, verify
+
+# the active active playback state and visible progress, and then pause it. If the action
+
+# is absent, every conditional block is reported as skipped.
+
+- repeat:
+
+    times: 6
+
+    commands:
+
+      - runFlow:
+
+          when:
+
+            visible:
+
+              text: '(?i)^Listen to Article$'
+
+          commands:
+
+            - extendedWaitUntil:
+
+                visible:
+
+                  text: '(?i)^Listen to Article$'
+
+                timeout: 15000
+
+
+
+            - tapOn:
+
+                text: '(?i)^Listen to Article$'
+
+
+
+            # Some supported article players expose Play after the Listen action;
+
+            # others begin playback directly. Handle the former conditionally.
+
+            - runFlow:
+
+                when:
+
+                  visible:
+
+                    text: '(?i)^(Listen to Article|Play)$'
+
+                commands:
+
+                  - tapOn:
+
+                      text: '(?i)^(Listen to Article|Play)$'
+
+                      index: 0
+
+
+
+            - extendedWaitUntil:
+
+                visible:
+
+                  text: '(?i)^(Pause|Stop Playing)$'
+
+                timeout: 15000
+
+
+
+            - assertVisible:
+
+                text: '(?i)^(Pause|Stop Playing)$'
+
+
+
+            - evalScript: '${(() => { const end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+
+
+
+            - assertVisible:
+
+                text: '(?i)^(Pause|Stop Playing)$'
+
+
+
+            - assertWithAI: "At the measured 30-second checkpoint, verify that one settled article-audio player remains active, visibly exposes an active playback control, and shows elapsed-time or progress advancement beyond its initial position. Fail for a loading or error surface, zero visible advancement, stopped playback, or multiple active players."
+
+
+
+            - waitForAnimationToEnd
+
+            - takeScreenshot: "Screenshots/Generated/SUB_SCITECH_007_audio_after_30_seconds"
+
+
+
+            - tapOn:
+
+                text: '(?i)^(Pause|Stop Playing)$'
+
+                index: 0
+
+
+
+            - extendedWaitUntil:
+
+                visible:
+
+                  text: '(?i)^(Listen to Article|Play)$'
+
+                timeout: 15000
+
+
+
+            - assertVisible:
+
+                text: '(?i)^(Listen to Article|Play)$'
+
+
+
+            - waitForAnimationToEnd
+
+            - takeScreenshot: "Screenshots/Generated/SUB_SCITECH_007_audio_paused_responsive"
+
+
+
+      - swipe:
+
+          direction: UP
+
+
+
+      - waitForAnimationToEnd
+
+
+
+# Recheck subscriber entitlement after representative article scrolling.
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+# Preserve the bounded conditional-discovery state. The Maestro report records
+
+# whether the Listen branch executed or was skipped; this screenshot is
+
+# diagnostic evidence and is not used as a replacement for the branch assertions.
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_007_audio_discovery_complete"
+

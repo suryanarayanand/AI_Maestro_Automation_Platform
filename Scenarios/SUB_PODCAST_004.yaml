@@ -1,0 +1,112 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - podcast
+  - entitlement
+  - no-monetisation
+  - evidence-limited
+---
+
+# SUB_PODCAST_004 — Subscriber Podcast has no monetization block
+# Establish the repository-managed authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Position 1: Open the Podcast listing using the validated Podcast selector.
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+- tapOn:
+    text: "Podcast"
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify that the Podcast listing contains rendered podcast-series content. At least one identifiable podcast series card or series section must be visible, and the page must not be blank, loading-only, broken, or showing a request or network error."
+
+# Positions 2, 3 and 4: Prove that the initial Podcast listing is accessible and
+# free of the validated subscriber monetization and login-gate surfaces.
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "cta_login"
+
+- assertNotVisible:
+    text: '^Already a [Ss]ubscriber\? Login$'
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_004_listing_top_entitled"
+
+# Traverse three bounded listing viewports. Recheck entitlement at each settled
+# viewport instead of treating a screenshot as an assertion.
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "cta_login"
+      - assertNotVisible:
+          text: '^Already a [Ss]ubscriber\? Login$'
+      - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- assertWithAI: "Verify that the current Podcast listing viewport still contains readable podcast content and is not blank, blocked, loading-only, or displaying a request or network error."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_004_listing_lower_entitled"
+
+# Return by the same bounded distance and prove the validated Podcast anchor and
+# subscriber entitlement remain present at the restored listing state.
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: DOWN
+      - waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "cta_login"
+
+- assertNotVisible:
+    text: '^Already a [Ss]ubscriber\? Login$'
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_004_listing_restored_entitled"

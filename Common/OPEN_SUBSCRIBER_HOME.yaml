@@ -1,0 +1,32 @@
+appId: com.mobstac.thehindu
+tags:
+  - common
+  - subscriber
+---
+- launchApp:
+    clearState: true
+- runFlow: SUBSCRIBER_ACCOUNT_ONBOARDING.yaml
+- tapOn:
+    id: "nav_account"
+- runFlow:
+    when:
+      visible:
+        id: "cta_login"
+    commands:
+      - tapOn:
+          id: "cta_login"
+      - extendedWaitUntil:
+          visible: "Email"
+          timeout: 30000
+      - runFlow: SUBSCRIBER_LOGIN_ONCE.yaml
+      - assertVisible: "^Account$"
+      - back
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- assertVisible:
+    id: "screen_home"
+- runFlow: ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/subscriber_home_after_login"

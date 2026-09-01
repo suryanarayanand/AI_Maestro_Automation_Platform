@@ -1,0 +1,9 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, article-page, archive-paywall]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_PREMIUM_ARTICLE.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- runFlow: "../Common/ASSERT_ANONYMOUS_PREMIUM_PAYWALL.yaml"
+- assertVisible: {text: "Subscribe|SUBSCRIBE|Already a subscriber.*|Login|LOGIN"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_021_archive_restriction"

@@ -1,0 +1,13 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, article-page, audio]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- extendedWaitUntil: {visible: {text: "Listen to article"}, timeout: 45000}
+- tapOn: {text: "Listen to article"}
+- waitForAnimationToEnd
+- evalScript: ${(() => { const started = Date.now(); while (Date.now() - started < 30000) {} return true; })()}
+- tapOn: {text: "Stop Playing|STOP PLAYING", optional: true}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_008_audio_30_seconds"
+- assertVisible: {id: "screen_article_detail"}

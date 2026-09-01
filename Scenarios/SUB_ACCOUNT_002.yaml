@@ -1,0 +1,16 @@
+appId: com.mobstac.thehindu
+tags: [generated, subscriber, account, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_ACCOUNT.yaml"
+- scrollUntilVisible: {element: {text: "^Account$"}, direction: DOWN, timeout: 30000, speed: 45, visibilityPercentage: 20}
+- tapOn: {text: "^Account$"}
+- extendedWaitUntil: {visible: {text: "My Account|PROFILE|First name"}, timeout: 30000}
+- assertVisible: {text: "My Account|PROFILE"}
+- assertVisible: {text: "First name"}
+- assertVisible: {text: "Last name"}
+- assertVisible: {text: "Email"}
+- scrollUntilVisible: {element: {text: "Password|Change password"}, direction: DOWN, timeout: 30000, speed: 45, visibilityPercentage: 20}
+- assertVisible: {text: "Password|Change password"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ACCOUNT_002_profile_lower"
+

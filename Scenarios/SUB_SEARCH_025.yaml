@@ -1,0 +1,64 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - search
+  - unicode
+  - tamil
+  - input-safety
+  - non-destructive
+  - evidence-limited
+
+---
+
+# Required precondition: an authenticated SUBSCRIBER is already on the Search
+# surface with the query input focused. No validated Search navigation or input
+# locator was supplied, so this flow intentionally does not invent one.
+
+# Position 1: Replace retained input, enter the required Tamil query, verify the
+# value before submission, and submit it through the keyboard.
+- eraseText: 256
+
+- inputText: "சென்னை"
+
+- assertVisible:
+    text: "^சென்னை$"
+
+- pressKey: ENTER
+
+# Position 2: Wait for the submitted query state to settle and capture it.
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "^சென்னை$"
+    timeout: 30000
+
+- assertVisible:
+    text: "^சென்னை$"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_025_query_and_result_state"
+
+# Position 3: The exact Tamil value must survive submission. U+FFFD is the
+# Unicode replacement character and must not be rendered in the visible state.
+- assertVisible:
+    text: "^சென்னை$"
+
+- assertNotVisible:
+    text: ".*�.*"
+
+# Position 4: Reassert the executable rendering checks and save settled visual
+# evidence for layout-corruption review.
+- assertVisible:
+    text: "^சென்னை$"
+
+- assertNotVisible:
+    text: ".*�.*"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_025_tamil_unicode_settled"

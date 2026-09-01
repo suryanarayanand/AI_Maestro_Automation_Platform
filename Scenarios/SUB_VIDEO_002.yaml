@@ -1,0 +1,92 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - video
+  - article
+  - identity-metadata
+  - evidence-limited
+
+---
+
+# SUB_VIDEO_002 — Video article identity and metadata
+# The authenticated subscriber setup and active Vertical Video reference are
+# executable. No validated video-card, player, headline, or metadata-field
+# selector was supplied, so the flow does not fabricate those assertions.
+
+# Position 1: Open the active Vertical Video fixture as the grounded substitute
+# for the unavailable current-video-card interaction.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- openLink: "https://www.thehindu.com/videos/watch-looking-back-at-2024-what-are-the-words-that-dominated-social-media/article69045733.ece"
+
+# Position 2: Exercise bounded scrolling while proving that the article-detail
+# surface remains present and subscriber reading is not replaced by Subscribe.
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- repeat:
+    times: 4
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_002_video_article_scrolled_state"
+
+# Position 3: Return toward the article header and verify that the validated
+# article-detail surface remains open. Player and headline assertions remain
+# blocked because no validated selectors were supplied for either element.
+- repeat:
+    times: 4
+    commands:
+      - swipe:
+          direction: DOWN
+      - waitForAnimationToEnd
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_002_video_article_header_state"
+
+# Position 4: Re-enter a bounded reading state and verify continued article
+# availability without a subscription prompt. Individual identity and metadata
+# fields cannot be asserted until their locators are validated.
+- repeat:
+    times: 4
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_002_video_article_readable_state"

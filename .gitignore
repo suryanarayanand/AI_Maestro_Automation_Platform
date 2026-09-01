@@ -1,4 +1,6 @@
 credentials.local.json
+repository_credentials.local.json
+.env
 portal.db
 __pycache__/
 *.pyc

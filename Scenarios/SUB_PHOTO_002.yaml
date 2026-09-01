@@ -1,0 +1,97 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - photos
+  - refresh
+  - evidence-limited
+
+---
+
+# SUB_PHOTO_002 — Photos refresh and content recovery
+
+# Position 1: Establish the subscriber session and open Photos using the
+# accepted Photos locator.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      text: "Photos"
+    timeout: 30000
+
+- tapOn:
+    text: "Photos"
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Photos"
+    timeout: 30000
+
+- assertVisible:
+    text: "Photos"
+
+# Position 1: First bounded pull-to-refresh and settled-state checkpoint.
+- swipe:
+    direction: DOWN
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Photos"
+    timeout: 30000
+
+- assertVisible:
+    text: "Photos"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_002_after_refresh_1"
+
+# Position 1: Second bounded pull-to-refresh and settled-state checkpoint.
+- swipe:
+    direction: DOWN
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Photos"
+    timeout: 30000
+
+- assertVisible:
+    text: "Photos"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_002_after_refresh_2"
+
+# Position 2: Capture the settled visible gallery for card-image, headline,
+# timeout, and blank-content review. No validated selectors were supplied for
+# machine assertions over those dynamic properties.
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_002_visible_cards_review"
+
+# Position 3: Executable proof that repeated refresh remains on Photos.
+# Duplicate-card analysis remains visual because no stable card identity or
+# collection-count selector is validated in the supplied evidence.
+- extendedWaitUntil:
+    visible:
+      text: "Photos"
+    timeout: 30000
+
+- assertVisible:
+    text: "Photos"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_002_listing_recovered"
+
+# Position 4: Verify the grounded Photos surface remains rendered and capture
+# the final refreshed-gallery artifact.
+- assertVisible:
+    text: "Photos"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_002_refreshed_gallery_final"

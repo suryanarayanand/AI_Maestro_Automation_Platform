@@ -1,0 +1,107 @@
+{
+    "suite": "Anonymous User Cases - India Quick Access",
+    "source_suite": "user_anonymous",
+    "module": "India Quick Access",
+    "tests": [
+        {
+            "id": "ANON_INDIA_001",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P1",
+            "name": "India launch and selected Quick Access identity",
+            "yaml": "ANON_INDIA_001.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "ANON_INDIA_002",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P2",
+            "name": "India refresh and content recovery",
+            "yaml": "ANON_INDIA_002.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "ANON_INDIA_003",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P2",
+            "name": "India listing structure and article cards",
+            "yaml": "ANON_INDIA_003.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "ANON_INDIA_004",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P2",
+            "name": "India deep scroll and advertisement evidence",
+            "yaml": "ANON_INDIA_004.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "ANON_INDIA_005",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P1",
+            "name": "India article destination integrity",
+            "yaml": "ANON_INDIA_005.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "ANON_INDIA_006",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P1",
+            "name": "India anonymous article restriction behavior",
+            "yaml": "ANON_INDIA_006.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "ANON_INDIA_007",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P2",
+            "name": "India conditional AI Summary and Listen controls",
+            "yaml": "ANON_INDIA_007.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "ANON_INDIA_008",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P1",
+            "name": "India bookmark redirects anonymous user to login",
+            "yaml": "ANON_INDIA_008.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "ANON_INDIA_009",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P2",
+            "name": "India share surface behavior",
+            "yaml": "ANON_INDIA_009.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        },
+        {
+            "id": "ANON_INDIA_010",
+            "module": "India Quick Access",
+            "section": "India Quick Access",
+            "priority": "P2",
+            "name": "India comment and post-article behavior",
+            "yaml": "ANON_INDIA_010.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "India Quick Access"
+        }
+    ]
+}

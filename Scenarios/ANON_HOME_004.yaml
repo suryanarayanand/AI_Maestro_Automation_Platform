@@ -1,0 +1,16 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, home, sticky-advertisement]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_HOME.yaml"
+- repeat:
+    times: 6
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd: {timeout: 1200}
+- extendedWaitUntil:
+    visible: {text: "ADVERTISEMENT"}
+    timeout: 30000
+- assertVisible: {text: "ADVERTISEMENT"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HOME_004_evidence_sticky_advertisement"
+- assertVisible: {id: "screen_home"}

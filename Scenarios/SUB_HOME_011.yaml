@@ -1,0 +1,53 @@
+appId: com.mobstac.thehindu
+
+tags: [generated, ordered, subscriber, home, post-article]
+
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- tapOn: {id: "article_card", index: 0}
+
+- tapOn: {text: "Close sheet", optional: true}
+
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+
+- scrollUntilVisible:
+
+    element: {text: "Post a comment"}
+
+    direction: DOWN
+
+    timeout: 120000
+
+    speed: 40
+
+    visibilityPercentage: 40
+
+- assertVisible: {text: "Post a comment"}
+
+- scrollUntilVisible: {element: {text: "Related Topics"}, direction: DOWN, timeout: 60000}
+
+- assertVisible: {text: "Related Topics"}
+
+- repeat:
+    times: 6
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd: {timeout: 1500}
+
+- runFlow:
+    when: {visible: {text: "Recommended"}}
+    commands:
+      - assertVisible: {text: "Recommended"}
+
+- runFlow:
+    when: {visible: {text: "Headlines"}}
+    commands:
+      - assertVisible: {text: "Headlines"}
+
+- assertVisible: {text: "Related Topics|Post a comment"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HOME_011_post_article_sections"
+

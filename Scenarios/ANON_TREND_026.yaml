@@ -1,0 +1,43 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, trending, long-article,evidence]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_026_article_header"
+
+- repeat:
+
+    times: 16
+
+    commands:
+
+      - runFlow:
+
+          when: {visible: {text: "Already a subscriber.*|Keep reading.*|.*[0-9]+%.*off.*"}}
+
+          commands:
+
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_TREND_026_paywall_endpoint"
+
+      - runFlow:
+
+          when: {visible: {text: "Post a comment|Related Topics|Recommended|Headlines"}}
+
+          commands:
+
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_TREND_026_post_article_endpoint"
+
+      - swipe: {direction: UP}
+
+      - waitForAnimationToEnd: {timeout: 1000}
+
+      - takeScreenshot: "Screenshots/Generated/ANON_TREND_026_article_body"
+
+- assertVisible: {id: "screen_article_detail"}
+

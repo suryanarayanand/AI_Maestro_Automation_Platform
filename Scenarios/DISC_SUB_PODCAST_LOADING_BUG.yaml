@@ -1,0 +1,48 @@
+appId: com.mobstac.thehindu
+tags: [discovery, subscriber, podcast, bug-capture]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- tapOn: "Podcast"
+- waitForAnimationToEnd:
+    timeout: 5000
+- assertVisible:
+    id: "screen_home"
+- assertVisible: "Podcast"
+- takeScreenshot: "Screenshots/Discovery/sub_podcast_listing_before_bug"
+
+# Reproduce selected-series blank/loading behavior.
+- scrollUntilVisible:
+    element: "The Rearview"
+    direction: DOWN
+    timeout: 60000
+    speed: 40
+    visibilityPercentage: 40
+- assertVisible: "The Rearview"
+- tapOn:
+    text: "SEE ALL EPISODES"
+    index: 0
+- waitForAnimationToEnd:
+    timeout: 15000
+- takeScreenshot: "Screenshots/Discovery/sub_podcast_rearview_after_15s"
+- waitForAnimationToEnd:
+    timeout: 15000
+- takeScreenshot: "Screenshots/Discovery/sub_podcast_rearview_after_30s"
+- back
+- waitForAnimationToEnd
+
+# Reproduce Play Latest Episode player loading behavior.
+- scrollUntilVisible:
+    element: "The Rearview"
+    direction: DOWN
+    timeout: 60000
+    speed: 40
+    visibilityPercentage: 40
+- tapOn:
+    text: "Play Latest Episode"
+    index: 0
+- waitForAnimationToEnd:
+    timeout: 15000
+- takeScreenshot: "Screenshots/Discovery/sub_podcast_latest_episode_after_15s"
+- waitForAnimationToEnd:
+    timeout: 15000
+- takeScreenshot: "Screenshots/Discovery/sub_podcast_latest_episode_after_30s"

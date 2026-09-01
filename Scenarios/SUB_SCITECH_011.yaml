@@ -1,0 +1,306 @@
+appId: com.mobstac.thehindu
+
+
+
+tags:
+
+  - generated
+
+  - ordered
+
+  - subscriber
+
+  - sci-tech
+
+  - article
+
+  - paging
+
+  - navigation-recovery
+
+  - no-monetisation
+
+
+
+---
+
+
+
+# SUB_SCITECH_011 — Sci-tech article paging and navigation recovery
+
+
+
+# Establish the authenticated subscriber session before module navigation.
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_SCITECH.yaml"
+
+
+# Open the validated Sci-Tech quick section.
+
+- extendedWaitUntil:
+
+    visible:
+
+      text: "Sci-Tech"
+
+    timeout: 30000
+
+
+
+- tapOn:
+
+    text: "Sci-Tech"
+
+
+
+- waitForAnimationToEnd
+
+
+
+- extendedWaitUntil:
+
+    visible:
+
+      text: "Sci-Tech"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+# Record the listing context that Back must restore.
+
+- assertVisible:
+    text: "Sci-Tech"
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_011_scitech_listing_before_article"
+
+
+
+# Open the active standard Sci-Tech article reference. The article-detail screen
+
+# assertion is the runtime qualification required for this reference-only URL.
+
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+
+
+
+- extendedWaitUntil:
+
+    visible:
+
+      id: "screen_article_detail"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- assertNotVisible:
+
+    id: "ad_iframe"
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_011_article_initial_settled"
+
+
+
+# Obligation 1 — Perform exactly three left pager swipes. Every gesture has a
+
+# settle wait and is followed by article identity, ad-interstitial, and complete
+
+# subscriber monetization checks.
+
+- repeat:
+
+    times: 3
+
+    commands:
+
+      - swipe:
+
+          direction: LEFT
+
+          duration: 500
+
+      - waitForAnimationToEnd
+
+      - tapOn:
+          text: "Close sheet"
+          optional: true
+
+      - extendedWaitUntil:
+
+          visible:
+
+            id: "screen_article_detail"
+
+          timeout: 30000
+
+      - assertVisible:
+
+          id: "screen_article_detail"
+
+      - assertNotVisible:
+
+          id: "ad_iframe"
+
+      - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+- assertWithAI: "Verify the settled screen after the three left pager gestures remains a valid, readable article-detail surface. Fail for a listing, Home, app exit, crash, blank page, blocked-navigation overlay, paywall, login gate, subscription offer, or advertising interstitial. Do not require a fixed headline because adjacent live article inventory is dynamic."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_011_after_three_left_swipes"
+
+
+
+# Obligation 1 continued — Perform exactly three right pager swipes with the
+
+# same settled subscriber-session checks after every gesture.
+
+- repeat:
+
+    times: 3
+
+    commands:
+
+      - swipe:
+
+          direction: RIGHT
+
+          duration: 500
+
+      - waitForAnimationToEnd
+
+      - tapOn:
+          text: "Close sheet"
+          optional: true
+
+      - extendedWaitUntil:
+
+          visible:
+
+            id: "screen_article_detail"
+
+          timeout: 30000
+
+      - assertVisible:
+
+          id: "screen_article_detail"
+
+      - assertNotVisible:
+
+          id: "ad_iframe"
+
+      - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+# Obligation 3 — Both directional sequences completed while preserving article
+
+# detail and subscriber entitlement. This assertion deliberately does not demand
+
+# a particular adjacent headline when the live pager reaches an inventory edge.
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- assertNotVisible:
+
+    id: "ad_iframe"
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+- assertWithAI: "Verify the settled screen after the three reverse pager gestures is still a valid, readable article-detail surface with no blocked-navigation state. Fail for Home, a section listing, app exit, crash, blank content, paywall, login gate, subscription offer, advertisement, or interstitial. Do not require a fixed dynamic headline."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_011_after_three_right_swipes"
+
+
+
+# Obligation 2 — Use native Back from the article-detail navigation level.
+
+- back
+
+- waitForAnimationToEnd
+
+
+
+- extendedWaitUntil:
+
+    visible:
+
+      text: "Sci-Tech"
+
+    timeout: 30000
+
+
+
+# Obligation 4 — Confirm article detail closed, Sci-Tech remains selected, and
+
+# the restored listing is usable near its previously captured context.
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+- assertNotVisible:
+
+    id: "screen_article_detail"
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+- assertWithAI: "Verify Back restored the usable Sci-Tech article listing and Sci-Tech remains visibly selected. Compare with the pre-article listing evidence: the result must retain a reasonable listing context rather than unexpectedly opening Home, another section, the top of an unrelated feed, an exited app, a crash surface, a blank page, or a stale article overlay."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_011_scitech_listing_restored"
+

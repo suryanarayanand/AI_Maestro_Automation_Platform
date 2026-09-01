@@ -1,0 +1,127 @@
+{
+    "suite": "Subscriber User Cases - AI Generated",
+    "source_suite": "user_subscriber",
+    "module": "AI Generated",
+    "tests": [
+        {
+            "id": "SUB_SCITECH_001",
+            "module": "AI Generated",
+            "section": "AI Generated",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech launch, selection and subscriber identity",
+            "yaml": "SUB_SCITECH_001.yaml",
+            "display_module": "AI Generated"
+        },
+        {
+            "id": "SUB_SCITECH_002",
+            "module": "AI Generated",
+            "section": "AI Generated",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech refresh and content recovery",
+            "yaml": "SUB_SCITECH_002.yaml",
+            "display_module": "AI Generated"
+        },
+        {
+            "id": "SUB_SCITECH_003",
+            "module": "AI Generated",
+            "section": "AI Generated",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech listing identity and visual structure",
+            "yaml": "SUB_SCITECH_003.yaml",
+            "display_module": "AI Generated"
+        },
+        {
+            "id": "SUB_SCITECH_004",
+            "module": "AI Generated",
+            "section": "AI Generated",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech deep scroll, pagination and subscriber ad-free entitlement",
+            "yaml": "SUB_SCITECH_004.yaml",
+            "display_module": "AI Generated"
+        },
+        {
+            "id": "SUB_SCITECH_005",
+            "module": "AI Generated",
+            "section": "AI Generated",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech article selection and destination integrity",
+            "yaml": "SUB_SCITECH_005.yaml",
+            "display_module": "AI Generated"
+        },
+        {
+            "id": "SUB_SCITECH_006",
+            "module": "AI Generated",
+            "section": "AI Generated",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech subscriber full-article entitlement",
+            "yaml": "SUB_SCITECH_006.yaml",
+            "display_module": "AI Generated"
+        },
+        {
+            "id": "SUB_SCITECH_007",
+            "module": "AI Generated",
+            "section": "AI Generated",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech conditional AI Summary and Listen controls",
+            "yaml": "SUB_SCITECH_007.yaml",
+            "display_module": "AI Generated"
+        },
+        {
+            "id": "SUB_SCITECH_008",
+            "module": "AI Generated",
+            "section": "AI Generated",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech reading options, text size and themes",
+            "yaml": "SUB_SCITECH_008.yaml",
+            "display_module": "AI Generated"
+        },
+        {
+            "id": "SUB_SCITECH_009",
+            "module": "AI Generated",
+            "section": "AI Generated",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech bookmark, share and comment engagement",
+            "yaml": "SUB_SCITECH_009.yaml",
+            "display_module": "AI Generated"
+        },
+        {
+            "id": "SUB_SCITECH_010",
+            "module": "AI Generated",
+            "section": "AI Generated",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech post-article content continuity",
+            "yaml": "SUB_SCITECH_010.yaml",
+            "display_module": "AI Generated"
+        },
+        {
+            "id": "SUB_SCITECH_011",
+            "module": "AI Generated",
+            "section": "AI Generated",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech article paging and navigation recovery",
+            "yaml": "SUB_SCITECH_011.yaml",
+            "display_module": "AI Generated"
+        },
+        {
+            "id": "SUB_SCITECH_012",
+            "module": "AI Generated",
+            "section": "AI Generated",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sci-tech loading, live-content and failure resilience",
+            "yaml": "SUB_SCITECH_012.yaml",
+            "display_module": "AI Generated"
+        }
+    ]
+}

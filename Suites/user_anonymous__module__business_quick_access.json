@@ -1,0 +1,107 @@
+{
+    "suite": "Anonymous User Cases - Business Quick Access",
+    "source_suite": "user_anonymous",
+    "module": "Business Quick Access",
+    "tests": [
+        {
+            "id": "ANON_BUSINESS_001",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "priority": "P1",
+            "name": "Business launch and selected Quick Access identity",
+            "yaml": "ANON_BUSINESS_001.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "ANON_BUSINESS_002",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "priority": "P2",
+            "name": "Business refresh and content recovery",
+            "yaml": "ANON_BUSINESS_002.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "ANON_BUSINESS_003",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "priority": "P2",
+            "name": "Business listing structure and article cards",
+            "yaml": "ANON_BUSINESS_003.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "ANON_BUSINESS_004",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "priority": "P2",
+            "name": "Business deep scroll and advertisement evidence",
+            "yaml": "ANON_BUSINESS_004.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "ANON_BUSINESS_005",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "priority": "P1",
+            "name": "Business article destination integrity",
+            "yaml": "ANON_BUSINESS_005.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "ANON_BUSINESS_006",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "priority": "P1",
+            "name": "Business anonymous article restriction behavior",
+            "yaml": "ANON_BUSINESS_006.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "ANON_BUSINESS_007",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "priority": "P2",
+            "name": "Business conditional AI Summary and Listen controls",
+            "yaml": "ANON_BUSINESS_007.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "ANON_BUSINESS_008",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "priority": "P1",
+            "name": "Business bookmark redirects anonymous user to login",
+            "yaml": "ANON_BUSINESS_008.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "ANON_BUSINESS_009",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "priority": "P2",
+            "name": "Business share surface behavior",
+            "yaml": "ANON_BUSINESS_009.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Business Quick Access"
+        },
+        {
+            "id": "ANON_BUSINESS_010",
+            "module": "Business Quick Access",
+            "section": "Business Quick Access",
+            "priority": "P2",
+            "name": "Business comment and post-article behavior",
+            "yaml": "ANON_BUSINESS_010.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Business Quick Access"
+        }
+    ]
+}

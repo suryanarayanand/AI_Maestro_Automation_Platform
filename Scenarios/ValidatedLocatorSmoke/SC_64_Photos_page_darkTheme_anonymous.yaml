@@ -28,7 +28,7 @@ tags:
 - assertVisible: "SUBSCRIBE"
 
 # Verify Change Theme Option
-- runFlow: ../Common/Dark_theme_changing.yaml
+- runFlow: ../../Common/Dark_theme_changing.yaml
 
 # Relaunch the App Because Navigating Back Causes the App to Crash
 # - stopApp

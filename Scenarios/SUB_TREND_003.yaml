@@ -1,0 +1,60 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, trending, all-feed, no-monetisation]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- extendedWaitUntil: {visible: {id: "screen_home"}, timeout: 30000}
+- assertVisible: {id: "screen_home"}
+- tapOn: {id: "nav_trending"}
+- extendedWaitUntil: {visible: {id: "screen_trending"}, timeout: 30000}
+- assertVisible: {id: "screen_trending"}
+
+# Open and validate the All feed at its top position.
+- tapOn: {text: "All"}
+- waitForAnimationToEnd
+- assertVisible: {id: "screen_trending"}
+- assertVisible: {text: "All"}
+- assertNotVisible: {text: "SUBSCRIBE"}
+- assertNotVisible: {text: "ADVERTISEMENT"}
+- assertNotVisible: {id: "aw0"}
+- assertNotVisible: {id: "ad_iframe"}
+- assertNotVisible: {text: "Interstitial close button"}
+- assertNotVisible: {text: "Image for Taboola Advertising Unit"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_003_all_top_ad_free"
+
+# Move to a bounded middle-feed position while continuously checking responsiveness.
+- repeat:
+    times: 3
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd
+      - assertVisible: {id: "screen_trending"}
+
+- extendedWaitUntil: {visible: {id: "screen_trending"}, timeout: 30000}
+- assertNotVisible: {text: "SUBSCRIBE"}
+- assertNotVisible: {text: "ADVERTISEMENT"}
+- assertNotVisible: {id: "aw0"}
+- assertNotVisible: {id: "ad_iframe"}
+- assertNotVisible: {text: "Interstitial close button"}
+- assertNotVisible: {text: "Image for Taboola Advertising Unit"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_003_all_middle_ad_free"
+
+# Move to a bounded lower-feed position and allow additional content to settle.
+- repeat:
+    times: 3
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd
+      - assertVisible: {id: "screen_trending"}
+
+- extendedWaitUntil: {visible: {id: "screen_trending"}, timeout: 30000}
+- assertVisible: {id: "screen_trending"}
+- assertNotVisible: {text: "SUBSCRIBE"}
+- assertNotVisible: {text: "ADVERTISEMENT"}
+- assertNotVisible: {id: "aw0"}
+- assertNotVisible: {id: "ad_iframe"}
+- assertNotVisible: {text: "Interstitial close button"}
+- assertNotVisible: {text: "Image for Taboola Advertising Unit"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_003_all_lower_loaded_ad_free"

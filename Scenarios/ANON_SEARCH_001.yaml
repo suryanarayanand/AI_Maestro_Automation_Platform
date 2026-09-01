@@ -1,0 +1,9 @@
+appId: com.mobstac.thehindu
+tags: [anonymous, search]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_SEARCH.yaml"
+
+- assertVisible: {id: "cta_search"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_SEARCH_001_evidence"

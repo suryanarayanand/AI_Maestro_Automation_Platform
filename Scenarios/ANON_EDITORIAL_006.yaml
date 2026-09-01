@@ -1,0 +1,8 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, editorial]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_EDITORIAL_ARTICLE.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- assertVisible: {text: "EDITORIAL|Editorial"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_EDITORIAL_006_metadata"

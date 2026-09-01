@@ -1,0 +1,17 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, article-page, taboola]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- repeat:
+    times: 12
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd
+- runFlow:
+    when: {visible: {text: "ADVERTISEMENT|Recommended"}}
+    commands:
+      - assertVisible: {text: "ADVERTISEMENT|Recommended"}
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_017_taboola"
+- assertVisible: {id: "screen_article_detail"}

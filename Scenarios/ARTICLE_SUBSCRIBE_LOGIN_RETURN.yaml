@@ -1,0 +1,35 @@
+appId: com.mobstac.thehindu
+tags:
+  - functional
+  - anonymous-to-authenticated
+  - article
+  - subscribe-login
+---
+- runFlow: ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml
+
+- assertVisible:
+    text: "SUBSCRIBE"
+
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 20000
+
+- tapOn:
+    id: "article_card"
+    index: 0
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 25000
+
+- runFlow: ../Common/LOGIN_FROM_ARTICLE_SUBSCRIBE.yaml
+
+# The reusable flow guarantees that Login returns to this article screen.
+- assertVisible:
+    id: "screen_article_detail"

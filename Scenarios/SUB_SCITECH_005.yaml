@@ -1,0 +1,203 @@
+appId: com.mobstac.thehindu
+
+
+
+tags:
+
+  - generated
+
+  - ordered
+
+  - subscriber
+
+  - scitech
+
+  - article
+
+  - destination-integrity
+
+  - header-metadata
+
+  - visual-layout
+
+
+
+---
+
+
+
+# SUB_SCITECH_005 — Sci-tech article selection and destination integrity
+
+
+
+# Establish the repository-managed authenticated subscriber session.
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_SCITECH.yaml"
+
+
+- extendedWaitUntil:
+
+    visible:
+
+      text: "Sci-Tech"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+- tapOn:
+
+    text: "Sci-Tech"
+
+
+
+- waitForAnimationToEnd
+
+
+
+- extendedWaitUntil:
+
+    visible:
+
+      text: "Sci-Tech"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    text: "Sci-Tech"
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+# Obligation 1 — Select a current, visible, non-live Sci-Tech article card.
+
+# The settled pre-navigation screenshot records its readable headline without
+
+# fixing a title that will become stale as editorial inventory changes.
+
+- scrollUntilVisible:
+
+    element:
+
+      id: "article_card"
+
+    direction: DOWN
+
+    timeout: 30000
+
+    speed: 40
+
+    visibilityPercentage: 70
+
+    centerElement: true
+
+
+
+- assertVisible:
+
+    id: "article_card"
+
+
+
+- assertWithAI: "Inspect the first fully visible card on the selected Sci-Tech page. Verify it is completely rendered with a readable headline and has no LIVE indicator. Environment, Science, Technology, Health and other editorial subcategories are valid within Sci-Tech and must not be rejected solely because their label differs from Sci-Tech."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_005_selected_card_headline_before_open"
+
+
+
+- tapOn:
+
+    id: "article_card"
+
+    index: 0
+
+
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- waitForAnimationToEnd
+
+# Obligation 2 — Verify the supplied article-header elements.
+
+- extendedWaitUntil:
+
+    visible:
+
+      id: "screen_article_detail"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- assertWithAI: "Verify the open article header has a readable headline and a coherent Sci-Tech subcategory such as Environment, Science, Technology or Health. Verify supplied byline, publication/update time and hero media are readable and rendered. Do not reject a valid Sci-Tech subcategory or require optional media."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_005_article_header_fields"
+
+
+
+# Obligation 3 — Establish destination integrity for the card just selected.
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- assertWithAI: "Verify a complete non-live article detail is open with one readable headline. Treat Environment and other scientific subcategories as valid Sci-Tech content. Fail only for a listing page, blank/loading screen, error surface, live blog, or visibly unrelated destination."
+
+
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_005_matching_article_destination"
+
+
+
+# Obligation 4 — Verify header grouping, readability, and containment.
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- assertWithAI: "Inspect only the visible article-header layout. Verify supplied section label, headline, byline, publication/update time and hero media are readable, grouped and not overlapping or broken. Do not compare dates mentioned inside the story or headline with the publication date."
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_005_header_grouping_and_layout"
+

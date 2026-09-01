@@ -1,0 +1,31 @@
+appId: com.mobstac.thehindu
+tags: [generated, subscriber, photos, gallery, reverse-paging]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_MULTI_PHOTO_GALLERY.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_007_counter_1"
+- swipe: {direction: LEFT, duration: 500}
+- waitForAnimationToEnd
+- assertVisible: {text: ".*2/[0-9]+.*"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_007_counter_2"
+- swipe: {direction: LEFT, duration: 500}
+- waitForAnimationToEnd
+- assertVisible: {text: ".*3/[0-9]+.*"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_007_counter_3"
+- swipe: {direction: RIGHT, duration: 500}
+- waitForAnimationToEnd
+- assertVisible: {text: ".*2/[0-9]+.*"}
+- assertNotVisible: "SUBSCRIBE"
+- assertNotVisible: {id: "ad_iframe"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_007_counter_back_2"
+- swipe: {direction: RIGHT, duration: 500}
+- waitForAnimationToEnd
+- assertVisible: {text: ".*1/[0-9]+.*"}
+- swipe: {direction: RIGHT, duration: 500}
+- waitForAnimationToEnd
+- assertVisible: {text: ".*1/[0-9]+.*"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_007_first_boundary"

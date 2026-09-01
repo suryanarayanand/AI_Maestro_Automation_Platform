@@ -1,0 +1,47 @@
+appId: com.mobstac.thehindu
+tags: [discovery, anonymous, photos, gallery]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_HOME.yaml"
+- tapOn: {text: "Photos"}
+- waitForAnimationToEnd: {timeout: 5000}
+
+# The leading live card currently carries a multi-image count badge.
+- tapOn: {point: "25%,35%"}
+- waitForAnimationToEnd: {timeout: 8000}
+- runFlow:
+    when: {visible: {text: ".*Advertisement.*|.*ADVERTISEMENT.*"}}
+    commands:
+      - takeScreenshot: "Screenshots/Discovery/photo_gallery_interstitial"
+      - waitForAnimationToEnd: {timeout: 5000}
+      - extendedWaitUntil: {visible: {text: "Close|CLOSE|Skip|SKIP|✕|×"}, timeout: 30000}
+      - tapOn: {text: "Close|CLOSE|Skip|SKIP|✕|×"}
+- takeScreenshot: "Screenshots/Discovery/photo_gallery_header"
+- runFlow:
+    when: {visible: {text: ".*Go beyond the headline.*|.*subscribe to access.*"}}
+    commands:
+      - tapOn: {point: "91%,36%"}
+      - waitForAnimationToEnd: {timeout: 2000}
+      - takeScreenshot: "Screenshots/Discovery/photo_gallery_modal_closed"
+
+- swipe: {direction: LEFT, duration: 500}
+- waitForAnimationToEnd: {timeout: 1500}
+- takeScreenshot: "Screenshots/Discovery/photo_gallery_swipe_1"
+- swipe: {direction: LEFT, duration: 500}
+- waitForAnimationToEnd: {timeout: 1500}
+- takeScreenshot: "Screenshots/Discovery/photo_gallery_swipe_2"
+- swipe: {direction: RIGHT, duration: 500}
+- waitForAnimationToEnd: {timeout: 1500}
+- takeScreenshot: "Screenshots/Discovery/photo_gallery_swipe_back"
+
+- runFlow:
+    when: {visible: {text: "Read Full Article|READ FULL ARTICLE"}}
+    commands:
+      - tapOn: {text: "Read Full Article|READ FULL ARTICLE"}
+      - waitForAnimationToEnd: {timeout: 3000}
+      - takeScreenshot: "Screenshots/Discovery/photo_gallery_full_article"
+      - runFlow:
+          when: {visible: {text: "Read Less|READ LESS"}}
+          commands:
+            - tapOn: {text: "Read Less|READ LESS"}
+            - waitForAnimationToEnd: {timeout: 2000}
+            - takeScreenshot: "Screenshots/Discovery/photo_gallery_read_less"

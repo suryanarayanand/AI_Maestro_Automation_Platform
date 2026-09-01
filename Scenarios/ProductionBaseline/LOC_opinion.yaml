@@ -3,7 +3,7 @@ tags:
   - baseline
   - opinion
 ---
-- runFlow: ../Common/OPEN_HOME_FOR_BASELINE.yaml
+- runFlow: ../../Common/OPEN_HOME_FOR_BASELINE.yaml
 - tapOn:
     text: "Opinion\nTab 8 of 15"
 - waitForAnimationToEnd

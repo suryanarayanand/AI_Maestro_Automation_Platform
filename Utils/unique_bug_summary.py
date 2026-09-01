@@ -81,9 +81,19 @@ def _highest_severity(bugs):
 def generate_unique_bug_summary(report_root, similarity_threshold=0.58):
     report_root = Path(report_root)
     generated_at = datetime.now().astimezone()
+    reset_marker = report_root / "Unique_Bug_Summary_Reset.json"
+    reset_at = None
+    if reset_marker.is_file():
+        try:
+            marker_data = json.loads(reset_marker.read_text(encoding="utf-8-sig"))
+            reset_at = datetime.fromisoformat(marker_data.get("reset_at", "")).timestamp()
+        except (OSError, ValueError, TypeError, json.JSONDecodeError):
+            reset_at = None
     records = []
     source_reports = 0
     for summary_path in sorted(report_root.glob("*/Bug_Summary.json")):
+        if reset_at is not None and summary_path.stat().st_mtime < reset_at:
+            continue
         try:
             data = json.loads(summary_path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError):
@@ -94,7 +104,10 @@ def generate_unique_bug_summary(report_root, similarity_threshold=0.58):
             item["report"] = summary_path.parent.name
             item["finding_text"] = _finding_text(item)
             item["tokens"] = _tokens(item["finding_text"])
-            if not item["finding_text"] and _declares_non_bug(item) and str(item.get("execution_status", "PASS")).upper() == "PASS":
+            # Execution failures without a concrete finding belong in the run report,
+            # not the product bug sheet. This also prevents YAML/automation failures
+            # from being misreported as application defects.
+            if not item["finding_text"]:
                 continue
             records.append(item)
 

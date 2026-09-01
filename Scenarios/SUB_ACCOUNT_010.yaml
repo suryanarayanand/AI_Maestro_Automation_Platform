@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+tags: [generated, subscriber, account, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_ACCOUNT.yaml"
+- scrollUntilVisible: {element: {text: "Appearance"}, direction: DOWN, timeout: 30000, speed: 45, visibilityPercentage: 20}
+- tapOn: {text: "Appearance"}
+- assertVisible: {text: "LIGHT MODE|DARK MODE|Light.*Mode|Dark.*Mode"}
+- tapOn: {text: "DARK MODE|Dark.*Mode", optional: true}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ACCOUNT_010_dark_mode"
+- tapOn: {text: "LIGHT MODE|Light.*Mode", optional: true}
+- back
+- assertVisible: {id: "screen_user_menu"}
+

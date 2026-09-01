@@ -1,0 +1,167 @@
+{
+    "suite": "Anonymous User Cases - Videos Quick Access",
+    "source_suite": "user_anonymous",
+    "module": "Videos",
+    "tests": [
+        {
+            "id": "ANON_VIDEO_001",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Videos quick section launch and selected tab",
+            "yaml": "ANON_VIDEO_001.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_002",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Videos quick section refresh",
+            "yaml": "ANON_VIDEO_002.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_003",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Video hero and listing presentation",
+            "yaml": "ANON_VIDEO_003.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_004",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Videos scrolling and advertisement handling",
+            "yaml": "ANON_VIDEO_004.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_005",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Video article header and reading time",
+            "yaml": "ANON_VIDEO_005.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_006",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Anonymous video paywall overlay and playback restriction",
+            "yaml": "ANON_VIDEO_006.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_007",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Video paywall Subscribe action",
+            "yaml": "ANON_VIDEO_007.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_008",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Video paywall subscriber-login link",
+            "yaml": "ANON_VIDEO_008.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_009",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Accessible video playback controls",
+            "yaml": "ANON_VIDEO_009.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_010",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Video Reading Options functionality",
+            "yaml": "ANON_VIDEO_010.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_011",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Video Bookmark anonymous login gate",
+            "yaml": "ANON_VIDEO_011.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_012",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Video Share functionality",
+            "yaml": "ANON_VIDEO_012.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_013",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Video Comment anonymous login gate",
+            "yaml": "ANON_VIDEO_013.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_014",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Video floating Subscribe navigation",
+            "yaml": "ANON_VIDEO_014.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_015",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Video interstitial advertisement recovery",
+            "yaml": "ANON_VIDEO_015.yaml",
+            "display_module": "Videos"
+        },
+        {
+            "id": "ANON_VIDEO_016",
+            "module": "Videos",
+            "section": "Videos",
+            "user_state": "ANONYMOUS",
+            "priority": "P2",
+            "name": "Video article back navigation and retained position",
+            "yaml": "ANON_VIDEO_016.yaml",
+            "display_module": "Videos"
+        }
+    ]
+}

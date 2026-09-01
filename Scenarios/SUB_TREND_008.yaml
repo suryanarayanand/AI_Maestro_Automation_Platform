@@ -1,0 +1,133 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - trending
+  - article-audio
+  - conditional
+  - thirty-seconds
+---
+
+# Establish the validated subscriber state and open Trending.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- tapOn:
+    id: "nav_trending"
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+- assertVisible:
+    id: "screen_trending"
+
+# Open a current Trending article without depending on a fixed headline.
+- scrollUntilVisible:
+    element:
+      text: "READ FULL ARTICLE"
+    direction: DOWN
+    timeout: 45000
+    speed: 40
+- assertVisible:
+    text: "READ FULL ARTICLE"
+- tapOn:
+    text: "READ FULL ARTICLE"
+    index: 0
+
+# Dismiss the validated optional article sheet using a bounded recovery.
+- repeat:
+    times: 3
+    commands:
+      - tapOn:
+          text: "Close sheet"
+          optional: true
+      - waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+- assertVisible:
+    id: "screen_article_detail"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "Already a subscriber.*Login|Keep reading.*"
+
+# Listen to Article is article-dependent. Execute the complete playback proof
+# only when the control is rendered on this current Trending article.
+- runFlow:
+    when:
+      visible:
+        text: "Listen to Article|LISTEN TO ARTICLE"
+    commands:
+      - tapOn:
+          text: "Listen to Article|LISTEN TO ARTICLE"
+      - extendedWaitUntil:
+          visible:
+            text: "Play|PLAY|Pause|PAUSE"
+          timeout: 30000
+
+      # Some player variants open paused; normalize them to active playback.
+      - runFlow:
+          when:
+            visible:
+              text: "Play|PLAY"
+          commands:
+            - tapOn:
+                text: "Play|PLAY"
+
+      - extendedWaitUntil:
+          visible:
+            text: "Pause|PAUSE"
+          timeout: 15000
+      - assertVisible:
+          text: "Pause|PAUSE"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "Already a subscriber.*Login|Keep reading.*"
+      - assertNotVisible:
+          text: "HAVE AN ACCOUNT.*LOGIN|Login to your account"
+
+      # Synchronous wall-clock gate: playback remains active for at least 30 seconds.
+      - evalScript: '${(function () { var end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+
+      - assertVisible:
+          text: "Pause|PAUSE"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "Already a subscriber.*Login|Keep reading.*"
+      - assertNotVisible:
+          text: "HAVE AN ACCOUNT.*LOGIN|Login to your account"
+
+      # Pause after the measured interval and capture the settled player state.
+      - tapOn:
+          text: "Pause|PAUSE"
+      - extendedWaitUntil:
+          visible:
+            text: "Play|PLAY"
+          timeout: 15000
+      - assertVisible:
+          text: "Play|PLAY"
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_TREND_008_player_settled_after_30_seconds"
+
+      # Native Back must restore the article already present below the player.
+      - back
+      - extendedWaitUntil:
+          visible:
+            id: "screen_article_detail"
+          timeout: 30000
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "Already a subscriber.*Login|Keep reading.*"
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_TREND_008_article_restored"

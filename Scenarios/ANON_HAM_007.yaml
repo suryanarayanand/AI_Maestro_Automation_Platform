@@ -1,0 +1,20 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "Videos"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Videos"}
+- tapOn: {text: "Videos", index: 1}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_007_videos"
+- tapOn: {id: "article_card", index: 0}
+- waitForAnimationToEnd: {timeout: 5000}
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_007_media"
+- back

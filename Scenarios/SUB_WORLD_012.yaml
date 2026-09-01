@@ -1,0 +1,111 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - world
+  - article
+  - live-article
+  - bounded-scroll
+  - failure-resilience
+  - evidence-limited
+
+---
+
+# SUB_WORLD_012 — World loading, live-content and failure resilience
+
+# Establish the repository-managed authenticated subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_WORLD.yaml"
+
+# Establish a different ordinary article subtype before opening the live target.
+# Reference 138 is used without asserting its stale label or headline.
+- openLink: "https://www.thehindu.com/sci-tech/technology/gadgets/redmi-pad-pro-5g-and-redmi-pad-se-4g-launched-in-india-features-price/article68459826.ece"
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_012_baseline_article"
+
+# Return safely before opening another item of a deliberately different subtype.
+- back
+- waitForAnimationToEnd
+
+# Open article reference 58, classified in the repository as a Live Article.
+- openLink: "https://www.thehindu.com/business/budget/budget-2024-live-updates-nirmala-sitharaman-presents-interim-budget-february-1/article67796321.ece"
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- waitForAnimationToEnd
+
+# Allow the destination a measured 30-second recovery window. The screenshot is
+# taken before assertions so a persistent blank, loader, broken-media, or request
+# error state is retained even when the following assertion fails.
+- evalScript: '${(() => { const end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_012_live_target_after_30_seconds"
+
+- assertWithAI: "Inspect the destination after the completed 30-second recovery window. PASS only if meaningful article or live-update content is rendered and usable. The destination must not be blank, skeleton-only, covered by a permanent loader, replaced by a request/network/retry error, or contain visibly broken primary media or an unusable embedded live surface. If one of those product states persists, fail explicitly as PRODUCT FAIL for target type 'Live Article', repository reference 58, and include any readable headline or visible error wording in the failure explanation. Do not classify a Maestro service, device, transport, or selector-resolution problem as a product failure."
+
+# A visually usable destination must also expose the approved article identity.
+# If the visual content is usable but this selector cannot be resolved, Maestro
+# reports an automation/locator failure rather than a product-content failure.
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+# Qualify the selected destination as live/embedded before bounded interaction.
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_012_live_frame_before_swipes"
+
+- assertWithAI: "Verify that the open destination presents coherent live-article or embedded live-update content associated with repository reference 58. The visible live surface and its surrounding article content must be rendered, readable, and responsive-looking. Fail as PRODUCT FAIL if the live surface is blank, visibly broken, permanently loading, detached from the article, or replaced by a request error."
+
+# Use bounded viewport gestures only. No absolute page-end condition is required.
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_012_live_frame_bounded_swipe_01"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertWithAI: "Verify that the first bounded upward gesture produced a responsive transition within the same live-article destination. The article or embedded live-update content must remain rendered and usable. Do not require the absolute end of the article or live feed. Fail as PRODUCT FAIL for reference 58 if the visible live content has become blank, frozen behind a permanent loader, visibly broken, or replaced by a request error."
+
+- swipe:
+    direction: UP
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_012_live_frame_bounded_swipe_02"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertWithAI: "Verify that the second and final bounded upward gesture remains on the same responsive live-article destination. Meaningful article or live-update content must be visible without requiring an absolute page end. Fail explicitly as PRODUCT FAIL for target type 'Live Article', repository reference 58, and include any readable headline or error wording if blank content, endless loading, broken primary media, a frozen live surface, or a request error is visible."
+
+# Recheck subscriber entitlement after representative live-content scrolling.
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_012_final_live_content_state"

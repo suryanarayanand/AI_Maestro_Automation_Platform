@@ -1,0 +1,11 @@
+appId: com.mobstac.thehindu
+tags: [common, anonymous, photos]
+---
+- runFlow: "OPEN_ANONYMOUS_HOME.yaml"
+- tapOn: {text: "Photos"}
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {text: "Photos"}, timeout: 30000}
+- assertVisible: {id: "screen_home"}
+- assertVisible: {text: "Photos"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/photos_grid_ready"

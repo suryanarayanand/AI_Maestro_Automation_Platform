@@ -1,0 +1,14 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, premium]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_PREMIUM_ARTICLE.yaml"
+- runFlow: "../Common/ASSERT_ANONYMOUS_PREMIUM_PAYWALL.yaml"
+- tapOn: {text: "Already a subscriber.*Login|Login|LOGIN"}
+- extendedWaitUntil: {visible: {text: "Login to your account"}, timeout: 25000}
+- assertVisible: {text: "Login to your account"}
+- assertVisible: {text: "Bookmark"}
+- tapOn: {text: "Bookmark"}
+- assertVisible: {text: "Login to your account"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PREM_022_result"

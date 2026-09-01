@@ -13,6 +13,8 @@
         <thead>
             <tr>
                 <th>Execution</th>
+                <th>Status</th>
+                <th>Progress</th>
                 <th width="120">Action</th>
             </tr>
         </thead>
@@ -24,6 +26,8 @@
         <tr>
 
             <td>{{ report.name }}</td>
+            <td><a href="/reports/{{ report.name }}" class="badge {{ 'bg-success' if report.status == 'PASSED' else 'bg-danger' if report.status == 'FAILED' else 'bg-secondary' }}">{{ report.status }}</a></td>
+            <td>{{ report.job.completed if report.job else '-' }}/{{ report.job.total if report.job else '-' }}</td>
 
             <td>
 

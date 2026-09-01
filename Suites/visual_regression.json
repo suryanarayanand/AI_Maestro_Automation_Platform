@@ -1,0 +1,151 @@
+{
+    "suite": "Visual Regression - One-to-One Baseline Comparison",
+    "source_suite": "baseline",
+    "comparison_mode": "one_to_one_filename_and_case_id",
+    "baseline_root": ".maestro/screenshots/Baselines/Screenshots",
+    "tests": [
+        {
+            "id": "LOC_VIDEOS",
+            "module": "Visual Regression",
+            "priority": "P1",
+            "name": "Visual comparison - Videos",
+            "yaml": "ProductionBaseline/LOC_videos.yaml",
+            "visual_mode": "one_to_one",
+            "baseline_images": [
+                "videos_page.png"
+            ]
+        },
+        {
+            "id": "LOC_PHOTOS",
+            "module": "Visual Regression",
+            "priority": "P1",
+            "name": "Visual comparison - Photos",
+            "yaml": "ProductionBaseline/LOC_photos.yaml",
+            "visual_mode": "one_to_one",
+            "baseline_images": [
+                "photos_page.png"
+            ]
+        },
+        {
+            "id": "LOC_PODCAST",
+            "module": "Visual Regression",
+            "priority": "P1",
+            "name": "Visual comparison - Podcast",
+            "yaml": "ProductionBaseline/LOC_podcast.yaml",
+            "visual_mode": "one_to_one",
+            "baseline_images": [
+                "podcast_page.png"
+            ]
+        },
+        {
+            "id": "LOC_INDIA",
+            "module": "Visual Regression",
+            "priority": "P1",
+            "name": "Visual comparison - India",
+            "yaml": "ProductionBaseline/LOC_india.yaml",
+            "visual_mode": "one_to_one",
+            "baseline_images": [
+                "india_page.png"
+            ]
+        },
+        {
+            "id": "LOC_WORLD",
+            "module": "Visual Regression",
+            "priority": "P1",
+            "name": "Visual comparison - World",
+            "yaml": "ProductionBaseline/LOC_world.yaml",
+            "visual_mode": "one_to_one",
+            "baseline_images": [
+                "world_page.png"
+            ]
+        },
+        {
+            "id": "LOC_EDITORIAL",
+            "module": "Visual Regression",
+            "priority": "P1",
+            "name": "Visual comparison - Editorial",
+            "yaml": "ProductionBaseline/LOC_editorial.yaml",
+            "visual_mode": "one_to_one",
+            "baseline_images": [
+                "editorial_page.png"
+            ]
+        },
+        {
+            "id": "LOC_OPINION",
+            "module": "Visual Regression",
+            "priority": "P1",
+            "name": "Visual comparison - Opinion",
+            "yaml": "ProductionBaseline/LOC_opinion.yaml",
+            "visual_mode": "one_to_one",
+            "baseline_images": [
+                "opinion_page.png"
+            ]
+        },
+        {
+            "id": "LOC_SPORTS",
+            "module": "Visual Regression",
+            "priority": "P1",
+            "name": "Visual comparison - Sports",
+            "yaml": "ProductionBaseline/LOC_sports.yaml",
+            "visual_mode": "one_to_one",
+            "baseline_images": [
+                "sports_page.png"
+            ]
+        },
+        {
+            "id": "LOC_BUSINESS",
+            "module": "Visual Regression",
+            "priority": "P1",
+            "name": "Visual comparison - Business",
+            "yaml": "ProductionBaseline/LOC_business.yaml",
+            "visual_mode": "one_to_one",
+            "baseline_images": [
+                "business_page.png"
+            ]
+        },
+        {
+            "id": "LOC_SCI_TECH",
+            "module": "Visual Regression",
+            "priority": "P1",
+            "name": "Visual comparison - Sci-Tech",
+            "yaml": "ProductionBaseline/LOC_sci_tech.yaml",
+            "visual_mode": "one_to_one",
+            "baseline_images": [
+                "sci_tech_page.png"
+            ]
+        },
+        {
+            "id": "LOC_ENTERTAINMENT",
+            "module": "Visual Regression",
+            "priority": "P1",
+            "name": "Visual comparison - Entertainment",
+            "yaml": "ProductionBaseline/LOC_entertainment.yaml",
+            "visual_mode": "one_to_one",
+            "baseline_images": [
+                "entertainment_page.png"
+            ]
+        },
+        {
+            "id": "LOC_FOOD",
+            "module": "Visual Regression",
+            "priority": "P1",
+            "name": "Visual comparison - Food",
+            "yaml": "ProductionBaseline/LOC_food.yaml",
+            "visual_mode": "one_to_one",
+            "baseline_images": [
+                "food_page.png"
+            ]
+        },
+        {
+            "id": "LOC_LATEST_NEWS",
+            "module": "Visual Regression",
+            "priority": "P1",
+            "name": "Visual comparison - Latest News",
+            "yaml": "ProductionBaseline/LOC_latest_news.yaml",
+            "visual_mode": "one_to_one",
+            "baseline_images": [
+                "latest_news_page.png"
+            ]
+        }
+    ]
+}

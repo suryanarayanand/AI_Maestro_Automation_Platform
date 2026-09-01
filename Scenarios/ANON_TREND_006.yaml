@@ -1,0 +1,52 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, trending, sections]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING.yaml"
+
+- tapOn: {text: "All"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_006_All"
+
+- tapOn: {text: "News"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_006_News"
+
+- tapOn: {text: "Business"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_006_Business"
+
+- tapOn: {text: "Technology"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_006_Technology"
+
+- tapOn: {text: "Entertainment"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_006_Entertainment"
+
+- tapOn: {text: "Sports"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_006_Sports"
+
+- repeat:
+
+    times: 6
+
+    commands:
+
+      - swipe: {direction: UP}
+
+      - waitForAnimationToEnd: {timeout: 1200}
+
+      - runFlow: "../Common/CAPTURE_TRENDING_AD_STATE.yaml"
+
+- assertVisible: {id: "screen_trending"}
+

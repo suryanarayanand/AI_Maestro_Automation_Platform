@@ -1,0 +1,107 @@
+{
+    "suite": "Anonymous User Cases - Books Quick Access",
+    "source_suite": "user_anonymous",
+    "module": "Books Quick Access",
+    "tests": [
+        {
+            "id": "ANON_BOOKS_001",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "priority": "P1",
+            "name": "Books launch and selected Quick Access identity",
+            "yaml": "ANON_BOOKS_001.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "ANON_BOOKS_002",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "priority": "P2",
+            "name": "Books refresh and content recovery",
+            "yaml": "ANON_BOOKS_002.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "ANON_BOOKS_003",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "priority": "P2",
+            "name": "Books listing structure and article cards",
+            "yaml": "ANON_BOOKS_003.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "ANON_BOOKS_004",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "priority": "P2",
+            "name": "Books deep scroll and advertisement evidence",
+            "yaml": "ANON_BOOKS_004.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "ANON_BOOKS_005",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "priority": "P1",
+            "name": "Books article destination integrity",
+            "yaml": "ANON_BOOKS_005.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "ANON_BOOKS_006",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "priority": "P1",
+            "name": "Books anonymous article restriction behavior",
+            "yaml": "ANON_BOOKS_006.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "ANON_BOOKS_007",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "priority": "P2",
+            "name": "Books conditional AI Summary and Listen controls",
+            "yaml": "ANON_BOOKS_007.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "ANON_BOOKS_008",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "priority": "P1",
+            "name": "Books bookmark redirects anonymous user to login",
+            "yaml": "ANON_BOOKS_008.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "ANON_BOOKS_009",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "priority": "P2",
+            "name": "Books share surface behavior",
+            "yaml": "ANON_BOOKS_009.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "ANON_BOOKS_010",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "priority": "P2",
+            "name": "Books comment and post-article behavior",
+            "yaml": "ANON_BOOKS_010.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Books Quick Access"
+        }
+    ]
+}

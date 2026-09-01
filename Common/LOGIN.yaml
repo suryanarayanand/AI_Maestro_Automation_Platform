@@ -20,9 +20,26 @@ tags:
     visible: "Email"
     timeout: 30000
 - tapOn: "Email"
-- inputText: "product.testing@thehindu.co.in"
+- inputText: ${TEST_EMAIL}
 - hideKeyboard
 - waitForAnimationToEnd
+
+# Some WebView sessions reset to the native anonymous account drawer after
+# email entry. Recover through its validated Login control and enter once more.
+- runFlow:
+    when:
+      visible:
+        id: "cta_login"
+    commands:
+      - tapOn:
+          id: "cta_login"
+      - extendedWaitUntil:
+          visible: "Email"
+          timeout: 30000
+      - tapOn: "Email"
+      - inputText: ${TEST_EMAIL}
+      - hideKeyboard
+      - waitForAnimationToEnd
 
 # The authentication WebView occasionally resets to the onboarding login entry.
 # Wait for either the expected NEXT action or the reset state, then recover once.
@@ -38,7 +55,7 @@ tags:
           visible: "Email"
           timeout: 30000
       - tapOn: "Email"
-      - inputText: "product.testing@thehindu.co.in"
+      - inputText: ${TEST_EMAIL}
       - hideKeyboard
       - waitForAnimationToEnd
 
@@ -55,7 +72,14 @@ tags:
     visible: "password"
     timeout: 30000
 - tapOn: "password"
-- inputText: "Test@123"
+- inputText: ${TEST_PASSWORD}
+- runFlow:
+    when:
+      visible:
+        text: "Show password"
+    commands:
+      - tapOn: "Show password"
+- waitForAnimationToEnd
 - hideKeyboard
 
 - extendedWaitUntil:
@@ -63,6 +87,18 @@ tags:
     timeout: 15000
 - tapOn: "LOGIN.*"
 
+# Successful authentication returns to the authenticated account drawer.
 - extendedWaitUntil:
-    visible: "Home"
+    visible: "^Account$"
+    timeout: 30000
+- runFlow:
+    when:
+      visible:
+        id: "cta_menu_close"
+    commands:
+      - tapOn:
+          id: "cta_menu_close"
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
     timeout: 30000

@@ -4,6 +4,8 @@ from pathlib import Path
 
 import web.portal_db as portal_db
 from app import app
+from web.services.job_queue_service import create_batched_jobs
+from web.services.result_validation_service import excel_condition_verdict
 
 
 class PortalTestCase(unittest.TestCase):
@@ -31,9 +33,52 @@ class PortalTestCase(unittest.TestCase):
 
     def test_primary_portal_pages_render(self):
         self.sign_in()
-        for path in ("/", "/generator", "/yaml-editor", "/suites", "/jobs", "/reports", "/devices", "/settings"):
+        for path in ("/", "/generator", "/article-library", "/yaml-editor", "/suites", "/jobs", "/reports", "/devices", "/settings"):
             with self.subTest(path=path):
                 self.assertEqual(self.client.get(path).status_code, 200)
+
+    def test_test_design_workspace_combines_full_and_atomic_flows(self):
+        self.sign_in()
+        response = self.client.get("/generator")
+        self.assertEqual(response.status_code, 200)
+        html = response.get_data(as_text=True)
+        self.assertIn("Test Design Workspace", html)
+        self.assertIn("Upload and generate YAML", html)
+        self.assertIn("Import atomic catalogue", html)
+        self.assertIn("YAML drafts and approvals", html)
+        self.assertIn("Evidence-grounded reusable steps", html)
+        self.assertNotIn(">Agent Workspace<", html)
+
+    def test_legacy_agent_workspace_redirects_to_unified_workspace(self):
+        self.sign_in()
+        response = self.client.get("/flow-workspace")
+        self.assertEqual(response.status_code, 302)
+        self.assertIn("/generator", response.location)
+        self.assertIn("#atomic-flows", response.location)
+
+    def test_article_library_is_available_from_portal(self):
+        self.sign_in()
+        response = self.client.get("/article-library")
+        self.assertEqual(response.status_code, 200)
+        html = response.get_data(as_text=True)
+        self.assertIn("Article Reference Library", html)
+        self.assertIn("New article reference", html)
+        self.assertIn("Import Article URLs", html)
+
+    def test_friday_understands_article_coverage_question(self):
+        self.sign_in()
+        response = self.client.post(
+            "/api/testing-bot/ask",
+            json={"question": "What is anonymous Article Page coverage and what is missing?"},
+        )
+        self.assertEqual(response.status_code, 200)
+        answer = response.get_json()["answer"]
+        self.assertTrue("Article" in answer or "article" in answer)
+        self.assertNotEqual(
+            answer,
+            "Anonymous flows clear state and require SUBSCRIBE plus ADVERTISEMENT. "
+            "Subscriber flows clear state, authenticate again, and require both to be absent.",
+        )
 
     def test_suite_action_queues_agent_job(self):
         self.sign_in()
@@ -140,6 +185,41 @@ class PortalTestCase(unittest.TestCase):
         )
 
         self.assertIn("between 30 and 3600 seconds", response.get_data(as_text=True))
+
+    def test_suite_is_split_into_ordered_batches_of_ten(self):
+        tests = [{"id": f"CASE_{index:02d}"} for index in range(21)]
+        job_ids = create_batched_jobs("large-suite", tests)
+        with portal_db.connect() as db:
+            jobs = db.execute(
+                "SELECT total,batch_start,batch_number,batch_count FROM jobs ORDER BY id"
+            ).fetchall()
+        self.assertEqual(len(job_ids), 3)
+        self.assertEqual(
+            [tuple(job) for job in jobs],
+            [(10, 0, 1, 3), (10, 10, 2, 3), (1, 20, 3, 3)],
+        )
+
+    def test_maestro_pass_requires_complete_excel_traceability(self):
+        traceability = (
+            '[{"source_type":"expected_result","status":"covered",'
+            '"commands":["assertVisible"]}]'
+        )
+        with portal_db.connect() as db:
+            db.execute(
+                """INSERT INTO drafts(
+                       case_id,name,yaml,source_file,status,coverage_status,traceability
+                   ) VALUES('EXCEL_1','Excel case','appId: test','source.xlsx',
+                            'approved','complete',?)""",
+                (traceability,),
+            )
+        status, condition, details = excel_condition_verdict("EXCEL_1", "PASS")
+        self.assertEqual((status, condition), ("PASS", "verified_excel_pass"))
+        self.assertIn("source.xlsx", details)
+
+    def test_untraced_maestro_pass_is_segregated_for_review(self):
+        status, condition, _ = excel_condition_verdict("LEGACY_1", "PASS")
+        self.assertEqual(status, "NEEDS_REVIEW")
+        self.assertEqual(condition, "missing_excel_traceability")
 
     def test_agent_api_rejects_wrong_token(self):
         response = self.client.post("/api/agent/jobs/claim", headers={"X-Agent-Token": "wrong"})

@@ -1,0 +1,187 @@
+{
+    "suite": "Subscriber User Cases - Trending",
+    "source_suite": "user_subscriber",
+    "module": "Trending",
+    "tests": [
+        {
+            "id": "SUB_TREND_011",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Trending article Bookmark",
+            "yaml": "SUB_TREND_011.yaml",
+            "display_module": "Trending"
+        },
+        {
+            "id": "SUB_TREND_012",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Trending article Share",
+            "yaml": "SUB_TREND_012.yaml",
+            "display_module": "Trending"
+        },
+        {
+            "id": "SUB_TREND_015",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Trending article paging in both directions",
+            "yaml": "SUB_TREND_015.yaml",
+            "display_module": "Trending"
+        },
+        {
+            "id": "SUB_TREND_016",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Trending section and scroll-state restoration",
+            "yaml": "SUB_TREND_016.yaml",
+            "display_module": "Trending"
+        },
+        {
+            "id": "SUB_TREND_018",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber session persistence across Trending",
+            "yaml": "SUB_TREND_018.yaml",
+            "display_module": "Trending"
+        },
+        {
+            "id": "SUB_TREND_001",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Trending launch and selected navigation",
+            "yaml": "SUB_TREND_001.yaml",
+            "display_module": "Trending"
+        },
+        {
+            "id": "SUB_TREND_002",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Trending pull to refresh",
+            "yaml": "SUB_TREND_002.yaml",
+            "display_module": "Trending"
+        },
+        {
+            "id": "SUB_TREND_003",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Trending All feed and no-ad entitlement",
+            "yaml": "SUB_TREND_003.yaml",
+            "display_module": "Trending"
+        },
+        {
+            "id": "SUB_TREND_004",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Trending masthead round trip for subscriber",
+            "yaml": "SUB_TREND_004.yaml",
+            "display_module": "Trending"
+        },
+        {
+            "id": "SUB_TREND_005",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Trending section-tab navigation",
+            "yaml": "SUB_TREND_005.yaml",
+            "display_module": "Trending"
+        },
+        {
+            "id": "SUB_TREND_006",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber opens Trending full article",
+            "yaml": "SUB_TREND_006.yaml",
+            "display_module": "Trending"
+        },
+        {
+            "id": "SUB_TREND_007",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Premium Trending article entitlement",
+            "yaml": "SUB_TREND_007.yaml",
+            "display_module": "Trending"
+        },
+        {
+            "id": "SUB_TREND_008",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Trending Listen to Article",
+            "yaml": "SUB_TREND_008.yaml",
+            "display_module": "Trending"
+        },
+        {
+            "id": "SUB_TREND_009",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Trending AI Summary subscriber access",
+            "yaml": "SUB_TREND_009.yaml",
+            "display_module": "Trending"
+        },
+        {
+            "id": "SUB_TREND_010",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Trending reading options and text sizes",
+            "yaml": "SUB_TREND_010.yaml",
+            "display_module": "Trending"
+        },
+        {
+            "id": "SUB_TREND_013",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Trending comment access",
+            "yaml": "SUB_TREND_013.yaml",
+            "display_module": "Trending"
+        },
+        {
+            "id": "SUB_TREND_014",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Trending cross-section article entitlement",
+            "yaml": "SUB_TREND_014.yaml",
+            "display_module": "Trending"
+        },
+        {
+            "id": "SUB_TREND_017",
+            "module": "Trending",
+            "section": "Trending",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Trending long-article complete reading",
+            "yaml": "SUB_TREND_017.yaml",
+            "display_module": "Trending"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, ebooks]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_EBOOKS.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_EBOOK_001_result"

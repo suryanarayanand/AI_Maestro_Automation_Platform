@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Agent Workspace{% endblock %}
+{% block page_title %}Agent Workspace{% endblock %}
+{% block content %}
+<p class="page-intro">Import the scenario catalogue as atomic review items. Proposals are generated only when requested, then edited and published into the executable flow library.</p>
+<section class="surface mb-4">
+  <div class="section-head"><div><small>Knowledge intake</small><h2>Import scenario catalogue</h2></div></div>
+  <form method="post" enctype="multipart/form-data" class="row g-3 align-items-end">
+    <div class="col-md-9"><label class="form-label">Excel catalogue</label><input class="form-control" type="file" name="excel" accept=".xlsx" required><div class="form-text">Imports rows only. It does not generate thousands of YAML files during upload.</div></div>
+    <div class="col-md-3"><button class="btn btn-primary w-100">Import steps</button></div>
+  </form>
+</section>
+<section class="surface">
+  <div class="section-head"><div><small>Review queue</small><h2>Atomic flow steps</h2></div><div><span class="me-3">{{ steps|length }} shown</span><a class="btn btn-sm btn-primary" href="{{ url_for('flow_workspace.new_intake') }}">New manual intake</a></div></div>
+  <form method="get" class="row g-2 mb-3">
+    <div class="col"><input class="form-control" name="q" value="{{ query }}" placeholder="Search case, scenario, or action"></div>
+    <div class="col-md-2"><select class="form-select" name="state"><option value="">All users</option>{% for state in ['ANONYMOUS','SUBSCRIBER','MIXED'] %}<option {% if selected_state == state %}selected{% endif %}>{{ state }}</option>{% endfor %}</select></div>
+    <div class="col-md-2"><select class="form-select" name="status"><option value="">All statuses</option>{% for status in ['imported','proposed','edited','published','needs_input'] %}<option {% if selected_status == status %}selected{% endif %}>{{ status }}</option>{% endfor %}</select></div>
+    <div class="col-auto"><button class="btn btn-outline-primary">Filter</button></div>
+  </form>
+  <div class="table-responsive"><table class="table align-middle"><thead><tr><th>Case</th><th>Scenario</th><th>User state</th><th>Tags</th><th>Status</th><th></th></tr></thead><tbody>
+  {% for step in steps %}<tr><td><strong>{{ step.case_id }}</strong><small class="d-block text-muted">Step {{ step.step_number }}</small></td><td>{{ step.scenario }}</td><td><span class="status-pill">{{ step.user_state }}</span></td><td>{% for tag in step.tags_list %}<span class="yaml-tag">{{ tag }}</span>{% endfor %}</td><td><span class="status-pill status-{{ 'approved' if step.status == 'published' else 'pending' if step.status in ['imported','proposed','edited'] else 'failed' }}">{{ step.status }}</span></td><td class="text-end"><a class="btn btn-sm btn-outline-primary" href="{{ url_for('flow_workspace.review', step_id=step.id) }}">Review</a></td></tr>
+  {% else %}<tr><td colspan="6" class="text-muted">Import a catalogue to create the atomic review queue.</td></tr>{% endfor %}
+  </tbody></table></div>
+</section>
+{% endblock %}

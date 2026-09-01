@@ -1,0 +1,99 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - search
+  - navigation
+  - state-restoration
+---
+
+# Position 1: Open validated Subscriber Search, search, open a result, and Back.
+- runFlow: "../Common/OPEN_SUBSCRIBER_SEARCH.yaml"
+- tapOn: {point: "45%,8%"}
+- eraseText: 100
+- inputText: "flood"
+- pressKey: Enter
+- extendedWaitUntil:
+    visible:
+      text: '(?i).*flood.*|No results found.*'
+    timeout: 30000
+
+# Use one bounded fallback when the first approved dynamic query has no results.
+- runFlow:
+    when:
+      visible:
+        text: "No results found.*"
+    commands:
+      - tapOn:
+          text: '(?i)^flood$'
+      - eraseText: 5
+      - inputText: "war"
+      - pressKey: Enter
+      - waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+- tapOn:
+    id: "article_card"
+    index: 0
+- runFlow: "../Common/HANDLE_AI_SUMMARY_SHEET.yaml"
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+- assertVisible:
+    id: "screen_article_detail"
+- back
+
+# Position 3: The first Back must restore the Search results page.
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+- assertVisible:
+    id: "cta_search"
+- assertVisible:
+    id: "article_card"
+- assertNotVisible:
+    id: "screen_article_detail"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_015_results_restored"
+
+# Position 2: Back again, verify Home, and reopen the grounded Search entry.
+- back
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- assertVisible:
+    id: "screen_home"
+- extendedWaitUntil:
+    visible:
+      id: "cta_search"
+    timeout: 30000
+- tapOn:
+    id: "cta_search"
+- waitForAnimationToEnd
+
+# Position 4: Submit another approved term to prove Search remains reusable.
+- tapOn:
+    text: '(?i)^(flood|war)$'
+    optional: true
+- eraseText: 20
+- inputText: "war"
+- pressKey: Enter
+- extendedWaitUntil:
+    visible:
+      text: '(?i).*war.*|No results found.*'
+    timeout: 30000
+- assertVisible:
+    id: "cta_search"
+- assertVisible:
+    text: '(?i).*war.*|No results found.*'
+- assertNotVisible:
+    id: "screen_article_detail"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_015_search_reusable"

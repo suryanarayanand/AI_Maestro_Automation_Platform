@@ -1,0 +1,23 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, trending, subscribe]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING.yaml"
+
+- assertVisible: {text: "SUBSCRIBE"}
+
+- tapOn: {text: "SUBSCRIBE"}
+
+- extendedWaitUntil: {visible: {text: "Yearly|Monthly|Choose your plan|Choose a plan"}, timeout: 25000}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_021_subscription_offer"
+
+- back
+
+- extendedWaitUntil: {visible: {id: "screen_trending"}, timeout: 25000}
+
+- assertVisible: {text: "SUBSCRIBE"}
+

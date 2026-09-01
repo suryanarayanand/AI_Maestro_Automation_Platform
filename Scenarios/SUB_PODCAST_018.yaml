@@ -1,0 +1,42 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - podcast
+  - resilience
+  - blocked-locator-grounding
+  - evidence-limited
+
+---
+
+# SUB_PODCAST_018 — Podcast rapid interaction resilience
+#
+# Ordered precondition: an authenticated subscriber session exists and the
+# Podcast listing is already open. "Podcast" is the only validated locator
+# supplied for this screen.
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+# Qualify and preserve the only state that can be asserted without inventing
+# series, episode, playback-control, or scrubber locators.
+- assertWithAI: "Verify that the visible Podcast page has rendered as a usable multi-series podcast surface rather than a blank page, crash surface, or permanent loading-only screen. Do not treat this baseline inspection as proof that multiple series were opened, episodes were switched, playback controls were exercised, or metadata was updated."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_018_grounding_blocked"
+
+# Obligations 1-4 cannot be executed truthfully from the supplied evidence:
+# no validated series-entry action, episode action, Play/Pause/Forward/Rewind
+# controls, scrubber bounds, elapsed-time state, or stable metadata identity is
+# available. Reference-only YAML cannot promote those selectors to executable
+# truth. Fail explicitly so the baseline Podcast assertion cannot be reported
+# as a passing rapid-interaction-resilience result.
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_018_manual_review"

@@ -1,0 +1,41 @@
+[
+  {
+    "name": "test_payment",
+    "locator": {
+      "type": "text",
+      "value": "Test Payment",
+      "priority": 3
+    },
+    "status": "candidate",
+    "confidence": 0.55,
+    "source_type": "application_source",
+    "mechanisms": [
+      "compose-text"
+    ],
+    "sources": [
+      "androidApp/hindu/src/main/kotlin/com/thg/android/hindu/HinduAppShell.kt:200"
+    ],
+    "notes": "Source evidence only; validate against the installed build before execution."
+  },
+  {
+    "name": "user_consent",
+    "locator": {
+      "type": "text",
+      "value": "User Consent",
+      "priority": 3
+    },
+    "status": "candidate",
+    "confidence": 0.55,
+    "source_type": "application_source",
+    "mechanisms": [
+      "compose-text"
+    ],
+    "sources": [
+      "androidApp/sportstar/src/main/kotlin/com/thg/android/sportstar/SportstarAppShell.kt:173",
+      "androidApp/hindu/src/main/kotlin/com/thg/android/hindu/HinduAppShell.kt:174",
+      "androidApp/frontline/src/main/kotlin/com/thg/android/frontline/FrontlineAppShell.kt:173",
+      "androidApp/businessline/src/main/kotlin/com/thg/android/businessline/BusinesslineAppShell.kt:173"
+    ],
+    "notes": "Source evidence only; validate against the installed build before execution."
+  }
+]

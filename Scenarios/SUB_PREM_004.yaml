@@ -1,0 +1,58 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - premium
+  - briefing
+  - reading
+  - no-ads
+---
+
+# Repository evidence does not contain a validated locator for the latest
+# Briefing item. This grounded fragment therefore begins on an already-open
+# Briefing detail and must not be treated as standalone SUB_PREM_004 coverage.
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Validate the initial article surface before scrolling.
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "aw0"
+- assertNotVisible:
+    id: "ad_iframe"
+
+# Traverse a bounded portion of the available Briefing body while confirming
+# that the article detail remains active and validated ad surfaces stay absent.
+- repeat:
+    times: 8
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "aw0"
+      - assertNotVisible:
+          id: "ad_iframe"
+
+# Capture the settled lower reading state.
+- assertVisible:
+    id: "screen_article_detail"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "aw0"
+- assertNotVisible:
+    id: "ad_iframe"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_004_briefing_lower_ad_free"

@@ -1,0 +1,88 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - search
+  - recent-history
+  - conditional-history
+---
+# SUB_SEARCH_027 — Recent search history and reuse
+
+# Establish an authenticated Subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Position 1: Search for Chennai.
+- extendedWaitUntil:
+    visible:
+      id: "cta_search"
+    timeout: 30000
+- assertVisible:
+    id: "cta_search"
+- tapOn:
+    id: "cta_search"
+- waitForAnimationToEnd
+- eraseText: 100
+- inputText: "Chennai"
+- pressKey: Enter
+- extendedWaitUntil:
+    visible:
+      text: "(?i)(.*Chennai.*|No results found.*)"
+    timeout: 30000
+- assertVisible:
+    id: "cta_search"
+- assertVisible:
+    text: "(?i)(.*Chennai.*|No results found.*)"
+
+# Leave the submitted Search response and reopen Search to inspect history.
+- back
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "cta_search"
+    timeout: 30000
+- tapOn:
+    id: "cta_search"
+- waitForAnimationToEnd
+- assertVisible:
+    id: "cta_search"
+
+# Positions 3 and 4: History is product-dependent. If Chennai is absent after
+# reopening Search, assert the bounded unsupported state and save skip evidence.
+- runFlow:
+    when:
+      notVisible:
+        text: "(?i)^Chennai$"
+    commands:
+      - assertVisible:
+          id: "cta_search"
+      - assertNotVisible:
+          text: "(?i)^Chennai$"
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_SEARCH_027_history_not_supported"
+
+# Positions 2 and 3: When the saved Chennai query is rendered, prove its
+# presence before selecting it.
+- runFlow:
+    when:
+      visible:
+        text: "(?i)^Chennai$"
+    commands:
+      - assertVisible:
+          text: "(?i)^Chennai$"
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_SEARCH_027_chennai_recent_query"
+      - tapOn:
+          text: "(?i)^Chennai$"
+
+      # Position 4: The saved query must rerun and restore its Search response.
+      - extendedWaitUntil:
+          visible:
+            text: "(?i)(.*Chennai.*|No results found.*)"
+          timeout: 30000
+      - assertVisible:
+          id: "cta_search"
+      - assertVisible:
+          text: "(?i)(.*Chennai.*|No results found.*)"
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_SEARCH_027_chennai_recent_query_rerun"

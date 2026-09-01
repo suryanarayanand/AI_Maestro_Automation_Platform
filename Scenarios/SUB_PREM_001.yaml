@@ -1,0 +1,9 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_PREMIUM.yaml"
+- assertVisible: {id: "nav_premium"}
+- assertNotVisible: {text: "Login to your account|SUBSCRIBE|Already a subscriber.*"}
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_001_result"

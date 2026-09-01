@@ -1,0 +1,11 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, hamburger, friday-grounded]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_HAMBURGER.yaml"
+- assertVisible: {text: "India"}
+- assertVisible: {text: "World"}
+- repeat: {times: 4, commands: [{swipe: {direction: UP}}, {waitForAnimationToEnd: {timeout: 1000}}]}
+- assertVisible: {id: "screen_hamburger"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HAM_002_inventory"
+

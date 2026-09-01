@@ -1,0 +1,9 @@
+appId: com.mobstac.thehindu
+---
+- runFlow: "OPEN_ANONYMOUS_EBOOKS.yaml"
+# The manually validated SC_26 and SC_51 flows open the current card from this region.
+- tapOn: {point: "77%,34%"}
+- waitForAnimationToEnd: {timeout: 3000}
+- extendedWaitUntil:
+    visible: {text: ".*(Subscribe to continue reading|Support award-winning Journalism|SUBSCRIBE).*|Yearly|Monthly"}
+    timeout: 25000

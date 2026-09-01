@@ -1,0 +1,51 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, trending, advertisement,external-navigation]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING.yaml"
+
+- repeat:
+
+    times: 15
+
+    commands:
+
+      - runFlow:
+
+          when: {visible: {text: "Image for Taboola Advertising Unit"}}
+
+          commands:
+
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_TREND_004_rendered_ad"
+
+            - tapOn: {text: "Image for Taboola Advertising Unit"}
+
+            - waitForAnimationToEnd: {timeout: 5000}
+
+            - assertNotVisible: {text: "Webpage not available"}
+
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_TREND_004_ad_landing_page"
+
+            - back
+
+            - extendedWaitUntil: {visible: {id: "screen_trending"}, timeout: 30000}
+
+      - runFlow:
+
+          when: {visible: {text: "ADVERTISEMENT"}}
+
+          commands:
+
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_TREND_004_ad_or_blank_state"
+
+      - swipe: {direction: UP}
+
+      - waitForAnimationToEnd: {timeout: 1200}
+
+- assertVisible: {id: "screen_trending"}
+

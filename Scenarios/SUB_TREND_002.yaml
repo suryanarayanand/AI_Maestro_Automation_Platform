@@ -1,0 +1,39 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, trending, refresh, no-monetisation]
+---
+# Position 1: Open Subscriber Trending and pull down from its content area.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- tapOn: {id: "nav_trending"}
+- extendedWaitUntil: {visible: {id: "screen_trending"}, timeout: 30000}
+- assertVisible: {id: "screen_trending"}
+- swipe: {start: "50%,30%", end: "50%,75%", duration: 700}
+
+# Position 2: Wait for refresh to settle, verify Trending, and capture evidence.
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {id: "screen_trending"}, timeout: 20000}
+- assertVisible: {id: "screen_trending"}
+- assertVisible: {id: "nav_trending"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_002_trending_after_refresh"
+
+# Position 3: Recheck the Subscriber no-ad state after refresh.
+- assertNotVisible: {text: "SUBSCRIBE"}
+- assertNotVisible: {text: "ADVERTISEMENT"}
+- assertNotVisible: {id: "aw0"}
+- assertNotVisible: {text: "Image for Taboola Advertising Unit"}
+
+# Position 4: Prove the gesture did not navigate away from Trending.
+- assertVisible: {id: "screen_trending"}
+- assertVisible: {id: "nav_trending"}
+
+# Position 5: Prove the refreshed Trending surface remains usable and save final evidence.
+- assertVisible: {id: "screen_trending"}
+- assertVisible: {id: "nav_trending"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_002_trending_refreshed_usable"
+
+# Position 6: Prove refresh introduced no monetisation surface.
+- assertNotVisible: {text: "SUBSCRIBE"}
+- assertNotVisible: {text: "ADVERTISEMENT"}
+- assertNotVisible: {id: "aw0"}
+- assertNotVisible: {text: "Image for Taboola Advertising Unit"}

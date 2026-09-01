@@ -1,0 +1,79 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - video-article
+  - non-destructive
+  - evidence-limited
+---
+
+# SUB_VIDEO_009 — Video article actions
+# Precondition: the app retains an authenticated subscriber session.
+# Runtime-gate an active Inline Video article reference before interacting.
+- openLink: "https://www.thehindu.com/entertainment/music/how-the-concept-of-mahishasurmardini-unites-the-country-during-navaratri/article67433268.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 1 — Perform bounded scrolling while keeping article detail active.
+# The supplied evidence does not validate selectors for the complete floating
+# action bar, so this does not claim that every requested control was exposed.
+- repeat:
+    times: 3
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+
+# Locate the validated subscriber comment entry in a bounded operation.
+- scrollUntilVisible:
+    element:
+      text: "Post a comment"
+    timeout: 30000
+
+- assertVisible:
+    text: "Post a comment"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_009_comment_entry_available"
+
+# Positions 2 and 4 — Open Comment without entering or submitting content and
+# verify that an authenticated subscriber is not redirected to Login.
+- tapOn:
+    text: "Post a comment"
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    text: "Post a comment"
+
+- assertNotVisible:
+    text: "Login to your account"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_009_comment_open_no_login"
+
+# Exit without publishing a public comment.
+- back
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 25000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "Login to your account"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_009_article_restored_without_submission"

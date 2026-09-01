@@ -1,0 +1,20 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, article-page, reading-options]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- scrollUntilVisible:
+    element: {text: "Reading Options|Text size|Text Size"}
+    direction: DOWN
+    timeout: 45000
+    speed: 40
+- tapOn: {text: "Reading Options|Text size|Text Size", index: 0}
+- assertVisible: {text: "Reading Options|Text size|Text Size|Decrease|Increase"}
+- tapOn: {text: 'Increase|A\+', optional: true}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_006_large_text"
+- tapOn: {text: "Decrease|A-", optional: true}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ARTICLE_006_small_text"
+- tapOn: {text: "CLOSE|Close", optional: true}
+- assertVisible: {id: "screen_article_detail"}

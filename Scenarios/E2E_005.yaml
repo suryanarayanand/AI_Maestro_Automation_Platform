@@ -1,0 +1,85 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- assertVisible:
+    id: "screen_home"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- tapOn:
+    id: "nav_premium"
+
+- assertVisible:
+    id: "screen_premium"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- tapOn:
+    id: "article_card"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- takeScreenshot: "Screenshots/Generated/E2E_005_e2e_005_article_top"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/E2E_005_e2e_005_article_middle_one"
+
+- swipe:
+    direction: "UP"
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/E2E_005_e2e_005_article_middle_two"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- back
+
+- tapOn:
+    id: "nav_home"
+
+- assertVisible:
+    id: "screen_home"
+
+- tapOn:
+    id: "nav_account"
+
+- assertVisible:
+    id: "screen_user_menu"
+
+- tapOn:
+    text: "Appearance"
+
+- assertVisible:
+    text: "Dark\nMode"
+
+- tapOn:
+    text: "Dark\nMode"
+
+- takeScreenshot: "Screenshots/Generated/E2E_005_e2e_005_dark_mode_selected"
+
+- back
+
+- assertVisible:
+    id: "screen_user_menu"
+
+- tapOn:
+    id: "cta_menu_close"
+
+- assertVisible:
+    id: "screen_home"
+
+- takeScreenshot: "Screenshots/Generated/E2E_005_e2e_005_home_dark_theme"

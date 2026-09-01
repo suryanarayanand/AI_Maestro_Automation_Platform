@@ -1,0 +1,45 @@
+appId: com.mobstac.thehindu
+
+tags: [generated, ordered, subscriber, ebooks, refresh, entitlement, no-ads]
+
+---
+
+# Position 1: Open eBooks in the authenticated subscriber session and refresh once.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- extendedWaitUntil:
+    visible: {id: "screen_home"}
+    timeout: 30000
+- assertVisible: {id: "screen_home"}
+- tapOn: {id: "nav_ebooks"}
+- extendedWaitUntil:
+    visible: {id: "screen_ebooks"}
+    timeout: 30000
+- assertVisible: {id: "screen_ebooks"}
+- swipe: {direction: DOWN}
+
+# Position 2: Wait for the refreshed eBooks surface to settle and remain rendered.
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible: {id: "screen_ebooks"}
+    timeout: 20000
+- assertVisible: {id: "screen_ebooks"}
+
+# Position 3: Capture the settled page and recheck subscriber entitlement.
+- assertNotVisible: {text: "SUBSCRIBE"}
+- assertNotVisible: {text: "ADVERTISEMENT"}
+- assertNotVisible: {id: "aw0"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EBOOK_002_refreshed_page"
+
+# Position 4: Prove refresh completed without navigating away from eBooks.
+- assertVisible: {id: "screen_ebooks"}
+
+# Position 5: Prove the refreshed eBooks surface remains present and usable.
+- assertVisible: {id: "screen_ebooks"}
+
+# Position 6: Save final evidence with no visible restriction or advertisement.
+- assertNotVisible: {text: "SUBSCRIBE"}
+- assertNotVisible: {text: "ADVERTISEMENT"}
+- assertNotVisible: {id: "aw0"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EBOOK_002_refresh_entitlement"

@@ -1,0 +1,50 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - search
+  - dynamic-results
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_SEARCH.yaml"
+
+# Position 1: Search is open and focused using the validated common flow.
+- tapOn: {point: "45%,8%"}
+- eraseText: 100
+- inputText: "flood"
+- pressKey: Enter
+
+# Position 3: Accept either current flood-related content or the documented
+# no-results presentation, then capture the settled state.
+- extendedWaitUntil:
+    visible:
+      text: "(?i).*flood.*|No results found.*"
+    timeout: 30000
+- assertVisible:
+    text: "(?i).*flood.*|No results found.*"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_004_flood_results"
+
+# Position 2: Focus and clear the existing query, search for war, and scroll.
+- tapOn:
+    text: "(?i)^flood$"
+- eraseText: 5
+- inputText: "war"
+- pressKey: Enter
+- extendedWaitUntil:
+    visible:
+      text: "(?i).*war.*|No results found.*"
+    timeout: 30000
+- assertNotVisible:
+    text: "(?i)^flood$"
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# Position 4: Verify the refreshed war state survives the completed scroll.
+- assertVisible:
+    id: "cta_search"
+- assertVisible:
+    text: "(?i).*war.*|No results found.*"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_004_war_results_scrolled"

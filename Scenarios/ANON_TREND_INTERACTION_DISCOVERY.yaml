@@ -1,0 +1,50 @@
+appId: com.mobstac.thehindu
+tags: [discovery, anonymous, trending, sections, article]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_HOME.yaml"
+- tapOn: {id: "nav_trending"}
+- extendedWaitUntil: {visible: {id: "screen_trending"}, timeout: 30000}
+
+# The masthead is an unlabeled image; verify its destination after tapping.
+- tapOn: {point: "39%,8%"}
+- extendedWaitUntil: {visible: {id: "screen_home"}, timeout: 20000}
+- takeScreenshot: "Screenshots/Discovery/ANON_TREND_masthead_home"
+- tapOn: {id: "nav_trending"}
+- extendedWaitUntil: {visible: {id: "screen_trending"}, timeout: 20000}
+
+- tapOn: {text: "News"}
+- waitForAnimationToEnd: {timeout: 3000}
+- assertVisible: {id: "screen_trending"}
+- takeScreenshot: "Screenshots/Discovery/ANON_TREND_News"
+
+- tapOn: {text: "Business"}
+- waitForAnimationToEnd: {timeout: 3000}
+- assertVisible: {id: "screen_trending"}
+- takeScreenshot: "Screenshots/Discovery/ANON_TREND_Business"
+
+- tapOn: {text: "Technology"}
+- waitForAnimationToEnd: {timeout: 3000}
+- assertVisible: {id: "screen_trending"}
+- takeScreenshot: "Screenshots/Discovery/ANON_TREND_Technology"
+
+- tapOn: {text: "Entertainment"}
+- waitForAnimationToEnd: {timeout: 3000}
+- assertVisible: {id: "screen_trending"}
+- takeScreenshot: "Screenshots/Discovery/ANON_TREND_Entertainment"
+
+- tapOn: {text: "Sports"}
+- waitForAnimationToEnd: {timeout: 3000}
+- assertVisible: {id: "screen_trending"}
+- takeScreenshot: "Screenshots/Discovery/ANON_TREND_Sports"
+
+- tapOn: {text: "All"}
+- waitForAnimationToEnd: {timeout: 3000}
+- assertVisible: {text: "READ FULL ARTICLE"}
+- tapOn: {text: "READ FULL ARTICLE"}
+- tapOn: {text: "Close sheet", optional: true}
+- runFlow:
+    when: {visible: {text: "^CLOSE$|Interstitial close button"}}
+    file: "../Common/HANDLE_DELAYED_ARTICLE_INTERSTITIAL.yaml"
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- assertVisible: {id: "screen_article_detail"}
+- takeScreenshot: "Screenshots/Discovery/ANON_TREND_article_top"

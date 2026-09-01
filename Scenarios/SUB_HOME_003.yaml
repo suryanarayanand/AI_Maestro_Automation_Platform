@@ -1,0 +1,31 @@
+appId: com.mobstac.thehindu
+
+tags: [generated, ordered, subscriber, home, no-monetisation]
+
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- repeat:
+
+    times: 6
+
+    commands:
+
+      - swipe: {direction: UP}
+
+      - waitForAnimationToEnd: {timeout: 1200}
+
+      - assertVisible: {id: "screen_home"}
+
+      - assertNotVisible: {text: "SUBSCRIBE"}
+
+      - assertNotVisible: {text: "ADVERTISEMENT"}
+
+      - assertNotVisible: {id: "aw0"}
+
+      - assertNotVisible: {text: "Image for Taboola Advertising Unit"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HOME_003_home_without_monetisation"
+

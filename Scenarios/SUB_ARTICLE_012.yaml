@@ -1,0 +1,108 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - article
+  - bookmark
+  - state-restoration
+
+---
+
+# Establish an authenticated subscriber Home state.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Open a currently rendered article without relying on a dynamic headline.
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 30000
+
+- tapOn:
+    id: "article_card"
+    index: 0
+
+- tapOn:
+    text: "Close sheet"
+    optional: true
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 25000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Normalize mutable state so this case always starts unbookmarked.
+- runFlow:
+    when:
+      visible:
+        text: "Remove bookmark"
+    commands:
+      - tapOn:
+          text: "Remove bookmark"
+      - extendedWaitUntil:
+          visible:
+            text: "Bookmark"
+          timeout: 15000
+
+- extendedWaitUntil:
+    visible:
+      text: "Bookmark"
+    timeout: 15000
+
+- assertNotVisible:
+    text: "Remove bookmark"
+
+# Position 1: add the bookmark.
+- tapOn:
+    text: "Bookmark"
+
+# Position 3: verify the selected state without an authentication redirect.
+- extendedWaitUntil:
+    visible:
+      text: "Remove bookmark|success"
+    timeout: 15000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "Login to your account"
+
+- assertNotVisible:
+    id: "cta_login"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_012_bookmark_selected"
+
+# Position 2: capture completed above, then remove the bookmark and verify
+# restoration of the original unbookmarked state.
+- tapOn:
+    text: "Remove bookmark"
+
+- extendedWaitUntil:
+    visible:
+      text: "Bookmark"
+    timeout: 15000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertVisible:
+    text: "Bookmark"
+
+- assertNotVisible:
+    text: "Remove bookmark"
+
+# Position 4: prove toggling left no saved bookmark or authentication gate.
+- assertNotVisible:
+    text: "Login to your account"
+
+- assertNotVisible:
+    id: "cta_login"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_012_bookmark_restored"

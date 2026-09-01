@@ -1,0 +1,153 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - video
+  - post-article
+  - comment
+  - related-content
+---
+
+# Precondition: an authenticated subscriber is viewing a controlled video
+# article configured with Post a comment, Related Topics, Recommended, and
+# Headlines content.
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 1: reach the required post-article sections deterministically.
+- scrollUntilVisible:
+    element:
+      text: "Post a comment"
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+    visibilityPercentage: 40
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    text: "Post a comment"
+
+- scrollUntilVisible:
+    element:
+      text: "Related Topics"
+    direction: DOWN
+    timeout: 60000
+    speed: 40
+    visibilityPercentage: 40
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    text: "Related Topics"
+
+# Position 2: the controlled article requires both related-content tabs.
+- scrollUntilVisible:
+    element:
+      text: "Recommended"
+    direction: DOWN
+    timeout: 60000
+    speed: 40
+    visibilityPercentage: 40
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    text: "Recommended"
+
+- assertVisible:
+    text: "Headlines"
+
+# Position 3: prove subscriber comment access without posting, then restore
+# the article and confirm its configured Related Topics section remains usable.
+- scrollUntilVisible:
+    element:
+      text: "Post a comment"
+    direction: UP
+    timeout: 60000
+    speed: 40
+    visibilityPercentage: 40
+
+- assertVisible:
+    text: "Post a comment"
+
+- tapOn:
+    text: "Post a comment"
+
+- waitForAnimationToEnd
+
+- assertNotVisible:
+    text: "Login to your account"
+
+- assertNotVisible:
+    id: "cta_login"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_010_comment_access_no_login"
+
+- back
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- scrollUntilVisible:
+    element:
+      text: "Related Topics"
+    direction: DOWN
+    timeout: 60000
+    speed: 40
+    visibilityPercentage: 40
+
+- assertVisible:
+    text: "Related Topics"
+
+# Position 4: exercise both validated tab labels as selectable targets.
+- scrollUntilVisible:
+    element:
+      text: "Recommended"
+    direction: DOWN
+    timeout: 60000
+    speed: 40
+    visibilityPercentage: 40
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    text: "Recommended"
+
+- assertVisible:
+    text: "Headlines"
+
+- tapOn:
+    text: "Headlines"
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    text: "Headlines"
+
+- assertVisible:
+    text: "Recommended"
+
+- tapOn:
+    text: "Recommended"
+
+- waitForAnimationToEnd
+
+- assertVisible:
+    text: "Recommended"
+
+- assertVisible:
+    text: "Headlines"
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_VIDEO_010_post_comment_related_tabs"

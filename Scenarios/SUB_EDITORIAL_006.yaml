@@ -1,0 +1,86 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - editorial
+  - article
+  - full-access
+  - no-monetisation
+---
+
+# Establish the required authenticated subscriber state.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Open the repository Editorial candidate. The runtime article-detail assertion
+# prevents an unavailable, redirected, or unsupported deep link from passing.
+- openLink: "https://www.thehindu.com/opinion/editorial/brazen-intimidation-the-hindu-editorial-on-the-tax-survey-on-the-bbc/article66513588.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Required subscriber baseline immediately after article navigation.
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_006_article_top"
+
+# Positions 1 and 2: Traverse bounded, settled article-body viewports toward
+# the lower article state. Recheck subscriber entitlement after every swipe.
+- repeat:
+    times: 10
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+      - assertNotVisible:
+          text: "READ FULL ARTICLE"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+
+# Position 3: The eligible article-detail experience remains present and is not
+# replaced by the validated collapsed/full-article gate after traversal.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_006_article_lower_reading_state"
+
+# Position 4: Final settled entitlement check for all restrictions implemented
+# by the shared subscriber assertion flow, plus the individually validated
+# full-article, Subscribe, and advertisement markers.
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_006_full_article_entitlement"

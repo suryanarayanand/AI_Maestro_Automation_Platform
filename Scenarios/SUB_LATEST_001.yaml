@@ -1,0 +1,10 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, latest-news, quick-access]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_LATEST_NEWS.yaml"
+- assertVisible: {id: "screen_home"}
+- assertVisible: {text: "(?i)^Latest News$"}
+- assertNotVisible: {text: "ADVERTISEMENT|Advertisement|SUBSCRIBE|Subscribe"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_001_quick_access_selected"
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"

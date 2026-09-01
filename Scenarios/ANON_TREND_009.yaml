@@ -1,0 +1,21 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, trending, listen,ai-summary]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+- runFlow:
+    when: {visible: {text: "Listen to article"}}
+    commands:
+      - tapOn: {text: "Listen to article"}
+      - waitForAnimationToEnd: {timeout: 5000}
+      - takeScreenshot: "Screenshots/Generated/ANON_TREND_009_listen_state"
+      - back
+      - extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+- runFlow:
+    when: {visible: {text: "AI Summary|AI summary|AI SUMMARY"}}
+    commands:
+      - tapOn: {text: "AI Summary|AI summary|AI SUMMARY"}
+      - waitForAnimationToEnd: {timeout: 5000}
+      - takeScreenshot: "Screenshots/Generated/ANON_TREND_009_ai_summary_state"
+      - back
+      - extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+- assertVisible: {id: "screen_article_detail"}

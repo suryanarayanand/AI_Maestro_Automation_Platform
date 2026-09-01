@@ -1,0 +1,21 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, quick-access]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_ENTERTAINMENT.yaml"
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- tapOn: {id: "article_card", index: 0}
+- waitForAnimationToEnd
+- runFlow: "../Common/HANDLE_AI_SUMMARY_SHEET.yaml"
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- assertVisible: {id: "screen_article_detail"}
+- repeat:
+    times: 8
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd
+      - runFlow: "../Common/HANDLE_AI_SUMMARY_SHEET.yaml"
+      - waitForAnimationToEnd
+      - assertVisible: {id: "screen_article_detail"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ENTERTAINMENT_010_post_article"

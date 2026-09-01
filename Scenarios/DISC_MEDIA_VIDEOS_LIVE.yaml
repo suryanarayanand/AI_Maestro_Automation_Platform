@@ -1,0 +1,15 @@
+appId: com.mobstac.thehindu
+tags: [discovery, anonymous, videos]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_HOME.yaml"
+- tapOn: {text: "Videos"}
+- waitForAnimationToEnd: {timeout: 5000}
+- assertVisible: {id: "screen_home"}
+- assertVisible: {text: "Videos"}
+- takeScreenshot: "Screenshots/Discovery/videos_live_top"
+- repeat:
+    times: 3
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd: {timeout: 1500}
+- takeScreenshot: "Screenshots/Discovery/videos_live_scrolled"

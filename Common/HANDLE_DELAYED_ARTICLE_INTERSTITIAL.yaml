@@ -1,0 +1,24 @@
+appId: com.mobstac.thehindu
+tags: [common, article, interstitial, delayed-close, evidence]
+---
+# Video ads may delay CLOSE, while some Google AdActivity creatives never
+# publish it. Poll in 5-second windows, then use Back only if the ad still
+# covers the article. Back closes AdActivity, not The Hindu.
+- takeScreenshot: "Screenshots/Generated/article_interstitial_before_delayed_close"
+- repeat:
+    times: 12
+    commands:
+      - waitForAnimationToEnd: {timeout: 5000}
+      - runFlow:
+          when: {visible: {text: "^CLOSE$|Interstitial close button"}}
+          commands:
+            - assertVisible: {text: "^CLOSE$|Interstitial close button"}
+            - takeScreenshot: "Screenshots/Generated/article_video_interstitial_close_ready"
+            - tapOn: {text: "^CLOSE$|Interstitial close button"}
+- runFlow:
+    when: {notVisible: {id: "screen_article_detail"}}
+    commands:
+      - takeScreenshot: "Screenshots/Generated/article_interstitial_no_close_fallback"
+      - back
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+- assertVisible: {id: "screen_article_detail"}

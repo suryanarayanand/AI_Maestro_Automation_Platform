@@ -1,0 +1,47 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, trending, premium,paywall]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+
+- repeat:
+
+    times: 15
+
+    commands:
+
+      - runFlow:
+
+          when: {visible: {text: "Premium|PREMIUM"}}
+
+          commands:
+
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_TREND_008_premium_badge"
+
+      - runFlow:
+
+          when: {visible: {text: "Already a subscriber.*|Keep reading.*free for 3 days|.*[0-9]+%.*off.*"}}
+
+          commands:
+
+            - assertVisible: {text: "Already a subscriber.*|Keep reading.*free for 3 days|.*[0-9]+%.*off.*"}
+
+            - assertVisible: {text: "Login|LOGIN|Sign in|SIGN IN"}
+
+            - assertVisible: {text: "Subscribe|SUBSCRIBE|Yearly|Monthly|Choose a plan|View offers|.*[0-9]+%.*off.*"}
+
+            - waitForAnimationToEnd
+            - takeScreenshot: "Screenshots/Generated/ANON_TREND_008_paywall_subscribe"
+
+      - swipe: {direction: UP}
+
+      - waitForAnimationToEnd: {timeout: 1200}
+
+- assertVisible: {id: "screen_article_detail"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_008_article_outcome"
+

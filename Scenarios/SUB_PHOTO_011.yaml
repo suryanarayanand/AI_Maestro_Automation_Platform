@@ -1,0 +1,153 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - photos
+  - gallery
+  - bookmark
+  - persistence
+  - state-restoration
+
+---
+
+# Establish an authenticated subscriber session before opening the gallery.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_home"
+
+# Open the supplied photo-gallery reference. Successful rendering on this build
+# is established by the article-detail and bookmark-control assertions below.
+- openLink: "https://www.thehindu.com/sport/cricket/ipl2013/match-photos/rajasthan-royals-thrash-mumbai-indians/article4627667.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- extendedWaitUntil:
+    visible:
+      id: "cta_bookmark"
+    timeout: 20000
+
+# Normalize mutable state so the persistence check always starts unbookmarked.
+- runFlow:
+    when:
+      visible:
+        id: "cta_bookmark"
+        selected: true
+    commands:
+      - tapOn:
+          id: "cta_bookmark"
+      - extendedWaitUntil:
+          visible:
+            id: "cta_bookmark"
+            selected: false
+          timeout: 15000
+
+- assertVisible:
+    id: "cta_bookmark"
+    selected: false
+
+# Obligation 1: tap Bookmark and wait for the selected/saved state.
+- tapOn:
+    id: "cta_bookmark"
+
+- extendedWaitUntil:
+    visible:
+      id: "cta_bookmark"
+      selected: true
+    timeout: 15000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertVisible:
+    id: "cta_bookmark"
+    selected: true
+
+# Obligation 3: bookmarking must remain in gallery context and must not open an
+# authentication or subscription surface.
+- assertNotVisible:
+    id: "cta_login"
+
+- assertNotVisible:
+    text: "Login to your account"
+
+- assertNotVisible:
+    text: "(?i)^subscribe$"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_011_gallery_bookmarked"
+
+# Obligation 2: close the gallery, reopen the exact same URL, verify that its
+# selected state persisted, and then remove the bookmark.
+- back
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_home"
+
+- openLink: "https://www.thehindu.com/sport/cricket/ipl2013/match-photos/rajasthan-royals-thrash-mumbai-indians/article4627667.ece"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- extendedWaitUntil:
+    visible:
+      id: "cta_bookmark"
+      selected: true
+    timeout: 20000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertVisible:
+    id: "cta_bookmark"
+    selected: true
+
+- tapOn:
+    id: "cta_bookmark"
+
+- extendedWaitUntil:
+    visible:
+      id: "cta_bookmark"
+      selected: false
+    timeout: 15000
+
+# Obligation 4: the persisted state was observed after reopening and removal is
+# successful only when the same control returns to its unselected state.
+- assertVisible:
+    id: "screen_article_detail"
+
+- assertVisible:
+    id: "cta_bookmark"
+    selected: false
+
+- assertNotVisible:
+    id: "cta_login"
+
+- assertNotVisible:
+    text: "Login to your account"
+
+- assertNotVisible:
+    text: "(?i)^subscribe$"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_011_gallery_bookmark_removed"

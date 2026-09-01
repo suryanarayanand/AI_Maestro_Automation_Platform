@@ -1,0 +1,15 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, photos]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_PHOTOS.yaml"
+- tapOn: {point: "25%,35%"}
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {text: ".*Go beyond the headline.*|.*subscribe to access.*"}, timeout: 30000}
+- assertVisible: {text: "Subscribe|SUBSCRIBE"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PHOTO_008_subscription_popup"
+- tapOn: {point: "91%,36%"}
+- waitForAnimationToEnd
+- assertVisible: {text: ".*1/[2-9][0-9]*.*"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PHOTO_008_popup_closed_gallery_retained"

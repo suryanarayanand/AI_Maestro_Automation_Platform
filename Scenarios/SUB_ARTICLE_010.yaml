@@ -1,0 +1,90 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - premium
+  - article
+  - full-access
+  - no-paywall
+---
+
+# Grounded precondition: the test harness has authenticated the subscriber and
+# opened the Premium surface. No validated Premium navigation control was supplied.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- tapOn:
+    id: "nav_premium"
+- extendedWaitUntil:
+    visible:
+      id: "screen_premium"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_premium"
+
+# Position 1: Open a rendered article card from the validated Premium surface.
+# Premium provenance is used because no independently validated badge locator exists.
+- tapOn:
+    id: "article_card"
+    index: 0
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 2: Verify the article initially has no anonymous subscription gate.
+- assertNotVisible:
+    text: "Keep reading.*"
+
+- assertNotVisible:
+    text: "Already a [Ss]ubscriber.*Login"
+
+- assertNotVisible:
+    text: "Subscribe|SUBSCRIBE"
+
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+
+# Positions 1, 2 and 3: Traverse a bounded portion of the article. After every
+# gesture, prove article detail remains open and no entitlement gate appears.
+- repeat:
+    times: 8
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "Keep reading.*"
+      - assertNotVisible:
+          text: "Already a [Ss]ubscriber.*Login"
+      - assertNotVisible:
+          text: "Subscribe|SUBSCRIBE"
+      - assertNotVisible:
+          text: "READ FULL ARTICLE"
+
+# Position 3: The entitled Premium article remains readable after traversal.
+- assertVisible:
+    id: "screen_article_detail"
+
+# Position 4: At the settled lower reading state, recheck that no anonymous
+# restriction blocks the subscriber's article surface.
+- assertNotVisible:
+    text: "Keep reading.*"
+
+- assertNotVisible:
+    text: "Already a [Ss]ubscriber.*Login"
+
+- assertNotVisible:
+    text: "Subscribe|SUBSCRIBE"
+
+- assertNotVisible:
+    text: "READ FULL ARTICLE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_ARTICLE_010_premium_full_entitlement"

@@ -3,7 +3,7 @@ tags:
   - locator-smoke
   - latest_news
 ---
-- runFlow: ../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml
+- runFlow: ../../Common/OPEN_HOME_FOR_LOCATOR_SMOKE.yaml
 - tapOn:
     id: "nav_menu"
 - extendedWaitUntil:

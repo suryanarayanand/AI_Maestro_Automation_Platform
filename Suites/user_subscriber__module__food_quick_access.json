@@ -1,0 +1,127 @@
+{
+    "suite": "Subscriber User Cases - Food Quick Access",
+    "source_suite": "user_subscriber",
+    "module": "Food Quick Access",
+    "tests": [
+        {
+            "id": "SUB_FOOD_001",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Food launch, selection and subscriber identity",
+            "yaml": "SUB_FOOD_001.yaml",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "SUB_FOOD_002",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Food refresh and content recovery",
+            "yaml": "SUB_FOOD_002.yaml",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "SUB_FOOD_003",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Food listing identity and visual structure",
+            "yaml": "SUB_FOOD_003.yaml",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "SUB_FOOD_004",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Food deep scroll, pagination and subscriber ad-free entitlement",
+            "yaml": "SUB_FOOD_004.yaml",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "SUB_FOOD_005",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Food article selection and destination integrity",
+            "yaml": "SUB_FOOD_005.yaml",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "SUB_FOOD_006",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Food subscriber full-article entitlement",
+            "yaml": "SUB_FOOD_006.yaml",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "SUB_FOOD_007",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Food conditional AI Summary and Listen controls",
+            "yaml": "SUB_FOOD_007.yaml",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "SUB_FOOD_008",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Food reading options, text size and themes",
+            "yaml": "SUB_FOOD_008.yaml",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "SUB_FOOD_009",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Food bookmark, share and comment engagement",
+            "yaml": "SUB_FOOD_009.yaml",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "SUB_FOOD_010",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Food post-article content continuity",
+            "yaml": "SUB_FOOD_010.yaml",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "SUB_FOOD_011",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Food article paging and navigation recovery",
+            "yaml": "SUB_FOOD_011.yaml",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "SUB_FOOD_012",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Food loading, live-content and failure resilience",
+            "yaml": "SUB_FOOD_012.yaml",
+            "display_module": "Food Quick Access"
+        }
+    ]
+}

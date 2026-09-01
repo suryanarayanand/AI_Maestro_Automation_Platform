@@ -1,0 +1,127 @@
+{
+    "suite": "Subscriber User Cases - Opinion Quick Access",
+    "source_suite": "user_subscriber",
+    "module": "Opinion Quick Access",
+    "tests": [
+        {
+            "id": "SUB_OPINION_001",
+            "module": "Opinion Quick Access",
+            "section": "Opinion Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Opinion launch, selection and subscriber identity",
+            "yaml": "SUB_OPINION_001.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "SUB_OPINION_002",
+            "module": "Opinion Quick Access",
+            "section": "Opinion Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Opinion refresh and content recovery",
+            "yaml": "SUB_OPINION_002.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "SUB_OPINION_003",
+            "module": "Opinion Quick Access",
+            "section": "Opinion Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Opinion listing identity and visual structure",
+            "yaml": "SUB_OPINION_003.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "SUB_OPINION_004",
+            "module": "Opinion Quick Access",
+            "section": "Opinion Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Opinion deep scroll, pagination and subscriber ad-free entitlement",
+            "yaml": "SUB_OPINION_004.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "SUB_OPINION_005",
+            "module": "Opinion Quick Access",
+            "section": "Opinion Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Opinion article selection and destination integrity",
+            "yaml": "SUB_OPINION_005.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "SUB_OPINION_006",
+            "module": "Opinion Quick Access",
+            "section": "Opinion Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Opinion subscriber full-article entitlement",
+            "yaml": "SUB_OPINION_006.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "SUB_OPINION_007",
+            "module": "Opinion Quick Access",
+            "section": "Opinion Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Opinion conditional AI Summary and Listen controls",
+            "yaml": "SUB_OPINION_007.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "SUB_OPINION_008",
+            "module": "Opinion Quick Access",
+            "section": "Opinion Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Opinion reading options, text size and themes",
+            "yaml": "SUB_OPINION_008.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "SUB_OPINION_009",
+            "module": "Opinion Quick Access",
+            "section": "Opinion Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Opinion bookmark, share and comment engagement",
+            "yaml": "SUB_OPINION_009.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "SUB_OPINION_010",
+            "module": "Opinion Quick Access",
+            "section": "Opinion Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Opinion post-article content continuity",
+            "yaml": "SUB_OPINION_010.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "SUB_OPINION_011",
+            "module": "Opinion Quick Access",
+            "section": "Opinion Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Opinion article paging and navigation recovery",
+            "yaml": "SUB_OPINION_011.yaml",
+            "display_module": "Opinion Quick Access"
+        },
+        {
+            "id": "SUB_OPINION_012",
+            "module": "Opinion Quick Access",
+            "section": "Opinion Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Opinion loading, live-content and failure resilience",
+            "yaml": "SUB_OPINION_012.yaml",
+            "display_module": "Opinion Quick Access"
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - world
+  - quick-access
+  - entitlement
+  - no-monetisation
+  - evidence-limited
+---
+
+# Position 1: Establish the repository-managed authenticated Subscriber Home
+# state, then open World through its validated Quick Access text selector.
+- runFlow: "../Common/OPEN_SUBSCRIBER_WORLD.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_home"
+
+- extendedWaitUntil:
+    visible:
+      text: "World"
+    timeout: 30000
+
+- tapOn:
+    text: "World"
+
+- waitForAnimationToEnd
+
+# Position 2: Confirm that navigation remains on the authenticated Home-derived
+# content surface and retains the validated Subscriber no-ad entitlement signal.
+- assertVisible:
+    id: "screen_home"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+# Position 3: Confirm the World destination is rendered. Selection styling is
+# assessed visually because no deterministic selected-state property was supplied.
+- extendedWaitUntil:
+    visible:
+      text: "World"
+    timeout: 30000
+
+- assertVisible:
+    text: "World"
+
+- assertWithAI: "Verify that the World page is open and that World is visibly selected in Quick Access. The World selected styling must be visually distinguishable from the other available Quick Access sections."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_001_world_selected"
+
+# Position 4: Verify that validated anonymous/login and subscription surfaces are
+# absent, then apply the shared Subscriber no-monetisation and paywall contract.
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    id: "cta_login"
+
+- assertNotVisible:
+    text: '^Already a [Ss]ubscriber\? Login$'
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_WORLD_001_subscriber_entitlement"

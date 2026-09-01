@@ -8,6 +8,40 @@
 
     <hr>
 
+    <div class="row mb-3">
+      <div class="col"><b>Status</b><div>{{ report.job.status|upper if report.job else 'UNKNOWN' }}</div></div>
+      <div class="col"><b>Application</b><div>{{ report.metadata.app_name }} ({{ report.metadata.package_id }})</div></div>
+      <div class="col"><b>App version</b><div>{{ report.metadata.version_name }} / {{ report.metadata.version_code }}</div></div>
+      <div class="col"><b>Device</b><div>{{ report.metadata.device_model }} · {{ report.metadata.device_id }} · Android {{ report.metadata.android_version }}</div></div>
+    </div>
+
+    <h4>Case Status and Execution Steps</h4>
+    {% for case in report.results %}
+    <details class="card mb-2">
+      <summary class="card-header"><b>{{ case.case_id }} — {{ case.name }}</b> <span class="badge {{ 'bg-success' if case.status == 'PASS' else 'bg-danger' }}">{{ case.status }}</span> {{ case.duration }}s</summary>
+      <div class="card-body">
+        {% if case.failure_reason %}<div class="alert alert-danger"><b>Failure:</b> {{ case.failure_reason }}<br><b>Classification:</b> {{ case.failure_analysis.classification or 'execution_failure' }}{% if case.failure_analysis.component %} · {{ case.failure_analysis.component }}{% endif %}</div>{% endif %}
+        <table class="table table-sm"><thead><tr><th>#</th><th>Execution step</th><th>Status</th></tr></thead><tbody>
+        {% for step in case.steps %}<tr><td>{{ step.number }}</td><td>{{ step.command }}</td><td><span class="badge {{ 'bg-success' if step.status == 'COMPLETED' else 'bg-danger' if step.status == 'FAILED' else 'bg-secondary' }}">{{ step.status }}</span></td></tr>{% else %}<tr><td colspan="3">No step-level log was supplied.</td></tr>{% endfor %}
+        </tbody></table>
+        {% if case.status != 'PASS' %}<details><summary>Raw failure output</summary><pre>{{ case.stderr or case.stdout }}</pre></details>{% endif %}
+      </div>
+    </details>
+    {% endfor %}
+
+    <hr>
+
+    {% if report.case_folders %}
+    <h4>Case Evidence Folders</h4>
+    <a class="card card-body text-decoration-none mb-4" href="{{ url_for('report.report_evidence', report_name=report.name) }}">
+      <b>📁 Case Evidence</b>
+      <span>{{ report.case_folders|length }} case folders</span>
+      <code>{{ report.name }}/cases</code>
+      <small>Click to view screenshots, videos, logs and failure evidence by case →</small>
+    </a>
+    <hr>
+    {% endif %}
+
     <h4>Generated Reports</h4>
 
     <table class="table table-hover">
@@ -49,6 +83,21 @@
 
     <hr>
 
+    <div class="report-gallery-head">
+      <div><small>Visual evidence</small><h4>Execution Screenshots</h4></div>
+      <span>{{ report.screenshot_artifacts|length }} screenshots</span>
+    </div>
+    {% if report.screenshot_artifacts %}
+    <a class="card card-body text-decoration-none" href="{{ url_for('report.report_screenshots', report_name=report.name) }}">
+      <b>📁 Screenshots</b>
+      <span>{{ report.screenshot_artifacts|length }} screenshots from all cases</span>
+      <code>{{ report.name }}/cases/*/screenshots</code>
+      <small>Click to open the complete screenshot gallery →</small>
+    </a>
+    {% else %}<p class="empty">No screenshot evidence was generated for this report.</p>{% endif %}
+
+    <hr>
+
     <h4>Scenario Logs</h4>
 
     <ul>
@@ -56,20 +105,6 @@
     {% for log in report.logs %}
 
         <li>{{ log }}</li>
-
-    {% endfor %}
-
-    </ul>
-
-    <hr>
-
-    <h4>Screenshot Folders</h4>
-
-    <ul>
-
-    {% for folder in report.screenshots %}
-
-        <li>{{ folder }}</li>
 
     {% endfor %}
 

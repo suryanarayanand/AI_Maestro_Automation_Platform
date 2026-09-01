@@ -11,16 +11,88 @@ SUITES = ROOT / "Suites"
 MAX_YAML_SIZE = 1024 * 1024
 
 
-def list_scenarios(query=""):
+def extract_tags(content):
+    """Read simple Maestro header tags without requiring a YAML dependency."""
+    header = content.split("---", 1)[0]
+    tags = []
+    inline = re.search(r"(?m)^tags\s*:\s*\[([^]]*)\]", header)
+    if inline:
+        tags.extend(item.strip().strip("'\"") for item in inline.group(1).split(","))
+    else:
+        block = re.search(r"(?ms)^tags\s*:\s*\n((?:\s+-\s*[^\n]+\n?)*)", header)
+        if block:
+            tags.extend(
+                match.group(1).strip().strip("'\"")
+                for match in re.finditer(r"(?m)^\s+-\s*(.+?)\s*$", block.group(1))
+            )
+    return sorted({tag for tag in tags if tag}, key=str.casefold)
+
+
+def account_tag(relative_path, content):
+    evidence = f"{relative_path}\n{content}"
+    expired = bool(re.search(r"\b(?:expired|lapsed|subscription[ _-]?expired)\b", evidence, re.I))
+    registered = bool(re.search(
+        r"\b(?:registered[ _-]?user|non[ _-]?subscriber|signed[ _-]?in[ _-]?user)\b", evidence, re.I
+    ))
+    anonymous = bool(re.search(r"anonymous|ananymous|ananoymous|anonyous|free user", evidence, re.I))
+    # The negative prefix prevents "non-subscriber" from being classified as subscriber.
+    subscriber = bool(re.search(
+        r"(?<!non[-_ ])\bsubscriber\b|\bsubscribed\b|open_subscriber", evidence, re.I
+    ))
+    mixed = bool(re.search(r"subscriber-to-anonymous", evidence, re.I))
+    if mixed:
+        return "subscriber-to-anonymous"
+    if expired:
+        return "expired-user"
+    if registered:
+        return "registered-user"
+    if anonymous and subscriber:
+        return "subscriber-to-anonymous"
+    if subscriber:
+        return "subscriber"
+    if anonymous:
+        return "anonymous"
+    return ""
+
+
+def list_scenarios(query="", tag=""):
     query = query.strip().lower()
+    tag = tag.strip().lower()
     scenarios = []
-    for path in sorted(SCENARIOS.rglob("*.yaml")):
+    for path in SCENARIOS.rglob("*.yaml"):
         relative = path.relative_to(SCENARIOS).as_posix()
-        if not query or query in relative.lower():
+        content = path.read_text(encoding="utf-8-sig", errors="replace")
+        tags = extract_tags(content)
+        user_tag = account_tag(relative, content)
+        display_tags = sorted(set(tags + ([user_tag] if user_tag else [])), key=str.casefold)
+        if (not query or query in relative.lower()) and (
+            not tag or any(item.casefold() == tag for item in display_tags)
+        ):
+            stat = path.stat()
+            modified_at = datetime.fromtimestamp(stat.st_mtime).astimezone()
             scenarios.append({"path": relative, "name": path.name,
                               "folder": path.parent.relative_to(SCENARIOS).as_posix(),
-                              "size": path.stat().st_size})
+                              "tags": display_tags,
+                              "account_tag": user_tag,
+                              "size": stat.st_size,
+                              "modified_timestamp": stat.st_mtime_ns,
+                              "modified_at": modified_at.isoformat(timespec="seconds"),
+                              "modified_display": modified_at.strftime("%d %b %Y, %I:%M:%S %p")})
+    scenarios.sort(key=lambda scenario: (-scenario["modified_timestamp"], scenario["path"].casefold()))
     return scenarios
+
+
+def list_available_tags():
+    tags = set()
+    for path in SCENARIOS.rglob("*.yaml"):
+        relative = path.relative_to(SCENARIOS).as_posix()
+        content = path.read_text(encoding="utf-8-sig", errors="replace")
+        tags.update(extract_tags(content))
+        user_tag = account_tag(relative, content)
+        if user_tag:
+            tags.add(user_tag)
+    preferred = ["anonymous", "subscriber", "registered-user", "expired-user", "subscriber-to-anonymous"]
+    return [tag for tag in preferred if tag in tags] + sorted(tags.difference(preferred), key=str.casefold)
 
 
 def resolve_scenario(relative_path):

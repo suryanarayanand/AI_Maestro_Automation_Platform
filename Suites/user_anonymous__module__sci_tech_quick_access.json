@@ -1,0 +1,107 @@
+{
+    "suite": "Anonymous User Cases - Sci-tech Quick Access",
+    "source_suite": "user_anonymous",
+    "module": "Sci-tech Quick Access",
+    "tests": [
+        {
+            "id": "ANON_SCITECH_001",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P1",
+            "name": "Sci-Tech launch and selected Quick Access identity",
+            "yaml": "ANON_SCITECH_001.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "ANON_SCITECH_002",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P2",
+            "name": "Sci-Tech refresh and content recovery",
+            "yaml": "ANON_SCITECH_002.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "ANON_SCITECH_003",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P2",
+            "name": "Sci-Tech listing structure and article cards",
+            "yaml": "ANON_SCITECH_003.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "ANON_SCITECH_004",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P2",
+            "name": "Sci-Tech deep scroll and advertisement evidence",
+            "yaml": "ANON_SCITECH_004.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "ANON_SCITECH_005",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P1",
+            "name": "Sci-Tech article destination integrity",
+            "yaml": "ANON_SCITECH_005.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "ANON_SCITECH_006",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P1",
+            "name": "Sci-Tech anonymous article restriction behavior",
+            "yaml": "ANON_SCITECH_006.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "ANON_SCITECH_007",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P2",
+            "name": "Sci-Tech conditional AI Summary and Listen controls",
+            "yaml": "ANON_SCITECH_007.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "ANON_SCITECH_008",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P1",
+            "name": "Sci-Tech bookmark redirects anonymous user to login",
+            "yaml": "ANON_SCITECH_008.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "ANON_SCITECH_009",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P2",
+            "name": "Sci-Tech share surface behavior",
+            "yaml": "ANON_SCITECH_009.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        },
+        {
+            "id": "ANON_SCITECH_010",
+            "module": "Sci-tech Quick Access",
+            "section": "Sci-tech Quick Access",
+            "priority": "P2",
+            "name": "Sci-Tech comment and post-article behavior",
+            "yaml": "ANON_SCITECH_010.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Sci-tech Quick Access"
+        }
+    ]
+}

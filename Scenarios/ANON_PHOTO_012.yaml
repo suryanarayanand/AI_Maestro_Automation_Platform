@@ -1,0 +1,11 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, photos]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_MULTI_PHOTO_GALLERY.yaml"
+- tapOn: {text: "Share"}
+- waitForAnimationToEnd
+- assertVisible: {text: "Share with|Nearby Share|Quick Share|Messages|Copy"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_PHOTO_012_share_sheet"
+- back
+- assertVisible: {text: ".*[0-9]+/[0-9]+.*"}

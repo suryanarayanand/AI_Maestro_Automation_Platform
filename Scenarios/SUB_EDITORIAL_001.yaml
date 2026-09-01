@@ -1,0 +1,75 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - editorial
+  - quick-access
+  - entitlement
+  - no-monetisation
+  - evidence-limited
+---
+
+# Position 1: Establish the repository-managed subscriber Home state, verify
+# Home is ready, and open Editorial using the validated Quick Access label.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_home"
+
+- extendedWaitUntil:
+    visible:
+      text: "Editorial"
+    timeout: 30000
+
+- assertVisible:
+    text: "Editorial"
+
+- tapOn:
+    text: "Editorial"
+
+- waitForAnimationToEnd
+
+# Position 2: Confirm that navigation retains the Home-derived content surface
+# and the validated subscriber no-ad entitlement signal.
+- assertVisible:
+    id: "screen_home"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+# Position 3: Verify the Editorial destination is rendered. No deterministic
+# selected-state property was supplied, so selected styling is checked visually.
+- extendedWaitUntil:
+    visible:
+      text: "Editorial"
+    timeout: 30000
+
+- assertVisible:
+    text: "Editorial"
+
+- assertWithAI: "Verify that the Editorial landing page is open and that Editorial is visibly selected in Quick Access. Editorial must have visually distinguishable selected styling, and the current page must show rendered Editorial content rather than a blank, loading-only, or error surface."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_001_editorial_selected"
+
+# Position 4: Assert that anonymous and non-subscriber gates are absent, then
+# apply the repository subscriber no-monetisation contract on the settled page.
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    id: "cta_login"
+
+- assertNotVisible:
+    text: '^Already a [Ss]ubscriber\? Login$'
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EDITORIAL_001_subscriber_entitlement"

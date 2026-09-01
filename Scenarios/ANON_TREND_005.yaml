@@ -1,0 +1,26 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, trending, masthead,navigation]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING.yaml"
+
+- tapOn: {point: "39%,8%"}
+
+- extendedWaitUntil: {visible: {id: "screen_home"}, timeout: 20000}
+
+- assertVisible: {id: "screen_home"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_005_masthead_home"
+
+- tapOn: {id: "nav_trending"}
+
+- extendedWaitUntil: {visible: {id: "screen_trending"}, timeout: 20000}
+
+- assertVisible: {id: "nav_trending"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_TREND_005_trending_restored"
+

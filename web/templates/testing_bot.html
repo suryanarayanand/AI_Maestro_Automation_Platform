@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Testing Bot{% endblock %}
+{% block page_title %}Testing Bot{% endblock %}
+{% block content %}
+<p class="page-intro">Ask about the app, locators, YAML, user states, cases, runs, failures, and testing strategy. Answers use portal evidence.</p>
+<section class="surface bot-shell"><div class="d-flex justify-content-between align-items-center mb-3"><strong>Conversation</strong><div class="d-flex gap-2"><a class="btn btn-sm btn-outline-secondary" href="{{ url_for('testing_bot.export') }}">Export Chat</a><button id="clearTestingBot" class="btn btn-sm btn-outline-danger" type="button">Clear Chat</button></div></div><div id="botMessages" class="bot-messages">
+{% if not messages %}<div class="bot-message assistant">Ask me about a case ID, current runs, a locator, or an app behavior.</div>{% endif %}
+{% for item in messages %}<div class="bot-message {{ item.role }}">{{ item.message }}</div>{% endfor %}
+</div><form id="testingBotForm" class="bot-form"><textarea id="testingBotQuestion" class="form-control" rows="2" placeholder="Example: Why did HAM_OPT_016 fail?" required></textarea><button class="btn btn-primary">Ask bot</button></form></section>
+<script src="{{ url_for('static', filename='js/testing_bot.js') }}"></script>
+{% endblock %}

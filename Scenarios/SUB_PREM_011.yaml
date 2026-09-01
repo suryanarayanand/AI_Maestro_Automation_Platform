@@ -1,0 +1,76 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - premium
+  - all-stories
+  - full-page
+  - no-monetisation
+---
+
+# PRECONDITION: An authenticated subscriber is already positioned at the top
+# of Premium > All Stories. No validated navigation, All Stories screen, or
+# story-card locator was supplied, so those interactions are not fabricated.
+
+# Capture and validate the settled top viewport.
+- waitForAnimationToEnd
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "aw0"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "Interstitial close button"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_011_all_stories_top_ad_free"
+
+# Traverse a bounded middle portion of the available feed. Recheck every
+# validated advertising surface after each viewport transition.
+- repeat:
+    times: 4
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "aw0"
+      - assertNotVisible:
+          id: "ad_iframe"
+      - assertNotVisible:
+          text: "Interstitial close button"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_011_all_stories_middle_ad_free"
+
+# Continue through a bounded lower portion and allow each newly exposed feed
+# viewport to settle before checking subscriber monetisation behavior.
+- repeat:
+    times: 4
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "aw0"
+      - assertNotVisible:
+          id: "ad_iframe"
+      - assertNotVisible:
+          text: "Interstitial close button"
+
+# Final lower-state subscriber assertions and documented evidence.
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "aw0"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "Interstitial close button"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_011_all_stories_lower_ad_free"

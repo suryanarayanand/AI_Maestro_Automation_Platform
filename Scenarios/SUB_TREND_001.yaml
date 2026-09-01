@@ -1,0 +1,50 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - trending
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_home"
+
+- tapOn:
+    id: "nav_trending"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_trending"
+
+- assertVisible:
+    id: "nav_trending"
+    selected: true
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_001_subscriber_trending_landing"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- assertNotVisible:
+    id: "aw0"
+
+- assertNotVisible:
+    id: "ad_iframe"
+
+- assertNotVisible:
+    text: "Image for Taboola Advertising Unit"

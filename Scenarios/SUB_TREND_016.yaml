@@ -1,0 +1,19 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_TRENDING.yaml"
+- tapOn: {text: "Business"}
+- repeat:
+    times: 3
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd
+- scrollUntilVisible: {element: {text: "READ FULL ARTICLE"}, direction: DOWN, timeout: 45000, speed: 40}
+- tapOn: {text: "READ FULL ARTICLE", index: 0}
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- back
+- extendedWaitUntil: {visible: {id: "screen_trending"}, timeout: 30000}
+- assertVisible: {text: "Business"}
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_016_result"

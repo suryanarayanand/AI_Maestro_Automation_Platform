@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}New Automation Intake{% endblock %}
+{% block page_title %}New automation intake{% endblock %}
+{% block content %}
+<p class="page-intro">Capture one testable requirement. The portal will ground its proposal against validated locators, reusable flows, and App Memory.</p>
+<section class="surface"><form method="post" class="row g-3">
+  <div class="col-md-8"><label class="form-label">Scenario title</label><input class="form-control" name="scenario" value="{{ request.form.get('scenario','') }}" required></div>
+  <div class="col-md-4"><label class="form-label">User state</label><select class="form-select" name="user_state" required><option value="ANONYMOUS">Anonymous</option><option value="SUBSCRIBER">Subscriber</option><option value="MIXED">Mixed (must resolve before publish)</option></select></div>
+  <div class="col-12"><label class="form-label">Automation requirement</label><textarea class="form-control" name="action" rows="5" placeholder="Describe the action and observable expected result." required>{{ request.form.get('action','') }}</textarea></div>
+  <div class="col-md-6"><label class="form-label">Module</label><input class="form-control" name="module" value="{{ request.form.get('module','') }}"></div>
+  <div class="col-md-6"><label class="form-label">Tags</label><input class="form-control" name="tags" value="{{ request.form.get('tags','') }}" placeholder="navigation, article, regression"></div>
+  <div class="col-12 d-flex justify-content-end gap-2"><a class="btn btn-outline-secondary" href="{{ url_for('flow_workspace.index') }}">Cancel</a><button class="btn btn-primary">Create intake</button></div>
+</form></section>
+{% endblock %}

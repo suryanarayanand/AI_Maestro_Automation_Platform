@@ -1,0 +1,9 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, trending, reading-options, text-size, blocked-grounding]
+---
+
+# Establish only the validated subscriber precondition. The case actions are
+# intentionally not fabricated because the supplied repository does not contain
+# validated locators for opening a Trending article, opening Reading Options,
+# selecting larger/smaller text, or asserting the selected text-size state.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"

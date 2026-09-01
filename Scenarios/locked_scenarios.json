@@ -1,0 +1,6 @@
+{
+  "TC_002_proto": {
+    "reason": "Reviewed modular Games flow; prevent stale generated drafts from overwriting fixes.",
+    "reviewer": "automation-team"
+  }
+}

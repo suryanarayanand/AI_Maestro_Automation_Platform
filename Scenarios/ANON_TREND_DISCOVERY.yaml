@@ -1,0 +1,29 @@
+appId: com.mobstac.thehindu
+tags: [discovery, anonymous, trending]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_HOME.yaml"
+
+- tapOn: {id: "nav_trending"}
+- extendedWaitUntil: {visible: {id: "screen_trending"}, timeout: 30000}
+- assertVisible: {id: "screen_trending"}
+- assertVisible: {id: "nav_trending"}
+- takeScreenshot: "Screenshots/Discovery/ANON_TREND_page_top"
+
+# Pull down from the content area and verify the Trending root remains usable.
+- swipe: {start: "50%,30%", end: "50%,75%", duration: 700}
+- waitForAnimationToEnd: {timeout: 5000}
+- extendedWaitUntil: {visible: {id: "screen_trending"}, timeout: 20000}
+- takeScreenshot: "Screenshots/Discovery/ANON_TREND_after_refresh"
+
+- repeat:
+    times: 6
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd: {timeout: 1200}
+      - runFlow:
+          when: {visible: {text: "ADVERTISEMENT"}}
+          commands:
+            - takeScreenshot: "Screenshots/Discovery/ANON_TREND_ad_seen"
+
+- assertVisible: {id: "screen_trending"}
+- takeScreenshot: "Screenshots/Discovery/ANON_TREND_page_scrolled"

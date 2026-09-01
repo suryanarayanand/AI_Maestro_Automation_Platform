@@ -1,0 +1,107 @@
+{
+    "suite": "Anonymous User Cases - Food Quick Access",
+    "source_suite": "user_anonymous",
+    "module": "Food Quick Access",
+    "tests": [
+        {
+            "id": "ANON_FOOD_001",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P1",
+            "name": "Food launch and selected Quick Access identity",
+            "yaml": "ANON_FOOD_001.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "ANON_FOOD_002",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P2",
+            "name": "Food refresh and content recovery",
+            "yaml": "ANON_FOOD_002.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "ANON_FOOD_003",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P2",
+            "name": "Food listing structure and article cards",
+            "yaml": "ANON_FOOD_003.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "ANON_FOOD_004",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P2",
+            "name": "Food deep scroll and advertisement evidence",
+            "yaml": "ANON_FOOD_004.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "ANON_FOOD_005",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P1",
+            "name": "Food article destination integrity",
+            "yaml": "ANON_FOOD_005.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "ANON_FOOD_006",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P1",
+            "name": "Food anonymous article restriction behavior",
+            "yaml": "ANON_FOOD_006.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "ANON_FOOD_007",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P2",
+            "name": "Food conditional AI Summary and Listen controls",
+            "yaml": "ANON_FOOD_007.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "ANON_FOOD_008",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P1",
+            "name": "Food bookmark redirects anonymous user to login",
+            "yaml": "ANON_FOOD_008.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "ANON_FOOD_009",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P2",
+            "name": "Food share surface behavior",
+            "yaml": "ANON_FOOD_009.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        },
+        {
+            "id": "ANON_FOOD_010",
+            "module": "Food Quick Access",
+            "section": "Food Quick Access",
+            "priority": "P2",
+            "name": "Food comment and post-article behavior",
+            "yaml": "ANON_FOOD_010.yaml",
+            "user_state": "ANONYMOUS",
+            "display_module": "Food Quick Access"
+        }
+    ]
+}

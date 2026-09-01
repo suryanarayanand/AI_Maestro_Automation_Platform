@@ -1,0 +1,237 @@
+{
+    "suite": "Subscriber User Cases - Search",
+    "source_suite": "user_subscriber",
+    "module": "Search",
+    "tests": [
+        {
+            "id": "SUB_SEARCH_018",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P1",
+            "name": "Sort Search results by Newest",
+            "yaml": "SUB_SEARCH_018.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_020",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P1",
+            "name": "Sort Search results by Relevance",
+            "yaml": "SUB_SEARCH_020.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_021",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P1",
+            "name": "Multi-word news phrase search",
+            "yaml": "SUB_SEARCH_021.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_024",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Numeric and year query",
+            "yaml": "SUB_SEARCH_024.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_028",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Repeated identical query stability",
+            "yaml": "SUB_SEARCH_028.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_001",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Hamburger Search entry and selected screen",
+            "yaml": "SUB_SEARCH_001.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_002",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Search close and Home recovery",
+            "yaml": "SUB_SEARCH_002.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_003",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Valid city keyword result list",
+            "yaml": "SUB_SEARCH_003.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_004",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Valid topic keyword result list",
+            "yaml": "SUB_SEARCH_004.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_006",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber full article entitlement from Search",
+            "yaml": "SUB_SEARCH_006.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_007",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Search article toolbar controls",
+            "yaml": "SUB_SEARCH_007.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_010",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "No-result keyword handling",
+            "yaml": "SUB_SEARCH_010.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_011",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Special-character input safety",
+            "yaml": "SUB_SEARCH_011.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_012",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Empty and whitespace search validation",
+            "yaml": "SUB_SEARCH_012.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_013",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Long search input boundary",
+            "yaml": "SUB_SEARCH_013.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_014",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Clear and replace search query",
+            "yaml": "SUB_SEARCH_014.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_015",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Search result back-navigation state",
+            "yaml": "SUB_SEARCH_015.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_016",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Subscriber Search no-advertisement contract",
+            "yaml": "SUB_SEARCH_016.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_022",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Uppercase and lowercase query consistency",
+            "yaml": "SUB_SEARCH_022.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_025",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Tamil Unicode query safety",
+            "yaml": "SUB_SEARCH_025.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_026",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Leading and trailing whitespace normalization",
+            "yaml": "SUB_SEARCH_026.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_027",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Recent search history and reuse",
+            "yaml": "SUB_SEARCH_027.yaml",
+            "display_module": "Search"
+        },
+        {
+            "id": "SUB_SEARCH_030",
+            "module": "Search",
+            "section": "Search",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Sort persistence after article navigation",
+            "yaml": "SUB_SEARCH_030.yaml",
+            "display_module": "Search"
+        }
+    ]
+}

@@ -1,0 +1,104 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - hamburger
+  - specialist-sections
+  - evidence-limited
+---
+
+# Preserve the authenticated subscriber session. Authentication setup is a
+# precondition because no validated Subscriber Home setup flow was supplied.
+- launchApp:
+    clearState: false
+
+- extendedWaitUntil:
+    visible:
+      id: "nav_menu"
+    timeout: 30000
+
+# Position 1: Open the only specialist destination with a validated selector.
+- tapOn:
+    id: "nav_menu"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_hamburger"
+    timeout: 15000
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- extendedWaitUntil:
+    visible:
+      text: "Opinion"
+    timeout: 15000
+
+- tapOn:
+    text: "Opinion"
+
+# Position 3: Confirm navigation left the drawer and the grounded destination
+# label is visible. No validated section-content locator was supplied.
+- extendedWaitUntil:
+    notVisible:
+      id: "screen_hamburger"
+    timeout: 30000
+
+- assertNotVisible:
+    id: "screen_hamburger"
+
+- assertVisible:
+    text: "Opinion"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HAM_004_opinion_destination"
+
+# Position 2: Return to Hamburger after the grounded destination.
+- extendedWaitUntil:
+    visible:
+      id: "nav_menu"
+    timeout: 30000
+
+- tapOn:
+    id: "nav_menu"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_hamburger"
+    timeout: 15000
+
+- assertVisible:
+    id: "screen_hamburger"
+
+# Position 4: Close and reopen the drawer to prove that it remains reusable and
+# reaches the same validated stable state.
+- tapOn:
+    id: "cta_drawer_close"
+
+- extendedWaitUntil:
+    notVisible:
+      id: "screen_hamburger"
+    timeout: 15000
+
+- assertNotVisible:
+    id: "screen_hamburger"
+
+- extendedWaitUntil:
+    visible:
+      id: "nav_menu"
+    timeout: 15000
+
+- tapOn:
+    id: "nav_menu"
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_hamburger"
+    timeout: 15000
+
+- assertVisible:
+    id: "screen_hamburger"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HAM_004_drawer_reusable"

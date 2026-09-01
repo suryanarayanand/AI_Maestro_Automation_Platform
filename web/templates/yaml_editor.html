@@ -2,10 +2,35 @@
 {% block title %}YAML Editor{% endblock %}
 {% block page_title %}YAML Editor{% endblock %}
 {% block content %}
-<p class="page-intro">View and safely edit existing Maestro scenarios. Every save creates a timestamped backup.</p>
+<p class="page-intro">View and safely edit existing Maestro scenarios. Every save creates a timestamped backup. Files are sorted by latest modification.</p>
+<div class="yaml-account-filters" aria-label="Account type filters">
+  <a class="yaml-filter-chip {% if not selected_tag %}active{% endif %}" href="{{ url_for('yaml_editor.index') }}"><span>All</span><small>Every scenario</small></a>
+  <a class="yaml-filter-chip anonymous {% if selected_tag == 'anonymous' %}active{% endif %}" href="{{ url_for('yaml_editor.index', tag='anonymous') }}"><span>Anonymous</span><small>Logged-out user</small></a>
+  <a class="yaml-filter-chip subscriber {% if selected_tag == 'subscriber' %}active{% endif %}" href="{{ url_for('yaml_editor.index', tag='subscriber') }}"><span>Subscriber</span><small>Paid account</small></a>
+  <a class="yaml-filter-chip mixed {% if selected_tag == 'subscriber-to-anonymous' %}active{% endif %}" href="{{ url_for('yaml_editor.index', tag='subscriber-to-anonymous') }}"><span>Mixed</span><small>Account transition</small></a>
+</div>
 <section class="surface">
-<form class="row g-2 mb-3" method="get"><div class="col"><input class="form-control" name="q" value="{{ query }}" placeholder="Search scenario name or folder"></div><div class="col-auto"><button class="btn btn-primary">Search</button></div></form>
-<div class="table-responsive"><table class="table align-middle"><thead><tr><th>Scenario</th><th>Folder</th><th>Size</th><th></th></tr></thead><tbody>
-{% for scenario in scenarios %}<tr><td><strong>{{ scenario.name }}</strong></td><td>{{ scenario.folder if scenario.folder != '.' else 'Scenarios' }}</td><td>{{ scenario.size }} bytes</td><td class="text-end"><div class="d-inline-flex gap-2"><a class="btn btn-sm btn-outline-primary" href="{{ url_for('yaml_editor.edit_query', file=scenario.path) }}">View / Edit</a><form method="post" action="{{ url_for('yaml_editor.delete') }}" onsubmit="return confirm('Delete {{ scenario.path }}? A recovery backup will be retained.');"><input type="hidden" name="file" value="{{ scenario.path }}"><button class="btn btn-sm btn-outline-danger" type="submit">Delete</button></form></div></td></tr>{% else %}<tr><td colspan="4" class="text-muted">No matching YAML scenarios.</td></tr>{% endfor %}
-</tbody></table></div></section>
+<div class="yaml-editor-heading"><div><small>Scenario library</small><strong>{{ scenarios|length }} result{% if scenarios|length != 1 %}s{% endif %}</strong></div>{% if query or selected_tag %}<a href="{{ url_for('yaml_editor.index') }}">Clear filters</a>{% endif %}</div>
+<form class="row g-2 mb-3" method="get">
+  <div class="col"><input class="form-control" name="q" value="{{ query }}" placeholder="Search scenario name or folder"></div>
+  <div class="col-sm-4 col-lg-3"><select class="form-select" name="tag"><option value="">All tags</option>{% for tag in tags %}<option value="{{ tag }}" {% if tag == selected_tag %}selected{% endif %}>{{ tag }}</option>{% endfor %}</select></div>
+  <div class="col-auto"><button class="btn btn-primary">Filter</button></div>
+</form>
+<div class="table-responsive"><table class="table align-middle">
+<thead><tr><th>Scenario</th><th>Tags</th><th>Folder</th><th>Last modified</th><th>Size</th><th></th></tr></thead>
+<tbody>
+{% for scenario in scenarios %}
+<tr>
+  <td><strong>{{ scenario.name }}</strong></td>
+  <td>{% for tag in scenario.tags %}<a class="yaml-tag {% if tag == 'anonymous' %}anonymous{% elif tag == 'subscriber' %}subscriber{% elif tag == 'subscriber-to-anonymous' %}mixed{% endif %}" href="{{ url_for('yaml_editor.index', tag=tag) }}">{{ tag }}</a>{% else %}<span class="text-muted">None</span>{% endfor %}</td>
+  <td>{{ scenario.folder if scenario.folder != '.' else 'Scenarios' }}</td>
+  <td><time datetime="{{ scenario.modified_at }}" title="{{ scenario.modified_at }}">{{ scenario.modified_display }}</time></td>
+  <td>{{ scenario.size }} bytes</td>
+  <td class="text-end"><div class="d-inline-flex gap-2"><a class="btn btn-sm btn-outline-primary" href="{{ url_for('yaml_editor.edit_query', file=scenario.path) }}">View / Edit</a><form method="post" action="{{ url_for('yaml_editor.delete') }}" onsubmit="return confirm('Delete {{ scenario.path }}? A recovery backup will be retained.');"><input type="hidden" name="file" value="{{ scenario.path }}"><button class="btn btn-sm btn-outline-danger" type="submit">Delete</button></form></div></td>
+</tr>
+{% else %}
+<tr><td colspan="6" class="text-muted">No matching YAML scenarios.</td></tr>
+{% endfor %}
+</tbody></table></div>
+</section>
 {% endblock %}

@@ -1,0 +1,36 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, home, premium-article, optional-discovery]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- tapOn: {id: "article_card", index: 0}
+- tapOn: {text: "Close sheet", optional: true}
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+
+# Search only articles opened from Home. Premium availability is dynamic.
+- repeat:
+    times: 5
+    commands:
+      - runFlow:
+          when: {visible: {text: "PREMIUM|Premium"}}
+          file: "../Common/CAPTURE_SUBSCRIBER_PREMIUM_EVIDENCE.yaml"
+      - swipe: {direction: LEFT}
+      - waitForAnimationToEnd: {timeout: 3000}
+      - tapOn: {text: "Close sheet", optional: true}
+      - assertVisible: {id: "screen_article_detail"}
+      - assertNotVisible: {id: "ad_iframe"}
+      - assertNotVisible: {text: "SUBSCRIBE|Already a subscriber.*|Keep reading.*"}
+- repeat:
+    times: 5
+    commands:
+      - runFlow:
+          when: {visible: {text: "PREMIUM|Premium"}}
+          file: "../Common/CAPTURE_SUBSCRIBER_PREMIUM_EVIDENCE.yaml"
+      - swipe: {direction: RIGHT}
+      - waitForAnimationToEnd: {timeout: 3000}
+      - tapOn: {text: "Close sheet", optional: true}
+      - assertVisible: {id: "screen_article_detail"}
+      - assertNotVisible: {id: "ad_iframe"}
+      - assertNotVisible: {text: "SUBSCRIBE|Already a subscriber.*|Keep reading.*"}
+- assertVisible: {id: "screen_article_detail"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HOME_006_home_premium_search_complete"

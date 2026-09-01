@@ -1,0 +1,21 @@
+appId: com.mobstac.thehindu
+tags: [common, anonymous, editorial, article]
+---
+- runFlow: "OPEN_ANONYMOUS_EDITORIAL.yaml"
+- tapOn: {point: "50%,50%"}
+- waitForAnimationToEnd
+- runFlow:
+    when: {notVisible: {id: "screen_article_detail"}}
+    commands:
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/editorial_possible_interstitial"
+      - repeat:
+          times: 12
+          commands:
+            - waitForAnimationToEnd
+            - runFlow:
+                when: {visible: {text: "^CLOSE$|Interstitial close button|SKIP|Skip Ad"}}
+                commands:
+                  - tapOn: {text: "^CLOSE$|Interstitial close button|SKIP|Skip Ad"}
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- assertVisible: {id: "screen_article_detail"}

@@ -1,0 +1,25 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, videos]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_VIDEO_ARTICLE.yaml"
+- scrollUntilVisible:
+    element: {text: "Keep reading.*|.*[0-9]+%.*off.*|Go beyond the headline.*|SUBSCRIBE|Subscribe"}
+    direction: DOWN
+    timeout: 45000
+    speed: 55
+- assertVisible: {text: "Keep reading.*|.*[0-9]+%.*off.*|Go beyond the headline.*|SUBSCRIBE|Subscribe"}
+- scrollUntilVisible:
+    element: {text: "Already a subscriber.*|Login"}
+    direction: DOWN
+    timeout: 90000
+    speed: 70
+    visibilityPercentage: 30
+    centerElement: true
+- assertVisible: {text: "Already a subscriber.*|Login"}
+- tapOn: {text: "Already a subscriber.*|Login|LOGIN"}
+- extendedWaitUntil: {visible: {text: "Login to your account"}, timeout: 30000}
+- assertVisible: {text: "Login to your account"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_VIDEO_008_login"
+- back
+- assertVisible: {id: "screen_article_detail"}

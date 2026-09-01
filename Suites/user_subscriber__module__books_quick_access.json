@@ -1,0 +1,127 @@
+{
+    "suite": "Subscriber User Cases - Books Quick Access",
+    "source_suite": "user_subscriber",
+    "module": "Books Quick Access",
+    "tests": [
+        {
+            "id": "SUB_BOOKS_001",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Books launch, selection and subscriber identity",
+            "yaml": "SUB_BOOKS_001.yaml",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "SUB_BOOKS_002",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Books refresh and content recovery",
+            "yaml": "SUB_BOOKS_002.yaml",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "SUB_BOOKS_003",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Books listing identity and visual structure",
+            "yaml": "SUB_BOOKS_003.yaml",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "SUB_BOOKS_004",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Books deep scroll, pagination and subscriber ad-free entitlement",
+            "yaml": "SUB_BOOKS_004.yaml",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "SUB_BOOKS_005",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Books article selection and destination integrity",
+            "yaml": "SUB_BOOKS_005.yaml",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "SUB_BOOKS_006",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Books subscriber full-article entitlement",
+            "yaml": "SUB_BOOKS_006.yaml",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "SUB_BOOKS_007",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Books conditional AI Summary and Listen controls",
+            "yaml": "SUB_BOOKS_007.yaml",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "SUB_BOOKS_008",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Books reading options, text size and themes",
+            "yaml": "SUB_BOOKS_008.yaml",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "SUB_BOOKS_009",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Books bookmark, share and comment engagement",
+            "yaml": "SUB_BOOKS_009.yaml",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "SUB_BOOKS_010",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Books post-article content continuity",
+            "yaml": "SUB_BOOKS_010.yaml",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "SUB_BOOKS_011",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Books article paging and navigation recovery",
+            "yaml": "SUB_BOOKS_011.yaml",
+            "display_module": "Books Quick Access"
+        },
+        {
+            "id": "SUB_BOOKS_012",
+            "module": "Books Quick Access",
+            "section": "Books Quick Access",
+            "user_state": "SUBSCRIBER",
+            "priority": "P2",
+            "name": "Books loading, live-content and failure resilience",
+            "yaml": "SUB_BOOKS_012.yaml",
+            "display_module": "Books Quick Access"
+        }
+    ]
+}

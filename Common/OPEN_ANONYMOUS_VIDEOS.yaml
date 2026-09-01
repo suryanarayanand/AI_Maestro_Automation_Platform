@@ -1,0 +1,11 @@
+appId: com.mobstac.thehindu
+tags: [common, anonymous, videos]
+---
+- runFlow: "OPEN_ANONYMOUS_HOME.yaml"
+- tapOn: {text: "Videos"}
+- waitForAnimationToEnd
+- extendedWaitUntil: {visible: {text: "Videos"}, timeout: 30000}
+- assertVisible: {id: "screen_home"}
+- assertVisible: {text: "Videos"}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 60000}
+- assertVisible: {id: "article_card"}

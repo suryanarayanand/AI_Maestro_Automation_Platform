@@ -1,0 +1,27 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, login, article-subscribe]
+---
+- stopApp
+- runFlow: "../Common/OPEN_ANONYMOUS_HOME.yaml"
+- tapOn: {id: "article_card", index: 0}
+- tapOn: {text: "Close sheet", optional: true}
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- assertVisible: {id: "screen_article_detail"}
+- scrollUntilVisible:
+    element: {text: "Subscribe|SUBSCRIBE"}
+    direction: DOWN
+    timeout: 120000
+    speed: 40
+- assertVisible: {text: "Subscribe|SUBSCRIBE"}
+- tapOn: {text: "Subscribe|SUBSCRIBE", index: 0}
+- runFlow: "../Common/ASSERT_PREMIUM_PLANS.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LOGIN_003_subscription_plans"
+- tapOn: {text: "Already a subscriber.*Login|Already a subscriber.*|Login|LOGIN"}
+- extendedWaitUntil: {visible: "Email", timeout: 30000}
+- runFlow: "../Common/SUBSCRIBER_LOGIN_CREDENTIALS_ONCE.yaml"
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- assertVisible: {id: "screen_article_detail"}
+- assertNotVisible: {text: "Already a subscriber.*Login|Keep reading.*"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LOGIN_003_authenticated_article"

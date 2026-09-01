@@ -1,0 +1,175 @@
+appId: com.mobstac.thehindu
+
+tags:
+
+  - generated
+
+  - ordered
+
+  - subscriber
+
+  - scitech
+
+  - article
+
+  - full-access
+
+  - no-monetisation
+
+---
+
+
+
+# Establish the required authenticated subscriber state.
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_SCITECH.yaml"
+
+
+# Open the supplied non-live Sci-tech article candidate. The article-detail
+
+# assertion runtime-gates this reference-only URL against the target build.
+
+- openLink: "https://www.thehindu.com/sci-tech/technology/disney-streaming-service-sees-subscribers-fall-again/article67179102.ece"
+
+
+
+- extendedWaitUntil:
+
+    visible:
+
+      id: "screen_article_detail"
+
+    timeout: 30000
+
+
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+# Baseline entitlement check immediately after navigation.
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+- assertNotVisible:
+
+    text: "READ FULL ARTICLE"
+
+
+
+- assertNotVisible:
+
+    text: '(?i)^Already a subscriber\?.*login$'
+
+
+
+- assertNotVisible:
+
+    text: '(?i).*keep reading.*'
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_006_article_top"
+
+
+
+# Positions 1 and 2: Traverse bounded, settled article-body viewports toward
+
+# the lower article while checking subscriber entitlement after every swipe.
+
+- repeat:
+
+    times: 10
+
+    commands:
+
+      - swipe:
+
+          direction: UP
+
+      - waitForAnimationToEnd
+
+      - assertVisible:
+
+          id: "screen_article_detail"
+
+      - runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+      - assertNotVisible:
+
+          text: "READ FULL ARTICLE"
+
+      - assertNotVisible:
+
+          text: '(?i)^Already a subscriber\?.*login$'
+
+      - assertNotVisible:
+
+          text: '(?i).*keep reading.*'
+
+
+
+# Position 3: The entitled article-detail surface remains available at the
+
+# lower reading state and has not been replaced by a full-article gate.
+
+- assertVisible:
+
+    id: "screen_article_detail"
+
+
+
+- assertNotVisible:
+
+    text: "READ FULL ARTICLE"
+
+
+
+# Position 4: Final explicit verification of all grounded subscriber
+
+# restriction and monetisation surfaces.
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+
+
+
+- assertNotVisible:
+
+    text: "SUBSCRIBE"
+
+
+
+- assertNotVisible:
+
+    text: "ADVERTISEMENT"
+
+
+
+- assertNotVisible:
+
+    text: '(?i)^Already a subscriber\?.*login$'
+
+
+
+- assertNotVisible:
+
+    text: '(?i).*keep reading.*'
+
+
+
+- assertNotVisible:
+
+    text: "READ FULL ARTICLE"
+
+
+
+- waitForAnimationToEnd
+
+- takeScreenshot: "Screenshots/Generated/SUB_SCITECH_006_lower_full_access"
+

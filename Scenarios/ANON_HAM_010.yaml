@@ -1,0 +1,36 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_HAMBURGER.yaml"
+- scrollUntilVisible:
+    element: {text: "India"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "India"}
+- tapOn: {text: "India", index: 1}
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- assertVisible: {id: "article_card"}
+- tapOn: {id: "article_card", index: 0}
+- runFlow:
+    when:
+      visible: "This summary and the FAQs.*"
+    commands:
+      - tapOn: "Close sheet"
+- runFlow:
+    when:
+      visible: "Summary"
+    commands:
+      - tapOn: {point: "90%,21%"}
+      - waitForAnimationToEnd: {timeout: 3000}
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 30000}
+- back
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- back
+- extendedWaitUntil: {visible: {id: "screen_hamburger"}, timeout: 30000}
+- assertVisible: {id: "screen_hamburger"}
+- tapOn: {id: "cta_drawer_close"}
+- assertVisible: {id: "screen_home"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_HAM_010_result"

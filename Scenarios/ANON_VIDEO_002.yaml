@@ -1,0 +1,21 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, videos]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_VIDEOS.yaml"
+
+- swipe: {direction: DOWN, duration: 700}
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 60000}
+
+- assertVisible: {text: "Videos"}
+
+- assertVisible: {id: "article_card"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_VIDEO_002_result"
+

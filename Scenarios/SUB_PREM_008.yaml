@@ -1,0 +1,102 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - premium
+  - packages
+  - no-monetisation
+---
+
+# Establish the repository subscriber session.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+# Obligation 1: Open Premium > Packages and perform bounded page traversal.
+- tapOn:
+    text: "Premium"
+
+- extendedWaitUntil:
+    visible:
+      text: "Packages"
+    timeout: 30000
+
+- tapOn:
+    text: "Packages"
+
+- extendedWaitUntil:
+    visible:
+      text: "Packages"
+    timeout: 30000
+
+- assertVisible:
+    text: "Packages"
+
+- repeat:
+    times: 4
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+
+# Obligation 2: Return to the top, then save settled top and lower states.
+- repeat:
+    times: 4
+    commands:
+      - swipe:
+          direction: DOWN
+      - waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Packages"
+    timeout: 30000
+
+- assertVisible:
+    text: "Packages"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_008_packages_top"
+
+- repeat:
+    times: 6
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_008_packages_lower"
+
+# Obligation 3: Apply the two monetisation selectors grounded by validated evidence.
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+# Obligation 4: Confirm that the Packages surface remains loaded after traversal.
+- repeat:
+    times: 6
+    commands:
+      - swipe:
+          direction: DOWN
+      - waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Packages"
+    timeout: 30000
+
+- assertVisible:
+    text: "Packages"
+
+# Obligation 5: Save an asserted, settled final Packages state.
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PREM_008_packages_readable_final"
+
+# Obligation 6: Reconfirm the validated subscriber entitlement signals.
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"

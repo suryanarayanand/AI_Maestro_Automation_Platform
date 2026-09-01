@@ -1,0 +1,9 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, opinion]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_OPINION_ARTICLE.yaml"
+- tapOn: {text: "Bookmark"}
+- extendedWaitUntil: {visible: {text: ".*Login.*|.*Sign in.*|Login to your account"}, timeout: 30000}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_OPINION_011_bookmark_login"
+- back

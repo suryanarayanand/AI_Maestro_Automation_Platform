@@ -1,0 +1,65 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - podcast
+  - playback
+  - rewind
+  - blocked-grounding
+  - evidence-limited
+---
+
+# SUB_PODCAST_011 — Rewind control changes playback position
+# Ordered precondition: the authenticated subscriber setup has completed and
+# the Podcast listing is open. "Podcast" is validated only as a page anchor.
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+# Positions 1 and 3 — Start a runtime-qualified current episode using the
+# selector approved in SUB_PODCAST_007, retain playback for the approved
+# 30-second checkpoint, and record the visible non-zero position.
+- scrollUntilVisible:
+    element:
+      text: '(?i)^Play Latest Episode$'
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+
+- extendedWaitUntil:
+    visible:
+      text: '(?i)^Play Latest Episode$'
+    timeout: 30000
+
+- assertVisible:
+    text: '(?i)^Play Latest Episode$'
+
+- assertWithAI: "Verify that the first visible Play Latest Episode action belongs to a fully rendered current Podcast series card and is not detached from its episode identity. Fail if the action or associated episode identity is blank, unreadable, or still loading."
+
+- tapOn:
+    text: '(?i)^Play Latest Episode$'
+    index: 0
+
+- evalScript: '${(() => { const end = Date.now() + 30000; while (Date.now() < end) {} return true; })()}'
+
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify that playback has started and the Podcast listing remains open with one settled mini-player. The player must expose a visibly non-zero elapsed position or progress state suitable for rewind comparison. Fail if playback is still at its initial zero position, the player is absent, the elapsed/progress presentation is unreadable, the player is blocked by a persistent loader or error, or the app has left the Podcast listing."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_011_position_before_rewind"
+
+# Positions 2 and 4 are intentionally blocked rather than falsely passed.
+# No validated Rewind control locator, elapsed-time locator, progress locator,
+# configured rewind interval, or programmatic position value was supplied.
+# Consequently, exactly four rewind taps and the required per-tap interval,
+# underflow, and player-retention comparisons cannot be executed safely.
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_011_manual_review"

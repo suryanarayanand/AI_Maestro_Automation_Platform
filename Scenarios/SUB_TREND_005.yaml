@@ -1,0 +1,190 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - trending
+  - sections
+  - no-monetisation
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- assertVisible:
+    id: "screen_home"
+- tapOn:
+    id: "nav_trending"
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+- assertVisible:
+    id: "screen_trending"
+- assertVisible:
+    id: "nav_trending"
+    selected: true
+
+# All
+- tapOn:
+    text: "All"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+- assertVisible:
+    id: "screen_trending"
+- assertVisible:
+    text: "All"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "aw0"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "Interstitial close button"
+- assertNotVisible:
+    text: "Image for Taboola Advertising Unit"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_005_All_ad_free"
+
+# News
+- tapOn:
+    text: "News"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+- assertVisible:
+    id: "screen_trending"
+- assertVisible:
+    text: "News"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "aw0"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "Interstitial close button"
+- assertNotVisible:
+    text: "Image for Taboola Advertising Unit"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_005_News_ad_free"
+
+# Business
+- tapOn:
+    text: "Business"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+- assertVisible:
+    id: "screen_trending"
+- assertVisible:
+    text: "Business"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "aw0"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "Interstitial close button"
+- assertNotVisible:
+    text: "Image for Taboola Advertising Unit"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_005_Business_ad_free"
+
+# Technology
+- tapOn:
+    text: "Technology"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+- assertVisible:
+    id: "screen_trending"
+- assertVisible:
+    text: "Technology"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "aw0"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "Interstitial close button"
+- assertNotVisible:
+    text: "Image for Taboola Advertising Unit"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_005_Technology_ad_free"
+
+# Entertainment
+- tapOn:
+    text: "Entertainment"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+- assertVisible:
+    id: "screen_trending"
+- assertVisible:
+    text: "Entertainment"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "aw0"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "Interstitial close button"
+- assertNotVisible:
+    text: "Image for Taboola Advertising Unit"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_005_Entertainment_ad_free"
+
+# Sports
+- tapOn:
+    text: "Sports"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+- assertVisible:
+    id: "screen_trending"
+- assertVisible:
+    text: "Sports"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "aw0"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "Interstitial close button"
+- assertNotVisible:
+    text: "Image for Taboola Advertising Unit"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_005_Sports_ad_free"

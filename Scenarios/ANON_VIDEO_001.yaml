@@ -1,0 +1,15 @@
+﻿appId: com.mobstac.thehindu
+
+tags: [generated, ordered, anonymous, videos]
+
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_VIDEOS.yaml"
+
+- assertVisible: {id: "screen_home"}
+
+- assertVisible: {text: "Videos"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_VIDEO_001_selected_tab"
+

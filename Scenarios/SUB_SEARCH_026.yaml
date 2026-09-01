@@ -1,0 +1,89 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - search
+  - whitespace-normalization
+  - state-safety
+  - evidence
+---
+
+# Establish an authenticated Subscriber Home state.
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      id: "cta_search"
+    timeout: 30000
+
+- assertVisible:
+    id: "cta_search"
+
+- tapOn:
+    id: "cta_search"
+
+- waitForAnimationToEnd
+
+# Create a controlled prior query so the final assertions can detect stale state.
+# This follows the approved clear-and-replace Search interaction pattern.
+- eraseText: 100
+- inputText: "Bangalore"
+- pressKey: ENTER
+
+- extendedWaitUntil:
+    visible:
+      text: "(?i)^Bangalore$"
+    timeout: 30000
+
+- tapOn:
+    text: "(?i)^Bangalore$"
+
+- eraseText: 100
+
+# Position 1: Enter Chennai with leading and trailing spaces and submit it.
+- inputText: "   Chennai   "
+- pressKey: ENTER
+
+# Position 2: A normalized, nonblank Chennai value must anchor the returned state.
+- extendedWaitUntil:
+    visible:
+      text: "(?i)^Chennai$"
+    timeout: 30000
+
+- assertVisible:
+    text: "(?i)^Chennai$"
+
+- assertNotVisible:
+    id: "screen_article_detail"
+
+# Position 3: The submitted value must be observably normalized rather than
+# retained as a malformed, whitespace-padded value.
+- assertVisible:
+    text: "(?i)^Chennai$"
+
+- assertNotVisible:
+    text: "(?i)^\\s+Chennai\\s+$"
+
+# Position 4: The settled response must remain associated with Chennai (or its
+# legitimate no-results state), must not restore the controlled prior query,
+# and must not navigate to stale article content.
+- extendedWaitUntil:
+    visible:
+      text: "(?i)(.*Chennai.*|No results found.*)"
+    timeout: 30000
+
+- assertVisible:
+    id: "cta_search"
+
+- assertVisible:
+    text: "(?i)(.*Chennai.*|No results found.*)"
+
+- assertNotVisible:
+    text: "(?i)^Bangalore$"
+
+- assertNotVisible:
+    id: "screen_article_detail"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_SEARCH_026_whitespace_normalized"

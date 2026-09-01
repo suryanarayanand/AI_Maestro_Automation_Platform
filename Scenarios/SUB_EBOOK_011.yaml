@@ -1,0 +1,17 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, ebooks]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_EBOOKS.yaml"
+
+- tapOn: {id: "nav_home"}
+
+- extendedWaitUntil: {visible: {id: "screen_home"}, timeout: 30000}
+
+- tapOn: {id: "nav_ebooks"}
+
+- extendedWaitUntil: {visible: {id: "screen_ebooks"}, timeout: 30000}
+
+- runFlow: "../Common/ASSERT_SUBSCRIBER_EBOOK_ACCESS.yaml"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EBOOK_011_round_trip"

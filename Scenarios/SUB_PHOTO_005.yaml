@@ -1,0 +1,50 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - photos
+  - single-photo
+  - evidence-limited
+  - needs-grounding
+---
+
+# SUB_PHOTO_005 — Single-photo gallery presentation
+#
+# This replacement safely establishes the validated subscriber Photos listing.
+# It intentionally does not select a gallery or perform pager gestures because
+# the repository contains no validated locator or controlled fixture proving a
+# current card has exactly one photo. Performing those actions on an arbitrary
+# card would test a different requirement.
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil:
+    visible:
+      text: "Photos"
+    timeout: 30000
+
+- tapOn:
+    text: "Photos"
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Photos"
+    timeout: 30000
+
+- assertVisible:
+    text: "Photos"
+
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PHOTO_005_photos_listing_needs_single_photo_fixture"
+
+# Positions 1–6 remain blocked at this point. Required grounding:
+# - a validated single-photo card selector or controlled single-photo URL;
+# - gallery image, headline/description, credit, and counter selectors;
+# - selectors or an approved visual-comparison mechanism for blank images,
+#   clipping, alignment, readability, and overlay collision.

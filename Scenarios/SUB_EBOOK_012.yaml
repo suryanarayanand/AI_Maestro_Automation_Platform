@@ -1,0 +1,31 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, ebooks, scroll-restoration]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_EBOOKS.yaml"
+
+# Reach a bounded lower position in the previous-eBooks listing.
+- repeat:
+    times: 3
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd
+
+# This case-specific point interaction is retained from the approved flow.
+- tapOn: {point: "7%,10%"}
+- waitForAnimationToEnd
+
+# Assert that the subscriber reached the entitled eBook surface.
+- runFlow: "../Common/ASSERT_SUBSCRIBER_EBOOK_ACCESS.yaml"
+
+# Return through native Back navigation.
+- back
+
+# Verify that the eBooks listing is restored after navigation.
+- extendedWaitUntil:
+    visible: {id: "screen_ebooks"}
+    timeout: 30000
+- assertVisible: {id: "screen_ebooks"}
+
+# Capture the settled restored listing context.
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_EBOOK_012_restored"

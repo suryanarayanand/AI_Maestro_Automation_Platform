@@ -1,0 +1,23 @@
+appId: com.mobstac.thehindu
+
+tags: [generated, ordered, subscriber, home, entitlement, no-ads]
+
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- extendedWaitUntil: {visible: {id: "screen_home"}, timeout: 30000}
+
+- assertVisible: {id: "screen_home"}
+
+- waitForAnimationToEnd: {timeout: 5000}
+
+- assertNotVisible: {text: "SUBSCRIBE"}
+
+- assertNotVisible: {text: "ADVERTISEMENT"}
+
+- assertNotVisible: {id: "aw0"}
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_HOME_001_subscriber_home_no_ads"
+

@@ -1,0 +1,6 @@
+appId: com.mobstac.thehindu
+---
+- runFlow: "OPEN_ANONYMOUS_HOME.yaml"
+- tapOn: {id: "nav_account"}
+- extendedWaitUntil: {visible: {id: "screen_user_menu"}, timeout: 30000}
+- assertVisible: {id: "screen_user_menu"}

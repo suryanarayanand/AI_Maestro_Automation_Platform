@@ -1,0 +1,137 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, subscriber, trending, article, full-access, no-monetisation]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- assertVisible:
+    id: "screen_home"
+
+# Open Trending and locate a currently rendered full-article action using a bounded search.
+- tapOn:
+    id: "nav_trending"
+- extendedWaitUntil:
+    visible:
+      id: "screen_trending"
+    timeout: 30000
+- assertVisible:
+    id: "screen_trending"
+- scrollUntilVisible:
+    element:
+      text: "READ FULL ARTICLE"
+    direction: DOWN
+    timeout: 45000
+    speed: 40
+- assertVisible:
+    text: "READ FULL ARTICLE"
+- tapOn:
+    text: "READ FULL ARTICLE"
+    index: 0
+
+# Dismiss the validated optional article sheet without allowing unbounded polling.
+- repeat:
+    times: 3
+    commands:
+      - tapOn:
+          text: "Close sheet"
+          optional: true
+      - waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_article_detail"
+    timeout: 30000
+- assertVisible:
+    id: "screen_article_detail"
+
+# Validate the settled article top before collecting evidence.
+- assertNotVisible:
+    text: "Already a subscriber.*Login|Keep reading.*"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "aw0"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "Interstitial close button"
+- assertNotVisible:
+    text: "Image for Taboola Advertising Unit"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_006_article_top_full_access"
+
+# Read through a bounded middle portion, checking entitlement after every step.
+- repeat:
+    times: 4
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "Already a subscriber.*Login|Keep reading.*"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "aw0"
+      - assertNotVisible:
+          id: "ad_iframe"
+      - assertNotVisible:
+          text: "Interstitial close button"
+      - assertNotVisible:
+          text: "Image for Taboola Advertising Unit"
+- assertVisible:
+    id: "screen_article_detail"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_006_article_middle_full_access"
+
+# Continue through a bounded lower portion with the same subscriber checks.
+- repeat:
+    times: 4
+    commands:
+      - swipe:
+          direction: UP
+      - waitForAnimationToEnd
+      - assertVisible:
+          id: "screen_article_detail"
+      - assertNotVisible:
+          text: "Already a subscriber.*Login|Keep reading.*"
+      - assertNotVisible:
+          text: "SUBSCRIBE"
+      - assertNotVisible:
+          text: "ADVERTISEMENT"
+      - assertNotVisible:
+          id: "aw0"
+      - assertNotVisible:
+          id: "ad_iframe"
+      - assertNotVisible:
+          text: "Interstitial close button"
+      - assertNotVisible:
+          text: "Image for Taboola Advertising Unit"
+
+# Final settled proof that reading remains unblocked and ad-free.
+- assertVisible:
+    id: "screen_article_detail"
+- assertNotVisible:
+    text: "Already a subscriber.*Login|Keep reading.*"
+- assertNotVisible:
+    text: "SUBSCRIBE"
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+- assertNotVisible:
+    id: "aw0"
+- assertNotVisible:
+    id: "ad_iframe"
+- assertNotVisible:
+    text: "Interstitial close button"
+- assertNotVisible:
+    text: "Image for Taboola Advertising Unit"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_TREND_006_article_lower_full_access"

@@ -1,0 +1,28 @@
+appId: com.mobstac.thehindu
+---
+- runFlow: OPEN_SUBSCRIBER_HOME.yaml
+
+# Sci-tech belongs to the horizontal Quick Access carousel. It must not be
+# reached through the separate Hamburger Menu module.
+- repeat:
+    times: 4
+    commands:
+      - swipe:
+          start: "88%,14%"
+          end: "12%,14%"
+          duration: 500
+      - waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      text: "(?i)^Sci-?Tech$"
+    timeout: 30000
+- tapOn:
+    text: "(?i)^Sci-?Tech$"
+- waitForAnimationToEnd
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+- assertVisible:
+    text: "(?i)^Sci-?Tech$"
+- runFlow: ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml

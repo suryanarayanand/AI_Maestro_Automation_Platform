@@ -1,0 +1,54 @@
+appId: com.mobstac.thehindu
+
+tags: [generated, ordered, subscriber, home, ai-summary]
+
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- tapOn: {id: "article_card", index: 0}
+
+- tapOn: {text: "Close sheet", optional: true}
+
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 25000}
+
+- repeat:
+
+    while: {notVisible: {text: "AI Summary|Summary"}}
+
+    times: 10
+
+    commands:
+
+      - swipe: {direction: LEFT}
+
+      - waitForAnimationToEnd: {timeout: 3000}
+
+      - runFlow:
+          when: {notVisible: {text: "Summary|Article FAQs"}}
+          commands:
+            - assertVisible: {id: "screen_article_detail"}
+
+      - assertNotVisible: {id: "ad_iframe"}
+
+- runFlow:
+    when: {visible: {text: "AI Summary"}}
+    commands:
+      - tapOn: {text: "AI Summary"}
+      - extendedWaitUntil: {visible: {text: "Summary"}, timeout: 20000}
+
+- runFlow:
+    when: {visible: {text: "Article FAQs"}}
+    commands:
+      - assertVisible: {text: "Summary"}
+      - assertVisible: {text: "Article FAQs"}
+      - assertNotVisible: {text: "SUBSCRIBE|Go beyond the headline.*"}
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_HOME_007_entitled_ai_summary"
+
+- runFlow:
+    when: {notVisible: {text: "Article FAQs"}}
+    commands:
+      - waitForAnimationToEnd
+      - takeScreenshot: "Screenshots/Generated/SUB_HOME_007_ai_summary_not_available_for_current_articles"
+

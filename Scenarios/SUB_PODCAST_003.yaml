@@ -1,0 +1,111 @@
+appId: com.mobstac.thehindu
+
+tags:
+  - generated
+  - ordered
+  - subscriber
+  - podcast
+  - refresh
+  - content-recovery
+  - evidence-limited
+
+---
+
+# SUB_PODCAST_003 — Podcast refresh and content recovery
+# Precondition: the test runner has established an authenticated subscriber
+# session and opened the Podcast listing at its top. Navigation is intentionally
+# not fabricated because the supplied Podcast text is validated as a page
+# identity locator, not as a clickable navigation control.
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+# Subscriber entitlement checkpoint before refresh.
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+# Position 1 — First pull-to-refresh and bounded settlement wait.
+- swipe:
+    direction: DOWN
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_003_after_refresh_1"
+
+# Position 1 — Second pull-to-refresh and bounded settlement wait.
+- swipe:
+    direction: DOWN
+
+- waitForAnimationToEnd
+
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_003_after_refresh_2"
+
+# Position 2 — Verify the refreshed viewport contains usable series-card UI.
+# No stable series-card or action locator was supplied, so this assertion checks
+# the rendered listing without inventing a selector or activating an unknown
+# potentially destructive control.
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify this is the settled Podcast listing after refresh. At least one series card must be fully rendered with readable content and visible action controls. The cards and controls must be unobstructed, unclipped, and presented as enabled. Fail if series cards or their action controls are absent, blank, broken, disabled-looking, overlapped, or blocked by a loader or overlay."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_003_series_cards_and_actions"
+
+# Position 3 — Prove execution recovered from both refreshes and remained on
+# Podcast. Reaching these assertions after both gestures is the bounded
+# executable freeze check.
+- extendedWaitUntil:
+    visible:
+      text: "Podcast"
+    timeout: 30000
+
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Verify the Podcast screen is settled after the two refreshes and has not been replaced by a crash screen, error page, blocking overlay, or full-screen loading state. The Podcast listing must remain visibly rendered."
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_003_listing_recovered"
+
+# Position 4 — Final content-integrity and control-retention assertion.
+- assertVisible:
+    text: "Podcast"
+
+- assertWithAI: "Inspect the visible Podcast listing after repeated refresh. Series cards must contain rendered content rather than blank placeholders. No permanent or blocking loader may remain, and the listing's visible controls and action affordances must still be present, readable, and unobstructed."
+
+# Recheck the approved subscriber entitlement outcome at the final settled state.
+- assertNotVisible:
+    text: "SUBSCRIBE"
+
+- assertNotVisible:
+    text: "ADVERTISEMENT"
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_PODCAST_003_final_content_integrity"

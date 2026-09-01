@@ -1,0 +1,17 @@
+appId: com.mobstac.thehindu
+tags: [anonymous, search]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_SEARCH.yaml"
+
+- tapOn: {point: "45%,8%"}
+- inputText: "flood"
+- pressKey: enter
+- waitForAnimationToEnd
+- tapOn: {point: "45%,8%"}
+- eraseText: 5
+- inputText: "flood"
+- pressKey: enter
+- waitForAnimationToEnd
+
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_SEARCH_011_evidence"

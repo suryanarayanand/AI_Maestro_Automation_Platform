@@ -1,0 +1,14 @@
+appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous, article-page, interstitial]
+---
+- runFlow: "../Common/OPEN_ANONYMOUS_TRENDING_ARTICLE.yaml"
+- assertVisible: {id: "screen_article_detail"}
+- repeat:
+    times: 5
+    commands:
+      - swipe: {direction: UP}
+      - waitForAnimationToEnd
+      - runFlow:
+          when: {visible: {text: "^CLOSE$|Interstitial close button"}}
+          file: "../Common/HANDLE_ARTICLE_INTERSTITIAL.yaml"
+- assertVisible: {id: "screen_article_detail"}

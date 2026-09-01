@@ -1,0 +1,17 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_ACCOUNT.yaml"
+- assertVisible: {text: "Login"}
+- assertVisible: {text: "Create account"}
+- assertVisible: {text: "Subscribe"}
+- scrollUntilVisible:
+    element: {text: "APPLICATION SETTINGS"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- assertVisible: {text: "Text Size"}
+- assertVisible: {text: "Appearance"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ACCOUNT_001_result"

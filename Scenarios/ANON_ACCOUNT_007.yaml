@@ -1,0 +1,19 @@
+﻿appId: com.mobstac.thehindu
+tags: [generated, ordered, anonymous]
+---
+
+- runFlow: "../Common/OPEN_ANONYMOUS_ACCOUNT.yaml"
+- scrollUntilVisible:
+    element: {text: "Bookmarks"}
+    direction: DOWN
+    timeout: 30000
+    speed: 40
+- tapOn: {text: "Bookmarks"}
+- extendedWaitUntil: {visible: {text: "Bookmarks|Login to your account|No bookmarks"}, timeout: 30000}
+- assertVisible: {text: "Bookmarks|Login to your account|No bookmarks"}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ACCOUNT_007_destination"
+- back
+- extendedWaitUntil: {visible: {id: "screen_user_menu"}, timeout: 30000}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/ANON_ACCOUNT_007_result"

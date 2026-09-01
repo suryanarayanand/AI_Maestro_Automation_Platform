@@ -1,0 +1,23 @@
+appId: com.mobstac.thehindu
+tags:
+  - generated
+  - ordered
+  - simple
+---
+
+- runFlow: "../Common/OPEN_SUBSCRIBER_HOME.yaml"
+
+- assertVisible:
+    id: "screen_home"
+
+- tapOn:
+    id: "nav_account"
+
+- assertVisible:
+    id: "screen_user_menu"
+
+- tapOn:
+    id: "cta_menu_close"
+
+- assertVisible:
+    id: "screen_home"

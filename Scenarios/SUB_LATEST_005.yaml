@@ -1,0 +1,13 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, latest-news, article, destination]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_LATEST_NEWS.yaml"
+- extendedWaitUntil: {visible: {id: "article_card"}, timeout: 30000}
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_005_listing"
+- openLink: "https://www.thehindu.com/news/national/kerala/kerala-assembly-unanimously-passes-resolution-to-change-official-name-of-state-to-keralam/article67175490.ece"
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 45000}
+- assertVisible: {id: "screen_article_detail"}
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_005_article_destination"

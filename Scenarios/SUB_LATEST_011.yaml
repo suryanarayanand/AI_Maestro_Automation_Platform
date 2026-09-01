@@ -1,0 +1,25 @@
+appId: com.mobstac.thehindu
+tags: [subscriber, latest-news, article-paging, recovery]
+---
+- runFlow: "../Common/OPEN_SUBSCRIBER_LATEST_NEWS.yaml"
+- openLink: "https://www.thehindu.com/news/national/kerala/kerala-assembly-unanimously-passes-resolution-to-change-official-name-of-state-to-keralam/article67175490.ece"
+- extendedWaitUntil: {visible: {id: "screen_article_detail"}, timeout: 45000}
+- repeat:
+    times: 3
+    commands:
+      - swipe: {direction: LEFT}
+      - waitForAnimationToEnd
+      - tapOn: {text: "Close sheet", optional: true}
+      - extendedWaitUntil: {visible: {text: "Text size|Bookmark|Share"}, timeout: 15000}
+- repeat:
+    times: 3
+    commands:
+      - swipe: {direction: RIGHT}
+      - waitForAnimationToEnd
+      - tapOn: {text: "Close sheet", optional: true}
+      - extendedWaitUntil: {visible: {text: "Text size|Bookmark|Share"}, timeout: 15000}
+- runFlow: "../Common/ASSERT_SUBSCRIBER_NO_MONETIZATION.yaml"
+- waitForAnimationToEnd
+- takeScreenshot: "Screenshots/Generated/SUB_LATEST_011_paging"
+- back
+- extendedWaitUntil: {visible: {id: "screen_home"}, timeout: 30000}

@@ -1,0 +1,27 @@
+appId: com.mobstac.thehindu
+tags:
+  - common
+  - anonymous
+---
+# Establish a deterministic anonymous session instead of preserving login state.
+- launchApp:
+    clearState: true
+
+- runFlow: Anonymous_account_onboarding.yaml
+
+- extendedWaitUntil:
+    visible:
+      id: "screen_home"
+    timeout: 30000
+
+- assertVisible:
+    id: "screen_home"
+
+- assertVisible:
+    text: "SUBSCRIBE"
+
+# Wait for live Home content, not only the screen container, before a case starts.
+- extendedWaitUntil:
+    visible:
+      id: "article_card"
+    timeout: 120000
