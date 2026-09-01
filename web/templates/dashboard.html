@@ -5,7 +5,7 @@
 <div class="overview-shell">
 <section class="overview-hero">
   <div class="overview-hero-copy"><span class="overview-kicker"><i></i> Automation control center</span><h2>Ship confident mobile experiences.</h2><p>Build, execute, and review every user journey from one focused workspace.</p><div class="overview-actions"><a class="overview-primary" href="{{ url_for('suite.suites') }}">Browse test suites &rarr;</a><a class="overview-secondary" href="{{ url_for('generator.generator') }}">Generate scenarios</a></div></div>
-  <div class="overview-live-card"><div class="overview-live-head"><span>Live execution</span><span id="execution-status" class="status-pill status-idle">Idle</span></div><strong id="execution-suite">No suite running</strong><div class="overview-progress-track"><span></span></div><div class="overview-live-meta"><div><small>Progress</small><b id="execution-progress">-</b></div><div><small>Started</small><b id="execution-time">-</b></div></div><a class="overview-job-link" href="{{ url_for('jobs.jobs') }}">Open execution jobs</a><button id="cancel-execution" class="btn btn-sm btn-danger mt-3 d-none" type="button">Cancel Execution</button></div>
+  <div class="overview-live-card"><div class="overview-live-head"><span>Live execution</span><span id="execution-status" class="status-pill status-idle">Idle</span></div><strong id="execution-suite">No suite running</strong><div class="overview-progress-track"><span></span></div><div class="overview-live-meta"><div><small>Progress</small><b id="execution-progress">-</b></div><div><small>Started</small><b id="execution-time">-</b></div></div><div class="overview-live-actions"><a class="overview-job-link" href="{{ url_for('jobs.jobs') }}">Open execution jobs</a><button id="cancel-execution" class="btn btn-sm btn-danger d-none" type="button">Cancel Execution</button></div></div>
 </section>
 <section class="overview-section"><div class="overview-section-head"><div><span>User journeys</span><h2>Test by audience</h2></div><a href="{{ url_for('user_profiles.index') }}">View all profiles &rarr;</a></div><div class="profile-rail">
 {% set profiles = [('Anonymous','First-time and signed-out journeys','A','anonymous','user_anonymous'),('Subscriber','Entitled premium experience','S','subscriber','user_subscriber'),('Registered','Signed-in free user journeys','R','registered','user_registered'),('Expired','Renewal and access restrictions','E','expired','user_expired')] %}
@@ -27,6 +27,14 @@
     <section class="surface"><div class="section-head"><div><small>Recent activity</small><h2>Latest jobs</h2></div></div>
         {% if stats.latest_completed %}<p>Last completed: <a href="{{ url_for('jobs.job_detail', job_id=stats.latest_completed.id) }}"><span class="status-pill status-{{ stats.latest_completed.status }}">{{ stats.latest_completed.status }}</span> Job #{{ stats.latest_completed.id }} · {{ stats.latest_completed.suite|title }}</a></p>{% else %}<p class="empty">No completed execution yet.</p>{% endif %}
         {% for job in stats.latest_jobs %}<a class="activity-row" href="{{ url_for('jobs.job_detail', job_id=job.id) }}"><span>#{{ job.id }} · {{ job.suite|title }}</span><span class="status-pill status-{{ job.status }}">{{ job.status }}</span></a>{% else %}<p class="empty">No execution jobs yet.</p>{% endfor %}
+    </section>
+    <section class="surface dashboard-device-card">
+        <div class="section-head"><div><small>Test device</small><h2>Device status</h2></div></div>
+        <div class="dashboard-device-stats">
+            <div><span class="device-dot {{ 'is-online' if stats.device.connected else 'is-offline' }}"></span><small>Device</small><strong>{{ 'Connected' if stats.device.connected else 'Disconnected' }}</strong></div>
+            <div><span class="device-dot {{ 'is-online' if stats.device.online else 'is-offline' }}"></span><small>Network</small><strong>{{ 'Online' if stats.device.online else 'Offline' }}</strong></div>
+            <div><span class="device-battery-icon">▰</span><small>Battery</small><strong>{{ stats.device.battery ~ '%' if stats.device.battery is not none else 'Unknown' }}</strong></div>
+        </div>
     </section>
 </div></div>
 {% endblock %}

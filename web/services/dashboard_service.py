@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from web.services.device_service import get_device_status
+from web.services.device_service import get_device_health, get_device_status
 from web.portal_db import connect
 # Project root (Automation_Framework_UI)
 ROOT = Path(__file__).resolve().parents[2]
@@ -39,6 +39,7 @@ def get_dashboard_stats():
         ]
     )
     device = get_device_status()
+    health, _ = get_device_health()
     with connect() as db:
         pending_drafts = db.execute(
             "SELECT COUNT(*) FROM drafts WHERE status='pending'"
@@ -59,6 +60,11 @@ def get_dashboard_stats():
         "scenario_count": scenario_count,
         "report_count": report_count,
         "device_status": device["status"],
+        "device": {
+            "connected": device["connected"],
+            "online": bool(health.get("internet_reachable")),
+            "battery": health.get("battery_level"),
+        },
         "pending_drafts": pending_drafts,
         "active_jobs": active_jobs,
         "latest_jobs": latest_jobs,

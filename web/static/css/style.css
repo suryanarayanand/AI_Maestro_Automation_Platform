@@ -24,3 +24,21 @@
 /* Decorative background only; portal layout and behavior remain unchanged. */
 body{background-color:#f4f2ea;background-image:url("../images/calm-japanese-background.svg");background-size:cover;background-position:center;background-attachment:fixed;background-repeat:no-repeat}
 [data-theme="dark"] body{background-color:#080d16;background-image:linear-gradient(rgba(5,9,16,.36),rgba(5,9,16,.48)),url("../images/dark-gothic-city-background.svg");background-size:cover;background-position:center;background-attachment:fixed;background-repeat:no-repeat}
+
+/* Dashboard live status and compact device health. */
+.overview-live-card{min-width:0}
+.overview-live-head{gap:12px;flex-wrap:wrap}
+.overview-live-head #execution-status{flex:0 0 auto;max-width:100%;white-space:nowrap}
+.overview-live-actions{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:17px}
+.overview-live-actions .overview-job-link{margin-top:0;white-space:nowrap}
+.overview-live-actions #cancel-execution{flex:0 0 auto;margin:0!important}
+.dashboard-device-card{min-height:100%}
+.dashboard-device-stats{display:grid;gap:13px}
+.dashboard-device-stats>div{display:grid;grid-template-columns:12px 1fr auto;align-items:center;gap:10px;padding:14px;border-radius:10px;background:#f7f9fc}
+.dashboard-device-stats small{color:var(--muted);font-size:12px}
+.dashboard-device-stats strong{font-size:15px}
+.device-dot{width:9px;height:9px;border-radius:50%}
+.device-dot.is-online{background:var(--green);box-shadow:0 0 0 4px #22a06b1c}
+.device-dot.is-offline{background:var(--red);box-shadow:0 0 0 4px #d94b5b1c}
+.device-battery-icon{color:var(--green);font-size:12px}
+@media(max-width:900px){.content-grid{grid-template-columns:1fr}}
