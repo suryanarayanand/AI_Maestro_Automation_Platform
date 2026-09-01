@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="title">
+  <title id="title">AI Maestro mobile automation</title>
+  <defs>
+    <linearGradient id="bg" x1="6" y1="4" x2="42" y2="45" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4b8cff"/>
+      <stop offset="1" stop-color="#225fd9"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="14" fill="url(#bg)"/>
+  <rect x="13" y="8" width="22" height="32" rx="5" fill="none" stroke="#fff" stroke-width="2.7"/>
+  <path d="M20 12h8" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="24" cy="36" r="1.5" fill="#fff"/>
+  <circle cx="34" cy="29" r="8" fill="#10213c" stroke="#69e2b4" stroke-width="1.8"/>
+  <path d="m30.5 29 2.3 2.4 4.6-5" fill="none" stroke="#69e2b4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

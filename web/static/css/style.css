@@ -24,6 +24,8 @@
 /* Decorative background only; portal layout and behavior remain unchanged. */
 body{background-color:#f4f2ea;background-image:url("../images/calm-japanese-background.svg");background-size:cover;background-position:center;background-attachment:fixed;background-repeat:no-repeat}
 [data-theme="dark"] body{background-color:#080d16;background-image:linear-gradient(rgba(5,9,16,.36),rgba(5,9,16,.48)),url("../images/dark-gothic-city-background.svg");background-size:cover;background-position:center;background-attachment:fixed;background-repeat:no-repeat}
+.brand-mark{width:46px!important;height:46px!important;overflow:visible;background:transparent!important;flex:0 0 46px}
+.brand-mark img{display:block;width:46px;height:46px}
 
 /* Dashboard live status and compact device health. */
 .overview-live-card{min-width:0}

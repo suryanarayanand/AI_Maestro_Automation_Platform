@@ -14,7 +14,7 @@
 <div class="wrapper">
 {% if session.get('username') %}
     <aside class="sidebar">
-        <div class="brand"><span class="brand-mark">M</span><div><strong>AI Maestro</strong><small>Automation Portal</small></div></div>
+        <div class="brand"><span class="brand-mark"><img src="{{ url_for('static', filename='images/ai-maestro-mark.svg') }}" alt=""></span><div><strong>AI Maestro</strong><small>Automation Portal</small></div></div>
         <nav>
             <a class="{{ 'active' if request.endpoint == 'dashboard.dashboard' }}" href="{{ url_for('dashboard.dashboard') }}">Overview</a>
             <div class="nav-label">Build</div>
